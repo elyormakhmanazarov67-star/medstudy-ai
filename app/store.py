@@ -40,6 +40,17 @@ class Store:
               correct INTEGER NOT NULL
             );
             CREATE INDEX IF NOT EXISTS idx_attempt_user ON attempts(user_id, lesson_id, id);
+            CREATE TABLE IF NOT EXISTS ai_consents (
+                user_id INTEGER PRIMARY KEY REFERENCES users(user_id) ON DELETE CASCADE,
+                consented_at TEXT NOT NULL
+            );
+            CREATE TABLE IF NOT EXISTS ai_usage (
+                user_id INTEGER NOT NULL REFERENCES users(user_id) ON DELETE CASCADE,
+                utc_day TEXT NOT NULL,
+                requests INTEGER NOT NULL DEFAULT 0,
+                PRIMARY KEY (user_id, utc_day)
+            );
+            CREATE INDEX IF NOT EXISTS idx_ai_usage_day ON ai_usage(utc_day);
             """)
             cols = {r[1] for r in c.execute("PRAGMA table_info(attempts)")}
             if "mode" not in cols:
@@ -87,3 +98,45 @@ class Store:
     def attempt_count(self, uid: int) -> int:
         with self.connect() as c:
             return c.execute("SELECT COUNT(1) FROM attempts WHERE user_id=?", (uid,)).fetchone()[0]
+
+
+    def has_ai_consent(self, uid: int) -> bool:
+        with self.connect() as c:
+            return c.execute("SELECT 1 FROM ai_consents WHERE user_id=?", (uid,)).fetchone() is not None
+
+    def consent_ai(self, uid: int) -> None:
+        if not self.has_consent(uid):
+            raise PermissionError('Avval ilova maxfiylik roziligi talab etiladi')
+        with self.connect() as c:
+            c.execute("INSERT OR IGNORE INTO ai_consents VALUES (?, ?)",
+                      (uid, datetime.now(timezone.utc).isoformat()))
+
+    def revoke_ai_consent(self, uid: int) -> None:
+        with self.connect() as c:
+            c.execute("DELETE FROM ai_consents WHERE user_id=?", (uid,))
+
+    def ai_usage(self, uid: int) -> int:
+        day = datetime.now(timezone.utc).date().isoformat()
+        with self.connect() as c:
+            row = c.execute('SELECT requests FROM ai_usage WHERE user_id=? AND utc_day=?', (uid,day)).fetchone()
+            return row[0] if row else 0
+
+    def reserve_ai_request(self, uid: int, per_user: int, global_limit: int) -> int:
+        """Reserve one request atomically; no message content is stored.
+
+        A reservation counts even if the upstream call later fails, preventing
+        repeated failures and retries from bypassing the budget guard.
+        """
+        day = datetime.now(timezone.utc).date().isoformat()
+        with self.connect() as c:
+            c.execute('BEGIN IMMEDIATE')
+            if not c.execute('SELECT 1 FROM ai_consents WHERE user_id=?',(uid,)).fetchone():
+                raise PermissionError('AI xizmati uchun alohida rozilik kerak')
+            user_row = c.execute('SELECT requests FROM ai_usage WHERE user_id=? AND utc_day=?',(uid,day)).fetchone()
+            used = user_row[0] if user_row else 0
+            all_count = c.execute('SELECT COALESCE(SUM(requests), 0) FROM ai_usage WHERE utc_day=?',(day,)).fetchone()[0]
+            if used >= per_user or all_count >= global_limit:
+                raise ValueError('Kunlik AI so‘rovlar limiti tugadi')
+            c.execute("INSERT INTO ai_usage(user_id, utc_day, requests) VALUES(?,?,1) "
+                      "ON CONFLICT(user_id, utc_day) DO UPDATE SET requests = requests + 1", (uid,day))
+        return used + 1

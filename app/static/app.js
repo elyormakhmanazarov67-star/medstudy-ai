@@ -8,7 +8,7 @@
   const app = document.getElementById('app');
   const demo = new URLSearchParams(location.search).get('demo') === '1' && ['localhost', '127.0.0.1'].includes(location.hostname);
   const auth = webapp?.initData || '';
-  const state = { tab: 'home', catalog: null, progress: null, lesson: null, quiz: null, result: null, consent: null, busy: false };
+  const state = { tab: 'home', catalog: null, progress: null, lesson: null, quiz: null, result: null, consent: null, busy: false, tutorStatus: null, tutorQuestion:'', tutorAnswer: null, tutorLessonId:'' };
   const esc = val => String(val ?? '').replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]));
 
   async function api(path, method='GET', data) {
@@ -20,8 +20,8 @@
     if (!response.ok) throw new Error(body?.detail || 'Server bilan aloqa xatosi');
     return body;
   }
-  const header = () => `<header class="sitehead"><div class="brand"><div class="logo">✦</div><div><strong>MedStudy AI</strong><small>O‘quv platforma</small></div></div><span class="pill"><span class="pill-dot"></span> SINOV v0.2</span></header>`;
-  const nav = () => `<div class="footer-nav"><div class="nav-inner"><button class="nav ${state.tab==='home'?'active':''}" data-action="home"><b>⌂</b>Asosiy</button><button class="nav ${state.tab==='progress'?'active':''}" data-action="progress"><b>▥</b>Natijalar</button><button class="nav ${state.tab==='privacy'?'active':''}" data-action="privacy"><b>♢</b>Maxfiylik</button></div></div>`;
+  const header = () => `<header class="sitehead"><div class="brand"><div class="logo">✦</div><div><strong>MedStudy AI</strong><small>O‘quv platforma</small></div></div><span class="pill"><span class="pill-dot"></span> SINOV v0.4</span></header>`;
+  const nav = () => `<div class="footer-nav"><div class="nav-inner"><button class="nav ${state.tab==='home'?'active':''}" data-action="home"><b>⌂</b>Asosiy</button><button class="nav ${state.tab==='progress'?'active':''}" data-action="progress"><b>▥</b>Natijalar</button><button class="nav ${state.tab==='tutor'?'active':''}" data-action="tutor"><b>✧</b>AI Ustoz</button><button class="nav ${state.tab==='privacy'?'active':''}" data-action="privacy"><b>♢</b>Maxfiylik</button></div></div>`;
   const disclaimer = `<div class="caution">⚠️ Mazkur darslar sinov materialidir; mutaxassis ko‘rigidan o‘tmagan. Klinik amaliyot uchun yo‘riqnoma yoki rasmiy universitet xizmati emas.</div>`;
   const shell = content => { app.innerHTML = header() + '<main>' + content + '</main>' + nav(); window.scrollTo(0,0); };
   const loading = () => { app.innerHTML = `<div class="boot"><div class="loader"></div><p>Ma’lumotlar yuklanmoqda…</p></div>`; };
@@ -42,7 +42,7 @@
   function showLesson() {
     state.tab='lesson';
     const l=state.lesson;
-    shell(`<button class="back" data-action="home">← Barcha mavzular</button><div class="article-intro"><p class="eyebrow">PREKLINIK RESTAVRATSION STOMATOLOGIYA</p><h1>${esc(l.title)}</h1><p>${l.sections.length} bo‘lim · ${l.question_count} savol</p></div>${disclaimer}<div class="card"><h3>🎯 Bugungi maqsad</h3><p class="smallprint">Mavzuni o‘qing, muhim tushunchalarni takrorlang va bilimlaringizni test bilan sinab ko‘ring.</p><button class="btn btn-primary btn-wide" data-action="start-quiz">Testni boshlash (${l.question_count}) →</button></div>${l.sections.map(s=>`<section class="lesson-section"><h3>${esc(s.heading)}</h3><p>${esc(s.body)}</p></section>`).join('')}<div class="card"><h3>Bilimingizni sinab ko‘ring</h3><button class="btn btn-primary btn-wide" data-action="start-quiz">${l.question_count} ta test savolini boshlash →</button></div><div class="sources"><strong>📖 Manbalar katalogi</strong><p class="smallprint">Quyidagilar SamDTU elektron kutubxonasi havolalari. Kitoblar to‘liq matni bilan bandma-band tekshiruv hali yakunlanmagan.</p>${(l.sources||[]).map((u,i)=>`<a href="${esc(u)}" target="_blank" rel="noopener noreferrer">${i+1}-manba ↗</a>`).join('')}</div>`);
+    shell(`<button class="back" data-action="home">← Barcha mavzular</button><div class="article-intro"><p class="eyebrow">PREKLINIK RESTAVRATSION STOMATOLOGIYA</p><h1>${esc(l.title)}</h1><p>${l.sections.length} bo‘lim · ${l.question_count} savol</p></div>${disclaimer}<div class="card"><h3>🎯 Bugungi maqsad</h3><p class="smallprint">Mavzuni o‘qing, muhim tushunchalarni takrorlang va bilimlaringizni test bilan sinab ko‘ring.</p><button class="btn btn-primary btn-wide" data-action="start-quiz">Testni boshlash (${l.question_count}) →</button><div class="spacer"></div><button class="btn btn-flat btn-wide" data-action="tutor" data-id="${esc(l.id)}">✧ AI Ustozdan so‘rash</button></div>${l.sections.map(s=>`<section class="lesson-section"><h3>${esc(s.heading)}</h3><p>${esc(s.body)}</p></section>`).join('')}<div class="card"><h3>Bilimingizni sinab ko‘ring</h3><button class="btn btn-primary btn-wide" data-action="start-quiz">${l.question_count} ta test savolini boshlash →</button></div><div class="sources"><strong>📖 Manbalar katalogi</strong><p class="smallprint">Quyidagilar SamDTU elektron kutubxonasi havolalari. Kitoblar to‘liq matni bilan bandma-band tekshiruv hali yakunlanmagan.</p>${(l.sources||[]).map((u,i)=>`<a href="${esc(u)}" target="_blank" rel="noopener noreferrer">${i+1}-manba ↗</a>`).join('')}</div>`);
   }
   function startQuiz(questions, mode='full') {
     if (!questions.length) { state.tab='lesson'; showLesson(); return; }
@@ -80,11 +80,49 @@
     shell(`<p class="eyebrow">Mening o‘sishim</p><h1>O‘quv natijalarim</h1><p class="smallprint">Faqat shaxsiy test natijalaringiz ko‘rsatiladi.</p><div class="stats"><div class="stat"><strong>${p.attempts_count}</strong><small>Urinishlar</small></div><div class="stat"><strong>${p.latest.length}</strong><small>O‘rganilgan mavzu</small></div><div class="stat"><strong>${p.latest.length?Math.round(p.latest.reduce((x,r)=>x+r.percent,0)/p.latest.length):0}%</strong><small>Oxirgi o‘rtacha</small></div></div><div class="sectionhead"><h2>Mavzular kesimida</h2><span>Oxirgi urinishlar</span></div>${p.latest.length?`<div class="card">${p.latest.map(r=>`<div class="progress-row"><div class="progress-label"><strong>${esc(r.title)}</strong><span>${r.score}/${r.total} · ${r.percent}%</span></div><div class="bar"><div class="bar-fill" style="width:${r.percent}%"></div></div></div>`).join('')}<p class="smallprint">Eslatma: xatolarni takrorlash testida savollar soni kamroq bo‘lishi mumkin.</p></div>`:`<div class="empty"><div class="symbol">📊</div><h3>Natijalar hozircha yo‘q</h3><p>Birinchi testni topshiring — progress shu yerda ko‘rinadi.</p><button class="btn btn-primary" data-action="home">Darslarni ko‘rish →</button></div>`}`);
   }
   function privacy(){
-    state.tab='privacy';shell(`<p class="eyebrow">Shaxsiy ma’lumotlar</p><h1>Maxfiylik va xavfsizlik</h1><div class="card privacy"><h3>Qanday ma’lumotlar saqlanadi?</h3><p>Sinov davrida faqat Telegram foydalanuvchi IDsi, rozilik vaqti, test javoblari va natijalari SQLite bazasida saqlanadi. Ism, telefon raqami va yozishmalar saqlanmaydi.</p><h3>Ma’lumotlar kimga tegishli?</h3><p>Test natijalarini ilova administratori serverda boshqaradi. Ilova hozircha mustaqil o‘quv prototipi, universitetning rasmiy xizmati emas.</p><h3>Ma’lumotlarni o‘chirish</h3><p>Quyidagi tugma orqali shaxsiy test tarixingiz va rozilik yozuvini o‘chirishingiz mumkin.</p><button class="btn btn-danger btn-wide" data-action="delete">Ma’lumotlarimni o‘chirish</button></div>${disclaimer}`);
+    state.tab='privacy';shell(`<p class="eyebrow">Shaxsiy ma’lumotlar</p><h1>Maxfiylik va xavfsizlik</h1><div class="card privacy"><h3>Qanday ma’lumotlar saqlanadi?</h3><p>Sinov davrida faqat Telegram foydalanuvchi IDsi, rozilik vaqti, test javoblari va natijalari SQLite bazasida saqlanadi. Ism, telefon raqami va yozishmalar saqlanmaydi. AI Ustoz funksiyasi uchun alohida rozilik bersangiz, savolingiz va tanlangan dars parchalari OpenAI API xizmatiga yuboriladi; savol matni bizning SQLite bazamizga saqlanmaydi. API foydalanish soni saqlanadi.</p><h3>Ma’lumotlar kimga tegishli?</h3><p>Test natijalarini ilova administratori serverda boshqaradi. Ilova hozircha mustaqil o‘quv prototipi, universitetning rasmiy xizmati emas.</p><h3>Ma’lumotlarni o‘chirish</h3><p>Quyidagi tugma orqali shaxsiy test tarixingiz va rozilik yozuvini o‘chirishingiz mumkin.</p><button class="btn btn-danger btn-wide" data-action="delete">Ma’lumotlarimni o‘chirish</button></div>${disclaimer}`);
   }
   function consentScreen(){
-    app.innerHTML=header()+`<main class="privacy"><p class="eyebrow">Xush kelibsiz</p><h1>MedStudy AI’ga kirish</h1><div class="card"><h3>Yopiq sinovga rozilik</h3><p>Ta’limiy tajriba uchun Telegram ID, rozilik vaqti, test javoblari va natijalari administrator serveridagi SQLite bazasida saqlanadi. Ism, telefon va yozishmalar saqlanmaydi.</p><p>Keyin “Maxfiylik” bo‘limidan ularni o‘chirish mumkin. Materiallar ekspert tasdig‘ini olmagan.</p><button class="btn btn-primary btn-wide" data-action="consent">Roziman · Davom etish</button><div class="spacer"></div><p class="smallprint">Rozilik bermasangiz, natijalar saqlanmaydi va ilovadan foydalanish boshlanmaydi.</p></div></main>`;
+    app.innerHTML=header()+`<main class="privacy"><p class="eyebrow">Xush kelibsiz</p><h1>MedStudy AI’ga kirish</h1><div class="card"><h3>Yopiq sinovga rozilik</h3><p>Ta’limiy tajriba uchun Telegram ID, rozilik vaqti, test javoblari va natijalari administrator serveridagi SQLite bazasida saqlanadi. Ism, telefon va yozishmalar saqlanmaydi. AI Ustozda alohida rozilikdan keyin savol va dars parchasi OpenAI xizmatiga yuboriladi. Savollar bizning server bazamizda saqlanmaydi.</p><p>Keyin “Maxfiylik” bo‘limidan ularni o‘chirish mumkin. Materiallar ekspert tasdig‘ini olmagan.</p><button class="btn btn-primary btn-wide" data-action="consent">Roziman · Davom etish</button><div class="spacer"></div><p class="smallprint">Rozilik bermasangiz, natijalar saqlanmaydi va ilovadan foydalanish boshlanmaydi.</p></div></main>`;
   }
+
+  async function tutorScreen(id='') {
+    state.tab='tutor';
+    if(id) state.tutorLessonId=id;
+    loading();
+    try { state.tutorStatus=await api('/tutor/status'); renderTutor(); }
+    catch(e) { fail(e); }
+  }
+  function renderTutor() {
+    state.tab='tutor';
+    const t=state.tutorStatus;
+    const lessons=subjectSummary();
+    if (!state.tutorLessonId && lessons[0]) state.tutorLessonId=lessons[0].id;
+    const select=lessons.map(l=>`<option value="${esc(l.id)}" ${l.id===state.tutorLessonId?'selected':''}>${esc(l.title)}</option>`).join('');
+    if(!t.consented) {
+      shell(`<p class="eyebrow">Yangi imkoniyat · sinov</p><h1>✧ AI Ustoz</h1><div class="card privacy"><h3>AI xizmatiga alohida rozilik</h3><p>Savolingiz va tanlangan mavzuning qisqa parchalari OpenAI API orqali qayta ishlanadi. Shaxsiy, bemor haqidagi yoki maxfiy ma’lumotlarni yubormang. AI javoblari xato bo‘lishi mumkin va shifokor ko‘rsatmasini almashtirmaydi.</p><p>Savollaringiz bizning SQLite bazamizda saqlanmaydi. Kunlik foydalanish soni saqlanadi. Istalgan payt rozilikni bekor qilish yoki shaxsiy ma’lumotlarni o‘chirish mumkin.</p><button class="btn btn-primary btn-wide" data-action="tutor-consent">Roziman · AI Ustozni ochish</button></div>`);
+      return;
+    }
+    let result='';
+    if(state.tutorAnswer) {
+      result=`<div class="card ai-result"><h3>✧ AI javobi</h3><p>${esc(state.tutorAnswer.answer).replace(/\n/g,'<br>')}</p><div class="smallprint">Foydalanilgan dars bo‘limlari: ${esc(state.tutorAnswer.sections.join(' · '))}</div><p class="smallprint">${esc(state.tutorAnswer.notice)}</p></div>`;
+    }
+    shell(`<p class="eyebrow">Shaxsiy o‘quv yordamchi</p><h1>✧ AI Ustoz</h1>${disclaimer}<div class="card"><p class="smallprint">Kunlik so‘rov: ${t.used}/${t.limit} · Qolgan: ${t.remaining}</p>${!t.enabled?'<div class="caution">AI hali faollashtirilmagan. Administrator Railway’da API sozlamalarini kiritishi kerak.</div>':''}<label for="tutor-lesson">Mavzuni tanlang</label><select id="tutor-lesson" class="ai-input">${select}</select><label for="tutor-question">Savolingiz</label><textarea id="tutor-question" class="ai-input" maxlength="500" rows="4" placeholder="Masalan: Ergonomika nima uchun kerak?">${esc(state.tutorQuestion)}</textarea><p class="smallprint">Savol va mavzu parchasi OpenAI API'ga yuboriladi. Bemor ma’lumoti yoki maxfiy ma’lumotni kiritmang.</p><button class="btn btn-primary btn-wide" data-action="tutor-ask" ${(!t.enabled||t.remaining<=0||state.busy)?'disabled':''}>${state.busy?'Javob olinmoqda…':'AI Ustozdan so‘rash →'}</button></div>${result}<div class="card"><button class="btn btn-flat btn-wide" data-action="tutor-revoke">AI roziligini bekor qilish</button></div>`);
+  }
+  async function tutorAsk() {
+    if(state.busy) return;
+    const select=document.getElementById('tutor-lesson');
+    const field=document.getElementById('tutor-question');
+    state.tutorLessonId=select?.value||state.tutorLessonId;
+    state.tutorQuestion=field?.value.trim()||'';
+    if(state.tutorQuestion.length < 5) { alert('Savol kamida 5 ta belgi bo‘lsin'); return; }
+    state.busy=true;
+    renderTutor();
+    try { state.tutorAnswer=await api('/tutor/ask','POST',{lesson_id:state.tutorLessonId,question:state.tutorQuestion}); state.tutorStatus=await api('/tutor/status'); }
+    catch(e) { state.busy=false; fail(e); return; }
+    state.busy=false;renderTutor();
+  }
+
   async function init(){
     loading();try {
       const me=await api('/me');state.consent=me.consented;
@@ -105,8 +143,12 @@
         case 'retry':if(state.tab==='result')await retryWrong();else await init();break;
         case 'progress':await progress();break;
         case 'privacy':privacy();break;
+        case 'tutor':await tutorScreen(el.dataset.id||'');break;
+        case 'tutor-consent':await api('/tutor/consent','POST');await tutorScreen();break;
+        case 'tutor-ask':await tutorAsk();break;
+        case 'tutor-revoke':await api('/tutor/consent','DELETE');state.tutorAnswer=null;await tutorScreen();break;
         case 'consent':await api('/consent','POST');await init();break;
-        case 'delete':if(!confirm('Barcha test natijalari o‘chirilsinmi?'))return;await api('/me','DELETE');state.catalog=null;state.progress=null;await init();break;
+        case 'delete':if(!confirm('Barcha test natijalari o‘chirilsinmi?'))return;await api('/me','DELETE');state.catalog=null;state.progress=null;state.tutorAnswer=null;state.tutorQuestion='';await init();break;
       }
     }catch(e){fail(e);}
   });

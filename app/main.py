@@ -12,6 +12,7 @@ from pydantic import BaseModel, Field
 from .auth import AuthError, verify_init_data
 from .core import load_catalog, find_lesson, public_question, grade
 from .store import Store
+from . import tutor
 from .telegram_gateway import router as telegram_router, configure_telegram
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -39,7 +40,7 @@ def index():
 
 @app.get('/api/health')
 def health():
-    return {'status': 'ok', 'version': '0.3.0', 'draft': True}
+    return {'status': 'ok', 'version': '0.4.0', 'draft': True}
 
 
 def current_user(request: Request, x_telegram_init_data: Annotated[str | None, Header()] = None) -> int:
@@ -141,3 +142,67 @@ def review(lesson_id: str,uid: int = Depends(consent_required)):
     wrong = STORE.latest_wrong_ids(uid,lesson_id)
     qmap = {q['id']:q for q in found[1]['questions']}
     return {'lesson_id':lesson_id,'questions':[public_question(qmap[q]) for q in wrong if q in qmap]}
+
+
+# AI Tutor is a strictly opt-in pilot. No API call occurs without both existing
+# Telegram-authenticated app consent and separate consent for OpenAI processing.
+
+def _bounded_positive(name: str, default: int, cap: int) -> int:
+    try:
+        return max(1, min(int(os.getenv(name, str(default))), cap))
+    except ValueError:
+        return default
+
+
+@app.get('/api/tutor/status')
+def tutor_status(uid: int = Depends(consent_required)):
+    limit = _bounded_positive('AI_DAILY_LIMIT', 5, 20)
+    used = STORE.ai_usage(uid)
+    return {'enabled': tutor.enabled(), 'consented': STORE.has_ai_consent(uid),
+            'used': used, 'limit': limit, 'remaining': max(0, limit-used)}
+
+
+@app.post('/api/tutor/consent')
+def tutor_consent(uid: int = Depends(consent_required)):
+    STORE.consent_ai(uid)
+    return {'consented': True}
+
+
+@app.delete('/api/tutor/consent')
+def tutor_revoke_consent(uid: int = Depends(consent_required)):
+    STORE.revoke_ai_consent(uid)
+    return {'consented': False}
+
+
+class TutorQuestion(BaseModel):
+    lesson_id: str = Field(min_length=1, max_length=100)
+    question: str = Field(min_length=5, max_length=500)
+
+
+@app.post('/api/tutor/ask')
+async def tutor_ask(data: TutorQuestion, uid: int = Depends(consent_required)):
+    if not tutor.enabled():
+        raise HTTPException(503, 'AI hozir o‘chirilgan. Administrator sozlamalarini tekshirsin.')
+    if not STORE.has_ai_consent(uid):
+        raise HTTPException(403, 'OpenAI ga savol yuborish uchun alohida rozilik kerak')
+    lesson_found = find_lesson(CATALOG, data.lesson_id)
+    if not lesson_found:
+        raise HTTPException(404, 'Mavzu topilmadi')
+    if not data.question.strip():
+        raise HTTPException(422, 'Savol bo‘sh bo‘lishi mumkin emas')
+    # Reject obvious personally identifying data to reduce accidental exposure.
+    import re
+    if re.search(r'[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}|\+?998[\d -]{8,}|sk-[a-zA-Z0-9_-]{12,}', data.question):
+        raise HTTPException(422, 'Savoldan telefon, email yoki maxfiy kalitni olib tashlang')
+    per_user = _bounded_positive('AI_DAILY_LIMIT', 5, 20)
+    globally = _bounded_positive('AI_GLOBAL_DAILY_LIMIT', 40, 1000)
+    try:
+        used = STORE.reserve_ai_request(uid, per_user, globally)
+    except (ValueError, PermissionError) as exc:
+        raise HTTPException(429 if isinstance(exc, ValueError) else 403, str(exc)) from exc
+    try:
+        result = await tutor.generate_answer(lesson_found[1], data.question.strip())
+    except tutor.TutorUnavailable as exc:
+        raise HTTPException(503, str(exc)) from exc
+    return {**result, 'remaining': max(0, per_user-used),
+            'notice': 'AI javobi tekshirilmagan o‘quv materialiga asoslangan. Klinik maslahat emas.'}
