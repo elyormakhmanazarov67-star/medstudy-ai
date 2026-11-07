@@ -79,7 +79,7 @@ def test_legacy_office_and_poster_upload_with_header_validation(tmp_path,monkeyp
     course=next(s for s in main.CATALOG['subjects'] if s['id']=='lotin_tili_tibbiy_terminologiya')
     files={m['filename'] for l in course['lessons'] for m in l['teacher_materials']}
     samples={
-        'photo_2026-11-08_02-29-35.jpg':b'\\xff\\xd8\\xff\\xe0'+b'demo',
+        'photo_2026-11-08_02-29-35.jpg':b'\xff\xd8\xff\xe0'+b'demo',
         'St.Lotin.26-27.doc':bytes.fromhex('D0CF11E0A1B11AE1')+b'demo',
     }
     for name,body in samples.items():
