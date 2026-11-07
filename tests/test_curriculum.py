@@ -13,6 +13,11 @@ def test_all_subjects_and_teacher_source_separation():
         for lesson in subject['lessons']:
             assert all(item.get('url','').startswith(('https://e-library.sammu.uz/', 'https://openstax.org/')) for item in lesson['supplementary'])
             assert all(not item.get('url') for item in lesson['teacher_materials'])
+            assert lesson.get('sammu_books'), 'SamMU catalog books must remain on every topic'
+            assert all(x['url'].startswith('https://e-library.sammu.uz/uz/book/') for x in lesson['sammu_books'])
+            assert all(not x.get('url','').startswith('https://e-library.sammu.uz/') for x in lesson['supplementary'])
+            assert all(x.get('access') for x in lesson['sammu_books'])
+
             for question in lesson['questions']:
                 assert len(question['options'])==4
     assert sum(len(s['lessons']) for s in data['subjects'])==66
@@ -39,3 +44,17 @@ def test_user_source_teaching_material_counts():
     assert sum(len(l['questions']) for l in e['lessons']+b['lessons'])==18
     assert all(len(l.get('supplement_sections', [])) >= 1 for l in b['lessons'])
     assert all(len(l.get('supplement_questions', [])) >= 1 for l in b['lessons'])
+
+def test_free_notes_and_sammu_books_are_separate_on_anatomy_and_preclinical_topics():
+    data=load_catalog()
+    a=data['subjects'][2]['lessons'][2]
+    assert a['supplement_sections']
+    assert a['supplement_questions']
+    assert a['supplementary'][0]['url'].startswith('https://openstax.org/')
+    assert a['sammu_books'][0]['url'].startswith('https://e-library.sammu.uz/')
+    p=data['subjects'][0]['lessons'][0]
+    assert p['questions']
+    assert not p.get('supplement_questions')
+    assert not p.get('supplement_sections')
+    assert p['sammu_books']
+    assert not p['supplementary']
