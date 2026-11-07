@@ -1,7 +1,7 @@
 {
-  "version": "0.5.15-preclinical-sources",
+  "version": "0.5.16-preclinical-quizzes",
   "status": "TEST — O‘qituvchi materiallari va OpenStax ochiq darsliklaridan manba ko‘rsatilgan alohida o‘quv materiallari. Mutaxassis tekshiruvi talab etiladi.",
-  "note": "Preklinik restavratsion stomatologiyaning 28 mavzusi uchta yuklangan darslik asosida alohida to‘ldirildi; 23–25-darslarda kariyesning to‘liq tasnifi uchun manba yetarli emas. 26–29-darslarda hozircha faqat ichki endodontik anatomiya yoritilgan. PDF/fayl yuklab olish o‘chiq.",
+  "note": "Preklinik restavratsion stomatologiyada manbali 28 darsning har birida 10 tadan alohida test savoli bor (jami 280). Kariyes bo‘yicha 23–25 darslar manba yetishmagani sabab bo‘sh; PDF/original fayl yuklab olish yo‘q.",
   "subjects": [
     {
       "id": "stom_prerest",
@@ -47,18 +47,126 @@
           "questions": [
             {
               "id": "ergonomika_req1",
-              "q": "Ergonomika nima bilan bog‘liq?",
+              "q": "Stomatologik ish joyining markaziy jihozi qaysi?",
               "options": [
-                "Ish joyini qulay tashkil etish",
-                "Faqat reklama",
-                "Faqat to‘lov",
-                "Faqat bino nomi"
+                "Rentgen plyonkasi",
+                "Bemor kreslosi",
+                "Shtopfer",
+                "Kanal shtifti"
+              ],
+              "answer": 1,
+              "explanation": "Stomatologning ish joyida bemor kreslosi, shifokor stuli, yoritish tizimi, asboblar stoli va stomatologik qurilma bo‘ladi."
+            },
+            {
+              "id": "ergonomika_q02",
+              "q": "Ish maydonini yoritish uchun qaysi moslama xizmat qiladi?",
+              "options": [
+                "Yoritgich",
+                "Kompressor",
+                "So‘lak so‘rg‘ich",
+                "Patnis"
               ],
               "answer": 0,
-              "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
+              "explanation": "Stomatologning ish joyida bemor kreslosi, shifokor stuli, yoritish tizimi, asboblar stoli va stomatologik qurilma bo‘ladi."
+            },
+            {
+              "id": "ergonomika_q03",
+              "q": "Og‘iz bo‘shlig‘idagi suyuqlikni olib turuvchi moslama qaysi?",
+              "options": [
+                "Mikromotor",
+                "Yoritgich",
+                "Stul",
+                "So‘lak so‘rg‘ich"
+              ],
+              "answer": 3,
+              "explanation": "Qurilmaga bormashina, havo-suv pistoleti va so‘lak so‘rg‘ich kabi moslamalar ulanadi."
+            },
+            {
+              "id": "ergonomika_q04",
+              "q": "Stomatologik qurilmaning havo ta’minotiga aloqador jihoz qaysi?",
+              "options": [
+                "Ko‘zgu",
+                "Gladilka",
+                "Kompressor",
+                "Matritsa"
+              ],
+              "answer": 2,
+              "explanation": "Stomatologning ish joyida bemor kreslosi, shifokor stuli, yoritish tizimi, asboblar stoli va stomatologik qurilma bo‘ladi."
+            },
+            {
+              "id": "ergonomika_q05",
+              "q": "Asboblarni tartibli saqlash uchun nima ishlatiladi?",
+              "options": [
+                "Bemor kreslosi",
+                "Modulli shkaf",
+                "Turbina rotori",
+                "Dentin layneri"
+              ],
+              "answer": 1,
+              "explanation": "Trezubov va hammualliflar ish joyida asboblarni saqlash uchun modulli shkaflar, ishchi stol, sanitariya-texnik kommunikatsiyalar hamda tozalash va zararsizlantirish vositalari bo‘lishini tasvirlaydi."
+            },
+            {
+              "id": "ergonomika_q06",
+              "q": "Asboblarni vaqtincha joylashtirish uchun nima ishlatiladi?",
+              "options": [
+                "Asboblar patnisi",
+                "Yorug‘lik filtri",
+                "Ildiz shtifti",
+                "Tish qoplamasi"
+              ],
+              "answer": 0,
+              "explanation": "Trezubov va hammualliflar ish joyida asboblarni saqlash uchun modulli shkaflar, ishchi stol, sanitariya-texnik kommunikatsiyalar hamda tozalash va zararsizlantirish vositalari bo‘lishini tasvirlaydi."
+            },
+            {
+              "id": "ergonomika_q07",
+              "q": "Bemor holatini muolajaga moslashtiruvchi jihoz qaysi?",
+              "options": [
+                "Metall shpatel",
+                "Polir",
+                "Karboksilat sement",
+                "Stomatologik kreslo"
+              ],
+              "answer": 3,
+              "explanation": "Kreslo bemorning holatini muolaja turiga moslashtirishga, yoritgich esa og‘iz bo‘shlig‘idagi ish maydonini ko‘rishga yordam beradi."
+            },
+            {
+              "id": "ergonomika_q08",
+              "q": "Ish joyi ergonomikasida asboblarning qaysi belgisi muhim?",
+              "options": [
+                "Faqat rangi",
+                "Faqat ishlab chiqarilgan yili",
+                "Ularga qulay yetish mumkinligi",
+                "Faqat reklama belgisi"
+              ],
+              "answer": 2,
+              "explanation": "Kreslo bemorning holatini muolaja turiga moslashtirishga, yoritgich esa og‘iz bo‘shlig‘idagi ish maydonini ko‘rishga yordam beradi."
+            },
+            {
+              "id": "ergonomika_q09",
+              "q": "Stomatologik qurilma tarkibida odatda qaysi juft tizim bo‘lishi mumkin?",
+              "options": [
+                "Faqat yorug‘lik va ovoz yozuvi",
+                "Havo va suv tizimlari",
+                "Faqat radiotexnika",
+                "Faqat laboratoriya tarozisi"
+              ],
+              "answer": 1,
+              "explanation": "Stomatologning ish joyida bemor kreslosi, shifokor stuli, yoritish tizimi, asboblar stoli va stomatologik qurilma bo‘ladi."
+            },
+            {
+              "id": "ergonomika_q10",
+              "q": "Qayta ishlash zonasi nimasi bilan farqlanadi?",
+              "options": [
+                "Asboblarni tozalash va zararsizlantirish vazifasi bilan",
+                "Bemorni o‘tirgizishi bilan",
+                "Tish rangini tanlashi bilan",
+                "Doimiy plomba yasashi bilan"
+              ],
+              "answer": 0,
+              "explanation": "Trezubov va hammualliflar ish joyida asboblarni saqlash uchun modulli shkaflar, ishchi stol, sanitariya-texnik kommunikatsiyalar hamda tozalash va zararsizlantirish vositalari bo‘lishini tasvirlaydi."
             }
           ],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "review_status": "USER_SOURCE_DRAFT — 10 topic-specific practice questions from uploaded dental textbooks",
           "source_pages": [
             {
               "book": "Trezubov",
@@ -104,8 +212,129 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "questions": [],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "questions": [
+            {
+              "id": "ergonomika_2_q01",
+              "q": "Stomatologik ergonomikaning asosiy maqsadi nima?",
+              "options": [
+                "Faqat mebel rangini o‘zgartirish",
+                "Faqat materialni qotirish",
+                "Ish jarayonini qulay va xavfsiz tashkil etish",
+                "Faqat rentgen tasvirini chiqarish"
+              ],
+              "answer": 2,
+              "explanation": "Stomatologiyada u shifokorning ortiqcha egilishini, qo‘l va yelka zo‘riqishini hamda takroriy noqulay harakatlarni kamaytirishga qaratilgan."
+            },
+            {
+              "id": "ergonomika_2_q02",
+              "q": "Shifokorning ortiqcha egilishini nima kamaytiradi?",
+              "options": [
+                "Asboblarning og‘irligini oshirish",
+                "Jihozlarning qulay joylashishi",
+                "Yoritishni kamaytirish",
+                "Uzoq statik holatni saqlash"
+              ],
+              "answer": 1,
+              "explanation": "Stomatologiyada u shifokorning ortiqcha egilishini, qo‘l va yelka zo‘riqishini hamda takroriy noqulay harakatlarni kamaytirishga qaratilgan."
+            },
+            {
+              "id": "ergonomika_2_q03",
+              "q": "Uzoq statik holatda ishlash ko‘proq nimani zo‘riqtiradi?",
+              "options": [
+                "Mushaklarni",
+                "Tish emalini",
+                "Plomba sementini",
+                "Bor o‘zagini"
+              ],
+              "answer": 0,
+              "explanation": "Ergonomika insonning ish jarayoni va jihozlar bilan o‘zaro munosabatini o‘rganadi."
+            },
+            {
+              "id": "ergonomika_2_q04",
+              "q": "Ish maydonida keskin yorug‘lik kontrasti nimaga ta’sir qilishi mumkin?",
+              "options": [
+                "Sementning kimyoviy tarkibiga",
+                "Tishlar soniga",
+                "Gematokritga",
+                "Ko‘rish qulayligiga"
+              ],
+              "answer": 3,
+              "explanation": "Yorug‘likning yo‘nalishi, soyalar, keskin kontrast va ko‘zni qamashtirish ko‘rish qulayligiga ta’sir qiladi."
+            },
+            {
+              "id": "ergonomika_2_q05",
+              "q": "Kabinet yoritishining qaysi ikki turi muhim?",
+              "options": [
+                "Faqat rentgen va lazer",
+                "Faqat ultrabinafsha va infraqizil",
+                "Umumiy va mahalliy yoritish",
+                "Faqat tabiiy aks-sado"
+              ],
+              "answer": 2,
+              "explanation": "Kabinetda umumiy yoritish bilan birga ish maydonini yorituvchi maxsus lampa qo‘llanadi."
+            },
+            {
+              "id": "ergonomika_2_q06",
+              "q": "Stomatologiya xonasidagi shovqin va tebranish nimaga tegishli?",
+              "options": [
+                "Tish shakli tasnifiga",
+                "Mehnat sharoiti omillariga",
+                "Sement turiga",
+                "Ildiz kanalining soniga"
+              ],
+              "answer": 1,
+              "explanation": "Shovqin, tebranish, havoning tozaligi, xonadagi mikroiqlim hamda uzoq davom etuvchi statik mushak zo‘riqishi ish sharoitining muhim omillaridir."
+            },
+            {
+              "id": "ergonomika_2_q07",
+              "q": "Mikroiqlim atamasi bu mavzuda nimani anglatadi?",
+              "options": [
+                "Xonadagi ish muhiti sharoitlarini",
+                "Tishdagi kariyes chuqurligini",
+                "Borning olmos donalarini",
+                "Plombaning rangini"
+              ],
+              "answer": 0,
+              "explanation": "Shovqin, tebranish, havoning tozaligi, xonadagi mikroiqlim hamda uzoq davom etuvchi statik mushak zo‘riqishi ish sharoitining muhim omillaridir."
+            },
+            {
+              "id": "ergonomika_2_q08",
+              "q": "Asbobga qulay yetish nimani kamaytiradi?",
+              "options": [
+                "Elektr quvvatining o‘zini",
+                "Emal mineralini",
+                "Sementning qotish vaqtini",
+                "Ortiqcha harakatlarni"
+              ],
+              "answer": 3,
+              "explanation": "Stomatologiyada u shifokorning ortiqcha egilishini, qo‘l va yelka zo‘riqishini hamda takroriy noqulay harakatlarni kamaytirishga qaratilgan."
+            },
+            {
+              "id": "ergonomika_2_q09",
+              "q": "Ergonomikada bemor va yordamchining joylashuvi nima uchun ahamiyatli?",
+              "options": [
+                "Bor shaklini o‘zgartirish uchun",
+                "Sement tarkibini o‘zgartirish uchun",
+                "Ish harakatlarini muvofiqlashtirish uchun",
+                "Tish ildizi sonini aniqlash uchun"
+              ],
+              "answer": 2,
+              "explanation": "Ergonomika insonning ish jarayoni va jihozlar bilan o‘zaro munosabatini o‘rganadi."
+            },
+            {
+              "id": "ergonomika_2_q10",
+              "q": "Ish joyini baholashda quyidagilardan qaysisi hisobga olinadi?",
+              "options": [
+                "Faqat plomba rangi",
+                "Havo tozaligi va yoritish",
+                "Faqat stul narxi",
+                "Faqat tish formulasi"
+              ],
+              "answer": 1,
+              "explanation": "Shovqin, tebranish, havoning tozaligi, xonadagi mikroiqlim hamda uzoq davom etuvchi statik mushak zo‘riqishi ish sharoitining muhim omillaridir."
+            }
+          ],
+          "review_status": "USER_SOURCE_DRAFT — 10 topic-specific practice questions from uploaded dental textbooks",
           "source_pages": [
             {
               "book": "Trezubov",
@@ -150,18 +379,126 @@
           "questions": [
             {
               "id": "qurilmalar_req1",
-              "q": "Turbinali dastak qaysi turdagi qurilmaga tegishli?",
+              "q": "Kornilov tasnifida bormashina harakat manbai bo‘yicha qanday bo‘linadi?",
               "options": [
-                "Rotatsion dental qurilma",
-                "Ko‘rik ko‘zgusi",
-                "Sement",
-                "Pinset"
+                "Sharsimon, konussimon, disk",
+                "Vaqtinchalik, doimiy, davolovchi",
+                "Ko‘zgu, zond, pinset",
+                "Oyoqli, elektr va turbinali"
+              ],
+              "answer": 3,
+              "explanation": "Kornilov va hammualliflar bormashinalarni oyoq yordamida, elektr motor orqali va pnevmatik/turbinali harakatga keladigan turlarga ajratadi."
+            },
+            {
+              "id": "qurilmalar_q02",
+              "q": "BES-10 qanday qurilma sifatida tasvirlangan?",
+              "options": [
+                "Turbinali skaler",
+                "Kanal shtifti",
+                "Stasionar elektr bormashina",
+                "Rux-fosfat sement"
+              ],
+              "answer": 2,
+              "explanation": "Darslikda BES-10 stasionar elektr bormashina va BK-1 kombinatsiyalashgan bormashina misol sifatida berilgan."
+            },
+            {
+              "id": "qurilmalar_q03",
+              "q": "BK-1 modelining tarixiy xususiyati qaysi?",
+              "options": [
+                "Faqat yorug‘lik ishlab chiqarishi",
+                "Elektr bo‘lmasa oyoq mexanizmi bilan ishlashi",
+                "Faqat rentgen tasvirini chiqarishi",
+                "Faqat so‘lakni so‘rishi"
+              ],
+              "answer": 1,
+              "explanation": "Darslikda BES-10 stasionar elektr bormashina va BK-1 kombinatsiyalashgan bormashina misol sifatida berilgan."
+            },
+            {
+              "id": "qurilmalar_q04",
+              "q": "BEO-30-2 qanday qurilma?",
+              "options": [
+                "Yoritgichli elektr bormashina majmuasi",
+                "Faqat diagnostik ko‘zgu",
+                "Kanalni to‘ldiruvchi siler",
+                "Guttapercha shtifti"
               ],
               "answer": 0,
-              "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
+              "explanation": "Darslikda BES-10 stasionar elektr bormashina va BK-1 kombinatsiyalashgan bormashina misol sifatida berilgan."
+            },
+            {
+              "id": "qurilmalar_q05",
+              "q": "US-30 qurilmasida qaysi yordamchi tizim ko‘rsatilgan?",
+              "options": [
+                "Faqat audiometr",
+                "Faqat suyak arrasi",
+                "Faqat kimyoviy reaktiv",
+                "Havo-suv yo‘llari"
+              ],
+              "answer": 3,
+              "explanation": "US-30 kabi qurilmalarda elektromotor, yoritgich, havo va suv yo‘llari, so‘lak so‘rg‘ich va asboblar patnisi bir tizimga jamlangan."
+            },
+            {
+              "id": "qurilmalar_q06",
+              "q": "Bormashinaning harakati tishga qaysi vosita orqali yetadi?",
+              "options": [
+                "Stomatologik oynaning aksi orqali",
+                "Shishaionomer sement orqali",
+                "Dastakdagi bor orqali",
+                "Pinset orqali"
+              ],
+              "answer": 2,
+              "explanation": "Kornilov va hammualliflar bormashinalarni oyoq yordamida, elektr motor orqali va pnevmatik/turbinali harakatga keladigan turlarga ajratadi."
+            },
+            {
+              "id": "qurilmalar_q07",
+              "q": "Turbinali bormashinada aylanishning energiya manbai nima?",
+              "options": [
+                "Faqat quyosh nuri",
+                "Siqilgan havo oqimi",
+                "Suyuqlikning rangi",
+                "Emalning qattiqligi"
+              ],
+              "answer": 1,
+              "explanation": "Kornilov va hammualliflar bormashinalarni oyoq yordamida, elektr motor orqali va pnevmatik/turbinali harakatga keladigan turlarga ajratadi."
+            },
+            {
+              "id": "qurilmalar_q08",
+              "q": "Stomatologik qurilmadagi patnisning vazifasi nima?",
+              "options": [
+                "Asbob va materiallarni joylashtirish",
+                "Faqat rotorni sovitish",
+                "Tish rangini o‘lchash",
+                "Kanal uzunligini tekshirish"
+              ],
+              "answer": 0,
+              "explanation": "US-30 kabi qurilmalarda elektromotor, yoritgich, havo va suv yo‘llari, so‘lak so‘rg‘ich va asboblar patnisi bir tizimga jamlangan."
+            },
+            {
+              "id": "qurilmalar_q09",
+              "q": "Qurilmada yoritgich mavjudligi nimaga xizmat qiladi?",
+              "options": [
+                "Kanalni kimyoviy yopishga",
+                "Amalgama tayyorlashga",
+                "Gematokritni aniqlashga",
+                "Ish maydonini yoritishga"
+              ],
+              "answer": 3,
+              "explanation": "Qurilma qismlari turli vazifalarni bajaradi: harakat, sovitish, yoritish va ish maydonini toza saqlash."
+            },
+            {
+              "id": "qurilmalar_q10",
+              "q": "US-30 kabi kompleks tizimning belgisi nima?",
+              "options": [
+                "Faqat bitta ko‘zgu bo‘lishi",
+                "Hech qanday harakat mexanizmi bo‘lmasligi",
+                "Bir nechta ishchi moslamaning bitta tizimda jamlanishi",
+                "Faqat matritsa mavjudligi"
+              ],
+              "answer": 2,
+              "explanation": "US-30 kabi qurilmalarda elektromotor, yoritgich, havo va suv yo‘llari, so‘lak so‘rg‘ich va asboblar patnisi bir tizimga jamlangan."
             }
           ],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "review_status": "USER_SOURCE_DRAFT — 10 topic-specific practice questions from uploaded dental textbooks",
           "source_pages": [
             {
               "book": "Kornilov",
@@ -207,8 +544,129 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "questions": [],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "questions": [
+            {
+              "id": "qurilmalar_2_q01",
+              "q": "Turbinali dastak rotorini odatda nima harakatlantiradi?",
+              "options": [
+                "Siqilgan havo",
+                "Tish emali",
+                "Sement suyuqligi",
+                "Rentgen nuri"
+              ],
+              "answer": 0,
+              "explanation": "Turbinali dastakda siqilgan havo rotorni harakatga keltiradi."
+            },
+            {
+              "id": "qurilmalar_2_q02",
+              "q": "Elektr mikromotorli dastakda aylanishni nima hosil qiladi?",
+              "options": [
+                "Periodontal zond",
+                "Silikat shisha",
+                "Tish toshi",
+                "Elektr mikromotori"
+              ],
+              "answer": 3,
+              "explanation": "Elektr mikromotori aylanishni maxsus dastakka uzatadi."
+            },
+            {
+              "id": "qurilmalar_2_q03",
+              "q": "Cho‘tkasiz mikromotorning asosiy mexanik farqi nima?",
+              "options": [
+                "Sovutish suvining majburiy yo‘qligi",
+                "Borning uchsiz bo‘lishi",
+                "Yeyiladigan mexanik cho‘tkalarning bo‘lmasligi",
+                "Faqat qo‘l kuchida ishlashi"
+              ],
+              "answer": 2,
+              "explanation": "Darslikda cho‘tkali va cho‘tkasiz mikromotorlar farqlanadi; cho‘tkasiz turi mexanik cho‘tkalarning yeyilishiga bog‘liq emas."
+            },
+            {
+              "id": "qurilmalar_2_q04",
+              "q": "To‘g‘ri va burchakli dastak nimasi bilan farqlanadi?",
+              "options": [
+                "Faqat rangi bilan",
+                "Ishchi boshchaning joylashuvi va harakat uzatilishi",
+                "Faqat tish rangi bilan",
+                "Faqat sement turi bilan"
+              ],
+              "answer": 1,
+              "explanation": "Burchakli dastakda ishchi boshcha harakatni burchak ostida uzatadi; to‘g‘ri dastakning uzatish yo‘li esa korpus bo‘ylab joylashadi."
+            },
+            {
+              "id": "qurilmalar_2_q05",
+              "q": "Yuqori aylanish tezligi bilan qaysi dastak ajraladi?",
+              "options": [
+                "Turbinali dastak",
+                "Diagnostik pinset",
+                "Parodontologik zond",
+                "Metall shpatel"
+              ],
+              "answer": 0,
+              "explanation": "Turbinali dastakda siqilgan havo rotorni harakatga keltiradi."
+            },
+            {
+              "id": "qurilmalar_2_q06",
+              "q": "Ultratovushli skalerning o‘quv materialidagi vazifasi qaysi?",
+              "options": [
+                "Tish tojini emal bilan qoplash",
+                "Rentgen suratini olish",
+                "Gematokritni hisoblash",
+                "Tish karashlarini olib tashlash bilan bog‘liq"
+              ],
+              "answer": 3,
+              "explanation": "Darslikda ultratovushli skalerlar, endodontik mikromotorlar, abraziv kukun oqimiga mo‘ljallangan dastaklar ham tilga olinadi."
+            },
+            {
+              "id": "qurilmalar_2_q07",
+              "q": "Endodontik mikromotor qaysi sohaga tegishli?",
+              "options": [
+                "Tish rangi tanlashga",
+                "Kreslo qoplamasiga",
+                "Ildiz kanali asboblari bilan ishlashga",
+                "Og‘iz ko‘zgusining kattaligiga"
+              ],
+              "answer": 2,
+              "explanation": "Darslikda ultratovushli skalerlar, endodontik mikromotorlar, abraziv kukun oqimiga mo‘ljallangan dastaklar ham tilga olinadi."
+            },
+            {
+              "id": "qurilmalar_2_q08",
+              "q": "Burchakli dastakdagi ishchi boshcha qanday joylashgan?",
+              "options": [
+                "Har doim dastaksiz",
+                "Uzatish yo‘liga nisbatan burchak ostida",
+                "Faqat suyuqlik ichida",
+                "Faqat bemor kreslosida"
+              ],
+              "answer": 1,
+              "explanation": "Dastak korpusining shakliga ko‘ra to‘g‘ri va burchakli turlar mavjud."
+            },
+            {
+              "id": "qurilmalar_2_q09",
+              "q": "Mikromotorli dastakda bor harakati nimadan keladi?",
+              "options": [
+                "Motorning aylanma harakatini uzatishdan",
+                "Ion almashinuvidan",
+                "Plombaning qotishidan",
+                "Yorug‘likning aksidan"
+              ],
+              "answer": 0,
+              "explanation": "Elektr mikromotori aylanishni maxsus dastakka uzatadi."
+            },
+            {
+              "id": "qurilmalar_2_q10",
+              "q": "Abraziv kukun oqimli dastak odatda qaysi guruhga kiradi?",
+              "options": [
+                "Faqat diagnostik oynalarga",
+                "Faqat qo‘lda ushlanadigan shtiftlarga",
+                "Faqat plombalarga",
+                "Maxsus vazifali dastaklarga"
+              ],
+              "answer": 3,
+              "explanation": "Darslikda ultratovushli skalerlar, endodontik mikromotorlar, abraziv kukun oqimiga mo‘ljallangan dastaklar ham tilga olinadi."
+            }
+          ],
+          "review_status": "USER_SOURCE_DRAFT — 10 topic-specific practice questions from uploaded dental textbooks",
           "source_pages": [
             {
               "book": "Kornilov",
@@ -258,8 +716,129 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "questions": [],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "questions": [
+            {
+              "id": "qurilmalar_3_q01",
+              "q": "Dastakni qurilmaga ulashda nima mos bo‘lishi kerak?",
+              "options": [
+                "Faqat dastak rangi",
+                "Ulagich va texnik aloqa kanallari",
+                "Faqat ishlab chiqaruvchi logotipi",
+                "Faqat quti kattaligi"
+              ],
+              "answer": 1,
+              "explanation": "Ulagichdagi havo, suv va elektr aloqalari mos bo‘lishi kerak."
+            },
+            {
+              "id": "qurilmalar_3_q02",
+              "q": "Turbinali dastakda aylanadigan asosiy qism qaysi?",
+              "options": [
+                "Rotor",
+                "Ko‘zgu dastagi",
+                "Sement kapsulasi",
+                "Shtopfer uchi"
+              ],
+              "answer": 0,
+              "explanation": "Turbinali dastakning funksional qismlari rotor, podshipnik, borni mahkamlovchi mexanizm va ishchi boshchadan iborat."
+            },
+            {
+              "id": "qurilmalar_3_q03",
+              "q": "Rotorning aylanishini tayanchlaydigan detal nima?",
+              "options": [
+                "Suv pistoleti",
+                "Pinset",
+                "Matritsa",
+                "Podshipnik"
+              ],
+              "answer": 3,
+              "explanation": "Turbinali dastakning funksional qismlari rotor, podshipnik, borni mahkamlovchi mexanizm va ishchi boshchadan iborat."
+            },
+            {
+              "id": "qurilmalar_3_q04",
+              "q": "Borning barqaror turishini nima ta’minlaydi?",
+              "options": [
+                "Yoritgich oynasi",
+                "Asboblar patnisi",
+                "Mahkamlash mexanizmi",
+                "Shifokor stuli"
+              ],
+              "answer": 2,
+              "explanation": "Podshipnik rotorning aylanishini ta’minlaydi; borni mahkamlash tizimi esa asbobning barqaror turishi uchun zarur."
+            },
+            {
+              "id": "qurilmalar_3_q05",
+              "q": "Sprey kanallarining vazifasi nima?",
+              "options": [
+                "Plomba rangini qoraytirish",
+                "Ishlov paytidagi issiqlikni kamaytirish",
+                "Bor aylanishini to‘xtatish",
+                "Tish anatomiyasini o‘zgartirish"
+              ],
+              "answer": 1,
+              "explanation": "Sprey kanallari rotatsion ishlov paytidagi issiqlikni kamaytirishga xizmat qiladi."
+            },
+            {
+              "id": "qurilmalar_3_q06",
+              "q": "Dastakning gigiyenik xususiyatida nima muhim?",
+              "options": [
+                "Tozalash va sterilizatsiyaga moslik",
+                "Faqat tutqich rangi",
+                "Faqat reklama materiali",
+                "Faqat quti bezagi"
+              ],
+              "answer": 0,
+              "explanation": "Dastakning tozalanishi va sterilizatsiyaga mosligi, ichki kanallarining ifloslanishdan himoyalanishi hamda materialining qayta ishlashga chidamliligi gigiyenik baholashda muhim."
+            },
+            {
+              "id": "qurilmalar_3_q07",
+              "q": "Dastakdagi ortiqcha tebranish nimaga bog‘liq baholanadi?",
+              "options": [
+                "Faqat sementning kislotaliligiga",
+                "Faqat xona bo‘yoqlariga",
+                "Faqat tish turiga",
+                "Texnik sozlik va ergonomikaga"
+              ],
+              "answer": 3,
+              "explanation": "Qurilma bilan mos kelmaydigan yoki texnik nosoz dastak ishlash sifati va xavfsizligiga salbiy ta’sir ko‘rsatadi."
+            },
+            {
+              "id": "qurilmalar_3_q08",
+              "q": "Yoritish elementi qaysi xususiyatni yaxshilaydi?",
+              "options": [
+                "Sementning asosiy tarkibini",
+                "Mushak kuchini",
+                "Ish joyini ko‘rish qulayligini",
+                "Guttaperchaning shaklini"
+              ],
+              "answer": 2,
+              "explanation": "Dastak og‘irligi, tutqichning qulayligi, yorug‘lik manbai, shovqin va tebranish darajasi foydalanuvchiga ta’sir etadi."
+            },
+            {
+              "id": "qurilmalar_3_q09",
+              "q": "Ulagichlarda qaysi ta’minot yo‘llari uchrashi mumkin?",
+              "options": [
+                "Faqat qon tomirlari",
+                "Havo va suv kanallari",
+                "Faqat nerv tolalari",
+                "Faqat rentgen plyonkasi"
+              ],
+              "answer": 1,
+              "explanation": "Dastaklar stomatologik qurilmaga maxsus ulanish orqali biriktiriladi."
+            },
+            {
+              "id": "qurilmalar_3_q10",
+              "q": "Mos kelmaydigan dastakni qo‘llashning nazariy xatari nimada?",
+              "options": [
+                "Texnik nosozlik va xavfsizlikka salbiy ta’sir",
+                "Tish rangining o‘z-o‘zidan oqishi",
+                "Barcha borlarning bir xil bo‘lishi",
+                "Kanal sonining ortishi"
+              ],
+              "answer": 0,
+              "explanation": "Dastak og‘irligi, tutqichning qulayligi, yorug‘lik manbai, shovqin va tebranish darajasi foydalanuvchiga ta’sir etadi."
+            }
+          ],
+          "review_status": "USER_SOURCE_DRAFT — 10 topic-specific practice questions from uploaded dental textbooks",
           "source_pages": [
             {
               "book": "Kornilov",
@@ -314,18 +893,126 @@
           "questions": [
             {
               "id": "asboblar_req1",
-              "q": "Plomba materialini aralashtirish asbobi qaysi?",
+              "q": "Stomatologik ko‘zguning asosiy vazifalaridan biri nima?",
               "options": [
-                "Shpatel",
-                "Ko‘zgu",
-                "Kreslo",
-                "Kompressor"
+                "Materialni zichlashtirish",
+                "Sementni aralashtirish",
+                "Ko‘rish qiyin yuzalarni aks ettirish",
+                "Bor aylanishini boshqarish"
+              ],
+              "answer": 2,
+              "explanation": "Stomatologik ko‘zgu ko‘rish qiyin bo‘lgan yuzalarni aks ettirib ko‘rsatadi, yorug‘likni yo‘naltiradi va yumshoq to‘qimalarni chetga surishga xizmat qiladi."
+            },
+            {
+              "id": "asboblar_q02",
+              "q": "Ko‘zgu yumshoq to‘qimalarga qanday yordam beradi?",
+              "options": [
+                "Ularni kimyoviy eritish",
+                "Ularni chetga surish va ushlab turish",
+                "Ularni rentgen bilan o‘lchash",
+                "Ularni plomba bilan almashtirish"
+              ],
+              "answer": 1,
+              "explanation": "Stomatologik ko‘zgu ko‘rish qiyin bo‘lgan yuzalarni aks ettirib ko‘rsatadi, yorug‘likni yo‘naltiradi va yumshoq to‘qimalarni chetga surishga xizmat qiladi."
+            },
+            {
+              "id": "asboblar_q03",
+              "q": "Diagnostik eksplorerning ishchi qismi odatda qanday?",
+              "options": [
+                "Ingichka uchli",
+                "Katta yumaloq patnisli",
+                "Keng yorug‘lik linzali",
+                "Elektromotorli"
               ],
               "answer": 0,
-              "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
+              "explanation": "Eksplorer ingichka ishchi uchli tekshiruv asbobi bo‘lib, tish yuzasi, fissura va restavratsiya chetlarining holatini baholashda qo‘llanadi."
+            },
+            {
+              "id": "asboblar_q04",
+              "q": "Parodontologik zond nimani baholash uchun mo‘ljallangan?",
+              "options": [
+                "Stomatologik kreslo balandligini",
+                "Sementning qotish vaqtini",
+                "Rotor tezligini",
+                "Milk cho‘ntagi chuqurligini"
+              ],
+              "answer": 3,
+              "explanation": "Parodontologik zondning to‘mtoq uchi va millimetrli bo‘linmalari milk cho‘ntagi chuqurligini o‘lchash uchun mo‘ljallangan."
+            },
+            {
+              "id": "asboblar_q05",
+              "q": "Parodontologik zondda qanday belgi foydali?",
+              "options": [
+                "Turbina podshipnigi",
+                "Olmos qoplama",
+                "Millimetrli bo‘linmalar",
+                "Havo-suv spreyi"
+              ],
+              "answer": 2,
+              "explanation": "Parodontologik zondning to‘mtoq uchi va millimetrli bo‘linmalari milk cho‘ntagi chuqurligini o‘lchash uchun mo‘ljallangan."
+            },
+            {
+              "id": "asboblar_q06",
+              "q": "Stomatologik pinset nimaga ishlatiladi?",
+              "options": [
+                "Bor aylantirishga",
+                "Paxta valiklari va mayda materiallarni tutishga",
+                "Tish qattiq to‘qimasini charxlashga",
+                "Shishaionomerni qotirishga"
+              ],
+              "answer": 1,
+              "explanation": "Stomatologik pinset paxta valiklari, mayda asboblar va diagnostik materiallarni tutib turishga yordam beradi."
+            },
+            {
+              "id": "asboblar_q07",
+              "q": "Tibbiy patnisning vazifasi qaysi?",
+              "options": [
+                "Ko‘rik asboblarini vaqtincha joylashtirish",
+                "Yurak EKGsini yozish",
+                "Kanalni to‘ldirish",
+                "Tish rangini o‘lchash"
+              ],
+              "answer": 0,
+              "explanation": "Tibbiy patnis ko‘rik asboblarini vaqtincha joylashtirish uchun ishlatiladi."
+            },
+            {
+              "id": "asboblar_q08",
+              "q": "Ko‘zguning qanday optik turi mavjud?",
+              "options": [
+                "Mikromotorli shtopfer",
+                "Rux-fosfat zond",
+                "Shishaionomer pinset",
+                "Kattalashtiruvchi ko‘zgu"
+              ],
+              "answer": 3,
+              "explanation": "Stomatologik ko‘zgu ko‘rish qiyin bo‘lgan yuzalarni aks ettirib ko‘rsatadi, yorug‘likni yo‘naltiradi va yumshoq to‘qimalarni chetga surishga xizmat qiladi."
+            },
+            {
+              "id": "asboblar_q09",
+              "q": "Klassik ko‘rik uchun asboblar juftligi qaysi?",
+              "options": [
+                "Sement va guttapercha",
+                "Kreslo va polir",
+                "Ko‘zgu va zond",
+                "Bor va shishaionomer"
+              ],
+              "answer": 2,
+              "explanation": "Stomatologik ko‘zgu ko‘rish qiyin bo‘lgan yuzalarni aks ettirib ko‘rsatadi, yorug‘likni yo‘naltiradi va yumshoq to‘qimalarni chetga surishga xizmat qiladi."
+            },
+            {
+              "id": "asboblar_q10",
+              "q": "Diagnostik zond va parodontologik zondning farqi nimada?",
+              "options": [
+                "Faqat ishlab chiqarilgan davlatida",
+                "Ishchi uchi va o‘lchash vazifasida",
+                "Faqat rangida",
+                "Faqat narxida"
+              ],
+              "answer": 1,
+              "explanation": "Burchakli va to‘g‘ri zondlar ishchi qismi shakli bilan farqlanadi."
             }
           ],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "review_status": "USER_SOURCE_DRAFT — 10 topic-specific practice questions from uploaded dental textbooks",
           "source_pages": [
             {
               "book": "Kornilov",
@@ -377,8 +1064,129 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "questions": [],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "questions": [
+            {
+              "id": "asboblar_2_q01",
+              "q": "Plomba materiali tarkiblarini aralashtirishga qaysi asbob mo‘ljallangan?",
+              "options": [
+                "Ko‘zgu",
+                "Zond",
+                "Turbina",
+                "Shpatel"
+              ],
+              "answer": 3,
+              "explanation": "Metall shpatel kukun va suyuqlik tarkibli materiallarni aralashtirishga mo‘ljallangan."
+            },
+            {
+              "id": "asboblar_2_q02",
+              "q": "Silikat sementlar bilan metall shpatel nega cheklangan?",
+              "options": [
+                "Sementni muzlatadi",
+                "Suvni elektrga aylantiradi",
+                "Material rangiga ta’sir qilishi mumkin",
+                "Bor o‘zagini almashtiradi"
+              ],
+              "answer": 2,
+              "explanation": "Metall shpatel kukun va suyuqlik tarkibli materiallarni aralashtirishga mo‘ljallangan."
+            },
+            {
+              "id": "asboblar_2_q03",
+              "q": "Plastmassa shpatel qachon afzal?",
+              "options": [
+                "Faqat tish ko‘rishda",
+                "Metall bilan o‘zaro ta’sirlashishi mumkin bo‘lgan materialda",
+                "Faqat EKG olishda",
+                "Faqat dastak sozlashda"
+              ],
+              "answer": 1,
+              "explanation": "Metall shpatel kukun va suyuqlik tarkibli materiallarni aralashtirishga mo‘ljallangan."
+            },
+            {
+              "id": "asboblar_2_q04",
+              "q": "Gladilkaning asosiy vazifasi qaysi?",
+              "options": [
+                "Plomba materialini joylash va shakllantirish",
+                "Rotor aylantirish",
+                "Kanal uzunligini o‘lchash",
+                "Ko‘zgu yuzasini yoritish"
+              ],
+              "answer": 0,
+              "explanation": "U plomba materialini bo‘shliqqa joylash va dastlabki shaklini berishda qo‘llanadi."
+            },
+            {
+              "id": "asboblar_2_q05",
+              "q": "Shtopfer nimaga xizmat qiladi?",
+              "options": [
+                "Tish ko‘zgusini kattalashtirish",
+                "So‘lakni so‘rish",
+                "Borni mahkamlash",
+                "Plomba materialini zichlashtirish"
+              ],
+              "answer": 3,
+              "explanation": "U plomba materialini bo‘shliqqa joylash va dastlabki shaklini berishda qo‘llanadi."
+            },
+            {
+              "id": "asboblar_2_q06",
+              "q": "Shtopferning ishchi uchlari qanday bo‘lishi mumkin?",
+              "options": [
+                "Faqat shisha qoplangan",
+                "Faqat elektr spiralli",
+                "Silindrsimon va sharsimon",
+                "Faqat oyna sirtli"
+              ],
+              "answer": 2,
+              "explanation": "Shtopferning silindrsimon, sharsimon yoki noksimon ishchi uchlari materialni zichlashtirishga mo‘ljallangan."
+            },
+            {
+              "id": "asboblar_2_q07",
+              "q": "Gladilka va shtopferning farqi nima?",
+              "options": [
+                "Faqat dastagi uzunligida",
+                "Shakl berish va zichlash vazifalarida",
+                "Faqat metal rangi bilan",
+                "Faqat steril qutisida"
+              ],
+              "answer": 1,
+              "explanation": "Shpatel asosan materialni aralashtiradi, gladilka materialni olib o‘tadi va yuzasini shakllantiradi, shtopfer esa zichlaydi."
+            },
+            {
+              "id": "asboblar_2_q08",
+              "q": "Shpatelning ikki asosiy materiali qaysilar?",
+              "options": [
+                "Metall va plastmassa",
+                "Faqat yog‘och va suyak",
+                "Faqat shisha va mum",
+                "Faqat oltin va gips"
+              ],
+              "answer": 0,
+              "explanation": "Metall shpatel kukun va suyuqlik tarkibli materiallarni aralashtirishga mo‘ljallangan."
+            },
+            {
+              "id": "asboblar_2_q09",
+              "q": "Qaysi asbob materialni zichlaydi, lekin aralashtirish uchun asosiy emas?",
+              "options": [
+                "Shpatel",
+                "Ko‘zgu",
+                "Zond",
+                "Shtopfer"
+              ],
+              "answer": 3,
+              "explanation": "Shpatel asosan materialni aralashtiradi, gladilka materialni olib o‘tadi va yuzasini shakllantiradi, shtopfer esa zichlaydi."
+            },
+            {
+              "id": "asboblar_2_q10",
+              "q": "Materialga mos asbob tanlashda qaysi belgi muhim?",
+              "options": [
+                "Faqat asbob qutisining rangi",
+                "Faqat kreslo modeli",
+                "Materialning kimyoviy tarkibi va asbob yuzasi",
+                "Faqat xona o‘lchami"
+              ],
+              "answer": 2,
+              "explanation": "Shpatel asosan materialni aralashtiradi, gladilka materialni olib o‘tadi va yuzasini shakllantiradi, shtopfer esa zichlaydi."
+            }
+          ],
+          "review_status": "USER_SOURCE_DRAFT — 10 topic-specific practice questions from uploaded dental textbooks",
           "source_pages": [
             {
               "book": "Kornilov",
@@ -433,18 +1241,126 @@
           "questions": [
             {
               "id": "rotatsion_req1",
-              "q": "Olmosli borlar qanday xususiyati bilan ajralib turadi?",
+              "q": "Stomatologik borning asosiy qismi qaysi?",
               "options": [
-                "Abraziv ishchi sirt",
-                "Qog‘oz korpus",
-                "Faqat yoritish",
-                "Faqat aspiratsiya"
+                "Ishchi boshcha va o‘zak",
+                "Ko‘zgu va patnis",
+                "Kreslo va kompressor",
+                "Suv pistoleti va yoritgich"
               ],
               "answer": 0,
-              "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
+              "explanation": "Rotatsion bor ishchi boshcha, bo‘yin va dastakka birikuvchi o‘zak qismdan tuzilgan."
+            },
+            {
+              "id": "rotatsion_q02",
+              "q": "Borning o‘zak qismi nima uchun kerak?",
+              "options": [
+                "Materialni qotirish uchun",
+                "Osmosni o‘lchash uchun",
+                "Tish rangini aniqlash uchun",
+                "Dastakka mahkamlash uchun"
+              ],
+              "answer": 3,
+              "explanation": "Rotatsion bor ishchi boshcha, bo‘yin va dastakka birikuvchi o‘zak qismdan tuzilgan."
+            },
+            {
+              "id": "rotatsion_q03",
+              "q": "Sharsimon bor boshchasi qanday?",
+              "options": [
+                "Disk kabi tekis",
+                "Uzun konusli",
+                "Dumaloq",
+                "To‘g‘ri burchakli plastinka"
+              ],
+              "answer": 2,
+              "explanation": "Kornilov darsligida sharsimon, silindrsimon fissur, konussimon fissur, teskari konussimon va g‘ildiraksimon borlar ko‘rsatilgan."
+            },
+            {
+              "id": "rotatsion_q04",
+              "q": "Fissur borning ishchi qismi qaysi shaklda bo‘lishi mumkin?",
+              "options": [
+                "Ko‘zgu ovali",
+                "Silindrsimon",
+                "Tish toji",
+                "Plomba kapsulasi"
+              ],
+              "answer": 1,
+              "explanation": "Kornilov darsligida sharsimon, silindrsimon fissur, konussimon fissur, teskari konussimon va g‘ildiraksimon borlar ko‘rsatilgan."
+            },
+            {
+              "id": "rotatsion_q05",
+              "q": "Teskari konussimon bor nimasi bilan ajraladi?",
+              "options": [
+                "Ishchi boshchaning teskari konus shakli",
+                "Faqat metall shpatel bo‘lishi",
+                "Faqat suv nasosi bo‘lishi",
+                "Faqat bo‘yinli ko‘zgu bo‘lishi"
+              ],
+              "answer": 0,
+              "explanation": "Kornilov darsligida sharsimon, silindrsimon fissur, konussimon fissur, teskari konussimon va g‘ildiraksimon borlar ko‘rsatilgan."
+            },
+            {
+              "id": "rotatsion_q06",
+              "q": "G‘ildiraksimon bor qaysi shaklga ega?",
+              "options": [
+                "Yumaloq ko‘zgu kabi",
+                "Uzun pinset kabi",
+                "Kreslo tayanchi kabi",
+                "Yassi g‘ildiraksimon"
+              ],
+              "answer": 3,
+              "explanation": "Kornilov darsligida sharsimon, silindrsimon fissur, konussimon fissur, teskari konussimon va g‘ildiraksimon borlar ko‘rsatilgan."
+            },
+            {
+              "id": "rotatsion_q07",
+              "q": "Rotatsion asboblar qanday mezon bo‘yicha farqlanishi mumkin?",
+              "options": [
+                "Faqat tayyorlash sanasi",
+                "Faqat kabinet joylashuvi",
+                "Ishchi qism materiali va shakli",
+                "Faqat yoritish turi"
+              ],
+              "answer": 2,
+              "explanation": "Rotatsion bor ishchi boshcha, bo‘yin va dastakka birikuvchi o‘zak qismdan tuzilgan."
+            },
+            {
+              "id": "rotatsion_q08",
+              "q": "Burchakli dastak borining o‘zagi nega maxsus bo‘ladi?",
+              "options": [
+                "Plombani eritishi uchun",
+                "Dastakning mahkamlash tizimiga moslashishi uchun",
+                "So‘lakni so‘rishi uchun",
+                "Kanalni yoritishi uchun"
+              ],
+              "answer": 1,
+              "explanation": "To‘g‘ri, burchakli va turbinali dastaklar uchun o‘zak tuzilishi hamda mahkamlash turi farqlanadi."
+            },
+            {
+              "id": "rotatsion_q09",
+              "q": "Bor boshchasidagi kesuvchi qirralar nimaga xizmat qiladi?",
+              "options": [
+                "Mexanik kesish uchun",
+                "Tovush yozish uchun",
+                "Yorug‘lik chiqarish uchun",
+                "Suvni bug‘latish uchun"
+              ],
+              "answer": 0,
+              "explanation": "Rotatsion bor ishchi boshcha, bo‘yin va dastakka birikuvchi o‘zak qismdan tuzilgan."
+            },
+            {
+              "id": "rotatsion_q10",
+              "q": "Bor shaklini tanlash asosan nimaga bog‘liq?",
+              "options": [
+                "Faqat dastak rangiga",
+                "Faqat shifokor stuli modeliga",
+                "Faqat patnis kattaligiga",
+                "Bajariladigan ishlov turiga"
+              ],
+              "answer": 3,
+              "explanation": "Shakl asbob bajaradigan mexanik ishlov turiga bog‘liq."
             }
           ],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "review_status": "USER_SOURCE_DRAFT — 10 topic-specific practice questions from uploaded dental textbooks",
           "source_pages": [
             {
               "book": "Kornilov",
@@ -496,8 +1412,129 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "questions": [],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "questions": [
+            {
+              "id": "rotatsion_2_q01",
+              "q": "Olmosli borning ishchi yuzasi nima bilan qoplangan?",
+              "options": [
+                "Kalsiy gidroksid",
+                "Olmos zarrachalari",
+                "Paxta tolalari",
+                "Silikat shisha bo‘lagi"
+              ],
+              "answer": 1,
+              "explanation": "Olmosli bor boshchasining yuzasiga abraziv olmos zarrachalari qoplangan."
+            },
+            {
+              "id": "rotatsion_2_q02",
+              "q": "Olmosli bor qanday usul bilan ishlov beradi?",
+              "options": [
+                "Abraziv silliqlash-kesish orqali",
+                "Faqat elektr tokini o‘lchab",
+                "Faqat vakuum so‘rib",
+                "Faqat yorug‘lik chiqarib"
+              ],
+              "answer": 0,
+              "explanation": "Olmosli bor boshchasining yuzasiga abraziv olmos zarrachalari qoplangan."
+            },
+            {
+              "id": "rotatsion_2_q03",
+              "q": "Kornilov belgilashida qora halqa nimani bildiradi?",
+              "options": [
+                "Juda mayda donadorlikni",
+                "O‘rtacha donadorlikni",
+                "Faqat po‘lat borni",
+                "O‘ta dag‘al donadorlikni"
+              ],
+              "answer": 3,
+              "explanation": "Kornilov darsligidagi belgilashda qora halqa o‘ta dag‘al, yashil halqa dag‘al, qizil halqa mayda, sariq halqa juda mayda olmos donachalarni bildiradi."
+            },
+            {
+              "id": "rotatsion_2_q04",
+              "q": "Kornilov belgilashida yashil halqa nimani bildiradi?",
+              "options": [
+                "Juda mayda donalarni",
+                "Borni sterillash usulini",
+                "Dag‘al olmos donalarini",
+                "Faqat po‘lat materialni"
+              ],
+              "answer": 2,
+              "explanation": "Kornilov darsligidagi belgilashda qora halqa o‘ta dag‘al, yashil halqa dag‘al, qizil halqa mayda, sariq halqa juda mayda olmos donachalarni bildiradi."
+            },
+            {
+              "id": "rotatsion_2_q05",
+              "q": "Qizil halqa qanday olmos donalariga tegishli?",
+              "options": [
+                "O‘ta dag‘al",
+                "Mayda",
+                "Dag‘al",
+                "Yirik karbid qirrali"
+              ],
+              "answer": 1,
+              "explanation": "Kornilov darsligidagi belgilashda qora halqa o‘ta dag‘al, yashil halqa dag‘al, qizil halqa mayda, sariq halqa juda mayda olmos donachalarni bildiradi."
+            },
+            {
+              "id": "rotatsion_2_q06",
+              "q": "Sariq halqa qanday donadorlikni bildiradi?",
+              "options": [
+                "Juda mayda",
+                "O‘ta dag‘al",
+                "Dag‘al",
+                "O‘rtacha"
+              ],
+              "answer": 0,
+              "explanation": "Kornilov darsligidagi belgilashda qora halqa o‘ta dag‘al, yashil halqa dag‘al, qizil halqa mayda, sariq halqa juda mayda olmos donachalarni bildiradi."
+            },
+            {
+              "id": "rotatsion_2_q07",
+              "q": "Volfram-karbid borning o‘ziga xos belgisi nima?",
+              "options": [
+                "Faqat yog‘ochdan yasalishi",
+                "Faqat shisha bilan qoplanishi",
+                "Faqat rezinadan bo‘lishi",
+                "Kesuvchi qirralari bo‘lishi"
+              ],
+              "answer": 3,
+              "explanation": "Po‘lat va volfram-karbid borlarda kesuvchi qirralar mavjud."
+            },
+            {
+              "id": "rotatsion_2_q08",
+              "q": "Olmos qoplama bilan karbid bor o‘rtasidagi farq nima?",
+              "options": [
+                "Faqat qadoq hajmi",
+                "Faqat suv ta’minoti",
+                "Abraziv zarralar va kesuvchi qirralar",
+                "Faqat og‘irlik markazi"
+              ],
+              "answer": 2,
+              "explanation": "Olmosli bor boshchasining yuzasiga abraziv olmos zarrachalari qoplangan."
+            },
+            {
+              "id": "rotatsion_2_q09",
+              "q": "Olmosli borning abrazivligi nimaga bog‘liq?",
+              "options": [
+                "Bemorning yoshiga",
+                "Olmos zarrachalari o‘lchamiga",
+                "Asbob patnisi hajmiga",
+                "Sement rangi bilan"
+              ],
+              "answer": 1,
+              "explanation": "Kornilov darsligidagi belgilashda qora halqa o‘ta dag‘al, yashil halqa dag‘al, qizil halqa mayda, sariq halqa juda mayda olmos donachalarni bildiradi."
+            },
+            {
+              "id": "rotatsion_2_q10",
+              "q": "Donadorlik ranglarini o‘qishda nima e’tiborga olinadi?",
+              "options": [
+                "Ishlab chiqaruvchi belgilash tizimi",
+                "Faqat kreslo rangini",
+                "Faqat klinika manzilini",
+                "Faqat pinsetning uzunligini"
+              ],
+              "answer": 0,
+              "explanation": "Kornilov darsligidagi belgilashda qora halqa o‘ta dag‘al, yashil halqa dag‘al, qizil halqa mayda, sariq halqa juda mayda olmos donachalarni bildiradi."
+            }
+          ],
+          "review_status": "USER_SOURCE_DRAFT — 10 topic-specific practice questions from uploaded dental textbooks",
           "source_pages": [
             {
               "book": "Kornilov",
@@ -549,8 +1586,129 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "questions": [],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "questions": [
+            {
+              "id": "rotatsion_3_q01",
+              "q": "Plombaga yakuniy ishlovning ikki asosiy bosqichi qaysi?",
+              "options": [
+                "Anesteziya va rentgen",
+                "Suyak o‘lchash va ekstraksiya",
+                "Pardozlash va silliqlash",
+                "Gematokrit va osmos"
+              ],
+              "answer": 2,
+              "explanation": "Plombaga yakuniy ishlov ikki bosqichga ajratiladi: kontur va notekisliklarga ishlov berish hamda yuzani silliqlash."
+            },
+            {
+              "id": "rotatsion_3_q02",
+              "q": "Finirning asosiy vazifasi qaysi?",
+              "options": [
+                "Sementni qorish",
+                "Nozik kontur ishlovi",
+                "So‘lakni so‘rish",
+                "Rotor aylantirish"
+              ],
+              "answer": 1,
+              "explanation": "Finir nozik kontur ishloviga, polir esa sirtni silliqlashga mo‘ljallangan."
+            },
+            {
+              "id": "rotatsion_3_q03",
+              "q": "Polir nimaga mo‘ljallangan?",
+              "options": [
+                "Yuzani silliqlash",
+                "Tish cho‘ntagini o‘lchash",
+                "Kanal uzunligini aniqlash",
+                "Yoritgichni ulash"
+              ],
+              "answer": 0,
+              "explanation": "Finir nozik kontur ishloviga, polir esa sirtni silliqlashga mo‘ljallangan."
+            },
+            {
+              "id": "rotatsion_3_q04",
+              "q": "Separatsion disk qaysi asboblar guruhiga mansub?",
+              "options": [
+                "Diagnostik pinsetlar",
+                "Stomatologik kreslolar",
+                "Endodontik pastalar",
+                "Abraziv rotatsion vositalar"
+              ],
+              "answer": 3,
+              "explanation": "Finirlar, polirlar, karborund toshlar, frezalar va separatsion disklar ishchi qismi hamda abrazivligiga ko‘ra farqlanadi."
+            },
+            {
+              "id": "rotatsion_3_q05",
+              "q": "Karborund tosh nimasi bilan farqlanadi?",
+              "options": [
+                "Havo pistoleti bilan",
+                "Ko‘zgu linzasi bilan",
+                "Abraziv ishchi qismi bilan",
+                "Ftor ajratish xossasi bilan"
+              ],
+              "answer": 2,
+              "explanation": "Finirlar, polirlar, karborund toshlar, frezalar va separatsion disklar ishchi qismi hamda abrazivligiga ko‘ra farqlanadi."
+            },
+            {
+              "id": "rotatsion_3_q06",
+              "q": "Yakuniiy silliqlashning maqsadi nima?",
+              "options": [
+                "Kanal sonini ko‘paytirish",
+                "Tiklangan sirtning silliqligi va shaklini yaxshilash",
+                "Tish sonini o‘zgartirish",
+                "Kompressor bosimini oshirish"
+              ],
+              "answer": 1,
+              "explanation": "Maqsad — tiklangan yuzaning shakli, kontaktlari va silliqligini yaxshilash."
+            },
+            {
+              "id": "rotatsion_3_q07",
+              "q": "Kompozit va amalgama uchun abraziv tizim nega farqlanadi?",
+              "options": [
+                "Materiallarning qattiqligi va sirt xususiyatlari har xil",
+                "Har doim bir xil ishlov kerak",
+                "Faqat ishlov vaqtiga qarab",
+                "Faqat rangiga qarab"
+              ],
+              "answer": 0,
+              "explanation": "Kompozit, amalgama va shishaionomer materiallarining qattiqligi hamda sirt xususiyatlari bir xil emas."
+            },
+            {
+              "id": "rotatsion_3_q08",
+              "q": "Rotatsion pardozlash vositalariga nimalar kiradi?",
+              "options": [
+                "Ko‘zgu va zond",
+                "Pinset va patnis",
+                "Kreslo va stul",
+                "Finir, polir va disklar"
+              ],
+              "answer": 3,
+              "explanation": "Finirlar, polirlar, karborund toshlar, frezalar va separatsion disklar ishchi qismi hamda abrazivligiga ko‘ra farqlanadi."
+            },
+            {
+              "id": "rotatsion_3_q09",
+              "q": "Pardozlash konturga qanday ta’sir etadi?",
+              "options": [
+                "Tish ildizi sonini ko‘paytirishga",
+                "Pulpa bo‘shlig‘ini yoritishga",
+                "Notekis joylarni moslashtirishga",
+                "Gematokritni hisoblashga"
+              ],
+              "answer": 2,
+              "explanation": "Plombaga yakuniy ishlov ikki bosqichga ajratiladi: kontur va notekisliklarga ishlov berish hamda yuzani silliqlash."
+            },
+            {
+              "id": "rotatsion_3_q10",
+              "q": "Abrazivlik darajasi nima uchun muhim?",
+              "options": [
+                "Bor o‘zagini elektrga aylantiradi",
+                "Yuzaga ishlovning qo‘polligi va silliqligini belgilaydi",
+                "Sementni qat’iy sterillaydi",
+                "Oynani kattalashtiradi"
+              ],
+              "answer": 1,
+              "explanation": "Kompozit, amalgama va shishaionomer materiallarining qattiqligi hamda sirt xususiyatlari bir xil emas."
+            }
+          ],
+          "review_status": "USER_SOURCE_DRAFT — 10 topic-specific practice questions from uploaded dental textbooks",
           "source_pages": [
             {
               "book": "Kornilov",
@@ -599,18 +1757,126 @@
           "questions": [
             {
               "id": "plombalar_req1",
-              "q": "Plomba ashyolari tasnifiga qaysi guruh kiradi?",
+              "q": "Plomba materialining asosiy vazifasi qaysi?",
               "options": [
-                "Vaqtinchalik materiallar",
-                "Kreslo qismi",
-                "Chiroq",
-                "Telefon"
+                "Faqat yoritish",
+                "Faqat so‘lak so‘rish",
+                "Faqat asbob saqlash",
+                "Tishdagi yo‘qotilgan to‘qima o‘rnini tiklash"
+              ],
+              "answer": 3,
+              "explanation": "Plomba materiali yo‘qotilgan tish qattiq to‘qimasi o‘rnini to‘ldirish va tishning shakli hamda funksiyasini tiklashga xizmat qiladi."
+            },
+            {
+              "id": "plombalar_q02",
+              "q": "Bog‘lov va vaqtinchalik plomba qaysi guruhga kiradi?",
+              "options": [
+                "Rotatsion asboblar",
+                "Ko‘rik ko‘zgulari",
+                "Vaqtinchalik yopuvchi materiallar",
+                "Yoritgichlar"
+              ],
+              "answer": 2,
+              "explanation": "Kornilov darsligida to‘rtta asosiy guruh ajratilgan: bog‘lov va vaqtinchalik plombalar, doimiy tiklovchi plombalar, davolovchi/ajratuvchi tagliklar va ildiz kanali uchun plomba ashyolari."
+            },
+            {
+              "id": "plombalar_q03",
+              "q": "Doimiy plomba ashyosi nimaga qaratilgan?",
+              "options": [
+                "Faqat qisqa bog‘lov qo‘yishga",
+                "Tish shakli va funksiyasini uzoq muddat tiklashga",
+                "Faqat asbobni saqlashga",
+                "Faqat havo uzatishga"
+              ],
+              "answer": 1,
+              "explanation": "Kornilov darsligida to‘rtta asosiy guruh ajratilgan: bog‘lov va vaqtinchalik plombalar, doimiy tiklovchi plombalar, davolovchi/ajratuvchi tagliklar va ildiz kanali uchun plomba ashyolari."
+            },
+            {
+              "id": "plombalar_q04",
+              "q": "Davolovchi taglik qaysi guruhga tegishli?",
+              "options": [
+                "Taglik ashyolari",
+                "Stomatologik dastaklar",
+                "Parodontologik zondlar",
+                "Kreslo detallari"
               ],
               "answer": 0,
-              "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
+              "explanation": "Kornilov darsligida to‘rtta asosiy guruh ajratilgan: bog‘lov va vaqtinchalik plombalar, doimiy tiklovchi plombalar, davolovchi/ajratuvchi tagliklar va ildiz kanali uchun plomba ashyolari."
+            },
+            {
+              "id": "plombalar_q05",
+              "q": "Ildiz kanali materiali qanday materialdan farq qiladi?",
+              "options": [
+                "Siler turidan",
+                "Guttaperchadan",
+                "Endodontik shtiftdan",
+                "Toj qismini tiklovchi plombadan"
+              ],
+              "answer": 3,
+              "explanation": "Kornilov darsligida to‘rtta asosiy guruh ajratilgan: bog‘lov va vaqtinchalik plombalar, doimiy tiklovchi plombalar, davolovchi/ajratuvchi tagliklar va ildiz kanali uchun plomba ashyolari."
+            },
+            {
+              "id": "plombalar_q06",
+              "q": "Materialning germetikligi nimani anglatadi?",
+              "options": [
+                "Rangini muntazam o‘zgartirishini",
+                "Katta elektr tokini chiqarishini",
+                "Bo‘shliqni tashqi muhitdan yaxshi ajrata olishini",
+                "Yorug‘lik tarqatishini"
+              ],
+              "answer": 2,
+              "explanation": "Muhrlash qobiliyati, mustahkamlik, og‘iz suyuqligi ta’siriga chidamlilik, biologik moslik va tish to‘qimalari bilan tutashuv materialning muhim xossalaridir."
+            },
+            {
+              "id": "plombalar_q07",
+              "q": "Biologik moslik nimani baholashga yordam beradi?",
+              "options": [
+                "Rotorning sonini",
+                "To‘qimalar bilan muvofiqlikni",
+                "Kreslo og‘irligini",
+                "Yoritgich rangini"
+              ],
+              "answer": 1,
+              "explanation": "Muhrlash qobiliyati, mustahkamlik, og‘iz suyuqligi ta’siriga chidamlilik, biologik moslik va tish to‘qimalari bilan tutashuv materialning muhim xossalaridir."
+            },
+            {
+              "id": "plombalar_q08",
+              "q": "Estetik talab qaysi xususiyatga ko‘proq bog‘liq?",
+              "options": [
+                "Plombaning tish rangiga mos kelishiga",
+                "Kreslo balandligiga",
+                "Dastakning shovqiniga",
+                "Patnisning kattaligiga"
+              ],
+              "answer": 0,
+              "explanation": "Muhrlash qobiliyati, mustahkamlik, og‘iz suyuqligi ta’siriga chidamlilik, biologik moslik va tish to‘qimalari bilan tutashuv materialning muhim xossalaridir."
+            },
+            {
+              "id": "plombalar_q09",
+              "q": "Plomba materiallari qaysi belgilariga ko‘ra farqlanadi?",
+              "options": [
+                "Faqat qadoqdagi rasmga ko‘ra",
+                "Faqat narxiga ko‘ra",
+                "Faqat ishlab chiqaruvchi shahriga ko‘ra",
+                "Tarkibi, qotishi va vazifasiga ko‘ra"
+              ],
+              "answer": 3,
+              "explanation": "Kornilov darsligida to‘rtta asosiy guruh ajratilgan: bog‘lov va vaqtinchalik plombalar, doimiy tiklovchi plombalar, davolovchi/ajratuvchi tagliklar va ildiz kanali uchun plomba ashyolari."
+            },
+            {
+              "id": "plombalar_q10",
+              "q": "Doimiy materialni baholashda nima muhim?",
+              "options": [
+                "Faqat shifokor stulining turi",
+                "Faqat xona rangi",
+                "Mustahkamlik va og‘iz suyuqligiga chidamlilik",
+                "Faqat asbob patnisining joyi"
+              ],
+              "answer": 2,
+              "explanation": "Muhrlash qobiliyati, mustahkamlik, og‘iz suyuqligi ta’siriga chidamlilik, biologik moslik va tish to‘qimalari bilan tutashuv materialning muhim xossalaridir."
             }
           ],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "review_status": "USER_SOURCE_DRAFT — 10 topic-specific practice questions from uploaded dental textbooks",
           "source_pages": [
             {
               "book": "Kornilov",
@@ -652,8 +1918,129 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "questions": [],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "questions": [
+            {
+              "id": "plombalar_2_q01",
+              "q": "Bog‘lov materialining asosiy vazifasi nima?",
+              "options": [
+                "Tish bo‘shlig‘ini qisqa muddatga yopish",
+                "Doimiy toj tayyorlash",
+                "Rentgen olish",
+                "Kresloni ko‘tarish"
+              ],
+              "answer": 0,
+              "explanation": "Bog‘lov materiallari tish bo‘shlig‘ini qisqa muddatga yopish uchun mo‘ljallangan."
+            },
+            {
+              "id": "plombalar_2_q02",
+              "q": "Sun’iy dentinning asosiy komponentlaridan biri qaysi?",
+              "options": [
+                "Olmos donalari",
+                "Volfram-karbid",
+                "Guttapercha",
+                "Rux oksidi"
+              ],
+              "answer": 3,
+              "explanation": "Kornilov darsligida sun’iy dentin rux oksidi, rux sulfat va kaolin asosli kukun sifatida ta’riflangan."
+            },
+            {
+              "id": "plombalar_2_q03",
+              "q": "Sun’iy dentinda qaysi mineral komponent mavjud?",
+              "options": [
+                "Platina",
+                "Temir sulfat",
+                "Kaolin",
+                "Mis simi"
+              ],
+              "answer": 2,
+              "explanation": "Kornilov darsligida sun’iy dentin rux oksidi, rux sulfat va kaolin asosli kukun sifatida ta’riflangan."
+            },
+            {
+              "id": "plombalar_2_q04",
+              "q": "Sun’iy dentin qanday vosita bilan qotadigan tizim sifatida berilgan?",
+              "options": [
+                "Faqat UV lazer bilan",
+                "Suv bilan",
+                "Faqat havo turbinasida",
+                "Faqat issiq metall bilan"
+              ],
+              "answer": 1,
+              "explanation": "Suv bilan qotadigan bu material vaqtinchalik germetik yopish uchun ishlatilgan."
+            },
+            {
+              "id": "plombalar_2_q05",
+              "q": "Dentin-malham qaysi guruhga mansub?",
+              "options": [
+                "Vaqtinchalik yopuvchi materiallarga",
+                "Endodontik ko‘zgularga",
+                "Rotatsion borlarga",
+                "Tish qoplamalariga"
+              ],
+              "answer": 0,
+              "explanation": "Suv bilan qotadigan bu material vaqtinchalik germetik yopish uchun ishlatilgan."
+            },
+            {
+              "id": "plombalar_2_q06",
+              "q": "Rux oksidi–evgenol materiallari qayerda uchraydi?",
+              "options": [
+                "Faqat mikromotor tarkibida",
+                "Faqat yoritgich oynasida",
+                "Faqat pinsetda",
+                "Vaqtinchalik plomba guruhida"
+              ],
+              "answer": 3,
+              "explanation": "Nisbatan uzoqroq muddatga mo‘ljallangan vaqtinchalik materiallar orasida rux oksidi–evgenol, rux-fosfat, polikarboksilat va shishaionomer sementlar ham sanaladi."
+            },
+            {
+              "id": "plombalar_2_q07",
+              "q": "Vaqtinchalik plomba va bog‘lov o‘rtasidagi farq nimada?",
+              "options": [
+                "Faqat xona kattaligida",
+                "Faqat bemor yoshi bilan",
+                "Foydalanish muddati va material xossalarida",
+                "Faqat yorug‘lik rangida"
+              ],
+              "answer": 2,
+              "explanation": "Bog‘lov materiallari tish bo‘shlig‘ini qisqa muddatga yopish uchun mo‘ljallangan."
+            },
+            {
+              "id": "plombalar_2_q08",
+              "q": "Vaqtinchalik materiallarni solishtirishda nima muhim?",
+              "options": [
+                "Faqat ko‘zgu diametri",
+                "Qotish va mustahkamlik xususiyatlari",
+                "Faqat tish turining nomi",
+                "Faqat stul og‘irligi"
+              ],
+              "answer": 1,
+              "explanation": "Nisbatan uzoqroq muddatga mo‘ljallangan vaqtinchalik materiallar orasida rux oksidi–evgenol, rux-fosfat, polikarboksilat va shishaionomer sementlar ham sanaladi."
+            },
+            {
+              "id": "plombalar_2_q09",
+              "q": "Qaysi sement vaqtinchalik material sifatida ham tasvirlangan?",
+              "options": [
+                "Polikarboksilat sement",
+                "Faqat kaolin kukuni",
+                "Faqat olmos kukuni",
+                "Faqat jigar pigmenti"
+              ],
+              "answer": 0,
+              "explanation": "Nisbatan uzoqroq muddatga mo‘ljallangan vaqtinchalik materiallar orasida rux oksidi–evgenol, rux-fosfat, polikarboksilat va shishaionomer sementlar ham sanaladi."
+            },
+            {
+              "id": "plombalar_2_q10",
+              "q": "Qaysi material vaqtinchalik yopishda qo‘llanishi mumkin?",
+              "options": [
+                "Faqat bor podshipnigi",
+                "Faqat diagnostik zond",
+                "Faqat EKG elektrodi",
+                "Shishaionomer sement"
+              ],
+              "answer": 3,
+              "explanation": "Nisbatan uzoqroq muddatga mo‘ljallangan vaqtinchalik materiallar orasida rux oksidi–evgenol, rux-fosfat, polikarboksilat va shishaionomer sementlar ham sanaladi."
+            }
+          ],
+          "review_status": "USER_SOURCE_DRAFT — 10 topic-specific practice questions from uploaded dental textbooks",
           "source_pages": [
             {
               "book": "Kornilov",
@@ -698,18 +2085,126 @@
           "questions": [
             {
               "id": "tagliklar_req1",
-              "q": "Kitobda qanday taglik guruhlari ajratilgan?",
+              "q": "Ajratuvchi taglik nimaga xizmat qiladi?",
               "options": [
-                "Ajratuvchi va davolovchi",
-                "Faqat elektr",
-                "Faqat mexanik",
-                "Faqat rezina"
+                "Rotor aylantirishga",
+                "Pulpa va dentinni plomba ta’siridan himoyalashga",
+                "Ko‘zgu kattalashtirishga",
+                "Bor sirtini qoplashga"
+              ],
+              "answer": 1,
+              "explanation": "Ajratuvchi taglik tishning ichki to‘qimalarini doimiy plomba materiali bilan bevosita aloqadan ajratishga mo‘ljallangan."
+            },
+            {
+              "id": "tagliklar_q02",
+              "q": "Metall plombaning qaysi xossasi termik himoyani muhim qiladi?",
+              "options": [
+                "Issiqlikni yaxshi o‘tkazishi",
+                "Yuqori shaffofligi",
+                "Ftor ajratishi",
+                "Suvni oson so‘rishi"
               ],
               "answer": 0,
-              "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
+              "explanation": "Ajratuvchi taglik tishning ichki to‘qimalarini doimiy plomba materiali bilan bevosita aloqadan ajratishga mo‘ljallangan."
+            },
+            {
+              "id": "tagliklar_q03",
+              "q": "Taglik qanday ikki shaklda farqlanishi mumkin?",
+              "options": [
+                "Ko‘zgu va patnis",
+                "Bor va mikromotor",
+                "Zond va pinset",
+                "Bazalik taglik va yupqa layner"
+              ],
+              "answer": 3,
+              "explanation": "Bazalik taglik nisbatan qalin qatlamli himoya materiali, layner esa yupqa qatlamli ajratuvchi qoplama sifatida farqlanadi."
+            },
+            {
+              "id": "tagliklar_q04",
+              "q": "Laynerning xos belgisi qaysi?",
+              "options": [
+                "Yirik elektr motor bo‘lishi",
+                "Yassi kesuvchi disk bo‘lishi",
+                "Yupqa himoya qatlami bo‘lishi",
+                "Tish ildizini almashtirishi"
+              ],
+              "answer": 2,
+              "explanation": "Bazalik taglik nisbatan qalin qatlamli himoya materiali, layner esa yupqa qatlamli ajratuvchi qoplama sifatida farqlanadi."
+            },
+            {
+              "id": "tagliklar_q05",
+              "q": "Bazalik taglik laynerdan nimasi bilan farqlanishi mumkin?",
+              "options": [
+                "Doimo metall bo‘lishi bilan",
+                "Nisbatan qalin qatlamligi bilan",
+                "O‘zi turbina bo‘lishi bilan",
+                "Faqat tashqi bezakligi bilan"
+              ],
+              "answer": 1,
+              "explanation": "Bazalik taglik nisbatan qalin qatlamli himoya materiali, layner esa yupqa qatlamli ajratuvchi qoplama sifatida farqlanadi."
+            },
+            {
+              "id": "tagliklar_q06",
+              "q": "Ajratuvchi taglik qanday ta’sirlardan himoyalashi mumkin?",
+              "options": [
+                "Kimyoviy va issiqlik ta’siridan",
+                "Faqat tovushdan",
+                "Faqat shovqin rangidan",
+                "Faqat yorug‘lik linzasidan"
+              ],
+              "answer": 0,
+              "explanation": "Darslik ayrim sementlarning kimyoviy ta’siri va metall materiallarning issiqlik o‘tkazuvchanligini misol qilib keltiradi."
+            },
+            {
+              "id": "tagliklar_q07",
+              "q": "Kornilov kitobida taglik materiali sifatida qaysi sement uchraydi?",
+              "options": [
+                "Faqat oltin qotishma",
+                "Faqat ortodontik sim",
+                "Faqat olmosli bor",
+                "Rux-fosfat sement"
+              ],
+              "answer": 3,
+              "explanation": "Kornilov darsligida taglik sifatida rux-fosfat, polikarboksilat va shishaionomer sementlar, shuningdek ajratuvchi laklar tilga olingan."
+            },
+            {
+              "id": "tagliklar_q08",
+              "q": "Qaysi material ham taglik sifatida tasvirlangan?",
+              "options": [
+                "Diagnostik ko‘zgu",
+                "Amalgama turbinasi",
+                "Shishaionomer sement",
+                "Podshipnik"
+              ],
+              "answer": 2,
+              "explanation": "Kornilov darsligida taglik sifatida rux-fosfat, polikarboksilat va shishaionomer sementlar, shuningdek ajratuvchi laklar tilga olingan."
+            },
+            {
+              "id": "tagliklar_q09",
+              "q": "Taglikning mexanik tayanch xossasi nimaga bog‘liq?",
+              "options": [
+                "Faqat rangi bilan",
+                "Materialning qalinligi va mustahkamligiga",
+                "Faqat EKG signaliga",
+                "Faqat tish uzunligi bilan"
+              ],
+              "answer": 1,
+              "explanation": "Bazalik taglik nisbatan qalin qatlamli himoya materiali, layner esa yupqa qatlamli ajratuvchi qoplama sifatida farqlanadi."
+            },
+            {
+              "id": "tagliklar_q10",
+              "q": "Ajratuvchi lak qanday vazifaga yaqin?",
+              "options": [
+                "Yupqa himoya qoplamasi",
+                "Rotor podshipnigi",
+                "Tish ildizini o‘lchash",
+                "Asboblarni saqlash"
+              ],
+              "answer": 0,
+              "explanation": "Kornilov darsligida taglik sifatida rux-fosfat, polikarboksilat va shishaionomer sementlar, shuningdek ajratuvchi laklar tilga olingan."
             }
           ],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "review_status": "USER_SOURCE_DRAFT — 10 topic-specific practice questions from uploaded dental textbooks",
           "source_pages": [
             {
               "book": "Kornilov",
@@ -751,8 +2246,129 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "questions": [],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "questions": [
+            {
+              "id": "tagliklar_2_q01",
+              "q": "Davolovchi taglikning maqsadi nima?",
+              "options": [
+                "Rotor tezligini oshirish",
+                "Faqat tish rangini bo‘yash",
+                "Pulpa-dentin atrofidagi biologik himoyani qo‘llab-quvvatlash",
+                "Ko‘zgu tutqichini almashtirish"
+              ],
+              "answer": 2,
+              "explanation": "Davolovchi taglik faqat fizik to‘siq bo‘lib qolmay, pulpa va dentin atrofidagi biologik muhit bilan bog‘liq himoya vazifasini ham bajaradi."
+            },
+            {
+              "id": "tagliklar_2_q02",
+              "q": "Davolovchi taglik uchun qaysi birikma misol bo‘la oladi?",
+              "options": [
+                "Olmos donasi",
+                "Kalsiy gidroksid",
+                "Volfram-karbid",
+                "Mis simi"
+              ],
+              "answer": 1,
+              "explanation": "Darslikda Ca(OH)₂ tarkibli suvli suspenziyalar, kimyoviy qotuvchi va nur bilan qotuvchi tagliklar ajratilgan."
+            },
+            {
+              "id": "tagliklar_2_q03",
+              "q": "Ca(OH)₂ qanday modda?",
+              "options": [
+                "Kalsiy gidroksid",
+                "Rux oksidi",
+                "Kremniy oksidi",
+                "Fosfat kislota"
+              ],
+              "answer": 0,
+              "explanation": "Darslikda Ca(OH)₂ tarkibli suvli suspenziyalar, kimyoviy qotuvchi va nur bilan qotuvchi tagliklar ajratilgan."
+            },
+            {
+              "id": "tagliklar_2_q04",
+              "q": "Kalsiy gidroksidli materialning xususiyati qaysi?",
+              "options": [
+                "Elektr rotori bo‘lishi",
+                "Yuqori metall yaltiroqlik",
+                "Bor uchun disk shakli",
+                "Yuqori ishqoriylik"
+              ],
+              "answer": 3,
+              "explanation": "Ular yuqori ishqoriyligi va odontotrop xossalari bilan tavsiflangan."
+            },
+            {
+              "id": "tagliklar_2_q05",
+              "q": "Davolovchi taglik qaysi jarayonni qo‘llab-quvvatlash bilan bog‘liq?",
+              "options": [
+                "EKG yozuvini",
+                "Asboblarni ulashni",
+                "Reparativ to‘qima javobini",
+                "Rangni tanlashni"
+              ],
+              "answer": 2,
+              "explanation": "Manbada chuqur dentin nuqsonlari sharoitida to‘qimalarning reparativ javobini qo‘llab-quvvatlash maqsadi tushuntirilgan."
+            },
+            {
+              "id": "tagliklar_2_q06",
+              "q": "Kimyoviy qotuvchi taglik nimaga ko‘ra nomlangan?",
+              "options": [
+                "Asbob uzunligiga ko‘ra",
+                "Qotish usuliga ko‘ra",
+                "Yoritgich modeliga ko‘ra",
+                "Kreslo turiga ko‘ra"
+              ],
+              "answer": 1,
+              "explanation": "Darslikda Ca(OH)₂ tarkibli suvli suspenziyalar, kimyoviy qotuvchi va nur bilan qotuvchi tagliklar ajratilgan."
+            },
+            {
+              "id": "tagliklar_2_q07",
+              "q": "Nur bilan qotuvchi taglikning farqi nimada?",
+              "options": [
+                "Qotish mexanizmida",
+                "Kanal sonida",
+                "Zond shaklida",
+                "Ko‘zgu turida"
+              ],
+              "answer": 0,
+              "explanation": "Darslikda Ca(OH)₂ tarkibli suvli suspenziyalar, kimyoviy qotuvchi va nur bilan qotuvchi tagliklar ajratilgan."
+            },
+            {
+              "id": "tagliklar_2_q08",
+              "q": "Davolovchi va ajratuvchi taglikning farqi nima?",
+              "options": [
+                "Faqat ishlab chiqarilgan kuni",
+                "Faqat bezakda",
+                "Faqat qadoq rangida",
+                "Biologik ta’sir va fizik himoya maqsadi"
+              ],
+              "answer": 3,
+              "explanation": "Davolovchi taglik biologik ta’sirga qaratilgan bo‘lsa, ajratuvchi taglik asosan mexanik, kimyoviy va termik himoya beradi."
+            },
+            {
+              "id": "tagliklar_2_q09",
+              "q": "Taglikni baholashda qaysi cheklov muhim?",
+              "options": [
+                "Faqat kompressor modeli",
+                "Faqat ko‘zgu radiusi",
+                "Mexanik mustahkamlik va eruvchanlik",
+                "Faqat pinset rangi"
+              ],
+              "answer": 2,
+              "explanation": "Davolovchi taglik biologik ta’sirga qaratilgan bo‘lsa, ajratuvchi taglik asosan mexanik, kimyoviy va termik himoya beradi."
+            },
+            {
+              "id": "tagliklar_2_q10",
+              "q": "Davolovchi pasta ayrim hollarda nima sababdan zaif?",
+              "options": [
+                "Doimo metal bo‘lgani uchun",
+                "Mustahkamligi cheklangan bo‘lishi mumkin",
+                "Mutlaqo suvsiz bo‘lgani uchun",
+                "Faqat nur chiqarishi sabab"
+              ],
+              "answer": 1,
+              "explanation": "Darslikda ayrim davolovchi pastalarning mustahkamligi pastligi qayd etilgan; materiallarning vazifasi va cheklovlarini ajratib o‘rganish muhim."
+            }
+          ],
+          "review_status": "USER_SOURCE_DRAFT — 10 topic-specific practice questions from uploaded dental textbooks",
           "source_pages": [
             {
               "book": "Kornilov",
@@ -798,8 +2414,129 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "questions": [],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "questions": [
+            {
+              "id": "tagliklar_3_q01",
+              "q": "Rux-fosfat sement qaysi guruhga mansub?",
+              "options": [
+                "Rotatsion borlarga",
+                "Ko‘rik asboblariga",
+                "Qon zardobiga",
+                "Stomatologik sementlarga"
+              ],
+              "answer": 3,
+              "explanation": "Kornilov darsligida rux-fosfat, bakteritsid, silikat, siliko-fosfat, rux oksidi–evgenol, polikarboksilat, shishaionomer va polimer sement guruhlari keltirilgan."
+            },
+            {
+              "id": "tagliklar_3_q02",
+              "q": "Silikat sementning qaysi tarkibi muhim?",
+              "options": [
+                "Olmosli rotor",
+                "Po‘lat pinset",
+                "Shisha tarkibli kukun",
+                "Guttapercha shtifti"
+              ],
+              "answer": 2,
+              "explanation": "Rux-fosfat sementning qotishi kukun va kislotali suyuqlik o‘zaro reaksiyasiga bog‘liq."
+            },
+            {
+              "id": "tagliklar_3_q03",
+              "q": "Siliko-fosfat sement nimaning xususiyatini birlashtiradi?",
+              "options": [
+                "Amalgama va guttaperchaning",
+                "Silikat va fosfat sementlarining",
+                "Ko‘zgu va zondning",
+                "Turbina va yoritgichning"
+              ],
+              "answer": 1,
+              "explanation": "Rux-fosfat sementning qotishi kukun va kislotali suyuqlik o‘zaro reaksiyasiga bog‘liq."
+            },
+            {
+              "id": "tagliklar_3_q04",
+              "q": "Rux-fosfat sement qotishida qanday jarayon bor?",
+              "options": [
+                "Kislota va kukun komponentlarining reaksiyasi",
+                "Faqat elektromagnit induksiya",
+                "Faqat mexanik bosim",
+                "Faqat sovuq suvda muzlash"
+              ],
+              "answer": 0,
+              "explanation": "Rux-fosfat sementning qotishi kukun va kislotali suyuqlik o‘zaro reaksiyasiga bog‘liq."
+            },
+            {
+              "id": "tagliklar_3_q05",
+              "q": "Sementlar qaysi maqsadlarda guruhlanadi?",
+              "options": [
+                "Faqat audiometriya",
+                "Faqat ko‘rik yoritishi",
+                "Faqat qon tashish",
+                "Fiksatsiya, tiklash va taglik"
+              ],
+              "answer": 3,
+              "explanation": "Stomatologik sementlar fiksatsiya, tiklash va taglik sifatida qo‘llanadigan turlarga ajratiladi."
+            },
+            {
+              "id": "tagliklar_3_q06",
+              "q": "Shishaionomer sement qaysi guruhga kiradi?",
+              "options": [
+                "Tish zondlariga",
+                "Suv pistoletlariga",
+                "Stomatologik sementlarga",
+                "Kreslo qoplamalariga"
+              ],
+              "answer": 2,
+              "explanation": "Kornilov darsligida rux-fosfat, bakteritsid, silikat, siliko-fosfat, rux oksidi–evgenol, polikarboksilat, shishaionomer va polimer sement guruhlari keltirilgan."
+            },
+            {
+              "id": "tagliklar_3_q07",
+              "q": "Rux oksidi–evgenol qaysi tarixiy guruhga mansub?",
+              "options": [
+                "Faqat olmosli borlarga",
+                "Sement va vaqtinchalik materiallar guruhiga",
+                "Faqat shifokor stullariga",
+                "Faqat implant frezalariga"
+              ],
+              "answer": 1,
+              "explanation": "Kornilov darsligida rux-fosfat, bakteritsid, silikat, siliko-fosfat, rux oksidi–evgenol, polikarboksilat, shishaionomer va polimer sement guruhlari keltirilgan."
+            },
+            {
+              "id": "tagliklar_3_q08",
+              "q": "Fiksatsion sementning umumiy vazifasi nima?",
+              "options": [
+                "Konstruksiyalarni mahkamlashga yordam berish",
+                "Tish tojini yoritish",
+                "Eshitish chegarasini o‘lchash",
+                "Suvni so‘rish"
+              ],
+              "answer": 0,
+              "explanation": "Stomatologik sementlar fiksatsiya, tiklash va taglik sifatida qo‘llanadigan turlarga ajratiladi."
+            },
+            {
+              "id": "tagliklar_3_q09",
+              "q": "Silikat sementlar tarixan qaysi tishlarda estetik maqsadda qo‘llangan?",
+              "options": [
+                "Faqat ildiz kanallarida",
+                "Faqat sut molyarlari ildizida",
+                "Faqat implantlarda",
+                "Oldingi tishlarda"
+              ],
+              "answer": 3,
+              "explanation": "Silikat sementlarda shisha tarkibli kukun muhim o‘rin tutadi; tarixan oldingi tishlarning rangiga yaqin tiklash materiallari sifatida tasvirlangan."
+            },
+            {
+              "id": "tagliklar_3_q10",
+              "q": "Sementlar bir xil vazifaga avtomatik mos keladimi?",
+              "options": [
+                "Ha, hammasi bir xil",
+                "Faqat rangi farq qiladi",
+                "Yo‘q, maqsad va xossaga qarab farqlanadi",
+                "Faqat tashqi qutisi farq qiladi"
+              ],
+              "answer": 2,
+              "explanation": "Stomatologik sementlar fiksatsiya, tiklash va taglik sifatida qo‘llanadigan turlarga ajratiladi."
+            }
+          ],
+          "review_status": "USER_SOURCE_DRAFT — 10 topic-specific practice questions from uploaded dental textbooks",
           "source_pages": [
             {
               "book": "Kornilov",
@@ -830,15 +2567,123 @@
           "questions": [
             {
               "id": "pre_session_16_req1",
-              "q": "Polikarboksilat sement tarkibida qaysi komponent bor?",
+              "q": "Polikarboksilat sement kukunining asosiy komponenti nima?",
               "options": [
                 "Rux oksidi",
+                "Olmos kukuni",
                 "Natriy xlorid",
-                "Kislorod gazi",
-                "Mis simi"
+                "Kalsiy ftorid"
               ],
               "answer": 0,
-              "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
+              "explanation": "Darslikda polikarboksilat sement kukuni asosan rux oksididan, suyuqligi esa polikarboksilat kislota suvli eritmasidan iborat deb tushuntirilgan."
+            },
+            {
+              "id": "pre_session_16_q02",
+              "q": "Polikarboksilat sement suyuqligi nimaga asoslangan?",
+              "options": [
+                "Faqat etil spirtga",
+                "Faqat suyuq simobga",
+                "Faqat vodorod peroksidga",
+                "Polikarboksilat kislotaning suvli eritmasiga"
+              ],
+              "answer": 3,
+              "explanation": "Darslikda polikarboksilat sement kukuni asosan rux oksididan, suyuqligi esa polikarboksilat kislota suvli eritmasidan iborat deb tushuntirilgan."
+            },
+            {
+              "id": "pre_session_16_q03",
+              "q": "Polikarboksilat sement qanday reaksiya bilan qotadi?",
+              "options": [
+                "Faqat lazer akslanishi bilan",
+                "Faqat sovitish bilan",
+                "Kislota-asos o‘zaro ta’siri bilan",
+                "Faqat mexanik uzatish bilan"
+              ],
+              "answer": 2,
+              "explanation": "Kukun va suyuqlikning kislotali-asosli o‘zaro ta’siri qotish jarayoniga bog‘liq."
+            },
+            {
+              "id": "pre_session_16_q04",
+              "q": "Polikarboksilat sementning muhim adgeziv xossasi nima?",
+              "options": [
+                "Faqat metal bilan mexanik yopishishi",
+                "Emal va dentin bilan kimyoviy bog‘lanishi",
+                "Faqat yog‘ga erishi",
+                "Faqat shaffof qoplama bo‘lishi"
+              ],
+              "answer": 1,
+              "explanation": "Polikarboksilat sement tish qattiq to‘qimalariga kimyoviy bog‘lanish xususiyatiga ega."
+            },
+            {
+              "id": "pre_session_16_q05",
+              "q": "Polikarboksilat sement qaysi to‘qimalarga bog‘lanishi mumkin?",
+              "options": [
+                "Emal va dentinga",
+                "Faqat teriga",
+                "Faqat shilliq qavatga",
+                "Faqat alveolyar havoga"
+              ],
+              "answer": 0,
+              "explanation": "Polikarboksilat sement tish qattiq to‘qimalariga kimyoviy bog‘lanish xususiyatiga ega."
+            },
+            {
+              "id": "pre_session_16_q06",
+              "q": "Adgeziya atamasi nimani bildiradi?",
+              "options": [
+                "Faqat rangning yoyilishini",
+                "Faqat suv bug‘lanishini",
+                "Faqat tovush rezonansini",
+                "Materiallarning o‘zaro tutashib bog‘lanishini"
+              ],
+              "answer": 3,
+              "explanation": "Polikarboksilat sement tish qattiq to‘qimalariga kimyoviy bog‘lanish xususiyatiga ega."
+            },
+            {
+              "id": "pre_session_16_q07",
+              "q": "Darslikda polikarboksilat sementning qaysi cheklovi qayd etilgan?",
+              "options": [
+                "Faqat ionlashish tezligi",
+                "Faqat rotor aylanishi",
+                "Mexanik mustahkamlikning cheklanganligi",
+                "Faqat ko‘zgudagi aks"
+              ],
+              "answer": 2,
+              "explanation": "Kornilov kitobida polikarboksilat sementning mustahkamligi va estetikasi ayrim boshqa tiklovchi materiallarga nisbatan cheklanganligi qayd etilgan."
+            },
+            {
+              "id": "pre_session_16_q08",
+              "q": "Estetik jihatdan qaysi cheklov bo‘lishi mumkin?",
+              "options": [
+                "Juda kuchli ultratovush chiqarishi",
+                "Tish rangiga mukammal mos kelmasligi",
+                "Tishni rentgen bilan ko‘rmasligi",
+                "Faqat to‘g‘ri dastakda ishlashi"
+              ],
+              "answer": 1,
+              "explanation": "Kornilov kitobida polikarboksilat sementning mustahkamligi va estetikasi ayrim boshqa tiklovchi materiallarga nisbatan cheklanganligi qayd etilgan."
+            },
+            {
+              "id": "pre_session_16_q09",
+              "q": "Polikarboksilat sementning kukun va suyuqligi o‘rtasida nima ro‘y beradi?",
+              "options": [
+                "Qotishga olib keladigan reaksiya",
+                "Ultratovushli diagnostika",
+                "Bor aylanishi",
+                "Osmosning to‘xtashi"
+              ],
+              "answer": 0,
+              "explanation": "Darslikda polikarboksilat sement kukuni asosan rux oksididan, suyuqligi esa polikarboksilat kislota suvli eritmasidan iborat deb tushuntirilgan."
+            },
+            {
+              "id": "pre_session_16_q10",
+              "q": "Polikarboksilat sement qaysi sinfga mansub?",
+              "options": [
+                "Diagnostik zondlarga",
+                "Rotatsion dastaklarga",
+                "Kreslo mexanizmlariga",
+                "Stomatologik sementlarga"
+              ],
+              "answer": 3,
+              "explanation": "Kornilov kitobida polikarboksilat sementning mustahkamligi va estetikasi ayrim boshqa tiklovchi materiallarga nisbatan cheklanganligi qayd etilgan."
             }
           ],
           "teacher_materials": [
@@ -855,7 +2700,7 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "review_status": "USER_SOURCE_DRAFT — 10 topic-specific practice questions from uploaded dental textbooks",
           "source_pages": [
             {
               "book": "Kornilov",
@@ -883,7 +2728,128 @@
               "body": "Shishaionomer materialda kislota va shisha tarkibi o‘zaro reaksiyaga kirishib, qotadigan tuzilma hosil qiladi. Tarkibidagi ftor birikmalari materialning ftor ajratish xususiyati bilan bog‘liq. Shu bilan u ko‘plab eski fosfat sementlardan farqlanadi."
             }
           ],
-          "questions": [],
+          "questions": [
+            {
+              "id": "pre_session_17_q01",
+              "q": "Shishaionomer sement kukunining asosiy turi qaysi?",
+              "options": [
+                "Guttapercha tolasi",
+                "Ftorli alumosilikat shisha",
+                "Suyuq simob",
+                "Faqat po‘lat kukuni"
+              ],
+              "answer": 1,
+              "explanation": "Shishaionomer sementlar tarkibida ftorli alumosilikat shisha mavjud."
+            },
+            {
+              "id": "pre_session_17_q02",
+              "q": "Shishaionomer tarkibida qaysi oksid uchraydi?",
+              "options": [
+                "Kremniy oksidi",
+                "Faqat temir oksidi",
+                "Faqat mis oksidi",
+                "Faqat marganets oksidi"
+              ],
+              "answer": 0,
+              "explanation": "Kornilov darsligida kremniy oksidi, aluminiy oksidi va kalsiy ftorid kabi komponentlar qayd etilgan."
+            },
+            {
+              "id": "pre_session_17_q03",
+              "q": "Shishaionomer tarkibida qaysi boshqa oksid bo‘lishi mumkin?",
+              "options": [
+                "Natriy xlorid",
+                "Glyukoza",
+                "Polietilen",
+                "Aluminiy oksidi"
+              ],
+              "answer": 3,
+              "explanation": "Kornilov darsligida kremniy oksidi, aluminiy oksidi va kalsiy ftorid kabi komponentlar qayd etilgan."
+            },
+            {
+              "id": "pre_session_17_q04",
+              "q": "Shishaionomer tarkibiga qaysi ftorli komponent kirishi mumkin?",
+              "options": [
+                "Natriy karbonat",
+                "Kalsiy sulfat",
+                "Kalsiy ftorid",
+                "Kaliy nitrat"
+              ],
+              "answer": 2,
+              "explanation": "Kornilov darsligida kremniy oksidi, aluminiy oksidi va kalsiy ftorid kabi komponentlar qayd etilgan."
+            },
+            {
+              "id": "pre_session_17_q05",
+              "q": "Shishaionomerning suyuqligi qaysi moddalar bilan bog‘liq?",
+              "options": [
+                "Faqat moy va simob bilan",
+                "Polikislota va suv bilan",
+                "Faqat kalsiy metali bilan",
+                "Faqat kislorod gazi bilan"
+              ],
+              "answer": 1,
+              "explanation": "Darslikda polikislota va suvli eritma bilan ishlaydigan, suv bilan qotadigan hamda yarim suvli shishaionomer tizimlari farqlanadi."
+            },
+            {
+              "id": "pre_session_17_q06",
+              "q": "Suv bilan qotadigan tizimda kislota komponenti qayerda bo‘lishi mumkin?",
+              "options": [
+                "Kukun tarkibida",
+                "Faqat borning o‘zagida",
+                "Faqat ko‘zgu yuzasida",
+                "Faqat kompressor ichida"
+              ],
+              "answer": 0,
+              "explanation": "Ayrim tizimlarda kislota komponenti suyuqlikda, boshqalarida kukun tarkibida bo‘lishi mumkin."
+            },
+            {
+              "id": "pre_session_17_q07",
+              "q": "Shishaionomerning qotish reaksiyasida nima ishtirok etadi?",
+              "options": [
+                "Faqat yorug‘lik linzasi",
+                "Faqat kesuvchi qirra",
+                "Faqat metall pinset",
+                "Kislota va shisha komponentlari"
+              ],
+              "answer": 3,
+              "explanation": "Shishaionomer materialda kislota va shisha tarkibi o‘zaro reaksiyaga kirishib, qotadigan tuzilma hosil qiladi."
+            },
+            {
+              "id": "pre_session_17_q08",
+              "q": "Materialdagi ftor birikmalari nimaga bog‘liq?",
+              "options": [
+                "Bor podshipnigining shakliga",
+                "Kreslo tezligiga",
+                "Ftor ajratish xususiyatiga",
+                "Yurak pulsiga"
+              ],
+              "answer": 2,
+              "explanation": "Tarkibidagi ftor birikmalari materialning ftor ajratish xususiyati bilan bog‘liq."
+            },
+            {
+              "id": "pre_session_17_q09",
+              "q": "Shishaionomer sement nima sababli fosfat sementdan farqlanadi?",
+              "options": [
+                "Faqat qutisining rangi bilan",
+                "Tarkibi va kimyoviy xususiyatlari tufayli",
+                "Faqat kabinet joyi bilan",
+                "Faqat reklamasi bilan"
+              ],
+              "answer": 1,
+              "explanation": "Shishaionomer materialda kislota va shisha tarkibi o‘zaro reaksiyaga kirishib, qotadigan tuzilma hosil qiladi."
+            },
+            {
+              "id": "pre_session_17_q10",
+              "q": "Shishaionomer turlari nima bilan farqlanishi mumkin?",
+              "options": [
+                "Kukun-suyuqlik tizimi va qotish usuli bilan",
+                "Faqat pacient yoshi bilan",
+                "Faqat qo‘lqop hajmi bilan",
+                "Faqat shifokor stuli bilan"
+              ],
+              "answer": 0,
+              "explanation": "Darslikda polikislota va suvli eritma bilan ishlaydigan, suv bilan qotadigan hamda yarim suvli shishaionomer tizimlari farqlanadi."
+            }
+          ],
           "teacher_materials": [
             {
               "title": "Kalendar reja",
@@ -898,7 +2864,7 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "review_status": "USER_SOURCE_DRAFT — 10 topic-specific practice questions from uploaded dental textbooks",
           "source_pages": [
             {
               "book": "Kornilov",
@@ -926,7 +2892,128 @@
               "body": "Darslikda fiksatsiya, tiklash va taglik sifatida ishlatiladigan shishaionomer sementlar alohida ajratilgan. Shuningdek kimyoviy hamda nur yordamida qotadigan turlar ko‘rsatilgan. Ularning ko‘rsatmalari va mexanik talablari bir xil emas."
             }
           ],
-          "questions": [],
+          "questions": [
+            {
+              "id": "pre_session_18_q01",
+              "q": "Shishaionomer sementning muhim xususiyati qaysi?",
+              "options": [
+                "Faqat mexanik tishli uzatma",
+                "Faqat metalga magnit yopishish",
+                "Emal va dentin bilan kimyoviy bog‘lanish",
+                "Faqat suvni so‘rish"
+              ],
+              "answer": 2,
+              "explanation": "Shishaionomer sementlarning muhim belgilaridan biri emal va dentin bilan kimyoviy bog‘lana olishidir."
+            },
+            {
+              "id": "pre_session_18_q02",
+              "q": "Shishaionomer sement qanday foydali komponent ajratishi mumkin?",
+              "options": [
+                "Simob",
+                "Ftor",
+                "Qo‘rg‘oshin",
+                "Mis"
+              ],
+              "answer": 1,
+              "explanation": "Tarkibdagi ftorli komponentlar ftor ajralishiga bog‘liq."
+            },
+            {
+              "id": "pre_session_18_q03",
+              "q": "Shishaionomerning qaysi fizik cheklovi bo‘lishi mumkin?",
+              "options": [
+                "Mo‘rtlik",
+                "Rotorga bog‘liqlik",
+                "Yuqori elektr toki",
+                "Faqat gaz holatida bo‘lish"
+              ],
+              "answer": 0,
+              "explanation": "Kornilov materialda nisbatan mo‘rtlik, yeyilishga sezgirlik va optik xossalarning ayrim kompozitlardan farq qilishini ham qayd etadi."
+            },
+            {
+              "id": "pre_session_18_q04",
+              "q": "Shishaionomerning optik xususiyatlari qaysi materialdan farq qilishi mumkin?",
+              "options": [
+                "Faqat podshipnikdan",
+                "Faqat ko‘zgudan",
+                "Faqat zanglamas po‘latdan",
+                "Kompozitlardan"
+              ],
+              "answer": 3,
+              "explanation": "Kornilov materialda nisbatan mo‘rtlik, yeyilishga sezgirlik va optik xossalarning ayrim kompozitlardan farq qilishini ham qayd etadi."
+            },
+            {
+              "id": "pre_session_18_q05",
+              "q": "Fiksatsion shishaionomer nima uchun guruhlangan?",
+              "options": [
+                "Faqat so‘lakni so‘rish uchun",
+                "Faqat EKG yozish uchun",
+                "Konstruksiyani mahkamlash uchun",
+                "Faqat borni aylantirish uchun"
+              ],
+              "answer": 2,
+              "explanation": "Darslikda fiksatsiya, tiklash va taglik sifatida ishlatiladigan shishaionomer sementlar alohida ajratilgan."
+            },
+            {
+              "id": "pre_session_18_q06",
+              "q": "Restavratsion shishaionomer nima uchun mo‘ljallangan?",
+              "options": [
+                "Faqat dastak tozalash uchun",
+                "Tish to‘qimasini tiklash uchun",
+                "Faqat kreslo yoritish uchun",
+                "Faqat shisha zangini olish uchun"
+              ],
+              "answer": 1,
+              "explanation": "Darslikda fiksatsiya, tiklash va taglik sifatida ishlatiladigan shishaionomer sementlar alohida ajratilgan."
+            },
+            {
+              "id": "pre_session_18_q07",
+              "q": "Taglik sifatidagi shishaionomer qaysi vazifaga yaqin?",
+              "options": [
+                "Himoyalovchi oraliq qatlam bo‘lishga",
+                "Bor aylantirishga",
+                "Ko‘zgu tutishga",
+                "Qon qovushqoqligini o‘lchashga"
+              ],
+              "answer": 0,
+              "explanation": "Darslikda fiksatsiya, tiklash va taglik sifatida ishlatiladigan shishaionomer sementlar alohida ajratilgan."
+            },
+            {
+              "id": "pre_session_18_q08",
+              "q": "Shishaionomer qotishiga ko‘ra qanday turlarga ajratilishi mumkin?",
+              "options": [
+                "Faqat suvda eruvchi va gazli",
+                "Faqat elektr va pnevmatik",
+                "Faqat metall va yog‘och",
+                "Kimyoviy va nur bilan qotuvchi"
+              ],
+              "answer": 3,
+              "explanation": "Shuningdek kimyoviy hamda nur yordamida qotadigan turlar ko‘rsatilgan."
+            },
+            {
+              "id": "pre_session_18_q09",
+              "q": "Shishaionomerning ftor ajratishi nimadan kelib chiqadi?",
+              "options": [
+                "Dastakning rotoridan",
+                "Plomba rangidan",
+                "Tarkibidagi ftorli birikmalardan",
+                "Suv pistoleti shaklidan"
+              ],
+              "answer": 2,
+              "explanation": "Tarkibdagi ftorli komponentlar ftor ajralishiga bog‘liq."
+            },
+            {
+              "id": "pre_session_18_q10",
+              "q": "Shishaionomerning xossalarini nega birgalikda baholash kerak?",
+              "options": [
+                "Faqat qutisi chiroyli bo‘lishi uchun",
+                "Afzalliklari va mexanik cheklovlari mavjudligi uchun",
+                "Faqat bemor ismini bilish uchun",
+                "Faqat tish sonini ko‘paytirish uchun"
+              ],
+              "answer": 1,
+              "explanation": "Tarkibdagi ftorli komponentlar ftor ajralishiga bog‘liq."
+            }
+          ],
           "teacher_materials": [
             {
               "title": "Kalendar reja",
@@ -941,7 +3028,7 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "review_status": "USER_SOURCE_DRAFT — 10 topic-specific practice questions from uploaded dental textbooks",
           "source_pages": [
             {
               "book": "Kornilov",
@@ -972,15 +3059,123 @@
           "questions": [
             {
               "id": "pre_session_19_req1",
-              "q": "Amalgama qaysi guruhga mansub?",
+              "q": "Amalgama qanday tiklovchi material?",
               "options": [
-                "Metall asosli restavratsion material",
-                "Ko‘rik oynasi",
-                "Membrana",
-                "Sterilizator"
+                "Faqat shisha kukunli",
+                "Faqat plastmassa tolali",
+                "Faqat fosfat kislotali",
+                "Simob va metall qotishmalariga asoslangan"
+              ],
+              "answer": 3,
+              "explanation": "Amalgama simob va metall qotishmasi bilan bog‘liq stomatologik tiklovchi materialdir."
+            },
+            {
+              "id": "pre_session_19_q02",
+              "q": "Kornilov tasnifida amalgamaning qanday turlari bor?",
+              "options": [
+                "Faqat shishaionomer va polikarboksilat",
+                "Faqat fosfat va silikat",
+                "Kumushli va misli",
+                "Faqat vaqtinchalik va layner"
+              ],
+              "answer": 2,
+              "explanation": "Kornilov darsligida kumushli va misli amalgamalar farqlanadi."
+            },
+            {
+              "id": "pre_session_19_q03",
+              "q": "Kumushli amalgama tarkibida qaysi metall mavjud?",
+              "options": [
+                "Kaltsiy",
+                "Kumush",
+                "Natriy",
+                "Kaliy"
+              ],
+              "answer": 1,
+              "explanation": "Kornilov darsligida kumushli amalgama qotishmasida kumush, qalay, mis va rux qatnashishi ko‘rsatilgan."
+            },
+            {
+              "id": "pre_session_19_q04",
+              "q": "Kumushli amalgamaning boshqa komponenti qaysi?",
+              "options": [
+                "Qalay",
+                "Kremniy dioksidi",
+                "Kaolin",
+                "Ftoridli shisha"
               ],
               "answer": 0,
-              "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
+              "explanation": "Kornilov darsligida kumushli amalgama qotishmasida kumush, qalay, mis va rux qatnashishi ko‘rsatilgan."
+            },
+            {
+              "id": "pre_session_19_q05",
+              "q": "Amalgama qotishmasida misning ahamiyati nima?",
+              "options": [
+                "Faqat rentgen tasvirini chiqarishi",
+                "Faqat ultratovush hosil qilishi",
+                "Faqat shisha qoplash",
+                "Fizik va mexanik xossalariga ta’sir etishi"
+              ],
+              "answer": 3,
+              "explanation": "Metallarning nisbati materialning qotish xususiyati, qattiqligi va deformatsiyaga chidamliligiga ta’sir qiladi."
+            },
+            {
+              "id": "pre_session_19_q06",
+              "q": "Amalgama tarixan qanday materiallar guruhiga kirgan?",
+              "options": [
+                "Ko‘rik ko‘zgulari",
+                "Bormashina rotorlar",
+                "Metall tiklovchi plombalar",
+                "Endodontik fayllar"
+              ],
+              "answer": 2,
+              "explanation": "Amalgama simob va metall qotishmasi bilan bog‘liq stomatologik tiklovchi materialdir."
+            },
+            {
+              "id": "pre_session_19_q07",
+              "q": "Amalgama qotishmasidagi metall nisbati nimaga ta’sir qiladi?",
+              "options": [
+                "Faqat klinika nomiga",
+                "Mustahkamlik va qotish xossalariga",
+                "Faqat kreslo o‘lchamiga",
+                "Faqat so‘lak so‘rg‘ichga"
+              ],
+              "answer": 1,
+              "explanation": "Kornilov darsligida kumushli amalgama qotishmasida kumush, qalay, mis va rux qatnashishi ko‘rsatilgan."
+            },
+            {
+              "id": "pre_session_19_q08",
+              "q": "Misli amalgama nimasi bilan farq qiladi?",
+              "options": [
+                "Metall tarkibi bilan",
+                "Faqat yoritgich bilan",
+                "Faqat stul rangi bilan",
+                "Faqat oyna diametri bilan"
+              ],
+              "answer": 0,
+              "explanation": "Mis miqdori qotishma xossalariga ta’sir qiladi; ayrim eski misli materiallar tish to‘qimalarida rang o‘zgarishi bilan bog‘liq bo‘lishi mumkin."
+            },
+            {
+              "id": "pre_session_19_q09",
+              "q": "Ayrim tarixiy misli amalgamalarning kamchiligi nima?",
+              "options": [
+                "Ftorni juda ko‘p ajratishi",
+                "Faqat suyuq bo‘lishi",
+                "Faqat radiatsiya chiqarishi",
+                "Tish to‘qimasida rang o‘zgarishi"
+              ],
+              "answer": 3,
+              "explanation": "Mis miqdori qotishma xossalariga ta’sir qiladi; ayrim eski misli materiallar tish to‘qimalarida rang o‘zgarishi bilan bog‘liq bo‘lishi mumkin."
+            },
+            {
+              "id": "pre_session_19_q10",
+              "q": "Amalgamadagi simob mavzusi nima uchun muhim?",
+              "options": [
+                "Faqat shaffoflik uchun",
+                "Faqat ko‘zgu kattaligi uchun",
+                "Xavfsizlik va ekologik baholash uchun",
+                "Faqat rotor tezligi uchun"
+              ],
+              "answer": 2,
+              "explanation": "Amalgama simob va metall qotishmasi bilan bog‘liq stomatologik tiklovchi materialdir."
             }
           ],
           "teacher_materials": [
@@ -997,7 +3192,7 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "review_status": "USER_SOURCE_DRAFT — 10 topic-specific practice questions from uploaded dental textbooks",
           "source_pages": [
             {
               "book": "Kornilov",
@@ -1025,7 +3220,128 @@
               "body": "Darslikda amalgama yuzasining yakuniy konturlanishi va pardozlanishi uning silliqligi hamda chetlarining sifatiga ta’sir qilishi ko‘rsatilgan. Ushbu bo‘lim tarixiy materialshunoslik ma’lumoti sifatida beriladi, bemorga mustaqil muolaja qilish yo‘riqnomasi emas."
             }
           ],
-          "questions": [],
+          "questions": [
+            {
+              "id": "pre_session_20_q01",
+              "q": "Amalgamaning tarixiy afzalligi nima?",
+              "options": [
+                "Mexanik mustahkamlik",
+                "Tish rangiga to‘liq moslik",
+                "Ftorning doimiy ko‘p ajralishi",
+                "Nurlanib qotishi"
+              ],
+              "answer": 0,
+              "explanation": "Darslik amalgamaning mexanik mustahkamligi, qattiqligi va chaynash bosimiga chidamliligini ijobiy xususiyatlar sifatida sanaydi."
+            },
+            {
+              "id": "pre_session_20_q02",
+              "q": "Amalgama nega chaynov tishlarini tiklashda tarixan qo‘llangan?",
+              "options": [
+                "Mutlaqo shaffofligi sabab",
+                "Faqat estetik rangi sabab",
+                "Faqat engil plastik bo‘lgani uchun",
+                "Chaynash yukiga chidamliligi sabab"
+              ],
+              "answer": 3,
+              "explanation": "Darslik amalgamaning mexanik mustahkamligi, qattiqligi va chaynash bosimiga chidamliligini ijobiy xususiyatlar sifatida sanaydi."
+            },
+            {
+              "id": "pre_session_20_q03",
+              "q": "Amalgamaning estetik kamchiligi nima?",
+              "options": [
+                "Mutlaqo rangsiz bo‘lishi",
+                "Har doim tish rangida bo‘lishi",
+                "Tish rangiga mos emasligi",
+                "Faqat ko‘zgu bo‘lishi"
+              ],
+              "answer": 2,
+              "explanation": "Amalgama tish rangiga mos kelmaydi, issiqlikni yaxshi o‘tkazadi va kimyoviy adgeziyasi cheklangan."
+            },
+            {
+              "id": "pre_session_20_q04",
+              "q": "Amalgama issiqlikni qanday o‘tkazadi?",
+              "options": [
+                "Mutlaqo o‘tkazmaydi",
+                "Yaxshi o‘tkazadi",
+                "Faqat yorug‘likni o‘tkazadi",
+                "Faqat magnitni uzatadi"
+              ],
+              "answer": 1,
+              "explanation": "Amalgama tish rangiga mos kelmaydi, issiqlikni yaxshi o‘tkazadi va kimyoviy adgeziyasi cheklangan."
+            },
+            {
+              "id": "pre_session_20_q05",
+              "q": "Amalgamaning kimyoviy adgeziyasi qanday?",
+              "options": [
+                "Cheklangan",
+                "Shishaionomernikidan har doim kuchliroq",
+                "Har doim to‘liq yopishadi",
+                "Har doim suvda eriydi"
+              ],
+              "answer": 0,
+              "explanation": "Amalgama tish rangiga mos kelmaydi, issiqlikni yaxshi o‘tkazadi va kimyoviy adgeziyasi cheklangan."
+            },
+            {
+              "id": "pre_session_20_q06",
+              "q": "Amalgama sirtiga yakuniy ishlov nima uchun muhim?",
+              "options": [
+                "Kanal sonini ko‘paytirish",
+                "Tish bo‘shlig‘ini yoritish",
+                "Kresloni harakatga keltirish",
+                "Silliqlik va chetlarning sifatini yaxshilash"
+              ],
+              "answer": 3,
+              "explanation": "Darslikda amalgama yuzasining yakuniy konturlanishi va pardozlanishi uning silliqligi hamda chetlarining sifatiga ta’sir qilishi ko‘rsatilgan."
+            },
+            {
+              "id": "pre_session_20_q07",
+              "q": "Amalgama tarkibidagi qaysi komponent xavfsizlik muhokamasiga sabab?",
+              "options": [
+                "Kaolin",
+                "Polikislota",
+                "Simob",
+                "Shisha kukuni"
+              ],
+              "answer": 2,
+              "explanation": "Darslikda amalgama yuzasining yakuniy konturlanishi va pardozlanishi uning silliqligi hamda chetlarining sifatiga ta’sir qilishi ko‘rsatilgan."
+            },
+            {
+              "id": "pre_session_20_q08",
+              "q": "Amalgama qanday mexanik yuklamaga mos deb baholangan?",
+              "options": [
+                "Faqat tovush bosimiga",
+                "Chaynash bosimiga",
+                "Faqat yorug‘lik bosimiga",
+                "Faqat osmosga"
+              ],
+              "answer": 1,
+              "explanation": "Darslik amalgamaning mexanik mustahkamligi, qattiqligi va chaynash bosimiga chidamliligini ijobiy xususiyatlar sifatida sanaydi."
+            },
+            {
+              "id": "pre_session_20_q09",
+              "q": "Amalgamada vaqt o‘tishi bilan nimaning ko‘rinishi o‘zgarishi mumkin?",
+              "options": [
+                "Sirt ko‘rinishining",
+                "Ildiz kanalining soni",
+                "Yuqori jag‘ning o‘lchami",
+                "Bemorning tish formulasi"
+              ],
+              "answer": 0,
+              "explanation": "Darslikda amalgama yuzasining yakuniy konturlanishi va pardozlanishi uning silliqligi hamda chetlarining sifatiga ta’sir qilishi ko‘rsatilgan."
+            },
+            {
+              "id": "pre_session_20_q10",
+              "q": "Amalgama mavzusini qanday o‘rganish kerak?",
+              "options": [
+                "Faqat ko‘zgu turlari doirasida",
+                "Faqat ortodontik sim o‘lchami orqali",
+                "Faqat stetoskop orqali",
+                "Tarixiy materialshunoslik, afzallik va cheklovlar doirasida"
+              ],
+              "answer": 3,
+              "explanation": "Ushbu bo‘lim tarixiy materialshunoslik ma’lumoti sifatida beriladi, bemorga mustaqil muolaja qilish yo‘riqnomasi emas."
+            }
+          ],
           "teacher_materials": [
             {
               "title": "Kalendar reja",
@@ -1040,7 +3356,7 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "review_status": "USER_SOURCE_DRAFT — 10 topic-specific practice questions from uploaded dental textbooks",
           "source_pages": [
             {
               "book": "Kornilov",
@@ -1075,15 +3391,123 @@
           "questions": [
             {
               "id": "pre_session_21_req1",
-              "q": "Siler va filer atamalari qaysi yo‘nalishga tegishli?",
+              "q": "Ildiz kanali uchun plomba materialining asosiy vazifasi nima?",
               "options": [
-                "Endodontik plomba materiallari",
-                "Kreslo",
-                "Yoritgich",
-                "Eshitish tizimi"
+                "Faqat tish sirtini bo‘yash",
+                "Kanal bo‘shlig‘ini germetik to‘ldirish",
+                "Faqat ko‘zgu tutish",
+                "Faqat shifokor kreslosini sozlash"
+              ],
+              "answer": 1,
+              "explanation": "Ildiz kanalini to‘ldirishda ishlatiladigan materiallar tishning toj qismidagi plomba materiallaridan farq qiladi."
+            },
+            {
+              "id": "pre_session_21_q02",
+              "q": "Endodontik material qaysi tiklovchi materialdan farqlanadi?",
+              "options": [
+                "Tish tojidagi plombadan",
+                "Siler materialidan",
+                "Guttaperchadan",
+                "Kanal shtiftidan"
               ],
               "answer": 0,
-              "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
+              "explanation": "Ildiz kanalini to‘ldirishda ishlatiladigan materiallar tishning toj qismidagi plomba materiallaridan farq qiladi."
+            },
+            {
+              "id": "pre_session_21_q03",
+              "q": "Endodontik materiallar qotishiga ko‘ra qanday ajratilishi mumkin?",
+              "options": [
+                "Faqat ko‘zgu va pinset",
+                "Faqat disk va freza",
+                "Faqat metall va rezina dastaklar",
+                "Qotmaydigan pasta va qotuvchi materiallar"
+              ],
+              "answer": 3,
+              "explanation": "Kornilov darsligida qotmaydigan antiseptik pastalar, qotuvchi pastalar va sementlar alohida guruhlarga ajratilgan."
+            },
+            {
+              "id": "pre_session_21_q04",
+              "q": "Guttapercha odatda qaysi rol bilan bog‘liq?",
+              "options": [
+                "Faqat yoritgich linzasi",
+                "Faqat ko‘zgu tutqichi",
+                "Kanalning asosiy qattiq to‘ldiruvchi materiali",
+                "Faqat sement shpateli"
+              ],
+              "answer": 2,
+              "explanation": "Kanalni to‘ldirishda asosiy qattiq material sifatida guttapercha shtiftlari, oraliqlarni germetiklash uchun esa siler qo‘llanadigan tizimlar tasvirlangan."
+            },
+            {
+              "id": "pre_session_21_q05",
+              "q": "Silerning vazifasi nima?",
+              "options": [
+                "Tish toji rangini o‘lchash",
+                "Kanal devori va to‘ldiruvchi orasidagi bo‘shliqlarni germetiklash",
+                "Asbob patnisini dezinfeksiyalash",
+                "Borni aylantirish"
+              ],
+              "answer": 1,
+              "explanation": "Kanalni to‘ldirishda asosiy qattiq material sifatida guttapercha shtiftlari, oraliqlarni germetiklash uchun esa siler qo‘llanadigan tizimlar tasvirlangan."
+            },
+            {
+              "id": "pre_session_21_q06",
+              "q": "Qotmaydigan pasta nimasi bilan cheklanishi mumkin?",
+              "options": [
+                "Uzoq muddatli germetiklik bilan",
+                "Faqat bor shakli bilan",
+                "Faqat ko‘zgu diametri bilan",
+                "Faqat kreslo balandligi bilan"
+              ],
+              "answer": 0,
+              "explanation": "Qotmaydigan materiallarning uzoq muddatli germetikligi cheklangan bo‘lishi mumkin; qotadigan materiallar esa boshqa mexanik xususiyatlarga ega."
+            },
+            {
+              "id": "pre_session_21_q07",
+              "q": "Endodontik shtiftlarning qaysi turi manbada tasvirlangan?",
+              "options": [
+                "Elektr chiroq shtifti",
+                "Pinset shtifti",
+                "Shisha plomba shtifti",
+                "Guttapercha shtifti"
+              ],
+              "answer": 3,
+              "explanation": "Kanalni to‘ldirishda asosiy qattiq material sifatida guttapercha shtiftlari, oraliqlarni germetiklash uchun esa siler qo‘llanadigan tizimlar tasvirlangan."
+            },
+            {
+              "id": "pre_session_21_q08",
+              "q": "Rentgenkontrastlik nimani anglatadi?",
+              "options": [
+                "Material faqat yorug‘lik tarqatishini",
+                "Faqat ion o‘tkazishini",
+                "Material rentgen tasvirida ajralib ko‘rinishini",
+                "Materialning tovush chiqarishini"
+              ],
+              "answer": 2,
+              "explanation": "Endodontik plomba materiali rentgen tasvirida ajralib ko‘rinishi, hajmni saqlashi, to‘qimalarga biologik mos bo‘lishi va kanal devori bilan tutashishi kabi xossalarga ega bo‘lishi kerak."
+            },
+            {
+              "id": "pre_session_21_q09",
+              "q": "Endodontik materialda hajm barqarorligi nega muhim?",
+              "options": [
+                "Faqat uning qutisi shakli uchun",
+                "Kanalni uzoq muddat zich yopishga ta’sir qilishi uchun",
+                "Faqat yoritgich chirog‘i uchun",
+                "Faqat kreslo harakati uchun"
+              ],
+              "answer": 1,
+              "explanation": "Endodontik plomba materiali rentgen tasvirida ajralib ko‘rinishi, hajmni saqlashi, to‘qimalarga biologik mos bo‘lishi va kanal devori bilan tutashishi kabi xossalarga ega bo‘lishi kerak."
+            },
+            {
+              "id": "pre_session_21_q10",
+              "q": "Endodontik materialda biologik moslik nimaga tegishli?",
+              "options": [
+                "Atrofdagi to‘qimalarga mos bo‘lishga",
+                "Faqat turbina shovqiniga",
+                "Faqat patnis hajmiga",
+                "Faqat ko‘zgu og‘irligiga"
+              ],
+              "answer": 0,
+              "explanation": "Endodontik plomba materiali rentgen tasvirida ajralib ko‘rinishi, hajmni saqlashi, to‘qimalarga biologik mos bo‘lishi va kanal devori bilan tutashishi kabi xossalarga ega bo‘lishi kerak."
             }
           ],
           "teacher_materials": [
@@ -1100,7 +3524,7 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "review_status": "USER_SOURCE_DRAFT — 10 topic-specific practice questions from uploaded dental textbooks",
           "source_pages": [
             {
               "book": "Kornilov",
@@ -1132,7 +3556,128 @@
               "body": "Darslikda rentgenologik nazorat, kanal uzunligi, materialning rentgenkontrastligi va atrof to‘qimalarning holati nazorat mezonlari sifatida berilgan. Ushbu ma’lumotlar nazariy ta’lim uchun mo‘ljallangan."
             }
           ],
-          "questions": [],
+          "questions": [
+            {
+              "id": "pre_session_22_q01",
+              "q": "Ildiz kanalini obturatsiya qilishning maqsadi nima?",
+              "options": [
+                "Kanal sonini ko‘paytirish",
+                "Tish rangini bo‘yash",
+                "Kanalni zich va barqaror yopish",
+                "Faqat emal yuzasini silliqlash"
+              ],
+              "answer": 2,
+              "explanation": "Endodontik obturatsiya ildiz kanali bo‘shlig‘ini zich yopishni ko‘zlaydi."
+            },
+            {
+              "id": "pre_session_22_q02",
+              "q": "Kanal yetarli to‘ldirilmasa nima zarar ko‘rishi mumkin?",
+              "options": [
+                "Yoritgich nuri",
+                "Germetiklik",
+                "Ko‘zgu kattaligi",
+                "Kreslo motorining quvvati"
+              ],
+              "answer": 1,
+              "explanation": "Endodontik obturatsiya ildiz kanali bo‘shlig‘ini zich yopishni ko‘zlaydi."
+            },
+            {
+              "id": "pre_session_22_q03",
+              "q": "Material apikal sohadan tashqariga chiqsa nima kuzatilishi mumkin?",
+              "options": [
+                "Atrof to‘qimalarga bog‘liq asoratlar",
+                "Faqat sirt yaltiroqligi oshishi",
+                "Faqat bor tezligi o‘zgarishi",
+                "Faqat tish rangi oqarishi"
+              ],
+              "answer": 0,
+              "explanation": "Materialning ildiz cho‘qqisidan tashqariga chiqishi esa atrofdagi to‘qimalar bilan bog‘liq asoratlarga olib kelishi mumkin."
+            },
+            {
+              "id": "pre_session_22_q04",
+              "q": "Ildiz kanallarining qaysi belgisi o‘zgaruvchan?",
+              "options": [
+                "Faqat tish toji rangi",
+                "Faqat ko‘zgu turi",
+                "Faqat bemor kreslosi",
+                "Soni va egriligi"
+              ],
+              "answer": 3,
+              "explanation": "Ildiz kanallarining soni, egriligi va qo‘shimcha tarmoqlari tishdan tishga farq qiladi."
+            },
+            {
+              "id": "pre_session_22_q05",
+              "q": "Kanaldagi qo‘shimcha tarmoqlar nimaga ta’sir qiladi?",
+              "options": [
+                "Faqat shifokor stuli modeliga",
+                "Faqat klinika devoriga",
+                "Obturatsiya murakkabligiga",
+                "Faqat kompressor rangiga"
+              ],
+              "answer": 2,
+              "explanation": "Ildiz kanallarining soni, egriligi va qo‘shimcha tarmoqlari tishdan tishga farq qiladi."
+            },
+            {
+              "id": "pre_session_22_q06",
+              "q": "Kanal sifatini nazorat qilishda qaysi usul muhim?",
+              "options": [
+                "Faqat audiometriya",
+                "Rentgenologik baholash",
+                "Faqat oftalmoskopiya",
+                "Faqat EKG"
+              ],
+              "answer": 1,
+              "explanation": "Darslikda rentgenologik nazorat, kanal uzunligi, materialning rentgenkontrastligi va atrof to‘qimalarning holati nazorat mezonlari sifatida berilgan."
+            },
+            {
+              "id": "pre_session_22_q07",
+              "q": "Plomba materialining qaysi xossasi rentgen nazoratini osonlashtiradi?",
+              "options": [
+                "Rentgenkontrastlik",
+                "Abrazivlik",
+                "Rang o‘zgarishi",
+                "Yuqori tebranish"
+              ],
+              "answer": 0,
+              "explanation": "Darslikda rentgenologik nazorat, kanal uzunligi, materialning rentgenkontrastligi va atrof to‘qimalarning holati nazorat mezonlari sifatida berilgan."
+            },
+            {
+              "id": "pre_session_22_q08",
+              "q": "Apikal soha qaysi anatomik qismga yaqin?",
+              "options": [
+                "Tishning vestibulyar sirtiga",
+                "Ko‘zgu tutqichiga",
+                "Kreslo oyoqchasiga",
+                "Ildiz cho‘qqisiga"
+              ],
+              "answer": 3,
+              "explanation": "Ildiz kanallarining soni, egriligi va qo‘shimcha tarmoqlari tishdan tishga farq qiladi."
+            },
+            {
+              "id": "pre_session_22_q09",
+              "q": "Kanal devoriga zich tutashish nima uchun zarur?",
+              "options": [
+                "Faqat tezlikni oshirish uchun",
+                "Faqat ko‘zgu ko‘rsatishini yaxshilash uchun",
+                "Bo‘shliqlarni germetik yopish uchun",
+                "Faqat borni sovitish uchun"
+              ],
+              "answer": 2,
+              "explanation": "Kanal bo‘shlig‘i to‘liq to‘ldirilmasligi germetiklikka salbiy ta’sir qilishi mumkin."
+            },
+            {
+              "id": "pre_session_22_q10",
+              "q": "Kanalni to‘ldirishda faqat material yetarlimi?",
+              "options": [
+                "Ha, kanallar soni ahamiyatsiz",
+                "Yo‘q, kanal anatomiyasi va nazorat ham muhim",
+                "Ha, rentgenkontrastlik ahamiyatsiz",
+                "Ha, apikal soha ahamiyatsiz"
+              ],
+              "answer": 1,
+              "explanation": "Darslikda rentgenologik nazorat, kanal uzunligi, materialning rentgenkontrastligi va atrof to‘qimalarning holati nazorat mezonlari sifatida berilgan."
+            }
+          ],
           "teacher_materials": [
             {
               "title": "Kalendar reja",
@@ -1147,7 +3692,7 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "review_status": "USER_SOURCE_DRAFT — 10 topic-specific practice questions from uploaded dental textbooks",
           "source_pages": [
             {
               "book": "Kornilov",
@@ -1254,7 +3799,128 @@
               "body": "Yuqori uchinchi molyarlarning ildiz va kanal konfiguratsiyasi ancha o‘zgaruvchan bo‘lishi mumkin. Ushbu manba asosan tishlarning ichki — pulpa bo‘shlig‘i va ildiz kanallari — anatomiyasini yoritadi; tojning barcha tashqi yuzalari bu darslikda to‘liq tasniflanmagan."
             }
           ],
-          "questions": [],
+          "questions": [
+            {
+              "id": "pre_session_26_q01",
+              "q": "Yuqori birinchi premolyarda qaysi kanal-ildiz varianti ko‘p uchraydi?",
+              "options": [
+                "Faqat uch ildiz va to‘rt kanal",
+                "Har doim besh kanal",
+                "Ikki ildiz va ikki kanal",
+                "Har doim kanalsiz"
+              ],
+              "answer": 2,
+              "explanation": "Kornilov darsligining endodontiya bo‘limida yuqori jag‘ birinchi premolyarining ildiz va kanal soni turlicha bo‘lishi, ikki ildizli va ikki kanalli variantlar ko‘p uchrashi qayd etilgan."
+            },
+            {
+              "id": "pre_session_26_q02",
+              "q": "Yuqori ikkinchi premolyarda qaysi variant tez-tez tasvirlangan?",
+              "options": [
+                "To‘rt ildiz va to‘rt kanal",
+                "Bir ildiz va bir kanal",
+                "Faqat ikki ildiz va to‘rt kanal",
+                "Ildiz bo‘lmasligi"
+              ],
+              "answer": 1,
+              "explanation": "Kornilov darsligining endodontiya bo‘limida yuqori jag‘ birinchi premolyarining ildiz va kanal soni turlicha bo‘lishi, ikki ildizli va ikki kanalli variantlar ko‘p uchrashi qayd etilgan."
+            },
+            {
+              "id": "pre_session_26_q03",
+              "q": "Yuqori birinchi molyar odatda nechta ildizga ega?",
+              "options": [
+                "Uchta",
+                "Bitta",
+                "Beshta",
+                "Oltita"
+              ],
+              "answer": 0,
+              "explanation": "Yuqori birinchi molyar odatda uchta ildizga ega bo‘lib, uch yoki undan ko‘p kanal uchrashi mumkin."
+            },
+            {
+              "id": "pre_session_26_q04",
+              "q": "Yuqori molyarda qaysi kanal turi mavjud bo‘lishi mumkin?",
+              "options": [
+                "Faqat ko‘zgu kanali",
+                "Faqat kompressor kanali",
+                "Faqat pulpa yo‘q tuzilma",
+                "Tanglay kanali"
+              ],
+              "answer": 3,
+              "explanation": "Darslikda tanglay kanali va lunj kanallarining shakli, shuningdek tish bo‘shlig‘ining chaynov yuzaga nisbatan joylashuvi tasvirlangan."
+            },
+            {
+              "id": "pre_session_26_q05",
+              "q": "Yuqori molyarning lunj tomonidagi kanallar qanday ataladi?",
+              "options": [
+                "Faqat gingival shpatellar",
+                "Faqat palatinal ko‘zgular",
+                "Lunj (bukkal) kanallari",
+                "Faqat vestibulyar disklar"
+              ],
+              "answer": 2,
+              "explanation": "Darslikda tanglay kanali va lunj kanallarining shakli, shuningdek tish bo‘shlig‘ining chaynov yuzaga nisbatan joylashuvi tasvirlangan."
+            },
+            {
+              "id": "pre_session_26_q06",
+              "q": "Yuqori uchinchi molyarlarning ichki anatomiyasi qanday?",
+              "options": [
+                "Har doim bir xil",
+                "O‘zgaruvchan bo‘lishi mumkin",
+                "Doimo to‘rt ildizli",
+                "Doimo kanalsiz"
+              ],
+              "answer": 1,
+              "explanation": "Yuqori uchinchi molyarlarning ildiz va kanal konfiguratsiyasi ancha o‘zgaruvchan bo‘lishi mumkin."
+            },
+            {
+              "id": "pre_session_26_q07",
+              "q": "Tishning pulpa bo‘shlig‘i nimaning qismi?",
+              "options": [
+                "Ichki tish anatomiyasining",
+                "Faqat emal tashqi sirtining",
+                "Faqat qo‘shni tishlar orasining",
+                "Faqat milk cho‘ntagining"
+              ],
+              "answer": 0,
+              "explanation": "Ushbu manba asosan tishlarning ichki — pulpa bo‘shlig‘i va ildiz kanallari — anatomiyasini yoritadi; tojning barcha tashqi yuzalari bu darslikda to‘liq tasniflanmagan."
+            },
+            {
+              "id": "pre_session_26_q08",
+              "q": "Ildiz kanali soni nimaga bog‘liq farqlanadi?",
+              "options": [
+                "Faqat davolash stuli rangiga",
+                "Faqat yoritgich kuchiga",
+                "Faqat plomba materialiga",
+                "Tish turi va anatomik variantiga"
+              ],
+              "answer": 3,
+              "explanation": "Yuqori uchinchi molyarlarning ildiz va kanal konfiguratsiyasi ancha o‘zgaruvchan bo‘lishi mumkin."
+            },
+            {
+              "id": "pre_session_26_q09",
+              "q": "Yuqori molyarlarning ildizlari qaysi guruhda o‘rganiladi?",
+              "options": [
+                "Faqat frontal tishlar kesuvchi qirrasida",
+                "Faqat ko‘zgu ergonomikasida",
+                "Chaynov tishlar ichki anatomiyasida",
+                "Faqat pinset tasnifida"
+              ],
+              "answer": 2,
+              "explanation": "Ushbu manba asosan tishlarning ichki — pulpa bo‘shlig‘i va ildiz kanallari — anatomiyasini yoritadi; tojning barcha tashqi yuzalari bu darslikda to‘liq tasniflanmagan."
+            },
+            {
+              "id": "pre_session_26_q10",
+              "q": "Ushbu mavzudagi manbaning asosiy qamrovi nima?",
+              "options": [
+                "Barcha tashqi toj yuzalarining to‘liq tasnifi",
+                "Pulpa bo‘shlig‘i va ildiz kanallari",
+                "Faqat tish ranglarini aniqlash",
+                "Faqat tish yuzasini silliqlash"
+              ],
+              "answer": 1,
+              "explanation": "Yuqori uchinchi molyarlarning ildiz va kanal konfiguratsiyasi ancha o‘zgaruvchan bo‘lishi mumkin."
+            }
+          ],
           "teacher_materials": [
             {
               "title": "Kalendar reja",
@@ -1269,7 +3935,7 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "review_status": "USER_SOURCE_DRAFT — 10 topic-specific practice questions from uploaded dental textbooks",
           "source_pages": [
             {
               "book": "Kornilov",
@@ -1297,7 +3963,128 @@
               "body": "Darslik pastki molyarlarda pulpa bo‘shlig‘i va kanal kirishlarining chaynov yuzaga nisbatan proyeksiyasini ko‘rsatadi. Bu bo‘limda tashqi toj relyefi emas, asosan ichki endodontik anatomiya yoritilgan."
             }
           ],
-          "questions": [],
+          "questions": [
+            {
+              "id": "pre_session_27_q01",
+              "q": "Pastki birinchi premolyar odatda qanday ildizga ega?",
+              "options": [
+                "Uchta ildizga",
+                "To‘rtta ildizga",
+                "Ildizsiz",
+                "Bitta ildizga"
+              ],
+              "answer": 3,
+              "explanation": "Kornilov darsligida pastki jag‘ birinchi va ikkinchi premolyarlari ko‘pincha bitta ildizli deb ta’riflangan."
+            },
+            {
+              "id": "pre_session_27_q02",
+              "q": "Pastki ikkinchi premolyarda qaysi holat ko‘p uchraydi?",
+              "options": [
+                "Uch ildiz va to‘rt kanal",
+                "Besh ildiz va bitta kanal",
+                "Bitta ildiz va bitta kanal",
+                "Mutlaqo kanalsiz"
+              ],
+              "answer": 2,
+              "explanation": "Kornilov darsligida pastki jag‘ birinchi va ikkinchi premolyarlari ko‘pincha bitta ildizli deb ta’riflangan."
+            },
+            {
+              "id": "pre_session_27_q03",
+              "q": "Pastki premolyarda qanday anatomik variant uchrashi mumkin?",
+              "options": [
+                "Ko‘zgu teshigi",
+                "Ikkinchi kanal",
+                "Turbina rotori",
+                "Sement kapsulasi"
+              ],
+              "answer": 1,
+              "explanation": "Pastki jag‘ birinchi molyari ko‘pincha ikki ildizli bo‘ladi: mezial ildizda ikkita kanal, distal ildizda esa odatda bitta kanal tasvirlangan."
+            },
+            {
+              "id": "pre_session_27_q04",
+              "q": "Pastki birinchi molyar odatda nechta ildizli bo‘ladi?",
+              "options": [
+                "Ikkita",
+                "Bitta",
+                "To‘rtta",
+                "Oltita"
+              ],
+              "answer": 0,
+              "explanation": "Pastki jag‘ birinchi molyari ko‘pincha ikki ildizli bo‘ladi: mezial ildizda ikkita kanal, distal ildizda esa odatda bitta kanal tasvirlangan."
+            },
+            {
+              "id": "pre_session_27_q05",
+              "q": "Pastki birinchi molyarning mezial ildizida ko‘pincha nechta kanal tasvirlangan?",
+              "options": [
+                "Bitta",
+                "To‘rtta",
+                "Beshta",
+                "Ikkita"
+              ],
+              "answer": 3,
+              "explanation": "Pastki jag‘ birinchi molyari ko‘pincha ikki ildizli bo‘ladi: mezial ildizda ikkita kanal, distal ildizda esa odatda bitta kanal tasvirlangan."
+            },
+            {
+              "id": "pre_session_27_q06",
+              "q": "Pastki molyarning distal ildizida odatda nechta kanal bo‘lishi mumkin?",
+              "options": [
+                "To‘rtta",
+                "Beshta",
+                "Bitta",
+                "Oltita"
+              ],
+              "answer": 2,
+              "explanation": "Darslik pastki molyarlarda pulpa bo‘shlig‘i va kanal kirishlarining chaynov yuzaga nisbatan proyeksiyasini ko‘rsatadi."
+            },
+            {
+              "id": "pre_session_27_q07",
+              "q": "Pastki molyar ichki anatomiyasiga nima kiradi?",
+              "options": [
+                "Faqat vestibulyar bo‘rtma rangi",
+                "Pulpa bo‘shlig‘i va ildiz kanallari",
+                "Faqat emalning tashqi yaltiroqligi",
+                "Faqat tish oralig‘i ko‘zgusi"
+              ],
+              "answer": 1,
+              "explanation": "Darslik pastki molyarlarda pulpa bo‘shlig‘i va kanal kirishlarining chaynov yuzaga nisbatan proyeksiyasini ko‘rsatadi."
+            },
+            {
+              "id": "pre_session_27_q08",
+              "q": "Ildiz kanalining yo‘nalishi qanday bo‘lishi mumkin?",
+              "options": [
+                "Tishdan tishga farqlanadi",
+                "Har doim aynan bir xil",
+                "Har doim mutlaqo tekis",
+                "Faqat qo‘shni tishga parallel"
+              ],
+              "answer": 0,
+              "explanation": "Darslik pastki molyarlarda pulpa bo‘shlig‘i va kanal kirishlarining chaynov yuzaga nisbatan proyeksiyasini ko‘rsatadi."
+            },
+            {
+              "id": "pre_session_27_q09",
+              "q": "Tish bo‘shlig‘i qaysi yuzaga nisbatan tasvirlangan?",
+              "options": [
+                "Faqat quloq suprasiga",
+                "Faqat ko‘zgu sirtiga",
+                "Faqat asbob patnisiga",
+                "Chaynov yuzaga"
+              ],
+              "answer": 3,
+              "explanation": "Darslik pastki molyarlarda pulpa bo‘shlig‘i va kanal kirishlarining chaynov yuzaga nisbatan proyeksiyasini ko‘rsatadi."
+            },
+            {
+              "id": "pre_session_27_q10",
+              "q": "Pastki molyarlar haqida bu manbada nima ustun?",
+              "options": [
+                "Tojning barcha tashqi belgilarini to‘liq tavsiflash",
+                "Faqat yoritgich tanlash",
+                "Ichki endodontik anatomiya",
+                "Faqat amalgama sirtini pardozlash"
+              ],
+              "answer": 2,
+              "explanation": "Bu bo‘limda tashqi toj relyefi emas, asosan ichki endodontik anatomiya yoritilgan."
+            }
+          ],
           "teacher_materials": [
             {
               "title": "Kalendar reja",
@@ -1312,7 +4099,7 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "review_status": "USER_SOURCE_DRAFT — 10 topic-specific practice questions from uploaded dental textbooks",
           "source_pages": [
             {
               "book": "Kornilov",
@@ -1340,7 +4127,128 @@
               "body": "Keltirilgan ma’lumotlar oldingi tishlarning ildizi, kanali va pulpa bo‘shlig‘iga tegishli. Kurak tishlarning kesuvchi qirrasi va qoziq tish tojining barcha anatomik belgilari bo‘yicha to‘liq tashqi tavsif bu manbada mavjud emas."
             }
           ],
-          "questions": [],
+          "questions": [
+            {
+              "id": "pre_session_28_q01",
+              "q": "Yuqori markaziy kurak tish odatda nechta ildizli?",
+              "options": [
+                "Bitta",
+                "Ikkita",
+                "Uchta",
+                "To‘rtta"
+              ],
+              "answer": 0,
+              "explanation": "Kornilov darsligida yuqori markaziy kurak tish odatda bitta ildiz va bitta kanalli deb tasvirlangan."
+            },
+            {
+              "id": "pre_session_28_q02",
+              "q": "Yuqori markaziy kurak tish odatda nechta kanalli?",
+              "options": [
+                "Ikkita",
+                "Uchta",
+                "Beshta",
+                "Bitta"
+              ],
+              "answer": 3,
+              "explanation": "Kornilov darsligida yuqori markaziy kurak tish odatda bitta ildiz va bitta kanalli deb tasvirlangan."
+            },
+            {
+              "id": "pre_session_28_q03",
+              "q": "Yuqori yon kurak tishida kanal soni ko‘pincha qanday?",
+              "options": [
+                "Uchta",
+                "To‘rtta",
+                "Bitta",
+                "Beshta"
+              ],
+              "answer": 2,
+              "explanation": "Kornilov darsligida yuqori markaziy kurak tish odatda bitta ildiz va bitta kanalli deb tasvirlangan."
+            },
+            {
+              "id": "pre_session_28_q04",
+              "q": "Yuqori yon kurak ildizida qanday xususiyat uchrashi mumkin?",
+              "options": [
+                "Mutlaqo ildiz bo‘lmaslik",
+                "Egrilik",
+                "Har doim uchta ildiz",
+                "Doimo beshta kanal"
+              ],
+              "answer": 1,
+              "explanation": "Kornilov darsligida yuqori markaziy kurak tish odatda bitta ildiz va bitta kanalli deb tasvirlangan."
+            },
+            {
+              "id": "pre_session_28_q05",
+              "q": "Yuqori qoziq tishi qanday ildiz belgisi bilan ajraladi?",
+              "options": [
+                "Uzun ildiz bilan",
+                "Har doim uch ildiz bilan",
+                "Ildizsiz bo‘lishi bilan",
+                "Faqat to‘rt kanal bilan"
+              ],
+              "answer": 0,
+              "explanation": "Yuqori qoziq tishi ko‘pincha uzun ildizi bilan ajralib turadi."
+            },
+            {
+              "id": "pre_session_28_q06",
+              "q": "Yuqori qoziq tishi ko‘pincha nechta kanalli?",
+              "options": [
+                "Ikkita",
+                "Uchta",
+                "To‘rtta",
+                "Bitta"
+              ],
+              "answer": 3,
+              "explanation": "Darslikda bitta ildizli va bitta kanalli tuzilish asosiy variant sifatida berilgan."
+            },
+            {
+              "id": "pre_session_28_q07",
+              "q": "Yuqori oldingi tishlarda pulpa bo‘shlig‘i nimaga moslashishi mumkin?",
+              "options": [
+                "Ko‘zgu shakliga",
+                "Kompressor hajmiga",
+                "Toj shakliga",
+                "Asbob patnisiga"
+              ],
+              "answer": 2,
+              "explanation": "Pulpa bo‘shlig‘ining tashqi toj shakliga mosligi ham qayd etilgan."
+            },
+            {
+              "id": "pre_session_28_q08",
+              "q": "Yuqori markaziy va yon kuraklar qaysi guruhga mansub?",
+              "options": [
+                "Molyarlarga",
+                "Frontal tishlarga",
+                "Premolyarlarga",
+                "Faqat sut tishlarga"
+              ],
+              "answer": 1,
+              "explanation": "Kornilov darsligida yuqori markaziy kurak tish odatda bitta ildiz va bitta kanalli deb tasvirlangan."
+            },
+            {
+              "id": "pre_session_28_q09",
+              "q": "Yuqori qoziq tishining ichki anatomiyasida nima o‘rganiladi?",
+              "options": [
+                "Pulpa bo‘shlig‘i va ildiz kanali",
+                "Faqat shifokor stulining holati",
+                "Faqat yoritgichning turishi",
+                "Faqat ishlov berish disklarining shakli"
+              ],
+              "answer": 0,
+              "explanation": "Keltirilgan ma’lumotlar oldingi tishlarning ildizi, kanali va pulpa bo‘shlig‘iga tegishli."
+            },
+            {
+              "id": "pre_session_28_q10",
+              "q": "Yuborilgan kitob bu mavzuda qaysi xususiyatni to‘liq yoritmaydi?",
+              "options": [
+                "Ildiz sonini",
+                "Kanal sonini",
+                "Pulpa bo‘shlig‘ini",
+                "Barcha tashqi toj morfologik belgilarini"
+              ],
+              "answer": 3,
+              "explanation": "Kurak tishlarning kesuvchi qirrasi va qoziq tish tojining barcha anatomik belgilari bo‘yicha to‘liq tashqi tavsif bu manbada mavjud emas."
+            }
+          ],
           "teacher_materials": [
             {
               "title": "Kalendar reja",
@@ -1355,7 +4263,7 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "review_status": "USER_SOURCE_DRAFT — 10 topic-specific practice questions from uploaded dental textbooks",
           "source_pages": [
             {
               "book": "Kornilov",
@@ -1383,7 +4291,128 @@
               "body": "Ushbu darslik frontal tishlarning pulpa bo‘shlig‘i, ildiz kanallari va ularning topografiyasiga e’tibor qaratadi. Tojning vestibulyar va til yuzalari, kontakt nuqtalari kabi tashqi morfologiya belgilarini to‘liq o‘rganish uchun qo‘shimcha anatomiya manbasi kerak."
             }
           ],
-          "questions": [],
+          "questions": [
+            {
+              "id": "pre_session_29_q01",
+              "q": "Pastki markaziy kurak tish odatda nechta ildizli?",
+              "options": [
+                "Uchta",
+                "Bitta",
+                "To‘rtta",
+                "Beshta"
+              ],
+              "answer": 1,
+              "explanation": "Kornilov darsligida pastki markaziy kurak tish ko‘pincha bitta ildizli bo‘lib, ayrim hollarda ikkita kanal mavjudligi tasvirlangan."
+            },
+            {
+              "id": "pre_session_29_q02",
+              "q": "Pastki markaziy kurak tishida qanday kanal varianti uchrashi mumkin?",
+              "options": [
+                "Ikkita kanal",
+                "Har doim beshta kanal",
+                "Mutlaqo kanal bo‘lmasligi",
+                "To‘rtta bir xil kanal"
+              ],
+              "answer": 0,
+              "explanation": "Kornilov darsligida pastki markaziy kurak tish ko‘pincha bitta ildizli bo‘lib, ayrim hollarda ikkita kanal mavjudligi tasvirlangan."
+            },
+            {
+              "id": "pre_session_29_q03",
+              "q": "Pastki yon kurakda qanday kanal xususiyati bo‘lishi mumkin?",
+              "options": [
+                "Faqat ko‘zgu joylashuvi",
+                "Suv yo‘lining ochilishi",
+                "Rotor qoplamasi",
+                "Kanallarning birlashishi"
+              ],
+              "answer": 3,
+              "explanation": "Yon kurak tishlarida ham qo‘shimcha kanal va kanallarning birlashishi kabi variantlar bo‘lishi mumkin."
+            },
+            {
+              "id": "pre_session_29_q04",
+              "q": "Pastki qoziq tishi odatda nechta ildizli?",
+              "options": [
+                "Ikkita",
+                "Uchta",
+                "Bitta",
+                "To‘rtta"
+              ],
+              "answer": 2,
+              "explanation": "Pastki qoziq tishi odatda bitta ildiz va bitta kanal bilan tavsiflanadi."
+            },
+            {
+              "id": "pre_session_29_q05",
+              "q": "Pastki qoziq tishi odatda nechta kanalli?",
+              "options": [
+                "Uchta",
+                "Bitta",
+                "To‘rtta",
+                "Beshta"
+              ],
+              "answer": 1,
+              "explanation": "Pastki qoziq tishi odatda bitta ildiz va bitta kanal bilan tavsiflanadi."
+            },
+            {
+              "id": "pre_session_29_q06",
+              "q": "Pastki qoziq tishining qanday varianti bo‘lishi mumkin?",
+              "options": [
+                "Ikki kanal",
+                "To‘rt ildiz",
+                "Ildizsiz tish",
+                "Besh kanal"
+              ],
+              "answer": 0,
+              "explanation": "Pastki qoziq tishi odatda bitta ildiz va bitta kanal bilan tavsiflanadi."
+            },
+            {
+              "id": "pre_session_29_q07",
+              "q": "Frontal tishlarning ichki anatomiyasiga nima kiradi?",
+              "options": [
+                "Faqat bemor kreslosi",
+                "Faqat ko‘zgu o‘lchami",
+                "Faqat kabinet yoritishi",
+                "Ildiz kanallari va pulpa bo‘shlig‘i"
+              ],
+              "answer": 3,
+              "explanation": "Ushbu darslik frontal tishlarning pulpa bo‘shlig‘i, ildiz kanallari va ularning topografiyasiga e’tibor qaratadi."
+            },
+            {
+              "id": "pre_session_29_q08",
+              "q": "Pastki kurak tishning bitta ildizi har doim bitta kanal deganimi?",
+              "options": [
+                "Ha, mutlaqo shunday",
+                "Har doim uchta kanal",
+                "Yo‘q, qo‘shimcha kanal uchrashi mumkin",
+                "Har doim kanalsiz"
+              ],
+              "answer": 2,
+              "explanation": "Kornilov darsligida pastki markaziy kurak tish ko‘pincha bitta ildizli bo‘lib, ayrim hollarda ikkita kanal mavjudligi tasvirlangan."
+            },
+            {
+              "id": "pre_session_29_q09",
+              "q": "Mazkur manbada nimaga ko‘proq urg‘u berilgan?",
+              "options": [
+                "Faqat tojning tashqi relefiga",
+                "Endodontik topografiyaga",
+                "Faqat tish rangiga",
+                "Faqat korpus jihozlariga"
+              ],
+              "answer": 1,
+              "explanation": "Ushbu darslik frontal tishlarning pulpa bo‘shlig‘i, ildiz kanallari va ularning topografiyasiga e’tibor qaratadi."
+            },
+            {
+              "id": "pre_session_29_q10",
+              "q": "Tishning vestibulyar va til yuzalari nimalarga kiradi?",
+              "options": [
+                "Tashqi anatomik morfologiyaga",
+                "Ildiz kanalining faqat ichki suyuqligiga",
+                "Rotatsion bor qismlariga",
+                "Sement tarkibiga"
+              ],
+              "answer": 0,
+              "explanation": "Tojning vestibulyar va til yuzalari, kontakt nuqtalari kabi tashqi morfologiya belgilarini to‘liq o‘rganish uchun qo‘shimcha anatomiya manbasi kerak."
+            }
+          ],
           "teacher_materials": [
             {
               "title": "Kalendar reja",
@@ -1398,7 +4427,7 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "review_status": "USER_SOURCE_DRAFT — 10 topic-specific practice questions from uploaded dental textbooks",
           "source_pages": [
             {
               "book": "Kornilov",
@@ -1429,15 +4458,123 @@
           "questions": [
             {
               "id": "pre_session_30_req1",
-              "q": "Aylanuvchi dental asboblarni o‘rganishda nima muhim?",
+              "q": "Tish qattiq to‘qimalariga ishlov beruvchi asosiy asbob qaysi?",
               "options": [
-                "O‘qituvchi nazorati va texnik moslik",
-                "Faqat reklama",
-                "Tasodifiy ulash",
-                "Yo‘riqnomani e’tiborsiz qoldirish"
+                "Ko‘zgu",
+                "Pinset",
+                "Stomatologik bor",
+                "Patnis"
+              ],
+              "answer": 2,
+              "explanation": "Tish to‘qimalariga mexanik ishlov berishda emal va dentin xossalari hamda rotatsion asbob boshchasining shakli ahamiyatga ega."
+            },
+            {
+              "id": "pre_session_30_q02",
+              "q": "Borning qaysi qismi tish sirtiga ishlov beradi?",
+              "options": [
+                "Faqat qutisi",
+                "Ishchi boshchasi",
+                "Faqat elektr kabeli",
+                "Faqat patnisi"
+              ],
+              "answer": 1,
+              "explanation": "Tish to‘qimalariga mexanik ishlov berishda emal va dentin xossalari hamda rotatsion asbob boshchasining shakli ahamiyatga ega."
+            },
+            {
+              "id": "pre_session_30_q03",
+              "q": "Kesuvchi qirrali va abraziv qoplamali asboblar nimasi bilan farqlanadi?",
+              "options": [
+                "Ishlov mexanizmi bilan",
+                "Faqat qadoq rangi bilan",
+                "Faqat klinika joyi bilan",
+                "Faqat kreslo turi bilan"
               ],
               "answer": 0,
-              "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
+              "explanation": "Tish to‘qimalariga mexanik ishlov berishda emal va dentin xossalari hamda rotatsion asbob boshchasining shakli ahamiyatga ega."
+            },
+            {
+              "id": "pre_session_30_q04",
+              "q": "Sharsimon bor qanday boshcha turiga ega?",
+              "options": [
+                "Yassi diskli",
+                "To‘g‘ri plastinkali",
+                "Uzun shpatelli",
+                "Dumaloq"
+              ],
+              "answer": 3,
+              "explanation": "Sharsimon, silindrsimon, konussimon, teskari konussimon va olmosli borlar turlicha yuzalar hosil qilishga mo‘ljallangan."
+            },
+            {
+              "id": "pre_session_30_q05",
+              "q": "Olmosli bor qanday sirtga ega?",
+              "options": [
+                "Faqat silliq yog‘ochli",
+                "Faqat shisha oynali",
+                "Abraziv qoplamali",
+                "Faqat paxtali"
+              ],
+              "answer": 2,
+              "explanation": "Bazikyan atlasida rotatsion asboblar ishchi qismi, o‘zak turi va abrazivligi bo‘yicha tasniflangan."
+            },
+            {
+              "id": "pre_session_30_q06",
+              "q": "Finir nimaga ko‘proq mos?",
+              "options": [
+                "Asbobni ulashga",
+                "Nozik kontur ishloviga",
+                "Sementni qorishga",
+                "Rentgen chiqarishga"
+              ],
+              "answer": 1,
+              "explanation": "Freza, finir va polirlar esa konturlash va yakuniy silliqlash bilan bog‘liq asboblardir."
+            },
+            {
+              "id": "pre_session_30_q07",
+              "q": "Polirning vazifasi qaysi?",
+              "options": [
+                "Yakuniy silliqlash",
+                "Borni mahkamlash",
+                "Tojga rentgen olish",
+                "Kanalni baholash"
+              ],
+              "answer": 0,
+              "explanation": "Freza, finir va polirlar esa konturlash va yakuniy silliqlash bilan bog‘liq asboblardir."
+            },
+            {
+              "id": "pre_session_30_q08",
+              "q": "Rotatsion asbob tasnifida nima muhim?",
+              "options": [
+                "Faqat bemor yoshi",
+                "Faqat xona rangi",
+                "Faqat reklama narxi",
+                "Material, o‘zak va abrazivlik"
+              ],
+              "answer": 3,
+              "explanation": "Bazikyan atlasida rotatsion asboblar ishchi qismi, o‘zak turi va abrazivligi bo‘yicha tasniflangan."
+            },
+            {
+              "id": "pre_session_30_q09",
+              "q": "Ortiqcha issiqlik qanday xavfga ega?",
+              "options": [
+                "Tishdagi kanal sonini oshirishi",
+                "Yoritgichni o‘chirishi",
+                "Tish to‘qimalariga salbiy ta’sir etishi",
+                "Ko‘zgu diametrini o‘zgartirishi"
+              ],
+              "answer": 2,
+              "explanation": "Darsliklarda ortiqcha mexanik ishlov berish, issiqlik ajralishi va tish to‘qimasining keraksiz yo‘qotilishi mumkin bo‘lgan cheklovlar sifatida ko‘rsatilgan."
+            },
+            {
+              "id": "pre_session_30_q10",
+              "q": "Tish to‘qimalarini asrash nima bilan bog‘liq?",
+              "options": [
+                "Faqat patnis rangi bilan",
+                "Ishlov ko‘lami va sovitish tizimi bilan",
+                "Faqat bemor poyabzali bilan",
+                "Faqat og‘iz ko‘zgusi rangi bilan"
+              ],
+              "answer": 1,
+              "explanation": "Darsliklarda ortiqcha mexanik ishlov berish, issiqlik ajralishi va tish to‘qimasining keraksiz yo‘qotilishi mumkin bo‘lgan cheklovlar sifatida ko‘rsatilgan."
             }
           ],
           "teacher_materials": [
@@ -1454,7 +4591,7 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "review_status": "USER_SOURCE_DRAFT — 10 topic-specific practice questions from uploaded dental textbooks",
           "source_pages": [
             {
               "book": "Kornilov",
@@ -1490,7 +4627,128 @@
               "body": "Dezinfeksiya mikroorganizmlar sonini kamaytirishga qaratilgan ishlovdir; sterilizatsiya esa mikroorganizmlarning barcha shakllarini yo‘q qilishga qaratiladi. Stomatologik asboblar uchun qayta ishlash talablari asbob materiali va qo‘llanish turiga bog‘liq."
             }
           ],
-          "questions": [],
+          "questions": [
+            {
+              "id": "pre_session_31_q01",
+              "q": "Rotatsion asboblar ishlaganda qaysi xavf omillari yuzaga keladi?",
+              "options": [
+                "Faqat ultrabinafsha chiroq",
+                "Faqat EKG signal",
+                "Faqat qon bosimi",
+                "Tebranish va aerozol"
+              ],
+              "answer": 3,
+              "explanation": "Rotatsion asboblar ishlaganda mexanik tebranish, shovqin, aerozol va uchuvchi mayda zarrachalar yuzaga kelishi mumkin."
+            },
+            {
+              "id": "pre_session_31_q02",
+              "q": "Ko‘zlarni mexanik zarrachalardan himoya qilish uchun nima qo‘llanadi?",
+              "options": [
+                "Shtopfer",
+                "Fissur bor",
+                "Himoya ko‘zoynagi",
+                "Kanal shtifti"
+              ],
+              "answer": 2,
+              "explanation": "Bazikyan atlasida tibbiy qo‘lqoplar, niqoblar va himoya ko‘zoynaklari alohida asbob-uskunalar guruhlari sifatida tasvirlangan."
+            },
+            {
+              "id": "pre_session_31_q03",
+              "q": "Stomatologik xodim uchun shaxsiy himoya vositalari qaysilar?",
+              "options": [
+                "Faqat polir va finir",
+                "Qo‘lqop, niqob va ko‘zoynak",
+                "Faqat ko‘zgu va patnis",
+                "Faqat sement va guttapercha"
+              ],
+              "answer": 1,
+              "explanation": "Bazikyan atlasida tibbiy qo‘lqoplar, niqoblar va himoya ko‘zoynaklari alohida asbob-uskunalar guruhlari sifatida tasvirlangan."
+            },
+            {
+              "id": "pre_session_31_q04",
+              "q": "Borni mahkamlash mexanizmi nega muhim?",
+              "options": [
+                "Asbobning barqaror va xavfsiz turishi uchun",
+                "Sementning rangini aniqlash uchun",
+                "Kresloni ko‘tarish uchun",
+                "Tish ildizining sonini oshirish uchun"
+              ],
+              "answer": 0,
+              "explanation": "Dastakka mos bo‘lmagan, noto‘g‘ri mahkamlangan yoki yeyilgan bor xavf tug‘dirishi mumkin."
+            },
+            {
+              "id": "pre_session_31_q05",
+              "q": "Sovitish kanallari qanday xavfni kamaytiradi?",
+              "options": [
+                "Tish ildizining o‘zgarishini",
+                "Ko‘zgu aksini",
+                "Yorug‘likning rangini",
+                "Ortiqcha issiqlikni"
+              ],
+              "answer": 3,
+              "explanation": "Dastakka mos bo‘lmagan, noto‘g‘ri mahkamlangan yoki yeyilgan bor xavf tug‘dirishi mumkin."
+            },
+            {
+              "id": "pre_session_31_q06",
+              "q": "Dezinfeksiya nimaga qaratilgan?",
+              "options": [
+                "Barcha jismlarni metallga aylantirishga",
+                "Sementni qotirishga",
+                "Infeksion mikroorganizmlarni kamaytirishga",
+                "Borni olmoslashga"
+              ],
+              "answer": 2,
+              "explanation": "Dezinfeksiya mikroorganizmlar sonini kamaytirishga qaratilgan ishlovdir; sterilizatsiya esa mikroorganizmlarning barcha shakllarini yo‘q qilishga qaratiladi."
+            },
+            {
+              "id": "pre_session_31_q07",
+              "q": "Sterilizatsiya nimaga qaratilgan?",
+              "options": [
+                "Faqat sirtni bo‘yashga",
+                "Mikroorganizmlarning barcha shakllarini yo‘q qilishga",
+                "Faqat tish tozalashga",
+                "Faqat shovqinni pasaytirishga"
+              ],
+              "answer": 1,
+              "explanation": "Dezinfeksiya mikroorganizmlar sonini kamaytirishga qaratilgan ishlovdir; sterilizatsiya esa mikroorganizmlarning barcha shakllarini yo‘q qilishga qaratiladi."
+            },
+            {
+              "id": "pre_session_31_q08",
+              "q": "Texnik nosoz dastakning xavfi qaysi?",
+              "options": [
+                "Tebranish va mahkamlashning buzilishi",
+                "Tish rangining o‘zidan-o‘zi o‘zgarishi",
+                "Gematokritning ortishi",
+                "Quloq eshitishining yaxshilanishi"
+              ],
+              "answer": 0,
+              "explanation": "Dastakka mos bo‘lmagan, noto‘g‘ri mahkamlangan yoki yeyilgan bor xavf tug‘dirishi mumkin."
+            },
+            {
+              "id": "pre_session_31_q09",
+              "q": "Kabinet gigiyenasida qaysi omil muhim?",
+              "options": [
+                "Faqat asbob qutisining rangi",
+                "Faqat xona bezagi",
+                "Faqat chiroq ishlab chiqaruvchisi",
+                "Asboblarni qayta ishlash va infektsiya nazorati"
+              ],
+              "answer": 3,
+              "explanation": "Rotatsion asboblar ishlaganda mexanik tebranish, shovqin, aerozol va uchuvchi mayda zarrachalar yuzaga kelishi mumkin."
+            },
+            {
+              "id": "pre_session_31_q10",
+              "q": "Amaliy ishlov kim nazoratida o‘rganilishi lozim?",
+              "options": [
+                "Mutlaqo nazoratsiz",
+                "Faqat internet videosi orqali",
+                "O‘qituvchi va klinik nazorat ostida",
+                "Faqat reklama ko‘rsatmasi bilan"
+              ],
+              "answer": 2,
+              "explanation": "Bunday asboblar bilan amaliy ishlash faqat klinik tartib-qoidalar va o‘qituvchi nazorati ostida amalga oshiriladi."
+            }
+          ],
           "teacher_materials": [
             {
               "title": "Kalendar reja",
@@ -1505,7 +4763,7 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "review_status": "USER_SOURCE_DRAFT — 10 topic-specific practice questions from uploaded dental textbooks",
           "source_pages": [
             {
               "book": "Kornilov",

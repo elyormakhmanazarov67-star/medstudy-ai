@@ -38,7 +38,7 @@ def test_catalog_and_grading():
     assert sum(len(s['lessons']) for s in c['subjects'])==81
     assert len(c['subjects'][0]['lessons'])==31
     assert len(c['subjects'][1]['lessons'])==12
-    assert len(c['subjects'][0]['lessons'][0]['questions'])==1
+    assert len(c['subjects'][0]['lessons'][0]['questions'])==10
     assert c['subjects'][0]['lessons'][0]['sections']
     assert grade([],[])==(0,[])
 
@@ -60,7 +60,7 @@ def test_consent_catalog_quiz_and_delete(client):
     c=client.get('/api/catalog',headers=hdr())
     assert c.status_code==200 and len(c.json()['subjects'])==6
     empty=client.get('/api/lessons/ergonomika',headers=hdr()).json()
-    assert len(empty['questions'])==1
+    assert len(empty['questions'])==10
     assert 'teacher_materials' not in empty
     assert 'sammu_books' not in empty
     assert 'supplementary' not in empty

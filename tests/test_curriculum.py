@@ -82,3 +82,17 @@ def test_preclinical_uploaded_sources_topic_coverage():
     assert all('Manba va chegaralar' not in [sec['heading'] for sec in l['sections']] for l in lessons)
     assert all(not l['questions'] for l in lessons if not l['sections'])
     assert all('teacher_materials' in l for l in lessons)
+
+
+def test_preclinical_quizzes_are_distinct_and_answerable():
+    data=load_catalog()
+    lessons=next(s for s in data['subjects'] if s['id']=='stom_prerest')['lessons']
+    assert sum(len(l['questions']) for l in lessons)==280
+    assert all(len(l['questions'])==10 for l in lessons if l['sections'])
+    assert all(not l['questions'] for l in lessons if not l['sections'])
+    ids=[q['id'] for l in lessons for q in l['questions']]
+    assert len(ids)==len(set(ids))
+    prompts=[q['q'] for l in lessons for q in l['questions']]
+    assert len(prompts)==len(set(prompts))
+    assert all(len(q['options'])==4 and len(set(q['options']))==4
+               and 0<=q['answer']<4 and q['explanation'] for l in lessons for q in l['questions'])
