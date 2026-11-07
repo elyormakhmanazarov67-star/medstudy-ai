@@ -10,7 +10,7 @@ def test_no_material_upload_or_download_endpoints(monkeypatch, tmp_path):
     monkeypatch.setattr(main, 'DEV_PREVIEW', False)
     monkeypatch.setattr(main, 'STORE', Store(str(tmp_path / 'no_files.sqlite')))
     client = TestClient(main.app)
-    assert not any(route.path.startswith('/api/materials') for route in main.app.routes)
+    assert not any(getattr(route, 'path', '').startswith('/api/materials') for route in main.app.routes)
     assert client.post('/api/consent', headers=hdr()).status_code == 200
     for path in ('/api/materials/admin', '/api/materials/1234567890abcdef12345678',
                  '/api/materials/bundle', '/api/materials/upload/1234567890abcdef12345678'):
