@@ -1,5 +1,5 @@
 {
-  "version": "0.5.6-open-source-supplements",
+  "version": "0.5.7-open-notes-and-sammu-books",
   "status": "TEST — O‘qituvchi materiallari va OpenStax ochiq darsliklaridan manba ko‘rsatilgan alohida o‘quv materiallari. Mutaxassis tekshiruvi talab etiladi.",
   "note": "O‘qituvchi matnlari uydirilmaydi; talabadan olingan fayllar nomi ro‘yxatda ko‘rsatiladi. To‘liq fayllarni ilovadan yuklab olish hozir ulanmagan.",
   "subjects": [
@@ -54,17 +54,20 @@
               "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
             }
           ],
-          "supplementary": [
+          "supplementary": [],
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
+          "sammu_books": [
             {
               "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555"
+              "url": "https://e-library.sammu.uz/uz/book/4555",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             },
             {
               "title": "Stomotologik asbob va ashyolar — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2058"
+              "url": "https://e-library.sammu.uz/uz/book/2058",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             }
-          ],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
+          ]
         },
         {
           "id": "ergonomika_2",
@@ -110,17 +113,20 @@
               "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
             }
           ],
-          "supplementary": [
+          "supplementary": [],
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
+          "sammu_books": [
             {
               "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555"
+              "url": "https://e-library.sammu.uz/uz/book/4555",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             },
             {
               "title": "Stomotologik asbob va ashyolar — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2058"
+              "url": "https://e-library.sammu.uz/uz/book/2058",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             }
-          ],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
+          ]
         },
         {
           "id": "qurilmalar",
@@ -166,17 +172,20 @@
               "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
             }
           ],
-          "supplementary": [
+          "supplementary": [],
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
+          "sammu_books": [
             {
               "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555"
+              "url": "https://e-library.sammu.uz/uz/book/4555",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             },
             {
               "title": "Stomotologik asbob va ashyolar — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2058"
+              "url": "https://e-library.sammu.uz/uz/book/2058",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             }
-          ],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
+          ]
         },
         {
           "id": "qurilmalar_2",
@@ -222,17 +231,20 @@
               "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
             }
           ],
-          "supplementary": [
+          "supplementary": [],
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
+          "sammu_books": [
             {
               "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555"
+              "url": "https://e-library.sammu.uz/uz/book/4555",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             },
             {
               "title": "Stomotologik asbob va ashyolar — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2058"
+              "url": "https://e-library.sammu.uz/uz/book/2058",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             }
-          ],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
+          ]
         },
         {
           "id": "qurilmalar_3",
@@ -278,17 +290,20 @@
               "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
             }
           ],
-          "supplementary": [
+          "supplementary": [],
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
+          "sammu_books": [
             {
               "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555"
+              "url": "https://e-library.sammu.uz/uz/book/4555",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             },
             {
               "title": "Stomotologik asbob va ashyolar — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2058"
+              "url": "https://e-library.sammu.uz/uz/book/2058",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             }
-          ],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
+          ]
         },
         {
           "id": "asboblar",
@@ -340,17 +355,20 @@
               "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
             }
           ],
-          "supplementary": [
+          "supplementary": [],
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
+          "sammu_books": [
             {
               "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555"
+              "url": "https://e-library.sammu.uz/uz/book/4555",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             },
             {
               "title": "Stomotologik asbob va ashyolar — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2058"
+              "url": "https://e-library.sammu.uz/uz/book/2058",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             }
-          ],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
+          ]
         },
         {
           "id": "asboblar_2",
@@ -402,17 +420,20 @@
               "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
             }
           ],
-          "supplementary": [
+          "supplementary": [],
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
+          "sammu_books": [
             {
               "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555"
+              "url": "https://e-library.sammu.uz/uz/book/4555",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             },
             {
               "title": "Stomotologik asbob va ashyolar — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2058"
+              "url": "https://e-library.sammu.uz/uz/book/2058",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             }
-          ],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
+          ]
         },
         {
           "id": "rotatsion",
@@ -464,17 +485,20 @@
               "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
             }
           ],
-          "supplementary": [
+          "supplementary": [],
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
+          "sammu_books": [
             {
               "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555"
+              "url": "https://e-library.sammu.uz/uz/book/4555",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             },
             {
               "title": "Stomotologik asbob va ashyolar — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2058"
+              "url": "https://e-library.sammu.uz/uz/book/2058",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             }
-          ],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
+          ]
         },
         {
           "id": "rotatsion_2",
@@ -526,17 +550,20 @@
               "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
             }
           ],
-          "supplementary": [
+          "supplementary": [],
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
+          "sammu_books": [
             {
               "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555"
+              "url": "https://e-library.sammu.uz/uz/book/4555",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             },
             {
               "title": "Stomotologik asbob va ashyolar — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2058"
+              "url": "https://e-library.sammu.uz/uz/book/2058",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             }
-          ],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
+          ]
         },
         {
           "id": "rotatsion_3",
@@ -588,17 +615,20 @@
               "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
             }
           ],
-          "supplementary": [
+          "supplementary": [],
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
+          "sammu_books": [
             {
               "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555"
+              "url": "https://e-library.sammu.uz/uz/book/4555",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             },
             {
               "title": "Stomotologik asbob va ashyolar — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2058"
+              "url": "https://e-library.sammu.uz/uz/book/2058",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             }
-          ],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
+          ]
         },
         {
           "id": "plombalar",
@@ -644,17 +674,20 @@
               "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
             }
           ],
-          "supplementary": [
+          "supplementary": [],
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
+          "sammu_books": [
             {
               "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555"
+              "url": "https://e-library.sammu.uz/uz/book/4555",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             },
             {
               "title": "Stomotologik asbob va ashyolar — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2058"
+              "url": "https://e-library.sammu.uz/uz/book/2058",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             }
-          ],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
+          ]
         },
         {
           "id": "plombalar_2",
@@ -700,17 +733,20 @@
               "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
             }
           ],
-          "supplementary": [
+          "supplementary": [],
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
+          "sammu_books": [
             {
               "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555"
+              "url": "https://e-library.sammu.uz/uz/book/4555",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             },
             {
               "title": "Stomotologik asbob va ashyolar — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2058"
+              "url": "https://e-library.sammu.uz/uz/book/2058",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             }
-          ],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
+          ]
         },
         {
           "id": "tagliklar",
@@ -756,17 +792,20 @@
               "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
             }
           ],
-          "supplementary": [
+          "supplementary": [],
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
+          "sammu_books": [
             {
               "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555"
+              "url": "https://e-library.sammu.uz/uz/book/4555",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             },
             {
               "title": "Stomotologik asbob va ashyolar — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2058"
+              "url": "https://e-library.sammu.uz/uz/book/2058",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             }
-          ],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
+          ]
         },
         {
           "id": "tagliklar_2",
@@ -812,17 +851,20 @@
               "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
             }
           ],
-          "supplementary": [
+          "supplementary": [],
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
+          "sammu_books": [
             {
               "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555"
+              "url": "https://e-library.sammu.uz/uz/book/4555",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             },
             {
               "title": "Stomotologik asbob va ashyolar — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2058"
+              "url": "https://e-library.sammu.uz/uz/book/2058",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             }
-          ],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
+          ]
         },
         {
           "id": "tagliklar_3",
@@ -868,17 +910,20 @@
               "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
             }
           ],
-          "supplementary": [
+          "supplementary": [],
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
+          "sammu_books": [
             {
               "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555"
+              "url": "https://e-library.sammu.uz/uz/book/4555",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             },
             {
               "title": "Stomotologik asbob va ashyolar — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2058"
+              "url": "https://e-library.sammu.uz/uz/book/2058",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             }
-          ],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
+          ]
         },
         {
           "id": "pre_session_16",
@@ -925,7 +970,19 @@
             }
           ],
           "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
+          "sammu_books": [
+            {
+              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
+              "url": "https://e-library.sammu.uz/uz/book/4555",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
+            },
+            {
+              "title": "Stomotologik asbob va ashyolar — SamMU e-library",
+              "url": "https://e-library.sammu.uz/uz/book/2058",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
+            }
+          ]
         },
         {
           "id": "pre_session_17",
@@ -972,7 +1029,19 @@
             }
           ],
           "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
+          "sammu_books": [
+            {
+              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
+              "url": "https://e-library.sammu.uz/uz/book/4555",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
+            },
+            {
+              "title": "Stomotologik asbob va ashyolar — SamMU e-library",
+              "url": "https://e-library.sammu.uz/uz/book/2058",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
+            }
+          ]
         },
         {
           "id": "pre_session_18",
@@ -1019,7 +1088,19 @@
             }
           ],
           "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
+          "sammu_books": [
+            {
+              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
+              "url": "https://e-library.sammu.uz/uz/book/4555",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
+            },
+            {
+              "title": "Stomotologik asbob va ashyolar — SamMU e-library",
+              "url": "https://e-library.sammu.uz/uz/book/2058",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
+            }
+          ]
         },
         {
           "id": "pre_session_19",
@@ -1066,7 +1147,19 @@
             }
           ],
           "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
+          "sammu_books": [
+            {
+              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
+              "url": "https://e-library.sammu.uz/uz/book/4555",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
+            },
+            {
+              "title": "Stomotologik asbob va ashyolar — SamMU e-library",
+              "url": "https://e-library.sammu.uz/uz/book/2058",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
+            }
+          ]
         },
         {
           "id": "pre_session_20",
@@ -1113,7 +1206,19 @@
             }
           ],
           "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
+          "sammu_books": [
+            {
+              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
+              "url": "https://e-library.sammu.uz/uz/book/4555",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
+            },
+            {
+              "title": "Stomotologik asbob va ashyolar — SamMU e-library",
+              "url": "https://e-library.sammu.uz/uz/book/2058",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
+            }
+          ]
         },
         {
           "id": "pre_session_21",
@@ -1160,7 +1265,19 @@
             }
           ],
           "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
+          "sammu_books": [
+            {
+              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
+              "url": "https://e-library.sammu.uz/uz/book/4555",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
+            },
+            {
+              "title": "Stomotologik asbob va ashyolar — SamMU e-library",
+              "url": "https://e-library.sammu.uz/uz/book/2058",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
+            }
+          ]
         },
         {
           "id": "pre_session_22",
@@ -1207,7 +1324,19 @@
             }
           ],
           "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
+          "sammu_books": [
+            {
+              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
+              "url": "https://e-library.sammu.uz/uz/book/4555",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
+            },
+            {
+              "title": "Stomotologik asbob va ashyolar — SamMU e-library",
+              "url": "https://e-library.sammu.uz/uz/book/2058",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
+            }
+          ]
         },
         {
           "id": "pre_session_23",
@@ -1254,7 +1383,19 @@
             }
           ],
           "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
+          "sammu_books": [
+            {
+              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
+              "url": "https://e-library.sammu.uz/uz/book/4555",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
+            },
+            {
+              "title": "Stomotologik asbob va ashyolar — SamMU e-library",
+              "url": "https://e-library.sammu.uz/uz/book/2058",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
+            }
+          ]
         },
         {
           "id": "pre_session_24",
@@ -1301,7 +1442,19 @@
             }
           ],
           "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
+          "sammu_books": [
+            {
+              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
+              "url": "https://e-library.sammu.uz/uz/book/4555",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
+            },
+            {
+              "title": "Stomotologik asbob va ashyolar — SamMU e-library",
+              "url": "https://e-library.sammu.uz/uz/book/2058",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
+            }
+          ]
         },
         {
           "id": "pre_session_25",
@@ -1348,7 +1501,19 @@
             }
           ],
           "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
+          "sammu_books": [
+            {
+              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
+              "url": "https://e-library.sammu.uz/uz/book/4555",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
+            },
+            {
+              "title": "Stomotologik asbob va ashyolar — SamMU e-library",
+              "url": "https://e-library.sammu.uz/uz/book/2058",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
+            }
+          ]
         },
         {
           "id": "pre_session_26",
@@ -1382,7 +1547,19 @@
             }
           ],
           "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
+          "sammu_books": [
+            {
+              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
+              "url": "https://e-library.sammu.uz/uz/book/4555",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
+            },
+            {
+              "title": "Stomotologik asbob va ashyolar — SamMU e-library",
+              "url": "https://e-library.sammu.uz/uz/book/2058",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
+            }
+          ]
         },
         {
           "id": "pre_session_27",
@@ -1416,7 +1593,19 @@
             }
           ],
           "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
+          "sammu_books": [
+            {
+              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
+              "url": "https://e-library.sammu.uz/uz/book/4555",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
+            },
+            {
+              "title": "Stomotologik asbob va ashyolar — SamMU e-library",
+              "url": "https://e-library.sammu.uz/uz/book/2058",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
+            }
+          ]
         },
         {
           "id": "pre_session_28",
@@ -1450,7 +1639,19 @@
             }
           ],
           "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
+          "sammu_books": [
+            {
+              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
+              "url": "https://e-library.sammu.uz/uz/book/4555",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
+            },
+            {
+              "title": "Stomotologik asbob va ashyolar — SamMU e-library",
+              "url": "https://e-library.sammu.uz/uz/book/2058",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
+            }
+          ]
         },
         {
           "id": "pre_session_29",
@@ -1484,7 +1685,19 @@
             }
           ],
           "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
+          "sammu_books": [
+            {
+              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
+              "url": "https://e-library.sammu.uz/uz/book/4555",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
+            },
+            {
+              "title": "Stomotologik asbob va ashyolar — SamMU e-library",
+              "url": "https://e-library.sammu.uz/uz/book/2058",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
+            }
+          ]
         },
         {
           "id": "pre_session_30",
@@ -1531,7 +1744,19 @@
             }
           ],
           "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
+          "sammu_books": [
+            {
+              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
+              "url": "https://e-library.sammu.uz/uz/book/4555",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
+            },
+            {
+              "title": "Stomotologik asbob va ashyolar — SamMU e-library",
+              "url": "https://e-library.sammu.uz/uz/book/2058",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
+            }
+          ]
         },
         {
           "id": "pre_session_31",
@@ -1578,7 +1803,19 @@
             }
           ],
           "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
+          "sammu_books": [
+            {
+              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
+              "url": "https://e-library.sammu.uz/uz/book/4555",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
+            },
+            {
+              "title": "Stomotologik asbob va ashyolar — SamMU e-library",
+              "url": "https://e-library.sammu.uz/uz/book/2058",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
+            }
+          ]
         }
       ]
     },
@@ -1599,17 +1836,20 @@
           "sections": [],
           "teacher_materials": [],
           "questions": [],
-          "supplementary": [
+          "supplementary": [],
+          "review_status": "AWAITING_USER_MATERIALS",
+          "sammu_books": [
             {
               "title": "Stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/50"
+              "url": "https://e-library.sammu.uz/uz/book/50",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             },
             {
               "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555"
+              "url": "https://e-library.sammu.uz/uz/book/4555",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             }
-          ],
-          "review_status": "AWAITING_USER_MATERIALS"
+          ]
         },
         {
           "id": "intro_a2",
@@ -1620,17 +1860,20 @@
           "sections": [],
           "teacher_materials": [],
           "questions": [],
-          "supplementary": [
+          "supplementary": [],
+          "review_status": "AWAITING_USER_MATERIALS",
+          "sammu_books": [
             {
               "title": "Stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/50"
+              "url": "https://e-library.sammu.uz/uz/book/50",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             },
             {
               "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555"
+              "url": "https://e-library.sammu.uz/uz/book/4555",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             }
-          ],
-          "review_status": "AWAITING_USER_MATERIALS"
+          ]
         },
         {
           "id": "intro_a3",
@@ -1641,17 +1884,20 @@
           "sections": [],
           "teacher_materials": [],
           "questions": [],
-          "supplementary": [
+          "supplementary": [],
+          "review_status": "AWAITING_USER_MATERIALS",
+          "sammu_books": [
             {
               "title": "Stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/50"
+              "url": "https://e-library.sammu.uz/uz/book/50",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             },
             {
               "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555"
+              "url": "https://e-library.sammu.uz/uz/book/4555",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             }
-          ],
-          "review_status": "AWAITING_USER_MATERIALS"
+          ]
         },
         {
           "id": "intro_a4",
@@ -1662,17 +1908,20 @@
           "sections": [],
           "teacher_materials": [],
           "questions": [],
-          "supplementary": [
+          "supplementary": [],
+          "review_status": "AWAITING_USER_MATERIALS",
+          "sammu_books": [
             {
               "title": "Stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/50"
+              "url": "https://e-library.sammu.uz/uz/book/50",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             },
             {
               "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555"
+              "url": "https://e-library.sammu.uz/uz/book/4555",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             }
-          ],
-          "review_status": "AWAITING_USER_MATERIALS"
+          ]
         },
         {
           "id": "intro_a5",
@@ -1683,17 +1932,20 @@
           "sections": [],
           "teacher_materials": [],
           "questions": [],
-          "supplementary": [
+          "supplementary": [],
+          "review_status": "AWAITING_USER_MATERIALS",
+          "sammu_books": [
             {
               "title": "Stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/50"
+              "url": "https://e-library.sammu.uz/uz/book/50",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             },
             {
               "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555"
+              "url": "https://e-library.sammu.uz/uz/book/4555",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             }
-          ],
-          "review_status": "AWAITING_USER_MATERIALS"
+          ]
         },
         {
           "id": "intro_a6",
@@ -1704,17 +1956,20 @@
           "sections": [],
           "teacher_materials": [],
           "questions": [],
-          "supplementary": [
+          "supplementary": [],
+          "review_status": "AWAITING_USER_MATERIALS",
+          "sammu_books": [
             {
               "title": "Stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/50"
+              "url": "https://e-library.sammu.uz/uz/book/50",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             },
             {
               "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555"
+              "url": "https://e-library.sammu.uz/uz/book/4555",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             }
-          ],
-          "review_status": "AWAITING_USER_MATERIALS"
+          ]
         },
         {
           "id": "intro_a7",
@@ -1725,17 +1980,20 @@
           "sections": [],
           "teacher_materials": [],
           "questions": [],
-          "supplementary": [
+          "supplementary": [],
+          "review_status": "AWAITING_USER_MATERIALS",
+          "sammu_books": [
             {
               "title": "Stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/50"
+              "url": "https://e-library.sammu.uz/uz/book/50",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             },
             {
               "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555"
+              "url": "https://e-library.sammu.uz/uz/book/4555",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             }
-          ],
-          "review_status": "AWAITING_USER_MATERIALS"
+          ]
         },
         {
           "id": "intro_a8",
@@ -1746,17 +2004,20 @@
           "sections": [],
           "teacher_materials": [],
           "questions": [],
-          "supplementary": [
+          "supplementary": [],
+          "review_status": "AWAITING_USER_MATERIALS",
+          "sammu_books": [
             {
               "title": "Stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/50"
+              "url": "https://e-library.sammu.uz/uz/book/50",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             },
             {
               "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555"
+              "url": "https://e-library.sammu.uz/uz/book/4555",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             }
-          ],
-          "review_status": "AWAITING_USER_MATERIALS"
+          ]
         },
         {
           "id": "intro_a9",
@@ -1767,17 +2028,20 @@
           "sections": [],
           "teacher_materials": [],
           "questions": [],
-          "supplementary": [
+          "supplementary": [],
+          "review_status": "AWAITING_USER_MATERIALS",
+          "sammu_books": [
             {
               "title": "Stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/50"
+              "url": "https://e-library.sammu.uz/uz/book/50",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             },
             {
               "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555"
+              "url": "https://e-library.sammu.uz/uz/book/4555",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             }
-          ],
-          "review_status": "AWAITING_USER_MATERIALS"
+          ]
         },
         {
           "id": "intro_a10",
@@ -1788,17 +2052,20 @@
           "sections": [],
           "teacher_materials": [],
           "questions": [],
-          "supplementary": [
+          "supplementary": [],
+          "review_status": "AWAITING_USER_MATERIALS",
+          "sammu_books": [
             {
               "title": "Stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/50"
+              "url": "https://e-library.sammu.uz/uz/book/50",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             },
             {
               "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555"
+              "url": "https://e-library.sammu.uz/uz/book/4555",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             }
-          ],
-          "review_status": "AWAITING_USER_MATERIALS"
+          ]
         },
         {
           "id": "intro_a11",
@@ -1809,17 +2076,20 @@
           "sections": [],
           "teacher_materials": [],
           "questions": [],
-          "supplementary": [
+          "supplementary": [],
+          "review_status": "AWAITING_USER_MATERIALS",
+          "sammu_books": [
             {
               "title": "Stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/50"
+              "url": "https://e-library.sammu.uz/uz/book/50",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             },
             {
               "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555"
+              "url": "https://e-library.sammu.uz/uz/book/4555",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             }
-          ],
-          "review_status": "AWAITING_USER_MATERIALS"
+          ]
         },
         {
           "id": "intro_a12",
@@ -1830,17 +2100,20 @@
           "sections": [],
           "teacher_materials": [],
           "questions": [],
-          "supplementary": [
+          "supplementary": [],
+          "review_status": "AWAITING_USER_MATERIALS",
+          "sammu_books": [
             {
               "title": "Stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/50"
+              "url": "https://e-library.sammu.uz/uz/book/50",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             },
             {
               "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555"
+              "url": "https://e-library.sammu.uz/uz/book/4555",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             }
-          ],
-          "review_status": "AWAITING_USER_MATERIALS"
+          ]
         }
       ]
     },
@@ -1888,6 +2161,13 @@
               "answer": 1,
               "explanation": "Qo‘shimcha ma’lumotlardagi «Skelet tizimi haqida» bo‘limidan."
             }
+          ],
+          "sammu_books": [
+            {
+              "title": "Odam anatomiyasi — SamMU e-library (Gadayev A.G.)",
+              "url": "https://e-library.sammu.uz/uz/book/216",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
+            }
           ]
         },
         {
@@ -1929,6 +2209,13 @@
               ],
               "answer": 2,
               "explanation": "Qo‘shimcha ma’lumotlardagi «Umurtqa pog‘onasi» bo‘limidan."
+            }
+          ],
+          "sammu_books": [
+            {
+              "title": "Odam anatomiyasi — SamMU e-library (Gadayev A.G.)",
+              "url": "https://e-library.sammu.uz/uz/book/216",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             }
           ]
         },
@@ -1972,6 +2259,13 @@
               "answer": 3,
               "explanation": "Qo‘shimcha ma’lumotlardagi «Ko‘krak qafasi» bo‘limidan."
             }
+          ],
+          "sammu_books": [
+            {
+              "title": "Odam anatomiyasi — SamMU e-library (Gadayev A.G.)",
+              "url": "https://e-library.sammu.uz/uz/book/216",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
+            }
           ]
         },
         {
@@ -2013,6 +2307,13 @@
               ],
               "answer": 0,
               "explanation": "Qo‘shimcha ma’lumotlardagi «Yelka kamari» bo‘limidan."
+            }
+          ],
+          "sammu_books": [
+            {
+              "title": "Odam anatomiyasi — SamMU e-library (Gadayev A.G.)",
+              "url": "https://e-library.sammu.uz/uz/book/216",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             }
           ]
         },
@@ -2056,6 +2357,13 @@
               "answer": 1,
               "explanation": "Qo‘shimcha ma’lumotlardagi «Qo‘l skeleti» bo‘limidan."
             }
+          ],
+          "sammu_books": [
+            {
+              "title": "Odam anatomiyasi — SamMU e-library (Gadayev A.G.)",
+              "url": "https://e-library.sammu.uz/uz/book/216",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
+            }
           ]
         },
         {
@@ -2097,6 +2405,13 @@
               ],
               "answer": 2,
               "explanation": "Qo‘shimcha ma’lumotlardagi «Chanoq kamari» bo‘limidan."
+            }
+          ],
+          "sammu_books": [
+            {
+              "title": "Odam anatomiyasi — SamMU e-library (Gadayev A.G.)",
+              "url": "https://e-library.sammu.uz/uz/book/216",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             }
           ]
         },
@@ -2140,6 +2455,13 @@
               "answer": 3,
               "explanation": "Qo‘shimcha ma’lumotlardagi «Chanoqning funksiyasi» bo‘limidan."
             }
+          ],
+          "sammu_books": [
+            {
+              "title": "Odam anatomiyasi — SamMU e-library (Gadayev A.G.)",
+              "url": "https://e-library.sammu.uz/uz/book/216",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
+            }
           ]
         },
         {
@@ -2181,6 +2503,13 @@
               ],
               "answer": 0,
               "explanation": "Qo‘shimcha ma’lumotlardagi «Oyoq skeletiga kirish» bo‘limidan."
+            }
+          ],
+          "sammu_books": [
+            {
+              "title": "Odam anatomiyasi — SamMU e-library (Gadayev A.G.)",
+              "url": "https://e-library.sammu.uz/uz/book/216",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             }
           ]
         },
@@ -2224,6 +2553,13 @@
               "answer": 1,
               "explanation": "Qo‘shimcha ma’lumotlardagi «Kalla suyagi» bo‘limidan."
             }
+          ],
+          "sammu_books": [
+            {
+              "title": "Odam anatomiyasi — SamMU e-library (Gadayev A.G.)",
+              "url": "https://e-library.sammu.uz/uz/book/216",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
+            }
           ]
         },
         {
@@ -2265,6 +2601,13 @@
               ],
               "answer": 2,
               "explanation": "Qo‘shimcha ma’lumotlardagi «Peshona va g‘alvir suyaklari» bo‘limidan."
+            }
+          ],
+          "sammu_books": [
+            {
+              "title": "Odam anatomiyasi — SamMU e-library (Gadayev A.G.)",
+              "url": "https://e-library.sammu.uz/uz/book/216",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             }
           ]
         },
@@ -2308,6 +2651,13 @@
               "answer": 3,
               "explanation": "Qo‘shimcha ma’lumotlardagi «Ponasimon va chakka suyaklari» bo‘limidan."
             }
+          ],
+          "sammu_books": [
+            {
+              "title": "Odam anatomiyasi — SamMU e-library (Gadayev A.G.)",
+              "url": "https://e-library.sammu.uz/uz/book/216",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
+            }
           ]
         },
         {
@@ -2349,6 +2699,13 @@
               ],
               "answer": 0,
               "explanation": "Qo‘shimcha ma’lumotlardagi «Yuz suyaklari» bo‘limidan."
+            }
+          ],
+          "sammu_books": [
+            {
+              "title": "Odam anatomiyasi — SamMU e-library (Gadayev A.G.)",
+              "url": "https://e-library.sammu.uz/uz/book/216",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             }
           ]
         },
@@ -2392,6 +2749,13 @@
               "answer": 1,
               "explanation": "Qo‘shimcha ma’lumotlardagi «Kalla topografiyasi» bo‘limidan."
             }
+          ],
+          "sammu_books": [
+            {
+              "title": "Odam anatomiyasi — SamMU e-library (Gadayev A.G.)",
+              "url": "https://e-library.sammu.uz/uz/book/216",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
+            }
           ]
         },
         {
@@ -2433,6 +2797,13 @@
               ],
               "answer": 2,
               "explanation": "Qo‘shimcha ma’lumotlardagi «Kalla teshiklari va kanallari» bo‘limidan."
+            }
+          ],
+          "sammu_books": [
+            {
+              "title": "Odam anatomiyasi — SamMU e-library (Gadayev A.G.)",
+              "url": "https://e-library.sammu.uz/uz/book/216",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             }
           ]
         }
@@ -2498,17 +2869,20 @@
               "explanation": "Manba: Lesson 1. Medical_English_Dentistry_.pptx"
             }
           ],
-          "supplementary": [
+          "supplementary": [],
+          "review_status": "USER_SOURCE_DRAFT",
+          "sammu_books": [
             {
               "title": "English in Dentistry — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4059"
+              "url": "https://e-library.sammu.uz/uz/book/4059",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             },
             {
               "title": "English for medical students — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2089"
+              "url": "https://e-library.sammu.uz/uz/book/2089",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             }
-          ],
-          "review_status": "USER_SOURCE_DRAFT"
+          ]
         },
         {
           "id": "eng_l2",
@@ -2566,17 +2940,20 @@
               "explanation": "Manba: My_Working_Day_DentistryL3.pptx"
             }
           ],
-          "supplementary": [
+          "supplementary": [],
+          "review_status": "USER_SOURCE_DRAFT",
+          "sammu_books": [
             {
               "title": "English in Dentistry — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4059"
+              "url": "https://e-library.sammu.uz/uz/book/4059",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             },
             {
               "title": "English for medical students — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2089"
+              "url": "https://e-library.sammu.uz/uz/book/2089",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             }
-          ],
-          "review_status": "USER_SOURCE_DRAFT"
+          ]
         },
         {
           "id": "eng_l3",
@@ -2628,17 +3005,20 @@
               "explanation": "Manba: The_Body_Parts_The_Skeleton_A1_B1_Dentistry (2).pptx"
             }
           ],
-          "supplementary": [
+          "supplementary": [],
+          "review_status": "USER_SOURCE_DRAFT",
+          "sammu_books": [
             {
               "title": "English in Dentistry — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4059"
+              "url": "https://e-library.sammu.uz/uz/book/4059",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             },
             {
               "title": "English for medical students — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2089"
+              "url": "https://e-library.sammu.uz/uz/book/2089",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             }
-          ],
-          "review_status": "USER_SOURCE_DRAFT"
+          ]
         },
         {
           "id": "eng_l4",
@@ -2696,17 +3076,20 @@
               "explanation": "Manba: Parts_of_the_Body_Lecture_on_the_Muscles_A1_B1_Dentistry.pptx"
             }
           ],
-          "supplementary": [
+          "supplementary": [],
+          "review_status": "USER_SOURCE_DRAFT",
+          "sammu_books": [
             {
               "title": "English in Dentistry — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4059"
+              "url": "https://e-library.sammu.uz/uz/book/4059",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             },
             {
               "title": "English for medical students — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2089"
+              "url": "https://e-library.sammu.uz/uz/book/2089",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             }
-          ],
-          "review_status": "USER_SOURCE_DRAFT"
+          ]
         },
         {
           "id": "eng_l5",
@@ -2770,17 +3153,20 @@
               "explanation": "Manba: Heart_Lesson_8_Universal.pptx"
             }
           ],
-          "supplementary": [
+          "supplementary": [],
+          "review_status": "USER_SOURCE_DRAFT",
+          "sammu_books": [
             {
               "title": "English in Dentistry — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4059"
+              "url": "https://e-library.sammu.uz/uz/book/4059",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             },
             {
               "title": "English for medical students — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2089"
+              "url": "https://e-library.sammu.uz/uz/book/2089",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             }
-          ],
-          "review_status": "USER_SOURCE_DRAFT"
+          ]
         }
       ]
     },
@@ -2868,6 +3254,18 @@
               ],
               "answer": 1,
               "explanation": "Qo‘shimcha ma’lumotlardagi «Membrana va transport» bo‘limidan."
+            }
+          ],
+          "sammu_books": [
+            {
+              "title": "Tibbiy biofizika — SamMU e-library",
+              "url": "https://e-library.sammu.uz/uz/book/4558",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
+            },
+            {
+              "title": "Biofizika — SamMU e-library",
+              "url": "https://e-library.sammu.uz/uz/book/2572",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             }
           ]
         },
@@ -2958,6 +3356,18 @@
               "answer": 2,
               "explanation": "Qo‘shimcha ma’lumotlardagi «Mitoxondriya va ATP» bo‘limidan."
             }
+          ],
+          "sammu_books": [
+            {
+              "title": "Tibbiy biofizika — SamMU e-library",
+              "url": "https://e-library.sammu.uz/uz/book/4558",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
+            },
+            {
+              "title": "Biofizika — SamMU e-library",
+              "url": "https://e-library.sammu.uz/uz/book/2572",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
+            }
           ]
         },
         {
@@ -3040,6 +3450,18 @@
               ],
               "answer": 3,
               "explanation": "Qo‘shimcha ma’lumotlardagi «Tovush va to‘lqin» bo‘limidan."
+            }
+          ],
+          "sammu_books": [
+            {
+              "title": "Tibbiy biofizika — SamMU e-library",
+              "url": "https://e-library.sammu.uz/uz/book/4558",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
+            },
+            {
+              "title": "Biofizika — SamMU e-library",
+              "url": "https://e-library.sammu.uz/uz/book/2572",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
             }
           ]
         },
@@ -3124,9 +3546,22 @@
               "answer": 0,
               "explanation": "Qo‘shimcha ma’lumotlardagi «Qovushqoqlik va oqim» bo‘limidan."
             }
+          ],
+          "sammu_books": [
+            {
+              "title": "Tibbiy biofizika — SamMU e-library",
+              "url": "https://e-library.sammu.uz/uz/book/4558",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
+            },
+            {
+              "title": "Biofizika — SamMU e-library",
+              "url": "https://e-library.sammu.uz/uz/book/2572",
+              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
+            }
           ]
         }
       ]
     }
-  ]
+  ],
+  "supplementary_policy": "Qo‘shimcha konspektlar va bepul manbalar mavzu ichida o‘qiladi. SamMU e-library kitoblari alohida bibliografik bo‘limda havola bilan saqlanadi; ruxsat talab etiladigan kitoblar bepul PDF deb ko‘rsatilmaydi. Kerakli (o‘qituvchi) materiallar o‘zgartirilmagan."
 }
