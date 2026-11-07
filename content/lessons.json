@@ -2,7 +2,7 @@
   "version": "0.5.1-draft",
   "status": "DRAFT — SamMU manbalariga asoslangan mustaqil konspekt, mutaxassis tasdig‘i kutilmoqda",
   "curriculum_source": "Talaba taqdim etgan Profi University Navoiy, 2026–2027, 1-semestr, Preklinik restavratsion stomatologiya, 15 ta amaliy mashg‘ulot kalendar rejasi",
-  "reference_scope": "SamMU elektron kutubxonasidagi kitob tavsiflari asosida yo‘nalishlar moslashtirildi. Dars matnlari original; kitoblarning to‘liq matni bandma-band tekshirilmagan.",
+  "reference_scope": "SamMU elektron kutubxonasi katalogidagi darsliklar mavzusi tekshirildi. Materiallar ochiq tavsif va umumiy akademik tushunchalar asosida yozilgan original konspektdir. Kitoblarning to‘liq matni asosida sahifama-sahifa tekshiruv amalga oshirilmagan.",
   "subjects": [
     {
       "id": "stom_prerest",
@@ -43,10 +43,8 @@
           ],
           "sources": [
             "https://e-library.sammu.uz/uz/book/4555",
-            "https://e-library.sammu.uz/uz/book/3055",
-            "https://e-library.sammu.uz/uz/book/343",
-            "https://e-library.sammu.uz/en/book/3055",
-            "https://e-library.sammu.uz/ru/book/5780"
+            "https://e-library.sammu.uz/uz/book/5780",
+            "https://e-library.sammu.uz/uz/book/2058"
           ],
           "questions": [
             {
@@ -197,9 +195,9 @@
             }
           ],
           "sources": [
-            "https://e-library.sammu.uz/uz/book/3055",
             "https://e-library.sammu.uz/uz/book/4555",
-            "https://e-library.sammu.uz/uz/book/343"
+            "https://e-library.sammu.uz/uz/book/5780",
+            "https://e-library.sammu.uz/uz/book/2058"
           ],
           "questions": [
             {
@@ -312,10 +310,8 @@
           ],
           "sources": [
             "https://e-library.sammu.uz/uz/book/4555",
-            "https://e-library.sammu.uz/uz/book/3055",
-            "https://e-library.sammu.uz/uz/book/343",
-            "https://e-library.sammu.uz/uz/book/4516",
-            "https://www.cdc.gov/dental-infection-control/hcp/dental-ipc-faqs/dental-handpieces.html"
+            "https://e-library.sammu.uz/uz/book/5780",
+            "https://e-library.sammu.uz/uz/book/2058"
           ],
           "questions": [
             {
@@ -592,8 +588,8 @@
           ],
           "sources": [
             "https://e-library.sammu.uz/uz/book/4555",
-            "https://e-library.sammu.uz/uz/book/3055",
-            "https://e-library.sammu.uz/uz/book/343"
+            "https://e-library.sammu.uz/uz/book/5780",
+            "https://e-library.sammu.uz/uz/book/2058"
           ],
           "questions": [
             {
@@ -692,9 +688,9 @@
             }
           ],
           "sources": [
-            "https://e-library.sammu.uz/uz/book/2058",
             "https://e-library.sammu.uz/uz/book/4555",
-            "https://e-library.sammu.uz/uz/book/3055"
+            "https://e-library.sammu.uz/uz/book/5780",
+            "https://e-library.sammu.uz/uz/book/2058"
           ],
           "questions": [
             {
@@ -793,9 +789,9 @@
             }
           ],
           "sources": [
-            "https://e-library.sammu.uz/uz/book/2058",
             "https://e-library.sammu.uz/uz/book/4555",
-            "https://e-library.sammu.uz/uz/book/5780"
+            "https://e-library.sammu.uz/uz/book/5780",
+            "https://e-library.sammu.uz/uz/book/2058"
           ],
           "questions": [
             {
@@ -895,8 +891,8 @@
           ],
           "sources": [
             "https://e-library.sammu.uz/uz/book/4555",
-            "https://e-library.sammu.uz/uz/book/2058",
-            "https://e-library.sammu.uz/uz/book/5780"
+            "https://e-library.sammu.uz/uz/book/5780",
+            "https://e-library.sammu.uz/uz/book/2058"
           ],
           "questions": [
             {
@@ -996,8 +992,8 @@
           ],
           "sources": [
             "https://e-library.sammu.uz/uz/book/4555",
-            "https://e-library.sammu.uz/uz/book/2058",
-            "https://e-library.sammu.uz/uz/book/5780"
+            "https://e-library.sammu.uz/uz/book/5780",
+            "https://e-library.sammu.uz/uz/book/2058"
           ],
           "questions": [
             {
@@ -1300,7 +1296,7 @@
           "sources": [
             "https://e-library.sammu.uz/uz/book/4555",
             "https://e-library.sammu.uz/uz/book/5780",
-            "https://e-library.sammu.uz/uz/book/343"
+            "https://e-library.sammu.uz/uz/book/2058"
           ],
           "questions": [
             {
@@ -1502,7 +1498,7 @@
           "sources": [
             "https://e-library.sammu.uz/uz/book/4555",
             "https://e-library.sammu.uz/uz/book/5780",
-            "https://e-library.sammu.uz/uz/book/50"
+            "https://e-library.sammu.uz/uz/book/2058"
           ],
           "questions": [
             {
