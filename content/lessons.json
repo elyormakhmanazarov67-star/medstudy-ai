@@ -1,5 +1,5 @@
 {
-  "version": "0.5.7-open-notes-and-sammu-books",
+  "version": "0.5.8-medical-english-teacher-materials",
   "status": "TEST — O‘qituvchi materiallari va OpenStax ochiq darsliklaridan manba ko‘rsatilgan alohida o‘quv materiallari. Mutaxassis tekshiruvi talab etiladi.",
   "note": "O‘qituvchi matnlari uydirilmaydi; talabadan olingan fayllar nomi ro‘yxatda ko‘rsatiladi. To‘liq fayllarni ilovadan yuklab olish hozir ulanmagan.",
   "subjects": [
@@ -2821,12 +2821,36 @@
           "focus": "Introduction to Medical English",
           "sections": [
             {
-              "heading": "Dars mazmuni",
-              "body": "Medical English bilan tanishuv, tish va og‘iz bo‘shlig‘i atamalari, bemor bilan sodda muloqot. Manba: Lesson 1 taqdimoti va worksheet."
+              "heading": "Dars tushuntirishi — Medical English nima?",
+              "body": "Medical English — shifoxona, stomatologiya klinikasi va tibbiyot ta’limida ishlatiladigan ingliz tili. Darsning maqsadi: o‘zingizni tanishtirish, asosiy tana va og‘iz qismlarini aytish, bemorning sodda shikoyatini tushunish. Tish shifokori bemor bilan xushmuomala, tushunarli savol-javob qilishni o‘rganadi."
             },
             {
-              "heading": "Lug‘at",
-              "body": "tooth — tish; dentist — tish shifokori; mouth — og‘iz; patient — bemor."
+              "heading": "Tana qismlari — English / O‘zbekcha",
+              "body": "head — bosh; face — yuz; eye — ko‘z; ear — quloq; nose — burun; mouth — og‘iz; neck — bo‘yin; arm — qo‘l; hand — qo‘l panjasi; leg — oyoq; cheek — yonoq; chin — iyak; lip — lab; tongue — til; jaw — jag‘."
+            },
+            {
+              "heading": "Og‘iz va tish tuzilishi — lug‘at",
+              "body": "tooth — tish; teeth — tishlar; gum — milk; palate — tanglay; saliva — so‘lak; crown — tish toji; root — ildiz; enamel — emal; dentin — dentin; pulp — pulpa; cavity — karioz kovak; toothache — tish og‘rig‘i; sensitivity — sezgirlik; swelling — shish; dentist — tish shifokori; patient — bemor; treatment — davolash."
+            },
+            {
+              "heading": "Grammatika — birlik va ko‘plik",
+              "body": "Ingliz tilida odatda birlikdan ko‘plik -s bilan yasaladi, lekin istisnolar bor: tooth → teeth; foot → feet; child → children; person → people. “This is a tooth” — Bu bitta tish. “These are teeth” — Bular tishlar. O‘zingizni tanishtirish uchun: “My name is ...”, “I study dentistry”, “I am from ...” kabi tuzilmalardan foydalaning."
+            },
+            {
+              "heading": "Muloqot — Dentist and Patient",
+              "body": "Og‘zaki mashq namunasi: Dentist: “Hello. What seems to be the problem?” Patient: “I have a toothache.” Dentist: “Which tooth hurts?” Patient: “The tooth on this side.” Dentist: “Please open your mouth so I can look.” Bu dialog faqat ingliz tilini mashq qilish uchun, tashxis yoki davolash ko‘rsatmasi emas."
+            },
+            {
+              "heading": "Grammatik va lug‘at mashqlari",
+              "body": "Bo‘sh joylarni to‘ldiring: 1) Open your ____ (og‘iz). 2) My ____ hurts (tish). 3) The ____ examines patients (tish shifokori). 4) One tooth, two _____. 5) The outer tooth layer is _____. Tekshirish javoblari: 1 mouth; 2 tooth; 3 dentist; 4 teeth; 5 enamel. So‘ng “I have a toothache” va “Open your mouth, please” gaplarida kim gapirayotganini ayting."
+            },
+            {
+              "heading": "Mustaqil topshiriq",
+              "body": "O‘qituvchi taqdimotiga ko‘ra: (1) bugungi mavzudan 20 ta yangi so‘zni o‘rganing; (2) tibbiy lug‘at bilan 5 ta inglizcha gap yozing; (3) o‘zingizni 6–8 gapda tanishtiring; (4) dentist–patient dialogini juftlikda mashq qiling; (5) tooth structure lug‘atini takrorlang."
+            },
+            {
+              "heading": "Manbalar",
+              "body": "Lesson 1. Medical_English_Dentistry_.pptx va Medical_English_Dentistry_Worksheet.docx. Ushbu konspekt yuborilgan dars mazmuni asosida qayta bayon qilingan; darsdagi savollar va uy vazifalari alohida ajratilgan."
             }
           ],
           "teacher_materials": [
@@ -2867,10 +2891,106 @@
               ],
               "answer": 2,
               "explanation": "Manba: Lesson 1. Medical_English_Dentistry_.pptx"
+            },
+            {
+              "id": "eng_l1_q3",
+              "q": "“Palate” so‘zining o‘zbekchasi qaysi?",
+              "options": [
+                "yonoq",
+                "tanglay",
+                "milk",
+                "iyak"
+              ],
+              "answer": 1,
+              "explanation": "Palate — tanglay."
+            },
+            {
+              "id": "eng_l1_q4",
+              "q": "“Root” tishning qaysi qismi?",
+              "options": [
+                "toj",
+                "emal",
+                "ildiz",
+                "og‘iz"
+              ],
+              "answer": 2,
+              "explanation": "Root — tish ildizi."
+            },
+            {
+              "id": "eng_l1_q5",
+              "q": "“Tooth” so‘zining ko‘plik shakli qanday?",
+              "options": [
+                "tooths",
+                "toothes",
+                "toothies",
+                "teeth"
+              ],
+              "answer": 3,
+              "explanation": "Tooth → teeth — istisno ko‘plik."
+            },
+            {
+              "id": "eng_l1_q6",
+              "q": "“I ____ dentistry” jumlasini to‘ldiring.",
+              "options": [
+                "study",
+                "studies",
+                "studying",
+                "studied"
+              ],
+              "answer": 0,
+              "explanation": "I bilan fe’lning asosiy shakli: I study dentistry."
+            },
+            {
+              "id": "eng_l1_q7",
+              "q": "“Cavity” atamasi nimani bildiradi?",
+              "options": [
+                "milk",
+                "karioz kovak",
+                "bo‘yin",
+                "ko‘z"
+              ],
+              "answer": 1,
+              "explanation": "Dars lug‘atida cavity — kovak."
+            },
+            {
+              "id": "eng_l1_q8",
+              "q": "“Enamel” qanday tarjima qilinadi?",
+              "options": [
+                "pulpa",
+                "ildiz",
+                "emal",
+                "dentin"
+              ],
+              "answer": 2,
+              "explanation": "Enamel — emal, tishning tashqi qavati."
+            },
+            {
+              "id": "eng_l1_q9",
+              "q": "“I have a toothache” gapini odatda kim aytadi?",
+              "options": [
+                "klinikadagi printer",
+                "stol",
+                "hamma vaqtda o‘qituvchi",
+                "bemor"
+              ],
+              "answer": 3,
+              "explanation": "Og‘riq haqidagi shikoyatni bemor aytadi."
+            },
+            {
+              "id": "eng_l1_q10",
+              "q": "“These are ____” gapidagi mos ko‘plik so‘zni toping.",
+              "options": [
+                "teeth",
+                "tooth",
+                "a tooth",
+                "an enamel"
+              ],
+              "answer": 0,
+              "explanation": "These are ko‘plik shaklini talab qiladi."
             }
           ],
           "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT",
+          "review_status": "USER_SOURCE_EXPANDED_DRAFT",
           "sammu_books": [
             {
               "title": "English in Dentistry — SamMU e-library",
@@ -2892,12 +3012,36 @@
           "focus": "My Working Day — Present Simple",
           "sections": [
             {
-              "heading": "Dars mazmuni",
-              "body": "Kundalik faoliyat, Present Simple va stomatologiya talabasi ish kunini 6–8 sodda gapda aytib berish. Manba: Lesson 3."
+              "heading": "Dars tushuntirishi — My Working Day",
+              "body": "Mavzu stomatologiya talabasining kun tartibini ingliz tilida bayon qilishga bag‘ishlangan. Darsda tana qismlari va og‘iz bo‘shlig‘i lug‘ati takrorlanadi, so‘ng Present Simple bilan har kuni takrorlanadigan ishlar tasvirlanadi. Maqsad — o‘zingiz haqingizda 6–8 sodda gap ayta olish."
             },
             {
-              "heading": "Grammatika",
-              "body": "I study dentistry. She studies dentistry. Present Simple fe’llari: study, read, write, examine."
+              "heading": "Kundalik faoliyat — English / O‘zbekcha",
+              "body": "wake up — uyg‘onmoq; get up — o‘rindan turmoq; wash my face — yuzimni yuvmoq; brush my teeth — tishlarimni yuvmoq; have breakfast — nonushta qilmoq; go to university — universitetga bormoq; attend classes — darslarda qatnashmoq; study dentistry — stomatologiyani o‘rganmoq; have lunch — tushlik qilmoq; come home — uyga kelmoq; do homework — uy vazifasini qilmoq; go to bed — uxlashga yotmoq."
+            },
+            {
+              "heading": "Darsdagi tibbiy fe’llar va vaqtlar",
+              "body": "learn — o‘rganmoq; study — o‘qimoq; ask — so‘ramoq; answer — javob bermoq; read — o‘qimoq; write — yozmoq; listen — tinglamoq; speak — gapirmoq; examine — tekshirmoq; describe — tasvirlamoq. at 7 o’clock — soat 7 da; in the morning — ertalab; in the afternoon — tushdan keyin; in the evening — kechqurun; every day — har kuni."
+            },
+            {
+              "heading": "Grammatika — Present Simple",
+              "body": "Odatdagi ishlar uchun Present Simple ishlatiladi. I/you/we/they + fe’l: “I study dentistry.” He/she/it + fe’lga -s/-es/-ies: “She studies dentistry.” “He examines patients.” Savollar uchun Do/Does: “Do you study English?” — “Yes, I do.” “Does she study dentistry?” — “Yes, she does.” Bo‘lishsiz: “I do not work today”; “He does not study at night.”"
+            },
+            {
+              "heading": "O‘qish mashqi — talabaning kuni",
+              "body": "Manbadagi Aziz haqidagi matnning qisqa qayta bayoni: Aziz stomatologiya talabasi. U ertalab turadi, tishlarini yuvadi va universitetga boradi. Darsda tishlar va og‘iz bo‘shlig‘ini o‘rganadi, keyin uyga qaytib vazifalarni bajaradi va ingliz tilini mashq qiladi. Savollar: What does Aziz study? When does he go to university? What does he do in the evening?"
+            },
+            {
+              "heading": "Muloqot va grammatik mashqlar",
+              "body": "Juftlikdagi savol-javob namunasi: A: “What time do you wake up?” B: “I wake up at seven.” A: “Do you study dentistry?” B: “Yes, I do.” Mashq: 1) She ____ dentistry. 2) Students ____ English. 3) He ____ patients. 4) They ____ books. Javoblar: 1 studies; 2 practise; 3 examines; 4 read."
+            },
+            {
+              "heading": "Mustaqil topshiriq",
+              "body": "My_Working_Day handout bo‘yicha “My Working Day” mavzusida Present Simple ishlatib 8–10 ta gap yozing. Kamida 5 ta kundalik ish atamasi va oldingi darsdan 3 ta fe’lni qo‘llang. Og‘zaki mashqda 30–60 soniya o‘z kuningiz haqida gapiring; bitta stomatologiya bilan bog‘liq faoliyatni ham qo‘shing."
+            },
+            {
+              "heading": "Manbalar",
+              "body": "My_Working_Day_DentistryL3.pptx va My_Working_Day_Dentistry_Student_Handout.docx. Matn mazkur taqdimot hamda handout topshiriqlari asosida qayta tuzilgan."
             }
           ],
           "teacher_materials": [
@@ -2938,10 +3082,106 @@
               ],
               "answer": 0,
               "explanation": "Manba: My_Working_Day_DentistryL3.pptx"
+            },
+            {
+              "id": "eng_l2_q3",
+              "q": "“Wake up” qanday tarjima qilinadi?",
+              "options": [
+                "uxlashga yotmoq",
+                "uyg‘onmoq",
+                "darsga qatnashmoq",
+                "tushlik qilmoq"
+              ],
+              "answer": 1,
+              "explanation": "Wake up — uyg‘onmoq."
+            },
+            {
+              "id": "eng_l2_q4",
+              "q": "“She ____ dentistry” jumlasidagi fe’l.",
+              "options": [
+                "study",
+                "studys",
+                "studies",
+                "studying"
+              ],
+              "answer": 2,
+              "explanation": "He/she/it bilan study → studies."
+            },
+            {
+              "id": "eng_l2_q5",
+              "q": "“We ____ English every day” gapini to‘ldiring.",
+              "options": [
+                "practises",
+                "practising",
+                "practised",
+                "practise"
+              ],
+              "answer": 3,
+              "explanation": "We bilan fe’lning asosiy shakli ishlatiladi."
+            },
+            {
+              "id": "eng_l2_q6",
+              "q": "“At 7 o’clock” qaysi vaqtni bildiradi?",
+              "options": [
+                "soat yettida",
+                "haftada bir marta",
+                "kechagi kun",
+                "ertalab doim"
+              ],
+              "answer": 0,
+              "explanation": "At ... o’clock — aniq soatni bildiradi."
+            },
+            {
+              "id": "eng_l2_q7",
+              "q": "“Do you study dentistry?” savoliga to‘g‘ri qisqa javob qaysi?",
+              "options": [
+                "Yes, I does.",
+                "Yes, I do.",
+                "Yes, I am do.",
+                "Yes, I studies."
+              ],
+              "answer": 1,
+              "explanation": "Do bilan berilgan so‘roqqa Yes, I do deyish mumkin."
+            },
+            {
+              "id": "eng_l2_q8",
+              "q": "“He ____ patients” jumlasini to‘ldiring.",
+              "options": [
+                "examine",
+                "examining",
+                "examines",
+                "examinees"
+              ],
+              "answer": 2,
+              "explanation": "He bilan examine → examines."
+            },
+            {
+              "id": "eng_l2_q9",
+              "q": "“Go to bed” qanday tarjima qilinadi?",
+              "options": [
+                "universitetga bormoq",
+                "tushlik qilmoq",
+                "yuvinmoq",
+                "uxlashga yotmoq"
+              ],
+              "answer": 3,
+              "explanation": "Go to bed — uxlashga yotmoq."
+            },
+            {
+              "id": "eng_l2_q10",
+              "q": "“I do homework in the evening” deganda qachon?",
+              "options": [
+                "kechqurun",
+                "tush payti",
+                "har yakshanba",
+                "ertalab soat beshda"
+              ],
+              "answer": 0,
+              "explanation": "In the evening — kechqurun."
             }
           ],
           "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT",
+          "review_status": "USER_SOURCE_EXPANDED_DRAFT",
           "sammu_books": [
             {
               "title": "English in Dentistry — SamMU e-library",
@@ -2963,12 +3203,40 @@
           "focus": "The Body Parts — The Skeleton",
           "sections": [
             {
-              "heading": "Dars mazmuni",
-              "body": "Skelet, bosh va gavda suyaklari hamda oddiy inglizcha tavsif. Manba: Lesson 6."
+              "heading": "Dars tushuntirishi — The Skeleton",
+              "body": "Skelet — tananing tayanch tizimi. O‘qituvchi taqdimotida voyaga yetgan odamda odatda 206 ta suyak bo‘lishi, skeletning tayanch, himoya, harakatga yordam va shaklni saqlash vazifalari tushuntiriladi. Suyaklar inglizcha nomi bilan birga joylashuvi va oddiy funksiyasi orqali o‘rganiladi."
             },
             {
-              "heading": "Lug‘at",
-              "body": "skull — kalla suyagi; spine — umurtqa pog‘onasi; skeleton — skelet. Voyaga yetgan odamda odatda 206 ta suyak bo‘ladi."
+              "heading": "Tana qismlari — lug‘at",
+              "body": "head — bosh; face — yuz; shoulder — yelka; elbow — tirsak; hand — qo‘l panjasi; chest — ko‘krak; back — orqa; knee — tizza; ankle — to‘piq; foot — oyoq panjasi; finger — barmoq; toe — oyoq barmog‘i."
+            },
+            {
+              "heading": "Suyaklar — English / O‘zbekcha",
+              "body": "skeleton — skelet; bone — suyak; skull — bosh suyagi; jaw — jag‘; spine/backbone — umurtqa pog‘onasi; vertebra — umurtqa; rib — qovurg‘a; rib cage — ko‘krak qafasi; shoulder blade — kurak suyagi; collarbone — o‘mrov suyagi; pelvis — chanoq; joint — bo‘g‘im; femur — son suyagi; patella — tizza qopqog‘i; upper jaw/maxilla — yuqori jag‘; lower jaw/mandible — pastki jag‘."
+            },
+            {
+              "heading": "Skelet vazifalari",
+              "body": "Support — the skeleton supports the body (tayanch); protection — the skull protects the brain, ribs protect the heart and lungs (himoya); movement — bones, joints and muscles work together (harakatga ko‘mak); shape — the skeleton gives the body shape (shaklni saqlash)."
+            },
+            {
+              "heading": "Grammatika — this, these, has, have, can",
+              "body": "“This is the skull” — bu bosh suyagi. “These are the ribs” — bular qovurg‘alar. “The body has 206 bones” — tanada 206 ta suyak bor. “We have two arms” — bizda ikkita qo‘l bor. “Joints can move” — bo‘g‘imlar harakatlana oladi. Mashq: 1) ____ are the ribs. 2) The body ____ bones. 3) Bones ____ protect organs. Javoblar: 1 These; 2 has; 3 can."
+            },
+            {
+              "heading": "Muloqot — anatomy speaking",
+              "body": "Juftlik mashqi namunasi: Student A: “Which bone protects the brain?” Student B: “The skull protects the brain.” A: “What protects the heart and lungs?” B: “The rib cage.” A: “Where is the femur?” B: “It is in the thigh.” So‘ng tanlangan uchta suyak haqida shu uslubda gaplar tuzing."
+            },
+            {
+              "heading": "Mustaqil topshiriq — skelet",
+              "body": "Slaydlardagi mashqlardan: (1) 10 ta tana qismini, 10 ta suyakni inglizcha-o‘zbekcha yozing; (2) skull, rib cage, spine va femur vazifasini bittadan gap bilan ayting; (3) this/these va has/have bilan 4 ta gap tuzing; (4) “The skeleton supports the body” gapi asosida kichik taqdimot qiling."
+            },
+            {
+              "heading": "Mustaqil loyiha — My Future Dental Clinic",
+              "body": "Alohida yuborilgan loyiha fayli shu dars bilan bog‘landi. 4 talabalik jamoada kelajakdagi stomatologiya klinikasini inson tanasiga qiyoslang: kamida 6 ta tana qismi yoki tizimiga klinikadagi o‘xshash vazifani toping. 5–7 slayd tayyorlang, 3–4 daqiqa himoya qiling; har bir talaba 30–45 soniya inglizcha gapirsin. Kamida 10 ta anatomik/tibbiy so‘zdan foydalaning. Baholash jami 20 ball. Bu kreativ til loyihasi, haqiqiy tibbiy loyiha emas."
+            },
+            {
+              "heading": "Manbalar",
+              "body": "The_Body_Parts_The_Skeleton_A1_B1_Dentistry (2).pptx va My_Future_Dental_Clinic_Team_Project_UZ.docx. Konspekt ushbu materiallarga tayanadi."
             }
           ],
           "teacher_materials": [
@@ -2977,6 +3245,12 @@
               "filename": "The_Body_Parts_The_Skeleton_A1_B1_Dentistry (2).pptx",
               "kind": "Fayl",
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
+            },
+            {
+              "title": "My Future Dental Clinic — mustaqil loyiha",
+              "filename": "My_Future_Dental_Clinic_Team_Project_UZ.docx",
+              "kind": "DOCX",
+              "note": "O‘qituvchi yuborgan mustaqil loyiha. Faylni ilovadan yuklab olish hali ulanmagan."
             }
           ],
           "questions": [
@@ -3003,10 +3277,106 @@
               ],
               "answer": 3,
               "explanation": "Manba: The_Body_Parts_The_Skeleton_A1_B1_Dentistry (2).pptx"
+            },
+            {
+              "id": "eng_l3_q3",
+              "q": "“Rib cage” so‘zi nimani bildiradi?",
+              "options": [
+                "bosh suyagi",
+                "ko‘krak qafasi",
+                "son suyagi",
+                "jag‘"
+              ],
+              "answer": 1,
+              "explanation": "Rib cage — ko‘krak qafasi."
+            },
+            {
+              "id": "eng_l3_q4",
+              "q": "Voyaga yetgan odam skeletida odatda nechta suyak bor?",
+              "options": [
+                "106 ta",
+                "306 ta",
+                "206 ta",
+                "506 ta"
+              ],
+              "answer": 2,
+              "explanation": "Dars taqdimotida 206 soni eslatilgan."
+            },
+            {
+              "id": "eng_l3_q5",
+              "q": "“Femur” qaysi suyak?",
+              "options": [
+                "kurak suyagi",
+                "ensa suyagi",
+                "jag‘",
+                "son suyagi"
+              ],
+              "answer": 3,
+              "explanation": "Femur — son suyagi."
+            },
+            {
+              "id": "eng_l3_q6",
+              "q": "“____ are the ribs” gapini to‘ldiring.",
+              "options": [
+                "These",
+                "This",
+                "That is",
+                "Has"
+              ],
+              "answer": 0,
+              "explanation": "Ko‘plik ribs bilan These are ishlatiladi."
+            },
+            {
+              "id": "eng_l3_q7",
+              "q": "“The body ____ 206 bones” gapidagi fe’l.",
+              "options": [
+                "have",
+                "has",
+                "can",
+                "are"
+              ],
+              "answer": 1,
+              "explanation": "The body (it) bilan has."
+            },
+            {
+              "id": "eng_l3_q8",
+              "q": "Qaysi tuzilma bosh miyani himoya qiladi?",
+              "options": [
+                "pelvis",
+                "patella",
+                "skull",
+                "femur"
+              ],
+              "answer": 2,
+              "explanation": "Skull — bosh suyagi, miyani himoya qiladi."
+            },
+            {
+              "id": "eng_l3_q9",
+              "q": "“Mandible” nimani anglatadi?",
+              "options": [
+                "yuqori jag‘",
+                "ko‘krak qafasi",
+                "tirsak",
+                "pastki jag‘"
+              ],
+              "answer": 3,
+              "explanation": "Mandible — pastki jag‘."
+            },
+            {
+              "id": "eng_l3_q10",
+              "q": "Skeletning “protection” vazifasi nima?",
+              "options": [
+                "a’zolarni himoya qilish",
+                "ovqat pishirish",
+                "ovoz yozish",
+                "faqat teri hosil qilish"
+              ],
+              "answer": 0,
+              "explanation": "Protection — himoya."
             }
           ],
           "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT",
+          "review_status": "USER_SOURCE_EXPANDED_DRAFT",
           "sammu_books": [
             {
               "title": "English in Dentistry — SamMU e-library",
@@ -3028,12 +3398,40 @@
           "focus": "Parts of the Body — The Muscles",
           "sections": [
             {
-              "heading": "Dars mazmuni",
-              "body": "Mushaklar, harakat fe’llari va stomatologiyaga oid inglizcha atamalar. Manba: The Muscles taqdimoti."
+              "heading": "Dars tushuntirishi — The Muscles",
+              "body": "Mushaklar suyak va bo‘g‘imlar bilan birga harakatni ta’minlaydi. Darsda mushak qisqarishi (contract), bo‘shashishi (relax), tana holatini ushlash va yuz-jag‘ mushaklarining tish shifokori uchun muhimligi o‘rganiladi. Ayrim mushaklar juftlikda qarama-qarshi harakat uchun ishlaydi."
             },
             {
-              "heading": "Lug‘at",
-              "body": "muscle — mushak; move — harakatlanmoq; contract — qisqarmoq; chew — chaynamoq."
+              "heading": "Harakat fe’llari — English / O‘zbekcha",
+              "body": "move — harakatlanmoq; bend — bukmoq; straighten — to‘g‘rilamoq; raise — ko‘tarmoq; lower — tushirmoq; contract — qisqarmoq; relax — bo‘shashmoq; chew — chaynamoq; smile — jilmaymoq; speak — gapirmoq; swallow — yutmoq."
+            },
+            {
+              "heading": "Mushaklar — lug‘at",
+              "body": "muscle — mushak; biceps — ikki boshli mushak; triceps — uch boshli mushak; chest muscles — ko‘krak mushaklari; abdominal muscles — qorin mushaklari; back muscles — orqa mushaklari; thigh muscles — son mushaklari; calf muscles — boldir mushaklari; facial muscles — yuz mushaklari; jaw muscles — jag‘ mushaklari; masseter — chaynash mushagi; temporalis — chakka mushagi."
+            },
+            {
+              "heading": "Mushaklarning vazifalari",
+              "body": "Biceps qo‘lning bukilishiga yordam beradi; triceps qo‘lning yozilishiga yordam beradi. Facial muscles tabassum va mimikada qatnashadi. Masseter jag‘ni yopish va chaynashda, til mushaklari nutq, chaynash va yutishda ishtirok etadi. Bularning barchasi tibbiy inglizcha gaplarda simple present bilan tasvirlanadi."
+            },
+            {
+              "heading": "Grammatika — Present Simple va can",
+              "body": "Birlikda: “The masseter helps us chew.” “The triceps straightens the arm.” Ko‘plikda: “Muscles move the body.” “Facial muscles show emotions.” Can bilan fe’l asosiy shaklda: “Muscles can contract.” Mashq: 1) The biceps help/helps bend the arm. 2) Muscles move/moves the body. 3) The masseter help/helps us chew. Javoblar: 1 helps; 2 move; 3 helps."
+            },
+            {
+              "heading": "Muloqot — My Jaw Hurts",
+              "body": "Juftlik mashqi namunasi: Dentist: “Where do you feel discomfort?” Patient: “My jaw hurts when I chew.” Dentist: “Can you open your mouth?” Patient: “Yes, I can.” Bu inglizcha shikoyat va savol tuzilishini mashq qilish; tibbiy maslahat yoki tashxis emas."
+            },
+            {
+              "heading": "Reading va mustaqil mashqlar",
+              "body": "Dars matni mazmuni: mushaklar tanani harakatlantiradi, suyaklarni tortadi va ko‘pincha juftlikda ishlaydi; masseter chaynashda muhim. O‘qish savollari: What happens when a muscle contracts? Which muscles move the arm? What does the masseter do? Keyin muscle, bend, contract, relax, chew, masseter so‘zlarini inglizcha-o‘zbekcha kartochkalarga yozing."
+            },
+            {
+              "heading": "Uy vazifasi",
+              "body": "Taqdimotdagi topshiriqlar asosida 10 ta mushak yoki harakat atamasini yodlang. He/she/it bilan -s qo‘shimchasiga oid 5 gap tuzing. Biceps/triceps va masseter haqida ikkita inglizcha gap ayting. Juftlikda qisqa “jaw discomfort” dialogini mashq qiling."
+            },
+            {
+              "heading": "Manbalar",
+              "body": "Parts_of_the_Body_Lecture_on_the_Muscles_A1_B1_Dentistry.pptx va shu darsning PDF nusxasi. Matn ma’ruza asosidagi qisqa o‘quv konspekt."
             }
           ],
           "teacher_materials": [
@@ -3058,7 +3456,7 @@
                 "suyak",
                 "til",
                 "tish",
-                "mușak"
+                "mushak"
               ],
               "answer": 3,
               "explanation": "Manba: Parts_of_the_Body_Lecture_on_the_Muscles_A1_B1_Dentistry.pptx"
@@ -3074,10 +3472,106 @@
               ],
               "answer": 0,
               "explanation": "Manba: Parts_of_the_Body_Lecture_on_the_Muscles_A1_B1_Dentistry.pptx"
+            },
+            {
+              "id": "eng_l4_q3",
+              "q": "“Contract” qanday tarjima qilinadi?",
+              "options": [
+                "bo‘shashmoq",
+                "qisqarmoq",
+                "jilmaymoq",
+                "yozmoq"
+              ],
+              "answer": 1,
+              "explanation": "Contract — qisqarmoq."
+            },
+            {
+              "id": "eng_l4_q4",
+              "q": "“Masseter” ning asosiy vazifalaridan biri nima?",
+              "options": [
+                "ko‘rish",
+                "eshitish",
+                "chaynashda jag‘ni yopishga yordam berish",
+                "yurakni haydash"
+              ],
+              "answer": 2,
+              "explanation": "Masseter chaynash mushagi."
+            },
+            {
+              "id": "eng_l4_q5",
+              "q": "“Biceps” nima qilishga yordam beradi?",
+              "options": [
+                "qo‘lni yozishga",
+                "nafas olishga",
+                "ko‘rishga",
+                "qo‘lni bukishga"
+              ],
+              "answer": 3,
+              "explanation": "Biceps — qo‘lni bukishga yordam beradi."
+            },
+            {
+              "id": "eng_l4_q6",
+              "q": "“Triceps” nima qilishga yordam beradi?",
+              "options": [
+                "qo‘lni yozishga",
+                "chaynashga",
+                "yutinishga",
+                "ko‘rishga"
+              ],
+              "answer": 0,
+              "explanation": "Triceps — qo‘lni yozishga yordam beradi."
+            },
+            {
+              "id": "eng_l4_q7",
+              "q": "“Muscles ____ the body” gapini to‘ldiring.",
+              "options": [
+                "moves",
+                "move",
+                "moving",
+                "moveds"
+              ],
+              "answer": 1,
+              "explanation": "Muscles ko‘plik, shuning uchun move."
+            },
+            {
+              "id": "eng_l4_q8",
+              "q": "“The masseter ____ us chew” jumlasini to‘ldiring.",
+              "options": [
+                "help",
+                "helping",
+                "helps",
+                "helpe"
+              ],
+              "answer": 2,
+              "explanation": "Uchinchi shaxs birlikda helps."
+            },
+            {
+              "id": "eng_l4_q9",
+              "q": "“Relax” so‘zi nimani bildiradi?",
+              "options": [
+                "qisqarmoq",
+                "bukmoq",
+                "yopmoq",
+                "bo‘shashmoq"
+              ],
+              "answer": 3,
+              "explanation": "Relax — bo‘shashmoq."
+            },
+            {
+              "id": "eng_l4_q10",
+              "q": "“Facial muscles” qayerda joylashgan?",
+              "options": [
+                "yuzda",
+                "sonda",
+                "boldirda",
+                "bilakda"
+              ],
+              "answer": 0,
+              "explanation": "Facial muscles — yuz mushaklari."
             }
           ],
           "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT",
+          "review_status": "USER_SOURCE_EXPANDED_DRAFT",
           "sammu_books": [
             {
               "title": "English in Dentistry — SamMU e-library",
@@ -3099,12 +3593,40 @@
           "focus": "The Heart & Vascular System",
           "sections": [
             {
-              "heading": "Dars mazmuni",
-              "body": "Heart, artery, vein va pulse so‘zlari bilan tanishuv. Present Simple orqali yurak va qon aylanishini oddiy gaplarda ifodalash. Manba: Lesson 8."
+              "heading": "Dars tushuntirishi — The Heart & Vascular System",
+              "body": "Yurak qon aylanishini ta’minlaydigan mushakli a’zo. Uning to‘rt bo‘lmachasi/qorinchasidan iborat kamerasi bor: right atrium, right ventricle, left atrium, left ventricle. Arteries qonni yurakdan olib chiqadi, veins yurakka qaytaradi, lungs esa qonning kislorod bilan boyishida ishtirok etadi."
             },
             {
-              "heading": "Lug‘at",
-              "body": "heart — yurak; artery — arteriya; vein — vena; pulse — tomir urishi."
+              "heading": "Yurak va tomirlar — English / O‘zbekcha",
+              "body": "heart — yurak; blood — qon; heartbeat — yurak urishi; pulse — tomir urishi; chest — ko‘krak; lung — o‘pka; oxygen — kislorod; circulation — qon aylanishi; artery — arteriya; vein — vena; capillary — kapillyar; blood vessel — qon tomiri; blood pressure — qon bosimi; valve — klapan; atrium — bo‘lmacha; ventricle — qorincha."
+            },
+            {
+              "heading": "Harakat fe’llari va tibbiy tarix",
+              "body": "pump — haydamoq; carry — tashimoq; flow — oqmoq; beat — urmoq; measure — o‘lchamoq; protect — himoya qilmoq; high blood pressure — yuqori qon bosimi; medicine — dori; medical history — kasallik tarixi. Masalan: “The heart pumps blood.” “Arteries carry blood away from the heart.”"
+            },
+            {
+              "heading": "Qon aylanishining sodda sxemasi",
+              "body": "Darsdagi Blood Drop Relay mashqi: BODY → RIGHT ATRIUM → RIGHT VENTRICLE → LUNGS → LEFT ATRIUM → LEFT VENTRICLE → BODY. O‘pka qonning kislorodlanishida ishtirok etadi. Bu sxema inglizcha anatomiya atamalarini eslab qolish uchun ishlatiladi."
+            },
+            {
+              "heading": "Grammatika — Present Simple, Do / Does",
+              "body": "“The heart pumps blood.” (it → pumps); “Arteries carry blood.” (plural → carry); “The heart has four chambers.” Savollar: “Does the heart pump blood?” — “Yes, it does.” “Do veins carry blood back?” — “Yes, they do.” Mashq: 1) The heart pump/pumps blood. 2) Arteries carry/carries blood. 3) ____ the heart have four chambers? Javoblar: 1 pumps; 2 carry; 3 Does."
+            },
+            {
+              "heading": "Muloqot — dentist va patient medical history",
+              "body": "Juftlikdagi til mashqi: Dentist: “Do you have any heart problems?” Patient: “No, I don’t.” Dentist: “Do you take any medicine?” Patient: “Yes, I do.” Dentist: “Thank you. I will note this in your medical history.” Haqiqiy tibbiy so‘rov uchun alohida klinik malaka va amaliyot nazorati talab etiladi."
+            },
+            {
+              "heading": "Reading va mashqlar",
+              "body": "Worksheet’dagi The Human Heart matniga ko‘ra: heart ko‘krakda joylashadi, to‘rt kameraga ega, qon aylanishini ta’minlaydi; arteries qonni yurakdan olib chiqadi, veins esa qaytaradi. Savollar: Where is the heart? How many chambers are there? What do arteries do? Javoblar: in the chest; four; carry blood away from the heart."
+            },
+            {
+              "heading": "Mustaqil topshiriq",
+              "body": "Heart & Vascular System worksheet asosida: 8 ta atamani tarjima qiling; Present Simple’dan 6 ta gapni yakunlang; Do/Does bilan 4 ta savol tuzing; qonning BODY dan boshlanib BODYga qaytadigan ketma-ketligini yozing; matnga oid savollarga javob bering; juftlikda patient medical history savol-javobini mashq qiling."
+            },
+            {
+              "heading": "Manbalar",
+              "body": "Heart_Lesson_8_Universal.pptx, Heart_Lesson_8_Universal.pdf va Heart_Vascular_System_Lesson8_Student_Worksheet.docx. Qisqa mazmun, grammatika va amaliy vazifalar ushbu manbalardan tuzilgan."
             }
           ],
           "teacher_materials": [
@@ -3151,10 +3673,106 @@
               ],
               "answer": 1,
               "explanation": "Manba: Heart_Lesson_8_Universal.pptx"
+            },
+            {
+              "id": "eng_l5_q3",
+              "q": "“Artery” qonni qayerga olib boradi?",
+              "options": [
+                "yurakka qaytaradi",
+                "yurakdan tashqariga",
+                "faqat ko‘zga",
+                "qon bilan bog‘liq emas"
+              ],
+              "answer": 1,
+              "explanation": "Artery qonni yurakdan olib chiqadi."
+            },
+            {
+              "id": "eng_l5_q4",
+              "q": "“Vein” vazifasi nima?",
+              "options": [
+                "faqat suyakni ushlash",
+                "havo chiqarish",
+                "qonni yurakka qaytarish",
+                "chaynash"
+              ],
+              "answer": 2,
+              "explanation": "Vein — vena, qonning yurakka qaytish yo‘li."
+            },
+            {
+              "id": "eng_l5_q5",
+              "q": "Inson yuragi nechta kameradan iborat?",
+              "options": [
+                "ikkita",
+                "beshta",
+                "oltita",
+                "to‘rtta"
+              ],
+              "answer": 3,
+              "explanation": "Yurakda 2 atria va 2 ventricles bor."
+            },
+            {
+              "id": "eng_l5_q6",
+              "q": "“The heart ____ blood” gapini to‘ldiring.",
+              "options": [
+                "pumps",
+                "pump",
+                "pumping",
+                "pumped always"
+              ],
+              "answer": 0,
+              "explanation": "The heart — it, fe’lga -s qo‘shiladi."
+            },
+            {
+              "id": "eng_l5_q7",
+              "q": "“Do / Does”: ____ the heart beat?",
+              "options": [
+                "Do",
+                "Does",
+                "Is do",
+                "Have"
+              ],
+              "answer": 1,
+              "explanation": "The heart (it) bilan Does ishlatiladi."
+            },
+            {
+              "id": "eng_l5_q8",
+              "q": "Qon kislorod bilan qayerda boyiydi?",
+              "options": [
+                "milkda",
+                "suyakda",
+                "o‘pkada",
+                "og‘izda"
+              ],
+              "answer": 2,
+              "explanation": "Blood receives oxygen in the lungs."
+            },
+            {
+              "id": "eng_l5_q9",
+              "q": "“Pulse” tarjimasi qaysi?",
+              "options": [
+                "yurak klapani",
+                "bosh suyagi",
+                "tish ildizi",
+                "tomir urishi"
+              ],
+              "answer": 3,
+              "explanation": "Pulse — tomir urishi."
+            },
+            {
+              "id": "eng_l5_q10",
+              "q": "“Atrium” o‘zbekchada nima?",
+              "options": [
+                "bo‘lmacha",
+                "qorincha",
+                "arteriya",
+                "milk"
+              ],
+              "answer": 0,
+              "explanation": "Atrium — bo‘lmacha."
             }
           ],
           "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT",
+          "review_status": "USER_SOURCE_EXPANDED_DRAFT",
           "sammu_books": [
             {
               "title": "English in Dentistry — SamMU e-library",
