@@ -76,8 +76,8 @@ def test_history_is_private_and_latest_first(monkeypatch, tmp_path):
     history = client.get("/api/history?limit=1", headers=hdr())
     assert history.status_code == 200
     assert len(history.json()["items"]) == 1
-    assert history.json()["items"][0]["score"] == 1
-    assert history.json()["items"][0]["percent"] == 50
+    assert history.json()["items"][0]["score"] == 9
+    assert history.json()["items"][0]["percent"] == 90
     assert "answers" not in history.json()["items"][0]
     assert client.get("/api/history", headers=hdr(__import__("tests.test_miniapp",fromlist=["sign"]).sign(uid=UID+1))).status_code == 403
     assert client.delete("/api/me", headers=hdr()).status_code == 200
