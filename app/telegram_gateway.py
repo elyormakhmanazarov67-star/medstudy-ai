@@ -132,7 +132,7 @@ async def receive_telegram_update(
         markup = None
     elif cmd in {'/start', '/help', ''}:
         body = ('🎓 MedStudy AI — yopiq sinov versiyasi.\n\n'
-                '📚 1 ta fan, 15 ta mashg‘ulot, 145 ta test savoli.\n'
+                '📚 Fanlar, o‘qituvçi materiallari va SamMU e-library havolalari.\n'
                 '📊 Test natijalari va xatolarni qaytarish Mini App ichida.\n'
                 '⚠️ O‘quv materiallari mutaxassis tasdig‘ini kutmoqda.\n\n'
                 'Quyidagi tugmani bosib Mini App ni oching.')
