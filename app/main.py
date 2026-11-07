@@ -90,7 +90,7 @@ def lesson(lesson_id: str, uid: int = Depends(consent_required)):
     if not found:
         raise HTTPException(404, 'Mavzu topilmadi')
     subject, l = found
-    return {'subject_id':subject['id'], 'id':l['id'], 'title':l['title'],
+    return {'subject_id':subject['id'], 'subject_title':subject['title'], 'id':l['id'], 'title':l['title'],
             'sections':l['sections'], 'sources':l.get('sources',[]),
             'question_count':len(l['questions']), 'questions':[public_question(q) for q in l['questions']]}
 
