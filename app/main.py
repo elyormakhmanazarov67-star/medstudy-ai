@@ -111,18 +111,21 @@ def submit(data: AttemptBody, uid: int = Depends(consent_required)):
     found = find_lesson(CATALOG, data.lesson_id)
     if not found:
         raise HTTPException(404, 'Mavzu topilmadi')
-    questions = found[1]['questions']
+    is_supplement = data.category == 'supplementary'
+    questions = found[1].get('supplement_questions', []) if is_supplement else found[1]['questions']
     if not questions:
-        raise HTTPException(409, 'O‘qituvçi materiali bo‘yiça test hozirça yo‘q')
-    lookup = {q['id']:q for q in questions}
+        raise HTTPException(409, 'Bu bo‘lim uchun test hali tayyorlanmagan')
+    lookup = {q['id']: q for q in questions}
     full_ids = [q['id'] for q in questions]
-    wrong_ids = STORE.latest_wrong_ids(uid, data.lesson_id)
-    # Allowed modes: all questions, or exactly the questions wrong on the latest attempt.
+    wrong_ids = STORE.latest_wrong_ids(uid, data.lesson_id) if not is_supplement else []
     if data.question_ids == full_ids:
         chosen_questions = questions
-        mode = 'full'
-    elif wrong_ids and data.question_ids == wrong_ids:
-        chosen_questions = [lookup[qid] for qid in wrong_ids]
+        mode = 'supplementary' if is_supplement else 'full'
+    elif not is_supplement and wrong_ids and data.question_ids == wrong_ids:
+        try:
+            chosen_questions = [lookup[qid] for qid in wrong_ids]
+        except KeyError:
+            raise HTTPException(400, 'Savollar ro‘yxati mos emas')
         mode = 'retry'
     else:
         raise HTTPException(400, 'Savollar ro‘yxati mos emas')
@@ -130,10 +133,9 @@ def submit(data: AttemptBody, uid: int = Depends(consent_required)):
         score, details = grade(chosen_questions, data.answers)
     except ValueError as exc:
         raise HTTPException(400, str(exc)) from exc
-    # Retrying a subset creates a new attempt for that subset, not a full test score.
     STORE.save_attempt(uid, data.lesson_id, score, details, mode=mode)
-    return {'score':score, 'total':len(details), 'mode':mode,'percent':round(score*100/len(details)),
-            'details':details}
+    return {'score':score, 'total':len(details), 'mode':mode,
+            'percent':round(score*100/len(details)), 'details':details}
 
 @app.get('/api/progress')
 def progress(uid: int = Depends(consent_required)):
