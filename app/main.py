@@ -201,6 +201,7 @@ def tutor_revoke_consent(uid: int = Depends(consent_required)):
 class TutorQuestion(BaseModel):
     lesson_id: str = Field(min_length=1, max_length=100)
     question: str = Field(min_length=5, max_length=500)
+    mode: str = Field(default="explain", pattern="^(explain|example|recall)$")
 
 
 @app.post('/api/tutor/ask')
@@ -225,7 +226,7 @@ async def tutor_ask(data: TutorQuestion, uid: int = Depends(consent_required)):
     except (ValueError, PermissionError) as exc:
         raise HTTPException(429 if isinstance(exc, ValueError) else 403, str(exc)) from exc
     try:
-        result = await tutor.generate_answer(lesson_found[1], data.question.strip())
+        result = await tutor.generate_answer(lesson_found[1], data.question.strip(), mode=data.mode)
     except tutor.TutorUnavailable as exc:
         raise HTTPException(503, str(exc)) from exc
     return {**result, 'remaining': max(0, per_user-used),
