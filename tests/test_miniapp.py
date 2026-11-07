@@ -99,3 +99,30 @@ def test_wrong_review(client):
     result=client.post('/api/attempts',json=retry,headers=hdr())
     assert result.status_code==200 and result.json()['score']==1
     assert client.get('/api/progress',headers=hdr()).json()['latest'][0]['total']==2
+
+
+def test_independent_required_and_supplementary_quizzes(client):
+    client.post('/api/consent',headers=hdr())
+    lid='bio_l1'
+    source=main.CATALOG['subjects'][4]['lessons'][0]
+    required=source['questions']
+    extra=source['supplement_questions']
+    assert required and extra
+    assert set(q['id'] for q in required).isdisjoint(set(q['id'] for q in extra))
+    data={'lesson_id':lid,'question_ids':[q['id'] for q in extra],
+          'answers':[q['answer'] for q in extra],'category':'supplementary'}
+    assert client.post('/api/attempts',json=data,headers=hdr()).json()['mode']=='supplementary'
+    assert client.get('/api/progress',headers=hdr()).json()['latest']==[]
+    req={'lesson_id':lid,'question_ids':[q['id'] for q in required],
+         'answers':[q['answer'] for q in required],'category':'required'}
+    done=client.post('/api/attempts',json=req,headers=hdr())
+    assert done.status_code==200 and done.json()['mode']=='full'
+    assert client.get('/api/progress',headers=hdr()).json()['latest'][0]['total']==len(required)
+    bad=client.post('/api/attempts',json={**data,'category':'required'},headers=hdr())
+    assert bad.status_code==400
+    bad=client.post('/api/attempts',json={**req,'category':'supplementary'},headers=hdr())
+    assert bad.status_code==400
+    extra_result=client.get('/api/lessons/'+lid,headers=hdr()).json()
+    assert extra_result['supplement_sections']
+    assert extra_result['supplement_question_count']==len(extra)
+    assert 'answer' not in extra_result['supplement_questions'][0]
