@@ -1,7 +1,7 @@
 {
-  "version": "0.5.14-biofizika-lessons",
+  "version": "0.5.15-preclinical-sources",
   "status": "TEST — O‘qituvchi materiallari va OpenStax ochiq darsliklaridan manba ko‘rsatilgan alohida o‘quv materiallari. Mutaxassis tekshiruvi talab etiladi.",
-  "note": "Biofizikaning 4 mavzusi foydalanuvchining 5 ta yangi ma’ruza/amaliy materialiga tayanib kengaytirildi. Original fayllarni yuklab olish yoki serverga yuklash mavjud emas. Asosiy tarmoq o‘zgarmagan.",
+  "note": "Preklinik restavratsion stomatologiyaning 28 mavzusi uchta yuklangan darslik asosida alohida to‘ldirildi; 23–25-darslarda kariyesning to‘liq tasnifi uchun manba yetarli emas. 26–29-darslarda hozircha faqat ichki endodontik anatomiya yoritilgan. PDF/fayl yuklab olish o‘chiq.",
   "subjects": [
     {
       "id": "stom_prerest",
@@ -18,8 +18,16 @@
           "focus": "Mutaxassislikka kirish. Ergonomika. Stomatologiya xonasining jihozlanishi.",
           "sections": [
             {
-              "heading": "Stomatologik ish joyining jihozlari",
-              "body": "Stomatologik ish joyiga bemor kreslosi, shifokor stuli, asboblar stoli, yoritgich va kompressor kiradi. Stomatologik qurilma tarkibida havo va suv tizimlari hamda so‘lak so‘rg‘ich bo‘lishi mumkin. Bu jihozlar ko‘rik va muolajalar uchun ish joyini tashkil etadi."
+              "heading": "Ish joyining asosiy qismlari",
+              "body": "Stomatologning ish joyida bemor kreslosi, shifokor stuli, yoritish tizimi, asboblar stoli va stomatologik qurilma bo‘ladi. Qurilmaga bormashina, havo-suv pistoleti va so‘lak so‘rg‘ich kabi moslamalar ulanadi. Ularning joylashuvi bemorni ko‘rish va asboblarga qulay yetish bilan bog‘liq."
+            },
+            {
+              "heading": "Ish maydoni va yordamchi jihozlar",
+              "body": "Trezubov va hammualliflar ish joyida asboblarni saqlash uchun modulli shkaflar, ishchi stol, sanitariya-texnik kommunikatsiyalar hamda tozalash va zararsizlantirish vositalari bo‘lishini tasvirlaydi. Davolash maydoni bilan asboblarni qayta ishlash hududi vazifalari farqlanadi."
+            },
+            {
+              "heading": "Stomatologik kreslo va yoritgich",
+              "body": "Kreslo bemorning holatini muolaja turiga moslashtirishga, yoritgich esa og‘iz bo‘shlig‘idagi ish maydonini ko‘rishga yordam beradi. Shifokorning ish holati, yoritish va asboblar joylashuvi ergonomikani belgilovchi muhim omillardir."
             }
           ],
           "teacher_materials": [
@@ -50,7 +58,17 @@
               "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
             }
           ],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, teacher review needed"
+          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "source_pages": [
+            {
+              "book": "Trezubov",
+              "pdf_pages": "6–8"
+            },
+            {
+              "book": "Trezubov",
+              "pdf_pages": "18–21"
+            }
+          ]
         },
         {
           "id": "ergonomika_2",
@@ -60,8 +78,16 @@
           "focus": "Mutaxassislikka kirish. Ergonomika. Stomatologiya xonasining jihozlanishi.",
           "sections": [
             {
-              "heading": "Ergonomikaning asosiy talablari",
-              "body": "Ergonomika stomatolog va bemor uchun qulay ish sharoitini tashkil etishga qaratiladi. Jihozlarning joylashuvi, yetarli yoritish, asboblarga qulay yetish, shovqin va tebranish darajasi ish joyining ergonomik xususiyatlaridir."
+              "heading": "Ergonomika tushunchasi",
+              "body": "Ergonomika insonning ish jarayoni va jihozlar bilan o‘zaro munosabatini o‘rganadi. Stomatologiyada u shifokorning ortiqcha egilishini, qo‘l va yelka zo‘riqishini hamda takroriy noqulay harakatlarni kamaytirishga qaratilgan. Bemor va yordamchining joylashuvi ham bunga ta’sir etadi."
+            },
+            {
+              "heading": "Yorug‘lik va ko‘rish sharoiti",
+              "body": "Kabinetda umumiy yoritish bilan birga ish maydonini yorituvchi maxsus lampa qo‘llanadi. Yorug‘likning yo‘nalishi, soyalar, keskin kontrast va ko‘zni qamashtirish ko‘rish qulayligiga ta’sir qiladi. Trezubov qo‘llanmasida tabiiy va sun’iy yoritish, xona yuzalarining yorqinligi alohida baholangan."
+            },
+            {
+              "heading": "Mehnat sharoitini baholash",
+              "body": "Shovqin, tebranish, havoning tozaligi, xonadagi mikroiqlim hamda uzoq davom etuvchi statik mushak zo‘riqishi ish sharoitining muhim omillaridir. Ish jihozlarini qulay joylashtirish va yordamchi xodim bilan vazifalarni muvofiqlashtirish mehnat unumdorligiga xizmat qiladi."
             }
           ],
           "teacher_materials": [
@@ -79,7 +105,13 @@
             }
           ],
           "questions": [],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, teacher review needed"
+          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "source_pages": [
+            {
+              "book": "Trezubov",
+              "pdf_pages": "7–9"
+            }
+          ]
         },
         {
           "id": "qurilmalar",
@@ -89,8 +121,16 @@
           "focus": "Stomatologik qurilmalar. Stomatologiyada ishlatiladigan dastaklar va dastalar. Ularni o‘rnatish qoidalari.",
           "sections": [
             {
-              "heading": "Bormashinalar va stomatologik qurilmalar",
-              "body": "Bormashina aylanuvchi asbobni harakatga keltiradigan qurilmadir. Elektr bormashina va turbinali bormashina harakat manbai hamda aylanish xususiyatlari bilan farqlanadi. Stomatologik qurilmada yoritgich, havo-suv pistoleti va so‘lak so‘rg‘ich kabi qismlar ham bo‘lishi mumkin."
+              "heading": "Bormashinalarning harakat manbai",
+              "body": "Kornilov va hammualliflar bormashinalarni oyoq yordamida, elektr motor orqali va pnevmatik/turbinali harakatga keladigan turlarga ajratadi. Aylanma harakat maxsus dastak va bor orqali tishning qattiq to‘qimalariga uzatiladi. Harakat manbai qurilmaning imkoniyatlarini belgilaydi."
+            },
+            {
+              "heading": "Elektr bormashina modellari",
+              "body": "Darslikda BES-10 stasionar elektr bormashina va BK-1 kombinatsiyalashgan bormashina misol sifatida berilgan. BK-1 elektr toki bo‘lmaganda oyoq mexanizmi bilan ham ishlay oladigan tarixiy model sifatida tasvirlangan. BEO-30-2 esa yoritgich va boshqa yordamchi qismlarni birlashtirgan qurilma misolidir."
+            },
+            {
+              "heading": "Kompleks stomatologik qurilma",
+              "body": "US-30 kabi qurilmalarda elektromotor, yoritgich, havo va suv yo‘llari, so‘lak so‘rg‘ich va asboblar patnisi bir tizimga jamlangan. Qurilma qismlari turli vazifalarni bajaradi: harakat, sovitish, yoritish va ish maydonini toza saqlash."
             }
           ],
           "teacher_materials": [
@@ -121,7 +161,13 @@
               "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
             }
           ],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, teacher review needed"
+          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "source_pages": [
+            {
+              "book": "Kornilov",
+              "pdf_pages": "4–8"
+            }
+          ]
         },
         {
           "id": "qurilmalar_2",
@@ -131,8 +177,20 @@
           "focus": "Stomatologik qurilmalar. Stomatologiyada ishlatiladigan dastaklar va dastalar. Ularni o‘rnatish qoidalari.",
           "sections": [
             {
-              "heading": "Stomatologik dastaklarning turlari",
-              "body": "Stomatologik dastaklar turbinali, elektr mikromotorli va havoli mikromotorli turlarga bo‘linadi. Burchakli va to‘g‘ri dastaklar asbobni tutish va harakatni uzatish tuzilishi bilan farqlanadi. Turbinali dastakning asosiy belgisi — rotorning yuqori aylanish tezligidir."
+              "heading": "Turbinali dastak",
+              "body": "Turbinali dastakda siqilgan havo rotorni harakatga keltiradi. Uning muhim belgisi yuqori aylanish tezligidir. Kornilov darsligida turbinali dastaklar tezkor rotatsion ishlov beruvchi vosita sifatida tavsiflangan."
+            },
+            {
+              "heading": "Mikromotorli dastak",
+              "body": "Elektr mikromotori aylanishni maxsus dastakka uzatadi. Darslikda cho‘tkali va cho‘tkasiz mikromotorlar farqlanadi; cho‘tkasiz turi mexanik cho‘tkalarning yeyilishiga bog‘liq emas. Mikromotorli dastaklar turli shakldagi rotatsion asboblar bilan birga ishlaydi."
+            },
+            {
+              "heading": "To‘g‘ri va burchakli dastaklar",
+              "body": "Dastak korpusining shakliga ko‘ra to‘g‘ri va burchakli turlar mavjud. Burchakli dastakda ishchi boshcha harakatni burchak ostida uzatadi; to‘g‘ri dastakning uzatish yo‘li esa korpus bo‘ylab joylashadi. Har ikkala turda asbob o‘zagining dastakka mosligi muhim."
+            },
+            {
+              "heading": "Maxsus dastaklar",
+              "body": "Darslikda ultratovushli skalerlar, endodontik mikromotorlar, abraziv kukun oqimiga mo‘ljallangan dastaklar ham tilga olinadi. Ularning vazifasi odatiy tish charxlash dastagidan farq qiladi."
             }
           ],
           "teacher_materials": [
@@ -150,7 +208,17 @@
             }
           ],
           "questions": [],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, teacher review needed"
+          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "source_pages": [
+            {
+              "book": "Kornilov",
+              "pdf_pages": "12–18"
+            },
+            {
+              "book": "Bazikyan",
+              "pdf_pages": "106–111"
+            }
+          ]
         },
         {
           "id": "qurilmalar_3",
@@ -160,8 +228,20 @@
           "focus": "Stomatologik qurilmalar. Stomatologiyada ishlatiladigan dastaklar va dastalar. Ularni o‘rnatish qoidalari.",
           "sections": [
             {
-              "heading": "Dastaklarning mosligi va gigiyenik xususiyatlari",
-              "body": "Dastakning qurilmaga mosligi ulanish turi va texnik xususiyatlariga bog‘liq. Uning muhim qismlari qatoriga rotor, podshipnik, borni mahkamlovchi qism va sovitish kanallari kiradi. Qaytar klapan, tozalash va sterilizatsiyaga yaroqlilik gigiyenik baholashda muhimdir."
+              "heading": "Ulash moslamalari va moslik",
+              "body": "Dastaklar stomatologik qurilmaga maxsus ulanish orqali biriktiriladi. Kornilov qo‘llanmasida turli rezbali va ko‘p kanalli birikmalar tasvirlangan; Bazikyan atlasida mikromotor ulanishlarining «Intra» va boshqa turlari ko‘rsatiladi. Ulagichdagi havo, suv va elektr aloqalari mos bo‘lishi kerak."
+            },
+            {
+              "heading": "Rotor va borni ushlash tizimi",
+              "body": "Turbinali dastakning funksional qismlari rotor, podshipnik, borni mahkamlovchi mexanizm va ishchi boshchadan iborat. Podshipnik rotorning aylanishini ta’minlaydi; borni mahkamlash tizimi esa asbobning barqaror turishi uchun zarur."
+            },
+            {
+              "heading": "Sovitish va gigiyenik xususiyatlar",
+              "body": "Sprey kanallari rotatsion ishlov paytidagi issiqlikni kamaytirishga xizmat qiladi. Dastakning tozalanishi va sterilizatsiyaga mosligi, ichki kanallarining ifloslanishdan himoyalanishi hamda materialining qayta ishlashga chidamliligi gigiyenik baholashda muhim."
+            },
+            {
+              "heading": "Ergonomik belgilari",
+              "body": "Dastak og‘irligi, tutqichning qulayligi, yorug‘lik manbai, shovqin va tebranish darajasi foydalanuvchiga ta’sir etadi. Qurilma bilan mos kelmaydigan yoki texnik nosoz dastak ishlash sifati va xavfsizligiga salbiy ta’sir ko‘rsatadi."
             }
           ],
           "teacher_materials": [
@@ -179,7 +259,17 @@
             }
           ],
           "questions": [],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, teacher review needed"
+          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "source_pages": [
+            {
+              "book": "Kornilov",
+              "pdf_pages": "14–16"
+            },
+            {
+              "book": "Bazikyan",
+              "pdf_pages": "107–111"
+            }
+          ]
         },
         {
           "id": "asboblar",
@@ -189,8 +279,16 @@
           "focus": "Stomatologik asboblar tasnifi. Ko‘rik, plomba qorish va qo‘yish uchun ishlatiladigan asboblar.",
           "sections": [
             {
-              "heading": "Ko‘rik uchun ishlatiladigan asboblar",
-              "body": "Stomatologik ko‘rikda ko‘zgu, zond va pinset qo‘llanadi. Ko‘zgu og‘iz bo‘shlig‘idagi yuzalarni ko‘rishga yordam beradi; zond tekshiruv asbobi, pinset esa kichik buyumlarni tutish uchun ishlatiladi. Asboblar vazifasiga ko‘ra alohida guruhlarga ajratiladi."
+              "heading": "Stomatologik ko‘zgu",
+              "body": "Stomatologik ko‘zgu ko‘rish qiyin bo‘lgan yuzalarni aks ettirib ko‘rsatadi, yorug‘likni yo‘naltiradi va yumshoq to‘qimalarni chetga surishga xizmat qiladi. Darslikda yassi va kattalashtiruvchi ko‘zgular ko‘rsatilgan. Bazikyan atlasida dastak va oyna qismi ajraladigan hamda ajralmaydigan tuzilmalar tasvirlangan."
+            },
+            {
+              "heading": "Diagnostik zond va eksplorer",
+              "body": "Burchakli va to‘g‘ri zondlar ishchi qismi shakli bilan farqlanadi. Eksplorer ingichka ishchi uchli tekshiruv asbobi bo‘lib, tish yuzasi, fissura va restavratsiya chetlarining holatini baholashda qo‘llanadi. Parodontologik zondning to‘mtoq uchi va millimetrli bo‘linmalari milk cho‘ntagi chuqurligini o‘lchash uchun mo‘ljallangan."
+            },
+            {
+              "heading": "Pinset va ko‘rik patnisi",
+              "body": "Stomatologik pinset paxta valiklari, mayda asboblar va diagnostik materiallarni tutib turishga yordam beradi. Tibbiy patnis ko‘rik asboblarini vaqtincha joylashtirish uchun ishlatiladi. Ko‘zgu, zond va pinsetning vazifalari bir-birini to‘ldiradi."
             }
           ],
           "teacher_materials": [
@@ -227,7 +325,17 @@
               "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
             }
           ],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, teacher review needed"
+          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "source_pages": [
+            {
+              "book": "Kornilov",
+              "pdf_pages": "9–11"
+            },
+            {
+              "book": "Bazikyan",
+              "pdf_pages": "7–11"
+            }
+          ]
         },
         {
           "id": "asboblar_2",
@@ -237,8 +345,16 @@
           "focus": "Stomatologik asboblar tasnifi. Ko‘rik, plomba qorish va qo‘yish uchun ishlatiladigan asboblar.",
           "sections": [
             {
-              "heading": "Plomba ashyolarini qorish va joylash asboblari",
-              "body": "Metall va plastmassa shpatellar plomba ashyolarini aralashtirish uchun mo‘ljallangan; ayrim materiallarga plastmassa shpatel mos keladi. Gladilka materialni joylash va dastlabki shakl berishga xizmat qiladi. Shtopferning ishchi qismi turli shaklda bo‘lib, plomba ashyosini zichlash uchun ishlatiladi."
+              "heading": "Metall va plastmassa shpatellar",
+              "body": "Metall shpatel kukun va suyuqlik tarkibli materiallarni aralashtirishga mo‘ljallangan. Plastmassa shpatel esa metall bilan kimyoviy yoki mexanik o‘zaro ta’sirlashishi mumkin bo‘lgan materiallar uchun ajratilgan. Kornilov darsligida ayrim silikat sementlari rangining metall shpatel ta’sirida o‘zgarishi misol qilinadi."
+            },
+            {
+              "heading": "Gladilka va shtopfer",
+              "body": "Gladilka — ishchi qismi ingichka, tekis yoki egilgan kurakcha bo‘lgan asbob. U plomba materialini bo‘shliqqa joylash va dastlabki shaklini berishda qo‘llanadi. Shtopferning silindrsimon, sharsimon yoki noksimon ishchi uchlari materialni zichlashtirishga mo‘ljallangan."
+            },
+            {
+              "heading": "Asboblarni vazifasiga ko‘ra ajratish",
+              "body": "Shpatel asosan materialni aralashtiradi, gladilka materialni olib o‘tadi va yuzasini shakllantiradi, shtopfer esa zichlaydi. Bir asbob turli materiallar uchun birday mos kelmasligi mumkin; tanlashda materialning tarkibi va asbob yuzasi hisobga olinadi."
             }
           ],
           "teacher_materials": [
@@ -262,7 +378,17 @@
             }
           ],
           "questions": [],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, teacher review needed"
+          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "source_pages": [
+            {
+              "book": "Kornilov",
+              "pdf_pages": "21–21"
+            },
+            {
+              "book": "Bazikyan",
+              "pdf_pages": "13–17"
+            }
+          ]
         },
         {
           "id": "rotatsion",
@@ -272,8 +398,16 @@
           "focus": "Tishlarni charxlash uchun ishlatiladigan rotatsion asboblar. Borlar. Plombaga yakuniy ishlov berish uchun ishlatiladigan asboblar va ashyolar.",
           "sections": [
             {
-              "heading": "Stomatologik borlarning tuzilishi va shakllari",
-              "body": "Stomatologik bor ishchi boshcha va dastakka ulanadigan o‘zak qismdan iborat. Sharsimon, silindrsimon fissur, konussimon va teskari konussimon borlar shakli bilan farqlanadi. Borning shakli va ishchi yuzasi uning vazifasini belgilaydi."
+              "heading": "Borning asosiy qismlari",
+              "body": "Rotatsion bor ishchi boshcha, bo‘yin va dastakka birikuvchi o‘zak qismdan tuzilgan. Boshcha kesuvchi qirralarga yoki abraziv qoplamaga ega bo‘lishi mumkin. Bazikyan atlasida rotatsion asboblarni material, o‘zak uzunligi, ishchi boshcha shakli, abrazivlik va diametriga ko‘ra farqlash taklif qilingan."
+            },
+            {
+              "heading": "Bor boshchalarining shakllari",
+              "body": "Kornilov darsligida sharsimon, silindrsimon fissur, konussimon fissur, teskari konussimon va g‘ildiraksimon borlar ko‘rsatilgan. Sharsimon boshcha yumaloq, fissur turi uzunchoq, teskari konus esa keng ishchi qismga ega. Shakl asbob bajaradigan mexanik ishlov turiga bog‘liq."
+            },
+            {
+              "heading": "O‘zak va dastak mosligi",
+              "body": "To‘g‘ri, burchakli va turbinali dastaklar uchun o‘zak tuzilishi hamda mahkamlash turi farqlanadi. Borning materiali mos kelgan taqdirda ham noto‘g‘ri o‘zakli asbob mos dastakka mahkamlanmasligi mumkin."
             }
           ],
           "teacher_materials": [
@@ -310,7 +444,17 @@
               "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
             }
           ],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, teacher review needed"
+          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "source_pages": [
+            {
+              "book": "Kornilov",
+              "pdf_pages": "18–20"
+            },
+            {
+              "book": "Bazikyan",
+              "pdf_pages": "123–139"
+            }
+          ]
         },
         {
           "id": "rotatsion_2",
@@ -320,8 +464,16 @@
           "focus": "Tishlarni charxlash uchun ishlatiladigan rotatsion asboblar. Borlar. Plombaga yakuniy ishlov berish uchun ishlatiladigan asboblar va ashyolar.",
           "sections": [
             {
-              "heading": "Olmosli va qattiq qotishmali borlar",
-              "body": "Olmosli borning ishchi yuzasi abraziv olmos zarrachalari bilan qoplangan. Ular zarracha yirikligiga ko‘ra turli abrazivlik darajalariga ajratiladi. Po‘latli va volfram-karbid borlar esa materialining tarkibi hamda kesuvchi qirralari bilan farqlanadi."
+              "heading": "Olmosli borning xususiyati",
+              "body": "Olmosli bor boshchasining yuzasiga abraziv olmos zarrachalari qoplangan. Bunday asbob kesuvchi pichoqsimon qirra bilan emas, asosan abraziv mayda zarrachalar orqali ishlov beradi. Bazikyan atlasida olmos qoplamaning va boshqa rotatsion materiallarning farqlari tasvirlangan."
+            },
+            {
+              "heading": "Olmos donachalari o‘lchami",
+              "body": "Kornilov darsligidagi belgilashda qora halqa o‘ta dag‘al, yashil halqa dag‘al, qizil halqa mayda, sariq halqa juda mayda olmos donachalarni bildiradi. Bu ranglar keltirilgan manbadagi tizimga tegishli; asbobni tanlashda ishlab chiqaruvchining amaldagi belgilanishi tekshiriladi."
+            },
+            {
+              "heading": "Po‘lat va qattiq qotishmali borlar",
+              "body": "Po‘lat va volfram-karbid borlarda kesuvchi qirralar mavjud. Qirralarning soni va geometriyasi ishlov tezligi, yuzaning silliqligi hamda asbobning vazifasiga ta’sir qiladi. Material turi, ishchi uch shakli va o‘zak mosligi birgalikda baholanadi."
             }
           ],
           "teacher_materials": [
@@ -345,7 +497,17 @@
             }
           ],
           "questions": [],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, teacher review needed"
+          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "source_pages": [
+            {
+              "book": "Kornilov",
+              "pdf_pages": "20–21"
+            },
+            {
+              "book": "Bazikyan",
+              "pdf_pages": "124–127"
+            }
+          ]
         },
         {
           "id": "rotatsion_3",
@@ -355,8 +517,16 @@
           "focus": "Tishlarni charxlash uchun ishlatiladigan rotatsion asboblar. Borlar. Plombaga yakuniy ishlov berish uchun ishlatiladigan asboblar va ashyolar.",
           "sections": [
             {
-              "heading": "Plombaga yakuniy ishlov berish vositalari",
-              "body": "Plombaning yakuniy ishlovi pardozlash va silliqlashni o‘z ichiga oladi. Buning uchun abraziv disklar, frezalar, finirlar va polirlar kabi asboblar mavjud. Ularning ishchi yuzasi va abrazivlik darajasi bajaradigan vazifasiga qarab farqlanadi."
+              "heading": "Pardozlash va polirovka farqi",
+              "body": "Plombaga yakuniy ishlov ikki bosqichga ajratiladi: kontur va notekisliklarga ishlov berish hamda yuzani silliqlash. Maqsad — tiklangan yuzaning shakli, kontaktlari va silliqligini yaxshilash. Kornilov darsligida bu ish uchun turli abraziv guruhlar sanalgan."
+            },
+            {
+              "heading": "Asboblarning turlari",
+              "body": "Finirlar, polirlar, karborund toshlar, frezalar va separatsion disklar ishchi qismi hamda abrazivligiga ko‘ra farqlanadi. Finir nozik kontur ishloviga, polir esa sirtni silliqlashga mo‘ljallangan. Disklar ayrim yuzalarga mos tekis abraziv asbob sifatida tasvirlangan."
+            },
+            {
+              "heading": "Materialga mos ishlov",
+              "body": "Kompozit, amalgama va shishaionomer materiallarining qattiqligi hamda sirt xususiyatlari bir xil emas. Shu sababli ularni pardozlash uchun asbob va abraziv tizimlari farqlanadi. Atlasda abrazivlik darajasi va asbob ishlab chiqaruvchisining belgilari muhimligi ko‘rsatilgan."
             }
           ],
           "teacher_materials": [
@@ -380,7 +550,17 @@
             }
           ],
           "questions": [],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, teacher review needed"
+          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "source_pages": [
+            {
+              "book": "Kornilov",
+              "pdf_pages": "20–28"
+            },
+            {
+              "book": "Bazikyan",
+              "pdf_pages": "139–142"
+            }
+          ]
         },
         {
           "id": "plombalar",
@@ -390,8 +570,16 @@
           "focus": "Plomba ashyolari tasnifi. Vaqtinchalik plomba ashyolari, bog‘lov materiallari.",
           "sections": [
             {
-              "heading": "Plomba ashyolarining tasnifi",
-              "body": "Plomba ashyolari vazifasiga ko‘ra bog‘lov va vaqtinchalik materiallar, doimiy plomba materiallari, davolovchi va ajratuvchi tagliklar hamda ildiz kanali uchun materiallarga ajratiladi. Bu guruhlar ishlatilish maqsadi va xususiyatlari bilan farqlanadi."
+              "heading": "Plombaning vazifasi",
+              "body": "Plomba materiali yo‘qotilgan tish qattiq to‘qimasi o‘rnini to‘ldirish va tishning shakli hamda funksiyasini tiklashga xizmat qiladi. Materiallar tarkibi, qotish xossalari va ishlatilish maqsadiga qarab farqlanadi."
+            },
+            {
+              "heading": "Plomba ashyolarining asosiy guruhlari",
+              "body": "Kornilov darsligida to‘rtta asosiy guruh ajratilgan: bog‘lov va vaqtinchalik plombalar, doimiy tiklovchi plombalar, davolovchi/ajratuvchi tagliklar va ildiz kanali uchun plomba ashyolari. Ular bir xil vazifani bajarmaydi."
+            },
+            {
+              "heading": "Materialni baholash mezonlari",
+              "body": "Muhrlash qobiliyati, mustahkamlik, og‘iz suyuqligi ta’siriga chidamlilik, biologik moslik va tish to‘qimalari bilan tutashuv materialning muhim xossalaridir. Estetik talab ayniqsa ko‘rinadigan oldingi tishlarni tiklashda ahamiyatlidir."
             }
           ],
           "teacher_materials": [
@@ -422,7 +610,13 @@
               "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
             }
           ],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, teacher review needed"
+          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "source_pages": [
+            {
+              "book": "Kornilov",
+              "pdf_pages": "66–67"
+            }
+          ]
         },
         {
           "id": "plombalar_2",
@@ -432,8 +626,16 @@
           "focus": "Plomba ashyolari tasnifi. Vaqtinchalik plomba ashyolari, bog‘lov materiallari.",
           "sections": [
             {
-              "heading": "Vaqtinchalik plomba va bog‘lov materiallari",
-              "body": "Vaqtinchalik materiallar orasida sun’iy dentin, dentin-malham va rux oksidi–evgenol asosli materiallar uchraydi. Darslikda bog‘lov va vaqtinchalik plombalar xizmat muddati hamda tarkibiga ko‘ra farqlangan. Materiallarning qotishi va mustahkamligi bir xil emas."
+              "heading": "Bog‘lov materiallari",
+              "body": "Bog‘lov materiallari tish bo‘shlig‘ini qisqa muddatga yopish uchun mo‘ljallangan. Darslikda sun’iy dentin, dentin-malham va rux oksidi–evgenol asosli materiallar misol sifatida berilgan. Bog‘lov materialining asosiy vazifasi tashqi muhitdan vaqtincha ajratishdir."
+            },
+            {
+              "heading": "Sun’iy dentin",
+              "body": "Kornilov darsligida sun’iy dentin rux oksidi, rux sulfat va kaolin asosli kukun sifatida ta’riflangan. Suv bilan qotadigan bu material vaqtinchalik germetik yopish uchun ishlatilgan. Uning ishlatilishi materialning muayyan qotish va chidamlilik chegaralari bilan bog‘liq."
+            },
+            {
+              "heading": "Vaqtinchalik plomba turlari",
+              "body": "Nisbatan uzoqroq muddatga mo‘ljallangan vaqtinchalik materiallar orasida rux oksidi–evgenol, rux-fosfat, polikarboksilat va shishaionomer sementlar ham sanaladi. Ularning tarkibi va fizik mustahkamligi bir xil emas; vaqtinchalik va doimiy plomba tushunchalari farqlanadi."
             }
           ],
           "teacher_materials": [
@@ -451,7 +653,13 @@
             }
           ],
           "questions": [],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, teacher review needed"
+          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "source_pages": [
+            {
+              "book": "Kornilov",
+              "pdf_pages": "67–68"
+            }
+          ]
         },
         {
           "id": "tagliklar",
@@ -461,8 +669,16 @@
           "focus": "Ajratuvchi va davolovchi tagliklar. Sementlar. Tarkibi, xususiyatlari.",
           "sections": [
             {
-              "heading": "Ajratuvchi tagliklarning vazifasi",
-              "body": "Ajratuvchi tagliklar dentin va pulpani plomba ashyolarining ayrim kimyoviy yoki issiqlik ta’sirlaridan himoyalashga mo‘ljallangan. Ular asosli tagliklar va yupqa qatlamli laynerlarga ajratiladi. Taglikning himoya va izolyatsiya xususiyatlari muhim hisoblanadi."
+              "heading": "Ajratuvchi taglik nima uchun kerak?",
+              "body": "Ajratuvchi taglik tishning ichki to‘qimalarini doimiy plomba materiali bilan bevosita aloqadan ajratishga mo‘ljallangan. Darslik ayrim sementlarning kimyoviy ta’siri va metall materiallarning issiqlik o‘tkazuvchanligini misol qilib keltiradi."
+            },
+            {
+              "heading": "Bazalik taglik va layner",
+              "body": "Bazalik taglik nisbatan qalin qatlamli himoya materiali, layner esa yupqa qatlamli ajratuvchi qoplama sifatida farqlanadi. Ularning mexanik tayanch berishi, kimyoviy yoki termik himoyasi va qoplash qobiliyati bir xil emas."
+            },
+            {
+              "heading": "Taglik materiallari",
+              "body": "Kornilov darsligida taglik sifatida rux-fosfat, polikarboksilat va shishaionomer sementlar, shuningdek ajratuvchi laklar tilga olingan. Materiallar dentin bilan tutashuvi, suyuqlik ta’siriga chidamliligi va tiklovchi plomba bilan mosligiga qarab farqlanadi."
             }
           ],
           "teacher_materials": [
@@ -493,7 +709,13 @@
               "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
             }
           ],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, teacher review needed"
+          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "source_pages": [
+            {
+              "book": "Kornilov",
+              "pdf_pages": "89–91"
+            }
+          ]
         },
         {
           "id": "tagliklar_2",
@@ -503,8 +725,16 @@
           "focus": "Ajratuvchi va davolovchi tagliklar. Sementlar. Tarkibi, xususiyatlari.",
           "sections": [
             {
-              "heading": "Davolovchi tagliklarning vazifasi",
-              "body": "Davolovchi tagliklar tishning ichki to‘qimalarini muhofaza qilish va reparativ jarayonlarni qo‘llab-quvvatlash maqsadida o‘rganiladi. Bunday materiallardan pulpa bilan moslik, himoya, germetiklik va biologik xususiyatlar talab qilinadi."
+              "heading": "Davolovchi taglikning vazifasi",
+              "body": "Davolovchi taglik faqat fizik to‘siq bo‘lib qolmay, pulpa va dentin atrofidagi biologik muhit bilan bog‘liq himoya vazifasini ham bajaradi. Manbada chuqur dentin nuqsonlari sharoitida to‘qimalarning reparativ javobini qo‘llab-quvvatlash maqsadi tushuntirilgan."
+            },
+            {
+              "heading": "Kalsiy gidroksidli materiallar",
+              "body": "Darslikda Ca(OH)₂ tarkibli suvli suspenziyalar, kimyoviy qotuvchi va nur bilan qotuvchi tagliklar ajratilgan. Ular yuqori ishqoriyligi va odontotrop xossalari bilan tavsiflangan. Turli shakllarning mexanik xususiyatlari va eruvchanligi farq qiladi."
+            },
+            {
+              "heading": "Davolovchi va ajratuvchi taglikni farqlash",
+              "body": "Davolovchi taglik biologik ta’sirga qaratilgan bo‘lsa, ajratuvchi taglik asosan mexanik, kimyoviy va termik himoya beradi. Darslikda ayrim davolovchi pastalarning mustahkamligi pastligi qayd etilgan; materiallarning vazifasi va cheklovlarini ajratib o‘rganish muhim."
             }
           ],
           "teacher_materials": [
@@ -522,7 +752,13 @@
             }
           ],
           "questions": [],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, teacher review needed"
+          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "source_pages": [
+            {
+              "book": "Kornilov",
+              "pdf_pages": "91–93"
+            }
+          ]
         },
         {
           "id": "tagliklar_3",
@@ -532,8 +768,20 @@
           "focus": "Ajratuvchi va davolovchi tagliklar. Sementlar. Tarkibi, xususiyatlari.",
           "sections": [
             {
-              "heading": "Stomatologik sementlarning guruhlari",
-              "body": "Stomatologik sementlar orasida rux-fosfat, silikat, siliko-fosfat, rux oksidi–evgenol, polikarboksilat va shishaionomer turlari mavjud. Ular tarkibi, tish to‘qimalari bilan bog‘lanish xususiyati va vazifasi jihatidan farqlanadi."
+              "heading": "Sementlarning tarixiy tasnifi",
+              "body": "Kornilov darsligida rux-fosfat, bakteritsid, silikat, siliko-fosfat, rux oksidi–evgenol, polikarboksilat, shishaionomer va polimer sement guruhlari keltirilgan. Bu materialshunoslikka oid guruhlash 2005-yilgi darslik doirasida berilgan."
+            },
+            {
+              "heading": "Rux-fosfat va silikat sementlar",
+              "body": "Rux-fosfat sementning qotishi kukun va kislotali suyuqlik o‘zaro reaksiyasiga bog‘liq. Silikat sementlarda shisha tarkibli kukun muhim o‘rin tutadi; tarixan oldingi tishlarning rangiga yaqin tiklash materiallari sifatida tasvirlangan."
+            },
+            {
+              "heading": "Siliko-fosfat sement",
+              "body": "Siliko-fosfat sement silikat va fosfat sementlarning xususiyatlarini birlashtirishga mo‘ljallangan tarixiy materialdir. Darslikda uning mexanik mustahkamligi, kimyoviy chidamliligi va estetik cheklovlari solishtiriladi."
+            },
+            {
+              "heading": "Sementlarning vazifasi",
+              "body": "Stomatologik sementlar fiksatsiya, tiklash va taglik sifatida qo‘llanadigan turlarga ajratiladi. Muayyan sementning bir vazifaga mosligi boshqa vazifa uchun ham avtomatik mosligini bildirmaydi."
             }
           ],
           "teacher_materials": [
@@ -551,7 +799,13 @@
             }
           ],
           "questions": [],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, teacher review needed"
+          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "source_pages": [
+            {
+              "book": "Kornilov",
+              "pdf_pages": "68–71"
+            }
+          ]
         },
         {
           "id": "pre_session_16",
@@ -562,7 +816,15 @@
           "sections": [
             {
               "heading": "Polikarboksilat sementning tarkibi",
-              "body": "Polikarboksilat sementning kukun qismida rux oksidi muhim komponent hisoblanadi; suyuqlik qismi polikarboksilat kislota eritmasi asosida bo‘ladi. Material emal va dentin bilan kimyoviy bog‘lanish xususiyatiga ega."
+              "body": "Darslikda polikarboksilat sement kukuni asosan rux oksididan, suyuqligi esa polikarboksilat kislota suvli eritmasidan iborat deb tushuntirilgan. Kukun va suyuqlikning kislotali-asosli o‘zaro ta’siri qotish jarayoniga bog‘liq."
+            },
+            {
+              "heading": "Emal va dentin bilan bog‘lanish",
+              "body": "Polikarboksilat sement tish qattiq to‘qimalariga kimyoviy bog‘lanish xususiyatiga ega. Bu xossa uni faqat mexanik ushlanadigan ayrim eski sementlardan farqlaydi. Emal va dentin bilan moslik stomatologik materialni baholashda muhim belgi hisoblanadi."
+            },
+            {
+              "heading": "Xususiyat va cheklovlari",
+              "body": "Kornilov kitobida polikarboksilat sementning mustahkamligi va estetikasi ayrim boshqa tiklovchi materiallarga nisbatan cheklanganligi qayd etilgan. Shuning uchun u materialshunoslikda tarkibi, adgeziyasi va mexanik xossalari alohida baholanadigan sement sifatida o‘rganiladi."
             }
           ],
           "questions": [
@@ -593,7 +855,13 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, teacher review needed"
+          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "source_pages": [
+            {
+              "book": "Kornilov",
+              "pdf_pages": "70–70"
+            }
+          ]
         },
         {
           "id": "pre_session_17",
@@ -603,8 +871,16 @@
           "focus": "Shishaionomer va polikarboksilat sementlar. Tarkibi, xususiyatlari.",
           "sections": [
             {
-              "heading": "Shishaionomer sementlarning tarkibi",
-              "body": "Shishaionomer sementlar ftorli alumosilikat shisha asosli kukun va polikislota bilan bog‘liq komponentlardan iborat. Ularning tarkibida kremniy va aluminiy oksidlari hamda ftorli birikmalar mavjud bo‘lishi mumkin. Turli tizimlarda kukun va suyuqlik tarkibi farqlanadi."
+              "heading": "Shishaionomer sementning kukuni",
+              "body": "Shishaionomer sementlar tarkibida ftorli alumosilikat shisha mavjud. Kornilov darsligida kremniy oksidi, aluminiy oksidi va kalsiy ftorid kabi komponentlar qayd etilgan. Shisha zarralari materialning fizik xossalariga ta’sir qiladi."
+            },
+            {
+              "heading": "Suyuqlik tarkibi va turlari",
+              "body": "Darslikda polikislota va suvli eritma bilan ishlaydigan, suv bilan qotadigan hamda yarim suvli shishaionomer tizimlari farqlanadi. Ayrim tizimlarda kislota komponenti suyuqlikda, boshqalarida kukun tarkibida bo‘lishi mumkin."
+            },
+            {
+              "heading": "Qotish mexanizmining umumiy mazmuni",
+              "body": "Shishaionomer materialda kislota va shisha tarkibi o‘zaro reaksiyaga kirishib, qotadigan tuzilma hosil qiladi. Tarkibidagi ftor birikmalari materialning ftor ajratish xususiyati bilan bog‘liq. Shu bilan u ko‘plab eski fosfat sementlardan farqlanadi."
             }
           ],
           "questions": [],
@@ -622,7 +898,13 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, teacher review needed"
+          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "source_pages": [
+            {
+              "book": "Kornilov",
+              "pdf_pages": "71–72"
+            }
+          ]
         },
         {
           "id": "pre_session_18",
@@ -632,8 +914,16 @@
           "focus": "Shishaionomer va polikarboksilat sementlar. Tarkibi, xususiyatlari.",
           "sections": [
             {
-              "heading": "Shishaionomer sementlarning xususiyatlari",
-              "body": "Shishaionomer sementlarning muhim xususiyatlari — tish qattiq to‘qimalari bilan kimyoviy bog‘lanishi va ftor ajratishidir. Ular vazifasiga ko‘ra fiksatsiya, restavratsiya va taglik uchun mo‘ljallangan turlarga bo‘linadi."
+              "heading": "Kimyoviy adgeziya",
+              "body": "Shishaionomer sementlarning muhim belgilaridan biri emal va dentin bilan kimyoviy bog‘lana olishidir. Darslikda materialning tish-plomba chegarasidagi tutashuvi asosiy afzalliklardan biri sifatida ko‘rsatilgan."
+            },
+            {
+              "heading": "Ftor ajratish va fizik xossalar",
+              "body": "Tarkibdagi ftorli komponentlar ftor ajralishiga bog‘liq. Kornilov materialda nisbatan mo‘rtlik, yeyilishga sezgirlik va optik xossalarning ayrim kompozitlardan farq qilishini ham qayd etadi. Afzalliklarni cheklovlar bilan birga baholash zarur."
+            },
+            {
+              "heading": "Vazifasiga ko‘ra turlari",
+              "body": "Darslikda fiksatsiya, tiklash va taglik sifatida ishlatiladigan shishaionomer sementlar alohida ajratilgan. Shuningdek kimyoviy hamda nur yordamida qotadigan turlar ko‘rsatilgan. Ularning ko‘rsatmalari va mexanik talablari bir xil emas."
             }
           ],
           "questions": [],
@@ -651,7 +941,13 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, teacher review needed"
+          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "source_pages": [
+            {
+              "book": "Kornilov",
+              "pdf_pages": "72–72"
+            }
+          ]
         },
         {
           "id": "pre_session_19",
@@ -661,8 +957,16 @@
           "focus": "Amalgamalar.",
           "sections": [
             {
-              "heading": "Amalgama materiallarining tasnifi",
-              "body": "Amalgama tarkibida simob va boshqa metallardan hosil bo‘lgan qotishma qatnashadigan tarixiy restavratsion materialdir. Metall tarkibiga qarab kumushli va misli amalgamalar ajratiladi. Ularni o‘rganishda tarkib va fizik xususiyatlar alohida ko‘rib chiqiladi."
+              "heading": "Amalgama tushunchasi",
+              "body": "Amalgama simob va metall qotishmasi bilan bog‘liq stomatologik tiklovchi materialdir. Kornilov darsligida kumushli va misli amalgamalar farqlanadi. U materiallar tarixida mustahkam metall plombalardan biri sifatida muhim o‘rin tutadi."
+            },
+            {
+              "heading": "Kumushli amalgamaning metall tarkibi",
+              "body": "Kornilov darsligida kumushli amalgama qotishmasida kumush, qalay, mis va rux qatnashishi ko‘rsatilgan. Metallarning nisbati materialning qotish xususiyati, qattiqligi va deformatsiyaga chidamliligiga ta’sir qiladi."
+            },
+            {
+              "heading": "Misli amalgama",
+              "body": "Kitobda misli amalgama alohida tarixiy material turi sifatida berilgan. Mis miqdori qotishma xossalariga ta’sir qiladi; ayrim eski misli materiallar tish to‘qimalarida rang o‘zgarishi bilan bog‘liq bo‘lishi mumkin."
             }
           ],
           "questions": [
@@ -693,7 +997,13 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, teacher review needed"
+          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "source_pages": [
+            {
+              "book": "Kornilov",
+              "pdf_pages": "74–75"
+            }
+          ]
         },
         {
           "id": "pre_session_20",
@@ -703,8 +1013,16 @@
           "focus": "Amalgamalar.",
           "sections": [
             {
-              "heading": "Amalgamaning asosiy xususiyatlari",
-              "body": "Amalgama materiallari yuqori mexanik mustahkamligi bilan tavsiflanadi. Ularning cheklovlariga estetik ko‘rinishining tish rangiga mos emasligi, issiqlik o‘tkazuvchanligi hamda simob tarkibi bilan bog‘liq xavfsizlik va ekologik masalalar kiradi."
+              "heading": "Amalgamaning afzalliklari",
+              "body": "Darslik amalgamaning mexanik mustahkamligi, qattiqligi va chaynash bosimiga chidamliligini ijobiy xususiyatlar sifatida sanaydi. Bu xususiyatlar uning tarixan chaynov tishlarini tiklashda qo‘llanishini tushuntiradi."
+            },
+            {
+              "heading": "Amalgamaning cheklovlari",
+              "body": "Amalgama tish rangiga mos kelmaydi, issiqlikni yaxshi o‘tkazadi va kimyoviy adgeziyasi cheklangan. Vaqt o‘tishi bilan sirt ko‘rinishi ham o‘zgarishi mumkin. Uning simob tarkibi alohida xavfsizlik va ekologik baholashni talab qiladi."
+            },
+            {
+              "heading": "Pardozlashning ahamiyati",
+              "body": "Darslikda amalgama yuzasining yakuniy konturlanishi va pardozlanishi uning silliqligi hamda chetlarining sifatiga ta’sir qilishi ko‘rsatilgan. Ushbu bo‘lim tarixiy materialshunoslik ma’lumoti sifatida beriladi, bemorga mustaqil muolaja qilish yo‘riqnomasi emas."
             }
           ],
           "questions": [],
@@ -722,7 +1040,13 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, teacher review needed"
+          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "source_pages": [
+            {
+              "book": "Kornilov",
+              "pdf_pages": "74–75"
+            }
+          ]
         },
         {
           "id": "pre_session_21",
@@ -732,8 +1056,20 @@
           "focus": "Kanalni plombalashda qo‘llaniluvchi plomba ashyolar.",
           "sections": [
             {
-              "heading": "Ildiz kanali uchun plomba ashyolari",
-              "body": "Ildiz kanalini to‘ldirish uchun mo‘ljallangan materiallar tish tojini tiklash materiallaridan farqlanadi. Endodontik materialshunoslikda kanalni to‘ldiruvchi asosiy material va oraliqni germetiklaydigan siler vazifalari alohida o‘rganiladi."
+              "heading": "Endodontik plomba ashyolarining vazifasi",
+              "body": "Ildiz kanalini to‘ldirishda ishlatiladigan materiallar tishning toj qismidagi plomba materiallaridan farq qiladi. Ularning asosiy vazifasi tayyorlangan kanal bo‘shlig‘ini barqaror to‘ldirish va ichki o‘tish yo‘llarini germetiklashga xizmat qilishidir."
+            },
+            {
+              "heading": "Pasta va qotuvchi materiallar",
+              "body": "Kornilov darsligida qotmaydigan antiseptik pastalar, qotuvchi pastalar va sementlar alohida guruhlarga ajratilgan. Qotmaydigan materiallarning uzoq muddatli germetikligi cheklangan bo‘lishi mumkin; qotadigan materiallar esa boshqa mexanik xususiyatlarga ega."
+            },
+            {
+              "heading": "Siler va shtift tushunchasi",
+              "body": "Kanalni to‘ldirishda asosiy qattiq material sifatida guttapercha shtiftlari, oraliqlarni germetiklash uchun esa siler qo‘llanadigan tizimlar tasvirlangan. Darslikda kumushli va plastmassali shtiftlar ham tarixiy variantlar sifatida tilga olinadi."
+            },
+            {
+              "heading": "Rentgenkontrastlik",
+              "body": "Endodontik plomba materiali rentgen tasvirida ajralib ko‘rinishi, hajmni saqlashi, to‘qimalarga biologik mos bo‘lishi va kanal devori bilan tutashishi kabi xossalarga ega bo‘lishi kerak. Shunday belgilar sifat nazoratini tushunishda muhim."
             }
           ],
           "questions": [
@@ -764,7 +1100,13 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, teacher review needed"
+          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "source_pages": [
+            {
+              "book": "Kornilov",
+              "pdf_pages": "53–57"
+            }
+          ]
         },
         {
           "id": "pre_session_22",
@@ -774,8 +1116,20 @@
           "focus": "Kanalni plombalashda qo‘llaniluvchi plomba ashyolar.",
           "sections": [
             {
-              "heading": "Ildiz kanalini germetik to‘ldirish tushunchasi",
-              "body": "Endodontik plombalashning nazariy maqsadi ildiz kanali bo‘shlig‘ining zich va barqaror yopilishini ta’minlashdir. Darslikda kanalni yetarli to‘ldirmaslik yoki materialning ildiz cho‘qqisidan chiqishi kabi asoratlar ko‘rib chiqilgan."
+              "heading": "Kanalni to‘ldirish maqsadi",
+              "body": "Endodontik obturatsiya ildiz kanali bo‘shlig‘ini zich yopishni ko‘zlaydi. Darslik kanal devori bilan material orasidagi tutashuv, materialning barqarorligi va apikal sohadagi nazorat muhimligini qayd etadi."
+            },
+            {
+              "heading": "Yetarli va ortiqcha to‘ldirish farqi",
+              "body": "Kanal bo‘shlig‘i to‘liq to‘ldirilmasligi germetiklikka salbiy ta’sir qilishi mumkin. Materialning ildiz cho‘qqisidan tashqariga chiqishi esa atrofdagi to‘qimalar bilan bog‘liq asoratlarga olib kelishi mumkin. Bu holatlar darslikning endodontik asoratlar qismida solishtirilgan."
+            },
+            {
+              "heading": "Anatomik murakkabliklar",
+              "body": "Ildiz kanallarining soni, egriligi va qo‘shimcha tarmoqlari tishdan tishga farq qiladi. Kanal anatomiyasi to‘liq baholanmasa, material bilan to‘ldirish sifati va keyingi nazorat qiyinlashishi mumkin."
+            },
+            {
+              "heading": "Sifatni baholash",
+              "body": "Darslikda rentgenologik nazorat, kanal uzunligi, materialning rentgenkontrastligi va atrof to‘qimalarning holati nazorat mezonlari sifatida berilgan. Ushbu ma’lumotlar nazariy ta’lim uchun mo‘ljallangan."
             }
           ],
           "questions": [],
@@ -793,7 +1147,17 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, teacher review needed"
+          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "source_pages": [
+            {
+              "book": "Kornilov",
+              "pdf_pages": "53–54"
+            },
+            {
+              "book": "Kornilov",
+              "pdf_pages": "63–66"
+            }
+          ]
         },
         {
           "id": "pre_session_23",
@@ -817,7 +1181,8 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "review_status": "AWAITING_SOURCE — no topic-specific teaching text"
+          "review_status": "AWAITING_SOURCE — caries concept and cavity classification not sufficiently covered",
+          "source_pages": []
         },
         {
           "id": "pre_session_24",
@@ -841,7 +1206,8 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "review_status": "AWAITING_SOURCE — no topic-specific teaching text"
+          "review_status": "AWAITING_SOURCE — caries concept and cavity classification not sufficiently covered",
+          "source_pages": []
         },
         {
           "id": "pre_session_25",
@@ -865,7 +1231,8 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "review_status": "AWAITING_SOURCE — no topic-specific teaching text"
+          "review_status": "AWAITING_SOURCE — caries concept and cavity classification not sufficiently covered",
+          "source_pages": []
         },
         {
           "id": "pre_session_26",
@@ -873,7 +1240,20 @@
           "title": "Doimiy tishlovdagi chaynov tishlarning tuzilishi.",
           "calendar_topic": "Doimiy tishlovdagi chaynov tishlarning tuzilishi.",
           "focus": "Doimiy tishlovdagi chaynov tishlarning tuzilishi.",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Yuqori premolyarlarning ichki tuzilishi",
+              "body": "Kornilov darsligining endodontiya bo‘limida yuqori jag‘ birinchi premolyarining ildiz va kanal soni turlicha bo‘lishi, ikki ildizli va ikki kanalli variantlar ko‘p uchrashi qayd etilgan. Ikkinchi premolyarda esa bitta ildiz va bitta kanalli variant tez-tez tasvirlangan."
+            },
+            {
+              "heading": "Yuqori molyarlarning ildiz va kanallari",
+              "body": "Yuqori birinchi molyar odatda uchta ildizga ega bo‘lib, uch yoki undan ko‘p kanal uchrashi mumkin. Darslikda tanglay kanali va lunj kanallarining shakli, shuningdek tish bo‘shlig‘ining chaynov yuzaga nisbatan joylashuvi tasvirlangan."
+            },
+            {
+              "heading": "O‘zgaruvchan anatomik xususiyatlar",
+              "body": "Yuqori uchinchi molyarlarning ildiz va kanal konfiguratsiyasi ancha o‘zgaruvchan bo‘lishi mumkin. Ushbu manba asosan tishlarning ichki — pulpa bo‘shlig‘i va ildiz kanallari — anatomiyasini yoritadi; tojning barcha tashqi yuzalari bu darslikda to‘liq tasniflanmagan."
+            }
+          ],
           "questions": [],
           "teacher_materials": [
             {
@@ -889,7 +1269,13 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "review_status": "AWAITING_SOURCE — no topic-specific teaching text"
+          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "source_pages": [
+            {
+              "book": "Kornilov",
+              "pdf_pages": "30–33"
+            }
+          ]
         },
         {
           "id": "pre_session_27",
@@ -897,7 +1283,20 @@
           "title": "Doimiy tishlovdagi chaynov tishlarning tuzilishi.",
           "calendar_topic": "Doimiy tishlovdagi chaynov tishlarning tuzilishi.",
           "focus": "Doimiy tishlovdagi chaynov tishlarning tuzilishi.",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Pastki premolyarlarning ichki tuzilishi",
+              "body": "Kornilov darsligida pastki jag‘ birinchi va ikkinchi premolyarlari ko‘pincha bitta ildizli deb ta’riflangan. Biroq ikkita kanal yoki ikki ildizli anatomik variantlar ham qayd etilgan. Kanalning shakli va yo‘nalishi tish turiga qarab farqlanadi."
+            },
+            {
+              "heading": "Pastki molyarlardagi kanallar",
+              "body": "Pastki jag‘ birinchi molyari ko‘pincha ikki ildizli bo‘ladi: mezial ildizda ikkita kanal, distal ildizda esa odatda bitta kanal tasvirlangan. Ikkinchi molyarda ham ikki ildiz va bir nechta kanal bo‘lishi mumkin."
+            },
+            {
+              "heading": "Tish bo‘shlig‘ining shakli",
+              "body": "Darslik pastki molyarlarda pulpa bo‘shlig‘i va kanal kirishlarining chaynov yuzaga nisbatan proyeksiyasini ko‘rsatadi. Bu bo‘limda tashqi toj relyefi emas, asosan ichki endodontik anatomiya yoritilgan."
+            }
+          ],
           "questions": [],
           "teacher_materials": [
             {
@@ -913,7 +1312,13 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "review_status": "AWAITING_SOURCE — no topic-specific teaching text"
+          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "source_pages": [
+            {
+              "book": "Kornilov",
+              "pdf_pages": "34–36"
+            }
+          ]
         },
         {
           "id": "pre_session_28",
@@ -921,7 +1326,20 @@
           "title": "Doimiy tishlovdagi frontal tishlarning tuzilishi.",
           "calendar_topic": "Doimiy tishlovdagi frontal tishlarning tuzilishi.",
           "focus": "Doimiy tishlovdagi frontal tishlarning tuzilishi.",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Yuqori markaziy va yon kurak tishlari",
+              "body": "Kornilov darsligida yuqori markaziy kurak tish odatda bitta ildiz va bitta kanalli deb tasvirlangan. Yuqori yon kurak tishida ham ko‘pincha bitta ildiz va bitta kanal mavjud, biroq ildizning egriligi uchrashi mumkin."
+            },
+            {
+              "heading": "Yuqori qoziq tishi",
+              "body": "Yuqori qoziq tishi ko‘pincha uzun ildizi bilan ajralib turadi. Darslikda bitta ildizli va bitta kanalli tuzilish asosiy variant sifatida berilgan. Pulpa bo‘shlig‘ining tashqi toj shakliga mosligi ham qayd etilgan."
+            },
+            {
+              "heading": "Manbaning qamrovi",
+              "body": "Keltirilgan ma’lumotlar oldingi tishlarning ildizi, kanali va pulpa bo‘shlig‘iga tegishli. Kurak tishlarning kesuvchi qirrasi va qoziq tish tojining barcha anatomik belgilari bo‘yicha to‘liq tashqi tavsif bu manbada mavjud emas."
+            }
+          ],
           "questions": [],
           "teacher_materials": [
             {
@@ -937,7 +1355,13 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "review_status": "AWAITING_SOURCE — no topic-specific teaching text"
+          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "source_pages": [
+            {
+              "book": "Kornilov",
+              "pdf_pages": "28–30"
+            }
+          ]
         },
         {
           "id": "pre_session_29",
@@ -945,7 +1369,20 @@
           "title": "Doimiy tishlovdagi frontal tishlarning tuzilishi.",
           "calendar_topic": "Doimiy tishlovdagi frontal tishlarning tuzilishi.",
           "focus": "Doimiy tishlovdagi frontal tishlarning tuzilishi.",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Pastki markaziy va yon kurak tishlari",
+              "body": "Kornilov darsligida pastki markaziy kurak tish ko‘pincha bitta ildizli bo‘lib, ayrim hollarda ikkita kanal mavjudligi tasvirlangan. Yon kurak tishlarida ham qo‘shimcha kanal va kanallarning birlashishi kabi variantlar bo‘lishi mumkin."
+            },
+            {
+              "heading": "Pastki qoziq tishi",
+              "body": "Pastki qoziq tishi odatda bitta ildiz va bitta kanal bilan tavsiflanadi. Biroq manbada ikkita kanalli variantlar ham mumkinligi aytilgan. Kanallarning soni va tuzilishi har bir tishda bir xil bo‘lavermaydi."
+            },
+            {
+              "heading": "Ichki va tashqi anatomiya farqi",
+              "body": "Ushbu darslik frontal tishlarning pulpa bo‘shlig‘i, ildiz kanallari va ularning topografiyasiga e’tibor qaratadi. Tojning vestibulyar va til yuzalari, kontakt nuqtalari kabi tashqi morfologiya belgilarini to‘liq o‘rganish uchun qo‘shimcha anatomiya manbasi kerak."
+            }
+          ],
           "questions": [],
           "teacher_materials": [
             {
@@ -961,7 +1398,13 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "review_status": "AWAITING_SOURCE — no topic-specific teaching text"
+          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "source_pages": [
+            {
+              "book": "Kornilov",
+              "pdf_pages": "33–34"
+            }
+          ]
         },
         {
           "id": "pre_session_30",
@@ -971,8 +1414,16 @@
           "focus": "Tish qattiq to‘qimalarini charxlash asoslari va terapevt-stomatolog ishidagi texnika-xavfsizlik qoidalari.",
           "sections": [
             {
-              "heading": "Tish qattiq to‘qimalariga ishlov beruvchi asboblar",
-              "body": "Tish qattiq to‘qimalariga ishlov beruvchi aylanuvchi asboblar orasida turli shakldagi borlar mavjud. Ular ishchi boshchasi, kesuvchi qirralari, materiali va dastakka mosligi bilan farqlanadi. Ishlov turi asbobning shakli hamda xususiyatlariga bog‘liq."
+              "heading": "Tish qattiq to‘qimalariga ishlov berish tushunchasi",
+              "body": "Tish to‘qimalariga mexanik ishlov berishda emal va dentin xossalari hamda rotatsion asbob boshchasining shakli ahamiyatga ega. Asboblar kesuvchi qirrali va abraziv qoplamali turlarga bo‘linadi. Ishlovning turi va ko‘lami tiklash vazifasiga bog‘liq."
+            },
+            {
+              "heading": "Asbob va ishchi qismni solishtirish",
+              "body": "Sharsimon, silindrsimon, konussimon, teskari konussimon va olmosli borlar turlicha yuzalar hosil qilishga mo‘ljallangan. Freza, finir va polirlar esa konturlash va yakuniy silliqlash bilan bog‘liq asboblardir. Bazikyan atlasida rotatsion asboblar ishchi qismi, o‘zak turi va abrazivligi bo‘yicha tasniflangan."
+            },
+            {
+              "heading": "Qattiq to‘qimalarni asrash",
+              "body": "Darsliklarda ortiqcha mexanik ishlov berish, issiqlik ajralishi va tish to‘qimasining keraksiz yo‘qotilishi mumkin bo‘lgan cheklovlar sifatida ko‘rsatilgan. Shuning uchun asbobni tanlash, sovitish tizimi va texnik sozlik nazariy xavfsizlik tushunchalari bilan birga o‘rganiladi."
             }
           ],
           "questions": [
@@ -1003,7 +1454,17 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, teacher review needed"
+          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "source_pages": [
+            {
+              "book": "Kornilov",
+              "pdf_pages": "18–21"
+            },
+            {
+              "book": "Bazikyan",
+              "pdf_pages": "123–142"
+            }
+          ]
         },
         {
           "id": "pre_session_31",
@@ -1013,8 +1474,20 @@
           "focus": "Tish qattiq to‘qimalarini charxlash asoslari va terapevt-stomatolog ishidagi texnika-xavfsizlik qoidalari.",
           "sections": [
             {
-              "heading": "Rotatsion asboblarda xavfsizlik tamoyillari",
-              "body": "Rotatsion asboblarning xavfsiz qo‘llanishi uchun dastak va bor mosligi, mahkamlanish holati, sovitish tizimi hamda asbobning gigiyenik holati muhim. Dastakning shovqini, tebranishi va texnik sozligi ham baholanadi. Amaliy ishlar o‘qituvchi nazorati ostida o‘rganiladi."
+              "heading": "Stomatologik ish joyidagi asosiy xavf omillari",
+              "body": "Rotatsion asboblar ishlaganda mexanik tebranish, shovqin, aerozol va uchuvchi mayda zarrachalar yuzaga kelishi mumkin. Trezubov qo‘llanmasida infeksiya tarqalishini cheklash, kabinet gigiyenasi va xodimlarning himoyalanishi alohida ko‘rib chiqilgan."
+            },
+            {
+              "heading": "Shaxsiy himoya vositalari",
+              "body": "Bazikyan atlasida tibbiy qo‘lqoplar, niqoblar va himoya ko‘zoynaklari alohida asbob-uskunalar guruhlari sifatida tasvirlangan. Ular biologik materiallar, suyuqlik sachrashi va mexanik zarrachalardan himoyalanish tizimining qismidir."
+            },
+            {
+              "heading": "Asboblarning texnik holati",
+              "body": "Dastakka mos bo‘lmagan, noto‘g‘ri mahkamlangan yoki yeyilgan bor xavf tug‘dirishi mumkin. Dastakning sovitish kanallari, vibratsiyasi va texnik sozligi e’tiborga olinadi. Bunday asboblar bilan amaliy ishlash faqat klinik tartib-qoidalar va o‘qituvchi nazorati ostida amalga oshiriladi."
+            },
+            {
+              "heading": "Dezinfeksiya va sterilizatsiya farqi",
+              "body": "Dezinfeksiya mikroorganizmlar sonini kamaytirishga qaratilgan ishlovdir; sterilizatsiya esa mikroorganizmlarning barcha shakllarini yo‘q qilishga qaratiladi. Stomatologik asboblar uchun qayta ishlash talablari asbob materiali va qo‘llanish turiga bog‘liq."
             }
           ],
           "questions": [],
@@ -1032,7 +1505,21 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "review_status": "USER_SOURCE_DRAFT — topic-specific, teacher review needed"
+          "review_status": "USER_SOURCE_DRAFT — topic-specific, based on uploaded dental textbooks",
+          "source_pages": [
+            {
+              "book": "Kornilov",
+              "pdf_pages": "13–16"
+            },
+            {
+              "book": "Bazikyan",
+              "pdf_pages": "160–166"
+            },
+            {
+              "book": "Trezubov",
+              "pdf_pages": "9–17"
+            }
+          ]
         }
       ]
     },

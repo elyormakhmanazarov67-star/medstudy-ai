@@ -23,9 +23,9 @@ def test_preclinical_calendar_and_no_invented_content():
     assert course['id']=='stom_prerest'
     assert [l['session_number'] for l in course['lessons']]==list(range(1,32))
     assert course['lessons'][0]['id']=='ergonomika'
-    assert sum(bool(l['sections']) for l in course['lessons']) == 24
-    assert sum(not l['sections'] for l in course['lessons']) == 7
-    assert len(set(sec['body'] for l in course['lessons'] for sec in l['sections'])) == 24
+    assert sum(bool(l['sections']) for l in course['lessons']) == 28
+    assert sum(not l['sections'] for l in course['lessons']) == 3
+    assert len(set(sec['body'] for l in course['lessons'] for sec in l['sections'])) == sum(len(l['sections']) for l in course['lessons'])
     assert not any(sec['heading'] == 'Manba va chegaralar' for l in course['lessons'] for sec in l['sections'])
     assert all(not l['questions'] for l in course['lessons'] if not l['sections'])
     assert course['total_sessions'] == 31
@@ -66,3 +66,19 @@ def test_latin_lessons_follow_uploaded_curriculum_and_alphabet():
     assert all(not l['teacher_materials'] for l in s['lessons'])
     assert all(not any(x['filename'].lower().endswith(ext) for x in l['teacher_materials'] for ext in ('.jpg', '.doc', '.docx', '.ppt', '.pptx')) for l in s['lessons'])
     assert all(q['id'].startswith('latin_') for l in s['lessons'] for q in l['questions'])
+
+
+def test_preclinical_uploaded_sources_topic_coverage():
+    data=load_catalog()
+    course=next(s for s in data['subjects'] if s['id']=='stom_prerest')
+    lessons=course['lessons']
+    assert len(lessons)==31
+    assert [l['session_number'] for l in lessons if not l['sections']]==[23,24,25]
+    assert all(len(l['sections'])>=3 for l in lessons if l['sections'])
+    assert all(l.get('source_pages') for l in lessons if l['sections'])
+    assert any(any(ref['book']=='Trezubov' for ref in l['source_pages']) for l in lessons)
+    assert any(any(ref['book']=='Bazikyan' for ref in l['source_pages']) for l in lessons)
+    assert any(any(ref['book']=='Kornilov' for ref in l['source_pages']) for l in lessons)
+    assert all('Manba va chegaralar' not in [sec['heading'] for sec in l['sections']] for l in lessons)
+    assert all(not l['questions'] for l in lessons if not l['sections'])
+    assert all('teacher_materials' in l for l in lessons)
