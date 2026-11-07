@@ -97,9 +97,9 @@ def _save_stream(stream, filename: str, directory: Path, size_limit: int = MAX_F
                 raise HTTPException(422, "Office fayl formati noto‘g‘ri")
         if ext in {".doc", ".ppt"} and head != bytes.fromhex("D0CF11E0A1B11AE1"):
             raise HTTPException(422, "Eski Office fayl formati noto‘g‘ri")
-        if ext in {".jpg", ".jpeg"} and not head.startswith(b"\\xff\\xd8\\xff"):
+        if ext in {".jpg", ".jpeg"} and not head.startswith(b"\xff\xd8\xff"):
             raise HTTPException(422, "JPEG formati noto‘g‘ri")
-        if ext == ".png" and head != b"\\x89PNG\\r\\n\\x1a\\n":
+        if ext == ".png" and head != b"\x89PNG\r\n\x1a\n":
             raise HTTPException(422, "PNG formati noto‘g‘ri")
         os.chmod(temporary, 0o600)
         os.replace(temporary, destination)
