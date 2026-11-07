@@ -131,4 +131,5 @@ def test_latin_subject_and_poster_in_authenticated_lesson(client):
     assert first['questions'][0]['q']
     assert client.get('/api/lessons/latin_a1').status_code==401
     later=client.get('/api/lessons/latin_a15',headers=hdr()).json()
-    assert later['sections']==[] and later['questions']==[]
+    assert later['sections'] and later['questions']
+    assert len(later['questions'])==5

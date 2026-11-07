@@ -23,8 +23,8 @@ def test_preclinical_calendar_and_no_invented_content():
     assert course['id']=='stom_prerest'
     assert [l['session_number'] for l in course['lessons']]==list(range(1,32))
     assert course['lessons'][0]['id']=='ergonomika'
-    assert sum(bool(l['sections']) for l in course['lessons']) == 28
-    assert sum(not l['sections'] for l in course['lessons']) == 3
+    assert sum(bool(l['sections']) for l in course['lessons']) == 31
+    assert sum(not l['sections'] for l in course['lessons']) == 0
     assert len(set(sec['body'] for l in course['lessons'] for sec in l['sections'])) == sum(len(l['sections']) for l in course['lessons'])
     assert not any(sec['heading'] == 'Manba va chegaralar' for l in course['lessons'] for sec in l['sections'])
     assert all(not l['questions'] for l in course['lessons'] if not l['sections'])
@@ -61,7 +61,7 @@ def test_latin_lessons_follow_uploaded_curriculum_and_alphabet():
     assert [l['session_number'] for l in s['lessons']]==list(range(1,16))
     assert len(s['lessons'][0]['alphabet'])==25
     assert {x['letter'] for x in s['lessons'][0]['alphabet']}==set('ABCDEFGHIJKLMNOPQRSTUVXYZ')
-    assert sum(bool(l['sections']) for l in s['lessons'])==6
+    assert sum(bool(l['sections']) for l in s['lessons'])==15
     assert all(not l['questions'] for l in s['lessons'] if not l['sections'])
     assert all(not l['teacher_materials'] for l in s['lessons'])
     assert all(not any(x['filename'].lower().endswith(ext) for x in l['teacher_materials'] for ext in ('.jpg', '.doc', '.docx', '.ppt', '.pptx')) for l in s['lessons'])
@@ -73,9 +73,9 @@ def test_preclinical_uploaded_sources_topic_coverage():
     course=next(s for s in data['subjects'] if s['id']=='stom_prerest')
     lessons=course['lessons']
     assert len(lessons)==31
-    assert [l['session_number'] for l in lessons if not l['sections']]==[23,24,25]
+    assert [l['session_number'] for l in lessons if not l['sections']]==[]
     assert all(len(l['sections'])>=3 for l in lessons if l['sections'])
-    assert all(l.get('source_pages') for l in lessons if l['sections'])
+    assert all(l.get('source_pages') or l.get('research_sources') for l in lessons if l['sections'])
     assert any(any(ref['book']=='Trezubov' for ref in l['source_pages']) for l in lessons)
     assert any(any(ref['book']=='Bazikyan' for ref in l['source_pages']) for l in lessons)
     assert any(any(ref['book']=='Kornilov' for ref in l['source_pages']) for l in lessons)
@@ -87,8 +87,8 @@ def test_preclinical_uploaded_sources_topic_coverage():
 def test_preclinical_quizzes_are_distinct_and_answerable():
     data=load_catalog()
     lessons=next(s for s in data['subjects'] if s['id']=='stom_prerest')['lessons']
-    assert sum(len(l['questions']) for l in lessons)==280
-    assert all(len(l['questions'])==10 for l in lessons if l['sections'])
+    assert sum(len(l['questions']) for l in lessons)==304
+    assert all(len(l['questions'])==10 if l['session_number'] not in (23,24,25) else len(l['questions'])==8 for l in lessons)
     assert all(not l['questions'] for l in lessons if not l['sections'])
     ids=[q['id'] for l in lessons for q in l['questions']]
     assert len(ids)==len(set(ids))
@@ -96,3 +96,19 @@ def test_preclinical_quizzes_are_distinct_and_answerable():
     assert len(prompts)==len(set(prompts))
     assert all(len(q['options'])==4 and len(set(q['options']))==4
                and 0<=q['answer']<4 and q['explanation'] for l in lessons for q in l['questions'])
+
+
+def test_every_topic_filled_and_quizzed_after_open_research():
+    data=load_catalog()
+    lessons=[l for s in data['subjects'] for l in s['lessons']]
+    assert len(lessons)==81
+    assert all(l['sections'] and l['questions'] for l in lessons)
+    research=[l for l in lessons if l.get('review_status','').startswith('AI_RESEARCH_DRAFT')]
+    assert len(research)==38
+    assert all(l.get('research_sources') for l in research)
+    assert all(len(l['questions'])>=5 for l in research)
+    assert all(not any(section['heading']=='Manba va chegaralar' for section in l['sections']) for l in lessons)
+    assert all(len(q['options'])==4 and len(set(q['options']))==4
+               and isinstance(q['answer'],int) and 0<=q['answer']<4 and q['explanation']
+               for l in lessons for q in l['questions'])
+    assert all('url' not in item for l in lessons for item in l.get('teacher_materials',[]))
