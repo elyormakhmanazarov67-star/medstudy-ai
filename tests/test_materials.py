@@ -38,4 +38,4 @@ def test_latin_curriculum_still_accessible_without_original_files(monkeypatch, t
     assert len(first['alphabet'])==25
     assert first['sections']
     assert first['questions']
-    assert client.get('/api/health').json()['version']=='0.5.13-content-only'
+    assert client.get('/api/health').json()['version']=='0.5.14-biofizika-lessons'
