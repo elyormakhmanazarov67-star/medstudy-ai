@@ -8,7 +8,7 @@
   const app = document.getElementById('app');
   const demo = new URLSearchParams(location.search).get('demo') === '1' && ['localhost', '127.0.0.1'].includes(location.hostname);
   const auth = webapp?.initData || '';
-  const state = { tab: 'home', catalog: null, progress: null, studyPlan: null, history: null, lesson: null, quiz: null, result: null, consent: null, busy: false, tutorStatus: null, tutorQuestion:'', tutorAnswer: null, tutorLessonId:'' };
+  const state = { tab: 'home', catalog: null, progress: null, studyPlan: null, history: null, lesson: null, quiz: null, result: null, consent: null, busy: false, tutorStatus: null, tutorQuestion:'', tutorAnswer: null, tutorLessonId:'', materialAdmin: null } ;
   // Preserve original Uzbek Latin digraphs (Sh/sh, Ch/ch); never rewrite text.
   const uz = val => String(val ?? '');
   const esc = val => uz(val).replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]));
@@ -42,17 +42,23 @@
       ? 'Bu bo‘limda o‘qituvchi yuborgan materiallar va ulardan tayyorlangan testlar bor.'
       : 'Mavzuga oid bepul o‘quv konspektlari va SamMU elektron kutubxonasidagi kitob havolalari alohida ko‘rsatiladi.';
     const renderLink = doc => {
-      const title = '<strong>'+rawEsc(doc.title)+'</strong>';
-      const note = doc.access || doc.note || '';
+      const title = '<strong>'+esc(doc.title)+'</strong>';
+      const note = doc.access || (doc.available ? 'Fayl yuklab olishga tayyor' : doc.note || 'Fayl serverga hali yuklanmagan') || '';
       const hint = note ? '<p class="smallprint">'+esc(note)+'</p>' : '';
       if(typeof doc.url === 'string' && /^https:\/\//.test(doc.url)) {
         return '<div class="card"><a href="'+rawEsc(doc.url)+'" rel="noopener noreferrer" target="_blank">'+title+' ↗</a>'+hint+'</div>';
       }
-      return '<div class="card">'+title+'<p class="smallprint">'+rawEsc(doc.filename || '')+'</p>'+hint+'</div>';
+      const available = Boolean(doc.available && doc.file_id);
+      const download = available
+        ? '<button type="button" class="btn btn-primary" data-action="download-material" data-id="'+rawEsc(doc.file_id)+'" data-filename="'+rawEsc(doc.filename)+'">⬇ Yuklab olish</button>'
+        : '<span class="smallprint">Fayl hali yuklanmagan</span>';
+      return '<div class="card">'+title+'<p class="smallprint">'+esc(doc.filename || '')+'</p>'+download+hint+'</div>';
     };
     let cards = '';
     if(kind === 'required') {
       cards = docs.map(renderLink).join('');
+      if(state.materialAdmin?.is_admin) cards += '<div class="card"><h3>Administrator: fayllarni yuklash</h3><p class="smallprint">Bitta faylni tanlang yoki barcha materiallar uchun ZIP arxiv yuklang. Faqat darslar ro‘yxatidagi asl fayl nomlari qabul qilinadi.</p><input id="material-zip" class="ai-input" type="file" accept=".zip"/><button type="button" class="btn" data-action="upload-material-zip">ZIP arxivni yuklash</button><p class="smallprint">Serverdagi fayllar: '+state.materialAdmin.available_files+'/'+state.materialAdmin.total_files+'</p></div>';
+
       cards += (lesson.sections||[]).map(s=>'<section class="lesson-section"><h3>'+esc(s.heading)+'</h3><p>'+esc(s.body)+'</p></section>').join('');
       if(lesson.questions?.length) cards += '<div class="card"><h3>Kerakli ma’lumotlar testi</h3><button class="btn btn-primary btn-wide" data-action="start-quiz">Testni boshlash ('+lesson.questions.length+')</button></div>';
       if(!docs.length && !lesson.sections?.length)cards = '<div class="empty"><h3>Hozircha material yo‘q</h3><p>O‘qituvchi materiallari kelishi kutilmoqda.</p></div>';
@@ -70,6 +76,46 @@
     }
     shell(back+'<p class="eyebrow">'+esc(lesson.subject_title)+'</p><h1>'+name+'</h1><p class="smallprint">'+intro+'</p>'+cards+disclaimer);
   };
+  async function downloadMaterial(id, filename) {
+    if(!/^[a-f0-9]{24}$/.test(id))throw Error('Fayl identifikatori noto‘g‘ri');
+    const headers={'X-Telegram-Init-Data':auth};
+    if(demo)headers['X-Dev-Preview']='local-only';
+    const response=await fetch('/api/materials/'+id,{headers,cache:'no-store'});
+    if(!response.ok){
+      let data={};
+      try{data=await response.json()}catch(_){}
+      throw Error(data.detail || 'Faylni yuklab bo‘lmadi');
+    }
+    const blob=await response.blob();
+    const objectUrl=URL.createObjectURL(blob);
+    const a=document.createElement('a');
+    a.href=objectUrl;
+    a.download=filename || 'material';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(()=>URL.revokeObjectURL(objectUrl),20000);
+  }
+  async function uploadMaterialZip() {
+    const file=document.getElementById('material-zip')?.files?.[0];
+    if(!file){alert('ZIP faylni tanlang');return;}
+    if(!file.name.toLowerCase().endsWith('.zip')){alert('Faqat ZIP fayl mumkin');return;}
+    if(file.size>160*1024*1024){alert('ZIP hajmi 160 MB dan oshmasin');return;}
+    const form=new FormData();
+    form.append('archive',file,file.name);
+    const headers={'X-Telegram-Init-Data':auth};
+    if(demo)headers['X-Dev-Preview']='local-only';
+    const response=await fetch('/api/materials/bundle',{method:'POST',headers,body:form});
+    if(!response.ok){
+      const data=await response.json().catch(()=>({}));
+      throw Error(data.detail || 'Fayllarni yuklab bo‘lmadi');
+    }
+    const data=await response.json();
+    alert(data.uploaded+' ta fayl serverga joylandi');
+    await getLesson(state.lesson.id);
+    displayCategory(state.lesson,'required');
+  }
+
   function home() {
     state.tab='home';
     const subjects=state.catalog?.subjects || [];
@@ -92,7 +138,7 @@
   }
   async function getLesson(id) {
     loading();
-    try { state.lesson=await api('/lessons/'+encodeURIComponent(id)); showLesson(); }
+    try { [state.lesson, state.materialAdmin] = await Promise.all([api('/lessons/'+encodeURIComponent(id)), api('/materials/admin')]); showLesson(); }
     catch(e){ fail(e); }
   }
   function showLesson(){
@@ -204,6 +250,8 @@
         case 'home': if(state.catalog)home();else init();break;
         case 'subject':showSubject(el.dataset.id);break;
         case 'category':if(state.lesson)displayCategory(state.lesson,el.dataset.kind);break;
+        case 'download-material':await downloadMaterial(el.dataset.id,el.dataset.filename);break;
+        case 'upload-material-zip':await uploadMaterialZip();break;
         case 'lesson': if(el.dataset.id)await getLesson(el.dataset.id);break;
         case 'start-quiz':if(state.lesson && state.lesson.questions?.length)startQuiz(state.lesson.questions,'full','required');break;
         case 'start-supplement-quiz':if(state.lesson && state.lesson.supplement_questions?.length)startQuiz(state.lesson.supplement_questions,'full','supplementary');break;
