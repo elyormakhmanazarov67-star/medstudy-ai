@@ -15,6 +15,7 @@ from .store import Store
 from .study_plan import build_study_plan
 from .plans import plans_catalog
 from . import tutor
+from .lesson_helper import prepare_answer
 from .telegram_gateway import router as telegram_router, configure_telegram
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -190,6 +191,23 @@ def tutor_status(uid: int = Depends(consent_required)):
     used = STORE.ai_usage(uid)
     return {'enabled': tutor.enabled(), 'consented': STORE.has_ai_consent(uid),
             'used': used, 'limit': limit, 'remaining': max(0, limit-used)}
+
+
+class LessonHelpQuestion(BaseModel):
+    lesson_id: str = Field(min_length=1, max_length=100)
+    question: str = Field(min_length=5, max_length=500)
+    mode: str = Field(default="explain", pattern="^(explain|example|recall)$")
+
+
+@app.post('/api/tutor/lesson')
+def free_lesson_help(data: LessonHelpQuestion, uid: int = Depends(consent_required)):
+    """Private free study helper: no OpenAI call and no transcripts saved."""
+    found = find_lesson(CATALOG, data.lesson_id)
+    if not found:
+        raise HTTPException(404, 'Mavzu topilmadi')
+    if not data.question.strip():
+        raise HTTPException(422, 'Savol bo‘sh bo‘lishi mumkin emas')
+    return prepare_answer(found[1], data.question, data.mode)
 
 
 @app.post('/api/tutor/consent')
