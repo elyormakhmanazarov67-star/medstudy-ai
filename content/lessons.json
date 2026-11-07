@@ -1,7 +1,7 @@
 {
-  "version": "0.5.18-anatomy-added",
+  "version": "0.5.19-all-lessons-filled",
   "status": "TEST — O‘qituvchi materiallari va OpenStax ochiq darsliklaridan manba ko‘rsatilgan alohida o‘quv materiallari. Mutaxassis tekshiruvi talab etiladi.",
-  "note": "Boshlang‘ich to‘ldirish: 23–25-kariyes va Stomatologiyaga kirish 1–12 mavzulari tekshirilgan ochiq manbalar asosida tayyorlandi. Yangi mazmun foydalanuvchi kitoblaridan ajratilgan AI_RESEARCH_DRAFT sifatida belgilangan.",
+  "note": "81 ta mavzuning barchasida konspekt va test savollar mavjud. Oldingi foydalanuvchi manbalari saqlangan, ilgari bo‘sh darslar tashqi o‘quv manbalari va ChatGPT asosida AI_RESEARCH_DRAFT deb belgilangan; original fayllarni yuklab olish mavjud emas.",
   "subjects": [
     {
       "id": "stom_prerest",
@@ -10368,10 +10368,96 @@
           "title": "Klinik terminologiyaga kirish. Klinik atamalar yasash: suffiksatsiya va prefiksatsiya.",
           "calendar_topic": "Klinik terminologiyaga kirish. Klinik atamalar yasash: suffiksatsiya va prefiksatsiya.",
           "focus": "Klinik terminologiyaga kirish. Klinik atamalar yasash: suffiksatsiya va prefiksatsiya.",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Klinik terminning tuzilishi",
+              "body": "Klinik termin ko‘pincha yunon yoki lotin ildizi, old qo‘shimcha (prefiks), so‘z yasovchi qo‘shimcha (suffiks) va bog‘lovchi unli orqali yasaladi. Masalan, cardiologia: cardi/o — yurak, -logia — fan yoki o‘rganish sohasi."
+            },
+            {
+              "heading": "Termin elementi va ildiz",
+              "body": "Termin elementi atamaning muayyan ma’noga ega qismini bildiradi. Dermat/o — teri; neur/o — nerv; oste/o — suyak; odont/o — tish. Ildiz atamaning asosiy mazmunini anglatadi."
+            },
+            {
+              "heading": "Suffiksatsiya",
+              "body": "Suffiks atama oxiriga qo‘shilib kasallik, jarayon yoki mutaxassislik ma’nosini qo‘shadi. -itis yallig‘lanishni, -algia og‘riqni, -logia o‘rganish sohasini bildiradi: gingivitis — milk yallig‘lanishi."
+            },
+            {
+              "heading": "Prefiksatsiya",
+              "body": "Prefiks atama boshida keladi va miqdor, joylashuv yoki yo‘nalishni bildiradi. Hyper- me’yordan ortiq, hypo- me’yordan past, peri- atrof, intra- ichki degan ma’noni berishi mumkin."
+            },
+            {
+              "heading": "So‘z qismlarini tahlil qilish",
+              "body": "Periodontitis terminida peri- — atrof, odont- — tish, -itis — yallig‘lanish degan qismlar mavjud. Terminlarni qismlarga ajratish ularni yodlash va ma’nosini aniqlashga yordam beradi; klinik tashxis esa faqat so‘z tahlili bilan qo‘yilmaydi."
+            }
+          ],
           "teacher_materials": [],
-          "questions": [],
-          "review_status": "AWAITING_SOURCE — content not in supplied materials"
+          "questions": [
+            {
+              "id": "latin_a7_aiq1",
+              "q": "Cardiologia so‘zidagi cardi/o nimani anglatadi?",
+              "options": [
+                "Buyrakni",
+                "Tishni",
+                "Mushakni",
+                "Yurakni"
+              ],
+              "answer": 3,
+              "explanation": "Klinik termin ko‘pincha yunon yoki lotin ildizi, old qo‘shimcha (prefiks), so‘z yasovchi qo‘shimcha (suffiks) va bog‘lovchi unli orqali yasaladi."
+            },
+            {
+              "id": "latin_a7_aiq2",
+              "q": "Odont/o termini nimani bildiradi?",
+              "options": [
+                "Tishni",
+                "Qonni",
+                "Ko‘zni",
+                "Jigarni"
+              ],
+              "answer": 0,
+              "explanation": "Termin elementi atamaning muayyan ma’noga ega qismini bildiradi."
+            },
+            {
+              "id": "latin_a7_aiq3",
+              "q": "-itis qo‘shimchasi ko‘pincha nimani bildiradi?",
+              "options": [
+                "O‘lchovni",
+                "Yallig‘lanishni",
+                "Rangni",
+                "Suyakni"
+              ],
+              "answer": 1,
+              "explanation": "Suffiks atama oxiriga qo‘shilib kasallik, jarayon yoki mutaxassislik ma’nosini qo‘shadi."
+            },
+            {
+              "id": "latin_a7_aiq4",
+              "q": "Peri- prefiksi qanday ma’no bildiradi?",
+              "options": [
+                "Ichkaridan tashqariga",
+                "Qarshi",
+                "Atrof",
+                "Ikkita"
+              ],
+              "answer": 2,
+              "explanation": "Prefiks atama boshida keladi va miqdor, joylashuv yoki yo‘nalishni bildiradi."
+            },
+            {
+              "id": "latin_a7_aiq5",
+              "q": "Periodontitis so‘zining -itis qismi nimani bildiradi?",
+              "options": [
+                "Sonni",
+                "O‘lchamni",
+                "Shaklni",
+                "Yallig‘lanishni"
+              ],
+              "answer": 3,
+              "explanation": "Periodontitis terminida peri- — atrof, odont- — tish, -itis — yallig‘lanish degan qismlar mavjud."
+            }
+          ],
+          "review_status": "AI_RESEARCH_DRAFT — clinical terminology vocabulary and language fundamentals; teacher review recommended",
+          "research_sources": [
+            "https://www.ncbi.nlm.nih.gov/books/NBK607453/",
+            "https://openmd.com/guide/medical-terminology"
+          ]
         },
         {
           "id": "latin_a8",
@@ -10379,10 +10465,96 @@
           "title": "Prefiksatsiya usuli.",
           "calendar_topic": "Prefiksatsiya usuli.",
           "focus": "Prefiksatsiya usuli.",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Joylashuv prefikslari",
+              "body": "Intra- — ichida; extra- — tashqarida; sub- — ostida; supra- — ustida; inter- — orasida. Masalan, sublingualis — til ostiga oid, intercostalis — qovurg‘alar orasiga oid."
+            },
+            {
+              "heading": "Miqdor va daraja prefikslari",
+              "body": "Hyper- — ortiqcha yoki yuqori, hypo- — past yoki yetarli emas, poly- — ko‘p, oligo- — kam. Hypoglycaemia atamasida hypo- pastlikni, -glyc- glyukoza bilan bog‘liqlikni bildiradi."
+            },
+            {
+              "heading": "Vaqt va takrorlanish",
+              "body": "Pre- — oldin; post- — keyin; re- — qayta. Prenatalis — tug‘ilishdan oldingi, postoperativus — operatsiyadan keyingi degan terminlarda ishlatiladi."
+            },
+            {
+              "heading": "Qarama-qarshi holat",
+              "body": "Anti- qarshi degan ma’noni bildiradi, dys- buzilish yoki qiyinlashish bilan bog‘liq. Atama ma’nosini aniqlashda ildiz ham muhim: dysphagia — yutish qiyinligi."
+            },
+            {
+              "heading": "Atamalarni ajratish",
+              "body": "Intramuscularis — mushak ichiga oid; supragingivalis — milk ustidagi; subgingivalis — milk ostidagi. Prefiks o‘zgarsa atamaning anatomik joylashuv ma’nosi ham o‘zgarishi mumkin."
+            }
+          ],
           "teacher_materials": [],
-          "questions": [],
-          "review_status": "AWAITING_SOURCE — content not in supplied materials"
+          "questions": [
+            {
+              "id": "latin_a8_aiq1",
+              "q": "Inter- prefiksi nimani bildiradi?",
+              "options": [
+                "Orasida",
+                "Ustida",
+                "Oldida",
+                "Qarshi"
+              ],
+              "answer": 0,
+              "explanation": "Intra- — ichida; extra- — tashqarida; sub- — ostida; supra- — ustida; inter- — orasida."
+            },
+            {
+              "id": "latin_a8_aiq2",
+              "q": "Hypo- prefiksi qanday ma’noni beradi?",
+              "options": [
+                "Ko‘p yoki yuqori",
+                "Kam yoki past",
+                "Atrof",
+                "Oldin"
+              ],
+              "answer": 1,
+              "explanation": "Hyper- — ortiqcha yoki yuqori, hypo- — past yoki yetarli emas, poly- — ko‘p, oligo- — kam."
+            },
+            {
+              "id": "latin_a8_aiq3",
+              "q": "Post- prefiksi nimani anglatadi?",
+              "options": [
+                "Oldin",
+                "Ichida",
+                "Keyin",
+                "Ikkita"
+              ],
+              "answer": 2,
+              "explanation": "Pre- — oldin; post- — keyin; re- — qayta."
+            },
+            {
+              "id": "latin_a8_aiq4",
+              "q": "Dys- prefiksi nimaga ishora qiladi?",
+              "options": [
+                "Doimiy normal holatga",
+                "Faqat sonni oshirishga",
+                "Faqat rangga",
+                "Buzilish yoki qiyinchilikka"
+              ],
+              "answer": 3,
+              "explanation": "Anti- qarshi degan ma’noni bildiradi, dys- buzilish yoki qiyinlashish bilan bog‘liq."
+            },
+            {
+              "id": "latin_a8_aiq5",
+              "q": "Supragingivalis nimani anglatadi?",
+              "options": [
+                "Milk ustidagi",
+                "Milk ostidagi",
+                "Tish ichidagi",
+                "Milk orasidagi"
+              ],
+              "answer": 0,
+              "explanation": "Intramuscularis — mushak ichiga oid; supragingivalis — milk ustidagi; subgingivalis — milk ostidagi."
+            }
+          ],
+          "review_status": "AI_RESEARCH_DRAFT — clinical terminology vocabulary and language fundamentals; teacher review recommended",
+          "research_sources": [
+            "https://www.ncbi.nlm.nih.gov/books/NBK607453/",
+            "https://openmd.com/guide/medical-terminology"
+          ]
         },
         {
           "id": "latin_a9",
@@ -10390,10 +10562,96 @@
           "title": "Klinik termin elementlari. A’zolar, diagnostika, davolash va kasalliklarni ifodalovchi yunon-lotin atamalari.",
           "calendar_topic": "Klinik termin elementlari. A’zolar, diagnostika, davolash va kasalliklarni ifodalovchi yunon-lotin atamalari.",
           "focus": "Klinik termin elementlari. A’zolar, diagnostika, davolash va kasalliklarni ifodalovchi yunon-lotin atamalari.",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Organlarni anglatuvchi ildizlar",
+              "body": "Cardi/o — yurak, hepat/o — jigar, nephr/o — buyrak, gastr/o — oshqozon, enter/o — ichak, odont/o — tish. Klinik terminlar bu ildizlarni boshqa elementlar bilan birlashtiradi."
+            },
+            {
+              "heading": "Kasallik va simptom qo‘shimchalari",
+              "body": "-itis yallig‘lanish, -osis holat yoki jarayon, -algia og‘riq, -pathy kasallik, -megaly kattalashish ma’nolarida qo‘llanadi. Masalan, neuralgia — nerv og‘rig‘i."
+            },
+            {
+              "heading": "Diagnostik atama elementlari",
+              "body": "-scopia ko‘rib tekshirish, -graphia qayd qilish yoki tasvirlash jarayoni, -gramma esa natijaviy yozuv yoki tasvirga ishora qiladi. Masalan, electrocardiogramma — yurak elektr faolligining yozuvi."
+            },
+            {
+              "heading": "Davolash terminlari",
+              "body": "-therapia davolash usuli, -tomia kesish, -ectomia olib tashlash, -plastica tiklash yoki shakl berish amaliyotini bildiradi. Bu elementlar tibbiy hujjatdagi terminlarni tushunishga yordam beradi."
+            },
+            {
+              "heading": "Stomatologik klinik terminlar",
+              "body": "Gingivitis — milk yallig‘lanishi; stomatitis — og‘iz shilliq qavati yallig‘lanishi; periodontitis — tish atrofidagi tayanch to‘qimalar yallig‘lanishi bilan bog‘liq termin. Atama ma’nosi klinik tashxisni to‘liq almashtirmaydi."
+            }
+          ],
           "teacher_materials": [],
-          "questions": [],
-          "review_status": "AWAITING_SOURCE — content not in supplied materials"
+          "questions": [
+            {
+              "id": "latin_a9_aiq1",
+              "q": "Nephr/o nimani bildiradi?",
+              "options": [
+                "Jigarni",
+                "Buyrakni",
+                "Oshqozonni",
+                "Tishni"
+              ],
+              "answer": 1,
+              "explanation": "Cardi/o — yurak, hepat/o — jigar, nephr/o — buyrak, gastr/o — oshqozon, enter/o — ichak, odont/o — tish."
+            },
+            {
+              "id": "latin_a9_aiq2",
+              "q": "-algia qanday ma’noni bildiradi?",
+              "options": [
+                "Kesib tashlashni",
+                "Ko‘rishni",
+                "Og‘riqni",
+                "O‘lchashni"
+              ],
+              "answer": 2,
+              "explanation": "-itis yallig‘lanish, -osis holat yoki jarayon, -algia og‘riq, -pathy kasallik, -megaly kattalashish ma’nolarida qo‘llanadi."
+            },
+            {
+              "id": "latin_a9_aiq3",
+              "q": "-gramma odatda nimani bildiradi?",
+              "options": [
+                "Suyakni",
+                "Yallig‘lanishni",
+                "Organ kattalashishini",
+                "Yozuv yoki natijaviy tasvirni"
+              ],
+              "answer": 3,
+              "explanation": "-scopia ko‘rib tekshirish, -graphia qayd qilish yoki tasvirlash jarayoni, -gramma esa natijaviy yozuv yoki tasvirga ishora qiladi."
+            },
+            {
+              "id": "latin_a9_aiq4",
+              "q": "-ectomia nimani bildiradi?",
+              "options": [
+                "Olib tashlashni",
+                "Ko‘payishni",
+                "Rangni",
+                "O‘lchashni"
+              ],
+              "answer": 0,
+              "explanation": "-therapia davolash usuli, -tomia kesish, -ectomia olib tashlash, -plastica tiklash yoki shakl berish amaliyotini bildiradi."
+            },
+            {
+              "id": "latin_a9_aiq5",
+              "q": "Gingivitis nimani anglatadi?",
+              "options": [
+                "O‘pka yallig‘lanishini",
+                "Milk yallig‘lanishini",
+                "Buyrak yallig‘lanishini",
+                "Mushak og‘rig‘ini"
+              ],
+              "answer": 1,
+              "explanation": "Gingivitis — milk yallig‘lanishi; stomatitis — og‘iz shilliq qavati yallig‘lanishi; periodontitis — tish atrofidagi tayanch to‘qimalar yallig‘lanishi bilan bog‘liq termin."
+            }
+          ],
+          "review_status": "AI_RESEARCH_DRAFT — clinical terminology vocabulary and language fundamentals; teacher review recommended",
+          "research_sources": [
+            "https://www.ncbi.nlm.nih.gov/books/NBK607453/",
+            "https://openmd.com/guide/medical-terminology"
+          ]
         },
         {
           "id": "latin_a10",
@@ -10401,10 +10659,96 @@
           "title": "Yunon-lotin dubletlari. To‘qima, a’zo, suyuqlik, sekret, jins, yosh va patologik jarayonlar atamalari.",
           "calendar_topic": "Yunon-lotin dubletlari. To‘qima, a’zo, suyuqlik, sekret, jins, yosh va patologik jarayonlar atamalari.",
           "focus": "Yunon-lotin dubletlari. To‘qima, a’zo, suyuqlik, sekret, jins, yosh va patologik jarayonlar atamalari.",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Yunon-lotin dubletlari",
+              "body": "Bir anatomik tuzilma lotincha ot bilan, klinik termin tarkibida esa yunoncha ildiz bilan ifodalanishi mumkin. Masalan, dens — tish, odont/o — tishga oid klinik ildiz; ren — buyrak, nephr/o — buyrak ildizi."
+            },
+            {
+              "heading": "A’zolar dubletlari",
+              "body": "Cor — yurak, cardi/o — yurak; pulmo — o‘pka, pneumon/o — o‘pka; hepar — jigar, hepat/o — jigar. Dubletning ma’nosi yaqin, ammo atamadagi grammatik vazifasi farq qiladi."
+            },
+            {
+              "heading": "To‘qima dubletlari",
+              "body": "Os, ossis — suyak, oste/o — suyak; cutis — teri, dermat/o — teri; musculus — mushak, my/o — mushak. Dubletlar klinik terminlarda qo‘shma ildiz yasashga xizmat qiladi."
+            },
+            {
+              "heading": "Suyuqlik va sekret terminlari",
+              "body": "Sanguis — qon, haemat/o yoki hemat/o — qon; urina — siydik, ur/o — siydik yo‘llariga oid so‘zlarda uchraydi. Termin ildizi har doim bitta organni emas, biologik suyuqlikni ham anglatishi mumkin."
+            },
+            {
+              "heading": "Yosh va patologik jarayonlar",
+              "body": "Paed/o yoki pedi/o bola bilan, geront/o keksalik bilan bog‘liq klinik termin elementidir. Path/o kasallikni, necr/o o‘lik to‘qimani bildiradi. Qo‘shma so‘z ma’nosi barcha elementlar orqali aniqlanadi."
+            }
+          ],
           "teacher_materials": [],
-          "questions": [],
-          "review_status": "AWAITING_SOURCE — content not in supplied materials"
+          "questions": [
+            {
+              "id": "latin_a10_aiq1",
+              "q": "Dens so‘zining yunoncha klinik ildiz dubleti qaysi?",
+              "options": [
+                "Cardi/o",
+                "Dermat/o",
+                "Odont/o",
+                "Nephr/o"
+              ],
+              "answer": 2,
+              "explanation": "Bir anatomik tuzilma lotincha ot bilan, klinik termin tarkibida esa yunoncha ildiz bilan ifodalanishi mumkin."
+            },
+            {
+              "id": "latin_a10_aiq2",
+              "q": "Hepar uchun yunoncha klinik ildiz qaysi?",
+              "options": [
+                "Oste/o",
+                "Neur/o",
+                "My/o",
+                "Hepat/o"
+              ],
+              "answer": 3,
+              "explanation": "Cor — yurak, cardi/o — yurak; pulmo — o‘pka, pneumon/o — o‘pka; hepar — jigar, hepat/o — jigar."
+            },
+            {
+              "id": "latin_a10_aiq3",
+              "q": "Musculus ning klinik ildiz dubleti qaysi?",
+              "options": [
+                "My/o",
+                "Oste/o",
+                "Gastr/o",
+                "Ophthalm/o"
+              ],
+              "answer": 0,
+              "explanation": "Os, ossis — suyak, oste/o — suyak; cutis — teri, dermat/o — teri; musculus — mushak, my/o — mushak."
+            },
+            {
+              "id": "latin_a10_aiq4",
+              "q": "Sanguis ning klinik ildiz dubleti qaysi?",
+              "options": [
+                "Nephr/o",
+                "Hemat/o",
+                "Gastr/o",
+                "My/o"
+              ],
+              "answer": 1,
+              "explanation": "Sanguis — qon, haemat/o yoki hemat/o — qon; urina — siydik, ur/o — siydik yo‘llariga oid so‘zlarda uchraydi."
+            },
+            {
+              "id": "latin_a10_aiq5",
+              "q": "Geront/o elementi nimani anglatadi?",
+              "options": [
+                "Bolalikni",
+                "Qonni",
+                "Keksalikni",
+                "Tishni"
+              ],
+              "answer": 2,
+              "explanation": "Paed/o yoki pedi/o bola bilan, geront/o keksalik bilan bog‘liq klinik termin elementidir."
+            }
+          ],
+          "review_status": "AI_RESEARCH_DRAFT — clinical terminology vocabulary and language fundamentals; teacher review recommended",
+          "research_sources": [
+            "https://www.ncbi.nlm.nih.gov/books/NBK607453/",
+            "https://openmd.com/guide/medical-terminology"
+          ]
         },
         {
           "id": "latin_a11",
@@ -10412,10 +10756,96 @@
           "title": "Yunon-lotin dubletlari va yakka termin elementlari. Fizik xususiyat va sifatni ifodalovchi atamalar.",
           "calendar_topic": "Yunon-lotin dubletlari va yakka termin elementlari. Fizik xususiyat va sifatni ifodalovchi atamalar.",
           "focus": "Yunon-lotin dubletlari va yakka termin elementlari. Fizik xususiyat va sifatni ifodalovchi atamalar.",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "O‘lcham va miqdor elementlari",
+              "body": "Macro- — katta, micro- — kichik, mega-/megalo- — yirik yoki kattalashgan, oligo- — kam, poly- — ko‘p. Masalan, microdontia tishlarning odatdagidan kichik bo‘lishini ifodalovchi atama."
+            },
+            {
+              "heading": "Rang bildiruvchi elementlar",
+              "body": "Leuk/o — oq, erythr/o — qizil, melan/o — qora yoki to‘q rang, cyan/o — ko‘kimtir rang bilan bog‘liq. Erythrocytus atamasi qizil qon hujayrasini bildiradi."
+            },
+            {
+              "heading": "Harorat va tezlik",
+              "body": "Therm/o harorat yoki issiqlik, cry/o sovuqlik, tachy- tezlik, brady- sekinlik bilan bog‘liq. Masalan, tachycardia yurak urish tezligining ortishini anglatuvchi atama."
+            },
+            {
+              "heading": "Qattiqlik va shakl",
+              "body": "Scler/o qattiqlashish yoki qattiq tuzilma, malac/o yumshash, sten/o torayish ma’nolarini bildiradi. Sclerosis va stenosis turli klinik hodisalarga oid atamalar hisoblanadi."
+            },
+            {
+              "heading": "Bir element bir necha kontekstda",
+              "body": "Oste/o suyak, arthr/o bo‘g‘im, chondr/o tog‘ay, my/o mushak bilan bog‘liq. Osteochondritis kabi qo‘shma so‘z bir necha tuzilma yoki jarayonni nomlashi mumkin. Atamani tarjima qilishda barcha qismlar hisobga olinadi."
+            }
+          ],
           "teacher_materials": [],
-          "questions": [],
-          "review_status": "AWAITING_SOURCE — content not in supplied materials"
+          "questions": [
+            {
+              "id": "latin_a11_aiq1",
+              "q": "Micro- elementi nimani bildiradi?",
+              "options": [
+                "Katta",
+                "Atrof",
+                "Orqa",
+                "Kichik"
+              ],
+              "answer": 3,
+              "explanation": "Macro- — katta, micro- — kichik, mega-/megalo- — yirik yoki kattalashgan, oligo- — kam, poly- — ko‘p."
+            },
+            {
+              "id": "latin_a11_aiq2",
+              "q": "Erythr/o qanday rang bilan bog‘liq?",
+              "options": [
+                "Qizil",
+                "Oq",
+                "Yashil",
+                "Sariq"
+              ],
+              "answer": 0,
+              "explanation": "Leuk/o — oq, erythr/o — qizil, melan/o — qora yoki to‘q rang, cyan/o — ko‘kimtir rang bilan bog‘liq."
+            },
+            {
+              "id": "latin_a11_aiq3",
+              "q": "Brady- prefiksi nima bilan bog‘liq?",
+              "options": [
+                "Tezlik",
+                "Sekinlik",
+                "Katta o‘lcham",
+                "Yuqori harorat"
+              ],
+              "answer": 1,
+              "explanation": "Therm/o harorat yoki issiqlik, cry/o sovuqlik, tachy- tezlik, brady- sekinlik bilan bog‘liq."
+            },
+            {
+              "id": "latin_a11_aiq4",
+              "q": "Sten/o termini nimani bildiradi?",
+              "options": [
+                "Kengayish",
+                "Qon",
+                "Torayish",
+                "Ko‘z"
+              ],
+              "answer": 2,
+              "explanation": "Scler/o qattiqlashish yoki qattiq tuzilma, malac/o yumshash, sten/o torayish ma’nolarini bildiradi."
+            },
+            {
+              "id": "latin_a11_aiq5",
+              "q": "Chondr/o termini nimani bildiradi?",
+              "options": [
+                "Qon",
+                "Tish",
+                "Jigar",
+                "Tog‘ay"
+              ],
+              "answer": 3,
+              "explanation": "Oste/o suyak, arthr/o bo‘g‘im, chondr/o tog‘ay, my/o mushak bilan bog‘liq."
+            }
+          ],
+          "review_status": "AI_RESEARCH_DRAFT — clinical terminology vocabulary and language fundamentals; teacher review recommended",
+          "research_sources": [
+            "https://www.ncbi.nlm.nih.gov/books/NBK607453/",
+            "https://openmd.com/guide/medical-terminology"
+          ]
         },
         {
           "id": "latin_a12",
@@ -10423,10 +10853,96 @@
           "title": "Farmatsevtik terminologiyaga kirish. Dorivor modda nomlari, dori shakllari va farmatsevtik atamalar.",
           "calendar_topic": "Farmatsevtik terminologiyaga kirish. Dorivor modda nomlari, dori shakllari va farmatsevtik atamalar.",
           "focus": "Farmatsevtik terminologiyaga kirish. Dorivor modda nomlari, dori shakllari va farmatsevtik atamalar.",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Farmatsevtik terminologiya",
+              "body": "Farmatsevtik lotin dorivor moddalarning standart nomlari, dori shakllari, yorliq va retseptura matnlarini tushunishda qo‘llanadi. Terminlarni o‘rganishning maqsadi nom, shakl va grammatik tuzilishni ajrata olishdir."
+            },
+            {
+              "heading": "Dori shakllari nomlari",
+              "body": "Tabuletta — tabletka; capsula — kapsula; solutio — eritma; unguentum — surtma; suppositorium — shamcha. Ularning lotincha lug‘at shakli va grammatik rodi farqlanadi."
+            },
+            {
+              "heading": "Suyuqlik va qattiq shakl",
+              "body": "Solutio, -onis f — eritma; tinctura, -ae f — nastoyka; pulvis, -eris m — kukun. Bu so‘zlar preparatning dozalash usuli emas, dori shaklini nomlaydi."
+            },
+            {
+              "heading": "Anatomik va farmatsevtik otlarning farqi",
+              "body": "Musculus — mushak, dens — tish singari anatomik otlar a’zoni bildiradi; tabuletta va unguentum farmatsevtik otlar esa dori shaklini bildiradi. Har ikkala soha lotin grammatikasidan foydalanadi."
+            },
+            {
+              "heading": "Xalqaro nomlash tushunchasi",
+              "body": "Dori vositalarining xalqaro patentlanmagan nomi (INN) muayyan faol modda nomini standartlashtirishga xizmat qiladi. Savdo nomi esa ishlab chiqaruvchi tomonidan qo‘llanishi mumkin. Til o‘rganishda atamalarning farqi va lug‘at shakli muhim."
+            }
+          ],
           "teacher_materials": [],
-          "questions": [],
-          "review_status": "AWAITING_SOURCE — content not in supplied materials"
+          "questions": [
+            {
+              "id": "latin_a12_aiq1",
+              "q": "Farmatsevtik terminologiya nimani o‘rganadi?",
+              "options": [
+                "Dorivor modda va dori shakllari nomlarini",
+                "Faqat suyak anatomiyasini",
+                "Faqat tovush tezligini",
+                "Faqat tish sonini"
+              ],
+              "answer": 0,
+              "explanation": "Farmatsevtik lotin dorivor moddalarning standart nomlari, dori shakllari, yorliq va retseptura matnlarini tushunishda qo‘llanadi."
+            },
+            {
+              "id": "latin_a12_aiq2",
+              "q": "Unguentum nimani bildiradi?",
+              "options": [
+                "Eritma",
+                "Surtma",
+                "Tabletka",
+                "Kapsula"
+              ],
+              "answer": 1,
+              "explanation": "Tabuletta — tabletka; capsula — kapsula; solutio — eritma; unguentum — surtma; suppositorium — shamcha."
+            },
+            {
+              "id": "latin_a12_aiq3",
+              "q": "Pulvis so‘zining ma’nosi qanday?",
+              "options": [
+                "Shamcha",
+                "Surtma",
+                "Kukun",
+                "Eritma"
+              ],
+              "answer": 2,
+              "explanation": "Solutio, -onis f — eritma; tinctura, -ae f — nastoyka; pulvis, -eris m — kukun."
+            },
+            {
+              "id": "latin_a12_aiq4",
+              "q": "Tabuletta qaysi atamalar turiga kiradi?",
+              "options": [
+                "Suyak turiga",
+                "Qon tomiri nomiga",
+                "Mushak nomiga",
+                "Dori shakli nomiga"
+              ],
+              "answer": 3,
+              "explanation": "Musculus — mushak, dens — tish singari anatomik otlar a’zoni bildiradi; tabuletta va unguentum farmatsevtik otlar esa dori shaklini bildiradi."
+            },
+            {
+              "id": "latin_a12_aiq5",
+              "q": "INN qisqartmasi nimani anglatadi?",
+              "options": [
+                "Xalqaro patentlanmagan nomni",
+                "Tish rentgen turi",
+                "Yelka bo‘g‘imi",
+                "Lotin tilidagi kelishikni"
+              ],
+              "answer": 0,
+              "explanation": "Dori vositalarining xalqaro patentlanmagan nomi (INN) muayyan faol modda nomini standartlashtirishga xizmat qiladi."
+            }
+          ],
+          "review_status": "AI_RESEARCH_DRAFT — clinical terminology vocabulary and language fundamentals; teacher review recommended",
+          "research_sources": [
+            "https://www.ncbi.nlm.nih.gov/books/NBK607453/",
+            "https://openmd.com/guide/medical-terminology"
+          ]
         },
         {
           "id": "latin_a13",
@@ -10434,10 +10950,96 @@
           "title": "Fe’l va uning grammatik kategoriyalari. Retseptura formulirovkalari.",
           "calendar_topic": "Fe’l va uning grammatik kategoriyalari. Retseptura formulirovkalari.",
           "focus": "Fe’l va uning grammatik kategoriyalari. Retseptura formulirovkalari.",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Lotin fe’lining grammatik kategoriyalari",
+              "body": "Lotin tilida fe’l shaxs, son, zamon, mayl va nisbat bo‘yicha o‘zgaradi. Tibbiy o‘quv terminologiyasida ko‘pincha buyruq mayli hamda an’anaviy retseptura iboralari tahlil qilinadi. Bunda maqsad grammatik shaklni tanishdir."
+            },
+            {
+              "heading": "Infinitiv va asosiy shakllar",
+              "body": "Infinitivus — fe’lning boshlang‘ich (noaniq) shakli. Masalan, miscere — aralashtirmoq, dare — bermoq, signare — belgilamoq. Bu so‘zlar matndagi fe’l ildizini tushunishga yordam beradi."
+            },
+            {
+              "heading": "Buyruq mayli",
+              "body": "Imperativus buyruq yoki iltimos mazmunini anglatadi. Masalan, da — «ber», signa — «belgila» kabi grammatik shakllardir. Bu yerda so‘zlar tilshunoslik misollari sifatida o‘rganiladi."
+            },
+            {
+              "heading": "Majhul va faol tuzilma",
+              "body": "Lotin tilida fe’lning activum va passivum shakllari bor. Fiat so‘zi «tayyorlansin/hosil bo‘lsin» mazmunidagi uchinchi shaxs istak-buyruq shaklidir; grammatik tahlilda fe’lning tuzilishi va ma’nosi farqlanadi."
+            },
+            {
+              "heading": "Tibbiy iboralarning tahlili",
+              "body": "An’anaviy retseptura matnlarida grammatik iboralar uchrashi mumkin, lekin ularni o‘qish dori tanlash yoki qo‘llash bo‘yicha mustaqil ko‘rsatma emas. Terminologik mashqda fe’l turini, shaxsini va ma’nosini ajratish yetarli."
+            }
+          ],
           "teacher_materials": [],
-          "questions": [],
-          "review_status": "AWAITING_SOURCE — content not in supplied materials"
+          "questions": [
+            {
+              "id": "latin_a13_aiq1",
+              "q": "Lotin fe’li qaysi grammatik kategoriyaga ega?",
+              "options": [
+                "Faqat suyak soniga",
+                "Zamon va maylga",
+                "Faqat rangga",
+                "Faqat joylashuv sathiga"
+              ],
+              "answer": 1,
+              "explanation": "Lotin tilida fe’l shaxs, son, zamon, mayl va nisbat bo‘yicha o‘zgaradi."
+            },
+            {
+              "id": "latin_a13_aiq2",
+              "q": "Miscere fe’li nimani bildiradi?",
+              "options": [
+                "Yozmoq",
+                "Ko‘rmoq",
+                "Aralashtirmoq",
+                "Kesmoq"
+              ],
+              "answer": 2,
+              "explanation": "Infinitivus — fe’lning boshlang‘ich (noaniq) shakli."
+            },
+            {
+              "id": "latin_a13_aiq3",
+              "q": "Imperativus qanday mayl?",
+              "options": [
+                "Shart mayli",
+                "Xabar mayli",
+                "Sifat darajasi",
+                "Buyruq mayli"
+              ],
+              "answer": 3,
+              "explanation": "Imperativus buyruq yoki iltimos mazmunini anglatadi."
+            },
+            {
+              "id": "latin_a13_aiq4",
+              "q": "Fiat so‘zining umumiy ma’nosi qaysi?",
+              "options": [
+                "Hosil bo‘lsin",
+                "Katta",
+                "Kichik",
+                "Suyak"
+              ],
+              "answer": 0,
+              "explanation": "Lotin tilida fe’lning activum va passivum shakllari bor."
+            },
+            {
+              "id": "latin_a13_aiq5",
+              "q": "Signare fe’li qaysi ma’noni anglatadi?",
+              "options": [
+                "Sovitmoq",
+                "Belgilamoq",
+                "Chizg‘ich",
+                "Oshqozon"
+              ],
+              "answer": 1,
+              "explanation": "An’anaviy retseptura matnlarida grammatik iboralar uchrashi mumkin, lekin ularni o‘qish dori tanlash yoki qo‘llash bo‘yicha mustaqil ko‘rsatma emas."
+            }
+          ],
+          "review_status": "AI_RESEARCH_DRAFT — clinical terminology vocabulary and language fundamentals; teacher review recommended",
+          "research_sources": [
+            "https://www.ncbi.nlm.nih.gov/books/NBK607453/",
+            "https://openmd.com/guide/medical-terminology"
+          ]
         },
         {
           "id": "latin_a14",
@@ -10445,10 +11047,96 @@
           "title": "Retsept tuzilishi va yozish qoidalari. Tabletka, shamcha va ko‘z plyonkalari.",
           "calendar_topic": "Retsept tuzilishi va yozish qoidalari. Tabletka, shamcha va ko‘z plyonkalari.",
           "focus": "Retsept tuzilishi va yozish qoidalari. Tabletka, shamcha va ko‘z plyonkalari.",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Retseptura hujjati tuzilishi",
+              "body": "Retsept tibbiy-huquqiy hujjat bo‘lib, unda muassasa yoki retsept beruvchi ma’lumotlari, sana, bemor ma’lumotlari va tegishli farmatsevtik ma’lumotlar bo‘lishi mumkin. Aniq shakl milliy me’yorlar va elektron tizimlarga bog‘liq."
+            },
+            {
+              "heading": "Retseptura lotinchasining o‘rni",
+              "body": "Tarixiy retseptura iboralarida lotin tili dori shakli va grammatik tuzilmani standart ifodalashda ishlatilgan. Zamonaviy retseptlar mamlakatiga qarab milliy til, elektron kod yoki standart nomlardan foydalanadi."
+            },
+            {
+              "heading": "Tabletka va kapsula",
+              "body": "Tabuletta, -ae f — tabletka; capsula, -ae f — kapsula. Bular farmatsevtik dori shakli nomlaridir. Lotin tilida ikkalasi ham birinchi turlanish otlaridan hisoblanadi."
+            },
+            {
+              "heading": "Shamcha va ko‘z plyonkalari",
+              "body": "Suppositorium, -i n — shamcha; ophthalmicus, -a, -um — ko‘zga oid sifat. Ko‘z dori plyonkasi mahsulotga oid shakl nomi bo‘lishi mumkin; bu yerda aniq farmatsevtik qo‘llash rejimlari emas, lotincha so‘zlarning ma’nosi ko‘rib chiqiladi."
+            },
+            {
+              "heading": "Retseptdagi xatolarni farqlash",
+              "body": "Ta’limda bir-biriga o‘xshash atamalarni, dori shakllarini va otlarning kelishiklarini farqlash mashq qilinadi. Retsept yozish vakolatli shifokor tomonidan amaldagi qonunchilik va kasbiy standartlarga muvofiq bajariladi."
+            }
+          ],
           "teacher_materials": [],
-          "questions": [],
-          "review_status": "AWAITING_SOURCE — content not in supplied materials"
+          "questions": [
+            {
+              "id": "latin_a14_aiq1",
+              "q": "Retseptning shakli nimaga bog‘liq?",
+              "options": [
+                "Faqat qog‘oz rangiga",
+                "Faqat tish soniga",
+                "Amaldagi milliy tartibga",
+                "Faqat ko‘zgu turiga"
+              ],
+              "answer": 2,
+              "explanation": "Retsept tibbiy-huquqiy hujjat bo‘lib, unda muassasa yoki retsept beruvchi ma’lumotlari, sana, bemor ma’lumotlari va tegishli farmatsevtik ma’lumotlar bo‘lishi mumkin."
+            },
+            {
+              "id": "latin_a14_aiq2",
+              "q": "Retseptura lotinchasi asosan nimaga xizmat qilgan?",
+              "options": [
+                "Faqat nerv nomini chizishga",
+                "Faqat yelka mushagini o‘lchashga",
+                "Faqat tish rangi tanlashga",
+                "Dori nomlari va grammatik iboralarni ifodalashga"
+              ],
+              "answer": 3,
+              "explanation": "Tarixiy retseptura iboralarida lotin tili dori shakli va grammatik tuzilmani standart ifodalashda ishlatilgan."
+            },
+            {
+              "id": "latin_a14_aiq3",
+              "q": "Capsula ning o‘zbekcha ma’nosi qaysi?",
+              "options": [
+                "Kapsula",
+                "Surtma",
+                "Shamcha",
+                "Eritma"
+              ],
+              "answer": 0,
+              "explanation": "Tabuletta, -ae f — tabletka; capsula, -ae f — kapsula."
+            },
+            {
+              "id": "latin_a14_aiq4",
+              "q": "Suppositorium nimani bildiradi?",
+              "options": [
+                "Kukun",
+                "Shamcha",
+                "Tabletka",
+                "Tomir"
+              ],
+              "answer": 1,
+              "explanation": "Suppositorium, -i n — shamcha; ophthalmicus, -a, -um — ko‘zga oid sifat."
+            },
+            {
+              "id": "latin_a14_aiq5",
+              "q": "Retseptni amalda kim rasmiylashtirishi kerak?",
+              "options": [
+                "Har qanday o‘quvchi",
+                "Faqat laboratoriya texnigi",
+                "Vakolatli tibbiy mutaxassis",
+                "Faqat elektron do‘kon"
+              ],
+              "answer": 2,
+              "explanation": "Ta’limda bir-biriga o‘xshash atamalarni, dori shakllarini va otlarning kelishiklarini farqlash mashq qilinadi."
+            }
+          ],
+          "review_status": "AI_RESEARCH_DRAFT — clinical terminology vocabulary and language fundamentals; teacher review recommended",
+          "research_sources": [
+            "https://www.ncbi.nlm.nih.gov/books/NBK607453/",
+            "https://openmd.com/guide/medical-terminology"
+          ]
         },
         {
           "id": "latin_a15",
@@ -10456,10 +11144,96 @@
           "title": "Retsepturada kimyoviy elementlar, kislotalar, oksidlar va tuzlar.",
           "calendar_topic": "Retsepturada kimyoviy elementlar, kislotalar, oksidlar va tuzlar.",
           "focus": "Retsepturada kimyoviy elementlar, kislotalar, oksidlar va tuzlar.",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Kimyoviy nomlar va lotin tili",
+              "body": "Kimyoviy elementlarning lotincha nomlari tibbiy terminologiyada uchraydi: Natrium — natriy, Kalium — kaliy, Calcium — kalsiy, Ferrum — temir, Cuprum — mis. Kimyoviy ramz va lotincha nomni farqlash kerak."
+            },
+            {
+              "heading": "Elementlarning ramzlari",
+              "body": "Na — Natrium, K — Kalium, Ca — Calcium, Fe — Ferrum, Cu — Cuprum, Ag — Argentum. Ba’zi kimyoviy ramzlar lotincha nomdan kelib chiqqan."
+            },
+            {
+              "heading": "Kislotalar nomlanishi",
+              "body": "Acidum — kislota degan ot. O‘quv misollarida acidum boricum — bor kislotasi, acidum citricum — limon kislotasi, acidum ascorbicum — askorbin kislotasi kabi grammatik birikmalar uchraydi. Bu nomlar moddaning tarkibi haqida atama beradi, lekin uni ishlatishga ko‘rsatma emas."
+            },
+            {
+              "heading": "Oksidlar atamalari",
+              "body": "Oxidum — oksid, dioxidum — dioksid atamasida ishlatiladi. Masalan, Zinci oxidum — rux oksidi deb nomlanadi. Atamalardagi ot va qaratqich kelishigi o‘zaro bog‘lanishi ilmiy nomni tahlil qilishda muhim."
+            },
+            {
+              "heading": "Tuz nomlarining grammatikasi",
+              "body": "Tuzlar nomlanishida kation yoki metall nomi qaratqich kelishigida, anion nomi esa asosiy ot ko‘rinishida kelishi mumkin: Natrii chloridum — natriy xlorid. Bu kimyoviy atamani grammatik tahlil qilish misoli, preparat tayyorlash ko‘rsatmasi emas."
+            }
+          ],
           "teacher_materials": [],
-          "questions": [],
-          "review_status": "AWAITING_SOURCE — content not in supplied materials"
+          "questions": [
+            {
+              "id": "latin_a15_aiq1",
+              "q": "Ferrum qaysi element?",
+              "options": [
+                "Mis",
+                "Kalsiy",
+                "Kaliy",
+                "Temir"
+              ],
+              "answer": 3,
+              "explanation": "Kimyoviy elementlarning lotincha nomlari tibbiy terminologiyada uchraydi: Natrium — natriy, Kalium — kaliy, Calcium — kalsiy, Ferrum — temir, Cuprum — mis."
+            },
+            {
+              "id": "latin_a15_aiq2",
+              "q": "Ag qaysi elementning belgisi?",
+              "options": [
+                "Kumush",
+                "Oltin",
+                "Kaliy",
+                "Natriy"
+              ],
+              "answer": 0,
+              "explanation": "Na — Natrium, K — Kalium, Ca — Calcium, Fe — Ferrum, Cu — Cuprum, Ag — Argentum."
+            },
+            {
+              "id": "latin_a15_aiq3",
+              "q": "Acidum so‘zining ma’nosi qaysi?",
+              "options": [
+                "Tuz",
+                "Kislota",
+                "Oksid",
+                "Eritma"
+              ],
+              "answer": 1,
+              "explanation": "Acidum — kislota degan ot."
+            },
+            {
+              "id": "latin_a15_aiq4",
+              "q": "Oxidum qanday ma’noni bildiradi?",
+              "options": [
+                "Tuz",
+                "Kukun",
+                "Oksid",
+                "Shamcha"
+              ],
+              "answer": 2,
+              "explanation": "Oxidum — oksid, dioxidum — dioksid atamasida ishlatiladi."
+            },
+            {
+              "id": "latin_a15_aiq5",
+              "q": "Natrii chloridum atamasida Natrii qanday grammatik shakl?",
+              "options": [
+                "Faqat ko‘plik bosh kelishigi",
+                "Fe’l infinitivi",
+                "Sifatning orttirma darajasi",
+                "Qaratqich kelishigi"
+              ],
+              "answer": 3,
+              "explanation": "Tuzlar nomlanishida kation yoki metall nomi qaratqich kelishigida, anion nomi esa asosiy ot ko‘rinishida kelishi mumkin: Natrii chloridum — natriy xlorid."
+            }
+          ],
+          "review_status": "AI_RESEARCH_DRAFT — clinical terminology vocabulary and language fundamentals; teacher review recommended",
+          "research_sources": [
+            "https://www.ncbi.nlm.nih.gov/books/NBK607453/",
+            "https://openmd.com/guide/medical-terminology"
+          ]
         }
       ],
       "schedule_note": "O‘quv dasturining umumiy qismida 1-semestr, amaliy mavzular jadvalida esa «2-semestr» deb yozilgan; aniqlashtirish kerak."
