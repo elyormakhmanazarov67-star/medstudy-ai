@@ -67,13 +67,13 @@ def test_consent_catalog_quiz_and_delete(client):
     body={'lesson_id':'ergonomika','question_ids':['old'],'answers':[0]}
     assert client.post('/api/attempts',json=body,headers=hdr()).status_code==400
     lesson=client.get('/api/lessons/eng_l1',headers=hdr()).json()
-    assert len(lesson['questions'])==2
+    assert len(lesson['questions'])==10
     assert 'answer' not in lesson['questions'][0]
     qs=main.CATALOG['subjects'][3]['lessons'][0]['questions']
     body={'lesson_id':'eng_l1','question_ids':[q['id'] for q in qs],
           'answers':[q['answer'] for q in qs]}
     done=client.post('/api/attempts',json=body,headers=hdr())
-    assert done.status_code==200 and done.json()['score']==2
+    assert done.status_code==200 and done.json()['score']==10
     assert client.get('/api/progress',headers=hdr()).json()['attempts_count']==1
     assert client.delete('/api/me',headers=hdr()).status_code==200
     assert client.get('/api/catalog',headers=hdr()).status_code==403
@@ -90,16 +90,16 @@ def test_cannot_submit_arbitrary_or_incomplete_question_set(client):
 def test_wrong_review(client):
     client.post('/api/consent',headers=hdr())
     qs=main.CATALOG['subjects'][3]['lessons'][0]['questions']
-    answers=[(qs[0]['answer']+1)%4, qs[1]['answer']]
+    answers=[(qs[0]['answer']+1)%4]+[q['answer'] for q in qs[1:]]
     full={'lesson_id':'eng_l1','question_ids':[q['id'] for q in qs],'answers':answers}
     done=client.post('/api/attempts',json=full,headers=hdr())
-    assert done.status_code==200 and done.json()['score']==1
+    assert done.status_code==200 and done.json()['score']==9
     review=client.get('/api/review/eng_l1',headers=hdr()).json()
     assert len(review['questions'])==1
     retry={'lesson_id':'eng_l1','question_ids':[qs[0]['id']], 'answers':[qs[0]['answer']]}
     result=client.post('/api/attempts',json=retry,headers=hdr())
     assert result.status_code==200 and result.json()['score']==1
-    assert client.get('/api/progress',headers=hdr()).json()['latest'][0]['total']==2
+    assert client.get('/api/progress',headers=hdr()).json()['latest'][0]['total']==10
 
 
 def test_independent_required_and_supplementary_quizzes(client):
