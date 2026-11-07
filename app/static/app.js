@@ -8,7 +8,7 @@
   const app = document.getElementById('app');
   const demo = new URLSearchParams(location.search).get('demo') === '1' && ['localhost', '127.0.0.1'].includes(location.hostname);
   const auth = webapp?.initData || '';
-  const state = { tab: 'home', catalog: null, progress: null, studyPlan: null, lesson: null, quiz: null, result: null, consent: null, busy: false, tutorStatus: null, tutorQuestion:'', tutorAnswer: null, tutorLessonId:'' };
+  const state = { tab: 'home', catalog: null, progress: null, studyPlan: null, history: null, lesson: null, quiz: null, result: null, consent: null, busy: false, tutorStatus: null, tutorQuestion:'', tutorAnswer: null, tutorLessonId:'' };
   const esc = val => String(val ?? '').replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]));
 
   async function api(path, method='GET', data) {
@@ -73,13 +73,15 @@
     loading();try{const r=await api('/review/'+encodeURIComponent(state.lesson.id));if(!r.questions.length){startQuiz(state.lesson.questions);return;}startQuiz(r.questions,'retry');}catch(e){fail(e);}
   }
   async function progress(){
-    state.tab='progress';loading();try{[state.progress,state.studyPlan]=await Promise.all([api('/progress'),api('/study-plan')]);renderProgress();}catch(e){fail(e);}
+    state.tab='progress';loading();try{[state.progress,state.studyPlan,state.history]=await Promise.all([api('/progress'),api('/study-plan'),api('/history?limit=12')]);renderProgress();}catch(e){fail(e);}
   }
   function renderProgress(){
     state.tab='progress';const p=state.progress||{latest:[],attempts_count:0};
     const plan=state.studyPlan?.items || [];
+    const history=state.history?.items || [];
+    const historyHtml=history.length ? `<div class="sectionhead"><h2>🕒 So‘nggi urinishlar</h2><span>${history.length} ta</span></div><div class="card">${history.map(row=>`<div class="progress-row"><div class="progress-label"><strong>${esc(row.title)}</strong><span>${row.score}/${row.total} · ${row.percent}%</span></div><p class="smallprint">${row.mode==='retry'?'Xatolarni takrorlash':'To‘liq test'} · ${esc(row.created_at.slice(0,16).replace('T',' '))} UTC</p></div>`).join('')}</div>` : '';
     const recommendations=plan.length ? `<div class="sectionhead"><h2>🎯 Shaxsiy o‘quv rejam</h2><span>${plan.length} mavzu</span></div><p class="smallprint">Tavsiyalar oxirgi to‘liq test va xato javoblardan hisoblanadi.</p>${plan.map(item=>`<button class="card lesson-card" data-action="lesson" data-id="${esc(item.lesson_id)}"><span class="lesson-icon">📖</span><span class="lesson-content"><strong>${esc(item.lesson_title)}</strong><small>${esc(item.action)} · ${esc(item.reason)}</small></span><span class="chevron">›</span></button>`).join('')}` : '';
-    shell(`<p class="eyebrow">Mening o‘sishim</p><h1>O‘quv natijalarim</h1><p class="smallprint">Faqat shaxsiy test natijalaringiz ko‘rsatiladi.</p><div class="stats"><div class="stat"><strong>${p.attempts_count}</strong><small>Urinishlar</small></div><div class="stat"><strong>${p.latest.length}</strong><small>O‘rganilgan mavzu</small></div><div class="stat"><strong>${p.latest.length?Math.round(p.latest.reduce((x,r)=>x+r.percent,0)/p.latest.length):0}%</strong><small>Oxirgi o‘rtacha</small></div></div>${recommendations}<div class="sectionhead"><h2>Mavzular kesimida</h2><span>Oxirgi urinishlar</span></div>${p.latest.length?`<div class="card">${p.latest.map(r=>`<div class="progress-row"><div class="progress-label"><strong>${esc(r.title)}</strong><span>${r.score}/${r.total} · ${r.percent}%</span></div><div class="bar"><div class="bar-fill" style="width:${r.percent}%"></div></div></div>`).join('')}<p class="smallprint">Eslatma: xatolarni takrorlash testida savollar soni kamroq bo‘lishi mumkin.</p></div>`:`<div class="empty"><div class="symbol">📊</div><h3>Natijalar hozircha yo‘q</h3><p>Birinchi testni topshiring — progress shu yerda ko‘rinadi.</p><button class="btn btn-primary" data-action="home">Darslarni ko‘rish →</button></div>`}`);
+    shell(`<p class="eyebrow">Mening o‘sishim</p><h1>O‘quv natijalarim</h1><p class="smallprint">Faqat shaxsiy test natijalaringiz ko‘rsatiladi.</p><div class="stats"><div class="stat"><strong>${p.attempts_count}</strong><small>Urinishlar</small></div><div class="stat"><strong>${p.latest.length}</strong><small>O‘rganilgan mavzu</small></div><div class="stat"><strong>${p.latest.length?Math.round(p.latest.reduce((x,r)=>x+r.percent,0)/p.latest.length):0}%</strong><small>Oxirgi o‘rtacha</small></div></div>${recommendations}${historyHtml}<div class="sectionhead"><h2>Mavzular kesimida</h2><span>Oxirgi urinishlar</span></div>${p.latest.length?`<div class="card">${p.latest.map(r=>`<div class="progress-row"><div class="progress-label"><strong>${esc(r.title)}</strong><span>${r.score}/${r.total} · ${r.percent}%</span></div><div class="bar"><div class="bar-fill" style="width:${r.percent}%"></div></div></div>`).join('')}<p class="smallprint">Eslatma: xatolarni takrorlash testida savollar soni kamroq bo‘lishi mumkin.</p></div>`:`<div class="empty"><div class="symbol">📊</div><h3>Natijalar hozircha yo‘q</h3><p>Birinchi testni topshiring — progress shu yerda ko‘rinadi.</p><button class="btn btn-primary" data-action="home">Darslarni ko‘rish →</button></div>`}`);
   }
   function privacy(){
     state.tab='privacy';shell(`<p class="eyebrow">Shaxsiy ma’lumotlar</p><h1>Maxfiylik va xavfsizlik</h1><div class="card privacy"><h3>Qanday ma’lumotlar saqlanadi?</h3><p>Sinov davrida faqat Telegram foydalanuvchi IDsi, rozilik vaqti, test javoblari va natijalari SQLite bazasida saqlanadi. Ism, telefon raqami va yozishmalar saqlanmaydi. AI Ustoz funksiyasi uchun alohida rozilik bersangiz, savolingiz va tanlangan dars parchalari OpenAI API xizmatiga yuboriladi; savol matni bizning SQLite bazamizga saqlanmaydi. API foydalanish soni saqlanadi.</p><h3>Ma’lumotlar kimga tegishli?</h3><p>Test natijalarini ilova administratori serverda boshqaradi. Ilova hozircha mustaqil o‘quv prototipi, universitetning rasmiy xizmati emas.</p><h3>Ma’lumotlarni o‘chirish</h3><p>Quyidagi tugma orqali shaxsiy test tarixingiz va rozilik yozuvini o‘chirishingiz mumkin.</p><button class="btn btn-danger btn-wide" data-action="delete">Ma’lumotlarimni o‘chirish</button></div>${disclaimer}`);
@@ -150,7 +152,7 @@
         case 'tutor-ask':await tutorAsk();break;
         case 'tutor-revoke':await api('/tutor/consent','DELETE');state.tutorAnswer=null;await tutorScreen();break;
         case 'consent':await api('/consent','POST');await init();break;
-        case 'delete':if(!confirm('Barcha test natijalari o‘chirilsinmi?'))return;await api('/me','DELETE');state.catalog=null;state.progress=null;state.studyPlan=null;state.tutorAnswer=null;state.tutorQuestion='';await init();break;
+        case 'delete':if(!confirm('Barcha test natijalari o‘chirilsinmi?'))return;await api('/me','DELETE');state.catalog=null;state.progress=null;state.studyPlan=null;state.history=null;state.tutorAnswer=null;state.tutorQuestion='';await init();break;
       }
     }catch(e){fail(e);}
   });
