@@ -41,7 +41,9 @@ def test_user_source_teaching_material_counts():
     assert len(e['lessons'])==5
     assert len(b['lessons'])==4
     assert all(len(l['teacher_materials'])>0 for l in e['lessons']+b['lessons'])
-    assert sum(len(l['questions']) for l in e['lessons']+b['lessons'])==18
+    assert all(len(l['sections']) >= 7 for l in e['lessons'])
+    assert all(len(l['questions']) == 10 for l in e['lessons'])
+    assert sum(len(l['questions']) for l in e['lessons']+b['lessons'])==58
     assert all(len(l.get('supplement_sections', [])) >= 1 for l in b['lessons'])
     assert all(len(l.get('supplement_questions', [])) >= 1 for l in b['lessons'])
 
