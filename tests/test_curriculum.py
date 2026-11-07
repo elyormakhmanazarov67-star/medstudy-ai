@@ -1,51 +1,38 @@
-"""Keep the student's 2026–2027 semester sequence intact."""
+"""User-provided lesson calendar and strictly separated content sources."""
 from app.core import load_catalog
 
 
-def test_calendar_sessions_match_provided_syllabus():
-    data = load_catalog()
-    assert len(data["subjects"]) == 1
-    course = data["subjects"][0]
-    assert course["id"] == "stom_prerest"
-    assert course["total_sessions"] == 15
-    assert len(course["lessons"]) == 15
-    sessions = course["lessons"]
-    assert [lesson["session_number"] for lesson in sessions] == list(range(1, 16))
-    assert len({lesson["id"] for lesson in sessions}) == 15
-    assert all(lesson["calendar_topic"] and lesson["focus"] for lesson in sessions)
-    assert all(lesson["review_status"].startswith("DRAFT") for lesson in sessions)
-    assert sum(len(lesson["questions"]) for lesson in sessions) == 145
+def test_all_subjects_and_teacher_source_separation():
+    data=load_catalog()
+    assert len(data['subjects'])==5
+    expected={'stom_prerest':15,'stom_kirish':12,'odam_anatomiyasi_1':14,'medical_english':5,'biofizika':4}
+    for subject in data['subjects']:
+        assert len(subject['lessons'])==expected[subject['id']]
+        assert all(isinstance(l.get('teacher_materials'),list) for l in subject['lessons'])
+        assert all(isinstance(l.get('supplementary'),list) for l in subject['lessons'])
+        for lesson in subject['lessons']:
+            assert all(item.get('url','').startswith('https://e-library.sammu.uz/') for item in lesson['supplementary'])
+            assert all(not item.get('url') for item in lesson['teacher_materials'])
+            for question in lesson['questions']:
+                assert len(question['options'])==4
+    assert sum(len(s['lessons']) for s in data['subjects'])==50
 
 
-def test_session_groups_and_legacy_ids():
-    data = load_catalog()
-    lessons = data["subjects"][0]["lessons"]
-    assert lessons[0]["id"] == "ergonomika"
-    assert lessons[2]["id"] == "qurilmalar"
-    titles = [lesson["calendar_topic"] for lesson in lessons]
-    assert titles[0] == titles[1]
-    assert titles[2] == titles[3] == titles[4]
-    assert titles[5] == titles[6]
-    assert titles[7] == titles[8] == titles[9]
-    assert titles[10] == titles[11]
-    assert titles[12] == titles[13] == titles[14]
-    assert len(set(titles)) == 6
+def test_preclinical_calendar_and_no_invented_content():
+    data=load_catalog()
+    course=data['subjects'][0]
+    assert course['id']=='stom_prerest'
+    assert [l['session_number'] for l in course['lessons']]==list(range(1,16))
+    assert course['lessons'][0]['id']=='ergonomika'
+    assert all(not l['sections'] and not l['questions'] for l in course['lessons'])
+    assert course['lessons'][0]['teacher_materials'][0]['filename'].startswith('Calendar_plan-')
 
 
-def test_approved_public_sources_only():
-    data = load_catalog()
-    verified_links = {
-        "https://e-library.sammu.uz/uz/book/4555",
-        "https://e-library.sammu.uz/uz/book/5780",
-        "https://e-library.sammu.uz/uz/book/2058",
-        "https://e-library.sammu.uz/uz/book/3055",
-        "https://e-library.sammu.uz/uz/book/343",
-        "https://e-library.sammu.uz/uz/book/4516",
-        "https://e-library.sammu.uz/uz/book/50",
-    }
-    for lesson in data["subjects"][0]["lessons"]:
-        assert set(lesson["sources"]).issubset(verified_links)
-        assert len(lesson["sources"]) >= 3
-        assert len(lesson["sections"]) >= 3
-        assert len(lesson["questions"]) >= 6
-        assert all(len(question["options"]) == 4 for question in lesson["questions"])
+def test_user_source_teaching_material_counts():
+    data=load_catalog()
+    e=next(s for s in data['subjects'] if s['id']=='medical_english')
+    b=next(s for s in data['subjects'] if s['id']=='biofizika')
+    assert len(e['lessons'])==5
+    assert len(b['lessons'])==4
+    assert all(len(l['teacher_materials'])>0 for l in e['lessons']+b['lessons'])
+    assert sum(len(l['questions']) for l in e['lessons']+b['lessons'])==18
