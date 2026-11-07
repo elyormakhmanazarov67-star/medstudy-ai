@@ -95,6 +95,20 @@ class Store:
                 return []
             return [r[0] for r in c.execute("SELECT question_id FROM answers WHERE attempt_id=? AND correct=0 ORDER BY id", (row[0],))]
 
+    def attempt_history(self, uid: int, limit: int = 20) -> list[dict]:
+        """Recent attempts, scoped to one user. No answer text is included."""
+        limit = max(1, min(int(limit), 50))
+        with self.connect() as c:
+            rows = c.execute(
+                """SELECT lesson_id, score, total, mode, created_at
+                   FROM attempts WHERE user_id=?
+                   ORDER BY id DESC LIMIT ?""", (uid, limit)
+            ).fetchall()
+            return [
+                dict(lesson_id=r[0], score=r[1], total=r[2],
+                     mode=r[3], created_at=r[4]) for r in rows
+            ]
+
     def attempt_count(self, uid: int) -> int:
         with self.connect() as c:
             return c.execute("SELECT COUNT(1) FROM attempts WHERE user_id=?", (uid,)).fetchone()[0]
