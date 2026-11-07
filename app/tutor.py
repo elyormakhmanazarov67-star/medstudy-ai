@@ -20,6 +20,21 @@ WORD = re.compile(r"[a-zA-ZÀ-ÿʻ’‘o‘g‘0-9]+", re.UNICODE)
 class TutorUnavailable(Exception):
     pass
 
+# The lesson selector is a pedagogical control, not a way to submit clinical
+# patient information. These modes change teaching style, not medical scope.
+MODES = {
+    'explain': 'Mavzuni sodda tushunchalar va asosiy atamalar bilan izohlang.',
+    'example': 'Faqat dars matnidagi tushunchalar asosida xavfsiz, kundalik taqqoslash misoli keltiring.',
+    'recall': 'Avval juda qisqa izoh bering, so‘ng bitta nazariy savol bilan o‘quvchini tekshiring. Javobni darhol oshkor qilmang.',
+}
+
+
+def response_style(mode: str) -> str:
+    if mode not in MODES:
+        raise ValueError('Noma’lum o‘rganish usuli')
+    return MODES[mode]
+
+
 
 def enabled() -> bool:
     return os.getenv('AI_ENABLED', '0') == '1' and bool(os.getenv('OPENAI_API_KEY', '').strip())
@@ -90,10 +105,11 @@ SYSTEM = (
 )
 
 
-async def generate_answer(lesson: dict, question: str) -> dict:
+async def generate_answer(lesson: dict, question: str, mode: str = 'explain') -> dict:
     key = os.getenv('OPENAI_API_KEY', '').strip()
     if not key:
         raise TutorUnavailable('OPENAI_API_KEY sozlanmagan.')
+    style = response_style(mode)
     context, headings = select_context(lesson, question)
     payload = {
         'model': model_name(),
@@ -104,6 +120,7 @@ async def generate_answer(lesson: dict, question: str) -> dict:
             f"Dars sarlavhasi: {lesson['title']}\n\n"
             f"<DARSDAN_PARCHALAR>\n{context}\n</DARSDAN_PARCHALAR>\n\n"
             f"Talabaning savoli: {question}\n"
+            f"Tushuntirish uslubi: {style}\n"
             "Faqat dars parchalaridagi faktlarga tayangan holda javob bering."
         ),
     }
