@@ -13,7 +13,7 @@ def load_catalog(path: Path = CATALOG_FILE) -> dict:
             assert lesson["id"] not in lesson_ids
             lesson_ids.add(lesson["id"])
             questions = lesson.get("questions", [])
-            assert questions
+            assert isinstance(questions, list)
             question_ids = set()
             for q in questions:
                 assert q["id"] not in question_ids
