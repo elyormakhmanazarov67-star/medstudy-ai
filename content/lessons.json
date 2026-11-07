@@ -1,5 +1,5 @@
 {
-  "version": "0.5.4-source-separated",
+  "version": "0.5.5-source-backed-preclinical",
   "status": "TEST — talabadan olingan kalendarlar va dars fayllari asosidagi tuzilma. SamMU manbalari faqat qo‘şimça o‘qish uchun. O‘qituvchi ko‘rigi talab etiladi.",
   "note": "O‘qituvchi matnlari uydirilmaydi; talabadan olingan fayllar nomi ro‘yxatda ko‘rsatiladi. To‘liq fayllarni ilovadan yuklab olish hozir ulanmagan.",
   "subjects": [
@@ -8,7 +8,7 @@
       "title": "Preklinik restavratsion stomatologiya",
       "academic_year": "2026–2027",
       "semester": 1,
-      "total_sessions": 15,
+      "total_sessions": 31,
       "lessons": [
         {
           "id": "ergonomika",
@@ -16,7 +16,16 @@
           "title": "Mutaxassislikka kirish. Ergonomika. Stomatologiya xonasining jihozlanishi.",
           "calendar_topic": "Mutaxassislikka kirish. Ergonomika. Stomatologiya xonasining jihozlanishi.",
           "focus": "Mutaxassislikka kirish. Ergonomika. Stomatologiya xonasining jihozlanishi.",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Stomatologik iş joyi va ergonomika",
+              "body": "«Stomatologik asbob va ashyolar» darsligida stomatologik iş joyining asosiy tarkibiy qismlari sifatida stomatolog kreslosi, stul, stol, kompressor va asboblar tizimi tasvirlangan. Ergonomika iş jarayonini odamga qulay tashkil etish tushunchasi bilan bog‘liq."
+            },
+            {
+              "heading": "Manba va chegaralar",
+              "body": "Asos: foydalanuvchi yuborgan «Stomatologik asbob va ashyolar» (Kornilov H.P. va boshq., 2005) va kalendar reja. Matn mustaqil qisqa konspekt; o‘qituvchi tekshiruvi talab etiladi."
+            }
+          ],
           "teacher_materials": [
             {
               "title": "Kalendar reja",
@@ -31,7 +40,20 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "questions": [],
+          "questions": [
+            {
+              "id": "ergonomika_req1",
+              "q": "Ergonomika nima bilan bog‘liq?",
+              "options": [
+                "Iş joyini qulay tashkil etiş",
+                "Faqat reklama",
+                "Faqat to‘lov",
+                "Faqat bino nomi"
+              ],
+              "answer": 0,
+              "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
+            }
+          ],
           "supplementary": [
             {
               "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
@@ -42,7 +64,7 @@
               "url": "https://e-library.sammu.uz/uz/book/2058"
             }
           ],
-          "review_status": "AWAITING_USER_MATERIALS"
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
         },
         {
           "id": "ergonomika_2",
@@ -50,7 +72,16 @@
           "title": "Mutaxassislikka kirish. Ergonomika. Stomatologiya xonasining jihozlanishi.",
           "calendar_topic": "Mutaxassislikka kirish. Ergonomika. Stomatologiya xonasining jihozlanishi.",
           "focus": "Mutaxassislikka kirish. Ergonomika. Stomatologiya xonasining jihozlanishi.",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Stomatologik iş joyi va ergonomika",
+              "body": "«Stomatologik asbob va ashyolar» darsligida stomatologik iş joyining asosiy tarkibiy qismlari sifatida stomatolog kreslosi, stul, stol, kompressor va asboblar tizimi tasvirlangan. Ergonomika iş jarayonini odamga qulay tashkil etish tushunchasi bilan bog‘liq."
+            },
+            {
+              "heading": "Manba va chegaralar",
+              "body": "Asos: foydalanuvchi yuborgan «Stomatologik asbob va ashyolar» (Kornilov H.P. va boshq., 2005) va kalendar reja. Matn mustaqil qisqa konspekt; o‘qituvchi tekshiruvi talab etiladi."
+            }
+          ],
           "teacher_materials": [
             {
               "title": "Kalendar reja",
@@ -65,7 +96,20 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "questions": [],
+          "questions": [
+            {
+              "id": "ergonomika_2_req1",
+              "q": "Ergonomika nima bilan bog‘liq?",
+              "options": [
+                "Iş joyini qulay tashkil etiş",
+                "Faqat reklama",
+                "Faqat to‘lov",
+                "Faqat bino nomi"
+              ],
+              "answer": 0,
+              "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
+            }
+          ],
           "supplementary": [
             {
               "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
@@ -76,7 +120,7 @@
               "url": "https://e-library.sammu.uz/uz/book/2058"
             }
           ],
-          "review_status": "AWAITING_USER_MATERIALS"
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
         },
         {
           "id": "qurilmalar",
@@ -84,7 +128,16 @@
           "title": "Stomatologik qurilmalar. Stomatologiyada ishlatiladigan dastaklar va dastalar. Ularni o‘rnatish qoidalari.",
           "calendar_topic": "Stomatologik qurilmalar. Stomatologiyada ishlatiladigan dastaklar va dastalar. Ularni o‘rnatish qoidalari.",
           "focus": "Stomatologik qurilmalar. Stomatologiyada ishlatiladigan dastaklar va dastalar. Ularni o‘rnatish qoidalari.",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Bormashina va dental dastaklar",
+              "body": "«Stomatologik asbob va ashyolar» qo‘llanmasining bormashinalar va dastaklar boblarida turbina, harakat manbai, ulash elementlari, rotor, yoritish va gigiyenik xususiyatlar farqlangan. Nazariy mashg‘ulotda ularning vazifasi va texnik mosligi o‘rganiladi."
+            },
+            {
+              "heading": "Manba va chegaralar",
+              "body": "Asos: foydalanuvchi yuborgan «Stomatologik asbob va ashyolar» (Kornilov H.P. va boshq., 2005) va kalendar reja. Matn mustaqil qisqa konspekt; o‘qituvchi tekshiruvi talab etiladi."
+            }
+          ],
           "teacher_materials": [
             {
               "title": "Kalendar reja",
@@ -99,7 +152,20 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "questions": [],
+          "questions": [
+            {
+              "id": "qurilmalar_req1",
+              "q": "Turbinali dastak qaysi turdagi qurilmaga tegishli?",
+              "options": [
+                "Rotatsion dental qurilma",
+                "Ko‘rik ko‘zgusi",
+                "Sement",
+                "Pinset"
+              ],
+              "answer": 0,
+              "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
+            }
+          ],
           "supplementary": [
             {
               "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
@@ -110,7 +176,7 @@
               "url": "https://e-library.sammu.uz/uz/book/2058"
             }
           ],
-          "review_status": "AWAITING_USER_MATERIALS"
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
         },
         {
           "id": "qurilmalar_2",
@@ -118,7 +184,16 @@
           "title": "Stomatologik qurilmalar. Stomatologiyada ishlatiladigan dastaklar va dastalar. Ularni o‘rnatish qoidalari.",
           "calendar_topic": "Stomatologik qurilmalar. Stomatologiyada ishlatiladigan dastaklar va dastalar. Ularni o‘rnatish qoidalari.",
           "focus": "Stomatologik qurilmalar. Stomatologiyada ishlatiladigan dastaklar va dastalar. Ularni o‘rnatish qoidalari.",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Bormashina va dental dastaklar",
+              "body": "«Stomatologik asbob va ashyolar» qo‘llanmasining bormashinalar va dastaklar boblarida turbina, harakat manbai, ulash elementlari, rotor, yoritish va gigiyenik xususiyatlar farqlangan. Nazariy mashg‘ulotda ularning vazifasi va texnik mosligi o‘rganiladi."
+            },
+            {
+              "heading": "Manba va chegaralar",
+              "body": "Asos: foydalanuvchi yuborgan «Stomatologik asbob va ashyolar» (Kornilov H.P. va boshq., 2005) va kalendar reja. Matn mustaqil qisqa konspekt; o‘qituvchi tekshiruvi talab etiladi."
+            }
+          ],
           "teacher_materials": [
             {
               "title": "Kalendar reja",
@@ -133,7 +208,20 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "questions": [],
+          "questions": [
+            {
+              "id": "qurilmalar_2_req1",
+              "q": "Turbinali dastak qaysi turdagi qurilmaga tegishli?",
+              "options": [
+                "Rotatsion dental qurilma",
+                "Ko‘rik ko‘zgusi",
+                "Sement",
+                "Pinset"
+              ],
+              "answer": 0,
+              "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
+            }
+          ],
           "supplementary": [
             {
               "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
@@ -144,7 +232,7 @@
               "url": "https://e-library.sammu.uz/uz/book/2058"
             }
           ],
-          "review_status": "AWAITING_USER_MATERIALS"
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
         },
         {
           "id": "qurilmalar_3",
@@ -152,7 +240,16 @@
           "title": "Stomatologik qurilmalar. Stomatologiyada ishlatiladigan dastaklar va dastalar. Ularni o‘rnatish qoidalari.",
           "calendar_topic": "Stomatologik qurilmalar. Stomatologiyada ishlatiladigan dastaklar va dastalar. Ularni o‘rnatish qoidalari.",
           "focus": "Stomatologik qurilmalar. Stomatologiyada ishlatiladigan dastaklar va dastalar. Ularni o‘rnatish qoidalari.",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Bormashina va dental dastaklar",
+              "body": "«Stomatologik asbob va ashyolar» qo‘llanmasining bormashinalar va dastaklar boblarida turbina, harakat manbai, ulash elementlari, rotor, yoritish va gigiyenik xususiyatlar farqlangan. Nazariy mashg‘ulotda ularning vazifasi va texnik mosligi o‘rganiladi."
+            },
+            {
+              "heading": "Manba va chegaralar",
+              "body": "Asos: foydalanuvchi yuborgan «Stomatologik asbob va ashyolar» (Kornilov H.P. va boshq., 2005) va kalendar reja. Matn mustaqil qisqa konspekt; o‘qituvchi tekshiruvi talab etiladi."
+            }
+          ],
           "teacher_materials": [
             {
               "title": "Kalendar reja",
@@ -167,7 +264,20 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "questions": [],
+          "questions": [
+            {
+              "id": "qurilmalar_3_req1",
+              "q": "Turbinali dastak qaysi turdagi qurilmaga tegishli?",
+              "options": [
+                "Rotatsion dental qurilma",
+                "Ko‘rik ko‘zgusi",
+                "Sement",
+                "Pinset"
+              ],
+              "answer": 0,
+              "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
+            }
+          ],
           "supplementary": [
             {
               "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
@@ -178,7 +288,7 @@
               "url": "https://e-library.sammu.uz/uz/book/2058"
             }
           ],
-          "review_status": "AWAITING_USER_MATERIALS"
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
         },
         {
           "id": "asboblar",
@@ -186,7 +296,16 @@
           "title": "Stomatologik asboblar tasnifi. Ko‘rik, plomba qorish va qo‘yish uchun ishlatiladigan asboblar.",
           "calendar_topic": "Stomatologik asboblar tasnifi. Ko‘rik, plomba qorish va qo‘yish uchun ishlatiladigan asboblar.",
           "focus": "Stomatologik asboblar tasnifi. Ko‘rik, plomba qorish va qo‘yish uchun ishlatiladigan asboblar.",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Ko‘rik va plomba asboblari",
+              "body": "O‘quv darsligining asboblar bobida ko‘zgu, pinset, zond, gladilka, shtopfer va shpatel turli vazifalarga qarab farqlangan. Ko‘zgu ko‘rishda, shpatel materialni aralashtirishda, shtopfer esa materialga ishlov berishda qo‘llanadigan asbob turi sifatida keltiriladi."
+            },
+            {
+              "heading": "Manba va chegaralar",
+              "body": "Asos: foydalanuvchi yuborgan «Stomatologik asbob va ashyolar» (Kornilov H.P. va boshq., 2005) va kalendar reja. Matn mustaqil qisqa konspekt; o‘qituvchi tekshiruvi talab etiladi."
+            }
+          ],
           "teacher_materials": [
             {
               "title": "Kalendar reja",
@@ -207,7 +326,20 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "questions": [],
+          "questions": [
+            {
+              "id": "asboblar_req1",
+              "q": "Plomba materialini aralashtirish asbobi qaysi?",
+              "options": [
+                "Shpatel",
+                "Ko‘zgu",
+                "Kreslo",
+                "Kompressor"
+              ],
+              "answer": 0,
+              "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
+            }
+          ],
           "supplementary": [
             {
               "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
@@ -218,7 +350,7 @@
               "url": "https://e-library.sammu.uz/uz/book/2058"
             }
           ],
-          "review_status": "AWAITING_USER_MATERIALS"
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
         },
         {
           "id": "asboblar_2",
@@ -226,7 +358,16 @@
           "title": "Stomatologik asboblar tasnifi. Ko‘rik, plomba qorish va qo‘yish uchun ishlatiladigan asboblar.",
           "calendar_topic": "Stomatologik asboblar tasnifi. Ko‘rik, plomba qorish va qo‘yish uchun ishlatiladigan asboblar.",
           "focus": "Stomatologik asboblar tasnifi. Ko‘rik, plomba qorish va qo‘yish uchun ishlatiladigan asboblar.",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Ko‘rik va plomba asboblari",
+              "body": "O‘quv darsligining asboblar bobida ko‘zgu, pinset, zond, gladilka, shtopfer va shpatel turli vazifalarga qarab farqlangan. Ko‘zgu ko‘rishda, shpatel materialni aralashtirishda, shtopfer esa materialga ishlov berishda qo‘llanadigan asbob turi sifatida keltiriladi."
+            },
+            {
+              "heading": "Manba va chegaralar",
+              "body": "Asos: foydalanuvchi yuborgan «Stomatologik asbob va ashyolar» (Kornilov H.P. va boshq., 2005) va kalendar reja. Matn mustaqil qisqa konspekt; o‘qituvchi tekshiruvi talab etiladi."
+            }
+          ],
           "teacher_materials": [
             {
               "title": "Kalendar reja",
@@ -247,7 +388,20 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "questions": [],
+          "questions": [
+            {
+              "id": "asboblar_2_req1",
+              "q": "Plomba materialini aralashtirish asbobi qaysi?",
+              "options": [
+                "Shpatel",
+                "Ko‘zgu",
+                "Kreslo",
+                "Kompressor"
+              ],
+              "answer": 0,
+              "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
+            }
+          ],
           "supplementary": [
             {
               "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
@@ -258,7 +412,7 @@
               "url": "https://e-library.sammu.uz/uz/book/2058"
             }
           ],
-          "review_status": "AWAITING_USER_MATERIALS"
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
         },
         {
           "id": "rotatsion",
@@ -266,7 +420,16 @@
           "title": "Tishlarni charxlash uchun ishlatiladigan rotatsion asboblar. Borlar. Plombaga yakuniy ishlov berish uchun ishlatiladigan asboblar va ashyolar.",
           "calendar_topic": "Tishlarni charxlash uchun ishlatiladigan rotatsion asboblar. Borlar. Plombaga yakuniy ishlov berish uchun ishlatiladigan asboblar va ashyolar.",
           "focus": "Tishlarni charxlash uchun ishlatiladigan rotatsion asboblar. Borlar. Plombaga yakuniy ishlov berish uchun ishlatiladigan asboblar va ashyolar.",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Borlar va yakuniy ishlov",
+              "body": "Kitobda tishlarni charxlashda ishlatiladigan asboblar va restavratsiyaga pardoz berish vositalari alohida boblarda keltiriladi. Olmosli borlarning abraziv sirtlari hamda abrazivlik darajasi ularning tasnifida ahamiyatga ega."
+            },
+            {
+              "heading": "Manba va chegaralar",
+              "body": "Asos: foydalanuvchi yuborgan «Stomatologik asbob va ashyolar» (Kornilov H.P. va boshq., 2005) va kalendar reja. Matn mustaqil qisqa konspekt; o‘qituvchi tekshiruvi talab etiladi."
+            }
+          ],
           "teacher_materials": [
             {
               "title": "Kalendar reja",
@@ -287,7 +450,20 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "questions": [],
+          "questions": [
+            {
+              "id": "rotatsion_req1",
+              "q": "Olmosli borlar qanday xususiyati bilan ajralib turadi?",
+              "options": [
+                "Abraziv ishchi sirt",
+                "Qog‘oz korpus",
+                "Faqat yoritish",
+                "Faqat aspiratsiya"
+              ],
+              "answer": 0,
+              "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
+            }
+          ],
           "supplementary": [
             {
               "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
@@ -298,7 +474,7 @@
               "url": "https://e-library.sammu.uz/uz/book/2058"
             }
           ],
-          "review_status": "AWAITING_USER_MATERIALS"
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
         },
         {
           "id": "rotatsion_2",
@@ -306,7 +482,16 @@
           "title": "Tishlarni charxlash uchun ishlatiladigan rotatsion asboblar. Borlar. Plombaga yakuniy ishlov berish uchun ishlatiladigan asboblar va ashyolar.",
           "calendar_topic": "Tishlarni charxlash uchun ishlatiladigan rotatsion asboblar. Borlar. Plombaga yakuniy ishlov berish uchun ishlatiladigan asboblar va ashyolar.",
           "focus": "Tishlarni charxlash uchun ishlatiladigan rotatsion asboblar. Borlar. Plombaga yakuniy ishlov berish uchun ishlatiladigan asboblar va ashyolar.",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Borlar va yakuniy ishlov",
+              "body": "Kitobda tishlarni charxlashda ishlatiladigan asboblar va restavratsiyaga pardoz berish vositalari alohida boblarda keltiriladi. Olmosli borlarning abraziv sirtlari hamda abrazivlik darajasi ularning tasnifida ahamiyatga ega."
+            },
+            {
+              "heading": "Manba va chegaralar",
+              "body": "Asos: foydalanuvchi yuborgan «Stomatologik asbob va ashyolar» (Kornilov H.P. va boshq., 2005) va kalendar reja. Matn mustaqil qisqa konspekt; o‘qituvchi tekshiruvi talab etiladi."
+            }
+          ],
           "teacher_materials": [
             {
               "title": "Kalendar reja",
@@ -327,7 +512,20 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "questions": [],
+          "questions": [
+            {
+              "id": "rotatsion_2_req1",
+              "q": "Olmosli borlar qanday xususiyati bilan ajralib turadi?",
+              "options": [
+                "Abraziv ishchi sirt",
+                "Qog‘oz korpus",
+                "Faqat yoritish",
+                "Faqat aspiratsiya"
+              ],
+              "answer": 0,
+              "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
+            }
+          ],
           "supplementary": [
             {
               "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
@@ -338,7 +536,7 @@
               "url": "https://e-library.sammu.uz/uz/book/2058"
             }
           ],
-          "review_status": "AWAITING_USER_MATERIALS"
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
         },
         {
           "id": "rotatsion_3",
@@ -346,7 +544,16 @@
           "title": "Tishlarni charxlash uchun ishlatiladigan rotatsion asboblar. Borlar. Plombaga yakuniy ishlov berish uchun ishlatiladigan asboblar va ashyolar.",
           "calendar_topic": "Tishlarni charxlash uchun ishlatiladigan rotatsion asboblar. Borlar. Plombaga yakuniy ishlov berish uchun ishlatiladigan asboblar va ashyolar.",
           "focus": "Tishlarni charxlash uchun ishlatiladigan rotatsion asboblar. Borlar. Plombaga yakuniy ishlov berish uchun ishlatiladigan asboblar va ashyolar.",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Borlar va yakuniy ishlov",
+              "body": "Kitobda tishlarni charxlashda ishlatiladigan asboblar va restavratsiyaga pardoz berish vositalari alohida boblarda keltiriladi. Olmosli borlarning abraziv sirtlari hamda abrazivlik darajasi ularning tasnifida ahamiyatga ega."
+            },
+            {
+              "heading": "Manba va chegaralar",
+              "body": "Asos: foydalanuvchi yuborgan «Stomatologik asbob va ashyolar» (Kornilov H.P. va boshq., 2005) va kalendar reja. Matn mustaqil qisqa konspekt; o‘qituvchi tekshiruvi talab etiladi."
+            }
+          ],
           "teacher_materials": [
             {
               "title": "Kalendar reja",
@@ -367,7 +574,20 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "questions": [],
+          "questions": [
+            {
+              "id": "rotatsion_3_req1",
+              "q": "Olmosli borlar qanday xususiyati bilan ajralib turadi?",
+              "options": [
+                "Abraziv ishchi sirt",
+                "Qog‘oz korpus",
+                "Faqat yoritish",
+                "Faqat aspiratsiya"
+              ],
+              "answer": 0,
+              "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
+            }
+          ],
           "supplementary": [
             {
               "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
@@ -378,7 +598,7 @@
               "url": "https://e-library.sammu.uz/uz/book/2058"
             }
           ],
-          "review_status": "AWAITING_USER_MATERIALS"
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
         },
         {
           "id": "plombalar",
@@ -386,7 +606,16 @@
           "title": "Plomba ashyolari tasnifi. Vaqtinchalik plomba ashyolari, bog‘lov materiallari.",
           "calendar_topic": "Plomba ashyolari tasnifi. Vaqtinchalik plomba ashyolari, bog‘lov materiallari.",
           "focus": "Plomba ashyolari tasnifi. Vaqtinchalik plomba ashyolari, bog‘lov materiallari.",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Plomba ashyolarining tasnifi",
+              "body": "Kornilov va hammualliflar qo‘llanmasida plomba ashyolari vaqtinchalik materiallar, doimiy plomba ashyolari, tagliklar va ildiz kanali uchun materiallarga ajratiladi. Bu tasnif materialning vazifasi va xususiyatlarini farqlashga yordam beradi."
+            },
+            {
+              "heading": "Manba va chegaralar",
+              "body": "Asos: foydalanuvchi yuborgan «Stomatologik asbob va ashyolar» (Kornilov H.P. va boshq., 2005) va kalendar reja. Matn mustaqil qisqa konspekt; o‘qituvchi tekshiruvi talab etiladi."
+            }
+          ],
           "teacher_materials": [
             {
               "title": "Kalendar reja",
@@ -401,7 +630,20 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "questions": [],
+          "questions": [
+            {
+              "id": "plombalar_req1",
+              "q": "Plomba ashyolari tasnifiga qaysi guruh kiradi?",
+              "options": [
+                "Vaqtinchalik materiallar",
+                "Kreslo qismi",
+                "Chiroq",
+                "Telefon"
+              ],
+              "answer": 0,
+              "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
+            }
+          ],
           "supplementary": [
             {
               "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
@@ -412,7 +654,7 @@
               "url": "https://e-library.sammu.uz/uz/book/2058"
             }
           ],
-          "review_status": "AWAITING_USER_MATERIALS"
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
         },
         {
           "id": "plombalar_2",
@@ -420,7 +662,16 @@
           "title": "Plomba ashyolari tasnifi. Vaqtinchalik plomba ashyolari, bog‘lov materiallari.",
           "calendar_topic": "Plomba ashyolari tasnifi. Vaqtinchalik plomba ashyolari, bog‘lov materiallari.",
           "focus": "Plomba ashyolari tasnifi. Vaqtinchalik plomba ashyolari, bog‘lov materiallari.",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Plomba ashyolarining tasnifi",
+              "body": "Kornilov va hammualliflar qo‘llanmasida plomba ashyolari vaqtinchalik materiallar, doimiy plomba ashyolari, tagliklar va ildiz kanali uchun materiallarga ajratiladi. Bu tasnif materialning vazifasi va xususiyatlarini farqlashga yordam beradi."
+            },
+            {
+              "heading": "Manba va chegaralar",
+              "body": "Asos: foydalanuvchi yuborgan «Stomatologik asbob va ashyolar» (Kornilov H.P. va boshq., 2005) va kalendar reja. Matn mustaqil qisqa konspekt; o‘qituvchi tekshiruvi talab etiladi."
+            }
+          ],
           "teacher_materials": [
             {
               "title": "Kalendar reja",
@@ -435,7 +686,20 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "questions": [],
+          "questions": [
+            {
+              "id": "plombalar_2_req1",
+              "q": "Plomba ashyolari tasnifiga qaysi guruh kiradi?",
+              "options": [
+                "Vaqtinchalik materiallar",
+                "Kreslo qismi",
+                "Chiroq",
+                "Telefon"
+              ],
+              "answer": 0,
+              "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
+            }
+          ],
           "supplementary": [
             {
               "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
@@ -446,7 +710,7 @@
               "url": "https://e-library.sammu.uz/uz/book/2058"
             }
           ],
-          "review_status": "AWAITING_USER_MATERIALS"
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
         },
         {
           "id": "tagliklar",
@@ -454,7 +718,16 @@
           "title": "Ajratuvchi va davolovchi tagliklar. Sementlar. Tarkibi, xususiyatlari.",
           "calendar_topic": "Ajratuvchi va davolovchi tagliklar. Sementlar. Tarkibi, xususiyatlari.",
           "focus": "Ajratuvchi va davolovchi tagliklar. Sementlar. Tarkibi, xususiyatlari.",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Ajratuvchi va davolovchi tagliklar",
+              "body": "«Stomatologik asbob va ashyolar» kitobining yakuniy boblarida ajratuvchi va davolovchi tagliklar alohida ko‘rib chiqiladi. Sementlar esa tarkibi va xossalariga qarab turli guruhlarga ajratilgan. Bu bilimlar mahsulotni mustaqil qo‘llash ko‘rsatmasi emas."
+            },
+            {
+              "heading": "Manba va chegaralar",
+              "body": "Asos: foydalanuvchi yuborgan «Stomatologik asbob va ashyolar» (Kornilov H.P. va boshq., 2005) va kalendar reja. Matn mustaqil qisqa konspekt; o‘qituvchi tekshiruvi talab etiladi."
+            }
+          ],
           "teacher_materials": [
             {
               "title": "Kalendar reja",
@@ -469,7 +742,20 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "questions": [],
+          "questions": [
+            {
+              "id": "tagliklar_req1",
+              "q": "Kitobda qanday taglik guruhlari ajratilgan?",
+              "options": [
+                "Ajratuvchi va davolovchi",
+                "Faqat elektr",
+                "Faqat mexanik",
+                "Faqat rezina"
+              ],
+              "answer": 0,
+              "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
+            }
+          ],
           "supplementary": [
             {
               "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
@@ -480,7 +766,7 @@
               "url": "https://e-library.sammu.uz/uz/book/2058"
             }
           ],
-          "review_status": "AWAITING_USER_MATERIALS"
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
         },
         {
           "id": "tagliklar_2",
@@ -488,7 +774,16 @@
           "title": "Ajratuvchi va davolovchi tagliklar. Sementlar. Tarkibi, xususiyatlari.",
           "calendar_topic": "Ajratuvchi va davolovchi tagliklar. Sementlar. Tarkibi, xususiyatlari.",
           "focus": "Ajratuvchi va davolovchi tagliklar. Sementlar. Tarkibi, xususiyatlari.",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Ajratuvchi va davolovchi tagliklar",
+              "body": "«Stomatologik asbob va ashyolar» kitobining yakuniy boblarida ajratuvchi va davolovchi tagliklar alohida ko‘rib chiqiladi. Sementlar esa tarkibi va xossalariga qarab turli guruhlarga ajratilgan. Bu bilimlar mahsulotni mustaqil qo‘llash ko‘rsatmasi emas."
+            },
+            {
+              "heading": "Manba va chegaralar",
+              "body": "Asos: foydalanuvchi yuborgan «Stomatologik asbob va ashyolar» (Kornilov H.P. va boshq., 2005) va kalendar reja. Matn mustaqil qisqa konspekt; o‘qituvchi tekshiruvi talab etiladi."
+            }
+          ],
           "teacher_materials": [
             {
               "title": "Kalendar reja",
@@ -503,7 +798,20 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "questions": [],
+          "questions": [
+            {
+              "id": "tagliklar_2_req1",
+              "q": "Kitobda qanday taglik guruhlari ajratilgan?",
+              "options": [
+                "Ajratuvchi va davolovchi",
+                "Faqat elektr",
+                "Faqat mexanik",
+                "Faqat rezina"
+              ],
+              "answer": 0,
+              "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
+            }
+          ],
           "supplementary": [
             {
               "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
@@ -514,7 +822,7 @@
               "url": "https://e-library.sammu.uz/uz/book/2058"
             }
           ],
-          "review_status": "AWAITING_USER_MATERIALS"
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
         },
         {
           "id": "tagliklar_3",
@@ -522,7 +830,16 @@
           "title": "Ajratuvchi va davolovchi tagliklar. Sementlar. Tarkibi, xususiyatlari.",
           "calendar_topic": "Ajratuvchi va davolovchi tagliklar. Sementlar. Tarkibi, xususiyatlari.",
           "focus": "Ajratuvchi va davolovchi tagliklar. Sementlar. Tarkibi, xususiyatlari.",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Ajratuvchi va davolovchi tagliklar",
+              "body": "«Stomatologik asbob va ashyolar» kitobining yakuniy boblarida ajratuvchi va davolovchi tagliklar alohida ko‘rib chiqiladi. Sementlar esa tarkibi va xossalariga qarab turli guruhlarga ajratilgan. Bu bilimlar mahsulotni mustaqil qo‘llash ko‘rsatmasi emas."
+            },
+            {
+              "heading": "Manba va chegaralar",
+              "body": "Asos: foydalanuvchi yuborgan «Stomatologik asbob va ashyolar» (Kornilov H.P. va boshq., 2005) va kalendar reja. Matn mustaqil qisqa konspekt; o‘qituvchi tekshiruvi talab etiladi."
+            }
+          ],
           "teacher_materials": [
             {
               "title": "Kalendar reja",
@@ -537,7 +854,20 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "questions": [],
+          "questions": [
+            {
+              "id": "tagliklar_3_req1",
+              "q": "Kitobda qanday taglik guruhlari ajratilgan?",
+              "options": [
+                "Ajratuvchi va davolovchi",
+                "Faqat elektr",
+                "Faqat mexanik",
+                "Faqat rezina"
+              ],
+              "answer": 0,
+              "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
+            }
+          ],
           "supplementary": [
             {
               "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
@@ -548,7 +878,707 @@
               "url": "https://e-library.sammu.uz/uz/book/2058"
             }
           ],
-          "review_status": "AWAITING_USER_MATERIALS"
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
+        },
+        {
+          "id": "pre_session_16",
+          "session_number": 16,
+          "title": "Shishaionomer va polikarboksilat sementlar. Tarkibi, xususiyatlari.",
+          "calendar_topic": "Shishaionomer va polikarboksilat sementlar. Tarkibi, xususiyatlari.",
+          "focus": "Shishaionomer va polikarboksilat sementlar. Tarkibi, xususiyatlari.",
+          "sections": [
+            {
+              "heading": "Shishaionomer va polikarboksilat sementlar",
+              "body": "Kornilov va hammualliflar kitobida polikarboksilat sement tarkibining asosiy kukun komponentlaridan biri rux oksidi ekani bayon etiladi. Shishaionomer sementlar esa alohida tur sifatida tasniflanadi. Kimyoviy tarkibi turli materiallarning xossalarini tushunishda muhim."
+            },
+            {
+              "heading": "Manba va chegaralar",
+              "body": "Asos: foydalanuvchi yuborgan «Stomatologik asbob va ashyolar» (Kornilov H.P. va boshq., 2005) va kalendar reja. Matn mustaqil qisqa konspekt; o‘qituvchi tekshiruvi talab etiladi."
+            }
+          ],
+          "questions": [
+            {
+              "id": "pre_session_16_req1",
+              "q": "Polikarboksilat sement tarkibida qaysi komponent bor?",
+              "options": [
+                "Rux oksidi",
+                "Natriy xlorid",
+                "Kislorod gazi",
+                "Mis simi"
+              ],
+              "answer": 0,
+              "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
+            }
+          ],
+          "teacher_materials": [
+            {
+              "title": "Kalendar reja",
+              "filename": "Calendar_plan-Preklinik restavratsion stomatologiya.pdf",
+              "kind": "PDF",
+              "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
+            },
+            {
+              "title": "Stomatologik asbob va ashyolar",
+              "filename": "Stomаtologik  asbob va ashyolar.Komilov H.P. 2005 y..pdf",
+              "kind": "PDF",
+              "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
+            }
+          ],
+          "supplementary": [],
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
+        },
+        {
+          "id": "pre_session_17",
+          "session_number": 17,
+          "title": "Shishaionomer va polikarboksilat sementlar. Tarkibi, xususiyatlari.",
+          "calendar_topic": "Shishaionomer va polikarboksilat sementlar. Tarkibi, xususiyatlari.",
+          "focus": "Shishaionomer va polikarboksilat sementlar. Tarkibi, xususiyatlari.",
+          "sections": [
+            {
+              "heading": "Shishaionomer va polikarboksilat sementlar",
+              "body": "Kornilov va hammualliflar kitobida polikarboksilat sement tarkibining asosiy kukun komponentlaridan biri rux oksidi ekani bayon etiladi. Shishaionomer sementlar esa alohida tur sifatida tasniflanadi. Kimyoviy tarkibi turli materiallarning xossalarini tushunishda muhim."
+            },
+            {
+              "heading": "Manba va chegaralar",
+              "body": "Asos: foydalanuvchi yuborgan «Stomatologik asbob va ashyolar» (Kornilov H.P. va boshq., 2005) va kalendar reja. Matn mustaqil qisqa konspekt; o‘qituvchi tekshiruvi talab etiladi."
+            }
+          ],
+          "questions": [
+            {
+              "id": "pre_session_17_req1",
+              "q": "Polikarboksilat sement tarkibida qaysi komponent bor?",
+              "options": [
+                "Rux oksidi",
+                "Natriy xlorid",
+                "Kislorod gazi",
+                "Mis simi"
+              ],
+              "answer": 0,
+              "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
+            }
+          ],
+          "teacher_materials": [
+            {
+              "title": "Kalendar reja",
+              "filename": "Calendar_plan-Preklinik restavratsion stomatologiya.pdf",
+              "kind": "PDF",
+              "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
+            },
+            {
+              "title": "Stomatologik asbob va ashyolar",
+              "filename": "Stomаtologik  asbob va ashyolar.Komilov H.P. 2005 y..pdf",
+              "kind": "PDF",
+              "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
+            }
+          ],
+          "supplementary": [],
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
+        },
+        {
+          "id": "pre_session_18",
+          "session_number": 18,
+          "title": "Shishaionomer va polikarboksilat sementlar. Tarkibi, xususiyatlari.",
+          "calendar_topic": "Shishaionomer va polikarboksilat sementlar. Tarkibi, xususiyatlari.",
+          "focus": "Shishaionomer va polikarboksilat sementlar. Tarkibi, xususiyatlari.",
+          "sections": [
+            {
+              "heading": "Shishaionomer va polikarboksilat sementlar",
+              "body": "Kornilov va hammualliflar kitobida polikarboksilat sement tarkibining asosiy kukun komponentlaridan biri rux oksidi ekani bayon etiladi. Shishaionomer sementlar esa alohida tur sifatida tasniflanadi. Kimyoviy tarkibi turli materiallarning xossalarini tushunishda muhim."
+            },
+            {
+              "heading": "Manba va chegaralar",
+              "body": "Asos: foydalanuvchi yuborgan «Stomatologik asbob va ashyolar» (Kornilov H.P. va boshq., 2005) va kalendar reja. Matn mustaqil qisqa konspekt; o‘qituvchi tekshiruvi talab etiladi."
+            }
+          ],
+          "questions": [
+            {
+              "id": "pre_session_18_req1",
+              "q": "Polikarboksilat sement tarkibida qaysi komponent bor?",
+              "options": [
+                "Rux oksidi",
+                "Natriy xlorid",
+                "Kislorod gazi",
+                "Mis simi"
+              ],
+              "answer": 0,
+              "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
+            }
+          ],
+          "teacher_materials": [
+            {
+              "title": "Kalendar reja",
+              "filename": "Calendar_plan-Preklinik restavratsion stomatologiya.pdf",
+              "kind": "PDF",
+              "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
+            },
+            {
+              "title": "Stomatologik asbob va ashyolar",
+              "filename": "Stomаtologik  asbob va ashyolar.Komilov H.P. 2005 y..pdf",
+              "kind": "PDF",
+              "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
+            }
+          ],
+          "supplementary": [],
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
+        },
+        {
+          "id": "pre_session_19",
+          "session_number": 19,
+          "title": "Amalgamalar.",
+          "calendar_topic": "Amalgamalar.",
+          "focus": "Amalgamalar.",
+          "sections": [
+            {
+              "heading": "Amalgama materiallari",
+              "body": "O‘quv qo‘llanmada amalgamalar, shu jumladan kumushli va misli turlari haqida alohida bo‘lim mavjud. Amalgama metall tarkibli restavratsion material guruhiga kiradi. Tarkibi, xossalari va zamonaviy cheklovlar klinik tanlovdan alohida baholanadi."
+            },
+            {
+              "heading": "Manba va chegaralar",
+              "body": "Asos: foydalanuvchi yuborgan «Stomatologik asbob va ashyolar» (Kornilov H.P. va boshq., 2005) va kalendar reja. Matn mustaqil qisqa konspekt; o‘qituvchi tekshiruvi talab etiladi."
+            }
+          ],
+          "questions": [
+            {
+              "id": "pre_session_19_req1",
+              "q": "Amalgama qaysi guruhga mansub?",
+              "options": [
+                "Metall asosli restavratsion material",
+                "Ko‘rik oynasi",
+                "Membrana",
+                "Sterilizator"
+              ],
+              "answer": 0,
+              "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
+            }
+          ],
+          "teacher_materials": [
+            {
+              "title": "Kalendar reja",
+              "filename": "Calendar_plan-Preklinik restavratsion stomatologiya.pdf",
+              "kind": "PDF",
+              "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
+            },
+            {
+              "title": "Stomatologik asbob va ashyolar",
+              "filename": "Stomаtologik  asbob va ashyolar.Komilov H.P. 2005 y..pdf",
+              "kind": "PDF",
+              "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
+            }
+          ],
+          "supplementary": [],
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
+        },
+        {
+          "id": "pre_session_20",
+          "session_number": 20,
+          "title": "Amalgamalar.",
+          "calendar_topic": "Amalgamalar.",
+          "focus": "Amalgamalar.",
+          "sections": [
+            {
+              "heading": "Amalgama materiallari",
+              "body": "O‘quv qo‘llanmada amalgamalar, shu jumladan kumushli va misli turlari haqida alohida bo‘lim mavjud. Amalgama metall tarkibli restavratsion material guruhiga kiradi. Tarkibi, xossalari va zamonaviy cheklovlar klinik tanlovdan alohida baholanadi."
+            },
+            {
+              "heading": "Manba va chegaralar",
+              "body": "Asos: foydalanuvchi yuborgan «Stomatologik asbob va ashyolar» (Kornilov H.P. va boshq., 2005) va kalendar reja. Matn mustaqil qisqa konspekt; o‘qituvchi tekshiruvi talab etiladi."
+            }
+          ],
+          "questions": [
+            {
+              "id": "pre_session_20_req1",
+              "q": "Amalgama qaysi guruhga mansub?",
+              "options": [
+                "Metall asosli restavratsion material",
+                "Ko‘rik oynasi",
+                "Membrana",
+                "Sterilizator"
+              ],
+              "answer": 0,
+              "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
+            }
+          ],
+          "teacher_materials": [
+            {
+              "title": "Kalendar reja",
+              "filename": "Calendar_plan-Preklinik restavratsion stomatologiya.pdf",
+              "kind": "PDF",
+              "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
+            },
+            {
+              "title": "Stomatologik asbob va ashyolar",
+              "filename": "Stomаtologik  asbob va ashyolar.Komilov H.P. 2005 y..pdf",
+              "kind": "PDF",
+              "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
+            }
+          ],
+          "supplementary": [],
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
+        },
+        {
+          "id": "pre_session_21",
+          "session_number": 21,
+          "title": "Kanalni plombalashda qo‘llaniluvchi plomba ashyolar.",
+          "calendar_topic": "Kanalni plombalashda qo‘llaniluvchi plomba ashyolar.",
+          "focus": "Kanalni plombalashda qo‘llaniluvchi plomba ashyolar.",
+          "sections": [
+            {
+              "heading": "Ildiz kanali plomba materiallari",
+              "body": "Kornilov qo‘llanmasining endodontik materiallar bo‘limida ildiz kanali uchun plomba ashyolari turli guruhlar orqali bayon etiladi; siler va filer atamalari ishlatiladi. Ularning vazifasi odatdagi tish yuzasi restavratsiyasidan farq qiladi."
+            },
+            {
+              "heading": "Manba va chegaralar",
+              "body": "Asos: foydalanuvchi yuborgan «Stomatologik asbob va ashyolar» (Kornilov H.P. va boshq., 2005) va kalendar reja. Matn mustaqil qisqa konspekt; o‘qituvchi tekshiruvi talab etiladi."
+            }
+          ],
+          "questions": [
+            {
+              "id": "pre_session_21_req1",
+              "q": "Siler va filer atamalari qaysi yo‘nalishga tegishli?",
+              "options": [
+                "Endodontik plomba materiallari",
+                "Kreslo",
+                "Yoritgich",
+                "Eshitish tizimi"
+              ],
+              "answer": 0,
+              "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
+            }
+          ],
+          "teacher_materials": [
+            {
+              "title": "Kalendar reja",
+              "filename": "Calendar_plan-Preklinik restavratsion stomatologiya.pdf",
+              "kind": "PDF",
+              "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
+            },
+            {
+              "title": "Stomatologik asbob va ashyolar",
+              "filename": "Stomаtologik  asbob va ashyolar.Komilov H.P. 2005 y..pdf",
+              "kind": "PDF",
+              "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
+            }
+          ],
+          "supplementary": [],
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
+        },
+        {
+          "id": "pre_session_22",
+          "session_number": 22,
+          "title": "Kanalni plombalashda qo‘llaniluvchi plomba ashyolar.",
+          "calendar_topic": "Kanalni plombalashda qo‘llaniluvchi plomba ashyolar.",
+          "focus": "Kanalni plombalashda qo‘llaniluvchi plomba ashyolar.",
+          "sections": [
+            {
+              "heading": "Ildiz kanali plomba materiallari",
+              "body": "Kornilov qo‘llanmasining endodontik materiallar bo‘limida ildiz kanali uchun plomba ashyolari turli guruhlar orqali bayon etiladi; siler va filer atamalari ishlatiladi. Ularning vazifasi odatdagi tish yuzasi restavratsiyasidan farq qiladi."
+            },
+            {
+              "heading": "Manba va chegaralar",
+              "body": "Asos: foydalanuvchi yuborgan «Stomatologik asbob va ashyolar» (Kornilov H.P. va boshq., 2005) va kalendar reja. Matn mustaqil qisqa konspekt; o‘qituvchi tekshiruvi talab etiladi."
+            }
+          ],
+          "questions": [
+            {
+              "id": "pre_session_22_req1",
+              "q": "Siler va filer atamalari qaysi yo‘nalishga tegishli?",
+              "options": [
+                "Endodontik plomba materiallari",
+                "Kreslo",
+                "Yoritgich",
+                "Eshitish tizimi"
+              ],
+              "answer": 0,
+              "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
+            }
+          ],
+          "teacher_materials": [
+            {
+              "title": "Kalendar reja",
+              "filename": "Calendar_plan-Preklinik restavratsion stomatologiya.pdf",
+              "kind": "PDF",
+              "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
+            },
+            {
+              "title": "Stomatologik asbob va ashyolar",
+              "filename": "Stomаtologik  asbob va ashyolar.Komilov H.P. 2005 y..pdf",
+              "kind": "PDF",
+              "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
+            }
+          ],
+          "supplementary": [],
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
+        },
+        {
+          "id": "pre_session_23",
+          "session_number": 23,
+          "title": "Kariyes haqida tushuncha. Karioz kovaklar tasnifi.",
+          "calendar_topic": "Kariyes haqida tushuncha. Karioz kovaklar tasnifi.",
+          "focus": "Kariyes haqida tushuncha. Karioz kovaklar tasnifi.",
+          "sections": [
+            {
+              "heading": "Kariyes va karioz kovaklar",
+              "body": "Stomatologik materialshunoslikda kariyes sabab hosil bo‘lgan qattiq tish to‘qimalari nuqsonlarini tiklash uchun turli plomba materiallari o‘rganiladi. Karioz kovak tushunchasi va uning joylashuvi haqida nazariy tasniflar klinik tashxis o‘rnini bosmaydi."
+            },
+            {
+              "heading": "Manba va chegaralar",
+              "body": "Asos: foydalanuvchi yuborgan «Stomatologik asbob va ashyolar» (Kornilov H.P. va boshq., 2005) va kalendar reja. Matn mustaqil qisqa konspekt; o‘qituvchi tekshiruvi talab etiladi."
+            }
+          ],
+          "questions": [
+            {
+              "id": "pre_session_23_req1",
+              "q": "Karioz kovaklar qanday to‘qimalar bilan bog‘liq?",
+              "options": [
+                "Tishning qattiq to‘qimalari",
+                "Soch",
+                "Quloq payi",
+                "Tirnoq"
+              ],
+              "answer": 0,
+              "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
+            }
+          ],
+          "teacher_materials": [
+            {
+              "title": "Kalendar reja",
+              "filename": "Calendar_plan-Preklinik restavratsion stomatologiya.pdf",
+              "kind": "PDF",
+              "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
+            },
+            {
+              "title": "Stomatologik asbob va ashyolar",
+              "filename": "Stomаtologik  asbob va ashyolar.Komilov H.P. 2005 y..pdf",
+              "kind": "PDF",
+              "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
+            }
+          ],
+          "supplementary": [],
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
+        },
+        {
+          "id": "pre_session_24",
+          "session_number": 24,
+          "title": "Kariyes haqida tushuncha. Karioz kovaklar tasnifi.",
+          "calendar_topic": "Kariyes haqida tushuncha. Karioz kovaklar tasnifi.",
+          "focus": "Kariyes haqida tushuncha. Karioz kovaklar tasnifi.",
+          "sections": [
+            {
+              "heading": "Kariyes va karioz kovaklar",
+              "body": "Stomatologik materialshunoslikda kariyes sabab hosil bo‘lgan qattiq tish to‘qimalari nuqsonlarini tiklash uchun turli plomba materiallari o‘rganiladi. Karioz kovak tushunchasi va uning joylashuvi haqida nazariy tasniflar klinik tashxis o‘rnini bosmaydi."
+            },
+            {
+              "heading": "Manba va chegaralar",
+              "body": "Asos: foydalanuvchi yuborgan «Stomatologik asbob va ashyolar» (Kornilov H.P. va boshq., 2005) va kalendar reja. Matn mustaqil qisqa konspekt; o‘qituvchi tekshiruvi talab etiladi."
+            }
+          ],
+          "questions": [
+            {
+              "id": "pre_session_24_req1",
+              "q": "Karioz kovaklar qanday to‘qimalar bilan bog‘liq?",
+              "options": [
+                "Tishning qattiq to‘qimalari",
+                "Soch",
+                "Quloq payi",
+                "Tirnoq"
+              ],
+              "answer": 0,
+              "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
+            }
+          ],
+          "teacher_materials": [
+            {
+              "title": "Kalendar reja",
+              "filename": "Calendar_plan-Preklinik restavratsion stomatologiya.pdf",
+              "kind": "PDF",
+              "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
+            },
+            {
+              "title": "Stomatologik asbob va ashyolar",
+              "filename": "Stomаtologik  asbob va ashyolar.Komilov H.P. 2005 y..pdf",
+              "kind": "PDF",
+              "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
+            }
+          ],
+          "supplementary": [],
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
+        },
+        {
+          "id": "pre_session_25",
+          "session_number": 25,
+          "title": "Kariyes haqida tushuncha. Karioz kovaklar tasnifi.",
+          "calendar_topic": "Kariyes haqida tushuncha. Karioz kovaklar tasnifi.",
+          "focus": "Kariyes haqida tushuncha. Karioz kovaklar tasnifi.",
+          "sections": [
+            {
+              "heading": "Kariyes va karioz kovaklar",
+              "body": "Stomatologik materialshunoslikda kariyes sabab hosil bo‘lgan qattiq tish to‘qimalari nuqsonlarini tiklash uchun turli plomba materiallari o‘rganiladi. Karioz kovak tushunchasi va uning joylashuvi haqida nazariy tasniflar klinik tashxis o‘rnini bosmaydi."
+            },
+            {
+              "heading": "Manba va chegaralar",
+              "body": "Asos: foydalanuvchi yuborgan «Stomatologik asbob va ashyolar» (Kornilov H.P. va boshq., 2005) va kalendar reja. Matn mustaqil qisqa konspekt; o‘qituvchi tekshiruvi talab etiladi."
+            }
+          ],
+          "questions": [
+            {
+              "id": "pre_session_25_req1",
+              "q": "Karioz kovaklar qanday to‘qimalar bilan bog‘liq?",
+              "options": [
+                "Tishning qattiq to‘qimalari",
+                "Soch",
+                "Quloq payi",
+                "Tirnoq"
+              ],
+              "answer": 0,
+              "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
+            }
+          ],
+          "teacher_materials": [
+            {
+              "title": "Kalendar reja",
+              "filename": "Calendar_plan-Preklinik restavratsion stomatologiya.pdf",
+              "kind": "PDF",
+              "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
+            },
+            {
+              "title": "Stomatologik asbob va ashyolar",
+              "filename": "Stomаtologik  asbob va ashyolar.Komilov H.P. 2005 y..pdf",
+              "kind": "PDF",
+              "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
+            }
+          ],
+          "supplementary": [],
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
+        },
+        {
+          "id": "pre_session_26",
+          "session_number": 26,
+          "title": "Doimiy tishlovdagi chaynov tishlarning tuzilishi.",
+          "calendar_topic": "Doimiy tishlovdagi chaynov tishlarning tuzilishi.",
+          "focus": "Doimiy tishlovdagi chaynov tishlarning tuzilishi.",
+          "sections": [
+            {
+              "heading": "Chaynov tishlar tuzilishi",
+              "body": "Doimiy tishlovdagi chaynov tishlariga premolyarlar va molyarlar kiradi. Ularning umumiy vazifasi ovqatni maydalash bilan bog‘liq. Bu izoh faqat mavzu rejasiga mos kirish bo‘lib, manbaviy anatomik matn hali kerak."
+            },
+            {
+              "heading": "Manba va chegaralar",
+              "body": "Asos: foydalanuvchi yuborgan «Stomatologik asbob va ashyolar» (Kornilov H.P. va boshq., 2005) va kalendar reja. Matn mustaqil qisqa konspekt; o‘qituvchi tekshiruvi talab etiladi."
+            }
+          ],
+          "questions": [],
+          "teacher_materials": [
+            {
+              "title": "Kalendar reja",
+              "filename": "Calendar_plan-Preklinik restavratsion stomatologiya.pdf",
+              "kind": "PDF",
+              "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
+            },
+            {
+              "title": "Stomatologik asbob va ashyolar",
+              "filename": "Stomаtologik  asbob va ashyolar.Komilov H.P. 2005 y..pdf",
+              "kind": "PDF",
+              "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
+            }
+          ],
+          "supplementary": [],
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
+        },
+        {
+          "id": "pre_session_27",
+          "session_number": 27,
+          "title": "Doimiy tishlovdagi chaynov tishlarning tuzilishi.",
+          "calendar_topic": "Doimiy tishlovdagi chaynov tishlarning tuzilishi.",
+          "focus": "Doimiy tishlovdagi chaynov tishlarning tuzilishi.",
+          "sections": [
+            {
+              "heading": "Chaynov tishlar tuzilishi",
+              "body": "Doimiy tishlovdagi chaynov tishlariga premolyarlar va molyarlar kiradi. Ularning umumiy vazifasi ovqatni maydalash bilan bog‘liq. Bu izoh faqat mavzu rejasiga mos kirish bo‘lib, manbaviy anatomik matn hali kerak."
+            },
+            {
+              "heading": "Manba va chegaralar",
+              "body": "Asos: foydalanuvchi yuborgan «Stomatologik asbob va ashyolar» (Kornilov H.P. va boshq., 2005) va kalendar reja. Matn mustaqil qisqa konspekt; o‘qituvchi tekshiruvi talab etiladi."
+            }
+          ],
+          "questions": [],
+          "teacher_materials": [
+            {
+              "title": "Kalendar reja",
+              "filename": "Calendar_plan-Preklinik restavratsion stomatologiya.pdf",
+              "kind": "PDF",
+              "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
+            },
+            {
+              "title": "Stomatologik asbob va ashyolar",
+              "filename": "Stomаtologik  asbob va ashyolar.Komilov H.P. 2005 y..pdf",
+              "kind": "PDF",
+              "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
+            }
+          ],
+          "supplementary": [],
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
+        },
+        {
+          "id": "pre_session_28",
+          "session_number": 28,
+          "title": "Doimiy tishlovdagi frontal tishlarning tuzilishi.",
+          "calendar_topic": "Doimiy tishlovdagi frontal tishlarning tuzilishi.",
+          "focus": "Doimiy tishlovdagi frontal tishlarning tuzilishi.",
+          "sections": [
+            {
+              "heading": "Frontal tishlar tuzilishi",
+              "body": "Doimiy tishlovdagi frontal tishlar kesuvchi tishlar va qoziq tishlardan iborat. Ularning shakli va funksiyasini o‘rganish tish anatomiyasi mashg‘ulotining bir qismidir. To‘liq anatomik manba kelmaguncha qo‘shimcha tafsilotlar kiritilmaydi."
+            },
+            {
+              "heading": "Manba va chegaralar",
+              "body": "Asos: foydalanuvchi yuborgan «Stomatologik asbob va ashyolar» (Kornilov H.P. va boshq., 2005) va kalendar reja. Matn mustaqil qisqa konspekt; o‘qituvchi tekshiruvi talab etiladi."
+            }
+          ],
+          "questions": [],
+          "teacher_materials": [
+            {
+              "title": "Kalendar reja",
+              "filename": "Calendar_plan-Preklinik restavratsion stomatologiya.pdf",
+              "kind": "PDF",
+              "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
+            },
+            {
+              "title": "Stomatologik asbob va ashyolar",
+              "filename": "Stomаtologik  asbob va ashyolar.Komilov H.P. 2005 y..pdf",
+              "kind": "PDF",
+              "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
+            }
+          ],
+          "supplementary": [],
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
+        },
+        {
+          "id": "pre_session_29",
+          "session_number": 29,
+          "title": "Doimiy tishlovdagi frontal tishlarning tuzilishi.",
+          "calendar_topic": "Doimiy tishlovdagi frontal tishlarning tuzilishi.",
+          "focus": "Doimiy tishlovdagi frontal tishlarning tuzilishi.",
+          "sections": [
+            {
+              "heading": "Frontal tishlar tuzilishi",
+              "body": "Doimiy tishlovdagi frontal tishlar kesuvchi tishlar va qoziq tishlardan iborat. Ularning shakli va funksiyasini o‘rganish tish anatomiyasi mashg‘ulotining bir qismidir. To‘liq anatomik manba kelmaguncha qo‘shimcha tafsilotlar kiritilmaydi."
+            },
+            {
+              "heading": "Manba va chegaralar",
+              "body": "Asos: foydalanuvchi yuborgan «Stomatologik asbob va ashyolar» (Kornilov H.P. va boshq., 2005) va kalendar reja. Matn mustaqil qisqa konspekt; o‘qituvchi tekshiruvi talab etiladi."
+            }
+          ],
+          "questions": [],
+          "teacher_materials": [
+            {
+              "title": "Kalendar reja",
+              "filename": "Calendar_plan-Preklinik restavratsion stomatologiya.pdf",
+              "kind": "PDF",
+              "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
+            },
+            {
+              "title": "Stomatologik asbob va ashyolar",
+              "filename": "Stomаtologik  asbob va ashyolar.Komilov H.P. 2005 y..pdf",
+              "kind": "PDF",
+              "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
+            }
+          ],
+          "supplementary": [],
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
+        },
+        {
+          "id": "pre_session_30",
+          "session_number": 30,
+          "title": "Tish qattiq to‘qimalarini charxlash asoslari va terapevt-stomatolog ishidagi texnika-xavfsizlik qoidalari.",
+          "calendar_topic": "Tish qattiq to‘qimalarini charxlash asoslari va terapevt-stomatolog ishidagi texnika-xavfsizlik qoidalari.",
+          "focus": "Tish qattiq to‘qimalarini charxlash asoslari va terapevt-stomatolog ishidagi texnika-xavfsizlik qoidalari.",
+          "sections": [
+            {
+              "heading": "Tish charxlash va xavfsizlik",
+              "body": "Preklinik mashg‘ulotda aylanuvchi asboblar, ularning vazifasi va texnik xavfsizlik atamalari nazariy jihatdan o‘rganiladi. Kitobda rotatsion asboblar tasnifi berilgan. Haqiqiy charxlash ishlarini mustaqil bajarish emas, o‘qituvchi nazorati asosiy talabdir."
+            },
+            {
+              "heading": "Manba va chegaralar",
+              "body": "Asos: foydalanuvchi yuborgan «Stomatologik asbob va ashyolar» (Kornilov H.P. va boshq., 2005) va kalendar reja. Matn mustaqil qisqa konspekt; o‘qituvchi tekshiruvi talab etiladi."
+            }
+          ],
+          "questions": [
+            {
+              "id": "pre_session_30_req1",
+              "q": "Aylanuvchi dental asboblarni o‘rganishda nima muhim?",
+              "options": [
+                "O‘qituvchi nazorati va texnik moslik",
+                "Faqat reklama",
+                "Tasodifiy ulash",
+                "Yo‘riqnomani e’tiborsiz qoldirish"
+              ],
+              "answer": 0,
+              "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
+            }
+          ],
+          "teacher_materials": [
+            {
+              "title": "Kalendar reja",
+              "filename": "Calendar_plan-Preklinik restavratsion stomatologiya.pdf",
+              "kind": "PDF",
+              "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
+            },
+            {
+              "title": "Stomatologik asbob va ashyolar",
+              "filename": "Stomаtologik  asbob va ashyolar.Komilov H.P. 2005 y..pdf",
+              "kind": "PDF",
+              "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
+            }
+          ],
+          "supplementary": [],
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
+        },
+        {
+          "id": "pre_session_31",
+          "session_number": 31,
+          "title": "Tish qattiq to‘qimalarini charxlash asoslari va terapevt-stomatolog ishidagi texnika-xavfsizlik qoidalari.",
+          "calendar_topic": "Tish qattiq to‘qimalarini charxlash asoslari va terapevt-stomatolog ishidagi texnika-xavfsizlik qoidalari.",
+          "focus": "Tish qattiq to‘qimalarini charxlash asoslari va terapevt-stomatolog ishidagi texnika-xavfsizlik qoidalari.",
+          "sections": [
+            {
+              "heading": "Tish charxlash va xavfsizlik",
+              "body": "Preklinik mashg‘ulotda aylanuvchi asboblar, ularning vazifasi va texnik xavfsizlik atamalari nazariy jihatdan o‘rganiladi. Kitobda rotatsion asboblar tasnifi berilgan. Haqiqiy charxlash ishlarini mustaqil bajarish emas, o‘qituvchi nazorati asosiy talabdir."
+            },
+            {
+              "heading": "Manba va chegaralar",
+              "body": "Asos: foydalanuvchi yuborgan «Stomatologik asbob va ashyolar» (Kornilov H.P. va boshq., 2005) va kalendar reja. Matn mustaqil qisqa konspekt; o‘qituvchi tekshiruvi talab etiladi."
+            }
+          ],
+          "questions": [
+            {
+              "id": "pre_session_31_req1",
+              "q": "Aylanuvchi dental asboblarni o‘rganishda nima muhim?",
+              "options": [
+                "O‘qituvchi nazorati va texnik moslik",
+                "Faqat reklama",
+                "Tasodifiy ulash",
+                "Yo‘riqnomani e’tiborsiz qoldirish"
+              ],
+              "answer": 0,
+              "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
+            }
+          ],
+          "teacher_materials": [
+            {
+              "title": "Kalendar reja",
+              "filename": "Calendar_plan-Preklinik restavratsion stomatologiya.pdf",
+              "kind": "PDF",
+              "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
+            },
+            {
+              "title": "Stomatologik asbob va ashyolar",
+              "filename": "Stomаtologik  asbob va ashyolar.Komilov H.P. 2005 y..pdf",
+              "kind": "PDF",
+              "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
+            }
+          ],
+          "supplementary": [],
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
         }
       ]
     },
