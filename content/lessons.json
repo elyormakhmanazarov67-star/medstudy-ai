@@ -18,8 +18,8 @@
           "focus": "Mutaxassislikka kirish. Ergonomika. Stomatologiya xonasining jihozlanishi.",
           "sections": [
             {
-              "heading": "Stomatologik iş joyi va ergonomika",
-              "body": "«Stomatologik asbob va ashyolar» darsligida stomatologik iş joyining asosiy tarkibiy qismlari sifatida stomatolog kreslosi, stul, stol, kompressor va asboblar tizimi tasvirlangan. Ergonomika iş jarayonini odamga qulay tashkil etish tushunchasi bilan bog‘liq."
+              "heading": "Stomatologik ish joyi va ergonomika",
+              "body": "«Stomatologik asbob va ashyolar» darsligida stomatologik ish joyining asosiy tarkibiy qismlari sifatida stomatolog kreslosi, stul, stol, kompressor va asboblar tizimi tasvirlangan. Ergonomika ish jarayonini odamga qulay tashkil etish tushunchasi bilan bog‘liq."
             },
             {
               "heading": "Manba va chegaralar",
@@ -45,7 +45,7 @@
               "id": "ergonomika_req1",
               "q": "Ergonomika nima bilan bog‘liq?",
               "options": [
-                "Iş joyini qulay tashkil etiş",
+                "Ish joyini qulay tashkil etish",
                 "Faqat reklama",
                 "Faqat to‘lov",
                 "Faqat bino nomi"
@@ -77,8 +77,8 @@
           "focus": "Mutaxassislikka kirish. Ergonomika. Stomatologiya xonasining jihozlanishi.",
           "sections": [
             {
-              "heading": "Stomatologik iş joyi va ergonomika",
-              "body": "«Stomatologik asbob va ashyolar» darsligida stomatologik iş joyining asosiy tarkibiy qismlari sifatida stomatolog kreslosi, stul, stol, kompressor va asboblar tizimi tasvirlangan. Ergonomika iş jarayonini odamga qulay tashkil etish tushunchasi bilan bog‘liq."
+              "heading": "Stomatologik ish joyi va ergonomika",
+              "body": "«Stomatologik asbob va ashyolar» darsligida stomatologik ish joyining asosiy tarkibiy qismlari sifatida stomatolog kreslosi, stul, stol, kompressor va asboblar tizimi tasvirlangan. Ergonomika ish jarayonini odamga qulay tashkil etish tushunchasi bilan bog‘liq."
             },
             {
               "heading": "Manba va chegaralar",
@@ -104,7 +104,7 @@
               "id": "ergonomika_2_req1",
               "q": "Ergonomika nima bilan bog‘liq?",
               "options": [
-                "Iş joyini qulay tashkil etiş",
+                "Ish joyini qulay tashkil etish",
                 "Faqat reklama",
                 "Faqat to‘lov",
                 "Faqat bino nomi"
@@ -2822,11 +2822,11 @@
           "sections": [
             {
               "heading": "Dars mazmuni",
-              "body": "Medical English bilan tanişuv, tish va og‘iz bo‘şlig‘i atamalari, bemor bilan sodda muloqot. Manba: Lesson 1 taqdimoti va worksheet."
+              "body": "Medical English bilan tanishuv, tish va og‘iz bo‘shlig‘i atamalari, bemor bilan sodda muloqot. Manba: Lesson 1 taqdimoti va worksheet."
             },
             {
               "heading": "Lug‘at",
-              "body": "tooth — tish; dentist — tish şifokori; mouth — og‘iz; patient — bemor."
+              "body": "tooth — tish; dentist — tish shifokori; mouth — og‘iz; patient — bemor."
             }
           ],
           "teacher_materials": [
@@ -2861,8 +2861,8 @@
               "q": "“Dentist” kim?",
               "options": [
                 "bemor",
-                "hamşira",
-                "tish şifokori",
+                "hamshira",
+                "tish shifokori",
                 "talaba"
               ],
               "answer": 2,
@@ -2893,7 +2893,7 @@
           "sections": [
             {
               "heading": "Dars mazmuni",
-              "body": "Kundalik faoliyat, Present Simple va stomatologiya talabasi ish kunini 6–8 sodda gapda aytib beriş. Manba: Lesson 3."
+              "body": "Kundalik faoliyat, Present Simple va stomatologiya talabasi ish kunini 6–8 sodda gapda aytib berish. Manba: Lesson 3."
             },
             {
               "heading": "Grammatika",
@@ -3067,7 +3067,7 @@
               "id": "eng_l4_q2",
               "q": "“Chew” fe’li qanday tarjima qilinadi?",
               "options": [
-                "çaynamoq",
+                "chaynamoq",
                 "yozmoq",
                 "ko‘rmoq",
                 "tinglamoq"
@@ -3100,11 +3100,11 @@
           "sections": [
             {
               "heading": "Dars mazmuni",
-              "body": "Heart, artery, vein va pulse so‘zlari bilan tanişuv. Present Simple orqali yurak va qon aylanişini oddiy gaplarda ifodalaş. Manba: Lesson 8."
+              "body": "Heart, artery, vein va pulse so‘zlari bilan tanishuv. Present Simple orqali yurak va qon aylanishini oddiy gaplarda ifodalash. Manba: Lesson 8."
             },
             {
               "heading": "Lug‘at",
-              "body": "heart — yurak; artery — arteriya; vein — vena; pulse — tomir urişi."
+              "body": "heart — yurak; artery — arteriya; vein — vena; pulse — tomir urishi."
             }
           ],
           "teacher_materials": [
@@ -3186,7 +3186,7 @@
               "body": "Biologik membrana, fosfolipid ikki qavat, osmos, diffuziya va ionlar almashinuvining fizik asoslari. Manba: 1-ma’ruza."
             },
             {
-              "heading": "Asosiy tushunça",
+              "heading": "Asosiy tushuncha",
               "body": "Membrana hujayrani tashqi muhitdan ajratadi; moddalarning o‘tishi turli fizik jarayonlarga bog‘liq."
             }
           ],
@@ -3281,7 +3281,7 @@
               "body": "ATP, mitoxondriya, tirik organizmlar termodinamikasi va energiya almashinuviga kirish. Manba: Bioenergetika ma’ruzasi va amaliy savolnoma."
             },
             {
-              "heading": "Asosiy tushunça",
+              "heading": "Asosiy tushuncha",
               "body": "ATP hujayrada energiya almashinuvida ishtirok etadi; mitoxondriya ko‘plab hujayralarda energiya hosil bo‘lishi bilan bog‘liq."
             }
           ],
@@ -3373,17 +3373,17 @@
         {
           "id": "bio_l3",
           "session_number": 3,
-          "title": "Akustika va eşitiş tizimi",
-          "calendar_topic": "Akustika va eşitiş tizimi",
-          "focus": "Akustika va eşitiş tizimi",
+          "title": "Akustika va eshitish tizimi",
+          "calendar_topic": "Akustika va eshitish tizimi",
+          "focus": "Akustika va eshitish tizimi",
           "sections": [
             {
               "heading": "Mavzu",
-              "body": "Tovuş — elastik muhitda tarqaluvchi mexanik to‘lqin. Eşitiş diapazoni, tovush tezligi, tovush bosimi, Doppler effekti. Manba: 3-amaliy."
+              "body": "Tovush — elastik muhitda tarqaluvchi mexanik to‘lqin. Eshitish diapazoni, tovush tezligi, tovush bosimi, Doppler effekti. Manba: 3-amaliy."
             },
             {
-              "heading": "Asosiy tushunça",
-              "body": "Inson odatda 20 Hz dan 20 kHz gaça bo‘lgan chastotalarni eşita oladi."
+              "heading": "Asosiy tushuncha",
+              "body": "Inson odatda 20 Hz dan 20 kHz gacha bo‘lgan chastotalarni eshita oladi."
             }
           ],
           "teacher_materials": [
@@ -3397,7 +3397,7 @@
           "questions": [
             {
               "id": "bio_l3_q1",
-              "q": "Tovuşning fizik tabiati nima?",
+              "q": "Tovushning fizik tabiati nima?",
               "options": [
                 "elektr zaryadi",
                 "kimyoviy reaksiya",
@@ -3409,7 +3409,7 @@
             },
             {
               "id": "bio_l3_q2",
-              "q": "Insonning odatiy eşitiş diapazoni qaysi?",
+              "q": "Insonning odatiy eshitish diapazoni qaysi?",
               "options": [
                 "20 Hz–20 kHz",
                 "1–2 Hz",
@@ -3468,17 +3468,17 @@
         {
           "id": "bio_l4",
           "session_number": 4,
-          "title": "Biologik suyuqliklar qovuşqoqligi va qon reologiyasi",
-          "calendar_topic": "Biologik suyuqliklar qovuşqoqligi va qon reologiyasi",
-          "focus": "Biologik suyuqliklar qovuşqoqligi va qon reologiyasi",
+          "title": "Biologik suyuqliklar qovushqoqligi va qon reologiyasi",
+          "calendar_topic": "Biologik suyuqliklar qovushqoqligi va qon reologiyasi",
+          "focus": "Biologik suyuqliklar qovushqoqligi va qon reologiyasi",
           "sections": [
             {
               "heading": "Mavzu",
-              "body": "Qovuşqoqlik, gematokrit, eritrotsit xossalari va mikrotsirkulyatsiya. Manba: amaliy dars ishlanmasi."
+              "body": "Qovushqoqlik, gematokrit, eritrotsit xossalari va mikrotsirkulyatsiya. Manba: amaliy dars ishlanmasi."
             },
             {
-              "heading": "Asosiy tushunça",
-              "body": "Qon reologiyasi qonning oqiş xususiyatlarini o‘rganadi; tarkibiy omillar va qovuşqoqlik o‘zaro bog‘liq."
+              "heading": "Asosiy tushuncha",
+              "body": "Qon reologiyasi qonning oqish xususiyatlarini o‘rganadi; tarkibiy omillar va qovushqoqlik o‘zaro bog‘liq."
             }
           ],
           "teacher_materials": [
@@ -3507,7 +3507,7 @@
               "q": "Reologiya nimani o‘rganadi?",
               "options": [
                 "faqat o‘pka hajmini",
-                "oqiş va deformatsiya xossalarini",
+                "oqish va deformatsiya xossalarini",
                 "faqat suyaklarni",
                 "faqat tovushni"
               ],
