@@ -59,6 +59,6 @@ def test_latin_lessons_follow_uploaded_curriculum_and_alphabet():
     assert {x['letter'] for x in s['lessons'][0]['alphabet']}==set('ABCDEFGHIJKLMNOPQRSTUVXYZ')
     assert sum(bool(l['sections']) for l in s['lessons'])==6
     assert all(not l['questions'] for l in s['lessons'] if not l['sections'])
-    assert all(l['teacher_materials'] for l in s['lessons'])
-    assert any(x['filename'].endswith('.jpg') for x in s['lessons'][0]['teacher_materials'])
+    assert all(not l['teacher_materials'] for l in s['lessons'])
+    assert all(not any(x['filename'].lower().endswith(ext) for x in l['teacher_materials'] for ext in ('.jpg', '.doc', '.docx', '.ppt', '.pptx')) for l in s['lessons'])
     assert all(q['id'].startswith('latin_') for l in s['lessons'] for q in l['questions'])

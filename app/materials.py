@@ -15,6 +15,8 @@ from pathlib import Path
 from fastapi import HTTPException
 
 VALID_EXTS = {".pdf", ".pptx", ".docx", ".doc", ".ppt", ".jpg", ".jpeg", ".png"}
+# Existing file downloads remain compatible. New uploads are PDF-only.
+UPLOAD_EXTS = {".pdf"}
 MAX_FILE_SIZE = 75 * 1024 * 1024
 MAX_UPLOAD_BYTES = 160 * 1024 * 1024
 MAX_TOTAL_UNPACKED = 220 * 1024 * 1024
@@ -110,6 +112,8 @@ def _save_stream(stream, filename: str, directory: Path, size_limit: int = MAX_F
 
 
 def save_upload(file, filename: str, catalog: dict, directory: Path) -> dict:
+    if Path(filename).suffix.lower() not in UPLOAD_EXTS:
+        raise HTTPException(422, "Bu fayl turini yuklash o‘chirilgan")
     permitted = manifest(catalog)
     if permitted.get(file_id(filename)) != filename:
         raise HTTPException(422, "Fayl o‘qituvchi materiallari ro‘yxatida topilmadi")
@@ -138,6 +142,8 @@ def import_bundle(stream, catalog: dict, directory: Path) -> list[dict]:
             filename = member.filename
             if filename not in known:
                 raise HTTPException(422, "ZIP ichida ruxsat berilmagan fayl: " + filename[:100])
+            if Path(filename).suffix.lower() not in UPLOAD_EXTS:
+                raise HTTPException(422, "ZIP ichida PDFdan boshqa fayl yuklash o‘chirilgan")
             if filename in seen:
                 raise HTTPException(422, "ZIP ichida takrorlangan fayl bor")
             if member.file_size <= 0 or member.file_size > MAX_FILE_SIZE:

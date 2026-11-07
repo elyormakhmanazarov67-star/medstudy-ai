@@ -27,24 +27,24 @@ def _bundle(name: str, data: bytes):
 
 def test_unavailable_and_authorized_file_download(tmp_path,monkeypatch):
     client=_test_client(tmp_path,monkeypatch)
-    lesson=main.CATALOG['subjects'][3]['lessons'][0]
+    lesson=main.CATALOG['subjects'][0]['lessons'][0]
     file=lesson['teacher_materials'][0]['filename']
     key=materials.file_id(file)
+    assert file.endswith('.pdf')
     assert client.get('/api/materials/'+key).status_code==401
     assert client.post('/api/consent',headers=hdr()).status_code==200
-    response=client.get('/api/lessons/eng_l1',headers=hdr()).json()
+    response=client.get('/api/lessons/ergonomika',headers=hdr()).json()
     assert response['teacher_materials'][0]['available'] is False
     assert client.get('/api/materials/'+key,headers=hdr()).status_code==404
     assert client.get('/api/materials/notvalid',headers=hdr()).status_code==404
-    # Upload an authentic minimal PPTX-shaped Office ZIP (not an arbitrary .exe).
-    presentation=_bundle('[Content_Types].xml',b'<Types/>')
-    upload=client.post('/api/materials/upload/'+key,headers=hdr(),files={'file':(file,presentation,'application/vnd.openxmlformats-officedocument.presentationml.presentation')})
+    document=b'%PDF-1.4\\nminimal test content'
+    upload=client.post('/api/materials/upload/'+key,headers=hdr(),files={'file':(file,document,'application/pdf')})
     assert upload.status_code==200,upload.text
-    response=client.get('/api/lessons/eng_l1',headers=hdr()).json()
+    response=client.get('/api/lessons/ergonomika',headers=hdr()).json()
     assert response['teacher_materials'][0]['available'] is True
     downloaded=client.get('/api/materials/'+key,headers=hdr())
     assert downloaded.status_code==200
-    assert downloaded.content==presentation
+    assert downloaded.content==document
     assert 'no-store' in downloaded.headers['cache-control']
 
 
@@ -73,21 +73,23 @@ def test_upload_is_admin_only(tmp_path,monkeypatch):
     assert client.get('/api/materials/admin',headers=hdr()).json()['is_admin'] is False
 
 
-def test_legacy_office_and_poster_upload_with_header_validation(tmp_path,monkeypatch):
+def test_original_format_uploads_are_disabled(tmp_path, monkeypatch):
+    from fastapi import HTTPException
+    import pytest
     client=_test_client(tmp_path,monkeypatch)
     assert client.post('/api/consent',headers=hdr()).status_code==200
-    course=next(s for s in main.CATALOG['subjects'] if s['id']=='lotin_tili_tibbiy_terminologiya')
-    files={m['filename'] for l in course['lessons'] for m in l['teacher_materials']}
-    samples={
-        'photo_2026-11-08_02-29-35.jpg':b'\xff\xd8\xff\xe0'+b'demo',
-        'St.Lotin.26-27.doc':bytes.fromhex('D0CF11E0A1B11AE1')+b'demo',
-    }
-    for name,body in samples.items():
-        assert name in files
-        fid=materials.file_id(name)
-        good=client.post('/api/materials/upload/'+fid,headers=hdr(),files={'file':(name,body,'application/octet-stream')})
-        assert good.status_code==200, good.text
-        fetched=client.get('/api/materials/'+fid,headers=hdr())
-        assert fetched.status_code==200 and fetched.content==body
-        bad=client.post('/api/materials/upload/'+fid,headers=hdr(),files={'file':(name,b'not a valid file','application/octet-stream')})
-        assert bad.status_code==422
+    latin=next(s for s in main.CATALOG['subjects'] if s['id']=='lotin_tili_tibbiy_terminologiya')
+    assert all(not l['teacher_materials'] for l in latin['lessons'])
+    for name in ('note.jpg','note.jpeg','note.png','lecture.doc','lecture.docx','lecture.ppt','lecture.pptx'):
+        synthetic={'subjects':[{'lessons':[{'teacher_materials':[{'filename':name}]}]}]}
+        with pytest.raises(HTTPException) as exc:
+            materials.save_upload(io.BytesIO(b'arbitrary'),name,synthetic,tmp_path/'files')
+        assert exc.value.status_code==422
+        with pytest.raises(HTTPException) as exc:
+            materials.import_bundle(io.BytesIO(_bundle(name,b'arbitrary')),synthetic,tmp_path/'files')
+        assert exc.value.status_code==422
+    preexisting=next(x['filename'] for s in main.CATALOG['subjects'] for l in s['lessons']
+                     for x in l['teacher_materials'] if x['filename'].lower().endswith('.pptx'))
+    response=client.post('/api/materials/upload/'+materials.file_id(preexisting),headers=hdr(),
+        files={'file':(preexisting,_bundle('[Content_Types].xml',b'<Types/>'),'application/octet-stream')})
+    assert response.status_code==422

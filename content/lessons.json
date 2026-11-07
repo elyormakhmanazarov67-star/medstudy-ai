@@ -1,7 +1,7 @@
 {
-  "version": "0.5.11-latin-terminology",
+  "version": "0.5.12-no-original-file-uploads",
   "status": "TEST — O‘qituvchi materiallari va OpenStax ochiq darsliklaridan manba ko‘rsatilgan alohida o‘quv materiallari. Mutaxassis tekshiruvi talab etiladi.",
-  "note": "Mavzuga mos ma’lumot manbada topilgan darslarda alohida qisqa konspekt berilgan; yetarli manbasi bo‘lmagan darslar bo‘sh qoldirilgan. Profi University lotin tili dasturidagi 15 amaliy mavzu qo‘shildi; faqat yuborilgan ma’lumotlar bilan yoritilgan mavzularga konspekt berildi.",
+  "note": "Lotin tili mavzulari original JPG/DOC/DOCX/PPT/PPTX fayllarini yuklash yoki ko‘rsatishsiz, faqat matnli konspekt, 25 harfli elektron jadval va testlar shaklida taqdim etiladi. Yetarli mazmun bo‘lmagan mavzular bo‘sh.",
   "subjects": [
     {
       "id": "stom_prerest",
@@ -2511,26 +2511,7 @@
               "body": "Yuborilgan alifbo rasmidagi misollar: Arteria — arteriya; Bronchus — bronx; Cellula — hujayra; Dens — tish; Hepar — jigar; Lingua — til; Ren — buyrak; Sanguis — qon. Qolgan misollarni 25 harfli jadvaldan o‘rganing."
             }
           ],
-          "teacher_materials": [
-            {
-              "title": "Lotin tili va tibbiy terminologiya — o‘quv dasturi",
-              "filename": "St.Lotin.26-27.doc",
-              "kind": "DOC",
-              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
-            },
-            {
-              "title": "25 ta harf ko‘rgazmali jadvali",
-              "filename": "photo_2026-11-08_02-29-35.jpg",
-              "kind": "JPG",
-              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
-            },
-            {
-              "title": "1-mavzu: alifbo va talaffuz",
-              "filename": "№1 mavzuLotin tili va tibbiy terminologiya (1).ppt",
-              "kind": "PPT",
-              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
-            }
-          ],
+          "teacher_materials": [],
           "questions": [
             {
               "id": "latin_a1_q01",
@@ -2786,38 +2767,7 @@
               "body": "I turlanish: costa — qovurg‘a; gingiva — milk; maxilla — yuqori jag‘; mandibula — pastki jag‘; scapula — kurak suyagi; vertebra — umurtqa; arteria — arteriya.\nII turlanish: musculus — mushak; ligamentum — boylam; sternum — to‘sh suyagi; radius — bilak suyagi.\nMustaqil topshiriq: costa, maxilla, sutura, orbita, scapula va gingiva so‘zlarining ma’nosini yozing. «Ramus nervi», «musculus colli», «caput humeri» birikmalaridagi qaratqich otlarni toping."
             }
           ],
-          "teacher_materials": [
-            {
-              "title": "Lotin tili va tibbiy terminologiya — o‘quv dasturi",
-              "filename": "St.Lotin.26-27.doc",
-              "kind": "DOC",
-              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
-            },
-            {
-              "title": "2-mavzu: ot va grammatik kategoriyalar",
-              "filename": "№2Lotin tili.pptx",
-              "kind": "PPTX",
-              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
-            },
-            {
-              "title": "2-mavzu: terminlar va mashqlar",
-              "filename": "2-mavzu lotin tili mashq (2) (2).docx",
-              "kind": "DOCX",
-              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
-            },
-            {
-              "title": "Blits-so‘rov va moslik mashqlari",
-              "filename": "3-mavzu lotin.docx",
-              "kind": "DOCX",
-              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
-            },
-            {
-              "title": "Mavzulashtirilgan lug‘at",
-              "filename": "Lotin tili mavzulashtirilgan.docx",
-              "kind": "DOCX",
-              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
-            }
-          ],
+          "teacher_materials": [],
           "questions": [
             {
               "id": "latin_a2_q01",
@@ -2934,26 +2884,7 @@
               "body": "Musculus pectoralis major — katta ko‘krak mushagi; arteria coronaria dextra — o‘ng toj arteriyasi; vena saphena magna — katta teri osti venasi; canalis palatinus major — katta tanglay kanali; tonsilla palatina — tanglay bodomchasi."
             }
           ],
-          "teacher_materials": [
-            {
-              "title": "Lotin tili va tibbiy terminologiya — o‘quv dasturi",
-              "filename": "St.Lotin.26-27.doc",
-              "kind": "DOC",
-              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
-            },
-            {
-              "title": "3-mavzu: sifat va anatomik atamalar",
-              "filename": "№3 Lotin tili va tibbiy terminologiya.pptx",
-              "kind": "PPTX",
-              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
-            },
-            {
-              "title": "Mavzulashtirilgan lug‘at",
-              "filename": "Lotin tili mavzulashtirilgan.docx",
-              "kind": "DOCX",
-              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
-            }
-          ],
+          "teacher_materials": [],
           "questions": [
             {
               "id": "latin_a3_q01",
@@ -3042,20 +2973,7 @@
               "body": "O‘quv taqdimotida sifatning uch darajasi berilgan: positivus — oddiy daraja (longus — uzun), comparativus — qiyosiy daraja (longior — uzunroq), superlativus — orttirma daraja (longissimus — eng uzun). Ushbu misol sifat darajalarining shaklini solishtirishga yordam beradi."
             }
           ],
-          "teacher_materials": [
-            {
-              "title": "Lotin tili va tibbiy terminologiya — o‘quv dasturi",
-              "filename": "St.Lotin.26-27.doc",
-              "kind": "DOC",
-              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
-            },
-            {
-              "title": "Sifat darajalari misollari",
-              "filename": "№3 Lotin tili va tibbiy terminologiya.pptx",
-              "kind": "PPTX",
-              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
-            }
-          ],
+          "teacher_materials": [],
           "questions": [
             {
               "id": "latin_a4_q01",
@@ -3096,26 +3014,7 @@
               "body": "III turlanishdagi otlarning Genetivus singularis shakli odatda -is bilan tugaydi. Manbadagi misollar: os, ossis n — suyak; foramen, foraminis n — teshik; corpus, corporis n — tana; ren, renis m — buyrak; pulmo, pulmonis m — o‘pka. Bu guruhda turli roddagi otlar bo‘lishi mumkin."
             }
           ],
-          "teacher_materials": [
-            {
-              "title": "Lotin tili va tibbiy terminologiya — o‘quv dasturi",
-              "filename": "St.Lotin.26-27.doc",
-              "kind": "DOC",
-              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
-            },
-            {
-              "title": "Ot turlanishi bo‘yicha mashqlar",
-              "filename": "2-mavzu lotin tili mashq (2) (2).docx",
-              "kind": "DOCX",
-              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
-            },
-            {
-              "title": "Mavzulashtirilgan lug‘at",
-              "filename": "Lotin tili mavzulashtirilgan.docx",
-              "kind": "DOCX",
-              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
-            }
-          ],
+          "teacher_materials": [],
           "questions": [
             {
               "id": "latin_a5_q01",
@@ -3172,26 +3071,7 @@
               "body": "I turlanishda qaratqich birlikda -ae, ko‘plikda -arum ishlatiladi: patellae, patellarum. II turlanishdagi m otlari: alveoli, alveolorum; n otlari: tuberculi, tuberculorum. Manbadagi boshqa turlanishlarning barcha ko‘plik shakllari yetarli bo‘lmagani uchun bu yerda umumlashtirilmagan."
             }
           ],
-          "teacher_materials": [
-            {
-              "title": "Lotin tili va tibbiy terminologiya — o‘quv dasturi",
-              "filename": "St.Lotin.26-27.doc",
-              "kind": "DOC",
-              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
-            },
-            {
-              "title": "Ot turlanishi bo‘yicha mashqlar",
-              "filename": "2-mavzu lotin tili mashq (2) (2).docx",
-              "kind": "DOCX",
-              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
-            },
-            {
-              "title": "Mavzulashtirilgan lug‘at",
-              "filename": "Lotin tili mavzulashtirilgan.docx",
-              "kind": "DOCX",
-              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
-            }
-          ],
+          "teacher_materials": [],
           "questions": [
             {
               "id": "latin_a6_q01",
@@ -3227,14 +3107,7 @@
           "calendar_topic": "Klinik terminologiyaga kirish. Klinik atamalar yasash: suffiksatsiya va prefiksatsiya.",
           "focus": "Klinik terminologiyaga kirish. Klinik atamalar yasash: suffiksatsiya va prefiksatsiya.",
           "sections": [],
-          "teacher_materials": [
-            {
-              "title": "Lotin tili va tibbiy terminologiya — o‘quv dasturi",
-              "filename": "St.Lotin.26-27.doc",
-              "kind": "DOC",
-              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
-            }
-          ],
+          "teacher_materials": [],
           "questions": [],
           "review_status": "AWAITING_SOURCE — content not in supplied materials"
         },
@@ -3245,14 +3118,7 @@
           "calendar_topic": "Prefiksatsiya usuli.",
           "focus": "Prefiksatsiya usuli.",
           "sections": [],
-          "teacher_materials": [
-            {
-              "title": "Lotin tili va tibbiy terminologiya — o‘quv dasturi",
-              "filename": "St.Lotin.26-27.doc",
-              "kind": "DOC",
-              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
-            }
-          ],
+          "teacher_materials": [],
           "questions": [],
           "review_status": "AWAITING_SOURCE — content not in supplied materials"
         },
@@ -3263,14 +3129,7 @@
           "calendar_topic": "Klinik termin elementlari. A’zolar, diagnostika, davolash va kasalliklarni ifodalovchi yunon-lotin atamalari.",
           "focus": "Klinik termin elementlari. A’zolar, diagnostika, davolash va kasalliklarni ifodalovchi yunon-lotin atamalari.",
           "sections": [],
-          "teacher_materials": [
-            {
-              "title": "Lotin tili va tibbiy terminologiya — o‘quv dasturi",
-              "filename": "St.Lotin.26-27.doc",
-              "kind": "DOC",
-              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
-            }
-          ],
+          "teacher_materials": [],
           "questions": [],
           "review_status": "AWAITING_SOURCE — content not in supplied materials"
         },
@@ -3281,14 +3140,7 @@
           "calendar_topic": "Yunon-lotin dubletlari. To‘qima, a’zo, suyuqlik, sekret, jins, yosh va patologik jarayonlar atamalari.",
           "focus": "Yunon-lotin dubletlari. To‘qima, a’zo, suyuqlik, sekret, jins, yosh va patologik jarayonlar atamalari.",
           "sections": [],
-          "teacher_materials": [
-            {
-              "title": "Lotin tili va tibbiy terminologiya — o‘quv dasturi",
-              "filename": "St.Lotin.26-27.doc",
-              "kind": "DOC",
-              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
-            }
-          ],
+          "teacher_materials": [],
           "questions": [],
           "review_status": "AWAITING_SOURCE — content not in supplied materials"
         },
@@ -3299,14 +3151,7 @@
           "calendar_topic": "Yunon-lotin dubletlari va yakka termin elementlari. Fizik xususiyat va sifatni ifodalovchi atamalar.",
           "focus": "Yunon-lotin dubletlari va yakka termin elementlari. Fizik xususiyat va sifatni ifodalovchi atamalar.",
           "sections": [],
-          "teacher_materials": [
-            {
-              "title": "Lotin tili va tibbiy terminologiya — o‘quv dasturi",
-              "filename": "St.Lotin.26-27.doc",
-              "kind": "DOC",
-              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
-            }
-          ],
+          "teacher_materials": [],
           "questions": [],
           "review_status": "AWAITING_SOURCE — content not in supplied materials"
         },
@@ -3317,14 +3162,7 @@
           "calendar_topic": "Farmatsevtik terminologiyaga kirish. Dorivor modda nomlari, dori shakllari va farmatsevtik atamalar.",
           "focus": "Farmatsevtik terminologiyaga kirish. Dorivor modda nomlari, dori shakllari va farmatsevtik atamalar.",
           "sections": [],
-          "teacher_materials": [
-            {
-              "title": "Lotin tili va tibbiy terminologiya — o‘quv dasturi",
-              "filename": "St.Lotin.26-27.doc",
-              "kind": "DOC",
-              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
-            }
-          ],
+          "teacher_materials": [],
           "questions": [],
           "review_status": "AWAITING_SOURCE — content not in supplied materials"
         },
@@ -3335,14 +3173,7 @@
           "calendar_topic": "Fe’l va uning grammatik kategoriyalari. Retseptura formulirovkalari.",
           "focus": "Fe’l va uning grammatik kategoriyalari. Retseptura formulirovkalari.",
           "sections": [],
-          "teacher_materials": [
-            {
-              "title": "Lotin tili va tibbiy terminologiya — o‘quv dasturi",
-              "filename": "St.Lotin.26-27.doc",
-              "kind": "DOC",
-              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
-            }
-          ],
+          "teacher_materials": [],
           "questions": [],
           "review_status": "AWAITING_SOURCE — content not in supplied materials"
         },
@@ -3353,14 +3184,7 @@
           "calendar_topic": "Retsept tuzilishi va yozish qoidalari. Tabletka, shamcha va ko‘z plyonkalari.",
           "focus": "Retsept tuzilishi va yozish qoidalari. Tabletka, shamcha va ko‘z plyonkalari.",
           "sections": [],
-          "teacher_materials": [
-            {
-              "title": "Lotin tili va tibbiy terminologiya — o‘quv dasturi",
-              "filename": "St.Lotin.26-27.doc",
-              "kind": "DOC",
-              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
-            }
-          ],
+          "teacher_materials": [],
           "questions": [],
           "review_status": "AWAITING_SOURCE — content not in supplied materials"
         },
@@ -3371,14 +3195,7 @@
           "calendar_topic": "Retsepturada kimyoviy elementlar, kislotalar, oksidlar va tuzlar.",
           "focus": "Retsepturada kimyoviy elementlar, kislotalar, oksidlar va tuzlar.",
           "sections": [],
-          "teacher_materials": [
-            {
-              "title": "Lotin tili va tibbiy terminologiya — o‘quv dasturi",
-              "filename": "St.Lotin.26-27.doc",
-              "kind": "DOC",
-              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
-            }
-          ],
+          "teacher_materials": [],
           "questions": [],
           "review_status": "AWAITING_SOURCE — content not in supplied materials"
         }
