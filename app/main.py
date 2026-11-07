@@ -102,7 +102,7 @@ def delete_me(uid: int = Depends(current_user)):
 def catalog(uid: int = Depends(consent_required)):
     return {'status': 'DRAFT', 'subjects': [
         {'id': s['id'], 'title': s['title'], 'lessons': [
-            {'id': l['id'], 'title': l['title'], 'section_count':len(l['sections']), 'question_count':len(l['questions']), 'teacher_material_count':len(l.get('teacher_materials', [])), 'supplement_count':len(l.get('supplementary', []))}
+            {'id': l['id'], 'title': l['title'], 'section_count':len(l['sections']), 'question_count':len(l['questions']), 'teacher_material_count':len(l.get('teacher_materials', []))}
             for l in s['lessons']]} for s in CATALOG['subjects']
     ]}
 
@@ -113,12 +113,8 @@ def lesson(lesson_id: str, uid: int = Depends(consent_required)):
         raise HTTPException(404, 'Mavzu topilmadi')
     subject, l = found
     return {'subject_id':subject['id'], 'subject_title':subject['title'], 'id':l['id'], 'title':l['title'],
-            'sections':l['sections'], 'teacher_materials':materials.public_materials(l.get('teacher_materials', []), CATALOG, MATERIALS_DIR), 'supplementary':l.get('supplementary', []), 'sources':l.get('sources',[]),
-            'question_count':len(l['questions']), 'questions':[public_question(q) for q in l['questions']],
-            'sammu_books':l.get('sammu_books', []),
-            'supplement_sections':l.get('supplement_sections', []),
-            'supplement_question_count':len(l.get('supplement_questions', [])),
-            'supplement_questions':[public_question(q) for q in l.get('supplement_questions', [])]}
+            'sections':l['sections'], 'teacher_materials':materials.public_materials(l.get('teacher_materials', []), CATALOG, MATERIALS_DIR), 'sources':l.get('sources',[]),
+            'question_count':len(l['questions']), 'questions':[public_question(q) for q in l['questions']],}
 
 @app.get('/api/materials/admin')
 def material_admin_status(uid: int = Depends(consent_required)):
