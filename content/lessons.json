@@ -1,0 +1,76 @@
+{
+  "version": "0.1.0",
+  "status": "DRAFT — mutaxassis tekshiruvi kutilmoqda",
+  "subjects": [
+    {
+      "id": "stom_prerest",
+      "title": "Preklinik restavratsion stomatologiya",
+      "lessons": [
+        {
+          "id": "ergonomika",
+          "title": "Mutaxassislikka kirish, ergonomika va stomatologiya xonasi",
+          "source_url": "https://docs.google.com/document/d/19yIhJXtB4G5WIR9qRjo_jRY6t8fNnwO5k4YTXoGOcqw/edit",
+          "sections": [
+            {"heading": "1. Stomatologiya nima?", "body": "Stomatologiya — og‘iz bo‘shlig‘i, tishlar va ular bilan bog‘liq tuzilmalarning salomatligini o‘rganuvchi tibbiyot sohasi. Stomatologning vazifasi davolashdan tashqari profilaktika, bemorni xabardor qilish va kasbiy etikani ham qamrab oladi. Preklinik tayyorgarlik bemor bilan amaliy ishlashdan avval bilim va simulyatsion ko‘nikmalarni shakllantiradi."},
+            {"heading": "2. Ergonomika", "body": "Ergonomika — ish muhitini inson imkoniyatlariga moslashtirishni o‘rganadi. Stomatologiyada shifokor va assistent holati, bemor joylashuvi, yoritish va asboblar masofasini oqilona tashkil etish muhim. Neytral gavda holati va keraksiz harakatlarni kamaytirish ish davomida ortiqcha zo‘riqishni kamaytirishga yordam berishi mumkin."},
+            {"heading": "3. Kabinet jihozlari", "body": "Bemor kreslosi, stomatologik yoritgich, shifokor va assistent kursisi, asboblar moduli, so‘rg‘ich tizimi, qo‘l yuvish nuqtasi va gigiyena vositalari stomatologiya ish joyining keng tarqalgan tarkibiy qismlaridir. Aniq tarkib klinika va uskunaning modeliga bog‘liq."},
+            {"heading": "4. Xavfsiz ish muhiti", "body": "Yaxshi yoritish, tartibli joylashtirish, toza va iflos hududlarni ajratish hamda gigiyena vositalari mavjudligi muhim. Qurilmani amalda sozlash yoki bemorga muolaja qilish ustoz va mas’ul mutaxassis nazoratini talab etadi."},
+            {"heading": "5. Infeksiya profilaktikasi", "body": "Standart ehtiyot choralari barcha bemorlarga nisbatan qo‘llanadi. Qo‘l gigiyenasi, vazifaga mos himoya vositalari, to‘g‘ri qayta ishlov berilgan asboblar va toza ish yuzalari muhim. Qo‘lqop qo‘l gigiyenasi o‘rnini bosmaydi."},
+            {"heading": "6. Atamalar", "body": "Ergonomika — ishni inson uchun qulay tashkil qilish tamoyillari. Preklinik — klinik muolajadan oldingi o‘quv bosqichi. Aspiratsiya — suyuqlikni so‘rish. Sterilizatsiya — barcha tirik mikroorganizmlar, jumladan sporalarni bartaraf etish jarayoni."}
+          ],
+          "sources": [
+            "https://e-library.sammu.uz/en/book/3055",
+            "https://e-library.sammu.uz/uz/book/4555",
+            "https://e-library.sammu.uz/ru/book/5780"
+          ],
+          "questions": [
+            {"id":"e01","q":"Ergonomika nimani o‘rganadi?","options":["Faqat tishlarning rangini","Ishni inson uchun qulay tashkil qilishni","Faqat dori tanlashni","Faqat hisob-kitobni"],"answer":1,"explanation":"Ergonomika ish joyi va harakatlarni inson ehtiyojlariga moslashtiradi."},
+            {"id":"e02","q":"Preklinik tayyorgarlikning asosiy mazmuni nima?","options":["Nazariy va simulyatsion tayyorgarlik","Mustaqil bemor operatsiyasi","Faqat marketing","Faqat hujjat to‘ldirish"],"answer":0,"explanation":"Preklinik bosqich klinik muolajadan oldingi bilim va ko‘nikmalarni shakllantiradi."},
+            {"id":"e03","q":"Uzoq vaqt noqulay holatda ishlash qaysi muammoga hissa qo‘shishi mumkin?","options":["Faqat eshitishning yaxshilanishiga","Mushak-skelet zo‘riqishiga","Ko‘rishning darhol tiklanishiga","Tishlarning o‘sishiga"],"answer":1,"explanation":"Noqulay statik holat mushak va bo‘g‘imlarga yuklamani oshirishi mumkin."},
+            {"id":"e04","q":"Bemor kreslosining vazifasi nima?","options":["Materialni steril qilish","Bemorni muolajaga mos joylashtirish","Rentgen tasvirini saqlash","Xonani shamollatish"],"answer":1,"explanation":"Kreslo bemorni xavfsiz va qulay joylashtirishga xizmat qiladi."},
+            {"id":"e05","q":"Stomatologik yoritgich nimaga xizmat qiladi?","options":["Ish maydonini yoritishga","Suvni isitishga","Tashxisni avtomatik qo‘yishga","Asbobni steril qilishga"],"answer":0,"explanation":"Yoritgich ish maydonini ko‘rishni osonlashtiradi."},
+            {"id":"e06","q":"So‘rg‘ich (aspiratsiya) tizimining asosiy vazifasi nima?","options":["Oqartirish","Og‘izdagi suyuqlikni olib tashlash","Suratga olish","Pulpa tuzilishini o‘zgartirish"],"answer":1,"explanation":"Aspiratsiya tizimi suyuqlikni so‘rib olishga xizmat qiladi."},
+            {"id":"e07","q":"Qaysi holatda standart ehtiyot choralari qo‘llanadi?","options":["Faqat infeksiya tasdiqlanganda","Faqat bolalarda","Barcha bemorlar bilan ishlaganda","Faqat laboratoriyada"],"answer":2,"explanation":"Standart ehtiyot choralari barcha bemorlarga tegishli."},
+            {"id":"e08","q":"Qo‘lqop haqida qaysi fikr to‘g‘ri?","options":["Qo‘l gigiyenasi o‘rnini bosadi","Har bemordan keyin qayta ishlatiladi","Qo‘l gigiyenasining o‘rnini bosmaydi","Himoya talabini bekor qiladi"],"answer":2,"explanation":"Qo‘lqop yechilgach ham qo‘l gigiyenasi talab etiladi."},
+            {"id":"e09","q":"Qaysi yondashuv ergonomikaga mos keladi?","options":["Kerakli asboblarni uzoqda saqlash","Doimiy kuchli egilib ishlash","Asboblarni qulay yetadigan joyda saqlash","Yorug‘likni to‘sish"],"answer":2,"explanation":"Asboblarning qulay joylashuvi ortiqcha harakatni kamaytiradi."},
+            {"id":"e10","q":"Stomatologik uskunaning amaliy sozlash ishlarini kim nazoratida o‘rganish kerak?","options":["Hech kim nazoratisiz","Malakali ustoz va yo‘riqnoma asosida","Faqat videoga qarab","Bemor ko‘rsatmasi bilan"],"answer":1,"explanation":"Xavfsiz o‘rganish malakali nazorat va rasmiy yo‘riqnomani talab qiladi."}
+          ]
+        },
+        {
+          "id": "qurilmalar",
+          "title": "Stomatologik qurilmalar va dastaklar",
+          "source_url": "https://docs.google.com/document/d/1vEgydiCw-acoAaYaFti6EaTkPLqGENGyS-83aZc1DH8/edit",
+          "sections": [
+            {"heading": "1. Stomatologik qurilma (unit)", "body": "Stomatologik qurilma bemorni joylashtirish, yoritish, asboblarni boshqarish, ayrim suv-havo va so‘rish tizimlari kabi qismlarni birlashtirishi mumkin bo‘lgan majmuadir. Qismlar modelga qarab farqlanadi."},
+            {"heading": "2. Asosiy qismlar", "body": "Bemor kreslosi bemor holatini moslashtiradi; yoritgich ko‘rishni yaxshilaydi; asboblar moduli ishchi jihozlarni tutadi; aspiratsiya tizimi suyuqliklarni olib tashlaydi; pedal ayrim funksiyalarni oyoq bilan boshqaradi. Kompressor pnevmatik qismlar uchun siqilgan havo manbai bo‘lishi mumkin."},
+            {"heading": "3. Dastaklar", "body": "Havo turbinali dastak odatda siqilgan havo bilan aylanish hosil qiladi. Mikromotor elektr yoki pnevmatik harakat manbai bo‘lib, mos uchlikni harakatlantiradi. To‘g‘ri va burchakli dastaklar ishchi qismining tuzilishi bilan farqlanadi."},
+            {"heading": "4. Turlarni ajratish", "body": "Turbina va mikromotorli tizimlar harakat manbai bilan farqlanadi; to‘g‘ri va burchakli dastaklar esa ishchi bosh qismining shakli bilan tavsiflanadi. Moslik va aniq xususiyatlar ishlab chiqaruvchining texnik hujjatlaridan tekshiriladi."},
+            {"heading": "5. Nazariy xavfsizlik", "body": "Ulanish va sozlashda ishlab chiqaruvchi yo‘riqnomasi hamda o‘qitilgan mutaxassis nazorati talab etiladi. Ushbu kurs klinik qurilmalarni mustaqil ishga tushirish uchun ko‘rsatma bermaydi."},
+            {"heading": "6. Infeksiya nazorati", "body": "Qayta ishlatiladigan yechiladigan stomatologik dastaklar ishlab chiqaruvchi ko‘rsatmasiga mos tozalash va issiqlik sterilizatsiyasini talab qiladi. Tashqi yuzani shunchaki artish barcha qayta ishlov bosqichlarini almashtirmaydi."},
+            {"heading": "7. Atamalar", "body": "Unit — ish majmuasi. Handpiece — dastak. Mikromotor — harakat manbai. Aspiratsiya — so‘rish. Sterilizatsiya — mikroorganizmlar, shu jumladan sporalarni bartaraf etish jarayoni."}
+          ],
+          "sources": [
+            "https://e-library.sammu.uz/uz/book/4555",
+            "https://e-library.sammu.uz/uz/book/4516",
+            "https://e-library.sammu.uz/uz/book/3055",
+            "https://www.cdc.gov/dental-infection-control/hcp/dental-ipc-faqs/dental-handpieces.html"
+          ],
+          "questions": [
+            {"id":"q01","q":"Stomatologik unitning asosiy vazifasi nima?","options":["Faqat rentgen tasvirlarini saqlash","Stomatolog ish joyidagi bir necha texnik tizimni birlashtirish","Faqat tish qoplamasini tayyorlash","Faqat laboratoriya hisobini yuritish"],"answer":1,"explanation":"Unit bemor joylashuvi, yoritish va yordamchi tizimlarni birlashtirishi mumkin."},
+            {"id":"q02","q":"Bemor kreslosi nimaga xizmat qiladi?","options":["Bemorni ish jarayoniga mos va qulay joylashtirish","Asboblarni sterilizatsiya qilish","Havoni siqish","Tish rangini aniqlash"],"answer":0,"explanation":"Kreslo bemor holatini moslashtiradi."},
+            {"id":"q03","q":"Turbinali dastakning aylanishi odatda nima hisobiga hosil bo‘ladi?","options":["Ultrabinafsha yorug‘lik","Elektr isitkich","Siqilgan havo","Magnit yozuv"],"answer":2,"explanation":"Havo turbinali dastak aylanishni siqilgan havo energiyasidan oladi."},
+            {"id":"q04","q":"Mikromotorning asosiy roli qaysi?","options":["Bemorni yoritish","Mos uchlikka aylanish harakatini berish","Suyuqlikni yig‘ish","Tish tasvirini qayd etish"],"answer":1,"explanation":"Mikromotor uchlik harakatini ta’minlaydi."},
+            {"id":"q05","q":"Burchakli dastakning to‘g‘ri dastakdan asosiy tashqi farqi nima?","options":["Faqat rangi","Faqat elektr simi","Ishchi qismining burchakli tuzilishi","Tashqi qutining nomi"],"answer":2,"explanation":"Burchakli dastak ishchi bosh qismining tuzilishi bilan farqlanadi."},
+            {"id":"q06","q":"Stomatologik yoritgich nimaga mo‘ljallangan?","options":["Asboblarni sovitishga","Ish maydonini ko‘rishga yordam berishga","Suvni filtrlashga","Materialni aralashtirishga"],"answer":1,"explanation":"Yoritgich ish maydonini yaxshi ko‘rishga xizmat qiladi."},
+            {"id":"q07","q":"Aspiratsiya tizimi nima qiladi?","options":["Suyuqliklarni so‘rib oladi","Bemorni isitadi","Tish rangini o‘zgartiradi","Rentgen nurlarini ishlab chiqaradi"],"answer":0,"explanation":"Aspiratsiya tizimi suyuqliklarni chiqarib olishga xizmat qiladi."},
+            {"id":"q08","q":"Stomatologik pedalning umumiy vazifasi nima?","options":["Steril material ishlab chiqarish","Qo‘lni band qilmasdan ayrim funksiyalarni boshqarish","O‘quv materialini saqlash","Yorug‘lik rangini o‘lchash"],"answer":1,"explanation":"Pedal ba’zi funksiyalarni oyoq bilan boshqarishga imkon beradi."},
+            {"id":"q09","q":"Dastakning ulanish mosligi nimaga asoslanib tekshiriladi?","options":["Faqat tashqi rangiga","Faqat talabaning taxminiga","Ishlab chiqaruvchining texnik yo‘riqnomasiga","Faqat dastak uzunligiga"],"answer":2,"explanation":"Moslik konkret ishlab chiqaruvchi hujjatida ko‘rsatiladi."},
+            {"id":"q10","q":"Dastakning tashqi yuzasini shunchaki artish sterilizatsiya o‘rnini bosadimi?","options":["Ha, hamma holatda","Faqat qurilma yangi bo‘lsa","Yo‘q, tozalash va sterilizatsiya talablarini almashtirmaydi","Faqat dastak katta bo‘lsa"],"answer":2,"explanation":"Qayta ishlatiladigan dental dastaklar tegishli qayta ishlov va issiqlik sterilizatsiyasini talab qiladi."},
+            {"id":"q11","q":"Kompressor ayrim stomatologik tizimlarda nimani ta’minlaydi?","options":["Siqilgan havoni","Tibbiy kartani","Rentgen suratini","Sun’iy tishni"],"answer":0,"explanation":"Kompressor pnevmatik tizim uchun siqilgan havo manbai bo‘lishi mumkin."},
+            {"id":"q12","q":"Talaba uskunani amalda sozlashni qanday o‘rganishi kerak?","options":["Kuzatuvsiz mustaqil","Faqat internetdagi taxmin bilan","Malakali ustoz nazorati va rasmiy yo‘riqnoma bilan","Faqat tashqi ko‘rinishiga qarab"],"answer":2,"explanation":"Klinik asboblarni amalda sozlashda xavfsizlik va malakali nazorat zarur."}
+          ]
+        }
+      ]
+    }
+  ]
+}
