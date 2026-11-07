@@ -39,26 +39,35 @@
     const docs = kind === 'required' ? (lesson.teacher_materials || []) : (lesson.supplementary || []);
     const back = '<button class="back" data-action="lesson" data-id="'+rawEsc(lesson.id)+'">← Mavzuga qaytiş</button>';
     const name = kind === 'required' ? 'Kerakli ma’lumotlar' : 'Qo‘şimça ma’lumotlar';
-    const intro = kind === 'required' ? 'Bu bo‘limda faqat o‘qituvçi yuborgan materiallar bor.' : 'Bo‘ş vaqtda mustaqil o‘qiş uchun oçiq darsliklarga asoslangan konspektlar. Testi ham alohida.';
-    let cards = docs.map(doc => {
-      const label = '<strong>'+rawEsc(doc.title)+'</strong>';
-      const hint = doc.note ? '<p class="smallprint">'+esc(doc.note)+'</p>' : '';
-      if(doc.url && /^https:\/\//.test(doc.url)){
-        return '<div class="card"><a href="'+rawEsc(doc.url)+'" rel="noopener noreferrer" target="_blank">'+label+' ↗</a>'+hint+'</div>';
+    const intro = kind === 'required'
+      ? 'Bu bo‘limda o‘qituvçi yuborgan materiallar va ulardan tayyorlangan testlar bor.'
+      : 'Mavzuga oid bepul o‘quv konspektlari va SamMU elektron kutubxonasidagi kitob havolalari alohida ko‘rsatiladi.';
+    const renderLink = doc => {
+      const title = '<strong>'+rawEsc(doc.title)+'</strong>';
+      const note = doc.access || doc.note || '';
+      const hint = note ? '<p class="smallprint">'+esc(note)+'</p>' : '';
+      if(typeof doc.url === 'string' && /^https:\/\//.test(doc.url)) {
+        return '<div class="card"><a href="'+rawEsc(doc.url)+'" rel="noopener noreferrer" target="_blank">'+title+' ↗</a>'+hint+'</div>';
       }
-      return '<div class="card">'+label+'<p class="smallprint">'+rawEsc(doc.filename || '')+'</p>'+hint+'</div>';
-    }).join('');
-    if(kind==='supplementary'){
-      const extras=lesson.supplement_sections || [];
-      cards = extras.map(s=>'<section class="lesson-section"><h3>'+esc(s.heading)+'</h3><p>'+esc(s.body)+'</p></section>').join('') + cards;
-      if(lesson.supplement_questions?.length) cards += '<div class="card"><h3>Qo‘şimça ma’lumotlar testi</h3><button class="btn btn-primary btn-wide" data-action="start-supplement-quiz">Qo‘şimça testni boshlash ('+lesson.supplement_questions.length+')</button></div>';
-    }
-    if(kind==='required' && (lesson.sections||[]).length) {
-      cards += (lesson.sections||[]).map(s=>'<div class="card"><h3>'+esc(s.heading)+'</h3><p>'+esc(s.body)+'</p></div>').join('');
-      if(hasQuestions(lesson)) cards += '<div class="card"><button class="btn btn-primary btn-wide" data-action="start-quiz">Testni boshlash ('+lesson.questions.length+')</button></div>';
-    }
-    if(!docs.length && !(kind==='required' && lesson.sections?.length) && !(kind==='supplementary' && lesson.supplement_sections?.length)) {
-      cards = '<div class="empty"><div class="symbol">📥</div><h3>Hozirça konspekt yo‘q</h3><p>'+(kind==='required'?'O‘qituvçidan material kelishi kutilmoqda.':'Bu mavzuga oid oçiq konspekt hali tayyorlanmagan.')+'</p></div>';
+      return '<div class="card">'+title+'<p class="smallprint">'+rawEsc(doc.filename || '')+'</p>'+hint+'</div>';
+    };
+    let cards = '';
+    if(kind === 'required') {
+      cards = docs.map(renderLink).join('');
+      cards += (lesson.sections||[]).map(s=>'<section class="lesson-section"><h3>'+esc(s.heading)+'</h3><p>'+esc(s.body)+'</p></section>').join('');
+      if(lesson.questions?.length) cards += '<div class="card"><h3>Kerakli ma’lumotlar testi</h3><button class="btn btn-primary btn-wide" data-action="start-quiz">Testni boshlash ('+lesson.questions.length+')</button></div>';
+      if(!docs.length && !lesson.sections?.length)cards = '<div class="empty"><h3>Hozirça material yo‘q</h3><p>O‘qituvçi materiallari kelishi kutilmoqda.</p></div>';
+    } else {
+      const extraSections = lesson.supplement_sections || [];
+      cards = '<div class="sectionhead"><h2>Bepul qo‘şimça konspektlar</h2></div>';
+      if(extraSections.length)cards += extraSections.map(s=>'<section class="lesson-section"><h3>'+esc(s.heading)+'</h3><p>'+esc(s.body)+'</p></section>').join('');
+      else cards += '<div class="card"><p>Mavzu bo‘yiça bepul konspekt hozirça tayyor emas. Bu kitob matni o‘qilganini anglatmaydi.</p></div>';
+      if(docs.length)cards += '<div class="sectionhead"><h2>Bepul xorijiy manbalar</h2></div>'+docs.map(renderLink).join('');
+      if(lesson.supplement_questions?.length)cards += '<div class="card"><h3>Qo‘şimça ma’lumotlar testi</h3><button class="btn btn-primary btn-wide" data-action="start-supplement-quiz">Qo‘şimça testni boshlash ('+lesson.supplement_questions.length+')</button></div>';
+      const books = lesson.sammu_books || [];
+      cards += '<div class="sectionhead"><h2>SamMU elektron kutubxonasidagi kitoblar</h2></div>';
+      if(books.length)cards += '<p class="smallprint">Bu kitob havolalari ma’lumotnoma sifatida saqlangan. To‘liq matnni o‘qiş uchun SamMU HEMIS ruxsati kerak bo‘lishi mumkin.</p>'+books.map(renderLink).join('');
+      else cards += '<div class="card"><p>Bu mavzu uçún SamMU katalogidan kitob aniqlanmagan.</p></div>';
     }
     shell(back+'<p class="eyebrow">'+esc(lesson.subject_title)+'</p><h1>'+name+'</h1><p class="smallprint">'+intro+'</p>'+cards+disclaimer);
   };
@@ -92,11 +101,12 @@
     const l=state.lesson;
     const needed=(l.teacher_materials||[]).length;
     const extra=(l.supplement_sections||[]).length;
+    const books=(l.sammu_books||[]).length;
     shell('<button class="back" data-action="subject" data-id="'+rawEsc(l.subject_id)+'">← Mavzular</button>'+
       '<p class="eyebrow">'+esc(l.subject_title)+'</p><h1>'+esc(l.title)+'</h1>'+
       '<p class="smallprint">Mavzu içidagi bo‘limni tanlang.</p>'+
       '<button class="card lesson-card" data-action="category" data-kind="required"><span class="lesson-icon">📘</span><span class="lesson-content"><strong>Kerakli ma’lumotlar</strong><small>O‘qituvçi materiallari · '+needed+' fayl</small></span><span class="chevron">›</span></button>'+
-      '<button class="card lesson-card" data-action="category" data-kind="supplementary"><span class="lesson-icon">📗</span><span class="lesson-content"><strong>Qo‘şimça ma’lumotlar</strong><small>Oçiq darsliklar · '+extra+' bo‘lim</small></span><span class="chevron">›</span></button>'+
+      '<button class="card lesson-card" data-action="category" data-kind="supplementary"><span class="lesson-icon">📗</span><span class="lesson-content"><strong>Qo‘şimça ma’lumotlar</strong><small>Bepul konspekt · '+extra+' bo‘lim · '+books+' kitob</small></span><span class="chevron">›</span></button>'+
       disclaimer);
   }
   function startQuiz(questions, mode='full', category='required') {
