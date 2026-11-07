@@ -35,7 +35,7 @@ def hdr(raw=None):return {'X-Telegram-Init-Data': raw or sign()}
 def test_catalog_and_grading():
     c=load_catalog();assert len(c['subjects'])==1
     lessons=c['subjects'][0]['lessons'];assert len(lessons)==15
-    assert sum(len(l['questions']) for subject in c['subjects'] for l in subject['lessons'])==100
+    assert sum(len(l['questions']) for subject in c['subjects'] for l in subject['lessons'])==145
     questions=lessons[0]['questions']
     score,ds=grade(questions,[q['answer'] for q in questions]);assert score==10
     assert all(d['correct'] for d in ds)
