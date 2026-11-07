@@ -5,7 +5,7 @@ from app.core import load_catalog
 def test_all_subjects_and_teacher_source_separation():
     data=load_catalog()
     assert len(data['subjects'])==5
-    expected={'stom_prerest':15,'stom_kirish':12,'odam_anatomiyasi_1':14,'medical_english':5,'biofizika':4}
+    expected={'stom_prerest':31,'stom_kirish':12,'odam_anatomiyasi_1':14,'medical_english':5,'biofizika':4}
     for subject in data['subjects']:
         assert len(subject['lessons'])==expected[subject['id']]
         assert all(isinstance(l.get('teacher_materials'),list) for l in subject['lessons'])
@@ -15,16 +15,17 @@ def test_all_subjects_and_teacher_source_separation():
             assert all(not item.get('url') for item in lesson['teacher_materials'])
             for question in lesson['questions']:
                 assert len(question['options'])==4
-    assert sum(len(s['lessons']) for s in data['subjects'])==50
+    assert sum(len(s['lessons']) for s in data['subjects'])==66
 
 
 def test_preclinical_calendar_and_no_invented_content():
     data=load_catalog()
     course=data['subjects'][0]
     assert course['id']=='stom_prerest'
-    assert [l['session_number'] for l in course['lessons']]==list(range(1,16))
+    assert [l['session_number'] for l in course['lessons']]==list(range(1,32))
     assert course['lessons'][0]['id']=='ergonomika'
-    assert all(not l['sections'] and not l['questions'] for l in course['lessons'])
+    assert all(l['sections'] for l in course['lessons'])
+    assert course['total_sessions'] == 31
     assert course['lessons'][0]['teacher_materials'][0]['filename'].startswith('Calendar_plan-')
 
 
