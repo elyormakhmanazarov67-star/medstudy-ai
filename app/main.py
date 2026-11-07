@@ -4,7 +4,7 @@ from contextlib import asynccontextmanager
 from pathlib import Path
 from typing import Annotated
 from dotenv import load_dotenv
-from fastapi import FastAPI, Depends, Header, HTTPException, Request
+from fastapi import FastAPI, Depends, Header, HTTPException, Request, File, UploadFile
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
@@ -16,6 +16,7 @@ from .study_plan import build_study_plan
 from .plans import plans_catalog
 from . import tutor
 from .lesson_helper import prepare_answer
+from . import materials
 from .telegram_gateway import router as telegram_router, configure_telegram
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -25,6 +26,7 @@ STORE = Store(os.getenv('DATABASE_PATH', str(ROOT / 'data' / 'medstudy.db')))
 BOT_TOKEN = os.getenv('BOT_TOKEN', '')
 ALLOWED_IDS = {int(x.strip()) for x in os.getenv('ALLOWED_USER_IDS', '').replace(';', ',').split(',') if x.strip()}
 DEV_PREVIEW = os.getenv('DEV_PREVIEW', '0') == '1'
+MATERIALS_DIR = materials.storage_dir(ROOT)
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -64,6 +66,24 @@ def consent_required(uid: int = Depends(current_user)) -> int:
         raise HTTPException(status_code=403, detail='Avval maxfiylik shartlariga rozilik bering')
     return uid
 
+
+def materials_admin(uid: int = Depends(consent_required)) -> int:
+    # Restrict uploads to explicit admin IDs. For a one-user closed staging,
+    # the only allowlisted tester is administrator unless overridden.
+    configured = os.getenv('MATERIALS_ADMIN_IDS', '').strip()
+    if configured:
+        try:
+            admins = {int(x.strip()) for x in configured.replace(';', ',').split(',') if x.strip()}
+        except ValueError:
+            admins = set()
+    else:
+        admins = set(ALLOWED_IDS) if len(ALLOWED_IDS) == 1 else set()
+    if uid not in admins:
+        raise HTTPException(403, 'Fayl yuklash faqat administrator uchun')
+    return uid
+
+
+
 @app.get('/api/me')
 def me(uid: int = Depends(current_user)):
     return {'consented': STORE.has_consent(uid), 'test_mode': True}
@@ -93,12 +113,53 @@ def lesson(lesson_id: str, uid: int = Depends(consent_required)):
         raise HTTPException(404, 'Mavzu topilmadi')
     subject, l = found
     return {'subject_id':subject['id'], 'subject_title':subject['title'], 'id':l['id'], 'title':l['title'],
-            'sections':l['sections'], 'teacher_materials':l.get('teacher_materials', []), 'supplementary':l.get('supplementary', []), 'sources':l.get('sources',[]),
+            'sections':l['sections'], 'teacher_materials':materials.public_materials(l.get('teacher_materials', []), CATALOG, MATERIALS_DIR), 'supplementary':l.get('supplementary', []), 'sources':l.get('sources',[]),
             'question_count':len(l['questions']), 'questions':[public_question(q) for q in l['questions']],
             'sammu_books':l.get('sammu_books', []),
             'supplement_sections':l.get('supplement_sections', []),
             'supplement_question_count':len(l.get('supplement_questions', [])),
             'supplement_questions':[public_question(q) for q in l.get('supplement_questions', [])]}
+
+@app.get('/api/materials/admin')
+def material_admin_status(uid: int = Depends(consent_required)):
+    try:
+        materials_admin(uid)
+        is_admin = True
+    except HTTPException:
+        is_admin = False
+    known = materials.manifest(CATALOG)
+    stored = sum(materials.stored_path(MATERIALS_DIR, name).is_file() for name in known.values())
+    return {'is_admin': is_admin, 'available_files':stored, 'total_files':len(known)}
+
+
+@app.get('/api/materials/{material_id}')
+def download_material(material_id: str, uid: int = Depends(consent_required)):
+    name = materials.manifest(CATALOG).get(material_id)
+    if not name:
+        raise HTTPException(404, 'Fayl ro‘yxatda topilmadi')
+    path = materials.stored_path(MATERIALS_DIR, name)
+    if not path.is_file():
+        raise HTTPException(404, 'Fayl serverga hali yuklanmagan')
+    return FileResponse(path, filename=name, media_type='application/octet-stream',
+                        headers={'Cache-Control':'private, no-store','X-Content-Type-Options':'nosniff'})
+
+
+@app.post('/api/materials/bundle')
+def upload_material_bundle(archive: UploadFile = File(...), uid: int = Depends(materials_admin)):
+    if not archive.filename or not archive.filename.lower().endswith('.zip'):
+        raise HTTPException(422, 'ZIP arxiv kerak')
+    files = materials.import_bundle(archive.file, CATALOG, MATERIALS_DIR)
+    return {'uploaded':len(files), 'files':files}
+
+
+@app.post('/api/materials/upload/{material_id}')
+def upload_material(material_id: str, file: UploadFile = File(...), uid: int = Depends(materials_admin)):
+    filename = materials.manifest(CATALOG).get(material_id)
+    if not filename:
+        raise HTTPException(404, 'Fayl ro‘yxatda topilmadi')
+    result = materials.save_upload(file.file, filename, CATALOG, MATERIALS_DIR)
+    return {'uploaded': 1, 'files':[result]}
+
 
 class AttemptBody(BaseModel):
     lesson_id: str = Field(min_length=1, max_length=100)
