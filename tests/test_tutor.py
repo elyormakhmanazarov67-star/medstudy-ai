@@ -16,8 +16,8 @@ def client(tmp_path, monkeypatch):
     monkeypatch.setenv('AI_DAILY_LIMIT', '2')
     monkeypatch.setenv('AI_GLOBAL_DAILY_LIMIT', '3')
     calls = []
-    async def answer(lesson, question):
-        calls.append({'lesson': lesson['id'], 'question': question})
+    async def answer(lesson, question, mode='explain'):
+        calls.append({'lesson': lesson['id'], 'question': question, 'mode': mode})
         return {'answer': 'Ergonomika ishni qulay tashkil etishdir.', 'sections': ['Ergonomika tushunchasi']}
     monkeypatch.setattr(tutor, 'generate_answer', answer)
     client = TestClient(main.app)
@@ -73,3 +73,20 @@ def test_lesson_grounding():
     assert len(context)<=4800
     response={'status':'completed','output':[{'type':'reasoning'},{'type':'message','content':[{'type':'output_text','text':'O‘zbekcha izoh'}]}]}
     assert tutor.extract_output(response)=='O‘zbekcha izoh'
+
+def test_tutor_learning_modes_and_rejects_invalid_mode(client):
+    c, calls = client
+    c.post('/api/consent', headers=hdr())
+    c.post('/api/tutor/consent', headers=hdr())
+    base = {'lesson_id':'ergonomika', 'question':'Ergonomika nima?'}
+    assert c.post('/api/tutor/ask', headers=hdr(), json={**base, 'mode':'clinical'}).status_code == 422
+    assert len(calls) == 0
+    response = c.post('/api/tutor/ask', headers=hdr(), json={**base, 'mode':'recall'})
+    assert response.status_code == 200
+    assert calls[0]['mode'] == 'recall'
+
+def test_teaching_styles_and_response_handling():
+    assert 'savol' in tutor.response_style('recall').lower()
+    assert 'misol' in tutor.response_style('example').lower()
+    with pytest.raises(ValueError):
+        tutor.response_style('unsafe')
