@@ -1,14 +1,19 @@
 {
-  "version": "0.5.0-draft",
-  "status": "DRAFT — mutaxassis tekshiruvi kutilmoqda",
+  "version": "0.5.1-draft",
+  "status": "DRAFT — SamMU manbalariga asoslangan mustaqil konspekt, mutaxassis tasdig‘i kutilmoqda",
+  "curriculum_source": "Talaba taqdim etgan Profi University Navoiy, 2026–2027, 1-semestr, Preklinik restavratsion stomatologiya, 15 ta amaliy mashg‘ulot kalendar rejasi",
+  "reference_scope": "SamMU elektron kutubxonasidagi kitob tavsiflari asosida yo‘nalishlar moslashtirildi. Dars matnlari original; kitoblarning to‘liq matni bandma-band tekshirilmagan.",
   "subjects": [
     {
       "id": "stom_prerest",
       "title": "Preklinik restavratsion stomatologiya",
+      "academic_year": "2026–2027",
+      "semester": 1,
+      "total_sessions": 15,
       "lessons": [
         {
           "id": "ergonomika",
-          "title": "Mutaxassislikka kirish, ergonomika va stomatologiya xonasi",
+          "title": "1-mashg‘ulot. Mutaxassislikka kirish va ergonomika asoslari",
           "source_url": "https://docs.google.com/document/d/19yIhJXtB4G5WIR9qRjo_jRY6t8fNnwO5k4YTXoGOcqw/edit",
           "sections": [
             {
@@ -37,8 +42,10 @@
             }
           ],
           "sources": [
-            "https://e-library.sammu.uz/en/book/3055",
             "https://e-library.sammu.uz/uz/book/4555",
+            "https://e-library.sammu.uz/uz/book/3055",
+            "https://e-library.sammu.uz/uz/book/343",
+            "https://e-library.sammu.uz/en/book/3055",
             "https://e-library.sammu.uz/ru/book/5780"
           ],
           "questions": [
@@ -162,11 +169,116 @@
               "answer": 1,
               "explanation": "Xavfsiz o‘rganish malakali nazorat va rasmiy yo‘riqnomani talab qiladi."
             }
+          ],
+          "session_number": 1,
+          "calendar_topic": "Mutaxassislikka kirish. Ergonomika. Stomatologiya xonasining jihozlanishi.",
+          "focus": "Mutaxassislikka kirish va ergonomika asoslari",
+          "review_status": "DRAFT — o‘qituvchi tekshiruvi kutilmoqda"
+        },
+        {
+          "id": "ergonomika_2",
+          "title": "2-mashg‘ulot. Kabinet tuzilishi va ergonomik ish muhiti",
+          "session_number": 2,
+          "calendar_topic": "Mutaxassislikka kirish. Ergonomika. Stomatologiya xonasining jihozlanishi.",
+          "focus": "Kabinet tuzilishi va ergonomik ish muhiti",
+          "review_status": "DRAFT — o‘qituvchi tekshiruvi kutilmoqda",
+          "sections": [
+            {
+              "heading": "Ish joyining asosiy qismlari",
+              "body": "Stomatologik kabinetda bemor kreslosi, ishchi yoritgich, shifokor va assistent kursisi, asboblar moduli, gigiyena nuqtasi hamda so‘rish tizimi bo‘lishi mumkin. Xonaning aniq jihozlanishi muassasa turi va sanitariya talablariga bog‘liq."
+            },
+            {
+              "heading": "Ergonomik tashkil etish",
+              "body": "Ergonomika keraksiz harakatlarni kamaytirish va ishchi gavdasining qulay holatini qo‘llab-quvvatlashga qaratiladi. Tez-tez ishlatiladigan buyumlarning oqilona joylashuvi va yetarli yoritish mehnat sharoitiga ta’sir qiladi."
+            },
+            {
+              "heading": "Hududlar va bemor xavfsizligi",
+              "body": "Toza buyumlar va ifloslangan ashyolar uchun ajratilgan joylar infektsiya profilaktikasiga yordam beradi. Qayta ishlatiladigan asboblar muassasaning tasdiqlangan qayta ishlov tizimiga muvofiq tayyorlanadi. Bemor bilan amaliy ish faqat mutaxassis nazorati ostida bajariladi."
+            }
+          ],
+          "sources": [
+            "https://e-library.sammu.uz/uz/book/3055",
+            "https://e-library.sammu.uz/uz/book/4555",
+            "https://e-library.sammu.uz/uz/book/343"
+          ],
+          "questions": [
+            {
+              "id": "s02q01",
+              "q": "Kabinetdagi ishchi yoritgichning asosiy maqsadi qaysi?",
+              "options": [
+                "Kresloni isitish",
+                "Tish rangini o‘zgartirish",
+                "Ish sohasini yetarlicha yoritish",
+                "Havoni siqish"
+              ],
+              "answer": 2,
+              "explanation": "Yoritgich ish maydonini ko‘rishga xizmat qiladi."
+            },
+            {
+              "id": "s02q02",
+              "q": "Ergonomikaga mos prinsip qaysi?",
+              "options": [
+                "Asboblarni iloji boricha uzoq saqlash",
+                "Yoritgichni ataylab to‘sish",
+                "Doimo noqulay egilib ishlash",
+                "Tez ishlatiladigan buyumlarni qulay joyga joylashtirish"
+              ],
+              "answer": 3,
+              "explanation": "Qulay joylashtirish ortiqcha harakatni kamaytirishi mumkin."
+            },
+            {
+              "id": "s02q03",
+              "q": "Toza va ishlatilgan asboblarni ajratishning maqsadi nima?",
+              "options": [
+                "Kontaminatsiya xavfini kamaytirish",
+                "Asboblarning narxini oshirish",
+                "Yorug‘likni ko‘paytirish",
+                "Elektr sarfini o‘lchash"
+              ],
+              "answer": 0,
+              "explanation": "Toza va iflos oqimlarni ajratish infeksiya nazoratining bir qismidir."
+            },
+            {
+              "id": "s02q04",
+              "q": "Qaysi jihoz bemor holatini moslashtirish uchun mo‘ljallangan?",
+              "options": [
+                "Kompressor",
+                "Stomatologik kreslo",
+                "Fotopolimerizatsiya lampasi",
+                "Avtoklav indikator kartasi"
+              ],
+              "answer": 1,
+              "explanation": "Bemor kreslosi muolaja paytida bemorni qulay joylashtirishga yordam beradi."
+            },
+            {
+              "id": "s02q05",
+              "q": "Assistent kursisi nima uchun zarur bo‘lishi mumkin?",
+              "options": [
+                "Plomba massasini qotirish",
+                "Tishni rentgen qilish",
+                "Assistentga ergonomik ish holatini ta’minlash",
+                "Sterilizatsiyani tekshirish"
+              ],
+              "answer": 2,
+              "explanation": "Kursi assistentning ishdagi holatini qo‘llab-quvvatlaydi."
+            },
+            {
+              "id": "s02q06",
+              "q": "Ish joyini amalda qayta tashkil qilishda nimaga amal qilish zarur?",
+              "options": [
+                "Faqat buyumlarning rangiga",
+                "Faqat internetdagi taxminga",
+                "Faqat talabaning xohishiga",
+                "Muassasa talablari va mas’ul mutaxassis ko‘rsatmalariga"
+              ],
+              "answer": 3,
+              "explanation": "Ish joyini tashkil etishda xavfsizlik, sanitariya va muassasa qoidalari ustun turadi."
+            }
           ]
         },
         {
           "id": "qurilmalar",
-          "title": "Stomatologik qurilmalar va dastaklar",
+          "title": "3-mashg‘ulot. Stomatologik unit va dastaklar: tanishuv",
           "source_url": "https://docs.google.com/document/d/1vEgydiCw-acoAaYaFti6EaTkPLqGENGyS-83aZc1DH8/edit",
           "sections": [
             {
@@ -200,8 +312,9 @@
           ],
           "sources": [
             "https://e-library.sammu.uz/uz/book/4555",
-            "https://e-library.sammu.uz/uz/book/4516",
             "https://e-library.sammu.uz/uz/book/3055",
+            "https://e-library.sammu.uz/uz/book/343",
+            "https://e-library.sammu.uz/uz/book/4516",
             "https://www.cdc.gov/dental-infection-control/hcp/dental-ipc-faqs/dental-handpieces.html"
           ],
           "questions": [
@@ -349,251 +462,1221 @@
               "answer": 2,
               "explanation": "Klinik asboblarni amalda sozlashda xavfsizlik va malakali nazorat zarur."
             }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "anatomy_basics",
-      "title": "Odam anatomiyasi",
-      "lessons": [
+          ],
+          "session_number": 3,
+          "calendar_topic": "Stomatologik qurilmalar. Stomatologiyada ishlatiladigan dastaklar va dastalar. Ularni o‘rnatish qoidalari.",
+          "focus": "Stomatologik unit va dastaklar: tanishuv",
+          "review_status": "DRAFT — o‘qituvchi tekshiruvi kutilmoqda"
+        },
         {
-          "id": "anat_levels",
-          "title": "Tana tuzilishining asosiy darajalari",
-          "review_status": "DRAFT — ekspert tekshiruvi kutilmoqda",
+          "id": "qurilmalar_2",
+          "title": "4-mashg‘ulot. Dastaklar turlari va asosiy farqlari",
+          "session_number": 4,
+          "calendar_topic": "Stomatologik qurilmalar. Stomatologiyada ishlatiladigan dastaklar va dastalar. Ularni o‘rnatish qoidalari.",
+          "focus": "Dastaklar turlari va asosiy farqlari",
+          "review_status": "DRAFT — o‘qituvchi tekshiruvi kutilmoqda",
           "sections": [
             {
-              "heading": "1. Anatomiya nimani o‘rganadi?",
-              "body": "Anatomiya tirik organizm tanasining tuzilishini o‘rganadigan fan. Fiziologiya esa organ va tizimlarning qanday ishlashini tushuntiradi. Bu fanlar bir-birini to‘ldiradi."
+              "heading": "Dastak tushunchasi",
+              "body": "Dastak (handpiece) — aylanuvchi yoki boshqa ishchi asbobni ushlashga xizmat qiluvchi stomatologik qurilma qismi. Turli dastaklar harakat manbai, konstruksiya va moslik jihatidan farqlanadi."
             },
             {
-              "heading": "2. Tashkiliy darajalar",
-              "body": "Hujayra tirik organizmning asosiy tuzilma va funksional birligidir. Tuzilishi va vazifasi o‘xshash hujayralar to‘qimalarni hosil qiladi. Turli to‘qimalar birlashib organlarni, birgalikda ishlaydigan organlar esa organlar tizimini hosil qiladi."
+              "heading": "Turbinali va mikromotorli tizimlar",
+              "body": "Havo turbinali dastaklarda aylanish siqilgan havo yordamida hosil bo‘ladi. Mikromotorli tizimlarda esa elektr yoki pnevmatik motor harakat manbai bo‘lishi mumkin. Qurilmalar orasidagi farqni nazariy jihatdan bilish kerak."
             },
             {
-              "heading": "3. Misol bilan tushunamiz",
-              "body": "Yurak — organ, qon aylanish tizimi esa bir nechta tuzilma va organlar hamkorligidan iborat tizimdir. Tizimlar birgalikda butun organizm faoliyatini qo‘llab-quvvatlaydi."
-            },
-            {
-              "heading": "4. Takrorlash",
-              "body": "Hujayra → to‘qima → organ → organlar tizimi → organizm ketma-ketligini tushunish anatomiya mavzularini o‘rganishga yordam beradi."
+              "heading": "To‘g‘ri va burchakli uchliklar",
+              "body": "To‘g‘ri va burchakli uchliklar ishchi bosh qismi shakli bilan farqlanadi. Har bir uchlikka mos asbob va texnik xususiyatlar ishlab chiqaruvchining hujjatlarida belgilanadi. Ulanishni amalda bajarish mustaqil talaba topshirig‘i emas."
             }
           ],
           "sources": [
-            "https://openstax.org/books/anatomy-and-physiology/pages/1-2-structural-organization-of-the-human-body"
+            "https://e-library.sammu.uz/uz/book/4555",
+            "https://e-library.sammu.uz/uz/book/5780",
+            "https://e-library.sammu.uz/uz/book/2058"
           ],
           "questions": [
             {
-              "id": "a01",
-              "q": "Anatomiya fani asosan nimani o‘rganadi?",
+              "id": "s04q01",
+              "q": "Turbinali dastak odatda qaysi energiya manbai bilan ishlaydi?",
               "options": [
-                "Tananing tuzilishini",
-                "Faqat dori ta’sirini",
-                "Faqat kimyoviy reaksiyalarni",
-                "Faqat kasalliklarning tarqalishini"
+                "Siqilgan havo",
+                "Quyosh nuri",
+                "Ultratovush to‘lqini",
+                "Batareya ichidagi suv"
               ],
               "answer": 0,
-              "explanation": "Anatomiya organizm va uning qismlarining tuzilishini o‘rganadi."
+              "explanation": "Havo turbinasi aylanishni siqilgan havodan oladi."
             },
             {
-              "id": "a02",
-              "q": "Hujayralar birlashib, avvalo, qaysi tuzilmani hosil qilishi mumkin?",
+              "id": "s04q02",
+              "q": "Mikromotorning vazifasi qaysi?",
               "options": [
-                "Organlar tizimini",
-                "To‘qimani",
-                "Butun organizmni",
-                "Suyak skeletini"
+                "Steril paketni yopish",
+                "Mos uchlikka harakat uzatish",
+                "Bemor haroratini o‘lchash",
+                "Plomba rangini aniqlash"
               ],
               "answer": 1,
-              "explanation": "O‘xshash vazifali hujayralar birgalikda to‘qima hosil qiladi."
+              "explanation": "Mikromotor uchlikning aylanishiga xizmat qiladi."
             },
             {
-              "id": "a03",
-              "q": "Yurak qaysi tashkiliy darajaga misol bo‘ladi?",
+              "id": "s04q03",
+              "q": "To‘g‘ri va burchakli uchliklar nimasi bilan farqlanadi?",
               "options": [
-                "Hujayra",
-                "To‘qima",
-                "Organ",
-                "Organizm"
+                "Faqat korpus rangiga ko‘ra",
+                "Faqat ishlab chiqarilgan yiliga ko‘ra",
+                "Ishchi qismining tuzilishi bilan",
+                "Faqat qadoq turi bilan"
               ],
               "answer": 2,
-              "explanation": "Yurak bir nechta to‘qimadan tashkil topgan organdir."
+              "explanation": "Uchlik boshining geometriyasi turlicha bo‘ladi."
             },
             {
-              "id": "a04",
-              "q": "Quyidagi ketma-ketliklardan qaysi biri umumiy tuzilish darajalariga mos?",
+              "id": "s04q04",
+              "q": "Dastakka mos ishchi asbobni tanlashda nimani tekshirish kerak?",
               "options": [
-                "Organ → hujayra → tizim → to‘qima",
-                "To‘qima → tizim → hujayra → organ",
-                "Organizm → to‘qima → hujayra → organ",
-                "Hujayra → to‘qima → organ → tizim"
+                "Faqat tashqi rangni",
+                "Faqat sotuv narxini",
+                "Faqat fotosuratdagi o‘lchamni",
+                "Ishlab chiqaruvchining moslik ko‘rsatmalarini"
               ],
               "answer": 3,
-              "explanation": "Hujayralar to‘qima, to‘qimalar organ, organlar esa tizim hosil qiladi."
+              "explanation": "Dastak va asbob mosligi texnik hujjatga tayangan holda tekshiriladi."
+            },
+            {
+              "id": "s04q05",
+              "q": "Pnevmatik so‘zi nimani bildiradi?",
+              "options": [
+                "Siqilgan havo bilan bog‘liq tizimni",
+                "Faqat elektr isitishni",
+                "Faqat optikani",
+                "Faqat rentgen nurlarini"
+              ],
+              "answer": 0,
+              "explanation": "Pnevmatik tizim havo bosimi energiyasidan foydalanishi mumkin."
+            },
+            {
+              "id": "s04q06",
+              "q": "Uchliklarni amaliy sinash qachon xavfsiz o‘rganiladi?",
+              "options": [
+                "Nazoratsiz tasodifiy ulashda",
+                "O‘qitilgan mutaxassis nazorati va yo‘riqnoma bilan",
+                "Har qanday uy qurilmasida",
+                "Faqat reklamani ko‘rib"
+              ],
+              "answer": 1,
+              "explanation": "Uskuna bilan ishlashda maxsus tayyorgarlik va xavfsizlik talablari bor."
             }
           ]
-        }
-      ]
-    },
-    {
-      "id": "biology_basics",
-      "title": "Tibbiy biologiya",
-      "lessons": [
+        },
         {
-          "id": "bio_cells",
-          "title": "Hujayra va asosiy organoidlar",
-          "review_status": "DRAFT — ekspert tekshiruvi kutilmoqda",
+          "id": "qurilmalar_3",
+          "title": "5-mashg‘ulot. Qurilmalar mosligi, texnik hujjat va xavfsizlik",
+          "session_number": 5,
+          "calendar_topic": "Stomatologik qurilmalar. Stomatologiyada ishlatiladigan dastaklar va dastalar. Ularni o‘rnatish qoidalari.",
+          "focus": "Qurilmalar mosligi, texnik hujjat va xavfsizlik",
+          "review_status": "DRAFT — o‘qituvchi tekshiruvi kutilmoqda",
           "sections": [
             {
-              "heading": "1. Hujayra haqida",
-              "body": "Hujayra — tirik organizmning asosiy birligi. Odam organizmidagi hujayralar eukariot hujayralardir: ularning genetik materiali membrana bilan o‘ralgan yadroda joylashgan."
+              "heading": "Uskunalar tizimi",
+              "body": "Stomatologik unitning tizimlari suv-havo ta’minoti, yoritish, aspiratsiya va ishchi qurilmalarni o‘z ichiga olishi mumkin. Barcha unitlarning konfiguratsiyasi bir xil emas."
             },
             {
-              "heading": "2. Plazmatik membrana",
-              "body": "Plazmatik membrana hujayrani tashqi muhitdan ajratadi va moddalar kirib-chiqishini tartibga soladi. U asosan fosfolipid ikki qavat va oqsillardan tashkil topadi."
+              "heading": "Texnik hujjatlar nima beradi?",
+              "body": "Ishlab chiqaruvchi yo‘riqnomasida uskunaning maqsadi, mos bo‘lgan aksessuarlar, parvarish va xavfsizlik talablari yoziladi. Ishlab chiqaruvchining aniq hujjatisiz har qanday turdagi dastakni mos deb bo‘lmaydi."
             },
             {
-              "heading": "3. Yadro va ribosoma",
-              "body": "Yadroda hujayraning genetik axborotining katta qismi saqlanadi. Ribosomalar oqsil sintezida qatnashadi. Ribosomalar sitoplazmada ham, endoplazmatik to‘r bilan bog‘langan holda ham uchrashi mumkin."
-            },
-            {
-              "heading": "4. Mitoxondriya",
-              "body": "Mitoxondriyalar energiya almashinuvida ishtirok etadi va ko‘plab hujayralarda ATP sinteziga xizmat qiladi. Ular o‘z membranalariga ega."
+              "heading": "Infeksiya nazorati va mutaxassis mas’uliyati",
+              "body": "Ko‘p marta ishlatiladigan dental dastaklar va yordamchi qismlar talab etilgan qayta ishlov hamda sterilizatsiyaga muvofiq tayyorlanadi. Uskunani tekshirish, ulash yoki texnik xizmat ko‘rsatish faqat o‘qitilgan mas’ul xodimlarga tegishlidir."
             }
           ],
           "sources": [
-            "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells"
+            "https://e-library.sammu.uz/uz/book/4555",
+            "https://e-library.sammu.uz/uz/book/3055",
+            "https://e-library.sammu.uz/uz/book/343"
           ],
           "questions": [
             {
-              "id": "b01",
-              "q": "Eukariot hujayraning asosiy belgilaridan biri nima?",
+              "id": "s05q01",
+              "q": "Bir xil nomdagi stomatologik unitlar doimo bir xil jihozlanganmi?",
               "options": [
-                "Membrana bilan o‘ralgan yadro",
-                "Faqat hujayra devori",
-                "Ribosomaning umuman bo‘lmasligi",
-                "Plazmatik membrananing bo‘lmasligi"
-              ],
-              "answer": 0,
-              "explanation": "Eukariotlarda genetik materialning asosiy qismi membranali yadroda joylashadi."
-            },
-            {
-              "id": "b02",
-              "q": "Hujayra membranasi nimaga yordam beradi?",
-              "options": [
-                "Faqat yorug‘lik hosil qilishga",
-                "Moddalar kirib-chiqishini tartibga solishga",
-                "Yadroni ATP ga aylantirishga",
-                "Oqsillarni har doim parchalanishiga"
+                "Ha, hammasi bir xil",
+                "Yo‘q, konfiguratsiya modelga bog‘liq",
+                "Faqat qadoq bir xil bo‘ladi",
+                "Faqat yoritish turi bir xil"
               ],
               "answer": 1,
-              "explanation": "Membrana hujayra va muhit orasidagi moddalar almashinuvini boshqaradi."
+              "explanation": "Unit tarkibi ishlab chiqaruvchi va modelga ko‘ra farq qiladi."
             },
             {
-              "id": "b03",
-              "q": "Ribosoma asosan qaysi jarayonda ishtirok etadi?",
+              "id": "s05q02",
+              "q": "Moslik haqidagi eng ishonchli dastlabki manba qaysi?",
               "options": [
-                "Suvni tashish",
-                "Xromosomalarni bo‘yash",
-                "Oqsil sintezi",
-                "Molekulalarni yorug‘lik bilan ajratish"
+                "Tasodifiy ijtimoiy tarmoq izohi",
+                "Uskunaning rangi",
+                "Ishlab chiqaruvchining texnik hujjati",
+                "Qadoqdagi reklama rasmi"
               ],
               "answer": 2,
-              "explanation": "Ribosomalar polipeptid zanjirlari sintezini amalga oshiradi."
+              "explanation": "Texnik tavsif moslik chegaralarini belgilaydi."
             },
             {
-              "id": "b04",
-              "q": "Mitoxondriyaning muhim vazifalaridan biri qaysi?",
+              "id": "s05q03",
+              "q": "Aspiratsiya tizimi asosan nima uchun ishlatiladi?",
               "options": [
-                "Hujayra devorini yasash",
-                "Genetik kodni o‘zgartirib turish",
-                "Yadro membranasini yo‘qotish",
-                "ATP sinteziga xizmat qilish"
+                "Tish emalini yoritish",
+                "Kompressorni sovitish",
+                "Sterilizatsiya indikatorini tekshirish",
+                "Suyuqlikni so‘rib chiqarish"
               ],
               "answer": 3,
-              "explanation": "Mitoxondriya hujayra energetikasida va ATP hosil bo‘lishida qatnashadi."
+              "explanation": "Aspiratsiya tizimi suyuqliklarni so‘rib olishga xizmat qiladi."
+            },
+            {
+              "id": "s05q04",
+              "q": "Dental dastakni tashqi tomondan artish to‘liq qayta ishlov o‘rnini bosadimi?",
+              "options": [
+                "Yo‘q, belgilangan qayta ishlov talablari saqlanadi",
+                "Ha, barcha turdagi dastaklarda",
+                "Faqat metall dastaklarda",
+                "Faqat suvli unitlarda"
+              ],
+              "answer": 0,
+              "explanation": "Qayta ishlatiladigan dastaklar uchun ishlab chiqaruvchi ko‘rsatmasi va sterilizatsiya talablari ahamiyatli."
+            },
+            {
+              "id": "s05q05",
+              "q": "Texnik xavfsizlikning asosiy maqsadi nima?",
+              "options": [
+                "Dars vaqtini uzaytirish",
+                "Bemor va xodimlar uchun xavfni kamaytirish",
+                "Qurilmaning og‘irligini oshirish",
+                "Asboblar sonini ko‘paytirish"
+              ],
+              "answer": 1,
+              "explanation": "Texnik xavfsizlik odamlar va uskuna bilan bog‘liq xatarlarni kamaytiradi."
+            },
+            {
+              "id": "s05q06",
+              "q": "Uskuna muammosi sezilsa, talabaga mos yondashuv qaysi?",
+              "options": [
+                "Mustaqil ta’mirlash",
+                "Uskunani taxminan qayta ulash",
+                "Foydalanishni to‘xtatib, mas’ul xodimga xabar berish",
+                "Muammoni e’tiborsiz qoldirish"
+              ],
+              "answer": 2,
+              "explanation": "Texnik nosozlik bilan malakali xodimlar shug‘ullanishi lozim."
             }
           ]
-        }
-      ]
-    },
-    {
-      "id": "chemistry_basics",
-      "title": "Tibbiy kimyoga kirish",
-      "lessons": [
+        },
         {
-          "id": "chem_atoms",
-          "title": "Atom tarkibi va kimyoviy elementlar",
-          "review_status": "DRAFT — ekspert tekshiruvi kutilmoqda",
+          "id": "asboblar",
+          "title": "6-mashg‘ulot. Ko‘rik asboblari va ularning tasnifi",
+          "session_number": 6,
+          "calendar_topic": "Stomatologik asboblar tasnifi. Ko‘rik, plomba qorish va qo‘yish uchun ishlatiladigan asboblar.",
+          "focus": "Ko‘rik asboblari va ularning tasnifi",
+          "review_status": "DRAFT — o‘qituvchi tekshiruvi kutilmoqda",
           "sections": [
             {
-              "heading": "1. Kimyo nimani o‘rganadi?",
-              "body": "Kimyo moddalar, ularning tarkibi, tuzilishi, xossalari va o‘zgarishlarini o‘rganadi. Tibbiyotda kimyoning asoslarini bilish biologik molekulalarni tushunishga yordam beradi."
+              "heading": "Asboblar nima uchun tasniflanadi?",
+              "body": "Stomatologik asboblar vazifasiga ko‘ra ko‘rik, material bilan ishlash, ishlov berish va boshqa guruhlarga ajratilishi mumkin. Tasnif asbobni to‘g‘ri tanish va uning maqsadini tushunishga yordam beradi."
             },
             {
-              "heading": "2. Atomning asosiy qismlari",
-              "body": "Atom yadrosida musbat zaryadli protonlar va zaryadsiz neytronlar bo‘ladi. Manfiy zaryadli elektronlar yadro atrofidagi elektron bulutida joylashadi."
+              "heading": "Ko‘rik asboblari",
+              "body": "Stomatologik ko‘zgu og‘iz bo‘shlig‘i ayrim joylarini ko‘rishga yordam beradi. Zond tish yuzasining ayrim xususiyatlarini baholashda, pinset esa kichik buyumlarni ushlashda ishlatilishi mumkin. Amaliy tekshiruv o‘qituvchi nazoratini talab etadi."
             },
             {
-              "heading": "3. Atom raqami",
-              "body": "Kimyoviy elementning atom raqami uning yadrosidagi protonlar soniga teng. Masalan, vodorodning atom raqami 1, kislorodniki 8."
-            },
-            {
-              "heading": "4. Molekula va formula",
-              "body": "Molekula ikki yoki undan ortiq atomlarning kimyoviy bog‘ bilan birlashgan zarrasi bo‘lishi mumkin. Suv molekulasi H₂O formulasiga ega: unda ikki vodorod va bir kislorod atomi mavjud."
+              "heading": "Infeksiya nazorati",
+              "body": "Ko‘rik asboblari bemor bilan muloqotda kontaminatsiyalanishi mumkin. Ularni tayyorlash va qayta ishlash muassasa sterilizatsiya va dezinfeksiya qoidalariga mos bo‘lishi zarur."
             }
           ],
           "sources": [
-            "https://openstax.org/books/chemistry-2e/pages/2-1-early-ideas-in-atomic-theory"
+            "https://e-library.sammu.uz/uz/book/2058",
+            "https://e-library.sammu.uz/uz/book/4555",
+            "https://e-library.sammu.uz/uz/book/3055"
           ],
           "questions": [
             {
-              "id": "c01",
-              "q": "Protonning elektr zaryadi qanday?",
+              "id": "s06q01",
+              "q": "Stomatologik ko‘zguning vazifasi qaysi?",
               "options": [
-                "Musbat",
-                "Manfiy",
-                "Nol",
-                "Har doim o‘zgaruvchan"
-              ],
-              "answer": 0,
-              "explanation": "Proton musbat elementar zaryadga ega."
-            },
-            {
-              "id": "c02",
-              "q": "Atom raqami nimaga teng?",
-              "options": [
-                "Elektron qavatlar soniga",
-                "Protonlar soniga",
-                "Molekulalar soniga",
-                "Moddaning massasiga"
-              ],
-              "answer": 1,
-              "explanation": "Kimyoviy elementning atom raqami yadrodagi protonlar sonini bildiradi."
-            },
-            {
-              "id": "c03",
-              "q": "Neytronning elektr zaryadi qanday?",
-              "options": [
-                "Musbat",
-                "Manfiy",
-                "Nol",
-                "Faqat suvda musbat"
+                "Plombani qotirish",
+                "Sementni saqlash",
+                "Ko‘rish qiyin hududlarni aks ettirish",
+                "Siqilgan havo ishlab chiqarish"
               ],
               "answer": 2,
-              "explanation": "Neytron elektr jihatdan neytraldir."
+              "explanation": "Ko‘zgu bilvosita ko‘rishni osonlashtiradi."
             },
             {
-              "id": "c04",
-              "q": "H₂O molekulasida nechta vodorod atomi bor?",
+              "id": "s06q02",
+              "q": "Stomatologik pinsetning odatiy vazifasi qaysi?",
               "options": [
-                "Bitta",
-                "Uchta",
-                "To‘rtta",
-                "Ikkita"
+                "Tish rentgenini olish",
+                "Unitni ishga tushirish",
+                "Kompressorni boshqarish",
+                "Kichik buyumlarni ushlash"
               ],
               "answer": 3,
-              "explanation": "H₂O formulasi bitta kislorod va ikkita vodorod atomini bildiradi."
+              "explanation": "Pinset mayda material va buyumlarni ushlashga yordam beradi."
+            },
+            {
+              "id": "s06q03",
+              "q": "Asbobni vazifasiga ko‘ra guruhlash nimaga xizmat qiladi?",
+              "options": [
+                "Asbobning maqsadini aniqlashga",
+                "Materialning rangini o‘zgartirishga",
+                "Elektr tokini o‘lchashga",
+                "Bemor bo‘yini hisoblashga"
+              ],
+              "answer": 0,
+              "explanation": "Tasnif asboblar o‘rtasidagi funktsional farqni ko‘rsatadi."
+            },
+            {
+              "id": "s06q04",
+              "q": "Zond odatda qaysi guruhga kiradi?",
+              "options": [
+                "Sementlar guruhiga",
+                "Ko‘rik asboblariga",
+                "Aspiratsiya tizimiga",
+                "Yoritish tizimiga"
+              ],
+              "answer": 1,
+              "explanation": "Zond ko‘rik to‘plamida uchrashi mumkin."
+            },
+            {
+              "id": "s06q05",
+              "q": "Qayta ishlatiladigan asbob bilan ish tugagach nima zarur?",
+              "options": [
+                "Uni faqat qutiga qaytarish",
+                "Uni uyga olib ketish",
+                "Tasdiqlangan qayta ishlov tizimiga yuborish",
+                "Uni faqat salfetka bilan yopish"
+              ],
+              "answer": 2,
+              "explanation": "Ko‘rik asboblarining xavfsiz qayta ishlovi infeksiya nazoratiga bog‘liq."
+            },
+            {
+              "id": "s06q06",
+              "q": "Amaliy ko‘rik asboblarini ishlatishni kim nazorat qiladi?",
+              "options": [
+                "Faqat ijtimoiy tarmoq muallifi",
+                "Faqat sinfdosh",
+                "Faqat asbob sotuvchisi",
+                "Malakali o‘qituvchi yoki mutaxassis"
+              ],
+              "answer": 3,
+              "explanation": "Bemor bilan amaliy ish tegishli nazoratni talab qiladi."
+            }
+          ]
+        },
+        {
+          "id": "asboblar_2",
+          "title": "7-mashg‘ulot. Plomba ashyolariga oid asboblar va material bilan ishlash",
+          "session_number": 7,
+          "calendar_topic": "Stomatologik asboblar tasnifi. Ko‘rik, plomba qorish va qo‘yish uchun ishlatiladigan asboblar.",
+          "focus": "Plomba ashyolariga oid asboblar va material bilan ishlash",
+          "review_status": "DRAFT — o‘qituvchi tekshiruvi kutilmoqda",
+          "sections": [
+            {
+              "heading": "Materialga oid asboblar",
+              "body": "Plomba materiallarini aralashtirish va joylashtirish uchun turli spatulalar, silliq ishchi uchli asboblar va maxsus moslamalar qo‘llanilishi mumkin. Aniq tanlov materialning turi va ishlab chiqaruvchi yo‘riqnomasiga bog‘liq."
+            },
+            {
+              "heading": "Spatula va boshqa moslamalar",
+              "body": "Spatula umumiy ma’noda materialni aralashtirish yoki ko‘chirish uchun mo‘ljallangan ishchi asbobdir. Shtopfer yoki zichlashtirish uchun mo‘ljallangan moslamalar esa boshqa vazifani bajaradi. Ularning shakli va foydalanish sharoiti farqlanadi."
+            },
+            {
+              "heading": "Material va asbob mosligi",
+              "body": "Ba’zi materiallar uchun bir martalik aralashtirish uchlari yoki maxsus dispenserlar ishlatiladi. Har bir materialning texnik tavsifiga mos moslama tanlanishi kerak. Kursda haqiqiy klinik muolaja bosqichlari mustaqil o‘rgatilmaydi."
+            }
+          ],
+          "sources": [
+            "https://e-library.sammu.uz/uz/book/2058",
+            "https://e-library.sammu.uz/uz/book/4555",
+            "https://e-library.sammu.uz/uz/book/5780"
+          ],
+          "questions": [
+            {
+              "id": "s07q01",
+              "q": "Spatula qanday vazifaga mo‘ljallanishi mumkin?",
+              "options": [
+                "Rentgen nuri chiqarishga",
+                "Siqilgan havo hosil qilishga",
+                "Yorug‘lik rangini o‘lchashga",
+                "Materialni aralashtirishga"
+              ],
+              "answer": 3,
+              "explanation": "Spatulalar materiallarni aralashtirish uchun ishlatilishi mumkin."
+            },
+            {
+              "id": "s07q02",
+              "q": "Plomba materialini ishlatish moslamasi nimaga ko‘ra tanlanadi?",
+              "options": [
+                "Materialning ko‘rsatmasi va turiga",
+                "Faqat asbob rangiga",
+                "Faqat eng katta o‘lchamga",
+                "Faqat sinfdosh taxminiga"
+              ],
+              "answer": 0,
+              "explanation": "Materialning xususiyatlari mos asbobni belgilaydi."
+            },
+            {
+              "id": "s07q03",
+              "q": "Ko‘rik ko‘zgusi bilan spatula orasidagi asosiy farq nima?",
+              "options": [
+                "Faqat ishlab chiqarilgan shahri",
+                "Vazifasi",
+                "Faqat qadoq narxi",
+                "Faqat yorliqlar tili"
+              ],
+              "answer": 1,
+              "explanation": "Ko‘zgu ko‘rishga, spatula esa materialga ishlov berishga mo‘ljallanadi."
+            },
+            {
+              "id": "s07q04",
+              "q": "Dispenser tushunchasi nimani bildirishi mumkin?",
+              "options": [
+                "Faqat steril pech",
+                "Faqat bemor kreslosi",
+                "Materialni belgilangan shaklda chiqarishga xizmat qiluvchi moslama",
+                "Faqat skaner ekranini"
+              ],
+              "answer": 2,
+              "explanation": "Dispenser materialni qo‘llash uchun yordamchi tizim bo‘lishi mumkin."
+            },
+            {
+              "id": "s07q05",
+              "q": "Bir martalik aralashtirish uchi qanday ko‘rsatilishi kerak?",
+              "options": [
+                "Cheksiz ishlatiladigan asbob sifatida",
+                "Har qanday uskunaga mos detal sifatida",
+                "Sterilizatsiyasiz qayta qo‘llanadigan moslama sifatida",
+                "Ishlab chiqaruvchi belgilagan bir martalik buyum sifatida"
+              ],
+              "answer": 3,
+              "explanation": "Bir martalik buyumga ishlab chiqaruvchi belgilagan cheklovlar qo‘llanadi."
+            },
+            {
+              "id": "s07q06",
+              "q": "Material bilan amaliy mashg‘ulotda eng muhim shart qaysi?",
+              "options": [
+                "O‘qituvchi nazorati va mahsulot yo‘riqnomasi",
+                "Taxminiy aralashtirish",
+                "Ruxsatsiz klinik ishlatish",
+                "Yorliqsiz mahsulot tanlash"
+              ],
+              "answer": 0,
+              "explanation": "Materiallar bilan xavfsiz ishlashda yo‘riqnoma va nazorat asosiy hisoblanadi."
+            }
+          ]
+        },
+        {
+          "id": "rotatsion",
+          "title": "8-mashg‘ulot. Rotatsion asboblar: tushuncha va umumiy tasnif",
+          "session_number": 8,
+          "calendar_topic": "Tishlarni charxlash uchun ishlatiladigan rotatsion asboblar. Borlar. Plombaga yakuniy ishlov berish uchun ishlatiladigan asboblar va ashyolar.",
+          "focus": "Rotatsion asboblar: tushuncha va umumiy tasnif",
+          "review_status": "DRAFT — o‘qituvchi tekshiruvi kutilmoqda",
+          "sections": [
+            {
+              "heading": "Rotatsion asbob nima?",
+              "body": "Rotatsion asbob — aylanish harakati orqali ishlov berish uchun mo‘ljallangan asbob. Stomatologiyada turli burlar, abraziv disklar va boshqa moslamalar bor. Ular maqsad va konstruksiyaga qarab farqlanadi."
+            },
+            {
+              "heading": "Burlarning umumiy farqlari",
+              "body": "Borlar ishchi qismi shakli, material turi va dastak bilan mosligi jihatidan tasniflanadi. Sharsimon, silindrsimon va konussimon shakllar nazariy misollar hisoblanadi."
+            },
+            {
+              "heading": "Xavfsizlik va nazariya",
+              "body": "Rotatsion asboblar uchun moslik, himoya va ishlash chegaralari muhim. Talaba ularni avvalo tasnif va terminologiya darajasida o‘rganadi; bemorga qo‘llash mustaqil mashg‘ulot mavzusi emas."
+            }
+          ],
+          "sources": [
+            "https://e-library.sammu.uz/uz/book/4555",
+            "https://e-library.sammu.uz/uz/book/2058",
+            "https://e-library.sammu.uz/uz/book/5780"
+          ],
+          "questions": [
+            {
+              "id": "s08q01",
+              "q": "Rotatsion asbobga xos belgi nima?",
+              "options": [
+                "Aylanish harakati",
+                "Faqat tovush yozish",
+                "Faqat statik yoritish",
+                "Faqat harorat o‘lchash"
+              ],
+              "answer": 0,
+              "explanation": "Rotatsion asboblar ishchi harakatni aylanish orqali bajaradi."
+            },
+            {
+              "id": "s08q02",
+              "q": "Borlar nimalarga ko‘ra farqlanishi mumkin?",
+              "options": [
+                "Faqat reklama matniga ko‘ra",
+                "Shakli va materialiga ko‘ra",
+                "Faqat qadoq rangiga ko‘ra",
+                "Faqat brend nomiga ko‘ra"
+              ],
+              "answer": 1,
+              "explanation": "Borlarning ishchi geometriyasi va tarkibi turlicha bo‘ladi."
+            },
+            {
+              "id": "s08q03",
+              "q": "Sharsimon bor qanday shaklga ega?",
+              "options": [
+                "Yassi disk shakliga",
+                "To‘g‘ri sim shakliga",
+                "Yumaloq ishchi bosh qismga",
+                "To‘rtburchak oynaga"
+              ],
+              "answer": 2,
+              "explanation": "Sharsimon bor yumaloq ishchi qismi bilan tavsiflanadi."
+            },
+            {
+              "id": "s08q04",
+              "q": "Qaysi biri rotatsion asbobga misol bo‘la oladi?",
+              "options": [
+                "Stomatologik ko‘zgu",
+                "Yordamchi kursisi",
+                "Aspiratsiya shlangi",
+                "Abraziv disk"
+              ],
+              "answer": 3,
+              "explanation": "Abraziv disk aylanuvchi moslama sifatida ishlatilishi mumkin."
+            },
+            {
+              "id": "s08q05",
+              "q": "Dastak va borning mosligi nimaga qarab tekshiriladi?",
+              "options": [
+                "Texnik yo‘riqnomaga",
+                "Korpus yozuvi rangiga",
+                "Faqat narxiga",
+                "Faqat talaba fikriga"
+              ],
+              "answer": 0,
+              "explanation": "Moslik ishlab chiqaruvchi belgilagan xususiyatlarga asoslanadi."
+            },
+            {
+              "id": "s08q06",
+              "q": "Rotatsion asboblarni amalda qo‘llash qanday o‘rganiladi?",
+              "options": [
+                "Faqat matnni o‘qib bemorda sinab",
+                "Mutaxassis nazorati ostida",
+                "Nazoratsiz mashq qilib",
+                "Faqat reklama ko‘rib"
+              ],
+              "answer": 1,
+              "explanation": "Rotatsion uskunalarning amaliy xavfsizligi uchun mutaxassis nazorati talab etiladi."
+            }
+          ]
+        },
+        {
+          "id": "rotatsion_2",
+          "title": "9-mashg‘ulot. Borlar: shakl, tarkib va moslik",
+          "session_number": 9,
+          "calendar_topic": "Tishlarni charxlash uchun ishlatiladigan rotatsion asboblar. Borlar. Plombaga yakuniy ishlov berish uchun ishlatiladigan asboblar va ashyolar.",
+          "focus": "Borlar: shakl, tarkib va moslik",
+          "review_status": "DRAFT — o‘qituvchi tekshiruvi kutilmoqda",
+          "sections": [
+            {
+              "heading": "Ishchi qism shakllari",
+              "body": "Burlarning ishchi qismi sharsimon, silindrsimon, konussimon yoki boshqa shaklda bo‘lishi mumkin. Shakl ishlab chiqaruvchi tavsifida ko‘rsatiladi va turli vazifalar uchun farqlanadi."
+            },
+            {
+              "heading": "Tarkibiga ko‘ra umumiy guruhlar",
+              "body": "Stomatologik ishlov berish asboblari orasida metall, qattiq qotishma va abraziv qoplamali variantlar uchraydi. Material turi asbobning ishchi xususiyatlari bilan bog‘liq."
+            },
+            {
+              "heading": "Belgilash va saqlash madaniyati",
+              "body": "Asbob modeli, moslik talablari va qayta ishlov cheklovlari ishlab chiqaruvchi ma’lumotida ko‘rsatiladi. Bir martalik va qayta ishlatiladigan buyumlarni farqlash xavfsizlik uchun muhim."
+            }
+          ],
+          "sources": [
+            "https://e-library.sammu.uz/uz/book/4555",
+            "https://e-library.sammu.uz/uz/book/2058",
+            "https://e-library.sammu.uz/uz/book/5780"
+          ],
+          "questions": [
+            {
+              "id": "s09q01",
+              "q": "Silindrsimon ishchi qismning geometrik belgisi qaysi?",
+              "options": [
+                "Shar shaklida bo‘lishi",
+                "Silindr shakliga yaqin bo‘lishi",
+                "Yassi ko‘zgu bo‘lishi",
+                "Burchakli kreslo bo‘lishi"
+              ],
+              "answer": 1,
+              "explanation": "Nomidan ham ko‘rinadiki, silindrsimon borning ishchi qismi silindrga o‘xshash."
+            },
+            {
+              "id": "s09q02",
+              "q": "Abraziv qoplamali asbobning umumiy xususiyati qaysi?",
+              "options": [
+                "Yorug‘likni kuchaytirish",
+                "Suvni isitish",
+                "Sirtida ishqalanishga xizmat qiluvchi donachalar bo‘lishi",
+                "Rangli ekran yaratish"
+              ],
+              "answer": 2,
+              "explanation": "Abraziv yuzalar ishqalanish va materialga ishlov berish bilan bog‘liq."
+            },
+            {
+              "id": "s09q03",
+              "q": "Qattiq qotishmali bor haqida qaysi fikr mantiqan to‘g‘ri?",
+              "options": [
+                "Barcha modellari bir xil bo‘lishi",
+                "Faqat ko‘rik uchun xizmat qilishi",
+                "Hech qachon texnik hujjat talab qilmasligi",
+                "Ishchi materiali maxsus qotishmadan bo‘lishi"
+              ],
+              "answer": 3,
+              "explanation": "Qotishma — bir necha element asosidagi materiallar sinfiga kiradi."
+            },
+            {
+              "id": "s09q04",
+              "q": "Borning modelini aniqlash uchun qaysi manba afzal?",
+              "options": [
+                "Ishlab chiqaruvchi katalogi",
+                "Rangsiz taxmin",
+                "Tanish bo‘lmagan e’lon",
+                "Qadoqsiz fotosurat"
+              ],
+              "answer": 0,
+              "explanation": "Aniq kod va model spetsifikatsiyalarda bo‘ladi."
+            },
+            {
+              "id": "s09q05",
+              "q": "Bir martalik deb belgilangan asbobga qanday yondashish kerak?",
+              "options": [
+                "Uni doimo qayta ishlatish",
+                "Belgilangan bir martalik cheklovga amal qilish",
+                "Yo‘riqnomasini e’tiborsiz qoldirish",
+                "Uni boshqa tur deb belgilash"
+              ],
+              "answer": 1,
+              "explanation": "Bir martalik belgi ishlab chiqaruvchi ko‘rsatmasi bilan belgilanadi."
+            },
+            {
+              "id": "s09q06",
+              "q": "Rotatsion asbobni noto‘g‘ri moslash nimaga olib kelishi mumkin?",
+              "options": [
+                "Barcha asboblarning universalligiga",
+                "Kabinet yoritishining ortishiga",
+                "Xavfsizlik xavfiga",
+                "Fanning nomi o‘zgarishiga"
+              ],
+              "answer": 2,
+              "explanation": "Moslik buzilishi texnik va bemor xavfsizligi bilan bog‘liq xatar tug‘diradi."
+            }
+          ]
+        },
+        {
+          "id": "rotatsion_3",
+          "title": "10-mashg‘ulot. Plombaga yakuniy ishlov: nazariy maqsadlar",
+          "session_number": 10,
+          "calendar_topic": "Tishlarni charxlash uchun ishlatiladigan rotatsion asboblar. Borlar. Plombaga yakuniy ishlov berish uchun ishlatiladigan asboblar va ashyolar.",
+          "focus": "Plombaga yakuniy ishlov: nazariy maqsadlar",
+          "review_status": "DRAFT — o‘qituvchi tekshiruvi kutilmoqda",
+          "sections": [
+            {
+              "heading": "Yakuniy ishlovning nazariy mazmuni",
+              "body": "Restavratsiya yuzasiga yakuniy ishlov berish sirt notekisliklarini kamaytirish va mos yuzaviy ko‘rinishga erishish bilan bog‘liq. Finirovka va polirovka tushunchalari bir-biriga yaqin, ammo maqsadi va abraziv darajasi bilan farqlanadi."
+            },
+            {
+              "heading": "Yakuniy ishlovda uchraydigan buyumlar",
+              "body": "Finirovka va jilolash uchun turli abraziv disklar, rezina uchliklar va polirovka materiallari qo‘llanilishi mumkin. Ishlov tanlovi restavratsion materialning turiga bog‘liq."
+            },
+            {
+              "heading": "Nazorat va sifat",
+              "body": "Materialning ishlab chiqaruvchi ko‘rsatmasi, bemor xavfsizligi va mutaxassis bahosi yakuniy ishlov sifatini belgilaydi. Mazkur dars klinik ishlov berishning bosqichma-bosqich usulini o‘rgatmaydi."
+            }
+          ],
+          "sources": [
+            "https://e-library.sammu.uz/uz/book/4555",
+            "https://e-library.sammu.uz/uz/book/5780",
+            "https://e-library.sammu.uz/uz/book/2058"
+          ],
+          "questions": [
+            {
+              "id": "s10q01",
+              "q": "Polirovkaning umumiy maqsadi qaysi?",
+              "options": [
+                "Kompressor bosimini oshirish",
+                "Bemor kreslosini sozlash",
+                "Yuzani silliqroq qilish",
+                "Materialni saqlash muddatini hisoblash"
+              ],
+              "answer": 2,
+              "explanation": "Polirovka sirtning silliqligini oshirishga qaratiladi."
+            },
+            {
+              "id": "s10q02",
+              "q": "Abraziv disk qanday guruhga kirishi mumkin?",
+              "options": [
+                "Ko‘rik ko‘zgulariga",
+                "Sterilizatsiya indikatorlariga",
+                "Bemor hujjatlariga",
+                "Yakuniy ishlov moslamalariga"
+              ],
+              "answer": 3,
+              "explanation": "Disklar abraziv yakuniy ishlov uchun ishlatilishi mumkin."
+            },
+            {
+              "id": "s10q03",
+              "q": "Yakuniy ishlov materialini tanlash nimaga bog‘liq?",
+              "options": [
+                "Restavratsiya materialining turiga",
+                "Faqat dars jadvaliga",
+                "Faqat kabinet devori rangiga",
+                "Faqat telefon modeliga"
+              ],
+              "answer": 0,
+              "explanation": "Har bir restavratsiya materiali uchun mos ishlov vositasi belgilanadi."
+            },
+            {
+              "id": "s10q04",
+              "q": "Finirovka va polirovka atamalari qaysi soha bilan bog‘liq?",
+              "options": [
+                "Bemor ro‘yxatga olish bilan",
+                "Sirtga yakuniy ishlov bilan",
+                "Elektr tarmog‘i montaji bilan",
+                "Tibbiy sug‘urta hisoboti bilan"
+              ],
+              "answer": 1,
+              "explanation": "Ikkala atama ham restavratsiya yuzasiga yakuniy ishlov bilan bog‘liq."
+            },
+            {
+              "id": "s10q05",
+              "q": "Sirt sifatini nazorat qilishda nimaga tayaniladi?",
+              "options": [
+                "Faqat rangli reklama rasmlariga",
+                "Faqat asbob og‘irligiga",
+                "Material talablari va mutaxassis bahosiga",
+                "Faqat tasodifiy fikrlarga"
+              ],
+              "answer": 2,
+              "explanation": "Yakuniy sifat material xossalari va kasbiy baho bilan bog‘liq."
+            },
+            {
+              "id": "s10q06",
+              "q": "Yakuniy ishlov mashg‘ulotida klinik amaliyotni kim nazorat qiladi?",
+              "options": [
+                "Faqat kursdoshi",
+                "Faqat internetdagi videorolik",
+                "Faqat asbob sotuvchisi",
+                "O‘qitilgan stomatolog yoki o‘qituvchi"
+              ],
+              "answer": 3,
+              "explanation": "Klinik ish xavfsizligi uchun malakali nazorat talab etiladi."
+            }
+          ]
+        },
+        {
+          "id": "plombalar",
+          "title": "11-mashg‘ulot. Plomba ashyolari tasnifi va asosiy xossalar",
+          "session_number": 11,
+          "calendar_topic": "Plomba ashyolari tasnifi. Vaqtinchalik plomba ashyolari, bog‘lov materiallari.",
+          "focus": "Plomba ashyolari tasnifi va asosiy xossalar",
+          "review_status": "DRAFT — o‘qituvchi tekshiruvi kutilmoqda",
+          "sections": [
+            {
+              "heading": "Plomba ashyo tushunchasi",
+              "body": "Plomba ashyolari tish to‘qimalari nuqsonlarini tiklash maqsadida ishlab chiqilgan stomatologik materiallar guruhidir. Ular qo‘llash maqsadi, tarkibi va qotish mexanizmiga qarab turlicha bo‘ladi."
+            },
+            {
+              "heading": "Tasnifga misollar",
+              "body": "Restavratsion materiallar orasida kompozitlar, shisha ionomer sementlar va boshqa guruhlar mavjud. Vaqtinchalik va doimiy tiklashga mo‘ljallangan materiallar maqsadiga ko‘ra farqlanadi."
+            },
+            {
+              "heading": "Muhim xususiyatlar",
+              "body": "Materialning mexanik xossalari, og‘iz muhitiga mosligi, qotish usuli va ishlab chiqaruvchi ko‘rsatmasi ahamiyatli. Bir materialni barcha klinik holatlarga mos deb hisoblash to‘g‘ri emas."
+            }
+          ],
+          "sources": [
+            "https://e-library.sammu.uz/uz/book/4555",
+            "https://e-library.sammu.uz/uz/book/5780",
+            "https://e-library.sammu.uz/uz/book/2058"
+          ],
+          "questions": [
+            {
+              "id": "s11q01",
+              "q": "Plomba ashyolari qaysi mezonlar bo‘yicha tasniflanishi mumkin?",
+              "options": [
+                "Faqat qutining rangiga ko‘ra",
+                "Faqat sotilgan yiliga ko‘ra",
+                "Faqat reklama nomiga ko‘ra",
+                "Tarkibi va qo‘llash maqsadi bo‘yicha"
+              ],
+              "answer": 3,
+              "explanation": "Plomba materiallari tarkib, vazifa va qotish usuliga ko‘ra farqlanadi."
+            },
+            {
+              "id": "s11q02",
+              "q": "Kompozit qaysi guruhga kiradi?",
+              "options": [
+                "Restavratsion materiallarga",
+                "Ko‘rik ko‘zgulariga",
+                "Aspiratsiya qurilmalariga",
+                "Steril qoplarga"
+              ],
+              "answer": 0,
+              "explanation": "Kompozitlar restavratsiyada ishlatiladigan materiallar guruhidir."
+            },
+            {
+              "id": "s11q03",
+              "q": "Vaqtinchalik plomba ashyosining vazifasi nima?",
+              "options": [
+                "Barcha doimiy restavratsiyalarni almashtirish",
+                "Ma’lum muddatga yopuvchi tiklash vazifasini bajarish",
+                "Bemor kreslosini mahkamlash",
+                "Ishchi yoritgichni ta’mirlash"
+              ],
+              "answer": 1,
+              "explanation": "Vaqtinchalik materiallar cheklangan muddatga mo‘ljallanadi."
+            },
+            {
+              "id": "s11q04",
+              "q": "Materialning qotish usuli nimani ifodalaydi?",
+              "options": [
+                "Qayerda sotilganini",
+                "Kim qadoqlaganini",
+                "Qanday mexanizm bilan mustahkamlanishini",
+                "Kabinet eshigining rangini"
+              ],
+              "answer": 2,
+              "explanation": "Qotish mexanizmi material xossalaridan biridir."
+            },
+            {
+              "id": "s11q05",
+              "q": "Barcha plomba materiallari bir xil xususiyatga egami?",
+              "options": [
+                "Ha, mutlaqo bir xil",
+                "Faqat rangi farq qiladi",
+                "Faqat nomi farq qiladi",
+                "Yo‘q, materialga qarab farq qiladi"
+              ],
+              "answer": 3,
+              "explanation": "Turli materiallar tarkib va xossalarga ko‘ra farqlanadi."
+            },
+            {
+              "id": "s11q06",
+              "q": "Material tanlashga oid klinik qarorni kim qabul qiladi?",
+              "options": [
+                "Malakali stomatolog",
+                "Nazoratsiz talaba",
+                "Faqat reklama muallifi",
+                "Faqat internet foydalanuvchisi"
+              ],
+              "answer": 0,
+              "explanation": "Klinik material tanlovi stomatologik baholashni talab etadi."
+            }
+          ]
+        },
+        {
+          "id": "plombalar_2",
+          "title": "12-mashg‘ulot. Vaqtinchalik plomba ashyolari va bog‘lov materiallari",
+          "session_number": 12,
+          "calendar_topic": "Plomba ashyolari tasnifi. Vaqtinchalik plomba ashyolari, bog‘lov materiallari.",
+          "focus": "Vaqtinchalik plomba ashyolari va bog‘lov materiallari",
+          "review_status": "DRAFT — o‘qituvchi tekshiruvi kutilmoqda",
+          "sections": [
+            {
+              "heading": "Vaqtinchalik materiallar",
+              "body": "Vaqtinchalik plomba materiallari doimiy tiklashdan oldingi ayrim bosqichlarda ma’lum muddatga himoya yoki yopish vazifasini bajarishi mumkin. Ularning qo‘llash muddati mahsulot va klinik vaziyatga bog‘liq."
+            },
+            {
+              "heading": "Bog‘lov materiallari tushunchasi",
+              "body": "Bog‘lov materiallari stomatologik yordamda turli himoya va izolyatsiya vazifalarida uchrashi mumkin. Ularning vazifasi, steril holati va foydalanish sohasi mahsulot turiga qarab belgilanadi."
+            },
+            {
+              "heading": "Xavfsizlik va kuzatuv",
+              "body": "Vaqtinchalik material doimiy restavratsiya bilan bir xil hisoblanmaydi. Klinik qo‘llash va muddatni kuzatish stomatolog nazorati ostida bo‘ladi. Har qanday mahsulot uchun ishlab chiqaruvchining rasmiy yo‘riqnomasiga amal qilinadi."
+            }
+          ],
+          "sources": [
+            "https://e-library.sammu.uz/uz/book/4555",
+            "https://e-library.sammu.uz/uz/book/5780",
+            "https://e-library.sammu.uz/uz/book/343"
+          ],
+          "questions": [
+            {
+              "id": "s12q01",
+              "q": "Vaqtinchalik plomba ashyosi qaysi xususiyat bilan farqlanadi?",
+              "options": [
+                "Cheklangan muddatga mo‘ljallanishi bilan",
+                "Har doim umrbod turishi bilan",
+                "Faqat ko‘rik uchun bo‘lishi bilan",
+                "Elektr toki ishlab chiqarishi bilan"
+              ],
+              "answer": 0,
+              "explanation": "Vaqtinchalik materiallar ma’lum davr uchun ishlatiladi."
+            },
+            {
+              "id": "s12q02",
+              "q": "Vaqtinchalik va doimiy restavratsiya bir xil tushunchami?",
+              "options": [
+                "Ha, har bir holatda bir xil",
+                "Yo‘q, maqsad va muddat farq qiladi",
+                "Faqat nomi boshqa",
+                "Faqat qadoq o‘lchami boshqa"
+              ],
+              "answer": 1,
+              "explanation": "Vaqtinchalik tiklashning vazifasi va davomiyligi boshqacha."
+            },
+            {
+              "id": "s12q03",
+              "q": "Bog‘lov materiallari qanday maqsad bilan bog‘liq bo‘lishi mumkin?",
+              "options": [
+                "Faqat rentgen chiqarish",
+                "Faqat kompressorni ishga tushirish",
+                "Himoya va izolyatsiya",
+                "Faqat skaner xotirasi"
+              ],
+              "answer": 2,
+              "explanation": "Bog‘lov materiallari ko‘pincha himoya yoki ajratish vazifalarida uchraydi."
+            },
+            {
+              "id": "s12q04",
+              "q": "Vaqtinchalik material muddatini kim belgilaydi?",
+              "options": [
+                "Faqat bemorning taxmini",
+                "Faqat materialning rangi",
+                "Faqat reklama jadvali",
+                "Klinik holatni baholagan stomatolog"
+              ],
+              "answer": 3,
+              "explanation": "Davomiylikni stomatolog klinik vaziyat va mahsulot bo‘yicha belgilaydi."
+            },
+            {
+              "id": "s12q05",
+              "q": "Mahsulotning foydalanish sohasi haqida qayerdan ma’lumot olinadi?",
+              "options": [
+                "Ishlab chiqaruvchi yo‘riqnomasidan",
+                "Faqat bezak yozuvidan",
+                "Faqat tasodifiy sharhdan",
+                "Faqat narx yorlig‘idan"
+              ],
+              "answer": 0,
+              "explanation": "Rasmiy yo‘riqnomada ko‘rsatmalar va cheklovlar beriladi."
+            },
+            {
+              "id": "s12q06",
+              "q": "Bir martalik bog‘lov buyumi uchun qaysi prinsip to‘g‘ri?",
+              "options": [
+                "Doim qayta qo‘llash",
+                "Bir martalik qo‘llash chekloviga rioya qilish",
+                "Qadoq yorlig‘ini e’tiborsiz qoldirish",
+                "Har qanday yuzaga mos deyish"
+              ],
+              "answer": 1,
+              "explanation": "Bir martalik belgilangan mahsulot qayta ishlatilmasligi kerak."
+            }
+          ]
+        },
+        {
+          "id": "tagliklar",
+          "title": "13-mashg‘ulot. Ajratuvchi tagliklar va himoya vazifasi",
+          "session_number": 13,
+          "calendar_topic": "Ajratuvchi va davolovchi tagliklar. Sementlar. Tarkibi, xususiyatlari.",
+          "focus": "Ajratuvchi tagliklar va himoya vazifasi",
+          "review_status": "DRAFT — o‘qituvchi tekshiruvi kutilmoqda",
+          "sections": [
+            {
+              "heading": "Taglik nima?",
+              "body": "Stomatologik taglik (liner yoki base) — muayyan restavratsion holatlarda materiallar o‘rtasida yordamchi qatlam sifatida ishlatilishi mumkin bo‘lgan mahsulot. Turli tagliklarning maqsad va tarkibi farqlanadi."
+            },
+            {
+              "heading": "Ajratuvchi qatlam vazifasi",
+              "body": "Ajratuvchi tagliklar ayrim materiallar va tish to‘qimalari orasidagi muhitni boshqarish yoki himoya funksiyasi uchun ko‘zda tutilishi mumkin. Har bir tur uchun klinik ko‘rsatmalar boshqacha."
+            },
+            {
+              "heading": "Xususiyatlarni baholash",
+              "body": "Taglik materiallarida biologik moslik, mexanik xossalar va ustki materiallar bilan moslik muhim. Qaysi material kerakligini klinik baholash natijasida stomatolog belgilaydi."
+            }
+          ],
+          "sources": [
+            "https://e-library.sammu.uz/uz/book/4555",
+            "https://e-library.sammu.uz/uz/book/5780",
+            "https://e-library.sammu.uz/uz/book/2058"
+          ],
+          "questions": [
+            {
+              "id": "s13q01",
+              "q": "Ajratuvchi taglik umumiy ma’noda qanday vazifaga ega?",
+              "options": [
+                "Yoritgich ishlab chiqarishi",
+                "Yordamchi himoya qatlami bo‘lishi",
+                "Kompressor havosini siqishi",
+                "Ko‘rik ko‘zgusini almashtirishi"
+              ],
+              "answer": 1,
+              "explanation": "Ajratuvchi qatlam ayrim restavratsion vaziyatlarda yordamchi himoya sifatida ishlatiladi."
+            },
+            {
+              "id": "s13q02",
+              "q": "Taglik va doimiy plomba materiali doimo bir xilmi?",
+              "options": [
+                "Ha, doim bir xil",
+                "Faqat qadoqlari farq qiladi",
+                "Yo‘q, vazifalari turlicha bo‘lishi mumkin",
+                "Faqat nomlari farq qiladi"
+              ],
+              "answer": 2,
+              "explanation": "Taglik yordamchi, restavratsion material esa boshqa maqsad uchun mo‘ljallanadi."
+            },
+            {
+              "id": "s13q03",
+              "q": "Taglik materialining qaysi xossasi ahamiyatli?",
+              "options": [
+                "Faqat qutidagi rasm",
+                "Faqat reklama uzunligi",
+                "Faqat sotuv nuqtasi",
+                "Biologik mosligi"
+              ],
+              "answer": 3,
+              "explanation": "Biologik moslik tibbiy materiallarni baholashda muhim."
+            },
+            {
+              "id": "s13q04",
+              "q": "Materiallararo moslikni baholash nimaga bog‘liq?",
+              "options": [
+                "Mahsulotlar xossalari va ko‘rsatmalariga",
+                "Faqat kabinet yoritishiga",
+                "Faqat poyabzal rangiga",
+                "Faqat reklama musiqasiga"
+              ],
+              "answer": 0,
+              "explanation": "Turli materiallarning bir-biriga mosligi hujjat bilan tekshiriladi."
+            },
+            {
+              "id": "s13q05",
+              "q": "Ajratuvchi tagliklardan foydalanishni kim belgilaydi?",
+              "options": [
+                "Faqat ishlab chiqarish sanasi",
+                "Stomatolog klinik baholash asosida",
+                "Faqat sinfdosh taklifi",
+                "Faqat internetdagi tasodifiy rasm"
+              ],
+              "answer": 1,
+              "explanation": "Klinik ko‘rsatma stomatolog bahosiga bog‘liq."
+            },
+            {
+              "id": "s13q06",
+              "q": "Taglik turi haqida qaysi manbani ko‘rish afzal?",
+              "options": [
+                "Faqat qadoq bezagini",
+                "Faqat savdo chegirmasini",
+                "Mahsulotning texnik va klinik yo‘riqnomasini",
+                "Faqat ijtimoiy tarmoq izohini"
+              ],
+              "answer": 2,
+              "explanation": "Yo‘riqnoma mahsulotning maqsadi va cheklovlarini beradi."
+            }
+          ]
+        },
+        {
+          "id": "tagliklar_2",
+          "title": "14-mashg‘ulot. Davolovchi tagliklar va biomoslik",
+          "session_number": 14,
+          "calendar_topic": "Ajratuvchi va davolovchi tagliklar. Sementlar. Tarkibi, xususiyatlari.",
+          "focus": "Davolovchi tagliklar va biomoslik",
+          "review_status": "DRAFT — o‘qituvchi tekshiruvi kutilmoqda",
+          "sections": [
+            {
+              "heading": "Davolovchi taglik tushunchasi",
+              "body": "Davolovchi tagliklar ayrim klinik vaziyatlarda biologik to‘qimalarni himoyalashga yo‘naltirilgan materiallar guruhidir. Ular barcha holatlarda bir xil yoki bir-birini almashtiruvchi mahsulotlar emas."
+            },
+            {
+              "heading": "Tarkib va xossalar",
+              "body": "Davolovchi yo‘nalishdagi stomatologik materiallarda biologik moslik, qotish xususiyatlari va boshqa restavratsion materiallar bilan muvofiqlik ahamiyatli. Mahsulot tarkibi va aniq vazifasi ishlab chiqaruvchi tavsifida ko‘rsatiladi."
+            },
+            {
+              "heading": "Klinik chegaralar",
+              "body": "Davolovchi taglikni tanlash bemorning holatiga bog‘liq tibbiy qarordir. Ushbu dars materiallarni nazariy farqlashga xizmat qiladi, mustaqil bemor davolash bo‘yicha ko‘rsatma bermaydi."
+            }
+          ],
+          "sources": [
+            "https://e-library.sammu.uz/uz/book/4555",
+            "https://e-library.sammu.uz/uz/book/5780",
+            "https://e-library.sammu.uz/uz/book/50"
+          ],
+          "questions": [
+            {
+              "id": "s14q01",
+              "q": "Davolovchi tagliklar umumiy ma’noda qaysi maqsad bilan bog‘liq?",
+              "options": [
+                "Yoritgichni sozlash",
+                "Kompressor kuchlanishini oshirish",
+                "To‘qimalarni muayyan holatlarda himoyalash",
+                "Ko‘zgu shaklini o‘zgartirish"
+              ],
+              "answer": 2,
+              "explanation": "Davolovchi materiallar muayyan biologik himoya maqsadiga qaratilishi mumkin."
+            },
+            {
+              "id": "s14q02",
+              "q": "Davolovchi materialning muhim xususiyati qaysi?",
+              "options": [
+                "Faqat qadoq rangi",
+                "Faqat savdo markasi uzunligi",
+                "Faqat hajm shriftining kattaligi",
+                "Biologik mosligi"
+              ],
+              "answer": 3,
+              "explanation": "Biologik moslik tibbiy materiallar uchun muhim baholash mezoni."
+            },
+            {
+              "id": "s14q03",
+              "q": "Barcha davolovchi tagliklar bir xil tarkiblimi?",
+              "options": [
+                "Yo‘q, tarkiblari turlicha bo‘ladi",
+                "Ha, har doim bir xil",
+                "Faqat yorliqlari farq qiladi",
+                "Faqat narxi farq qiladi"
+              ],
+              "answer": 0,
+              "explanation": "Turli ishlab chiqaruvchilar va material guruhlarining tarkibi farq qiladi."
+            },
+            {
+              "id": "s14q04",
+              "q": "Davolovchi taglikni klinik tanlash qaysi shaxs vakolatida?",
+              "options": [
+                "Nazoratsiz talaba",
+                "Malakali stomatolog",
+                "Faqat reklama agenti",
+                "Faqat bemorning taxmini"
+              ],
+              "answer": 1,
+              "explanation": "Klinik material tanlovi professional baho talab etadi."
+            },
+            {
+              "id": "s14q05",
+              "q": "Materialning qotish xususiyati haqida nima bilish kerak?",
+              "options": [
+                "U barcha mahsulotlarda bir xil",
+                "Uning klinik ahamiyati yo‘q",
+                "U mahsulotning muhim texnik xususiyatidir",
+                "U faqat qadoqga tegishli"
+              ],
+              "answer": 2,
+              "explanation": "Qotish usuli va holati restavratsion materialning texnik xossalaridir."
+            },
+            {
+              "id": "s14q06",
+              "q": "Davolovchi taglik haqida ishonchli ma’lumot qayerda yoziladi?",
+              "options": [
+                "Faqat reklama shiorida",
+                "Faqat do‘kon vitrinasi rangida",
+                "Faqat kursdosh xabarida",
+                "Mahsulotning klinik va texnik hujjatida"
+              ],
+              "answer": 3,
+              "explanation": "Rasmiy hujjatlar mahsulotning maqsadi va cheklovlarini belgilaydi."
+            }
+          ]
+        },
+        {
+          "id": "tagliklar_3",
+          "title": "15-mashg‘ulot. Stomatologik sementlar: tarkibi, xususiyatlari va umumlashtirish",
+          "session_number": 15,
+          "calendar_topic": "Ajratuvchi va davolovchi tagliklar. Sementlar. Tarkibi, xususiyatlari.",
+          "focus": "Stomatologik sementlar: tarkibi, xususiyatlari va umumlashtirish",
+          "review_status": "DRAFT — o‘qituvchi tekshiruvi kutilmoqda",
+          "sections": [
+            {
+              "heading": "Sementlar nima?",
+              "body": "Stomatologik sementlar tarkibi va vazifasi turlicha bo‘lgan materiallar guruhidir. Ayrimlari mahkamlash, ayrimlari yordamchi taglik yoki restavratsion maqsadlarda qo‘llanishi mumkin."
+            },
+            {
+              "heading": "Guruhlar va xususiyatlar",
+              "body": "Shisha ionomer va boshqa sement turlari kimyoviy tarkibi, qotish mexanizmi va qo‘llash maqsadi bilan farqlanadi. Materialning mexanik mustahkamligi, biologik mosligi va boshqa materiallar bilan muvofiqligi ahamiyatli."
+            },
+            {
+              "heading": "Semestr yakuni",
+              "body": "15 mashg‘ulot davomida ergonomika, qurilmalar, asboblar, rotatsion vositalar, plomba materiallari va taglik-sementlarning asosiy nazariy tushunchalari o‘rganildi. Materiallar bilan amaliy ish faqat mutaxassis nazorati, rasmiy yo‘riqnoma va xavfsizlik qoidalari asosida bo‘ladi."
+            }
+          ],
+          "sources": [
+            "https://e-library.sammu.uz/uz/book/4555",
+            "https://e-library.sammu.uz/uz/book/5780",
+            "https://e-library.sammu.uz/uz/book/2058"
+          ],
+          "questions": [
+            {
+              "id": "s15q01",
+              "q": "Stomatologik sementlar nimaga ko‘ra farqlanishi mumkin?",
+              "options": [
+                "Faqat qadoq rangiga",
+                "Faqat reklama uzunligiga",
+                "Faqat yetkazib berish vaqtiga",
+                "Tarkibi va qo‘llash maqsadiga"
+              ],
+              "answer": 3,
+              "explanation": "Sementlarni tarkib, vazifa va qotish mexanizmi bo‘yicha tavsiflash mumkin."
+            },
+            {
+              "id": "s15q02",
+              "q": "Shisha ionomer qaysi material sinfiga misol bo‘ladi?",
+              "options": [
+                "Stomatologik sementga",
+                "Rotatsion borga",
+                "Ko‘rik ko‘zgusiga",
+                "Aspiratsiya moduliga"
+              ],
+              "answer": 0,
+              "explanation": "Shisha ionomer stomatologik sement materiallari guruhidir."
+            },
+            {
+              "id": "s15q03",
+              "q": "Sementning qotish mexanizmi nima bilan bog‘liq?",
+              "options": [
+                "Faqat narxning o‘zgarishi bilan",
+                "Materialning kimyoviy-fizik o‘zgarishi bilan",
+                "Faqat yorliq bosilishi bilan",
+                "Faqat qadoq rangi bilan"
+              ],
+              "answer": 1,
+              "explanation": "Qotish mexanizmi materialning xossasini belgilaydi."
+            },
+            {
+              "id": "s15q04",
+              "q": "Sementning barcha turlari aynan bir vazifani bajaradimi?",
+              "options": [
+                "Ha, har bir holatda bir xil",
+                "Faqat ishlab chiqaruvchi nomi farq qiladi",
+                "Yo‘q, turiga ko‘ra maqsadi farqlanadi",
+                "Faqat qadoq tiliga ko‘ra farq qiladi"
+              ],
+              "answer": 2,
+              "explanation": "Sementlar turli vazifa va klinik ko‘rsatmalarga ega."
+            },
+            {
+              "id": "s15q05",
+              "q": "Qaysi xossa sementlar uchun ahamiyatlidir?",
+              "options": [
+                "Faqat reklama surati",
+                "Faqat karton qalinligi",
+                "Faqat telefon ilovasi rangi",
+                "Biologik moslik va mexanik xususiyatlar"
+              ],
+              "answer": 3,
+              "explanation": "Sementlarning ishlatilishiga biologik va mexanik xossalar ta’sir qiladi."
+            },
+            {
+              "id": "s15q06",
+              "q": "15-mashg‘ulotning nazariy yakunida qaysi prinsip ustun turadi?",
+              "options": [
+                "Materialni tanlashda xavfsizlik va mutaxassis bahosiga tayanish",
+                "Har qanday mahsulotni bemorda o‘zboshimchalik bilan sinash",
+                "Barcha sementlarni aynan bir xil deb bilish",
+                "Mahsulot yo‘riqnomasini e’tiborsiz qoldirish"
+              ],
+              "answer": 0,
+              "explanation": "Klinik qaror va xavfsiz amaliyot mutaxassis bahosi hamda rasmiy yo‘riqnomaga tayanadi."
             }
           ]
         }
