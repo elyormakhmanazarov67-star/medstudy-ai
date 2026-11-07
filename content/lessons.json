@@ -1,5 +1,5 @@
 {
-  "version": "0.5.8-medical-english-teacher-materials",
+  "version": "0.5.9-required-materials-only",
   "status": "TEST — O‘qituvchi materiallari va OpenStax ochiq darsliklaridan manba ko‘rsatilgan alohida o‘quv materiallari. Mutaxassis tekshiruvi talab etiladi.",
   "note": "O‘qituvchi matnlari uydirilmaydi; talabadan olingan fayllar nomi ro‘yxatda ko‘rsatiladi. To‘liq fayllarni ilovadan yuklab olish hozir ulanmagan.",
   "subjects": [
@@ -54,20 +54,7 @@
               "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
             }
           ],
-          "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
-          "sammu_books": [
-            {
-              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "Stomotologik asbob va ashyolar — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2058",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
         },
         {
           "id": "ergonomika_2",
@@ -113,20 +100,7 @@
               "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
             }
           ],
-          "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
-          "sammu_books": [
-            {
-              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "Stomotologik asbob va ashyolar — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2058",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
         },
         {
           "id": "qurilmalar",
@@ -172,20 +146,7 @@
               "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
             }
           ],
-          "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
-          "sammu_books": [
-            {
-              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "Stomotologik asbob va ashyolar — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2058",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
         },
         {
           "id": "qurilmalar_2",
@@ -231,20 +192,7 @@
               "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
             }
           ],
-          "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
-          "sammu_books": [
-            {
-              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "Stomotologik asbob va ashyolar — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2058",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
         },
         {
           "id": "qurilmalar_3",
@@ -290,20 +238,7 @@
               "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
             }
           ],
-          "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
-          "sammu_books": [
-            {
-              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "Stomotologik asbob va ashyolar — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2058",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
         },
         {
           "id": "asboblar",
@@ -355,20 +290,7 @@
               "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
             }
           ],
-          "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
-          "sammu_books": [
-            {
-              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "Stomotologik asbob va ashyolar — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2058",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
         },
         {
           "id": "asboblar_2",
@@ -420,20 +342,7 @@
               "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
             }
           ],
-          "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
-          "sammu_books": [
-            {
-              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "Stomotologik asbob va ashyolar — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2058",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
         },
         {
           "id": "rotatsion",
@@ -485,20 +394,7 @@
               "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
             }
           ],
-          "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
-          "sammu_books": [
-            {
-              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "Stomotologik asbob va ashyolar — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2058",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
         },
         {
           "id": "rotatsion_2",
@@ -550,20 +446,7 @@
               "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
             }
           ],
-          "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
-          "sammu_books": [
-            {
-              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "Stomotologik asbob va ashyolar — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2058",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
         },
         {
           "id": "rotatsion_3",
@@ -615,20 +498,7 @@
               "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
             }
           ],
-          "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
-          "sammu_books": [
-            {
-              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "Stomotologik asbob va ashyolar — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2058",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
         },
         {
           "id": "plombalar",
@@ -674,20 +544,7 @@
               "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
             }
           ],
-          "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
-          "sammu_books": [
-            {
-              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "Stomotologik asbob va ashyolar — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2058",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
         },
         {
           "id": "plombalar_2",
@@ -733,20 +590,7 @@
               "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
             }
           ],
-          "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
-          "sammu_books": [
-            {
-              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "Stomotologik asbob va ashyolar — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2058",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
         },
         {
           "id": "tagliklar",
@@ -792,20 +636,7 @@
               "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
             }
           ],
-          "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
-          "sammu_books": [
-            {
-              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "Stomotologik asbob va ashyolar — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2058",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
         },
         {
           "id": "tagliklar_2",
@@ -851,20 +682,7 @@
               "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
             }
           ],
-          "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
-          "sammu_books": [
-            {
-              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "Stomotologik asbob va ashyolar — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2058",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
         },
         {
           "id": "tagliklar_3",
@@ -910,20 +728,7 @@
               "explanation": "Foydalanuvchi yuborgan stomatologiya qo‘llanmasining mos bobiga asoslangan."
             }
           ],
-          "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
-          "sammu_books": [
-            {
-              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "Stomotologik asbob va ashyolar — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2058",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
         },
         {
           "id": "pre_session_16",
@@ -969,20 +774,7 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
-          "sammu_books": [
-            {
-              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "Stomotologik asbob va ashyolar — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2058",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
         },
         {
           "id": "pre_session_17",
@@ -1028,20 +820,7 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
-          "sammu_books": [
-            {
-              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "Stomotologik asbob va ashyolar — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2058",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
         },
         {
           "id": "pre_session_18",
@@ -1087,20 +866,7 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
-          "sammu_books": [
-            {
-              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "Stomotologik asbob va ashyolar — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2058",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
         },
         {
           "id": "pre_session_19",
@@ -1146,20 +912,7 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
-          "sammu_books": [
-            {
-              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "Stomotologik asbob va ashyolar — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2058",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
         },
         {
           "id": "pre_session_20",
@@ -1205,20 +958,7 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
-          "sammu_books": [
-            {
-              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "Stomotologik asbob va ashyolar — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2058",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
         },
         {
           "id": "pre_session_21",
@@ -1264,20 +1004,7 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
-          "sammu_books": [
-            {
-              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "Stomotologik asbob va ashyolar — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2058",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
         },
         {
           "id": "pre_session_22",
@@ -1323,20 +1050,7 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
-          "sammu_books": [
-            {
-              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "Stomotologik asbob va ashyolar — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2058",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
         },
         {
           "id": "pre_session_23",
@@ -1382,20 +1096,7 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
-          "sammu_books": [
-            {
-              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "Stomotologik asbob va ashyolar — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2058",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
         },
         {
           "id": "pre_session_24",
@@ -1441,20 +1142,7 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
-          "sammu_books": [
-            {
-              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "Stomotologik asbob va ashyolar — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2058",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
         },
         {
           "id": "pre_session_25",
@@ -1500,20 +1188,7 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
-          "sammu_books": [
-            {
-              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "Stomotologik asbob va ashyolar — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2058",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
         },
         {
           "id": "pre_session_26",
@@ -1546,20 +1221,7 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
-          "sammu_books": [
-            {
-              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "Stomotologik asbob va ashyolar — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2058",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
         },
         {
           "id": "pre_session_27",
@@ -1592,20 +1254,7 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
-          "sammu_books": [
-            {
-              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "Stomotologik asbob va ashyolar — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2058",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
         },
         {
           "id": "pre_session_28",
@@ -1638,20 +1287,7 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
-          "sammu_books": [
-            {
-              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "Stomotologik asbob va ashyolar — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2058",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
         },
         {
           "id": "pre_session_29",
@@ -1684,20 +1320,7 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
-          "sammu_books": [
-            {
-              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "Stomotologik asbob va ashyolar — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2058",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
         },
         {
           "id": "pre_session_30",
@@ -1743,20 +1366,7 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
-          "sammu_books": [
-            {
-              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "Stomotologik asbob va ashyolar — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2058",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
         },
         {
           "id": "pre_session_31",
@@ -1802,20 +1412,7 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "supplementary": [],
-          "review_status": "USER_SOURCE_DRAFT — teacher text condensed",
-          "sammu_books": [
-            {
-              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "Stomotologik asbob va ashyolar — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2058",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "USER_SOURCE_DRAFT — teacher text condensed"
         }
       ]
     },
@@ -1836,20 +1433,7 @@
           "sections": [],
           "teacher_materials": [],
           "questions": [],
-          "supplementary": [],
-          "review_status": "AWAITING_USER_MATERIALS",
-          "sammu_books": [
-            {
-              "title": "Stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/50",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "AWAITING_USER_MATERIALS"
         },
         {
           "id": "intro_a2",
@@ -1860,20 +1444,7 @@
           "sections": [],
           "teacher_materials": [],
           "questions": [],
-          "supplementary": [],
-          "review_status": "AWAITING_USER_MATERIALS",
-          "sammu_books": [
-            {
-              "title": "Stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/50",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "AWAITING_USER_MATERIALS"
         },
         {
           "id": "intro_a3",
@@ -1884,20 +1455,7 @@
           "sections": [],
           "teacher_materials": [],
           "questions": [],
-          "supplementary": [],
-          "review_status": "AWAITING_USER_MATERIALS",
-          "sammu_books": [
-            {
-              "title": "Stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/50",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "AWAITING_USER_MATERIALS"
         },
         {
           "id": "intro_a4",
@@ -1908,20 +1466,7 @@
           "sections": [],
           "teacher_materials": [],
           "questions": [],
-          "supplementary": [],
-          "review_status": "AWAITING_USER_MATERIALS",
-          "sammu_books": [
-            {
-              "title": "Stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/50",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "AWAITING_USER_MATERIALS"
         },
         {
           "id": "intro_a5",
@@ -1932,20 +1477,7 @@
           "sections": [],
           "teacher_materials": [],
           "questions": [],
-          "supplementary": [],
-          "review_status": "AWAITING_USER_MATERIALS",
-          "sammu_books": [
-            {
-              "title": "Stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/50",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "AWAITING_USER_MATERIALS"
         },
         {
           "id": "intro_a6",
@@ -1956,20 +1488,7 @@
           "sections": [],
           "teacher_materials": [],
           "questions": [],
-          "supplementary": [],
-          "review_status": "AWAITING_USER_MATERIALS",
-          "sammu_books": [
-            {
-              "title": "Stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/50",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "AWAITING_USER_MATERIALS"
         },
         {
           "id": "intro_a7",
@@ -1980,20 +1499,7 @@
           "sections": [],
           "teacher_materials": [],
           "questions": [],
-          "supplementary": [],
-          "review_status": "AWAITING_USER_MATERIALS",
-          "sammu_books": [
-            {
-              "title": "Stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/50",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "AWAITING_USER_MATERIALS"
         },
         {
           "id": "intro_a8",
@@ -2004,20 +1510,7 @@
           "sections": [],
           "teacher_materials": [],
           "questions": [],
-          "supplementary": [],
-          "review_status": "AWAITING_USER_MATERIALS",
-          "sammu_books": [
-            {
-              "title": "Stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/50",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "AWAITING_USER_MATERIALS"
         },
         {
           "id": "intro_a9",
@@ -2028,20 +1521,7 @@
           "sections": [],
           "teacher_materials": [],
           "questions": [],
-          "supplementary": [],
-          "review_status": "AWAITING_USER_MATERIALS",
-          "sammu_books": [
-            {
-              "title": "Stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/50",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "AWAITING_USER_MATERIALS"
         },
         {
           "id": "intro_a10",
@@ -2052,20 +1532,7 @@
           "sections": [],
           "teacher_materials": [],
           "questions": [],
-          "supplementary": [],
-          "review_status": "AWAITING_USER_MATERIALS",
-          "sammu_books": [
-            {
-              "title": "Stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/50",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "AWAITING_USER_MATERIALS"
         },
         {
           "id": "intro_a11",
@@ -2076,20 +1543,7 @@
           "sections": [],
           "teacher_materials": [],
           "questions": [],
-          "supplementary": [],
-          "review_status": "AWAITING_USER_MATERIALS",
-          "sammu_books": [
-            {
-              "title": "Stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/50",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "AWAITING_USER_MATERIALS"
         },
         {
           "id": "intro_a12",
@@ -2100,20 +1554,7 @@
           "sections": [],
           "teacher_materials": [],
           "questions": [],
-          "supplementary": [],
-          "review_status": "AWAITING_USER_MATERIALS",
-          "sammu_books": [
-            {
-              "title": "Stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/50",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "Preklinik restavratsion stomatologiya — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4555",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "AWAITING_USER_MATERIALS"
         }
       ]
     },
@@ -2130,45 +1571,7 @@
           "sections": [],
           "teacher_materials": [],
           "questions": [],
-          "supplementary": [
-            {
-              "title": "OpenStax — Skelet tizimi haqida",
-              "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/7-1-divisions-of-the-skeletal-system",
-              "kind": "Ochiq elektron darslik"
-            }
-          ],
-          "review_status": "AWAITING_USER_MATERIALS",
-          "supplement_sections": [
-            {
-              "heading": "Skelet tizimi haqida",
-              "body": "Voyaga yetgan odam skeleti o‘q skeleti va qo‘shimcha skeletga bo‘linadi. O‘q skeleti kalla, umurtqa pog‘onasi va ko‘krak qafasini qamrab oladi. Qo‘shimcha skeletda qo‘l-oyoq suyaklari va ularni gavdaga biriktiruvchi kamarlar joylashgan."
-            },
-            {
-              "heading": "Manba va o‘quv chegarasi",
-              "body": "Mustaqil qayta bayon qilingan qisqa konspekt; OpenStax (Rice University) ochiq darsligining mos bo‘limi asosida. O‘qituvchi materiallari alohida. Faqat nazariy tanishuv uchun."
-            }
-          ],
-          "supplement_questions": [
-            {
-              "id": "anat_1_extra1",
-              "q": "O‘q skeletiga qaysi tuzilma kiradi?",
-              "options": [
-                "Qo‘l panjasi",
-                "Kalla suyagi",
-                "Son suyagi",
-                "Kurak suyagi"
-              ],
-              "answer": 1,
-              "explanation": "Qo‘shimcha ma’lumotlardagi «Skelet tizimi haqida» bo‘limidan."
-            }
-          ],
-          "sammu_books": [
-            {
-              "title": "Odam anatomiyasi — SamMU e-library (Gadayev A.G.)",
-              "url": "https://e-library.sammu.uz/uz/book/216",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "AWAITING_USER_MATERIALS"
         },
         {
           "id": "anat_2",
@@ -2179,45 +1582,7 @@
           "sections": [],
           "teacher_materials": [],
           "questions": [],
-          "supplementary": [
-            {
-              "title": "OpenStax — Umurtqa pog‘onasi",
-              "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/7-3-the-vertebral-column",
-              "kind": "Ochiq elektron darslik"
-            }
-          ],
-          "review_status": "AWAITING_USER_MATERIALS",
-          "supplement_sections": [
-            {
-              "heading": "Umurtqa pog‘onasi",
-              "body": "Umurtqa pog‘onasi bo‘yin, ko‘krak, bel, dumg‘aza va dum qismlariga ajratiladi. Katta yoshda erkin umurtqalar bo‘yinda 7 ta, ko‘krakda 12 ta va belda 5 ta bo‘ladi. Dumg‘aza hamda dum suyaklarida birikish va o‘sish bilan bog‘liq yoshga xos o‘zgarishlar kuzatiladi."
-            },
-            {
-              "heading": "Manba va o‘quv chegarasi",
-              "body": "Mustaqil qayta bayon qilingan qisqa konspekt; OpenStax (Rice University) ochiq darsligining mos bo‘limi asosida. O‘qituvchi materiallari alohida. Faqat nazariy tanishuv uchun."
-            }
-          ],
-          "supplement_questions": [
-            {
-              "id": "anat_2_extra1",
-              "q": "Ko‘krak umurtqalari nechta?",
-              "options": [
-                "5 ta",
-                "7 ta",
-                "12 ta",
-                "2 ta"
-              ],
-              "answer": 2,
-              "explanation": "Qo‘shimcha ma’lumotlardagi «Umurtqa pog‘onasi» bo‘limidan."
-            }
-          ],
-          "sammu_books": [
-            {
-              "title": "Odam anatomiyasi — SamMU e-library (Gadayev A.G.)",
-              "url": "https://e-library.sammu.uz/uz/book/216",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "AWAITING_USER_MATERIALS"
         },
         {
           "id": "anat_3",
@@ -2228,45 +1593,7 @@
           "sections": [],
           "teacher_materials": [],
           "questions": [],
-          "supplementary": [
-            {
-              "title": "OpenStax — Ko‘krak qafasi",
-              "url": "https://openstax.org/books/anatomy-and-physiology/pages/7-4-the-thoracic-cage",
-              "kind": "Ochiq elektron darslik"
-            }
-          ],
-          "review_status": "AWAITING_USER_MATERIALS",
-          "supplement_sections": [
-            {
-              "heading": "Ko‘krak qafasi",
-              "body": "Ko‘krak qafasining asosiy suyaklari — 12 juft qovurg‘a, to‘sh suyagi va ko‘krak umurtqalari. To‘sh suyagi dastasi, tanasi va xanjarsimon o‘simtadan iborat. Bu tuzilma yurak va o‘pkani himoya qiladi."
-            },
-            {
-              "heading": "Manba va o‘quv chegarasi",
-              "body": "Mustaqil qayta bayon qilingan qisqa konspekt; OpenStax (Rice University) ochiq darsligining mos bo‘limi asosida. O‘qituvchi materiallari alohida. Faqat nazariy tanishuv uchun."
-            }
-          ],
-          "supplement_questions": [
-            {
-              "id": "anat_3_extra1",
-              "q": "Ko‘krak qafasida nechta juft qovurg‘a mavjud?",
-              "options": [
-                "7 juft",
-                "5 juft",
-                "14 juft",
-                "12 juft"
-              ],
-              "answer": 3,
-              "explanation": "Qo‘shimcha ma’lumotlardagi «Ko‘krak qafasi» bo‘limidan."
-            }
-          ],
-          "sammu_books": [
-            {
-              "title": "Odam anatomiyasi — SamMU e-library (Gadayev A.G.)",
-              "url": "https://e-library.sammu.uz/uz/book/216",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "AWAITING_USER_MATERIALS"
         },
         {
           "id": "anat_4",
@@ -2277,45 +1604,7 @@
           "sections": [],
           "teacher_materials": [],
           "questions": [],
-          "supplementary": [
-            {
-              "title": "OpenStax — Yelka kamari",
-              "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/8-1-the-pectoral-girdle",
-              "kind": "Ochiq elektron darslik"
-            }
-          ],
-          "review_status": "AWAITING_USER_MATERIALS",
-          "supplement_sections": [
-            {
-              "heading": "Yelka kamari",
-              "body": "Yelka kamari o‘mrov suyagi (clavicula) va kurak suyagidan (scapula) tashkil topadi. O‘mrov suyagi ko‘krak qafasi bilan, kurak suyagi esa yelka suyagi bilan bog‘liq bo‘lgan bo‘g‘imlar hosil qiladi. Har ikkisi qo‘lning harakat imkoniyatiga xizmat qiladi."
-            },
-            {
-              "heading": "Manba va o‘quv chegarasi",
-              "body": "Mustaqil qayta bayon qilingan qisqa konspekt; OpenStax (Rice University) ochiq darsligining mos bo‘limi asosida. O‘qituvchi materiallari alohida. Faqat nazariy tanishuv uchun."
-            }
-          ],
-          "supplement_questions": [
-            {
-              "id": "anat_4_extra1",
-              "q": "Yelka kamaridagi suyaklar qaysilar?",
-              "options": [
-                "O‘mrov va kurak",
-                "Ensa va tepa",
-                "Chanoq va dumg‘aza",
-                "Yuqori va pastki jag‘"
-              ],
-              "answer": 0,
-              "explanation": "Qo‘shimcha ma’lumotlardagi «Yelka kamari» bo‘limidan."
-            }
-          ],
-          "sammu_books": [
-            {
-              "title": "Odam anatomiyasi — SamMU e-library (Gadayev A.G.)",
-              "url": "https://e-library.sammu.uz/uz/book/216",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "AWAITING_USER_MATERIALS"
         },
         {
           "id": "anat_5",
@@ -2326,45 +1615,7 @@
           "sections": [],
           "teacher_materials": [],
           "questions": [],
-          "supplementary": [
-            {
-              "title": "OpenStax — Qo‘l skeleti",
-              "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/8-1-the-pectoral-girdle",
-              "kind": "Ochiq elektron darslik"
-            }
-          ],
-          "review_status": "AWAITING_USER_MATERIALS",
-          "supplement_sections": [
-            {
-              "heading": "Qo‘l skeleti",
-              "body": "Qo‘l suyaklari yelka, bilak va panja qismlariga ajratiladi. Yelka kamari qo‘lni o‘q skeleti bilan bog‘laydi. Qo‘lning uzun suyaklari, bo‘g‘imlari va panja suyaklari turli shakldagi harakatlarni ta’minlaydi."
-            },
-            {
-              "heading": "Manba va o‘quv chegarasi",
-              "body": "Mustaqil qayta bayon qilingan qisqa konspekt; OpenStax (Rice University) ochiq darsligining mos bo‘limi asosida. O‘qituvchi materiallari alohida. Faqat nazariy tanishuv uchun."
-            }
-          ],
-          "supplement_questions": [
-            {
-              "id": "anat_5_extra1",
-              "q": "Qo‘lni gavdaga biriktiruvchi kamar nima deyiladi?",
-              "options": [
-                "Chanoq kamari",
-                "Yelka kamari",
-                "Kalla asosi",
-                "Ko‘krak umurtqasi"
-              ],
-              "answer": 1,
-              "explanation": "Qo‘shimcha ma’lumotlardagi «Qo‘l skeleti» bo‘limidan."
-            }
-          ],
-          "sammu_books": [
-            {
-              "title": "Odam anatomiyasi — SamMU e-library (Gadayev A.G.)",
-              "url": "https://e-library.sammu.uz/uz/book/216",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "AWAITING_USER_MATERIALS"
         },
         {
           "id": "anat_6",
@@ -2375,45 +1626,7 @@
           "sections": [],
           "teacher_materials": [],
           "questions": [],
-          "supplementary": [
-            {
-              "title": "OpenStax — Chanoq kamari",
-              "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/8-3-the-pelvic-girdle-and-pelvis",
-              "kind": "Ochiq elektron darslik"
-            }
-          ],
-          "review_status": "AWAITING_USER_MATERIALS",
-          "supplement_sections": [
-            {
-              "heading": "Chanoq kamari",
-              "body": "Chanoqning suyak asosini o‘ng va chap chanoq suyaklari, dumg‘aza va dum suyagi tashkil etadi. Har bir chanoq suyagida yonbosh, qov va o‘tirg‘ich qismlari farqlanadi. Chanoq tana og‘irligini oyoqlarga o‘tkazishda ishtirok etadi."
-            },
-            {
-              "heading": "Manba va o‘quv chegarasi",
-              "body": "Mustaqil qayta bayon qilingan qisqa konspekt; OpenStax (Rice University) ochiq darsligining mos bo‘limi asosida. O‘qituvchi materiallari alohida. Faqat nazariy tanishuv uchun."
-            }
-          ],
-          "supplement_questions": [
-            {
-              "id": "anat_6_extra1",
-              "q": "Chanoq suyagining qaysi qismi mavjud?",
-              "options": [
-                "Kurak suyagi",
-                "O‘mrov suyagi",
-                "Yonbosh suyagi",
-                "Yuqori jag‘"
-              ],
-              "answer": 2,
-              "explanation": "Qo‘shimcha ma’lumotlardagi «Chanoq kamari» bo‘limidan."
-            }
-          ],
-          "sammu_books": [
-            {
-              "title": "Odam anatomiyasi — SamMU e-library (Gadayev A.G.)",
-              "url": "https://e-library.sammu.uz/uz/book/216",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "AWAITING_USER_MATERIALS"
         },
         {
           "id": "anat_7",
@@ -2424,45 +1637,7 @@
           "sections": [],
           "teacher_materials": [],
           "questions": [],
-          "supplementary": [
-            {
-              "title": "OpenStax — Chanoqning funksiyasi",
-              "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/8-3-the-pelvic-girdle-and-pelvis",
-              "kind": "Ochiq elektron darslik"
-            }
-          ],
-          "review_status": "AWAITING_USER_MATERIALS",
-          "supplement_sections": [
-            {
-              "heading": "Chanoqning funksiyasi",
-              "body": "Chanoq tana og‘irligini tik turganda pastki qo‘l-oyoqlarga uzatadi va chanoq bo‘shlig‘idagi a’zolarni qisman himoya qiladi. O‘ng va chap chanoq suyaklari old tomondan birlashadi, orqada dumg‘aza bilan bog‘lanadi."
-            },
-            {
-              "heading": "Manba va o‘quv chegarasi",
-              "body": "Mustaqil qayta bayon qilingan qisqa konspekt; OpenStax (Rice University) ochiq darsligining mos bo‘limi asosida. O‘qituvchi materiallari alohida. Faqat nazariy tanishuv uchun."
-            }
-          ],
-          "supplement_questions": [
-            {
-              "id": "anat_7_extra1",
-              "q": "Chanoqning asosiy vazifalaridan biri nima?",
-              "options": [
-                "Ko‘rishni ta’minlash",
-                "Nafas havosini isitish",
-                "Tish emalini hosil qilish",
-                "Og‘irlikni oyoqlarga uzatish"
-              ],
-              "answer": 3,
-              "explanation": "Qo‘shimcha ma’lumotlardagi «Chanoqning funksiyasi» bo‘limidan."
-            }
-          ],
-          "sammu_books": [
-            {
-              "title": "Odam anatomiyasi — SamMU e-library (Gadayev A.G.)",
-              "url": "https://e-library.sammu.uz/uz/book/216",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "AWAITING_USER_MATERIALS"
         },
         {
           "id": "anat_8",
@@ -2473,45 +1648,7 @@
           "sections": [],
           "teacher_materials": [],
           "questions": [],
-          "supplementary": [
-            {
-              "title": "OpenStax — Oyoq skeletiga kirish",
-              "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/7-1-divisions-of-the-skeletal-system",
-              "kind": "Ochiq elektron darslik"
-            }
-          ],
-          "review_status": "AWAITING_USER_MATERIALS",
-          "supplement_sections": [
-            {
-              "heading": "Oyoq skeletiga kirish",
-              "body": "Oyoq suyaklari pastki qo‘shimcha skelet tarkibiga kiradi. Chanoq kamari oyoqning o‘q skeleti bilan bog‘lanishida ishtirok etadi. Oyoq suyaklari gavda og‘irligini ko‘tarish va harakatlanishga moslashgan."
-            },
-            {
-              "heading": "Manba va o‘quv chegarasi",
-              "body": "Mustaqil qayta bayon qilingan qisqa konspekt; OpenStax (Rice University) ochiq darsligining mos bo‘limi asosida. O‘qituvchi materiallari alohida. Faqat nazariy tanishuv uchun."
-            }
-          ],
-          "supplement_questions": [
-            {
-              "id": "anat_8_extra1",
-              "q": "Oyoq suyaklari skeletning qaysi qismida?",
-              "options": [
-                "Qo‘shimcha skeletda",
-                "Faqat o‘q skeletida",
-                "Faqat kallada",
-                "Faqat ko‘krakda"
-              ],
-              "answer": 0,
-              "explanation": "Qo‘shimcha ma’lumotlardagi «Oyoq skeletiga kirish» bo‘limidan."
-            }
-          ],
-          "sammu_books": [
-            {
-              "title": "Odam anatomiyasi — SamMU e-library (Gadayev A.G.)",
-              "url": "https://e-library.sammu.uz/uz/book/216",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "AWAITING_USER_MATERIALS"
         },
         {
           "id": "anat_9",
@@ -2522,45 +1659,7 @@
           "sections": [],
           "teacher_materials": [],
           "questions": [],
-          "supplementary": [
-            {
-              "title": "OpenStax — Kalla suyagi",
-              "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/7-2-the-skull",
-              "kind": "Ochiq elektron darslik"
-            }
-          ],
-          "review_status": "AWAITING_USER_MATERIALS",
-          "supplement_sections": [
-            {
-              "heading": "Kalla suyagi",
-              "body": "Kalla suyagi miya qutisi va yuz qismiga bo‘linadi. Miya qutisi bosh miyani himoya qiladi. Ensa va tepa suyaklari bosh suyagining miya qutisi tuzilishida ishtirok etadi."
-            },
-            {
-              "heading": "Manba va o‘quv chegarasi",
-              "body": "Mustaqil qayta bayon qilingan qisqa konspekt; OpenStax (Rice University) ochiq darsligining mos bo‘limi asosida. O‘qituvchi materiallari alohida. Faqat nazariy tanishuv uchun."
-            }
-          ],
-          "supplement_questions": [
-            {
-              "id": "anat_9_extra1",
-              "q": "Ensa va tepa suyaklari qaysi qismga kiradi?",
-              "options": [
-                "Qo‘l panjasiga",
-                "Miya qutisiga",
-                "Chanoqqa",
-                "To‘sh suyagiga"
-              ],
-              "answer": 1,
-              "explanation": "Qo‘shimcha ma’lumotlardagi «Kalla suyagi» bo‘limidan."
-            }
-          ],
-          "sammu_books": [
-            {
-              "title": "Odam anatomiyasi — SamMU e-library (Gadayev A.G.)",
-              "url": "https://e-library.sammu.uz/uz/book/216",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "AWAITING_USER_MATERIALS"
         },
         {
           "id": "anat_10",
@@ -2571,45 +1670,7 @@
           "sections": [],
           "teacher_materials": [],
           "questions": [],
-          "supplementary": [
-            {
-              "title": "OpenStax — Peshona va g‘alvir suyaklari",
-              "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/7-2-the-skull",
-              "kind": "Ochiq elektron darslik"
-            }
-          ],
-          "review_status": "AWAITING_USER_MATERIALS",
-          "supplement_sections": [
-            {
-              "heading": "Peshona va g‘alvir suyaklari",
-              "body": "Peshona suyagi bosh suyagining oldingi yuqori qismida joylashgan. G‘alvirsimon suyak burun bo‘shlig‘i va ko‘z kosasi tuzilishida ham qatnashadi. Bu suyaklarni miya qutisi va yuz qismlarining o‘zaro bog‘liqligi bilan birga o‘rganish foydali."
-            },
-            {
-              "heading": "Manba va o‘quv chegarasi",
-              "body": "Mustaqil qayta bayon qilingan qisqa konspekt; OpenStax (Rice University) ochiq darsligining mos bo‘limi asosida. O‘qituvchi materiallari alohida. Faqat nazariy tanishuv uchun."
-            }
-          ],
-          "supplement_questions": [
-            {
-              "id": "anat_10_extra1",
-              "q": "G‘alvirsimon suyak qaysi bo‘shliq bilan bog‘liq?",
-              "options": [
-                "Chanoq bo‘shlig‘i",
-                "Bilak bo‘g‘imi",
-                "Burun bo‘shlig‘i",
-                "Tizza bo‘g‘imi"
-              ],
-              "answer": 2,
-              "explanation": "Qo‘shimcha ma’lumotlardagi «Peshona va g‘alvir suyaklari» bo‘limidan."
-            }
-          ],
-          "sammu_books": [
-            {
-              "title": "Odam anatomiyasi — SamMU e-library (Gadayev A.G.)",
-              "url": "https://e-library.sammu.uz/uz/book/216",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "AWAITING_USER_MATERIALS"
         },
         {
           "id": "anat_11",
@@ -2620,45 +1681,7 @@
           "sections": [],
           "teacher_materials": [],
           "questions": [],
-          "supplementary": [
-            {
-              "title": "OpenStax — Ponasimon va chakka suyaklari",
-              "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/7-2-the-skull",
-              "kind": "Ochiq elektron darslik"
-            }
-          ],
-          "review_status": "AWAITING_USER_MATERIALS",
-          "supplement_sections": [
-            {
-              "heading": "Ponasimon va chakka suyaklari",
-              "body": "Ponasimon suyak bosh suyagi asosining muhim qismi hisoblanadi. Chakka suyagi boshning yon qismida joylashgan, o‘rta va ichki quloq tuzilmalari bilan bog‘liq. Kalla asosidagi teshiklar orqali qon tomirlari va nervlar o‘tadi."
-            },
-            {
-              "heading": "Manba va o‘quv chegarasi",
-              "body": "Mustaqil qayta bayon qilingan qisqa konspekt; OpenStax (Rice University) ochiq darsligining mos bo‘limi asosida. O‘qituvchi materiallari alohida. Faqat nazariy tanishuv uchun."
-            }
-          ],
-          "supplement_questions": [
-            {
-              "id": "anat_11_extra1",
-              "q": "Chakka suyagi qaysi organ tizimi bilan yaqin bog‘liq?",
-              "options": [
-                "Tizza bo‘g‘imi",
-                "Bilak panjasi",
-                "Chanoq kamari",
-                "Eshitish tizimi"
-              ],
-              "answer": 3,
-              "explanation": "Qo‘shimcha ma’lumotlardagi «Ponasimon va chakka suyaklari» bo‘limidan."
-            }
-          ],
-          "sammu_books": [
-            {
-              "title": "Odam anatomiyasi — SamMU e-library (Gadayev A.G.)",
-              "url": "https://e-library.sammu.uz/uz/book/216",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "AWAITING_USER_MATERIALS"
         },
         {
           "id": "anat_12",
@@ -2669,45 +1692,7 @@
           "sections": [],
           "teacher_materials": [],
           "questions": [],
-          "supplementary": [
-            {
-              "title": "OpenStax — Yuz suyaklari",
-              "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/7-2-the-skull",
-              "kind": "Ochiq elektron darslik"
-            }
-          ],
-          "review_status": "AWAITING_USER_MATERIALS",
-          "supplement_sections": [
-            {
-              "heading": "Yuz suyaklari",
-              "body": "Yuz skeletida juft yuqori jag‘ suyaklari (maxilla) va toq pastki jag‘ (mandibula) bor. Yuqori jag‘ qattiq tanglayning bir qismini hosil qiladi; pastki jag‘ kalla suyagining harakatchan suyagidir."
-            },
-            {
-              "heading": "Manba va o‘quv chegarasi",
-              "body": "Mustaqil qayta bayon qilingan qisqa konspekt; OpenStax (Rice University) ochiq darsligining mos bo‘limi asosida. O‘qituvchi materiallari alohida. Faqat nazariy tanishuv uchun."
-            }
-          ],
-          "supplement_questions": [
-            {
-              "id": "anat_12_extra1",
-              "q": "Kalla suyagining harakatlanuvchi suyagi qaysi?",
-              "options": [
-                "Pastki jag‘",
-                "Peshona suyagi",
-                "Tepa suyagi",
-                "Ensa suyagi"
-              ],
-              "answer": 0,
-              "explanation": "Qo‘shimcha ma’lumotlardagi «Yuz suyaklari» bo‘limidan."
-            }
-          ],
-          "sammu_books": [
-            {
-              "title": "Odam anatomiyasi — SamMU e-library (Gadayev A.G.)",
-              "url": "https://e-library.sammu.uz/uz/book/216",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "AWAITING_USER_MATERIALS"
         },
         {
           "id": "anat_13",
@@ -2718,45 +1703,7 @@
           "sections": [],
           "teacher_materials": [],
           "questions": [],
-          "supplementary": [
-            {
-              "title": "OpenStax — Kalla topografiyasi",
-              "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/7-2-the-skull",
-              "kind": "Ochiq elektron darslik"
-            }
-          ],
-          "review_status": "AWAITING_USER_MATERIALS",
-          "supplement_sections": [
-            {
-              "heading": "Kalla topografiyasi",
-              "body": "Ko‘z kosasi, burun bo‘shlig‘i va kalla chuqurchalari bir necha suyaklar chegaralari bilan hosil bo‘ladi. Kalla asosi miya qutisining pastki qismini tashkil qiladi. Anatomik topografiya tuzilmalar bir-biriga nisbatan qayerda joylashganini ko‘rsatadi."
-            },
-            {
-              "heading": "Manba va o‘quv chegarasi",
-              "body": "Mustaqil qayta bayon qilingan qisqa konspekt; OpenStax (Rice University) ochiq darsligining mos bo‘limi asosida. O‘qituvchi materiallari alohida. Faqat nazariy tanishuv uchun."
-            }
-          ],
-          "supplement_questions": [
-            {
-              "id": "anat_13_extra1",
-              "q": "Ko‘z kosasi nima?",
-              "options": [
-                "Tizza bo‘g‘imi",
-                "Ko‘z joylashadigan suyakli bo‘shliq",
-                "Bilak suyaklaridan biri",
-                "Yurak bo‘lmachasi"
-              ],
-              "answer": 1,
-              "explanation": "Qo‘shimcha ma’lumotlardagi «Kalla topografiyasi» bo‘limidan."
-            }
-          ],
-          "sammu_books": [
-            {
-              "title": "Odam anatomiyasi — SamMU e-library (Gadayev A.G.)",
-              "url": "https://e-library.sammu.uz/uz/book/216",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "AWAITING_USER_MATERIALS"
         },
         {
           "id": "anat_14",
@@ -2767,45 +1714,7 @@
           "sections": [],
           "teacher_materials": [],
           "questions": [],
-          "supplementary": [
-            {
-              "title": "OpenStax — Kalla teshiklari va kanallari",
-              "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/7-2-the-skull",
-              "kind": "Ochiq elektron darslik"
-            }
-          ],
-          "review_status": "AWAITING_USER_MATERIALS",
-          "supplement_sections": [
-            {
-              "heading": "Kalla teshiklari va kanallari",
-              "body": "Kalla asosida nerv va qon tomirlari o‘tadigan teshiklar mavjud. Masalan, yumaloq, oval va tikanli teshiklar bosh suyagining maxsus anatomik belgilari bo‘lib, ularning vazifasi o‘tuvchi tuzilmalar bilan bog‘liq."
-            },
-            {
-              "heading": "Manba va o‘quv chegarasi",
-              "body": "Mustaqil qayta bayon qilingan qisqa konspekt; OpenStax (Rice University) ochiq darsligining mos bo‘limi asosida. O‘qituvchi materiallari alohida. Faqat nazariy tanishuv uchun."
-            }
-          ],
-          "supplement_questions": [
-            {
-              "id": "anat_14_extra1",
-              "q": "Kalla asosidagi teshiklar orqali nimalar o‘tishi mumkin?",
-              "options": [
-                "Faqat tish emali",
-                "Faqat paylar",
-                "Nervlar va qon tomirlari",
-                "Faqat tirnoqlar"
-              ],
-              "answer": 2,
-              "explanation": "Qo‘shimcha ma’lumotlardagi «Kalla teshiklari va kanallari» bo‘limidan."
-            }
-          ],
-          "sammu_books": [
-            {
-              "title": "Odam anatomiyasi — SamMU e-library (Gadayev A.G.)",
-              "url": "https://e-library.sammu.uz/uz/book/216",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "AWAITING_USER_MATERIALS"
         }
       ]
     },
@@ -2989,20 +1898,7 @@
               "explanation": "These are ko‘plik shaklini talab qiladi."
             }
           ],
-          "supplementary": [],
-          "review_status": "USER_SOURCE_EXPANDED_DRAFT",
-          "sammu_books": [
-            {
-              "title": "English in Dentistry — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4059",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "English for medical students — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2089",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "USER_SOURCE_EXPANDED_DRAFT"
         },
         {
           "id": "eng_l2",
@@ -3180,20 +2076,7 @@
               "explanation": "In the evening — kechqurun."
             }
           ],
-          "supplementary": [],
-          "review_status": "USER_SOURCE_EXPANDED_DRAFT",
-          "sammu_books": [
-            {
-              "title": "English in Dentistry — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4059",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "English for medical students — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2089",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "USER_SOURCE_EXPANDED_DRAFT"
         },
         {
           "id": "eng_l3",
@@ -3375,20 +2258,7 @@
               "explanation": "Protection — himoya."
             }
           ],
-          "supplementary": [],
-          "review_status": "USER_SOURCE_EXPANDED_DRAFT",
-          "sammu_books": [
-            {
-              "title": "English in Dentistry — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4059",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "English for medical students — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2089",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "USER_SOURCE_EXPANDED_DRAFT"
         },
         {
           "id": "eng_l4",
@@ -3570,20 +2440,7 @@
               "explanation": "Facial muscles — yuz mushaklari."
             }
           ],
-          "supplementary": [],
-          "review_status": "USER_SOURCE_EXPANDED_DRAFT",
-          "sammu_books": [
-            {
-              "title": "English in Dentistry — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4059",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "English for medical students — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2089",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "USER_SOURCE_EXPANDED_DRAFT"
         },
         {
           "id": "eng_l5",
@@ -3771,20 +2628,7 @@
               "explanation": "Atrium — bo‘lmacha."
             }
           ],
-          "supplementary": [],
-          "review_status": "USER_SOURCE_EXPANDED_DRAFT",
-          "sammu_books": [
-            {
-              "title": "English in Dentistry — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4059",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "English for medical students — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2089",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "USER_SOURCE_EXPANDED_DRAFT"
         }
       ]
     },
@@ -3842,50 +2686,7 @@
               "explanation": "Manba: 1-mavzu Ma'ruza mashg'ulotii.pptx"
             }
           ],
-          "supplementary": [
-            {
-              "title": "OpenStax — Membrana va transport",
-              "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/3-1-the-cell-membrane",
-              "kind": "Ochiq elektron darslik"
-            }
-          ],
-          "review_status": "USER_SOURCE_DRAFT",
-          "supplement_sections": [
-            {
-              "heading": "Membrana va transport",
-              "body": "Hujayra membranasi fosfolipid ikki qavat va oqsillar bilan tuzilgan. Undan ba’zi kichik nopolyar molekulalar osonroq o‘tadi, ionlarga esa kanallar yordam berishi mumkin. Diffuziya konsentratsiya farqi bo‘ylab sodir bo‘ladi, faol transport esa energiya talab qiladi."
-            },
-            {
-              "heading": "Manba va o‘quv chegarasi",
-              "body": "Mustaqil qayta bayon qilingan qisqa konspekt; OpenStax (Rice University) ochiq darsligining mos bo‘limi asosida. O‘qituvchi materiallari alohida. Faqat nazariy tanishuv uchun."
-            }
-          ],
-          "supplement_questions": [
-            {
-              "id": "bio_l1_extra1",
-              "q": "Faol transportning passiv transportdan farqi nima?",
-              "options": [
-                "Faqat yoritilishi",
-                "Energiya talab qilishi",
-                "Faqat suvni ushlashi",
-                "Faqat suyakda bo‘lishi"
-              ],
-              "answer": 1,
-              "explanation": "Qo‘shimcha ma’lumotlardagi «Membrana va transport» bo‘limidan."
-            }
-          ],
-          "sammu_books": [
-            {
-              "title": "Tibbiy biofizika — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4558",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "Biofizika — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2572",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "USER_SOURCE_DRAFT"
         },
         {
           "id": "bio_l2",
@@ -3943,50 +2744,7 @@
               "explanation": "Manba: 2-Ma'ruza Bioenergetika asoslari.pptx"
             }
           ],
-          "supplementary": [
-            {
-              "title": "OpenStax — Mitoxondriya va ATP",
-              "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/3-2-the-cytoplasm-and-cellular-organelles",
-              "kind": "Ochiq elektron darslik"
-            }
-          ],
-          "review_status": "USER_SOURCE_DRAFT",
-          "supplement_sections": [
-            {
-              "heading": "Mitoxondriya va ATP",
-              "body": "Mitoxondriya hujayrada energiyani foydali shaklga aylantirishning muhim markazidir. ATP hujayra jarayonlariga energiya yetkazib beradi. Mushak qisqarishi kabi energiyaga talab yuqori jarayonlarda ATP ko‘p sarflanadi."
-            },
-            {
-              "heading": "Manba va o‘quv chegarasi",
-              "body": "Mustaqil qayta bayon qilingan qisqa konspekt; OpenStax (Rice University) ochiq darsligining mos bo‘limi asosida. O‘qituvchi materiallari alohida. Faqat nazariy tanishuv uchun."
-            }
-          ],
-          "supplement_questions": [
-            {
-              "id": "bio_l2_extra1",
-              "q": "Mitoxondriya asosan qaysi jarayonda qatnashadi?",
-              "options": [
-                "Kalla suyaklarini ulash",
-                "Tish tojini bo‘yash",
-                "ATP hosil bo‘lishi",
-                "Tovushni kuchaytirish"
-              ],
-              "answer": 2,
-              "explanation": "Qo‘shimcha ma’lumotlardagi «Mitoxondriya va ATP» bo‘limidan."
-            }
-          ],
-          "sammu_books": [
-            {
-              "title": "Tibbiy biofizika — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4558",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "Biofizika — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2572",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "USER_SOURCE_DRAFT"
         },
         {
           "id": "bio_l3",
@@ -4038,50 +2796,7 @@
               "explanation": "Manba: 3-amaliy mashg'ulot.pdf"
             }
           ],
-          "supplementary": [
-            {
-              "title": "OpenStax — Tovush va to‘lqin",
-              "url": "https://openstax.org/books/college-physics-2e/pages/17-section-summary",
-              "kind": "Ochiq elektron darslik"
-            }
-          ],
-          "review_status": "USER_SOURCE_DRAFT",
-          "supplement_sections": [
-            {
-              "heading": "Tovush va to‘lqin",
-              "body": "Tovush moddiy muhitdagi mexanik tebranishlar natijasida tarqaladigan to‘lqindir. Chastota, to‘lqin uzunligi va tarqalish tezligi o‘zaro bog‘langan; to‘lqin tezligi chastota va to‘lqin uzunligi ko‘paytmasiga teng."
-            },
-            {
-              "heading": "Manba va o‘quv chegarasi",
-              "body": "Mustaqil qayta bayon qilingan qisqa konspekt; OpenStax (Rice University) ochiq darsligining mos bo‘limi asosida. O‘qituvchi materiallari alohida. Faqat nazariy tanishuv uchun."
-            }
-          ],
-          "supplement_questions": [
-            {
-              "id": "bio_l3_extra1",
-              "q": "Tovushning fizik tabiati qanday?",
-              "options": [
-                "Yadro zarrachasi",
-                "Suyak bo‘lagi",
-                "Hujayra organellasi",
-                "Mexanik to‘lqin"
-              ],
-              "answer": 3,
-              "explanation": "Qo‘shimcha ma’lumotlardagi «Tovush va to‘lqin» bo‘limidan."
-            }
-          ],
-          "sammu_books": [
-            {
-              "title": "Tibbiy biofizika — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4558",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "Biofizika — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2572",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "USER_SOURCE_DRAFT"
         },
         {
           "id": "bio_l4",
@@ -4133,53 +2848,9 @@
               "explanation": "Manba: biologik_suyuqliklar_qovushqoqligi_amaliy_dars-3-4.docx"
             }
           ],
-          "supplementary": [
-            {
-              "title": "OpenStax — Qovushqoqlik va oqim",
-              "url": "https://openstax.org/books/college-physics-2e/pages/12-section-summary",
-              "kind": "Ochiq elektron darslik"
-            }
-          ],
-          "review_status": "USER_SOURCE_DRAFT",
-          "supplement_sections": [
-            {
-              "heading": "Qovushqoqlik va oqim",
-              "body": "Qovushqoqlik suyuqlik qatlamlari orasidagi ichki ishqalanish bilan bog‘liq fizik kattalikdir. Laminar oqimda qatlamlar nisbatan tartibli harakat qiladi; turbulent oqimda esa aralashish va uyurmalar kuzatiladi. Suyuqlik oqimiga bosim farqi ham ta’sir qiladi."
-            },
-            {
-              "heading": "Manba va o‘quv chegarasi",
-              "body": "Mustaqil qayta bayon qilingan qisqa konspekt; OpenStax (Rice University) ochiq darsligining mos bo‘limi asosida. O‘qituvchi materiallari alohida. Faqat nazariy tanishuv uchun."
-            }
-          ],
-          "supplement_questions": [
-            {
-              "id": "bio_l4_extra1",
-              "q": "Laminar oqimning xususiyati qaysi?",
-              "options": [
-                "Qatlamlarning tartibli harakatlanishi",
-                "Yagona qattiq jism bo‘lishi",
-                "Faqat elektr oqimi bo‘lishi",
-                "Qatlamlarning mutlaqo to‘xtashi"
-              ],
-              "answer": 0,
-              "explanation": "Qo‘shimcha ma’lumotlardagi «Qovushqoqlik va oqim» bo‘limidan."
-            }
-          ],
-          "sammu_books": [
-            {
-              "title": "Tibbiy biofizika — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/4558",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            },
-            {
-              "title": "Biofizika — SamMU e-library",
-              "url": "https://e-library.sammu.uz/uz/book/2572",
-              "access": "Kitob sahifasi ochiladi. To‘liq matn uchun SamMU HEMIS ruxsati talab qilinishi mumkin."
-            }
-          ]
+          "review_status": "USER_SOURCE_DRAFT"
         }
       ]
     }
-  ],
-  "supplementary_policy": "Qo‘shimcha konspektlar va bepul manbalar mavzu ichida o‘qiladi. SamMU e-library kitoblari alohida bibliografik bo‘limda havola bilan saqlanadi; ruxsat talab etiladigan kitoblar bepul PDF deb ko‘rsatilmaydi. Kerakli (o‘qituvchi) materiallar o‘zgartirilmagan."
+  ]
 }
