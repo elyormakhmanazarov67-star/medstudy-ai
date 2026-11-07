@@ -9,7 +9,13 @@
   const demo = new URLSearchParams(location.search).get('demo') === '1' && ['localhost', '127.0.0.1'].includes(location.hostname);
   const auth = webapp?.initData || '';
   const state = { tab: 'home', catalog: null, progress: null, studyPlan: null, history: null, lesson: null, quiz: null, result: null, consent: null, busy: false, tutorStatus: null, tutorQuestion:'', tutorAnswer: null, tutorLessonId:'' };
-  const esc = val => String(val ?? '').replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]));
+  // Replace Uzbek sh/ch ONLY in user-visible interface copy, never in identifiers,
+  // URLs, filenames, English lesson text, or Telegram signed initData.
+  const uz = val => String(val ?? '').replace(/sh/gi, x => x === 'SH' ? 'Ş' : x === 'Sh' ? 'Ş' : 'ş').replace(/ch/gi, x => x === 'CH' ? 'Ç' : x === 'Ch' ? 'Ç' : 'ç');
+  const esc = val => uz(val).replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]));
+  const rawEsc = val => String(val ?? '').replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]));
+  const strings = html => html.replace(/>([^<>]+)</g,(all,txt)=>'>'+uz(txt)+'<');
+
 
   async function api(path, method='GET', data) {
     const headers = { 'X-Telegram-Init-Data': auth };
@@ -23,26 +29,70 @@
   const header = () => `<header class="sitehead"><div class="brand"><div class="logo">✦</div><div><strong>MedStudy AI</strong><small>O‘quv platforma</small></div></div><span class="pill"><span class="pill-dot"></span> SINOV v0.5</span></header>`;
   const nav = () => `<div class="footer-nav"><div class="nav-inner"><button class="nav ${state.tab==='home'?'active':''}" data-action="home"><b>⌂</b>Asosiy</button><button class="nav ${state.tab==='progress'?'active':''}" data-action="progress"><b>▥</b>Natijalar</button><button class="nav ${state.tab==='tutor'?'active':''}" data-action="tutor"><b>✧</b>AI Ustoz</button><button class="nav ${state.tab==='privacy'?'active':''}" data-action="privacy"><b>♢</b>Maxfiylik</button></div></div>`;
   const disclaimer = `<div class="caution">⚠️ Mazkur darslar sinov materialidir; mutaxassis ko‘rigidan o‘tmagan. Klinik amaliyot uchun yo‘riqnoma yoki rasmiy universitet xizmati emas.</div>`;
-  const shell = content => { app.innerHTML = header() + '<main>' + content + '</main>' + nav(); window.scrollTo(0,0); };
+  const shell = content => { app.innerHTML = strings(header() + '<main>' + content + '</main>' + nav()); window.scrollTo(0,0); };
   const loading = () => { app.innerHTML = `<div class="boot"><div class="loader"></div><p>Ma’lumotlar yuklanmoqda…</p></div>`; };
   const fail = err => shell(`<div class="empty"><div class="symbol">⚠️</div><h2>Ulanishda xatolik</h2><p class="error">${esc(err.message)}</p><button class="btn btn-primary" data-action="retry">Qayta urinish</button><p class="smallprint">Telegram orqali qayta oching. Lokal demo uchun yo‘riqnoma bilan ishga tushiring.</p></div>`);
   const subjectSummary = () => (state.catalog?.subjects || []).flatMap(s=>s.lessons.map(l=>({...l,subject_title:s.title})));
+  const sourcesReady = lesson => (lesson?.teacher_materials || []).length > 0;
+  const hasQuestions = lesson => (lesson?.questions || []).length > 0;
+  const displayCategory = (lesson, kind) => {
+    const docs = kind === 'required' ? (lesson.teacher_materials || []) : (lesson.supplementary || []);
+    const back = '<button class="back" data-action="lesson" data-id="'+rawEsc(lesson.id)+'">← Mavzuga qaytiş</button>';
+    const name = kind === 'required' ? 'Kerakli ma’lumotlar' : 'Qo‘şimça ma’lumotlar';
+    const intro = kind === 'required' ? 'Bu bo‘limda faqat o‘qituvçi yuborgan materiallar bor.' : 'Bo‘ş vaqtda oldindan o‘qiş uçún SamMU e-library manbalari. Ular o‘qituvçi bergan vazifalar o‘rnini bosmaydi.';
+    let cards = docs.map(doc => {
+      const label = '<strong>'+rawEsc(doc.title)+'</strong>';
+      const hint = doc.note ? '<p class="smallprint">'+esc(doc.note)+'</p>' : '';
+      if(doc.url && /^https:\/\//.test(doc.url)){
+        return '<div class="card"><a href="'+rawEsc(doc.url)+'" rel="noopener noreferrer" target="_blank">'+label+' ↗</a>'+hint+'</div>';
+      }
+      return '<div class="card">'+label+'<p class="smallprint">'+rawEsc(doc.filename || '')+'</p>'+hint+'</div>';
+    }).join('');
+    if(kind==='required' && (lesson.sections||[]).length) {
+      cards += (lesson.sections||[]).map(s=>'<div class="card"><h3>'+esc(s.heading)+'</h3><p>'+esc(s.body)+'</p></div>').join('');
+      if(hasQuestions(lesson)) cards += '<div class="card"><button class="btn btn-primary btn-wide" data-action="start-quiz">Testni boshlash ('+lesson.questions.length+')</button></div>';
+    }
+    if(!docs.length && !(kind==='required' && lesson.sections?.length)) {
+      cards = '<div class="empty"><div class="symbol">📥</div><h3>Hozirça material yo‘q</h3><p>'+(kind==='required'?'O‘qituvçidan material kelishi kutilmoqda.':'SamMU elektron kutubxonasidagi mos kitob aniqlanmagan.')+'</p></div>';
+    }
+    shell(back+'<p class="eyebrow">'+esc(lesson.subject_title)+'</p><h1>'+name+'</h1><p class="smallprint">'+intro+'</p>'+cards+disclaimer);
+  };
   function home() {
     state.tab='home';
+    const subjects=state.catalog?.subjects || [];
     const lessons=subjectSummary();
-    const completed=state.progress?.latest?.length || 0;
+    const completed=state.progress?.latest?.filter(x=>lessons.some(l=>l.id===x.lesson_id)).length || 0;
     const attempts=state.progress?.attempts_count || 0;
-    const tiles = lessons.map((l,i) => `<button class="card lesson-card" data-action="lesson" data-id="${esc(l.id)}"><span class="lesson-icon">${i?'⚙️':'🦷'}</span><span class="lesson-content"><span class="tag">${i+1}-MAVZU</span><strong>${esc(l.title)}</strong><small>${esc(l.subject_title)} · ${l.section_count} bo‘lim · ${l.question_count} savol</small></span><span class="chevron">›</span></button>`).join('');
-    shell(`<section class="hero"><p class="eyebrow">Kelajak shifokorlari uchun</p><h1>Bilim sari<br>bir qadam oldinda.</h1><p>O‘zbek tilida tushunarli darslar, qisqa testlar va shaxsiy o‘quv natijalari — hammasi bir joyda.</p><div class="hero-actions"><button class="btn btn-primary" data-action="lesson" data-id="${esc(lessons[0]?.id||'')}">Darsni boshlash ↗</button><button class="btn btn-ghost" data-action="progress">Mening natijalarim</button></div></section>
-    <div class="stats"><div class="stat"><strong>${state.catalog.subjects.length}</strong><small>Fan</small></div><div class="stat"><strong>${lessons.length}</strong><small>Mavzu</small></div><div class="stat"><strong>${attempts}</strong><small>Test urinish</small></div></div><div class="sectionhead"><h2>📚 Darslar kutubxonasi</h2><span>${completed}/${lessons.length} o‘rganilgan</span></div>${tiles}${disclaimer}<div class="footer-logo">MedStudy AI · Mustaqil ta’lim loyihasi</div>`);
+    const cards=subjects.map(s=>'<button class="card lesson-card" data-action="subject" data-id="'+rawEsc(s.id)+'"><span class="lesson-icon">📚</span><span class="lesson-content"><strong>'+esc(s.title)+'</strong><small>'+s.lessons.length+' ta mavzu</small></span><span class="chevron">›</span></button>').join('');
+    shell('<section class="hero"><p class="eyebrow">Talabalar uçún o‘quv platforma</p><h1>MedStudy AI</h1><p>O‘qituvçi yuborgan materiallar va SamMU kutubxonasidan qo‘şimça o‘qiş — alohida bo‘limlarda.</p></section>'+
+      '<div class="stats"><div class="stat"><strong>'+subjects.length+'</strong><small>Fan</small></div><div class="stat"><strong>'+lessons.length+'</strong><small>Mavzu</small></div><div class="stat"><strong>'+attempts+'</strong><small>Test uriniş</small></div></div>'+
+      '<div class="sectionhead"><h2>Fanlar</h2><span>'+completed+'/'+lessons.length+' o‘rganilgan</span></div>'+cards+disclaimer+
+      '<div class="footer-logo">MedStudy AI · Mustaqil ta’lim loyihasi</div>');
+  }
+  function showSubject(id){
+    const s=(state.catalog?.subjects||[]).find(x=>x.id===id);
+    if(!s)return home();
+    state.tab='subject';state.subjectId=id;
+    const cards=s.lessons.map((l,i)=>'<button class="card lesson-card" data-action="lesson" data-id="'+rawEsc(l.id)+'"><span class="lesson-icon">📖</span><span class="lesson-content"><span class="tag">'+(i+1)+'-MAVZU</span><strong>'+esc(l.title)+'</strong><small>'+l.section_count+' bo‘lim · '+l.question_count+' savol</small></span><span class="chevron">›</span></button>').join('');
+    shell('<button class="back" data-action="home">← Fanlar</button><h1>'+esc(s.title)+'</h1>'+
+      '<p class="smallprint">Mavzuni tanlang, so‘ng kerakli yoki qo‘şimça ma’lumotlarni oching.</p>'+cards);
   }
   async function getLesson(id) {
-    loading(); try { state.lesson = await api('/lessons/' + encodeURIComponent(id)); showLesson(); } catch(e){ fail(e); }
+    loading();
+    try { state.lesson=await api('/lessons/'+encodeURIComponent(id)); showLesson(); }
+    catch(e){ fail(e); }
   }
-  function showLesson() {
+  function showLesson(){
     state.tab='lesson';
     const l=state.lesson;
-    shell(`<button class="back" data-action="home">← Barcha mavzular</button><div class="article-intro"><p class="eyebrow">${esc(l.subject_title||'O‘quv mavzusi')}</p><h1>${esc(l.title)}</h1><p>${l.sections.length} bo‘lim · ${l.question_count} savol</p></div>${disclaimer}<div class="card"><h3>🎯 Bugungi maqsad</h3><p class="smallprint">Mavzuni o‘qing, muhim tushunchalarni takrorlang va bilimlaringizni test bilan sinab ko‘ring.</p><button class="btn btn-primary btn-wide" data-action="start-quiz">Testni boshlash (${l.question_count}) →</button><div class="spacer"></div><button class="btn btn-flat btn-wide" data-action="tutor" data-id="${esc(l.id)}">✧ AI Ustozdan so‘rash</button></div>${l.sections.map(s=>`<section class="lesson-section"><h3>${esc(s.heading)}</h3><p>${esc(s.body)}</p></section>`).join('')}<div class="card"><h3>Bilimingizni sinab ko‘ring</h3><button class="btn btn-primary btn-wide" data-action="start-quiz">${l.question_count} ta test savolini boshlash →</button></div><div class="sources"><strong>📖 Manbalar katalogi</strong><p class="smallprint">Quyidagilar SamDTU elektron kutubxonasi havolalari. Kitoblar to‘liq matni bilan bandma-band tekshiruv hali yakunlanmagan.</p>${(l.sources||[]).map((u,i)=>`<a href="${esc(u)}" target="_blank" rel="noopener noreferrer">${i+1}-manba ↗</a>`).join('')}</div>`);
+    const needed=(l.teacher_materials||[]).length;
+    const extra=(l.supplementary||[]).length;
+    shell('<button class="back" data-action="subject" data-id="'+rawEsc(l.subject_id)+'">← Mavzular</button>'+
+      '<p class="eyebrow">'+esc(l.subject_title)+'</p><h1>'+esc(l.title)+'</h1>'+
+      '<p class="smallprint">Mavzu içidagi bo‘limni tanlang.</p>'+
+      '<button class="card lesson-card" data-action="category" data-kind="required"><span class="lesson-icon">📘</span><span class="lesson-content"><strong>Kerakli ma’lumotlar</strong><small>O‘qituvçi materiallari · '+needed+' fayl</small></span><span class="chevron">›</span></button>'+
+      '<button class="card lesson-card" data-action="category" data-kind="supplementary"><span class="lesson-icon">📗</span><span class="lesson-content"><strong>Qo‘şimça ma’lumotlar</strong><small>SamMU e-library · '+extra+' manba</small></span><span class="chevron">›</span></button>'+
+      disclaimer);
   }
   function startQuiz(questions, mode='full') {
     if (!questions.length) { state.tab='lesson'; showLesson(); return; }
@@ -87,7 +137,7 @@
     state.tab='privacy';shell(`<p class="eyebrow">Shaxsiy ma’lumotlar</p><h1>Maxfiylik va xavfsizlik</h1><div class="card privacy"><h3>Qanday ma’lumotlar saqlanadi?</h3><p>Sinov davrida faqat Telegram foydalanuvchi IDsi, rozilik vaqti, test javoblari va natijalari SQLite bazasida saqlanadi. Ism, telefon raqami va yozishmalar saqlanmaydi. Dars Ustoz bepul rejimida savol faqat serverdagi dars matni bilan solishtiriladi; u OpenAI API'ga yuborilmaydi va bizning SQLite bazamizga yozilmaydi. Kelajakda alohida AI rejimi yoqilsa, tashqi xizmat uchun yangi rozilik talab qilinadi.</p><h3>Ma’lumotlar kimga tegishli?</h3><p>Test natijalarini ilova administratori serverda boshqaradi. Ilova hozircha mustaqil o‘quv prototipi, universitetning rasmiy xizmati emas.</p><h3>Ma’lumotlarni o‘chirish</h3><p>Quyidagi tugma orqali shaxsiy test tarixingiz va rozilik yozuvini o‘chirishingiz mumkin.</p><button class="btn btn-danger btn-wide" data-action="delete">Ma’lumotlarimni o‘chirish</button></div>${disclaimer}`);
   }
   function consentScreen(){
-    app.innerHTML=header()+`<main class="privacy"><p class="eyebrow">Xush kelibsiz</p><h1>MedStudy AI’ga kirish</h1><div class="card"><h3>Yopiq sinovga rozilik</h3><p>Ta’limiy tajriba uchun Telegram ID, rozilik vaqti, test javoblari va natijalari administrator serveridagi SQLite bazasida saqlanadi. Ism, telefon va yozishmalar saqlanmaydi. Dars Ustoz bepul rejimida savolingiz serverdagi dars bilan solishtiriladi va bizning SQLite bazamizga saqlanmaydi. Tashqi AI xizmatiga hech narsa yuborilmaydi.</p><p>Keyin “Maxfiylik” bo‘limidan ularni o‘chirish mumkin. Materiallar ekspert tasdig‘ini olmagan.</p><button class="btn btn-primary btn-wide" data-action="consent">Roziman · Davom etish</button><div class="spacer"></div><p class="smallprint">Rozilik bermasangiz, natijalar saqlanmaydi va ilovadan foydalanish boshlanmaydi.</p></div></main>`;
+    app.innerHTML=strings(header()+`<main class="privacy"><p class="eyebrow">Xush kelibsiz</p><h1>MedStudy AI’ga kirish</h1><div class="card"><h3>Yopiq sinovga rozilik</h3><p>Ta’limiy tajriba uchun Telegram ID, rozilik vaqti, test javoblari va natijalari administrator serveridagi SQLite bazasida saqlanadi. Ism, telefon va yozishmalar saqlanmaydi. Dars Ustoz bepul rejimida savolingiz serverdagi dars bilan solishtiriladi va bizning SQLite bazamizga saqlanmaydi. Tashqi AI xizmatiga hech narsa yuborilmaydi.</p><p>Keyin “Maxfiylik” bo‘limidan ularni o‘chirish mumkin. Materiallar ekspert tasdig‘ini olmagan.</p><button class="btn btn-primary btn-wide" data-action="consent">Roziman · Davom etish</button><div class="spacer"></div><p class="smallprint">Rozilik bermasangiz, natijalar saqlanmaydi va ilovadan foydalanish boshlanmaydi.</p></div></main>`);
   }
 
   async function tutorScreen(id='') {
@@ -107,7 +157,7 @@
     if(state.tutorAnswer) {
       result=`<div class="card ai-result"><h3>✧ Dars yordamchisi javobi</h3><p>${esc(state.tutorAnswer.answer).replace(/\n/g,'<br>')}</p><div class="smallprint">Foydalanilgan dars bo‘limlari: ${esc(state.tutorAnswer.sections.join(' · '))}</div><p class="smallprint">${esc(state.tutorAnswer.notice)}</p></div>`;
     }
-    shell(`<p class="eyebrow">15 mashg‘ulot bo‘yicha yordamchi</p><h1>✧ Dars Ustoz</h1><p class="smallprint">Bepul rejim · Darslardan tayyor izohlar; bu ChatGPT yoki generativ AI emas.</p>${disclaimer}<div class="card"><p class="smallprint">Savollar darsning original konspekti va testlaridan javob oladi. OpenAI API chaqirilmaydi va to‘lov qilinmaydi.</p><label for="tutor-lesson">Mavzuni tanlang</label><select id="tutor-lesson" class="ai-input">${select}</select><label for="tutor-mode">O‘rganish usuli</label><select id="tutor-mode" class="ai-input"><option value="explain">Sodda tushuntirish</option><option value="example">Misol bilan tushuntirish</option><option value="recall">Bilimni tekshiruvchi savol</option></select><label for="tutor-question">Savolingiz</label><textarea id="tutor-question" class="ai-input" maxlength="500" rows="4" placeholder="Masalan: Ergonomika nima uchun kerak?">${esc(state.tutorQuestion)}</textarea><p class="smallprint">Savol serverdagi dars matnida qidiriladi. Bemor yoki maxfiy ma’lumotni kiritmang.</p><button class="btn btn-primary btn-wide" data-action="tutor-ask" ${state.busy?'disabled':''}>${state.busy?'Javob tayyorlanmoqda…':'Darsdan javob olish →'}</button></div>${result}`);
+    shell(`<p class="eyebrow">Yuborilgan manbalar bo‘yicha yordamchi</p><h1>✧ Dars Ustoz</h1><p class="smallprint">Bepul rejim · Darslardan tayyor izohlar; bu ChatGPT yoki generativ AI emas.</p>${disclaimer}<div class="card"><p class="smallprint">Savollar darsning original konspekti va testlaridan javob oladi. OpenAI API chaqirilmaydi va to‘lov qilinmaydi.</p><label for="tutor-lesson">Mavzuni tanlang</label><select id="tutor-lesson" class="ai-input">${select}</select><label for="tutor-mode">O‘rganish usuli</label><select id="tutor-mode" class="ai-input"><option value="explain">Sodda tushuntirish</option><option value="example">Misol bilan tushuntirish</option><option value="recall">Bilimni tekshiruvchi savol</option></select><label for="tutor-question">Savolingiz</label><textarea id="tutor-question" class="ai-input" maxlength="500" rows="4" placeholder="Masalan: Ergonomika nima uchun kerak?">${esc(state.tutorQuestion)}</textarea><p class="smallprint">Savol serverdagi dars matnida qidiriladi. Bemor yoki maxfiy ma’lumotni kiritmang.</p><button class="btn btn-primary btn-wide" data-action="tutor-ask" ${state.busy?'disabled':''}>${state.busy?'Javob tayyorlanmoqda…':'Darsdan javob olish →'}</button></div>${result}`);
   }
   async function tutorAsk() {
     if(state.busy) return;
@@ -137,8 +187,10 @@
     try{
       switch(act){
         case 'home': if(state.catalog)home();else init();break;
+        case 'subject':showSubject(el.dataset.id);break;
+        case 'category':if(state.lesson)displayCategory(state.lesson,el.dataset.kind);break;
         case 'lesson': if(el.dataset.id)await getLesson(el.dataset.id);break;
-        case 'start-quiz':if(state.lesson)startQuiz(state.lesson.questions);break;
+        case 'start-quiz':if(state.lesson && state.lesson.questions?.length)startQuiz(state.lesson.questions);break;
         case 'answer':state.quiz.answers[state.quiz.pos]=Number(el.dataset.value);renderQuiz();break;
         case 'next':await next();break;
         case 'retry':if(state.tab==='result')await retryWrong();else await init();break;
