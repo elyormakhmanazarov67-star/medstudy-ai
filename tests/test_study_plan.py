@@ -54,3 +54,32 @@ def test_study_plan_requires_auth_and_consent(monkeypatch, tmp_path):
     assert r.status_code == 200
     assert r.json()["total_lessons"] == 2
     assert r.json()["attempted_lessons"] == 0
+
+
+def test_history_is_private_and_latest_first(monkeypatch, tmp_path):
+    monkeypatch.setattr(main, "BOT_TOKEN", TOKEN)
+    monkeypatch.setattr(main, "ALLOWED_IDS", {UID})
+    monkeypatch.setattr(main, "STORE", Store(str(tmp_path / "private.sqlite")))
+    client = TestClient(main.app)
+    assert client.get("/api/history").status_code == 401
+    assert client.get("/api/history", headers=hdr()).status_code == 403
+    assert client.post("/api/consent", headers=hdr()).status_code == 200
+    questions = main.CATALOG["subjects"][0]["lessons"][0]["questions"]
+    answer_ids = [q["id"] for q in questions]
+    right = [q["answer"] for q in questions]
+    body = {"lesson_id": "ergonomika", "question_ids": answer_ids, "answers": right}
+    assert client.post("/api/attempts", headers=hdr(), json=body).status_code == 200
+    wrong = right[:]
+    wrong[0] = (right[0] + 1) % 4
+    body["answers"] = wrong
+    assert client.post("/api/attempts", headers=hdr(), json=body).status_code == 200
+    history = client.get("/api/history?limit=1", headers=hdr())
+    assert history.status_code == 200
+    assert len(history.json()["items"]) == 1
+    assert history.json()["items"][0]["score"] == 9
+    assert history.json()["items"][0]["percent"] == 90
+    assert "answers" not in history.json()["items"][0]
+    assert client.get("/api/history", headers=hdr(__import__("tests.test_miniapp",fromlist=["sign"]).sign(uid=UID+1))).status_code == 403
+    assert client.delete("/api/me", headers=hdr()).status_code == 200
+    assert client.post("/api/consent", headers=hdr()).status_code == 200
+    assert client.get("/api/history", headers=hdr()).json()["items"] == []
