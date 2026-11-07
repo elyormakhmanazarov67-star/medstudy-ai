@@ -35,11 +35,11 @@ def hdr(raw=None):return {'X-Telegram-Init-Data': raw or sign()}
 def test_catalog_and_grading():
     c=load_catalog()
     assert len(c['subjects'])==5
-    assert sum(len(s['lessons']) for s in c['subjects'])==50
-    assert len(c['subjects'][0]['lessons'])==15
+    assert sum(len(s['lessons']) for s in c['subjects'])==66
+    assert len(c['subjects'][0]['lessons'])==31
     assert len(c['subjects'][1]['lessons'])==12
-    assert c['subjects'][0]['lessons'][0]['questions']==[]
-    assert c['subjects'][0]['lessons'][0]['sections']==[]
+    assert len(c['subjects'][0]['lessons'][0]['questions'])==1
+    assert c['subjects'][0]['lessons'][0]['sections']
     assert grade([],[])==(0,[])
 
 
@@ -60,11 +60,11 @@ def test_consent_catalog_quiz_and_delete(client):
     c=client.get('/api/catalog',headers=hdr())
     assert c.status_code==200 and len(c.json()['subjects'])==5
     empty=client.get('/api/lessons/ergonomika',headers=hdr()).json()
-    assert len(empty['questions'])==0
+    assert len(empty['questions'])==1
     assert len(empty['teacher_materials'])>=1
     assert len(empty['supplementary'])>=1
     body={'lesson_id':'ergonomika','question_ids':['old'],'answers':[0]}
-    assert client.post('/api/attempts',json=body,headers=hdr()).status_code==409
+    assert client.post('/api/attempts',json=body,headers=hdr()).status_code==400
     lesson=client.get('/api/lessons/eng_l1',headers=hdr()).json()
     assert len(lesson['questions'])==2
     assert 'answer' not in lesson['questions'][0]
