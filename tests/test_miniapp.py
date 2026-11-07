@@ -62,7 +62,8 @@ def test_consent_catalog_quiz_and_delete(client):
     empty=client.get('/api/lessons/ergonomika',headers=hdr()).json()
     assert len(empty['questions'])==1
     assert len(empty['teacher_materials'])>=1
-    assert len(empty['supplementary'])>=1
+    assert len(empty['sammu_books'])>=1
+    assert empty['supplementary']==[]
     body={'lesson_id':'ergonomika','question_ids':['old'],'answers':[0]}
     assert client.post('/api/attempts',json=body,headers=hdr()).status_code==400
     lesson=client.get('/api/lessons/eng_l1',headers=hdr()).json()
@@ -126,3 +127,13 @@ def test_independent_required_and_supplementary_quizzes(client):
     assert extra_result['supplement_sections']
     assert extra_result['supplement_question_count']==len(extra)
     assert 'answer' not in extra_result['supplement_questions'][0]
+
+def test_sammu_library_books_are_not_free_content(client):
+    client.post('/api/consent',headers=hdr())
+    lesson=client.get('/api/lessons/anat_3',headers=hdr()).json()
+    assert lesson['supplement_sections']
+    assert lesson['supplement_questions']
+    assert lesson['sammu_books']
+    assert all(b['url'].startswith('https://e-library.sammu.uz/') for b in lesson['sammu_books'])
+    assert all(b.get('access') for b in lesson['sammu_books'])
+    assert all(b['url'].startswith('https://openstax.org/') for b in lesson['supplementary'])
