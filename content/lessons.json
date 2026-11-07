@@ -1,5 +1,5 @@
 {
-  "version": "0.5.17-filling-missing-a",
+  "version": "0.5.18-anatomy-added",
   "status": "TEST — O‘qituvchi materiallari va OpenStax ochiq darsliklaridan manba ko‘rsatilgan alohida o‘quv materiallari. Mutaxassis tekshiruvi talab etiladi.",
   "note": "Boshlang‘ich to‘ldirish: 23–25-kariyes va Stomatologiyaga kirish 1–12 mavzulari tekshirilgan ochiq manbalar asosida tayyorlandi. Yangi mazmun foydalanuvchi kitoblaridan ajratilgan AI_RESEARCH_DRAFT sifatida belgilangan.",
   "subjects": [
@@ -6445,10 +6445,96 @@
           "title": "Anatomiya",
           "calendar_topic": "Anatomiya",
           "focus": "Anatomiya",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Anatomiya fanining predmeti",
+              "body": "Odam anatomiyasi tananing tuzilishi, organlarning joylashuvi, shakli va o‘zaro munosabatlarini o‘rganadi. Makroskopik anatomiya ko‘z bilan ko‘rinadigan tuzilmalarni, mikroskopik anatomiya esa to‘qimalarning mayda tuzilishini o‘rganadi."
+            },
+            {
+              "heading": "Anatomik holat",
+              "body": "Standart anatomik holatda odam tik turadi, yuzi va kaftlari oldinga qaratiladi, qo‘llar yonida joylashadi. Anatomik yo‘nalish atamalari aynan shu holatga nisbatan qo‘llanadi."
+            },
+            {
+              "heading": "Anatomik sathlar",
+              "body": "Sagittal sath tanani o‘ng va chapga, frontal sath old va orqaga, transversal sath esa yuqori va pastki qismlarga ajratadi. Bu sathlar organlarni joylashuviga ko‘ra ta’riflashda ishlatiladi."
+            },
+            {
+              "heading": "Yo‘nalish terminlari",
+              "body": "Superior — yuqoriroq, inferior — pastroqda, anterior — oldinda, posterior — orqada, medialis — o‘rta chiziqqa yaqin, lateralis — undan uzoq degan ma’noni bildiradi. Proximalis va distalis qo‘l-oyoq bo‘ylab yaqin va uzoqlikni ko‘rsatadi."
+            },
+            {
+              "heading": "Skelet tizimining vazifalari",
+              "body": "Skelet tana tayanchini ta’minlaydi, ichki organlarni himoya qiladi, mushaklar uchun mahkamlanish nuqtasi bo‘ladi va mineral zaxira sifatida xizmat qiladi. Suyak iligi qon hujayralari hosil bo‘lishida ishtirok etadi."
+            }
+          ],
           "teacher_materials": [],
-          "questions": [],
-          "review_status": "AWAITING_USER_MATERIALS"
+          "questions": [
+            {
+              "id": "anat_1_aiq1",
+              "q": "Anatomiya fani nimani o‘rganadi?",
+              "options": [
+                "Faqat dori narxini",
+                "Odam tanasining tuzilishini",
+                "Faqat ob-havoni",
+                "Faqat tovushni"
+              ],
+              "answer": 1,
+              "explanation": "Odam anatomiyasi tananing tuzilishi, organlarning joylashuvi, shakli va o‘zaro munosabatlarini o‘rganadi."
+            },
+            {
+              "id": "anat_1_aiq2",
+              "q": "Anatomik holatda kaftlar qaysi tomonga qaraydi?",
+              "options": [
+                "Orqaga",
+                "Pastga",
+                "Oldinga",
+                "Ichkariga"
+              ],
+              "answer": 2,
+              "explanation": "Standart anatomik holatda odam tik turadi, yuzi va kaftlari oldinga qaratiladi, qo‘llar yonida joylashadi."
+            },
+            {
+              "id": "anat_1_aiq3",
+              "q": "Qaysi sath tanani yuqori va pastki qismlarga ajratadi?",
+              "options": [
+                "Sagittal sath",
+                "Frontal sath",
+                "Median sath",
+                "Transversal sath"
+              ],
+              "answer": 3,
+              "explanation": "Sagittal sath tanani o‘ng va chapga, frontal sath old va orqaga, transversal sath esa yuqori va pastki qismlarga ajratadi."
+            },
+            {
+              "id": "anat_1_aiq4",
+              "q": "Medialis atamasi nimani bildiradi?",
+              "options": [
+                "O‘rta chiziqqa yaqin joylashgan",
+                "Tananing eng past qismida",
+                "Faqat tashqi yuzada",
+                "Faqat orqa tomonda"
+              ],
+              "answer": 0,
+              "explanation": "Superior — yuqoriroq, inferior — pastroqda, anterior — oldinda, posterior — orqada, medialis — o‘rta chiziqqa yaqin, lateralis — undan uzoq degan ma’noni bildiradi."
+            },
+            {
+              "id": "anat_1_aiq5",
+              "q": "Skeletning vazifalaridan biri qaysi?",
+              "options": [
+                "Tovush yozish",
+                "Ichki organlarni himoya qilish",
+                "Ftorli sement tayyorlash",
+                "Suyuqlikni isitish"
+              ],
+              "answer": 1,
+              "explanation": "Skelet tana tayanchini ta’minlaydi, ichki organlarni himoya qiladi, mushaklar uchun mahkamlanish nuqtasi bo‘ladi va mineral zaxira sifatida xizmat qiladi."
+            }
+          ],
+          "review_status": "AI_RESEARCH_DRAFT — OpenStax anatomy sources, teacher verification recommended",
+          "research_sources": [
+            "https://openstax.org/books/anatomy-and-physiology-2e/pages/7-1-divisions-of-the-skeletal-system",
+            "https://openstax.org/books/anatomy-and-physiology-2e/pages/7-3-the-vertebral-column"
+          ]
         },
         {
           "id": "anat_2",
@@ -6456,10 +6542,96 @@
           "title": "Umumiy osteologiya: skelet, sathlar, terminologiya, umurtqa pog‘onasi va yoshga oid xususiyatlar",
           "calendar_topic": "Umumiy osteologiya: skelet, sathlar, terminologiya, umurtqa pog‘onasi va yoshga oid xususiyatlar",
           "focus": "Umumiy osteologiya: skelet, sathlar, terminologiya, umurtqa pog‘onasi va yoshga oid xususiyatlar",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Osteologiya va skelet bo‘linmalari",
+              "body": "Osteologiya suyaklarni o‘rganadi. Skelet o‘q skeleti va qo‘shimcha skeletga bo‘linadi: o‘q skeletiga kalla, umurtqa pog‘onasi va ko‘krak qafasi, qo‘shimcha skeletga esa kamarlar va erkin qo‘l-oyoq suyaklari kiradi."
+            },
+            {
+              "heading": "Umurtqa qismlari",
+              "body": "Odamda odatda 7 ta bo‘yin, 12 ta ko‘krak va 5 ta bel umurtqasi bo‘ladi. Besh dumg‘aza umurtqasi birikib os sacrum, odatda bir necha dum umurtqasi esa os coccygis ni hosil qiladi."
+            },
+            {
+              "heading": "Tipik umurtqa tuzilishi",
+              "body": "Umurtqa tanasi (corpus vertebrae), yoyi (arcus vertebrae) va o‘simtalardan iborat. Umurtqa teshiklari ketma-ket joylashib orqa miya o‘tadigan kanalni hosil qiladi."
+            },
+            {
+              "heading": "Atlas va axis",
+              "body": "Birinchi bo‘yin umurtqasi atlas (C1) kalla bilan tutashadi. Ikkinchi bo‘yin umurtqasi axis (C2) ning dens deb ataladigan tishsimon o‘simtasi boshni burishda muhim rol o‘ynaydi."
+            },
+            {
+              "heading": "Yoshga oid o‘zgarishlar",
+              "body": "Yangi tug‘ilgan chaqaloqda umurtqa egriliklari kattalarnikidan farq qiladi. Bo‘yin egriligi boshni tutish, bel egriligi tik turish va yurish rivojlanishi bilan shakllanadi. Dumg‘aza umurtqalari yosh o‘tishi bilan suyaklashib birikadi."
+            }
+          ],
           "teacher_materials": [],
-          "questions": [],
-          "review_status": "AWAITING_USER_MATERIALS"
+          "questions": [
+            {
+              "id": "anat_2_aiq1",
+              "q": "Osteologiya nimani o‘rganadi?",
+              "options": [
+                "Tish plombasini",
+                "Qon guruhlarini",
+                "Suyaklarni",
+                "Tovush tezligini"
+              ],
+              "answer": 2,
+              "explanation": "Osteologiya suyaklarni o‘rganadi."
+            },
+            {
+              "id": "anat_2_aiq2",
+              "q": "Bo‘yin umurtqalari odatda nechta?",
+              "options": [
+                "12 ta",
+                "5 ta",
+                "3 ta",
+                "7 ta"
+              ],
+              "answer": 3,
+              "explanation": "Odamda odatda 7 ta bo‘yin, 12 ta ko‘krak va 5 ta bel umurtqasi bo‘ladi."
+            },
+            {
+              "id": "anat_2_aiq3",
+              "q": "Umurtqa tanasining lotincha nomi qaysi?",
+              "options": [
+                "Corpus vertebrae",
+                "Os frontale",
+                "Clavicula",
+                "Mandibula"
+              ],
+              "answer": 0,
+              "explanation": "Umurtqa tanasi (corpus vertebrae), yoyi (arcus vertebrae) va o‘simtalardan iborat."
+            },
+            {
+              "id": "anat_2_aiq4",
+              "q": "Tishsimon o‘simta qaysi umurtqada joylashgan?",
+              "options": [
+                "Atlas (C1)",
+                "Axis (C2)",
+                "T1",
+                "L5"
+              ],
+              "answer": 1,
+              "explanation": "Birinchi bo‘yin umurtqasi atlas (C1) kalla bilan tutashadi."
+            },
+            {
+              "id": "anat_2_aiq5",
+              "q": "Bel egriligining shakllanishi ko‘proq nima bilan bog‘liq?",
+              "options": [
+                "Faqat tish chiqishi bilan",
+                "Faqat eshitish bilan",
+                "Tik turish va yurish rivojlanishi bilan",
+                "Faqat ko‘rish bilan"
+              ],
+              "answer": 2,
+              "explanation": "Yangi tug‘ilgan chaqaloqda umurtqa egriliklari kattalarnikidan farq qiladi."
+            }
+          ],
+          "review_status": "AI_RESEARCH_DRAFT — OpenStax anatomy sources, teacher verification recommended",
+          "research_sources": [
+            "https://openstax.org/books/anatomy-and-physiology-2e/pages/7-1-divisions-of-the-skeletal-system",
+            "https://openstax.org/books/anatomy-and-physiology-2e/pages/7-3-the-vertebral-column"
+          ]
         },
         {
           "id": "anat_3",
@@ -6467,10 +6639,96 @@
           "title": "Qovurg‘alar, to‘sh suyagi va ko‘krak qafasi; yoshga doir xususiyatlar",
           "calendar_topic": "Qovurg‘alar, to‘sh suyagi va ko‘krak qafasi; yoshga doir xususiyatlar",
           "focus": "Qovurg‘alar, to‘sh suyagi va ko‘krak qafasi; yoshga doir xususiyatlar",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Qovurg‘alar soni",
+              "body": "Ko‘krak qafasi 12 juft qovurg‘a, to‘sh suyagi va ko‘krak umurtqalaridan tashkil topadi. Bu tuzilma yurak va o‘pkani himoya qilishda hamda nafas harakatida qatnashadi."
+            },
+            {
+              "heading": "Haqiqiy va soxta qovurg‘alar",
+              "body": "1–7-juftlar to‘sh suyagiga o‘z tog‘aylari orqali bevosita tutashgani uchun haqiqiy qovurg‘alar deyiladi. 8–10-juftlar yuqoridagi qovurg‘a tog‘aylari bilan bog‘lanadi; 11–12-juftlar esa oldingi uchlari erkin bo‘lgan suzuvchi qovurg‘alardir."
+            },
+            {
+              "heading": "To‘sh suyagi qismlari",
+              "body": "Sternum uch asosiy qismdan iborat: manubrium sterni (dasta), corpus sterni (tana) va processus xiphoideus (qilichsimon o‘simta). U oldingi ko‘krak devorida joylashgan."
+            },
+            {
+              "heading": "Qovurg‘a tuzilishi",
+              "body": "Tipik qovurg‘a boshcha, bo‘yin, bo‘rtma va tanaga ega. Qovurg‘a ichki-pastki chegarasi bo‘ylab tomir va nervlar joylashadigan egat o‘tadi. Qovurg‘a tog‘aylari ko‘krak qafasiga elastiklik beradi."
+            },
+            {
+              "heading": "Yosh xususiyatlari",
+              "body": "Bolalarda ko‘krak qafasining shakli va qovurg‘a yo‘nalishi kattalarnikidan farq qiladi. O‘sish davomida ko‘krak qafasi kengayadi, tog‘ay-suyak nisbati va nafas mexanikasi o‘zgaradi."
+            }
+          ],
           "teacher_materials": [],
-          "questions": [],
-          "review_status": "AWAITING_USER_MATERIALS"
+          "questions": [
+            {
+              "id": "anat_3_aiq1",
+              "q": "Odamda nechta juft qovurg‘a bo‘ladi?",
+              "options": [
+                "7 juft",
+                "5 juft",
+                "20 juft",
+                "12 juft"
+              ],
+              "answer": 3,
+              "explanation": "Ko‘krak qafasi 12 juft qovurg‘a, to‘sh suyagi va ko‘krak umurtqalaridan tashkil topadi."
+            },
+            {
+              "id": "anat_3_aiq2",
+              "q": "Qaysi qovurg‘alar suzuvchi deyiladi?",
+              "options": [
+                "11–12-juftlar",
+                "1–2-juftlar",
+                "3–4-juftlar",
+                "7–8-juftlar"
+              ],
+              "answer": 0,
+              "explanation": "1–7-juftlar to‘sh suyagiga o‘z tog‘aylari orqali bevosita tutashgani uchun haqiqiy qovurg‘alar deyiladi."
+            },
+            {
+              "id": "anat_3_aiq3",
+              "q": "To‘sh suyagining qilichsimon qismi nima deyiladi?",
+              "options": [
+                "Processus mastoideus",
+                "Processus xiphoideus",
+                "Foramen magnum",
+                "Crista galli"
+              ],
+              "answer": 1,
+              "explanation": "Sternum uch asosiy qismdan iborat: manubrium sterni (dasta), corpus sterni (tana) va processus xiphoideus (qilichsimon o‘simta)."
+            },
+            {
+              "id": "anat_3_aiq4",
+              "q": "Qovurg‘a tog‘aylari nimani ta’minlashga yordam beradi?",
+              "options": [
+                "Kalla ichi bosimini o‘lchashni",
+                "Tish rangini tanlashni",
+                "Ko‘krak qafasi elastikligini",
+                "Bosh miya qavatlarini yaratishni"
+              ],
+              "answer": 2,
+              "explanation": "Tipik qovurg‘a boshcha, bo‘yin, bo‘rtma va tanaga ega."
+            },
+            {
+              "id": "anat_3_aiq5",
+              "q": "Bolalarda ko‘krak qafasining qaysi jihati o‘zgarib boradi?",
+              "options": [
+                "Faqat tish emali rangi",
+                "Faqat soch zichligi",
+                "Faqat ko‘z qorachig‘i",
+                "Shakli va qovurg‘alar yo‘nalishi"
+              ],
+              "answer": 3,
+              "explanation": "Bolalarda ko‘krak qafasining shakli va qovurg‘a yo‘nalishi kattalarnikidan farq qiladi."
+            }
+          ],
+          "review_status": "AI_RESEARCH_DRAFT — OpenStax anatomy sources, teacher verification recommended",
+          "research_sources": [
+            "https://openstax.org/books/anatomy-and-physiology-2e/pages/7-1-divisions-of-the-skeletal-system",
+            "https://openstax.org/books/anatomy-and-physiology-2e/pages/7-3-the-vertebral-column"
+          ]
         },
         {
           "id": "anat_4",
@@ -6478,10 +6736,95 @@
           "title": "Yelka kamari suyaklari: tuzilishi va yoshga doir xususiyatlar",
           "calendar_topic": "Yelka kamari suyaklari: tuzilishi va yoshga doir xususiyatlar",
           "focus": "Yelka kamari suyaklari: tuzilishi va yoshga doir xususiyatlar",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Yelka kamari suyaklari",
+              "body": "Yelka kamari clavicula — o‘mrov va scapula — kurak suyagidan tashkil topadi. U yuqori qo‘lni tana skeletiga bog‘laydi va keng harakatni ta’minlaydi."
+            },
+            {
+              "heading": "O‘mrov suyagi",
+              "body": "Clavicula S shaklidagi uzun suyak bo‘lib, medial tomonda sternum bilan, lateral tomonda scapulaning acromion qismi bilan tutashadi. Uning egri shakli kuchni uzatish va yelkani tayanchlashga yordam beradi."
+            },
+            {
+              "heading": "Kurak suyagi",
+              "body": "Scapula uchburchaksimon yassi suyakdir. Uning orqa yuzasidagi spina scapulae akromiongacha davom etadi; lateral burchagidagi cavitas glenoidalis yelka suyagi boshchasi bilan bo‘g‘im hosil qiladi."
+            },
+            {
+              "heading": "Kurakning o‘simtalari",
+              "body": "Scapulada acromion va processus coracoideus kabi o‘simtalar bor. Ular boylam va mushaklar uchun mahkamlanish nuqtalaridir. Akromion o‘mrov bilan akromioklavikulyar bo‘g‘im hosil qiladi."
+            },
+            {
+              "heading": "O‘sish va suyaklashish",
+              "body": "O‘mrovning bir qismi erta suyaklana boshlaydi, ammo ayrim epifizlar keyinroq birikadi. Kurak o‘simtalarining suyaklanishi o‘sish davomida yakunlanadi. Yosh xususiyatlari rentgen tasvirini talqin qilishda muhim."
+            }
+          ],
           "teacher_materials": [],
-          "questions": [],
-          "review_status": "AWAITING_USER_MATERIALS"
+          "questions": [
+            {
+              "id": "anat_4_aiq1",
+              "q": "Yelka kamari qaysi suyaklardan tashkil topadi?",
+              "options": [
+                "O‘mrov va kurak",
+                "Son va boldir",
+                "Yuqori va pastki jag‘",
+                "Tepa va ensa"
+              ],
+              "answer": 0,
+              "explanation": "Yelka kamari clavicula — o‘mrov va scapula — kurak suyagidan tashkil topadi."
+            },
+            {
+              "id": "anat_4_aiq2",
+              "q": "Clavicula ning medial uchi nima bilan tutashadi?",
+              "options": [
+                "Femur bilan",
+                "Sternum bilan",
+                "Mandibula bilan",
+                "Fibula bilan"
+              ],
+              "answer": 1,
+              "explanation": "Clavicula S shaklidagi uzun suyak bo‘lib, medial tomonda sternum bilan, lateral tomonda scapulaning acromion qismi bilan tutashadi."
+            },
+            {
+              "id": "anat_4_aiq3",
+              "q": "Scapula ning yelka suyagi bilan bo‘g‘imlashuvchi chuqurchasi qaysi?",
+              "options": [
+                "Fossa mandibularis",
+                "Acetabulum",
+                "Cavitas glenoidalis",
+                "Foramen ovale"
+              ],
+              "answer": 2,
+              "explanation": "Scapula uchburchaksimon yassi suyakdir."
+            },
+            {
+              "id": "anat_4_aiq4",
+              "q": "O‘mrovning tashqi uchi kurakning qaysi qismi bilan tutashadi?",
+              "options": [
+                "Crista galli",
+                "Trochanter major",
+                "Dens axis",
+                "Acromion"
+              ],
+              "answer": 3,
+              "explanation": "Scapulada acromion va processus coracoideus kabi o‘simtalar bor."
+            },
+            {
+              "id": "anat_4_aiq5",
+              "q": "Kurak o‘simtalarining suyaklanishi qachon yakunlanadi?",
+              "options": [
+                "O‘sish davrida bosqichma-bosqich",
+                "Har doim tug‘ilishdan oldin to‘liq",
+                "Faqat kariyes paytida",
+                "Hech qachon"
+              ],
+              "answer": 0,
+              "explanation": "O‘mrovning bir qismi erta suyaklana boshlaydi, ammo ayrim epifizlar keyinroq birikadi."
+            }
+          ],
+          "review_status": "AI_RESEARCH_DRAFT — OpenStax anatomy sources, teacher verification recommended",
+          "research_sources": [
+            "https://openstax.org/books/anatomy-and-physiology-2e/pages/8-1-the-pectoral-girdle"
+          ]
         },
         {
           "id": "anat_5",
@@ -6489,10 +6832,95 @@
           "title": "Qo‘l erkin qismi suyaklari: tuzilishi va yoshga doir xususiyatlar",
           "calendar_topic": "Qo‘l erkin qismi suyaklari: tuzilishi va yoshga doir xususiyatlar",
           "focus": "Qo‘l erkin qismi suyaklari: tuzilishi va yoshga doir xususiyatlar",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Yelka va bilak suyaklari",
+              "body": "Erkin yuqori qo‘lda humerus — yelka, radius — bilakning tashqi (bosh barmoq tomoni) va ulna — tirsak tomondagi suyak joylashgan. Anatomik holatda radius lateral, ulna medial tomonda turadi."
+            },
+            {
+              "heading": "Humerus tuzilishi",
+              "body": "Humerus proximal qismida caput humeri, distal qismida condylus humeri va epicondylus lar mavjud. Boshcha scapula glenoid bo‘shlig‘i bilan yelka bo‘g‘imini tashkil qiladi."
+            },
+            {
+              "heading": "Radius va ulna",
+              "body": "Ulna proximal qismidagi olecranon tirsakning seziladigan bo‘rtmasini hosil qiladi. Radius boshchasi humerus bilan va ulna bilan tutashadi; radiusning distal qismi bilak-kaft bo‘g‘imida qatnashadi."
+            },
+            {
+              "heading": "Kaft suyaklari",
+              "body": "Qo‘l kafti skeletida 8 ta ossa carpi, 5 ta ossa metacarpi va odatda 14 ta barmoq falangasi mavjud. Bosh barmoqda ikki, qolgan barmoqlarda uchta falanga bo‘ladi."
+            },
+            {
+              "heading": "O‘sish plastinkalari",
+              "body": "Uzun suyaklarning epifiz zonalarida o‘sish plastinkalari mavjud bo‘lib, ular suyak uzunligining ortishiga yordam beradi. Voyaga yetishda bu plastinkalar suyaklashib epifiz chiziqlariga aylanadi."
+            }
+          ],
           "teacher_materials": [],
-          "questions": [],
-          "review_status": "AWAITING_USER_MATERIALS"
+          "questions": [
+            {
+              "id": "anat_5_aiq1",
+              "q": "Anatomik holatda radius qaysi tomonda joylashadi?",
+              "options": [
+                "Medial, jimjiloq tomonida",
+                "Lateral, bosh barmoq tomonida",
+                "Faqat orqa tomonda",
+                "Faqat kurakda"
+              ],
+              "answer": 1,
+              "explanation": "Erkin yuqori qo‘lda humerus — yelka, radius — bilakning tashqi (bosh barmoq tomoni) va ulna — tirsak tomondagi suyak joylashgan."
+            },
+            {
+              "id": "anat_5_aiq2",
+              "q": "Caput humeri qaysi suyak bilan bo‘g‘im hosil qiladi?",
+              "options": [
+                "Femur bilan",
+                "Os frontale bilan",
+                "Scapula bilan",
+                "Patella bilan"
+              ],
+              "answer": 2,
+              "explanation": "Humerus proximal qismida caput humeri, distal qismida condylus humeri va epicondylus lar mavjud."
+            },
+            {
+              "id": "anat_5_aiq3",
+              "q": "Olecranon qaysi suyakning qismi?",
+              "options": [
+                "Radius",
+                "Clavicula",
+                "Scapula",
+                "Ulna"
+              ],
+              "answer": 3,
+              "explanation": "Ulna proximal qismidagi olecranon tirsakning seziladigan bo‘rtmasini hosil qiladi."
+            },
+            {
+              "id": "anat_5_aiq4",
+              "q": "Bosh barmoqda odatda nechta falanga bo‘ladi?",
+              "options": [
+                "2 ta",
+                "3 ta",
+                "4 ta",
+                "5 ta"
+              ],
+              "answer": 0,
+              "explanation": "Qo‘l kafti skeletida 8 ta ossa carpi, 5 ta ossa metacarpi va odatda 14 ta barmoq falangasi mavjud."
+            },
+            {
+              "id": "anat_5_aiq5",
+              "q": "Uzun suyakning bo‘yiga o‘sishi qayer bilan bog‘liq?",
+              "options": [
+                "Faqat suyak iligi rangi bilan",
+                "Epifiz o‘sish plastinkasi bilan",
+                "Faqat teri osti yog‘i bilan",
+                "Faqat ko‘z kosasi bilan"
+              ],
+              "answer": 1,
+              "explanation": "Uzun suyaklarning epifiz zonalarida o‘sish plastinkalari mavjud bo‘lib, ular suyak uzunligining ortishiga yordam beradi."
+            }
+          ],
+          "review_status": "AI_RESEARCH_DRAFT — OpenStax anatomy sources, teacher verification recommended",
+          "research_sources": [
+            "https://openstax.org/books/anatomy-and-physiology-2e/pages/8-1-the-pectoral-girdle"
+          ]
         },
         {
           "id": "anat_6",
@@ -6500,10 +6928,95 @@
           "title": "Chanoq kamari tuzilishi va yoshga doir xususiyatlar",
           "calendar_topic": "Chanoq kamari tuzilishi va yoshga doir xususiyatlar",
           "focus": "Chanoq kamari tuzilishi va yoshga doir xususiyatlar",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Chanoq kamarining tuzilishi",
+              "body": "Har bir os coxae uch qism — ilium, ischium va pubis — qo‘shilishidan hosil bo‘ladi. Bolalarda ularning o‘rtasida tog‘ay zonalari mavjud, keyinchalik birikadi."
+            },
+            {
+              "heading": "Acetabulum",
+              "body": "Acetabulum chanoq suyagining lateral kosasimon chuqurchasidir. U son suyagining boshchasi bilan chanoq-son bo‘g‘imini hosil qiladi."
+            },
+            {
+              "heading": "Obturator teshik",
+              "body": "Foramen obturatum pubis va ischium orasidagi yirik teshikdir. Uning katta qismi obturator parda bilan yopilgan; muayyan kanal orqali tomir va nervlar o‘tadi."
+            },
+            {
+              "heading": "Chanoqning funksiyasi",
+              "body": "Chanoq gavdaning og‘irligini pastki oyoqlarga uzatadi, mushaklarni biriktiradi va kichik chanoq a’zolarini himoya qiladi. Suyak chanoq ikkita os coxae, sacrum va coccyxdan tarkib topgan."
+            },
+            {
+              "heading": "Chanoq kirish va chiqish qismlari",
+              "body": "Chanoq katta va kichik bo‘shliqlarga ajraladi. Linea terminalis ularni chegaralashda ishlatiladi; chanoq kirish qismi anatomik o‘lchovlarda muhim. O‘sish davrida chanoq kengligi va proporsiyalari o‘zgaradi."
+            }
+          ],
           "teacher_materials": [],
-          "questions": [],
-          "review_status": "AWAITING_USER_MATERIALS"
+          "questions": [
+            {
+              "id": "anat_6_aiq1",
+              "q": "Os coxae qaysi uch qismdan tashkil topadi?",
+              "options": [
+                "Radius, ulna va humerus",
+                "Frontal, ethmoid va sphenoid",
+                "Ilium, ischium va pubis",
+                "Tibia, fibula va patella"
+              ],
+              "answer": 2,
+              "explanation": "Har bir os coxae uch qism — ilium, ischium va pubis — qo‘shilishidan hosil bo‘ladi."
+            },
+            {
+              "id": "anat_6_aiq2",
+              "q": "Acetabulum nima bilan bo‘g‘im hosil qiladi?",
+              "options": [
+                "Caput humeri bilan",
+                "Mandibula bilan",
+                "Atlas bilan",
+                "Caput femoris bilan"
+              ],
+              "answer": 3,
+              "explanation": "Acetabulum chanoq suyagining lateral kosasimon chuqurchasidir."
+            },
+            {
+              "id": "anat_6_aiq3",
+              "q": "Foramen obturatum qaysi sohada joylashadi?",
+              "options": [
+                "Chanoq suyagida",
+                "Chakka suyagida",
+                "Kurak suyagida",
+                "Pastki jag‘da"
+              ],
+              "answer": 0,
+              "explanation": "Foramen obturatum pubis va ischium orasidagi yirik teshikdir."
+            },
+            {
+              "id": "anat_6_aiq4",
+              "q": "Suyak chanoqning muhim vazifasi nima?",
+              "options": [
+                "Bosh miya harakatini boshqarish",
+                "Gavda og‘irligini oyoqlarga uzatish",
+                "Ko‘zni himoya qilish",
+                "Qo‘l panjasini bukish"
+              ],
+              "answer": 1,
+              "explanation": "Chanoq gavdaning og‘irligini pastki oyoqlarga uzatadi, mushaklarni biriktiradi va kichik chanoq a’zolarini himoya qiladi."
+            },
+            {
+              "id": "anat_6_aiq5",
+              "q": "Chanoq katta va kichik qismlarini ajratishda qaysi chiziq muhim?",
+              "options": [
+                "Linea nuchae",
+                "Linea temporalis",
+                "Linea terminalis",
+                "Linea aspera"
+              ],
+              "answer": 2,
+              "explanation": "Chanoq katta va kichik bo‘shliqlarga ajraladi."
+            }
+          ],
+          "review_status": "AI_RESEARCH_DRAFT — OpenStax anatomy sources, teacher verification recommended",
+          "research_sources": [
+            "https://openstax.org/books/anatomy-and-physiology-2e/pages/8-3-the-pelvic-girdle-and-pelvis"
+          ]
         },
         {
           "id": "anat_7",
@@ -6511,10 +7024,95 @@
           "title": "Chanoq kamari tuzilishi va yoshga doir xususiyatlar",
           "calendar_topic": "Chanoq kamari tuzilishi va yoshga doir xususiyatlar",
           "focus": "Chanoq kamari tuzilishi va yoshga doir xususiyatlar",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Ilium ning tuzilishi",
+              "body": "Os ilium chanoq suyagining yuqori keng qismidir. Uning ala ossis ilii (qanoti), crista iliaca (qirrasi) va oldingi-yuqori yonbosh o‘sig‘i anatomik mo‘ljal sifatida ishlatiladi."
+            },
+            {
+              "heading": "Ischium xususiyatlari",
+              "body": "Os ischii chanoq suyagining orqa-pastki qismidir. Tuber ischiadicum o‘tirganda tana og‘irligining katta qismini qabul qiladigan suyak bo‘rtmasidir."
+            },
+            {
+              "heading": "Pubis va simfiz",
+              "body": "Os pubis chanoqning oldingi-pastki sohasini hosil qiladi. O‘ng va chap qov suyaklari symphysis pubica orqali tutashadi; bu fibro-tog‘ayli birikmadir."
+            },
+            {
+              "heading": "Sacrum bilan aloqasi",
+              "body": "Os coxae ning quloqsimon yuzi sacrum bilan sakroiliak bo‘g‘im hosil qiladi. Bu bo‘g‘im mustahkam boylamlar bilan qo‘llab-quvvatlanadi va gavdadan oyoqlarga kuch uzatilishida muhim."
+            },
+            {
+              "heading": "Yosh va jinsga bog‘liq farqlar",
+              "body": "Bolalarda ilium, ischium va pubis acetabulum sohasida o‘sish tog‘aylari bilan bog‘liq. Ularning birikishi o‘smirlik va keyingi davrlarda yakunlanadi. Kattalarda chanoq shaklining individual farqlari mavjud."
+            }
+          ],
           "teacher_materials": [],
-          "questions": [],
-          "review_status": "AWAITING_USER_MATERIALS"
+          "questions": [
+            {
+              "id": "anat_7_aiq1",
+              "q": "Crista iliaca qaysi suyakda?",
+              "options": [
+                "Os temporale",
+                "Os zygomaticum",
+                "Os naviculare",
+                "Os ilium"
+              ],
+              "answer": 3,
+              "explanation": "Os ilium chanoq suyagining yuqori keng qismidir."
+            },
+            {
+              "id": "anat_7_aiq2",
+              "q": "Tuber ischiadicum qaysi holatda muhim tayanch bo‘ladi?",
+              "options": [
+                "O‘tirganda",
+                "Yutganda",
+                "Ko‘zni yumganda",
+                "Qo‘lni yozganda"
+              ],
+              "answer": 0,
+              "explanation": "Os ischii chanoq suyagining orqa-pastki qismidir."
+            },
+            {
+              "id": "anat_7_aiq3",
+              "q": "O‘ng va chap pubis qaysi birikma orqali tutashadi?",
+              "options": [
+                "Sutura sagittalis",
+                "Symphysis pubica",
+                "Articulatio humeri",
+                "Sutura coronalis"
+              ],
+              "answer": 1,
+              "explanation": "Os pubis chanoqning oldingi-pastki sohasini hosil qiladi."
+            },
+            {
+              "id": "anat_7_aiq4",
+              "q": "Sakroiliak bo‘g‘im qaysi tuzilmalar orasida?",
+              "options": [
+                "Scapula va clavicula",
+                "Radius va ulna",
+                "Os ilium va os sacrum",
+                "Mandibula va maxilla"
+              ],
+              "answer": 2,
+              "explanation": "Os coxae ning quloqsimon yuzi sacrum bilan sakroiliak bo‘g‘im hosil qiladi."
+            },
+            {
+              "id": "anat_7_aiq5",
+              "q": "Ilium, ischium va pubisning birikish sohasi qaysi?",
+              "options": [
+                "Foramen magnum",
+                "Crista galli",
+                "Fossa mandibularis",
+                "Acetabulum"
+              ],
+              "answer": 3,
+              "explanation": "Bolalarda ilium, ischium va pubis acetabulum sohasida o‘sish tog‘aylari bilan bog‘liq."
+            }
+          ],
+          "review_status": "AI_RESEARCH_DRAFT — OpenStax anatomy sources, teacher verification recommended",
+          "research_sources": [
+            "https://openstax.org/books/anatomy-and-physiology-2e/pages/8-3-the-pelvic-girdle-and-pelvis"
+          ]
         },
         {
           "id": "anat_8",
@@ -6522,10 +7120,95 @@
           "title": "Oyoq erkin suyaklari: tuzilishi va yoshga doir xususiyatlar",
           "calendar_topic": "Oyoq erkin suyaklari: tuzilishi va yoshga doir xususiyatlar",
           "focus": "Oyoq erkin suyaklari: tuzilishi va yoshga doir xususiyatlar",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Son suyagi",
+              "body": "Femur tanadagi eng yirik va mustahkam uzun suyaklardan biridir. Uning caput femoris qismi acetabulum bilan, distal kondillari esa tibia bilan bo‘g‘imlashadi."
+            },
+            {
+              "heading": "Tizza qopqog‘i",
+              "body": "Patella katta sesamasimon suyak bo‘lib, sonning to‘rt boshli mushagi payi tizimida joylashadi. U tizzaning old yuzasida bo‘ladi va mushakning mexanik ta’sirini yaxshilaydi."
+            },
+            {
+              "heading": "Boldir suyaklari",
+              "body": "Tibia — katta boldir suyagi, medial va tana og‘irligini ko‘taruvchi asosiy suyak; fibula — kichik boldir suyagi, lateral tomonda joylashadi. Ular to‘piq bo‘g‘imini tashkil etishda ham qatnashadi."
+            },
+            {
+              "heading": "Oyoq panjasi skeleti",
+              "body": "Oyoq panjasida odatda 7 ta tarsal suyak, 5 ta metatarsal suyak va 14 ta falanga mavjud. Calcaneus tovon, talus esa boldir-to‘piq bo‘g‘imining muhim suyaklaridandir."
+            },
+            {
+              "heading": "Yoshga doir suyaklanish",
+              "body": "Uzun oyoq suyaklarida epifiz o‘sish zonalari va ikkilamchi suyaklanish markazlari mavjud. Rivojlanishda bu markazlar qo‘shilib, suyakning uzunligi hamda shakli o‘zgaradi."
+            }
+          ],
           "teacher_materials": [],
-          "questions": [],
-          "review_status": "AWAITING_USER_MATERIALS"
+          "questions": [
+            {
+              "id": "anat_8_aiq1",
+              "q": "Caput femoris qaysi chuqurchaga kiradi?",
+              "options": [
+                "Acetabulum",
+                "Cavitas glenoidalis",
+                "Fossa mandibularis",
+                "Orbita"
+              ],
+              "answer": 0,
+              "explanation": "Femur tanadagi eng yirik va mustahkam uzun suyaklardan biridir."
+            },
+            {
+              "id": "anat_8_aiq2",
+              "q": "Patella qanday suyak?",
+              "options": [
+                "Kalla yassi suyagi",
+                "Sesamasimon suyak",
+                "Havo bo‘shliqli suyak",
+                "Tishsimon o‘simta"
+              ],
+              "answer": 1,
+              "explanation": "Patella katta sesamasimon suyak bo‘lib, sonning to‘rt boshli mushagi payi tizimida joylashadi."
+            },
+            {
+              "id": "anat_8_aiq3",
+              "q": "Boldirning asosiy og‘irlik ko‘taruvchi suyagi qaysi?",
+              "options": [
+                "Fibula",
+                "Patella",
+                "Tibia",
+                "Scapula"
+              ],
+              "answer": 2,
+              "explanation": "Tibia — katta boldir suyagi, medial va tana og‘irligini ko‘taruvchi asosiy suyak; fibula — kichik boldir suyagi, lateral tomonda joylashadi."
+            },
+            {
+              "id": "anat_8_aiq4",
+              "q": "Tovon suyagining lotincha nomi qaysi?",
+              "options": [
+                "Talus",
+                "Cuboid",
+                "Naviculare",
+                "Calcaneus"
+              ],
+              "answer": 3,
+              "explanation": "Oyoq panjasida odatda 7 ta tarsal suyak, 5 ta metatarsal suyak va 14 ta falanga mavjud."
+            },
+            {
+              "id": "anat_8_aiq5",
+              "q": "Epifiz o‘sish zonalari nimaga xizmat qiladi?",
+              "options": [
+                "Uzun suyakning bo‘yiga o‘sishiga",
+                "Faqat soch o‘sishiga",
+                "Faqat ko‘z rangi o‘zgarishiga",
+                "Faqat tish kariyesiga"
+              ],
+              "answer": 0,
+              "explanation": "Uzun oyoq suyaklarida epifiz o‘sish zonalari va ikkilamchi suyaklanish markazlari mavjud."
+            }
+          ],
+          "review_status": "AI_RESEARCH_DRAFT — OpenStax anatomy sources, teacher verification recommended",
+          "research_sources": [
+            "https://openstax.org/books/anatomy-and-physiology-2e/pages/8-3-the-pelvic-girdle-and-pelvis"
+          ]
         },
         {
           "id": "anat_9",
@@ -6533,10 +7216,95 @@
           "title": "Kalla suyagi, miya qismi: ensa va tepa suyaklari; yoshga doir xususiyatlar",
           "calendar_topic": "Kalla suyagi, miya qismi: ensa va tepa suyaklari; yoshga doir xususiyatlar",
           "focus": "Kalla suyagi, miya qismi: ensa va tepa suyaklari; yoshga doir xususiyatlar",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Kalla miya qismi",
+              "body": "Neurocranium bosh miyani o‘rab turuvchi sakkiz suyakdan tashkil topadi: juft tepa va chakka, toq peshona, ensa, ponasimon va g‘alvirsimon suyaklar. Kalla suyaklari miya, tomir va nervlarni himoya qiladi."
+            },
+            {
+              "heading": "Ensa suyagi",
+              "body": "Os occipitale kalla orqa-pastki devorining muhim qismidir. Undagi foramen magnum orqali orqa miya va boshqa tuzilmalar o‘tadi. Condyli occipitales atlas bilan tutashadi."
+            },
+            {
+              "heading": "Tepa suyaklari",
+              "body": "Ossa parietalia — ikkita yassi suyak. Ular kalla tomi va yuqori yon devorini hosil qiladi; o‘rtada sutura sagittalis orqali birikadi."
+            },
+            {
+              "heading": "Kalla choklari",
+              "body": "Peshona va tepa suyaklari sutura coronalis bilan, tepa va ensa suyaklari sutura lambdoidea bilan tutashadi. Bolalarda kengroq biriktiruvchi to‘qima sohalari liqildoq deb ataladi."
+            },
+            {
+              "heading": "Yoshga oid o‘zgarishlar",
+              "body": "Chaqaloqlarda kalla suyaklari orasida liqildoqlar bo‘ladi; suyaklar o‘sishi bilan ular yopiladi va choklar mustahkamlanadi. Yosh bo‘yicha suyaklashish darajasi rivojlanishni baholashda yordam beradi."
+            }
+          ],
           "teacher_materials": [],
-          "questions": [],
-          "review_status": "AWAITING_USER_MATERIALS"
+          "questions": [
+            {
+              "id": "anat_9_aiq1",
+              "q": "Neurocranium odatda nechta suyakdan iborat?",
+              "options": [
+                "12 ta",
+                "8 ta",
+                "14 ta",
+                "22 juft"
+              ],
+              "answer": 1,
+              "explanation": "Neurocranium bosh miyani o‘rab turuvchi sakkiz suyakdan tashkil topadi: juft tepa va chakka, toq peshona, ensa, ponasimon va g‘alvirsimon suyaklar."
+            },
+            {
+              "id": "anat_9_aiq2",
+              "q": "Foramen magnum qaysi suyakda joylashgan?",
+              "options": [
+                "Os nasale",
+                "Os lacrimale",
+                "Os occipitale",
+                "Vomer"
+              ],
+              "answer": 2,
+              "explanation": "Os occipitale kalla orqa-pastki devorining muhim qismidir."
+            },
+            {
+              "id": "anat_9_aiq3",
+              "q": "Ikki tepa suyagi qaysi chok bilan birikadi?",
+              "options": [
+                "Sutura coronalis",
+                "Sutura lambdoidea",
+                "Sutura squamosa",
+                "Sutura sagittalis"
+              ],
+              "answer": 3,
+              "explanation": "Ossa parietalia — ikkita yassi suyak."
+            },
+            {
+              "id": "anat_9_aiq4",
+              "q": "Tepa va ensa suyaklari qaysi chokda tutashadi?",
+              "options": [
+                "Sutura lambdoidea",
+                "Sutura sagittalis",
+                "Sutura palatina",
+                "Sutura frontonasalis"
+              ],
+              "answer": 0,
+              "explanation": "Peshona va tepa suyaklari sutura coronalis bilan, tepa va ensa suyaklari sutura lambdoidea bilan tutashadi."
+            },
+            {
+              "id": "anat_9_aiq5",
+              "q": "Chaqaloq kallasidagi liqildoq nimani anglatadi?",
+              "options": [
+                "Yangi tish ildizi",
+                "Suyaklar orasidagi biriktiruvchi to‘qimali soha",
+                "Kalla ichidagi mushak",
+                "Bo‘yinning tog‘ayi"
+              ],
+              "answer": 1,
+              "explanation": "Chaqaloqlarda kalla suyaklari orasida liqildoqlar bo‘ladi; suyaklar o‘sishi bilan ular yopiladi va choklar mustahkamlanadi."
+            }
+          ],
+          "review_status": "AI_RESEARCH_DRAFT — OpenStax anatomy sources, teacher verification recommended",
+          "research_sources": [
+            "https://openstax.org/books/anatomy-and-physiology-2e/pages/7-2-the-skull"
+          ]
         },
         {
           "id": "anat_10",
@@ -6544,10 +7312,95 @@
           "title": "Peshona va g‘alvir suyaklari",
           "calendar_topic": "Peshona va g‘alvir suyaklari",
           "focus": "Peshona va g‘alvir suyaklari",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Peshona suyagi",
+              "body": "Os frontale peshona va ko‘z kosasi tomining muhim qismini hosil qiladi. Uning squama frontalis, pars orbitalis va pars nasalis qismlari bor. Unda sinus frontalis — havo saqlovchi bo‘shliq bo‘lishi mumkin."
+            },
+            {
+              "heading": "Ko‘z usti teshigi va qirrasi",
+              "body": "Margo supraorbitalis ko‘z kosasining yuqori qirrasi. Incisura/foramen supraorbitale orqali supraorbital nerv va tomirlar o‘tadi. Bu tuzilma yuz anatomik mo‘ljallaridan biridir."
+            },
+            {
+              "heading": "G‘alvirsimon suyak",
+              "body": "Os ethmoidale burun bo‘shlig‘i tomi va ko‘z kosasining medial devorida qatnashadi. Uning lamina cribrosa, lamina perpendicularis va labyrinthus ethmoidalis qismlari bor."
+            },
+            {
+              "heading": "Crista galli va hid nervi",
+              "body": "Crista galli g‘alvirsimon suyakning bosh miya bo‘shlig‘iga yo‘nalgan bo‘rtmasidir. Lamina cribrosa dagi mayda teshiklar orqali hid bilish nervi tolalari o‘tadi."
+            },
+            {
+              "heading": "Burun to‘sig‘i bilan munosabat",
+              "body": "Lamina perpendicularis burun to‘sig‘ining suyak qismida qatnashadi; vomer ham to‘siqning boshqa suyak qismidir. G‘alvirsimon suyakning bo‘shliqlari burun yon bo‘shliqlari tizimiga kiradi."
+            }
+          ],
           "teacher_materials": [],
-          "questions": [],
-          "review_status": "AWAITING_USER_MATERIALS"
+          "questions": [
+            {
+              "id": "anat_10_aiq1",
+              "q": "Peshona suyagining lotincha nomi qaysi?",
+              "options": [
+                "Os temporale",
+                "Os ethmoidale",
+                "Os frontale",
+                "Os parietale"
+              ],
+              "answer": 2,
+              "explanation": "Os frontale peshona va ko‘z kosasi tomining muhim qismini hosil qiladi."
+            },
+            {
+              "id": "anat_10_aiq2",
+              "q": "Supraorbital teshik qaysi chekkaga yaqin?",
+              "options": [
+                "Pastki jag‘ tanasiga",
+                "Ensa suyagi asosiga",
+                "Chakka o‘sig‘iga",
+                "Ko‘z kosasining yuqori qirrasiga"
+              ],
+              "answer": 3,
+              "explanation": "Margo supraorbitalis ko‘z kosasining yuqori qirrasi."
+            },
+            {
+              "id": "anat_10_aiq3",
+              "q": "Lamina cribrosa qaysi suyakning qismi?",
+              "options": [
+                "Os ethmoidale",
+                "Os frontale",
+                "Os occipitale",
+                "Os palatinum"
+              ],
+              "answer": 0,
+              "explanation": "Os ethmoidale burun bo‘shlig‘i tomi va ko‘z kosasining medial devorida qatnashadi."
+            },
+            {
+              "id": "anat_10_aiq4",
+              "q": "Hid bilish nervi tolalari qaysi suyak plastinkasidan o‘tadi?",
+              "options": [
+                "Lamina basalis mandibulae",
+                "Lamina cribrosa",
+                "Lamina papyracea tibiae",
+                "Lamina costalis"
+              ],
+              "answer": 1,
+              "explanation": "Crista galli g‘alvirsimon suyakning bosh miya bo‘shlig‘iga yo‘nalgan bo‘rtmasidir."
+            },
+            {
+              "id": "anat_10_aiq5",
+              "q": "Lamina perpendicularis qaysi tuzilma tarkibida qatnashadi?",
+              "options": [
+                "Tizza bo‘g‘imida",
+                "Oyoq tovonida",
+                "Burun to‘sig‘ida",
+                "Yelka bo‘g‘imida"
+              ],
+              "answer": 2,
+              "explanation": "Lamina perpendicularis burun to‘sig‘ining suyak qismida qatnashadi; vomer ham to‘siqning boshqa suyak qismidir."
+            }
+          ],
+          "review_status": "AI_RESEARCH_DRAFT — OpenStax anatomy sources, teacher verification recommended",
+          "research_sources": [
+            "https://openstax.org/books/anatomy-and-physiology-2e/pages/7-2-the-skull"
+          ]
         },
         {
           "id": "anat_11",
@@ -6555,10 +7408,95 @@
           "title": "Ponasimon va chakka suyaklari; chakka suyagi kanallari",
           "calendar_topic": "Ponasimon va chakka suyaklari; chakka suyagi kanallari",
           "focus": "Ponasimon va chakka suyaklari; chakka suyagi kanallari",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Ponasimon suyak",
+              "body": "Os sphenoidale kalla asosining markaziy suyaklaridan biri. Uning corpus, alae majores, alae minores va processus pterygoidei qismlari bor. Corpus ichida sinus sphenoidalis mavjud."
+            },
+            {
+              "heading": "Turk egari va gipofiz",
+              "body": "Sella turcica ponasimon suyakning yuqori yuzasidagi chuqurlashgan soha bo‘lib, gipofiz bezini joylashtiradigan fossa hypophysialis ni o‘z ichiga oladi."
+            },
+            {
+              "heading": "Chakka suyagi qismlari",
+              "body": "Os temporale kalla yon devori va asosida joylashadi. Uning pars squamosa, pars petrosa va pars tympanica qismlari bor. Processus mastoideus ham chakka suyagiga tegishli."
+            },
+            {
+              "heading": "Eshitish va yuz nervi yo‘llari",
+              "body": "Chakka suyagi piramidasida ichki quloq tuzilmalari joylashadi. Meatus acusticus internus orqali VII va VIII bosh miya nervlari bilan bog‘liq tuzilmalar o‘tadi. Canalis facialis yuz nervi yo‘lining bir qismidir."
+            },
+            {
+              "heading": "Chakka suyagi va pastki jag‘",
+              "body": "Fossa mandibularis chakka suyagining pastki yuzasida joylashgan bo‘lib, pastki jag‘ bo‘g‘im boshchasi bilan chakka-pastki jag‘ bo‘g‘imini tashkil qiladi."
+            }
+          ],
           "teacher_materials": [],
-          "questions": [],
-          "review_status": "AWAITING_USER_MATERIALS"
+          "questions": [
+            {
+              "id": "anat_11_aiq1",
+              "q": "Sella turcica qaysi suyakda joylashadi?",
+              "options": [
+                "Os parietale",
+                "Maxilla",
+                "Mandibula",
+                "Os sphenoidale"
+              ],
+              "answer": 3,
+              "explanation": "Os sphenoidale kalla asosining markaziy suyaklaridan biri."
+            },
+            {
+              "id": "anat_11_aiq2",
+              "q": "Gipofiz qaysi suyakdagi chuqurchada joylashadi?",
+              "options": [
+                "Ponasimon suyakdagi fossa hypophysialis",
+                "Pastki jag‘dagi alveola",
+                "Kurakdagi cavitas glenoidalis",
+                "Chanoqdagi acetabulum"
+              ],
+              "answer": 0,
+              "explanation": "Sella turcica ponasimon suyakning yuqori yuzasidagi chuqurlashgan soha bo‘lib, gipofiz bezini joylashtiradigan fossa hypophysialis ni o‘z ichiga oladi.."
+            },
+            {
+              "id": "anat_11_aiq3",
+              "q": "Processus mastoideus qaysi suyakning qismi?",
+              "options": [
+                "Os frontale",
+                "Os temporale",
+                "Os occipitale",
+                "Vomer"
+              ],
+              "answer": 1,
+              "explanation": "Os temporale kalla yon devori va asosida joylashadi."
+            },
+            {
+              "id": "anat_11_aiq4",
+              "q": "Meatus acusticus internus qaysi suyakda?",
+              "options": [
+                "Os nasale",
+                "Os lacrimale",
+                "Os temporale",
+                "Os zygomaticum"
+              ],
+              "answer": 2,
+              "explanation": "Chakka suyagi piramidasida ichki quloq tuzilmalari joylashadi."
+            },
+            {
+              "id": "anat_11_aiq5",
+              "q": "Fossa mandibularis qaysi suyakda joylashgan?",
+              "options": [
+                "Os ethmoidale",
+                "Os sacrum",
+                "Os frontale",
+                "Os temporale"
+              ],
+              "answer": 3,
+              "explanation": "Fossa mandibularis chakka suyagining pastki yuzasida joylashgan bo‘lib, pastki jag‘ bo‘g‘im boshchasi bilan chakka-pastki jag‘ bo‘g‘imini tashkil qiladi.."
+            }
+          ],
+          "review_status": "AI_RESEARCH_DRAFT — OpenStax anatomy sources, teacher verification recommended",
+          "research_sources": [
+            "https://openstax.org/books/anatomy-and-physiology-2e/pages/7-2-the-skull"
+          ]
         },
         {
           "id": "anat_12",
@@ -6566,10 +7504,95 @@
           "title": "Kalla yuz qismi: yuqori va pastki jag‘, mayda yuz suyaklari",
           "calendar_topic": "Kalla yuz qismi: yuqori va pastki jag‘, mayda yuz suyaklari",
           "focus": "Kalla yuz qismi: yuqori va pastki jag‘, mayda yuz suyaklari",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Yuqori jag‘ — maxilla",
+              "body": "Maxilla juft yuz suyagi bo‘lib, yuqori tishlar alveolalari, qattiq tanglayning oldingi qismi, burun bo‘shlig‘i va orbita devorlarining bir qismini hosil qiladi. Uning corpus maxillae ichida sinus maxillaris bor."
+            },
+            {
+              "heading": "Pastki jag‘ — mandibula",
+              "body": "Mandibula yuz skeletidagi yirik harakatchan suyakdir. Corpus mandibulae va ikki ramus mandibulae ga ega. Processus condylaris chakka suyagi bilan bo‘g‘im hosil qiladi."
+            },
+            {
+              "heading": "Yonoq va burun suyaklari",
+              "body": "Os zygomaticum yonoq bo‘rtig‘ini va ko‘z kosasining lateral devorini tashkil qilishda qatnashadi. Ossa nasalia juft kichik suyaklar bo‘lib, burun ko‘prigi suyak qismini hosil qiladi."
+            },
+            {
+              "heading": "Tanglay va ko‘z yoshi suyaklari",
+              "body": "Os palatinum qattiq tanglayning orqa qismini hosil etishda qatnashadi. Os lacrimale ko‘z kosasining medial devorida joylashadi va ko‘z yoshi xaltachasi sohasi bilan bog‘liq."
+            },
+            {
+              "heading": "Vomer va burun chig‘anog‘i",
+              "body": "Vomer burun to‘sig‘ining pastki-orqa suyak qismini tashkil qiladi. Concha nasalis inferior alohida juft suyak bo‘lib, burun bo‘shlig‘i yon devorida joylashadi."
+            }
+          ],
           "teacher_materials": [],
-          "questions": [],
-          "review_status": "AWAITING_USER_MATERIALS"
+          "questions": [
+            {
+              "id": "anat_12_aiq1",
+              "q": "Sinus maxillaris qaysi suyak ichida?",
+              "options": [
+                "Maxilla",
+                "Mandibula",
+                "Os temporale",
+                "Os parietale"
+              ],
+              "answer": 0,
+              "explanation": "Maxilla juft yuz suyagi bo‘lib, yuqori tishlar alveolalari, qattiq tanglayning oldingi qismi, burun bo‘shlig‘i va orbita devorlarining bir qismini hosil qiladi."
+            },
+            {
+              "id": "anat_12_aiq2",
+              "q": "Mandibulaning chakka suyagi bilan bo‘g‘imlashuvchi o‘simtasi qaysi?",
+              "options": [
+                "Processus xiphoideus",
+                "Processus condylaris",
+                "Processus mastoideus",
+                "Processus styloideus"
+              ],
+              "answer": 1,
+              "explanation": "Mandibula yuz skeletidagi yirik harakatchan suyakdir."
+            },
+            {
+              "id": "anat_12_aiq3",
+              "q": "Burun ko‘prigi suyak qismini qaysi suyaklar hosil qiladi?",
+              "options": [
+                "Ossa parietalia",
+                "Ossa coxae",
+                "Ossa nasalia",
+                "Ossa tarsi"
+              ],
+              "answer": 2,
+              "explanation": "Os zygomaticum yonoq bo‘rtig‘ini va ko‘z kosasining lateral devorini tashkil qilishda qatnashadi."
+            },
+            {
+              "id": "anat_12_aiq4",
+              "q": "Qattiq tanglayning orqa qismini qaysi suyak hosil qilishda qatnashadi?",
+              "options": [
+                "Os frontale",
+                "Os occipitale",
+                "Os claviculae",
+                "Os palatinum"
+              ],
+              "answer": 3,
+              "explanation": "Os palatinum qattiq tanglayning orqa qismini hosil etishda qatnashadi."
+            },
+            {
+              "id": "anat_12_aiq5",
+              "q": "Vomer nimaning qismi?",
+              "options": [
+                "Burun to‘sig‘ining",
+                "Yelka bo‘g‘imining",
+                "Tizza qopqog‘ining",
+                "Kalla tomining"
+              ],
+              "answer": 0,
+              "explanation": "Vomer burun to‘sig‘ining pastki-orqa suyak qismini tashkil qiladi."
+            }
+          ],
+          "review_status": "AI_RESEARCH_DRAFT — OpenStax anatomy sources, teacher verification recommended",
+          "research_sources": [
+            "https://openstax.org/books/anatomy-and-physiology-2e/pages/7-2-the-skull"
+          ]
         },
         {
           "id": "anat_13",
@@ -6577,10 +7600,95 @@
           "title": "Butun kalla va uning asosi, ko‘z kosasi, burun bo‘shlig‘i va chakka chuqurchalari",
           "calendar_topic": "Butun kalla va uning asosi, ko‘z kosasi, burun bo‘shlig‘i va chakka chuqurchalari",
           "focus": "Butun kalla va uning asosi, ko‘z kosasi, burun bo‘shlig‘i va chakka chuqurchalari",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Butun kalla tuzilishi",
+              "body": "Kalla miya qismi va yuz qismidan tashkil topgan. Kalla asosi ichkarida oldingi, o‘rta va orqa kalla chuqurlariga bo‘linadi. Ularning tubi va teshiklari nerv hamda tomir yo‘llari bilan bog‘liq."
+            },
+            {
+              "heading": "Ko‘z kosasi — orbita",
+              "body": "Orbita to‘rtta devorga ega: yuqori, pastki, medial va lateral. Uning shakllanishida frontal, maxilla, zygomaticum, sphenoidale, ethmoidale va boshqa mayda suyaklar qatnashadi."
+            },
+            {
+              "heading": "Burun bo‘shlig‘i",
+              "body": "Cavitas nasi burun to‘sig‘i bilan o‘ng va chap qismga bo‘linadi. Burun chig‘anoqlari havo oqimiga ta’sir qiladi, atrof suyaklar ichidagi sinuslar esa burun bo‘shlig‘i bilan tutashadi."
+            },
+            {
+              "heading": "Chakka va chakka osti chuqurlari",
+              "body": "Fossa temporalis chakka sohasida, fossa infratemporalis esa yonoq ravog‘i osti va orqa-jag‘ sohalarida joylashgan. U yerda chaynov mushaklari, nervlar va tomirlar mavjud."
+            },
+            {
+              "heading": "Qanot-tanglay chuqurchasi",
+              "body": "Fossa pterygopalatina kichik, chuqur joylashgan anatomik bo‘shliqdir. U yuqori jag‘ orqasida joylashib, nerv-tomirlar o‘tadigan teshik va kanallar bilan tutashadi. Stomatologiyada yuz-jag‘ anatomiyasi uchun muhim."
+            }
+          ],
           "teacher_materials": [],
-          "questions": [],
-          "review_status": "AWAITING_USER_MATERIALS"
+          "questions": [
+            {
+              "id": "anat_13_aiq1",
+              "q": "Kalla ichki asosi odatda nechta katta chuqurga bo‘linadi?",
+              "options": [
+                "Ikkita",
+                "Uchta",
+                "Beshta",
+                "Yettita"
+              ],
+              "answer": 1,
+              "explanation": "Kalla miya qismi va yuz qismidan tashkil topgan."
+            },
+            {
+              "id": "anat_13_aiq2",
+              "q": "Ko‘z kosasining lotincha nomi qaysi?",
+              "options": [
+                "Foramen magnum",
+                "Acetabulum",
+                "Orbita",
+                "Alveolus"
+              ],
+              "answer": 2,
+              "explanation": "Orbita to‘rtta devorga ega: yuqori, pastki, medial va lateral."
+            },
+            {
+              "id": "anat_13_aiq3",
+              "q": "Burun bo‘shlig‘ining lotincha nomi qaysi?",
+              "options": [
+                "Cavitas oris",
+                "Cavitas thoracis",
+                "Canalis vertebralis",
+                "Cavitas nasi"
+              ],
+              "answer": 3,
+              "explanation": "Cavitas nasi burun to‘sig‘i bilan o‘ng va chap qismga bo‘linadi."
+            },
+            {
+              "id": "anat_13_aiq4",
+              "q": "Fossa temporalis qaysi sohada joylashgan?",
+              "options": [
+                "Chakka sohasida",
+                "Chanoq tubida",
+                "Tovon ostida",
+                "Tizza orqasida"
+              ],
+              "answer": 0,
+              "explanation": "Fossa temporalis chakka sohasida, fossa infratemporalis esa yonoq ravog‘i osti va orqa-jag‘ sohalarida joylashgan."
+            },
+            {
+              "id": "anat_13_aiq5",
+              "q": "Fossa pterygopalatina qayerga yaqin joylashgan?",
+              "options": [
+                "Oyoq panjasida",
+                "Yuqori jag‘ning orqasida",
+                "To‘sh suyagi oldida",
+                "Kurakning yuqorisida"
+              ],
+              "answer": 1,
+              "explanation": "Fossa pterygopalatina kichik, chuqur joylashgan anatomik bo‘shliqdir."
+            }
+          ],
+          "review_status": "AI_RESEARCH_DRAFT — OpenStax anatomy sources, teacher verification recommended",
+          "research_sources": [
+            "https://openstax.org/books/anatomy-and-physiology-2e/pages/7-2-the-skull"
+          ]
         },
         {
           "id": "anat_14",
@@ -6588,10 +7696,95 @@
           "title": "Kalla kanallari, teshiklari va yoriqlarining klinik ahamiyati",
           "calendar_topic": "Kalla kanallari, teshiklari va yoriqlarining klinik ahamiyati",
           "focus": "Kalla kanallari, teshiklari va yoriqlarining klinik ahamiyati",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Foramen magnum",
+              "body": "Foramen magnum ensa suyagida joylashgan yirik teshikdir. U kalla bo‘shlig‘i bilan umurtqa kanalini tutashtiradi va nerv hamda tomirlar uchun muhim o‘tish joyidir."
+            },
+            {
+              "heading": "Ko‘z kosasiga bog‘liq teshiklar",
+              "body": "Canalis opticus orqali ko‘ruv nervi (II) va oftalmik arteriya o‘tadi. Fissura orbitalis superior orqali ko‘z harakati bilan bog‘liq bir nechta nerv va V1 shoxi o‘tadi."
+            },
+            {
+              "heading": "Uch shoxli nerv tarmoqlari",
+              "body": "Foramen rotundum orqali nervus maxillaris (V2), foramen ovale orqali nervus mandibularis (V3) o‘tadi. Bu teshiklar stomatologik soha innervatsiyasini tushunishda muhim."
+            },
+            {
+              "heading": "Pastki jag‘ kanali",
+              "body": "Foramen mandibulae ramus mandibulae ning ichki yuzasida joylashgan, undan canalis mandibulae boshlanadi. Kanal ichida pastki alveolyar nerv va tomirlar yo‘naladi; oldinda foramen mentale orqali tashqariga chiqadigan tarmoqlar bor."
+            },
+            {
+              "heading": "Yuz-jag‘ nerv yo‘llarining ahamiyati",
+              "body": "Foramen infraorbitale orqali infraorbital nerv-tomirlar yuzga chiqadi. Foramen mentale pastki jag‘ning old-lateral yuzasida joylashadi. Anatomik teshiklarni bilish yuz sezuvchanligi va klinik tekshiruvda ahamiyatlidir."
+            }
+          ],
           "teacher_materials": [],
-          "questions": [],
-          "review_status": "AWAITING_USER_MATERIALS"
+          "questions": [
+            {
+              "id": "anat_14_aiq1",
+              "q": "Foramen magnum qaysi suyakda?",
+              "options": [
+                "Os nasale",
+                "Os lacrimale",
+                "Os occipitale",
+                "Os palatinum"
+              ],
+              "answer": 2,
+              "explanation": "Foramen magnum ensa suyagida joylashgan yirik teshikdir."
+            },
+            {
+              "id": "anat_14_aiq2",
+              "q": "Nervus opticus qaysi kanal orqali o‘tadi?",
+              "options": [
+                "Canalis mandibulae",
+                "Canalis carpi",
+                "Canalis sacralis",
+                "Canalis opticus"
+              ],
+              "answer": 3,
+              "explanation": "Canalis opticus orqali ko‘ruv nervi (II) va oftalmik arteriya o‘tadi."
+            },
+            {
+              "id": "anat_14_aiq3",
+              "q": "Nervus mandibularis (V3) qaysi teshikdan o‘tadi?",
+              "options": [
+                "Foramen ovale",
+                "Foramen magnum",
+                "Foramen rotundum",
+                "Foramen incisivum"
+              ],
+              "answer": 0,
+              "explanation": "Foramen rotundum orqali nervus maxillaris (V2), foramen ovale orqali nervus mandibularis (V3) o‘tadi."
+            },
+            {
+              "id": "anat_14_aiq4",
+              "q": "Canalis mandibulae qaysi tuzilma ichida?",
+              "options": [
+                "Os frontale ichida",
+                "Mandibula ichida",
+                "Os clavicula ichida",
+                "Patella ichida"
+              ],
+              "answer": 1,
+              "explanation": "Foramen mandibulae ramus mandibulae ning ichki yuzasida joylashgan, undan canalis mandibulae boshlanadi."
+            },
+            {
+              "id": "anat_14_aiq5",
+              "q": "Foramen mentale qaysi suyakda joylashgan?",
+              "options": [
+                "Maxilla",
+                "Os temporale",
+                "Mandibula",
+                "Os frontale"
+              ],
+              "answer": 2,
+              "explanation": "Foramen infraorbitale orqali infraorbital nerv-tomirlar yuzga chiqadi."
+            }
+          ],
+          "review_status": "AI_RESEARCH_DRAFT — OpenStax anatomy sources, teacher verification recommended",
+          "research_sources": [
+            "https://openstax.org/books/anatomy-and-physiology-2e/pages/7-2-the-skull"
+          ]
         }
       ]
     },
