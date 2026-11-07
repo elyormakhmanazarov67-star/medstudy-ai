@@ -34,47 +34,22 @@
   const subjectSummary = () => (state.catalog?.subjects || []).flatMap(s=>s.lessons.map(l=>({...l,subject_title:s.title})));
   const sourcesReady = lesson => (lesson?.teacher_materials || []).length > 0;
   const hasQuestions = lesson => (lesson?.questions || []).length > 0;
-  const displayCategory = (lesson, kind) => {
-    const docs = kind === 'required' ? (lesson.teacher_materials || []) : (lesson.supplementary || []);
+  const displayCategory = lesson => {
+    const docs = lesson.teacher_materials || [];
     const back = '<button class="back" data-action="lesson" data-id="'+rawEsc(lesson.id)+'">← Mavzuga qaytish</button>';
-    const name = kind === 'required' ? 'Kerakli ma’lumotlar' : 'Qo‘shimcha ma’lumotlar';
-    const intro = kind === 'required'
-      ? 'Bu bo‘limda o‘qituvchi yuborgan materiallar va ulardan tayyorlangan testlar bor.'
-      : 'Mavzuga oid bepul o‘quv konspektlari va SamMU elektron kutubxonasidagi kitob havolalari alohida ko‘rsatiladi.';
     const renderLink = doc => {
       const title = '<strong>'+esc(doc.title)+'</strong>';
-      const note = doc.access || (doc.available ? 'Fayl yuklab olishga tayyor' : doc.note || 'Fayl serverga hali yuklanmagan') || '';
-      const hint = note ? '<p class="smallprint">'+esc(note)+'</p>' : '';
-      if(typeof doc.url === 'string' && /^https:\/\//.test(doc.url)) {
-        return '<div class="card"><a href="'+rawEsc(doc.url)+'" rel="noopener noreferrer" target="_blank">'+title+' ↗</a>'+hint+'</div>';
-      }
-      const available = Boolean(doc.available && doc.file_id);
-      const download = available
+      const hint = doc.note ? '<p class="smallprint">'+esc(doc.note)+'</p>' : '';
+      const download = doc.available && doc.file_id
         ? '<button type="button" class="btn btn-primary" data-action="download-material" data-id="'+rawEsc(doc.file_id)+'" data-filename="'+rawEsc(doc.filename)+'">⬇ Yuklab olish</button>'
-        : '<span class="smallprint">Fayl hali yuklanmagan</span>';
-      return '<div class="card">'+title+'<p class="smallprint">'+esc(doc.filename || '')+'</p>'+download+hint+'</div>';
+        : '<span class="smallprint">Fayl serverga hali yuklanmagan</span>';
+      return '<div class="card">'+title+'<p class="smallprint">'+esc(doc.filename||'')+'</p>'+download+hint+'</div>';
     };
-    let cards = '';
-    if(kind === 'required') {
-      cards = docs.map(renderLink).join('');
-      if(state.materialAdmin?.is_admin) cards += '<div class="card"><h3>Administrator: fayllarni yuklash</h3><p class="smallprint">Bitta faylni tanlang yoki barcha materiallar uchun ZIP arxiv yuklang. Faqat darslar ro‘yxatidagi asl fayl nomlari qabul qilinadi.</p><input id="material-zip" class="ai-input" type="file" accept=".zip"/><button type="button" class="btn" data-action="upload-material-zip">ZIP arxivni yuklash</button><p class="smallprint">Serverdagi fayllar: '+state.materialAdmin.available_files+'/'+state.materialAdmin.total_files+'</p></div>';
-
-      cards += (lesson.sections||[]).map(s=>'<section class="lesson-section"><h3>'+esc(s.heading)+'</h3><p>'+esc(s.body)+'</p></section>').join('');
-      if(lesson.questions?.length) cards += '<div class="card"><h3>Kerakli ma’lumotlar testi</h3><button class="btn btn-primary btn-wide" data-action="start-quiz">Testni boshlash ('+lesson.questions.length+')</button></div>';
-      if(!docs.length && !lesson.sections?.length)cards = '<div class="empty"><h3>Hozircha material yo‘q</h3><p>O‘qituvchi materiallari kelishi kutilmoqda.</p></div>';
-    } else {
-      const extraSections = lesson.supplement_sections || [];
-      cards = '<div class="sectionhead"><h2>Bepul qo‘shimcha konspektlar</h2></div>';
-      if(extraSections.length)cards += extraSections.map(s=>'<section class="lesson-section"><h3>'+esc(s.heading)+'</h3><p>'+esc(s.body)+'</p></section>').join('');
-      else cards += '<div class="card"><p>Mavzu bo‘yicha bepul konspekt hozircha tayyor emas. Bu kitob matni o‘qilganini anglatmaydi.</p></div>';
-      if(docs.length)cards += '<div class="sectionhead"><h2>Bepul xorijiy manbalar</h2></div>'+docs.map(renderLink).join('');
-      if(lesson.supplement_questions?.length)cards += '<div class="card"><h3>Qo‘shimcha ma’lumotlar testi</h3><button class="btn btn-primary btn-wide" data-action="start-supplement-quiz">Qo‘shimcha testni boshlash ('+lesson.supplement_questions.length+')</button></div>';
-      const books = lesson.sammu_books || [];
-      cards += '<div class="sectionhead"><h2>SamMU elektron kutubxonasidagi kitoblar</h2></div>';
-      if(books.length)cards += '<p class="smallprint">Bu kitob havolalari ma’lumotnoma sifatida saqlangan. To‘liq matnni o‘qish uchun SamMU HEMIS ruxsati kerak bo‘lishi mumkin.</p>'+books.map(renderLink).join('');
-      else cards += '<div class="card"><p>Bu mavzu uchún SamMU katalogidan kitob aniqlanmagan.</p></div>';
-    }
-    shell(back+'<p class="eyebrow">'+esc(lesson.subject_title)+'</p><h1>'+name+'</h1><p class="smallprint">'+intro+'</p>'+cards+disclaimer);
+    let cards = docs.map(renderLink).join('');
+    cards += (lesson.sections||[]).map(s=>'<section class="lesson-section"><h3>'+esc(s.heading)+'</h3><p>'+esc(s.body)+'</p></section>').join('');
+    if(lesson.questions?.length) cards += '<div class="card"><h3>Kerakli ma’lumotlar testi</h3><button class="btn btn-primary btn-wide" data-action="start-quiz">Testni boshlash ('+lesson.questions.length+')</button></div>';
+    if(!docs.length && !lesson.sections?.length) cards = '<div class="empty"><h3>Hozircha material yo‘q</h3><p>O‘qituvchi materiallari kelishi kutilmoqda.</p></div>';
+    shell(back+'<p class="eyebrow">'+esc(lesson.subject_title)+'</p><h1>Kerakli ma’lumotlar</h1>'+cards+disclaimer);
   };
   async function downloadMaterial(id, filename) {
     if(!/^[a-f0-9]{24}$/.test(id))throw Error('Fayl identifikatori noto‘g‘ri');
@@ -96,26 +71,6 @@
     a.remove();
     setTimeout(()=>URL.revokeObjectURL(objectUrl),20000);
   }
-  async function uploadMaterialZip() {
-    const file=document.getElementById('material-zip')?.files?.[0];
-    if(!file){alert('ZIP faylni tanlang');return;}
-    if(!file.name.toLowerCase().endsWith('.zip')){alert('Faqat ZIP fayl mumkin');return;}
-    if(file.size>160*1024*1024){alert('ZIP hajmi 160 MB dan oshmasin');return;}
-    const form=new FormData();
-    form.append('archive',file,file.name);
-    const headers={'X-Telegram-Init-Data':auth};
-    if(demo)headers['X-Dev-Preview']='local-only';
-    const response=await fetch('/api/materials/bundle',{method:'POST',headers,body:form});
-    if(!response.ok){
-      const data=await response.json().catch(()=>({}));
-      throw Error(data.detail || 'Fayllarni yuklab bo‘lmadi');
-    }
-    const data=await response.json();
-    alert(data.uploaded+' ta fayl serverga joylandi');
-    await getLesson(state.lesson.id);
-    displayCategory(state.lesson,'required');
-  }
-
   function home() {
     state.tab='home';
     const subjects=state.catalog?.subjects || [];
@@ -123,7 +78,7 @@
     const completed=state.progress?.latest?.filter(x=>lessons.some(l=>l.id===x.lesson_id)).length || 0;
     const attempts=state.progress?.attempts_count || 0;
     const cards=subjects.map(s=>'<button class="card lesson-card" data-action="subject" data-id="'+rawEsc(s.id)+'"><span class="lesson-icon">📚</span><span class="lesson-content"><strong>'+esc(s.title)+'</strong><small>'+s.lessons.length+' ta mavzu</small></span><span class="chevron">›</span></button>').join('');
-    shell('<section class="hero"><p class="eyebrow">Talabalar uchún o‘quv platforma</p><h1>MedStudy AI</h1><p>O‘qituvchi yuborgan materiallar va SamMU kutubxonasidan qo‘shimcha o‘qish — alohida bo‘limlarda.</p></section>'+
+    shell('<section class="hero"><p class="eyebrow">Talabalar uchún o‘quv platforma</p><h1>MedStudy AI</h1><p>O‘qituvchi yuborgan dars materiallari va ularning testlari.</p></section>'+
       '<div class="stats"><div class="stat"><strong>'+subjects.length+'</strong><small>Fan</small></div><div class="stat"><strong>'+lessons.length+'</strong><small>Mavzu</small></div><div class="stat"><strong>'+attempts+'</strong><small>Test urinish</small></div></div>'+
       '<div class="sectionhead"><h2>Fanlar</h2><span>'+completed+'/'+lessons.length+' o‘rganilgan</span></div>'+cards+disclaimer+
       '<div class="footer-logo">MedStudy AI · Mustaqil ta’lim loyihasi</div>');
@@ -134,24 +89,20 @@
     state.tab='subject';state.subjectId=id;
     const cards=s.lessons.map((l,i)=>'<button class="card lesson-card" data-action="lesson" data-id="'+rawEsc(l.id)+'"><span class="lesson-icon">📖</span><span class="lesson-content"><span class="tag">'+(i+1)+'-MAVZU</span><strong>'+esc(l.title)+'</strong><small>'+l.section_count+' bo‘lim · '+l.question_count+' savol</small></span><span class="chevron">›</span></button>').join('');
     shell('<button class="back" data-action="home">← Fanlar</button><h1>'+esc(s.title)+'</h1>'+
-      '<p class="smallprint">Mavzuni tanlang, so‘ng kerakli yoki qo‘shimcha ma’lumotlarni oching.</p>'+cards);
+      '<p class="smallprint">Mavzuni tanlang va kerakli ma’lumotlarni oching.</p>'+cards);
   }
   async function getLesson(id) {
     loading();
-    try { [state.lesson, state.materialAdmin] = await Promise.all([api('/lessons/'+encodeURIComponent(id)), api('/materials/admin')]); showLesson(); }
+    try { state.lesson=await api('/lessons/'+encodeURIComponent(id)); showLesson(); }
     catch(e){ fail(e); }
   }
   function showLesson(){
     state.tab='lesson';
     const l=state.lesson;
     const needed=(l.teacher_materials||[]).length;
-    const extra=(l.supplement_sections||[]).length;
-    const books=(l.sammu_books||[]).length;
     shell('<button class="back" data-action="subject" data-id="'+rawEsc(l.subject_id)+'">← Mavzular</button>'+
       '<p class="eyebrow">'+esc(l.subject_title)+'</p><h1>'+esc(l.title)+'</h1>'+
-      '<p class="smallprint">Mavzu ichidagi bo‘limni tanlang.</p>'+
       '<button class="card lesson-card" data-action="category" data-kind="required"><span class="lesson-icon">📘</span><span class="lesson-content"><strong>Kerakli ma’lumotlar</strong><small>O‘qituvchi materiallari · '+needed+' fayl</small></span><span class="chevron">›</span></button>'+
-      '<button class="card lesson-card" data-action="category" data-kind="supplementary"><span class="lesson-icon">📗</span><span class="lesson-content"><strong>Qo‘shimcha ma’lumotlar</strong><small>Bepul konspekt · '+extra+' bo‘lim · '+books+' kitob</small></span><span class="chevron">›</span></button>'+
       disclaimer);
   }
   function startQuiz(questions, mode='full', category='required') {
@@ -249,12 +200,10 @@
       switch(act){
         case 'home': if(state.catalog)home();else init();break;
         case 'subject':showSubject(el.dataset.id);break;
-        case 'category':if(state.lesson)displayCategory(state.lesson,el.dataset.kind);break;
+        case 'category':if(state.lesson)displayCategory(state.lesson);break;
         case 'download-material':await downloadMaterial(el.dataset.id,el.dataset.filename);break;
-        case 'upload-material-zip':await uploadMaterialZip();break;
         case 'lesson': if(el.dataset.id)await getLesson(el.dataset.id);break;
         case 'start-quiz':if(state.lesson && state.lesson.questions?.length)startQuiz(state.lesson.questions,'full','required');break;
-        case 'start-supplement-quiz':if(state.lesson && state.lesson.supplement_questions?.length)startQuiz(state.lesson.supplement_questions,'full','supplementary');break;
         case 'answer':state.quiz.answers[state.quiz.pos]=Number(el.dataset.value);renderQuiz();break;
         case 'next':await next();break;
         case 'retry':if(state.tab==='result')await retryWrong();else await init();break;
