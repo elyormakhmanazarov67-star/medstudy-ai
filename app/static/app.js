@@ -25,54 +25,22 @@
     if (!response.ok) throw new Error(body?.detail || 'Server bilan aloqa xatosi');
     return body;
   }
-  const header = () => `<header class="sitehead"><div class="brand"><div class="logo">✦</div><div><strong>MedStudy AI</strong><small>O‘quv platforma</small></div></div><span class="pill"><span class="pill-dot"></span> SINOV v0.5</span></header>`;
+  const header = () => `<header class="sitehead"><div class="brand"><div class="logo">✦</div><div><strong>MedStudy AI</strong><small>O‘quv platforma</small></div></div><span class="pill"><span class="pill-dot"></span> v0.5.13</span></header>`;
   const nav = () => `<div class="footer-nav"><div class="nav-inner"><button class="nav ${state.tab==='home'?'active':''}" data-action="home"><b>⌂</b>Asosiy</button><button class="nav ${state.tab==='progress'?'active':''}" data-action="progress"><b>▥</b>Natijalar</button><button class="nav ${state.tab==='tutor'?'active':''}" data-action="tutor"><b>✧</b>AI Ustoz</button><button class="nav ${state.tab==='privacy'?'active':''}" data-action="privacy"><b>♢</b>Maxfiylik</button></div></div>`;
   const disclaimer = `<div class="caution">⚠️ Mazkur darslar sinov materialidir; mutaxassis ko‘rigidan o‘tmagan. Klinik amaliyot uchun yo‘riqnoma yoki rasmiy universitet xizmati emas.</div>`;
   const shell = content => { app.innerHTML = strings(header() + '<main>' + content + '</main>' + nav()); window.scrollTo(0,0); };
   const loading = () => { app.innerHTML = `<div class="boot"><div class="loader"></div><p>Ma’lumotlar yuklanmoqda…</p></div>`; };
   const fail = err => shell(`<div class="empty"><div class="symbol">⚠️</div><h2>Ulanishda xatolik</h2><p class="error">${esc(err.message)}</p><button class="btn btn-primary" data-action="retry">Qayta urinish</button><p class="smallprint">Telegram orqali qayta oching. Lokal demo uchun yo‘riqnoma bilan ishga tushiring.</p></div>`);
   const subjectSummary = () => (state.catalog?.subjects || []).flatMap(s=>s.lessons.map(l=>({...l,subject_title:s.title})));
-  const sourcesReady = lesson => (lesson?.teacher_materials || []).length > 0;
-  const hasQuestions = lesson => (lesson?.questions || []).length > 0;
   const displayCategory = lesson => {
-    const docs = lesson.teacher_materials || [];
     const back = '<button class="back" data-action="lesson" data-id="'+rawEsc(lesson.id)+'">← Mavzuga qaytish</button>';
-    const renderLink = doc => {
-      const title = '<strong>'+esc(doc.title)+'</strong>';
-      const hint = doc.note ? '<p class="smallprint">'+esc(doc.note)+'</p>' : '';
-      const download = doc.available && doc.file_id
-        ? '<button type="button" class="btn btn-primary" data-action="download-material" data-id="'+rawEsc(doc.file_id)+'" data-filename="'+rawEsc(doc.filename)+'">⬇ Yuklab olish</button>'
-        : '<span class="smallprint">Fayl serverga hali yuklanmagan</span>';
-      return '<div class="card">'+title+'<p class="smallprint">'+esc(doc.filename||'')+'</p>'+download+hint+'</div>';
-    };
     const alphabet = lesson.alphabet || [];
     let cards = alphabet.length ? '<div class="card"><h3>Lotin alifbosi — 25 ta harf</h3><p class="smallprint">Siz yuborgan rasm asosida tibbiy misollar.</p><div class="alphabet-grid">'+alphabet.map(a=>'<div class="alphabet-item"><strong>'+esc(a.letter)+'</strong><span><b>'+esc(a.term)+'</b><small>'+esc(a.meaning)+'</small></span></div>').join('')+'</div></div>' : '';
-    cards += docs.map(renderLink).join('');
     cards += (lesson.sections||[]).map(s=>'<section class="lesson-section"><h3>'+esc(s.heading)+'</h3><p>'+esc(s.body)+'</p></section>').join('');
     if(lesson.questions?.length) cards += '<div class="card"><h3>Kerakli ma’lumotlar testi</h3><button class="btn btn-primary btn-wide" data-action="start-quiz">Testni boshlash ('+lesson.questions.length+')</button></div>';
-    if(!docs.length && !lesson.sections?.length) cards = '<div class="empty"><h3>Hozircha material yo‘q</h3><p>O‘qituvchi materiallari kelishi kutilmoqda.</p></div>';
+    if(!cards) cards = '<div class="empty"><h3>Hozircha ma’lumot yo‘q</h3><p>Ushbu mavzu bo‘yicha konspekt hali berilmagan.</p></div>';
     shell(back+'<p class="eyebrow">'+esc(lesson.subject_title)+'</p><h1>Kerakli ma’lumotlar</h1>'+cards+disclaimer);
   };
-  async function downloadMaterial(id, filename) {
-    if(!/^[a-f0-9]{24}$/.test(id))throw Error('Fayl identifikatori noto‘g‘ri');
-    const headers={'X-Telegram-Init-Data':auth};
-    if(demo)headers['X-Dev-Preview']='local-only';
-    const response=await fetch('/api/materials/'+id,{headers,cache:'no-store'});
-    if(!response.ok){
-      let data={};
-      try{data=await response.json()}catch(_){}
-      throw Error(data.detail || 'Faylni yuklab bo‘lmadi');
-    }
-    const blob=await response.blob();
-    const objectUrl=URL.createObjectURL(blob);
-    const a=document.createElement('a');
-    a.href=objectUrl;
-    a.download=filename || 'material';
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-    setTimeout(()=>URL.revokeObjectURL(objectUrl),20000);
-  }
   function home() {
     state.tab='home';
     const subjects=state.catalog?.subjects || [];
@@ -101,10 +69,9 @@
   function showLesson(){
     state.tab='lesson';
     const l=state.lesson;
-    const needed=(l.teacher_materials||[]).length;
     shell('<button class="back" data-action="subject" data-id="'+rawEsc(l.subject_id)+'">← Mavzular</button>'+
       '<p class="eyebrow">'+esc(l.subject_title)+'</p><h1>'+esc(l.title)+'</h1>'+
-      '<button class="card lesson-card" data-action="category" data-kind="required"><span class="lesson-icon">📘</span><span class="lesson-content"><strong>Kerakli ma’lumotlar</strong><small>'+(needed ? 'O‘qituvchi materiallari · '+needed+' fayl' : 'Mavzu konspekti va testlar')+'</small></span><span class="chevron">›</span></button>'+
+      '<button class="card lesson-card" data-action="category" data-kind="required"><span class="lesson-icon">📘</span><span class="lesson-content"><strong>Kerakli ma’lumotlar</strong><small>Mavzu konspekti va testlar</small></span><span class="chevron">›</span></button>'+
       disclaimer);
   }
   function startQuiz(questions, mode='full', category='required') {
@@ -202,7 +169,6 @@
         case 'home': if(state.catalog)home();else init();break;
         case 'subject':showSubject(el.dataset.id);break;
         case 'category':if(state.lesson)displayCategory(state.lesson);break;
-        case 'download-material':await downloadMaterial(el.dataset.id,el.dataset.filename);break;
         case 'lesson': if(el.dataset.id)await getLesson(el.dataset.id);break;
         case 'start-quiz':if(state.lesson && state.lesson.questions?.length)startQuiz(state.lesson.questions,'full','required');break;
         case 'answer':state.quiz.answers[state.quiz.pos]=Number(el.dataset.value);renderQuiz();break;

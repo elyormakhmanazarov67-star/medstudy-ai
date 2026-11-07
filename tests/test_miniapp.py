@@ -61,7 +61,7 @@ def test_consent_catalog_quiz_and_delete(client):
     assert c.status_code==200 and len(c.json()['subjects'])==6
     empty=client.get('/api/lessons/ergonomika',headers=hdr()).json()
     assert len(empty['questions'])==1
-    assert len(empty['teacher_materials'])>=1
+    assert 'teacher_materials' not in empty
     assert 'sammu_books' not in empty
     assert 'supplementary' not in empty
     body={'lesson_id':'ergonomika','question_ids':['old'],'answers':[0]}
@@ -127,7 +127,7 @@ def test_latin_subject_and_poster_in_authenticated_lesson(client):
     assert first['subject_id']=='lotin_tili_tibbiy_terminologiya'
     assert len(first['alphabet'])==25
     assert first['alphabet'][3]['term']=='Dens'
-    assert first['teacher_materials']==[]
+    assert 'teacher_materials' not in first
     assert first['questions'][0]['q']
     assert client.get('/api/lessons/latin_a1').status_code==401
     later=client.get('/api/lessons/latin_a15',headers=hdr()).json()

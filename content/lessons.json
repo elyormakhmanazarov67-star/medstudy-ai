@@ -1,7 +1,7 @@
 {
-  "version": "0.5.12-no-original-file-uploads",
+  "version": "0.5.13-content-only",
   "status": "TEST — O‘qituvchi materiallari va OpenStax ochiq darsliklaridan manba ko‘rsatilgan alohida o‘quv materiallari. Mutaxassis tekshiruvi talab etiladi.",
-  "note": "Lotin tili mavzulari original JPG/DOC/DOCX/PPT/PPTX fayllarini yuklash yoki ko‘rsatishsiz, faqat matnli konspekt, 25 harfli elektron jadval va testlar shaklida taqdim etiladi. Yetarli mazmun bo‘lmagan mavzular bo‘sh.",
+  "note": "Botda original PDF/JPG/DOC/DOCX/PPT/PPTX fayllarni yuklash hamda yuklab olish imkoniyati o‘chirilgan. Dars konspektlari, 25 harfli elektron jadval va testlar mavjud. O‘quv manbalari nomlari ichki tarixiy metama’lumot sifatida qolgan, ilovada ko‘rsatilmaydi.",
   "subjects": [
     {
       "id": "stom_prerest",
