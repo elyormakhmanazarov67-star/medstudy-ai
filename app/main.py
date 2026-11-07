@@ -135,6 +135,18 @@ def progress(uid: int = Depends(consent_required)):
          'percent':round(row['score']*100/row['total'])}
         for row in data]}
 
+@app.get('/api/history')
+def attempt_history(uid: int = Depends(consent_required), limit: int = 20):
+    rows = STORE.attempt_history(uid, limit)
+    return {'items': [
+        {**row,
+         'title': (find_lesson(CATALOG, row['lesson_id']) or
+                   (None, {'title': row['lesson_id']}))[1]['title'],
+         'percent': round(row['score'] * 100 / row['total']) if row['total'] else 0}
+        for row in rows
+    ]}
+
+
 @app.get('/api/study-plan')
 def study_plan(uid: int = Depends(consent_required)):
     latest = STORE.latest(uid)
