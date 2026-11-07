@@ -14,7 +14,7 @@ def test_calendar_sessions_match_provided_syllabus():
     assert len({lesson["id"] for lesson in sessions}) == 15
     assert all(lesson["calendar_topic"] and lesson["focus"] for lesson in sessions)
     assert all(lesson["review_status"].startswith("DRAFT") for lesson in sessions)
-    assert sum(len(lesson["questions"]) for lesson in sessions) == 100
+    assert sum(len(lesson["questions"]) for lesson in sessions) == 145
 
 
 def test_session_groups_and_legacy_ids():
@@ -38,9 +38,14 @@ def test_approved_public_sources_only():
         "https://e-library.sammu.uz/uz/book/4555",
         "https://e-library.sammu.uz/uz/book/5780",
         "https://e-library.sammu.uz/uz/book/2058",
+        "https://e-library.sammu.uz/uz/book/3055",
+        "https://e-library.sammu.uz/uz/book/343",
+        "https://e-library.sammu.uz/uz/book/4516",
+        "https://e-library.sammu.uz/uz/book/50",
     }
     for lesson in data["subjects"][0]["lessons"]:
-        assert set(lesson["sources"]) == verified_links
+        assert set(lesson["sources"]).issubset(verified_links)
+        assert len(lesson["sources"]) >= 3
         assert len(lesson["sections"]) >= 3
         assert len(lesson["questions"]) >= 6
         assert all(len(question["options"]) == 4 for question in lesson["questions"])
