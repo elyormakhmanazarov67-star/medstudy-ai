@@ -95,6 +95,7 @@ def lesson(lesson_id: str, uid: int = Depends(consent_required)):
     return {'subject_id':subject['id'], 'subject_title':subject['title'], 'id':l['id'], 'title':l['title'],
             'sections':l['sections'], 'teacher_materials':l.get('teacher_materials', []), 'supplementary':l.get('supplementary', []), 'sources':l.get('sources',[]),
             'question_count':len(l['questions']), 'questions':[public_question(q) for q in l['questions']],
+            'sammu_books':l.get('sammu_books', []),
             'supplement_sections':l.get('supplement_sections', []),
             'supplement_question_count':len(l.get('supplement_questions', [])),
             'supplement_questions':[public_question(q) for q in l.get('supplement_questions', [])]}
