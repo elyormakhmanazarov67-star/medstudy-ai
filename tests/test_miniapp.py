@@ -33,12 +33,15 @@ def client(tmp_path,monkeypatch):
 def hdr(raw=None):return {'X-Telegram-Init-Data': raw or sign()}
 
 def test_catalog_and_grading():
-    c=load_catalog();assert len(c['subjects'])==1
-    lessons=c['subjects'][0]['lessons'];assert len(lessons)==15
-    assert sum(len(l['questions']) for subject in c['subjects'] for l in subject['lessons'])==145
-    questions=lessons[0]['questions']
-    score,ds=grade(questions,[q['answer'] for q in questions]);assert score==10
-    assert all(d['correct'] for d in ds)
+    c=load_catalog()
+    assert len(c['subjects'])==5
+    assert sum(len(s['lessons']) for s in c['subjects'])==50
+    assert len(c['subjects'][0]['lessons'])==15
+    assert len(c['subjects'][1]['lessons'])==12
+    assert c['subjects'][0]['lessons'][0]['questions']==[]
+    assert c['subjects'][0]['lessons'][0]['sections']==[]
+    assert grade([],[])==(0,[])
+
 
 def test_signature_and_expiry():
     assert verify_init_data(sign(),TOKEN)==UID
@@ -54,37 +57,45 @@ def test_unauthorized_access(client):
 def test_consent_catalog_quiz_and_delete(client):
     assert client.get('/api/me',headers=hdr()).json()['consented'] is False
     assert client.post('/api/consent',headers=hdr()).status_code==200
-    c=client.get('/api/catalog',headers=hdr());assert c.status_code==200
-    lesson=client.get('/api/lessons/ergonomika',headers=hdr()).json()
-    assert len(lesson['questions'])==10
+    c=client.get('/api/catalog',headers=hdr())
+    assert c.status_code==200 and len(c.json()['subjects'])==5
+    empty=client.get('/api/lessons/ergonomika',headers=hdr()).json()
+    assert len(empty['questions'])==0
+    assert len(empty['teacher_materials'])>=1
+    assert len(empty['supplementary'])>=1
+    body={'lesson_id':'ergonomika','question_ids':['old'],'answers':[0]}
+    assert client.post('/api/attempts',json=body,headers=hdr()).status_code==409
+    lesson=client.get('/api/lessons/eng_l1',headers=hdr()).json()
+    assert len(lesson['questions'])==2
     assert 'answer' not in lesson['questions'][0]
-    assert 'explanation' not in lesson['questions'][0]
-    qs=main.CATALOG['subjects'][0]['lessons'][0]['questions']
-    body={'lesson_id':'ergonomika','question_ids':[q['id'] for q in qs],
+    qs=main.CATALOG['subjects'][3]['lessons'][0]['questions']
+    body={'lesson_id':'eng_l1','question_ids':[q['id'] for q in qs],
           'answers':[q['answer'] for q in qs]}
     done=client.post('/api/attempts',json=body,headers=hdr())
-    assert done.status_code==200 and done.json()['score']==10
+    assert done.status_code==200 and done.json()['score']==2
     assert client.get('/api/progress',headers=hdr()).json()['attempts_count']==1
     assert client.delete('/api/me',headers=hdr()).status_code==200
     assert client.get('/api/catalog',headers=hdr()).status_code==403
 
+
 def test_cannot_submit_arbitrary_or_incomplete_question_set(client):
     client.post('/api/consent',headers=hdr())
-    res=client.post('/api/attempts',json={'lesson_id':'ergonomika','question_ids':['e01'],'answers':[0]},headers=hdr())
+    res=client.post('/api/attempts',json={'lesson_id':'eng_l1','question_ids':['wrong'],'answers':[0]},headers=hdr())
     assert res.status_code==400
-    res=client.post('/api/attempts',json={'lesson_id':'ergonomika','question_ids':['e01'],'answers':[9]},headers=hdr())
+    res=client.post('/api/attempts',json={'lesson_id':'eng_l1','question_ids':['wrong'],'answers':[9]},headers=hdr())
     assert res.status_code==400
+
 
 def test_wrong_review(client):
     client.post('/api/consent',headers=hdr())
-    qs=main.CATALOG['subjects'][0]['lessons'][0]['questions']
-    answers=[(q['answer']+1)%4 if i<2 else q['answer'] for i,q in enumerate(qs)]
-    full={'lesson_id':'ergonomika','question_ids':[q['id'] for q in qs],'answers':answers}
+    qs=main.CATALOG['subjects'][3]['lessons'][0]['questions']
+    answers=[(qs[0]['answer']+1)%4, qs[1]['answer']]
+    full={'lesson_id':'eng_l1','question_ids':[q['id'] for q in qs],'answers':answers}
     done=client.post('/api/attempts',json=full,headers=hdr())
-    assert done.json()['score']==8
-    review=client.get('/api/review/ergonomika',headers=hdr()).json()
-    assert len(review['questions'])==2
-    retry={'lesson_id':'ergonomika','question_ids':[q['id'] for q in review['questions']], 'answers':[q['answer'] for q in qs[:2]]}
+    assert done.status_code==200 and done.json()['score']==1
+    review=client.get('/api/review/eng_l1',headers=hdr()).json()
+    assert len(review['questions'])==1
+    retry={'lesson_id':'eng_l1','question_ids':[qs[0]['id']], 'answers':[qs[0]['answer']]}
     result=client.post('/api/attempts',json=retry,headers=hdr())
-    assert result.status_code==200 and result.json()['score']==2
-    assert client.get('/api/progress',headers=hdr()).json()['latest'][0]['total']==10
+    assert result.status_code==200 and result.json()['score']==1
+    assert client.get('/api/progress',headers=hdr()).json()['latest'][0]['total']==2
