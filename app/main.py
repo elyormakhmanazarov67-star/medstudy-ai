@@ -42,7 +42,7 @@ def index():
 
 @app.get('/api/health')
 def health():
-    return {'status': 'ok', 'version': '0.4.0', 'draft': True}
+    return {'status': 'ok', 'version': '0.5.0-draft', 'draft': True}
 
 
 def current_user(request: Request, x_telegram_init_data: Annotated[str | None, Header()] = None) -> int:
