@@ -13,6 +13,7 @@ from .auth import AuthError, verify_init_data
 from .core import load_catalog, find_lesson, public_question, grade
 from .store import Store
 from .study_plan import build_study_plan
+from .plans import plans_catalog
 from . import tutor
 from .telegram_gateway import router as telegram_router, configure_telegram
 
@@ -145,6 +146,11 @@ def attempt_history(uid: int = Depends(consent_required), limit: int = 20):
          'percent': round(row['score'] * 100 / row['total']) if row['total'] else 0}
         for row in rows
     ]}
+
+
+@app.get('/api/plans')
+def preview_plans(uid: int = Depends(consent_required)):
+    return plans_catalog()
 
 
 @app.get('/api/study-plan')
