@@ -23,7 +23,11 @@ def test_preclinical_calendar_and_no_invented_content():
     assert course['id']=='stom_prerest'
     assert [l['session_number'] for l in course['lessons']]==list(range(1,32))
     assert course['lessons'][0]['id']=='ergonomika'
-    assert all(l['sections'] for l in course['lessons'])
+    assert sum(bool(l['sections']) for l in course['lessons']) == 24
+    assert sum(not l['sections'] for l in course['lessons']) == 7
+    assert len(set(sec['body'] for l in course['lessons'] for sec in l['sections'])) == 24
+    assert not any(sec['heading'] == 'Manba va chegaralar' for l in course['lessons'] for sec in l['sections'])
+    assert all(not l['questions'] for l in course['lessons'] if not l['sections'])
     assert course['total_sessions'] == 31
     assert course['lessons'][0]['teacher_materials'][0]['filename'].startswith('Calendar_plan-')
 
