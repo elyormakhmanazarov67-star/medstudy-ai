@@ -62,8 +62,8 @@ def test_consent_catalog_quiz_and_delete(client):
     empty=client.get('/api/lessons/ergonomika',headers=hdr()).json()
     assert len(empty['questions'])==1
     assert len(empty['teacher_materials'])>=1
-    assert empty.get('sammu_books', [])==[]
-    assert empty.get('supplementary', [])==[]
+    assert 'sammu_books' not in empty
+    assert 'supplementary' not in empty
     body={'lesson_id':'ergonomika','question_ids':['old'],'answers':[0]}
     assert client.post('/api/attempts',json=body,headers=hdr()).status_code==400
     lesson=client.get('/api/lessons/eng_l1',headers=hdr()).json()
@@ -105,9 +105,9 @@ def test_wrong_review(client):
 def test_no_supplementary_data_or_quiz(client):
     client.post('/api/consent',headers=hdr())
     lesson=client.get('/api/lessons/bio_l1',headers=hdr()).json()
-    assert lesson.get('supplement_sections', [])==[]
-    assert lesson.get('supplement_questions', [])==[]
-    assert lesson.get('sammu_books', [])==[]
+    assert 'supplement_sections' not in lesson
+    assert 'supplement_questions' not in lesson
+    assert 'sammu_books' not in lesson
     required=main.CATALOG['subjects'][4]['lessons'][0]['questions']
     response=client.post('/api/attempts',json={
         'lesson_id':'bio_l1',
