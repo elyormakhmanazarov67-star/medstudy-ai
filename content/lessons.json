@@ -1,7 +1,7 @@
 {
-  "version": "0.5.16-preclinical-quizzes",
+  "version": "0.5.17-filling-missing-a",
   "status": "TEST — O‘qituvchi materiallari va OpenStax ochiq darsliklaridan manba ko‘rsatilgan alohida o‘quv materiallari. Mutaxassis tekshiruvi talab etiladi.",
-  "note": "Preklinik restavratsion stomatologiyada manbali 28 darsning har birida 10 tadan alohida test savoli bor (jami 280). Kariyes bo‘yicha 23–25 darslar manba yetishmagani sabab bo‘sh; PDF/original fayl yuklab olish yo‘q.",
+  "note": "Boshlang‘ich to‘ldirish: 23–25-kariyes va Stomatologiyaga kirish 1–12 mavzulari tekshirilgan ochiq manbalar asosida tayyorlandi. Yangi mazmun foydalanuvchi kitoblaridan ajratilgan AI_RESEARCH_DRAFT sifatida belgilangan.",
   "subjects": [
     {
       "id": "stom_prerest",
@@ -3710,8 +3710,126 @@
           "title": "Kariyes haqida tushuncha. Karioz kovaklar tasnifi.",
           "calendar_topic": "Kariyes haqida tushuncha. Karioz kovaklar tasnifi.",
           "focus": "Kariyes haqida tushuncha. Karioz kovaklar tasnifi.",
-          "sections": [],
-          "questions": [],
+          "sections": [
+            {
+              "heading": "Kariyes nima?",
+              "body": "Tish kariyesi — og‘iz bo‘shlig‘idagi biofilm mikroorganizmlari oziq-ovqat shakarlarini parchalaganda hosil bo‘ladigan kislotalar ta’sirida tishning qattiq to‘qimalari mineralini yo‘qotishi bilan bog‘liq ko‘p omilli jarayondir. Bu jarayon davomida demineralizatsiya va remineralizatsiya navbatlashadi. Boshlang‘ich o‘zgarish har doim ko‘rinadigan teshik bo‘lishi shart emas."
+            },
+            {
+              "heading": "Kariyesga ta’sir qiladigan omillar",
+              "body": "Tez-tez shakarli mahsulot iste’mol qilish, blyashka nazoratining sustligi, ftor yetishmasligi va so‘lakning kamayishi kariyes xavfini oshirishi mumkin. So‘lak kislotani neytrallash va minerallar muvozanatini saqlashda ishtirok etadi. Xavf alohida bir bakteriya bilan emas, omillar yig‘indisi bilan belgilanadi."
+            },
+            {
+              "heading": "Dastlabki belgilar",
+              "body": "Dastlab emalda oqish, xira dog‘ yoki sirtning yaltiroqligi o‘zgarishi kuzatilishi mumkin. Bu bosqichda sirt butun bo‘lishi va kavita hosil bo‘lmasligi mumkin. Karioz kovak — qattiq to‘qima sirtining buzilishi natijasida paydo bo‘lgan bo‘shliqdir."
+            },
+            {
+              "heading": "Kariyes jarayonining faol yoki to‘xtaganligi",
+              "body": "Faol karioz shikastlanish va to‘xtagan shikastlanish bir xil emas. Shikastlanish faolligi sirtning ko‘rinishi, teksturasi, blyashka tutib turishi va vaqt bo‘yicha o‘zgarishlarga qarab mutaxassis tomonidan baholanadi. Birgina rangning o‘zgarishi faol kariyesni qat’iy tasdiqlamaydi."
+            },
+            {
+              "heading": "Profilaktika va erta aniqlash",
+              "body": "Kariyes xavfini kamaytirishda muntazam og‘iz gigiyenasi, ftorli profilaktika, shakar iste’moli chastotasini kamaytirish va stomatologik tekshiruv muhim. Boshlang‘ich shikastlanishlar ayrim hollarda invaziv bo‘lmagan nazorat bilan barqarorlashishi mumkin. Bemor uchun davolash usuli kasallik faolligi va xavf bahosiga bog‘liq."
+            }
+          ],
+          "questions": [
+            {
+              "id": "pre_session_23_aiq01",
+              "q": "Kariyesning asosiy jarayoni qaysi?",
+              "options": [
+                "Suyakning o‘sishi",
+                "Tish ildizining ko‘payishi",
+                "Faqat tashqi rangning bo‘yalishi",
+                "Demineralizatsiya va remineralizatsiya muvozanatining buzilishi"
+              ],
+              "answer": 3,
+              "explanation": "Kariyes kislota ta’siridagi dinamik mineral almashinuvi bilan bog‘liq."
+            },
+            {
+              "id": "pre_session_23_aiq02",
+              "q": "Kariyes rivojlanishida oziq-ovqatning qaysi komponenti muhim?",
+              "options": [
+                "Erkin shakarlar",
+                "Faqat suv",
+                "Faqat kalsiy",
+                "Faqat oqsil"
+              ],
+              "answer": 0,
+              "explanation": "Biofilm shakarlarni parchalaydi va kislota hosil qiladi."
+            },
+            {
+              "id": "pre_session_23_aiq03",
+              "q": "So‘lakning himoya vazifalaridan biri nima?",
+              "options": [
+                "Bor aylantirish",
+                "Kislotalarni neytrallashga yordam berish",
+                "Tishni mexanik almashtirish",
+                "Faqat tovush chiqarish"
+              ],
+              "answer": 1,
+              "explanation": "So‘lak og‘iz muhitining tampon tizimiga hissa qo‘shadi."
+            },
+            {
+              "id": "pre_session_23_aiq04",
+              "q": "Kariyesning boshlang‘ich belgisi qanday bo‘lishi mumkin?",
+              "options": [
+                "Doimo chuqur teshik",
+                "Tishning yangi ildizi",
+                "Emalda xira oqish dog‘",
+                "Doimo jag‘ suyagi sinishi"
+              ],
+              "answer": 2,
+              "explanation": "Dastlabki emal shikastlanishi kavitasiz bo‘lishi mumkin."
+            },
+            {
+              "id": "pre_session_23_aiq05",
+              "q": "Karioz kovak nimani anglatadi?",
+              "options": [
+                "Faqat milk rangi",
+                "Faqat so‘lak miqdori",
+                "Tishning tabiiy pulpa bo‘shlig‘i",
+                "Tish sirtining buzilib bo‘shliq paydo bo‘lishi"
+              ],
+              "answer": 3,
+              "explanation": "Kavita — kariyes tufayli qattiq tish sirtida hosil bo‘lgan bo‘shliq."
+            },
+            {
+              "id": "pre_session_23_aiq06",
+              "q": "Kariyes xavfi qaysi omil bilan ortishi mumkin?",
+              "options": [
+                "Shakarni tez-tez iste’mol qilish",
+                "Ftorli profilaktika",
+                "Yaxshi gigiyena",
+                "Muntazam tish ko‘rigi"
+              ],
+              "answer": 0,
+              "explanation": "Tez-tez shakar ta’siri biofilmda kislota hosil bo‘lishini kuchaytiradi."
+            },
+            {
+              "id": "pre_session_23_aiq07",
+              "q": "Faol kariyesni faqat rang bilan aniqlash to‘g‘rimi?",
+              "options": [
+                "Ha, har qanday qora dog‘ faol kariyes",
+                "Yo‘q, sirt belgisi va faollik ham baholanadi",
+                "Ha, har qanday oq dog‘ kavita",
+                "Faqat tishning hajmi yetarli"
+              ],
+              "answer": 1,
+              "explanation": "Kariyes faolligi bir nechta klinik belgi va kuzatuvga asoslanadi."
+            },
+            {
+              "id": "pre_session_23_aiq08",
+              "q": "Kavitasiz emal shikastlanishiga qanday yondashuv bo‘lishi mumkin?",
+              "options": [
+                "Har doim tishni olib tashlash",
+                "Tishni mexanik sindirish",
+                "Xavfni baholash va profilaktik nazorat",
+                "Faqat rangini kuzatmaslik"
+              ],
+              "answer": 2,
+              "explanation": "Erta shikastlanishlarda invaziv bo‘lmagan choralar muhim."
+            }
+          ],
           "teacher_materials": [
             {
               "title": "Kalendar reja",
@@ -3726,8 +3844,12 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "review_status": "AWAITING_SOURCE — caries concept and cavity classification not sufficiently covered",
-          "source_pages": []
+          "review_status": "AI_RESEARCH_DRAFT — open educational/clinical references, teacher verification recommended",
+          "source_pages": [],
+          "research_sources": [
+            "https://www.ada.org/resources/ada-library/oral-health-topics/caries-risk-assessment-and-management",
+            "https://www.who.int/en/news-room/fact-sheets/detail/oral-health"
+          ]
         },
         {
           "id": "pre_session_24",
@@ -3735,8 +3857,126 @@
           "title": "Kariyes haqida tushuncha. Karioz kovaklar tasnifi.",
           "calendar_topic": "Kariyes haqida tushuncha. Karioz kovaklar tasnifi.",
           "focus": "Kariyes haqida tushuncha. Karioz kovaklar tasnifi.",
-          "sections": [],
-          "questions": [],
+          "sections": [
+            {
+              "heading": "G. V. Black tasnifining mazmuni",
+              "body": "Black tasnifi karioz kovaklarni joylashuviga ko‘ra sinflarga ajratadi. I sinf — chaynov yuzasidagi chuqurcha va fissuralar, II sinf — premolyar va molyarlarning kontakt yuzasi, III va IV sinflar — oldingi tishlarning kontakt yuzalari bilan bog‘liq."
+            },
+            {
+              "heading": "I va II sinflar",
+              "body": "I sinf odatda molyar va premolyarlarning fissura va tabiiy chuqurchalaridagi shikastlanishni ifodalaydi. II sinf chaynov tishlarining mezial yoki distal kontakt yuzalaridagi kovakdir. Kontakt yuzadagi shikastlanish har doim bevosita ko‘zga tashlanmasligi mumkin."
+            },
+            {
+              "heading": "III va IV sinflar",
+              "body": "III sinf oldingi kurak va qoziq tishlarning kontakt yuzasida kesuvchi burchak ishtirokisiz joylashgan kovakdir. IV sinfda esa kontakt yuzadagi shikastlanishga kesuvchi qirra yoki burchak ham qo‘shiladi. Ularning farqi kesuvchi burchakning jalb etilganligidir."
+            },
+            {
+              "heading": "V va VI sinflar",
+              "body": "V sinf — tishning lunj yoki til yuzasidagi bo‘yin (servikal) sohasi kovagi. Keyinroq qo‘shilgan VI sinf — do‘mboq uchlari yoki oldingi tishlarning kesuvchi qirrasi sohasidagi shikastlanish. Black tasnifi shikastlanishning joyini bildiradi, uning faolligi va chuqurligini mustaqil aniqlamaydi."
+            },
+            {
+              "heading": "Tasniflarni to‘g‘ri solishtirish",
+              "body": "Black tasnifi restoratsion anatomiya bo‘yicha joylashuvni ko‘rsatadi. ICDAS esa shikastlanishning klinik ko‘rinishi va og‘irligini 0 dan 6 gacha baholovchi tizimdir. Bir xil Black sinfiga kiruvchi kovaklar ICDAS bo‘yicha turli darajada bo‘lishi mumkin."
+            }
+          ],
+          "questions": [
+            {
+              "id": "pre_session_24_aiq01",
+              "q": "Black I sinfi odatda qayerdagi kariyes kovagini bildiradi?",
+              "options": [
+                "Chaynov sirtining fissura va chuqurchalari",
+                "Oldingi tishning kesuvchi qirrasi",
+                "Faqat milk osti ildizi",
+                "Faqat lab shilliq qavati"
+              ],
+              "answer": 0,
+              "explanation": "I sinf tabiiy fissura va chuqurchalar bilan bog‘liq."
+            },
+            {
+              "id": "pre_session_24_aiq02",
+              "q": "Black II sinfi qaysi yuzalarda joylashadi?",
+              "options": [
+                "Faqat qoziq tish cho‘qqisida",
+                "Chaynov tishlarining kontakt yuzalarida",
+                "Faqat til yuzasidagi bo‘yin sohasida",
+                "Faqat oldingi tish kesuvchi burchagida"
+              ],
+              "answer": 1,
+              "explanation": "II sinf premolyar va molyarlarning proksimal yuzasiga tegishli."
+            },
+            {
+              "id": "pre_session_24_aiq03",
+              "q": "Black III sinfi qaysi holat?",
+              "options": [
+                "Chaynov tish fissurasi",
+                "Molyar do‘mbog‘i uchi",
+                "Oldingi tish kontakt yuzasi, kesuvchi burchak ishtirokisiz",
+                "Tishning pulpasi"
+              ],
+              "answer": 2,
+              "explanation": "III sinfda kesuvchi burchak jalb etilmaydi."
+            },
+            {
+              "id": "pre_session_24_aiq04",
+              "q": "Black IV sinfining III sinfdan farqi nima?",
+              "options": [
+                "Faqat ildiz sonining ortishi",
+                "Faqat material turi",
+                "Tishning doimiy yoki sut ekanligi",
+                "Kesuvchi burchakning ham ishtirok etishi"
+              ],
+              "answer": 3,
+              "explanation": "IV sinfda oldingi tishning kesuvchi burchagi/shakli ham buziladi."
+            },
+            {
+              "id": "pre_session_24_aiq05",
+              "q": "Black V sinfi qaysi sohaga tegishli?",
+              "options": [
+                "Vestibulyar yoki til yuzasining bo‘yin qismiga",
+                "Faqat molyar fissurasiga",
+                "Faqat kesuvchi qirraga",
+                "Faqat premolyar kontaktiga"
+              ],
+              "answer": 0,
+              "explanation": "V sinf — servikal soha."
+            },
+            {
+              "id": "pre_session_24_aiq06",
+              "q": "Black VI sinfi odatda qayerda?",
+              "options": [
+                "Faqat bo‘yin sohasida",
+                "Do‘mboq uchlari va kesuvchi qirralarda",
+                "Faqat til ildizida",
+                "Faqat milk to‘qimasida"
+              ],
+              "answer": 1,
+              "explanation": "VI sinf do‘mboq va kesuvchi qirra bilan bog‘liq."
+            },
+            {
+              "id": "pre_session_24_aiq07",
+              "q": "Black tasnifi birinchi navbatda nimani bildiradi?",
+              "options": [
+                "Kariyesning faolligini",
+                "Bemorning yoshini",
+                "Kovakning tish yuzasidagi joylashuvini",
+                "Shikastlanish bakteriyasini"
+              ],
+              "answer": 2,
+              "explanation": "Black tizimi anatomik joylashuvga asoslanadi."
+            },
+            {
+              "id": "pre_session_24_aiq08",
+              "q": "ICDAS va Black o‘rtasidagi farq nima?",
+              "options": [
+                "Ikkisi ham bir xil sinflar",
+                "ICDAS faqat tish sonini sanaydi",
+                "Black faqat yallig‘lanishni baholaydi",
+                "ICDAS og‘irlikni, Black joylashuvni tavsiflaydi"
+              ],
+              "answer": 3,
+              "explanation": "Ular bir-birini to‘ldiruvchi, lekin turli mezonli tasniflardir."
+            }
+          ],
           "teacher_materials": [
             {
               "title": "Kalendar reja",
@@ -3751,8 +3991,11 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "review_status": "AWAITING_SOURCE — caries concept and cavity classification not sufficiently covered",
-          "source_pages": []
+          "review_status": "AI_RESEARCH_DRAFT — open educational/clinical references, teacher verification recommended",
+          "source_pages": [],
+          "research_sources": [
+            "https://www.ada.org/resources/ada-library/oral-health-topics/caries-risk-assessment-and-management"
+          ]
         },
         {
           "id": "pre_session_25",
@@ -3760,8 +4003,126 @@
           "title": "Kariyes haqida tushuncha. Karioz kovaklar tasnifi.",
           "calendar_topic": "Kariyes haqida tushuncha. Karioz kovaklar tasnifi.",
           "focus": "Kariyes haqida tushuncha. Karioz kovaklar tasnifi.",
-          "sections": [],
-          "questions": [],
+          "sections": [
+            {
+              "heading": "Kariyesning chuqurlik bo‘yicha ko‘rinishi",
+              "body": "Karioz shikastlanish emal bilan cheklangan, dentinga o‘tgan yoki chuqur dentin qatlamigacha yetgan bo‘lishi mumkin. Joylashuv va chuqurlik mustaqil mezonlardir: masalan, Black I sinfidagi shikastlanish yuzaki ham, chuqur ham bo‘lishi mumkin."
+            },
+            {
+              "heading": "ICDAS boshlang‘ich darajalari",
+              "body": "ICDAS 0 — klinik jihatdan sog‘lom sirt; 1 — emalda ilk ko‘rinadigan o‘zgarish, 2 — aniqroq ko‘rinadigan emal o‘zgarishi. Kodlar shikastlanishning klinik ko‘rinishini tartibga solish uchun ishlatiladi."
+            },
+            {
+              "heading": "ICDAS o‘rta darajalari",
+              "body": "ICDAS 3 — emalda dentin ko‘rinmasdan kichik mahalliy sirt buzilishi; 4 — emal ostidagi dentin soyasining ko‘rinishi. Bu belgilar qattiq to‘qima shikastlanishi boshlang‘ich dog‘ bosqichidan oshganini bildiradi."
+            },
+            {
+              "heading": "ICDAS og‘ir darajalari",
+              "body": "ICDAS 5 — dentin ko‘rinadigan aniq kavita; 6 — dentin ochilgan keng va chuqur kavita. ICDAS kodlari kariyesning joylashuvi emas, klinik og‘irligini bildiradi. Shikastlanish faol yoki to‘xtaganligini baholash alohida bosqich."
+            },
+            {
+              "heading": "Tashxis va o‘rganish chegarasi",
+              "body": "Kariyes shikastlanishini baholashda tish yuzasi tozaligi, quritish sharoiti, vizual ko‘rik, xavf omillari va zarur hollarda rentgen tekshiruvining o‘rni bor. Ushbu dars tasnifni tushunishga mo‘ljallangan; invaziv davolash algoritmlarini mustaqil bajarish ko‘rsatmasi emas."
+            }
+          ],
+          "questions": [
+            {
+              "id": "pre_session_25_aiq01",
+              "q": "ICDAS kodi 0 nimani bildiradi?",
+              "options": [
+                "Keng kavita",
+                "Klinik jihatdan sog‘lom sirt",
+                "Dentin soyasi",
+                "Tish ildizi sinishi"
+              ],
+              "answer": 1,
+              "explanation": "ICDAS 0 — aniqlanadigan karioz shikastlanish belgisi yo‘q."
+            },
+            {
+              "id": "pre_session_25_aiq02",
+              "q": "ICDAS 1 va 2 qaysi bosqichlarga yaqin?",
+              "options": [
+                "Faqat keng chuqur kavitaga",
+                "Faqat pulpitga",
+                "Boshlang‘ich emal o‘zgarishlariga",
+                "Faqat tish sinishiga"
+              ],
+              "answer": 2,
+              "explanation": "1–2 kodlar emaldagi dastlabki vizual o‘zgarishlarni bildiradi."
+            },
+            {
+              "id": "pre_session_25_aiq03",
+              "q": "ICDAS 3 nimani anglatadi?",
+              "options": [
+                "Mutlaqo sog‘lom sirt",
+                "Keng dentin kavita",
+                "Faqat tish toshi",
+                "Emal sirtining mahalliy kichik buzilishi"
+              ],
+              "answer": 3,
+              "explanation": "3-kod mahalliy emal sirt buzilishi bilan bog‘liq."
+            },
+            {
+              "id": "pre_session_25_aiq04",
+              "q": "ICDAS 4 da qaysi belgi muhim?",
+              "options": [
+                "Emal ostida dentin soyasi ko‘rinishi",
+                "Faqat tish toshi",
+                "Mutlaqo sog‘lom yuz",
+                "Barcha toj yo‘qolishi"
+              ],
+              "answer": 0,
+              "explanation": "4-kodda dentinning asosiy qoramtir soyasi muhim."
+            },
+            {
+              "id": "pre_session_25_aiq05",
+              "q": "ICDAS 5 nimani ko‘rsatadi?",
+              "options": [
+                "Sog‘lom emalni",
+                "Dentin ko‘rinadigan aniq kavitani",
+                "Faqat milk yallig‘lanishini",
+                "Faqat tovush sezgirligini"
+              ],
+              "answer": 1,
+              "explanation": "5-kod dentin ochilgan kavitani bildiradi."
+            },
+            {
+              "id": "pre_session_25_aiq06",
+              "q": "ICDAS 6 ning belgisi qaysi?",
+              "options": [
+                "Faqat oq dog‘",
+                "Faqat kichik emal dog‘i",
+                "Keng va chuqur dentin kavita",
+                "Mutlaqo sog‘lom yuz"
+              ],
+              "answer": 2,
+              "explanation": "6-kod keng, yaqqol kavita uchun ishlatiladi."
+            },
+            {
+              "id": "pre_session_25_aiq07",
+              "q": "Chuqurlik va Black sinfi qanday munosabatda?",
+              "options": [
+                "Har doim bir xil qiymat",
+                "Faqat tish rangiga bog‘liq",
+                "Faqat yoshga bog‘liq",
+                "Turli tasnif mezonlari"
+              ],
+              "answer": 3,
+              "explanation": "Black joylashuvni, chuqurlik esa to‘qima zararlanishi ko‘lamini bildiradi."
+            },
+            {
+              "id": "pre_session_25_aiq08",
+              "q": "ICDAS faollikni to‘liq o‘zi aniqlaydimi?",
+              "options": [
+                "Yo‘q, faollik alohida baholanadi",
+                "Ha, kodning o‘zi yetadi",
+                "Faqat tish yoshini hisoblaydi",
+                "Faqat umumiy kasallikni baholaydi"
+              ],
+              "answer": 0,
+              "explanation": "Vizual og‘irlik kodi va faollik bahosi turli tushunchalardir."
+            }
+          ],
           "teacher_materials": [
             {
               "title": "Kalendar reja",
@@ -3776,8 +4137,11 @@
               "note": "Suhbatda yuborilgan manba. Ilovadan faylni yuklab olish hozircha ulanmagan."
             }
           ],
-          "review_status": "AWAITING_SOURCE — caries concept and cavity classification not sufficiently covered",
-          "source_pages": []
+          "review_status": "AI_RESEARCH_DRAFT — open educational/clinical references, teacher verification recommended",
+          "source_pages": [],
+          "research_sources": [
+            "https://www.ada.org/resources/ada-library/oral-health-topics/caries-risk-assessment-and-management"
+          ]
         },
         {
           "id": "pre_session_26",
@@ -4795,10 +5159,103 @@
           "title": "Stomatologiyaga kirish: tarixiy bosqichlar va mahalliy maktablar",
           "calendar_topic": "Stomatologiyaga kirish: tarixiy bosqichlar va mahalliy maktablar",
           "focus": "Stomatologiyaga kirish: tarixiy bosqichlar va mahalliy maktablar",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Stomatologiya fanining rivojlanishi",
+              "body": "Stomatologiya qadimgi tish va jag‘ kasalliklari haqidagi tajribalardan boshlab, anatomik tadqiqotlar, klinik gigiyena, materialshunoslik va ilmiy diagnostika rivoji bilan shakllangan. XIX–XX asrlarda maxsus stomatologik ta’lim, kasb tashkilotlari va profilaktika yo‘nalishi kengaydi."
+            },
+            {
+              "heading": "Mutaxassislikning zamonaviy yo‘nalishlari",
+              "body": "Terapevtik, ortopedik, jarrohlik va bolalar stomatologiyasi, ortodontiya, parodontologiya va endodontiya tish-jag‘ tizimining turli ehtiyojlarini o‘rganadi. Zamonaviy yondashuv davolash bilan bir qatorda profilaktikani va dalillarga asoslangan tashxisni ta’kidlaydi."
+            },
+            {
+              "heading": "FDI va xalqaro hamkorlik",
+              "body": "FDI World Dental Federation 1900-yilda xalqaro hamkorlik, ilmiy kongresslar va stomatologik ta’limni rivojlantirish maqsadida tuzilgan. Uning faoliyati og‘iz salomatligini umumiy salomatlikning bir qismi sifatida ko‘rishga yordam beradi."
+            },
+            {
+              "heading": "Mahalliy maktablarni o‘rganish",
+              "body": "O‘zbekistondagi stomatologik maktablarni o‘rganishda oliy ta’lim muassasalari, klinikalar, ilmiy ishlar va mahalliy darsliklarning o‘rni ko‘rib chiqiladi. Masalan, Kornilov, Ibragimova va Rizayev ishtirokidagi 2005-yilgi «Stomatologik asbob va ashyolar» darsligi talabalar uchun o‘zbekcha manbalardan biridir."
+            }
+          ],
           "teacher_materials": [],
-          "questions": [],
-          "review_status": "AWAITING_USER_MATERIALS"
+          "questions": [
+            {
+              "id": "intro_a1_aiq01",
+              "q": "FDI qanday tashkilot?",
+              "options": [
+                "Faqat klinika laboratoriyasi",
+                "Xalqaro stomatologiya federatsiyasi",
+                "Tish borlarining turi",
+                "Bir sement markasi"
+              ],
+              "answer": 1,
+              "explanation": "FDI stomatologiya kasbining xalqaro hamkorlik tashkilotidir."
+            },
+            {
+              "id": "intro_a1_aiq02",
+              "q": "FDI qachon tashkil etilgan?",
+              "options": [
+                "1750-yilda",
+                "2005-yilda",
+                "1900-yilda",
+                "2025-yilda"
+              ],
+              "answer": 2,
+              "explanation": "FDI 1900-yilda tashkil topgan."
+            },
+            {
+              "id": "intro_a1_aiq03",
+              "q": "Zamonaviy stomatologiyaning muhim yo‘nalishi qaysi?",
+              "options": [
+                "Faqat og‘riq paydo bo‘lganda murojaat",
+                "Faqat asbob reklamalari",
+                "Faqat tish rangi",
+                "Profilaktika"
+              ],
+              "answer": 3,
+              "explanation": "Og‘iz kasalliklarini oldini olish zamonaviy stomatologiyaning asosiy vazifalaridan."
+            },
+            {
+              "id": "intro_a1_aiq04",
+              "q": "Endodontiya nimani o‘rganadi?",
+              "options": [
+                "Tish ichki bo‘shlig‘i va ildiz kanali muammolarini",
+                "Faqat oyoq suyaklarini",
+                "Faqat quloq akustikasini",
+                "Faqat optik linzalarni"
+              ],
+              "answer": 0,
+              "explanation": "Endodontiya tish ichki to‘qimalari bilan bog‘liq yo‘nalishdir."
+            },
+            {
+              "id": "intro_a1_aiq05",
+              "q": "Ortodontiyaning asosiy sohasi qaysi?",
+              "options": [
+                "Faqat qon bosimi",
+                "Tishlar va jag‘ munosabatidagi anomaliyalar",
+                "Faqat tish plombasining ranggi",
+                "Faqat tana harorati"
+              ],
+              "answer": 1,
+              "explanation": "Ortodontiya tish qatorlari va jag‘ munosabatlari bilan shug‘ullanadi."
+            },
+            {
+              "id": "intro_a1_aiq06",
+              "q": "Mahalliy o‘quv manbalaridan biri qaysi?",
+              "options": [
+                "Faqat universal fizika atlasi",
+                "Faqat geografik xarita",
+                "«Stomatologik asbob va ashyolar» darsligi",
+                "Faqat kompyuter dasturi"
+              ],
+              "answer": 2,
+              "explanation": "2005-yilgi o‘zbekcha darslik stomatologiya asbob va materiallarini yoritadi."
+            }
+          ],
+          "review_status": "AI_RESEARCH_DRAFT — open educational/clinical references, teacher verification recommended",
+          "research_sources": [
+            "https://www.fdiworlddental.org/our-purpose"
+          ]
         },
         {
           "id": "intro_a2",
@@ -4806,10 +5263,103 @@
           "title": "Davolash-profilaktika stomatologiya muassasalari va bo‘limlari",
           "calendar_topic": "Davolash-profilaktika stomatologiya muassasalari va bo‘limlari",
           "focus": "Davolash-profilaktika stomatologiya muassasalari va bo‘limlari",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Stomatologik xizmat muassasalari",
+              "body": "Stomatologiya xizmati poliklinika, ko‘p tarmoqli shifoxona stomatologiya bo‘limi, xususiy kabinet, o‘quv klinikasi yoki ixtisoslashtirilgan markazda ko‘rsatilishi mumkin. Tashkilot shakli xizmat turi, xodimlar tarkibi va huquqiy talablar bilan bog‘liq."
+            },
+            {
+              "heading": "Profilaktika va ambulator xizmat",
+              "body": "Profilaktik xizmat og‘iz gigiyenasi, xavf omillarini baholash va kasalliklarni erta aniqlashga qaratiladi. Ambulator stomatologiyada bemor odatda muolajadan so‘ng uyga qaytadi; diagnostika, davolash va nazorat shu tizimda tashkil qilinadi."
+            },
+            {
+              "heading": "Ixtisoslashtirilgan bo‘limlar",
+              "body": "Terapevtik bo‘lim ko‘proq kariyes va tish to‘qimalari kasalliklari, ortopedik bo‘lim protezlash, jarrohlik bo‘lim esa stomatologik jarrohlik muammolarini ko‘rib chiqadi. Ortodontik va bolalar bo‘limlarining xizmat ko‘lami bundan farq qiladi."
+            },
+            {
+              "heading": "Yordamchi xizmatlar",
+              "body": "Sterilizatsiya hududi, rentgenologiya, tish-texnik laboratoriyasi va registratura tashxis, muolaja, hujjat yuritish va infeksiya nazoratini qo‘llab-quvvatlaydi. Ularning jihozlanishi muassasaning vazifalari va mahalliy qoidalarga qarab farq qiladi."
+            }
+          ],
           "teacher_materials": [],
-          "questions": [],
-          "review_status": "AWAITING_USER_MATERIALS"
+          "questions": [
+            {
+              "id": "intro_a2_aiq01",
+              "q": "Ambulator stomatologik xizmatda bemor odatda qayerga qaytadi?",
+              "options": [
+                "Doim reanimatsiyaga",
+                "Doim yotoqxonaga",
+                "Muolajadan keyin uyiga",
+                "Doim laboratoriyaga"
+              ],
+              "answer": 2,
+              "explanation": "Ambulator xizmat yotqizmasdan ko‘rsatiladi."
+            },
+            {
+              "id": "intro_a2_aiq02",
+              "q": "Protezlash ko‘proq qaysi bo‘limga tegishli?",
+              "options": [
+                "Faqat terapiya bo‘limiga",
+                "Faqat laboratoriya diagnostikasiga",
+                "Faqat rentgenologiyaga",
+                "Ortopedik stomatologiyaga"
+              ],
+              "answer": 3,
+              "explanation": "Ortopedik bo‘lim protezlash bilan shug‘ullanadi."
+            },
+            {
+              "id": "intro_a2_aiq03",
+              "q": "Kariyes bilan bog‘liq muammolar ko‘proq qaysi bo‘limda ko‘riladi?",
+              "options": [
+                "Terapevtik stomatologiyada",
+                "Ortodontik laboratoriyada",
+                "Tibbiy statistika bo‘limida",
+                "Faqat fizioterapiyada"
+              ],
+              "answer": 0,
+              "explanation": "Terapevtik stomatologiya tish qattiq to‘qimasi kasalliklarini o‘rganadi."
+            },
+            {
+              "id": "intro_a2_aiq04",
+              "q": "Tish-texnik laboratoriyaning vazifasi qaysi?",
+              "options": [
+                "Faqat EKG olish",
+                "Protez va konstruksiyalar tayyorlashga yordam berish",
+                "Faqat so‘lakni so‘rish",
+                "Faqat steril o‘ramni sanash"
+              ],
+              "answer": 1,
+              "explanation": "Laboratoriya protez ishlariga ko‘maklashadi."
+            },
+            {
+              "id": "intro_a2_aiq05",
+              "q": "Rentgenologik xizmat nima uchun kerak?",
+              "options": [
+                "Faqat plomba aralashtirish",
+                "Faqat bemorni ro‘yxatga olish",
+                "Tasviriy diagnostika uchun",
+                "Faqat jarrohlik qo‘lqop tayyorlash"
+              ],
+              "answer": 2,
+              "explanation": "Rentgenologiya tasvir yordamida anatomik va patologik holatni baholaydi."
+            },
+            {
+              "id": "intro_a2_aiq06",
+              "q": "Sterilizatsiya hududining vazifasi qaysi?",
+              "options": [
+                "Faqat bemorlarni qabul qilish",
+                "Faqat pulpa rangini tanlash",
+                "Faqat to‘lov olish",
+                "Asboblarni qayta ishlash"
+              ],
+              "answer": 3,
+              "explanation": "Qayta ishlash hududi infeksiya nazoratining bir qismidir."
+            }
+          ],
+          "review_status": "AI_RESEARCH_DRAFT — open educational/clinical references, teacher verification recommended",
+          "research_sources": [
+            "https://www.fdiworldental.org/leading-world-optimal-oral-health"
+          ]
         },
         {
           "id": "intro_a3",
@@ -4817,10 +5367,103 @@
           "title": "Stomatologiya klinikasi: turlari, toifalari va xodimlar vazifalari",
           "calendar_topic": "Stomatologiya klinikasi: turlari, toifalari va xodimlar vazifalari",
           "focus": "Stomatologiya klinikasi: turlari, toifalari va xodimlar vazifalari",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Klinikaning tashkiliy turlari",
+              "body": "Stomatologik klinikalar xizmat yo‘nalishiga ko‘ra umumiy yoki ixtisoslashgan, mulkchiligiga ko‘ra davlat yoki xususiy bo‘lishi mumkin. «Toifa» va litsenziya talablari tegishli mamlakatning amaldagi me’yorlari bilan belgilanadi."
+            },
+            {
+              "heading": "Stomatologning vazifasi",
+              "body": "Stomatolog tashxis, davolash rejasi, bemorning xabardor roziligi, bajarilgan muolajani hujjatlashtirish va yordamchi xodimlar ishini klinik muvofiqlashtirishda mas’uliyat oladi. Malaka doirasidan tashqaridagi holatda mutaxassisga yuborish muhim."
+            },
+            {
+              "heading": "Hamshira va assistent",
+              "body": "Assistent bemor va ish maydonini tayyorlashda, asboblarni uzatishda hamda gigiyena tartiblariga rioya qilishda yordam beradi. Hamshira vazifalari muassasa va ruxsat etilgan kasbiy kompetensiyaga bog‘liq."
+            },
+            {
+              "heading": "Registratura va tish texnigi",
+              "body": "Registratura qabul vaqtini, yo‘naltirishni va hujjatlar aylanishini tashkil etadi. Tish texnigi protez va ortopedik konstruksiyalarni laboratoriyada tayyorlaydi. Kasbiy chegaralar qonun va ichki ish tartibida belgilanadi."
+            }
+          ],
           "teacher_materials": [],
-          "questions": [],
-          "review_status": "AWAITING_USER_MATERIALS"
+          "questions": [
+            {
+              "id": "intro_a3_aiq01",
+              "q": "Ixtisoslashtirilgan klinika qanday farq qiladi?",
+              "options": [
+                "Faqat mebel rangi bilan",
+                "Faqat telefon bilan",
+                "Faqat manzil turi bilan",
+                "Muayyan xizmat yo‘nalishiga e’tibor berishi bilan"
+              ],
+              "answer": 3,
+              "explanation": "Ixtisoslashuv xizmat ko‘lamini bildiradi."
+            },
+            {
+              "id": "intro_a3_aiq02",
+              "q": "Davolash rejasini klinik jihatdan kim boshqaradi?",
+              "options": [
+                "Stomatolog",
+                "Faqat kuryer",
+                "Faqat texnik",
+                "Faqat registrator"
+              ],
+              "answer": 0,
+              "explanation": "Stomatolog tashxis va davolash uchun kasbiy mas’uliyat oladi."
+            },
+            {
+              "id": "intro_a3_aiq03",
+              "q": "Assistentning vazifalaridan biri nima?",
+              "options": [
+                "Mustaqil tashxisni har doim almashtirish",
+                "Asboblar va ish maydonini tayyorlash",
+                "Litsenziya berish",
+                "Laboratoriya sertifikati berish"
+              ],
+              "answer": 1,
+              "explanation": "Assistent klinik guruh ishini qo‘llab-quvvatlaydi."
+            },
+            {
+              "id": "intro_a3_aiq04",
+              "q": "Tish texnigi ko‘proq qayerda ishlaydi?",
+              "options": [
+                "Faqat EKG xonasida",
+                "Faqat dorixonada",
+                "Protez laboratoriyasida",
+                "Faqat qabullar zalida"
+              ],
+              "answer": 2,
+              "explanation": "Tish texnigi ortopedik konstruksiyalar tayyorlaydi."
+            },
+            {
+              "id": "intro_a3_aiq05",
+              "q": "Registratura nimani tashkil qiladi?",
+              "options": [
+                "Kanallar obturatsiyasini",
+                "Steril material ishlab chiqarishni",
+                "Implantlarni yaratishni",
+                "Qabul va hujjatlar aylanishini"
+              ],
+              "answer": 3,
+              "explanation": "Qabulni tashkil etish registratura vazifasidir."
+            },
+            {
+              "id": "intro_a3_aiq06",
+              "q": "Klinikaning ruxsat va toifalari nimaga bog‘liq?",
+              "options": [
+                "Amaldagi milliy me’yorlarga",
+                "Faqat logo rangiga",
+                "Faqat tish formulasiga",
+                "Faqat ob-havoga"
+              ],
+              "answer": 0,
+              "explanation": "Tashkiliy-litsenziyalash me’yorlari yurisdiksiya bilan belgilanadi."
+            }
+          ],
+          "review_status": "AI_RESEARCH_DRAFT — open educational/clinical references, teacher verification recommended",
+          "research_sources": [
+            "https://www.fdiworldental.org/leading-world-optimal-oral-health"
+          ]
         },
         {
           "id": "intro_a4",
@@ -4828,10 +5471,103 @@
           "title": "Yuz-jag‘ sohasi shikastlangan bemorlarni parvarish qilish",
           "calendar_topic": "Yuz-jag‘ sohasi shikastlangan bemorlarni parvarish qilish",
           "focus": "Yuz-jag‘ sohasi shikastlangan bemorlarni parvarish qilish",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Yuz-jag‘ jarohatlari haqida tushuncha",
+              "body": "Yuz-jag‘ sohasi shikastlanishi yumshoq to‘qima, tish, jag‘ suyagi va qo‘shni anatomik tuzilmalarga ta’sir qilishi mumkin. Bemorning nafas olishi, hushyorligi, qon ketishi va umumiy holatini kuzatish birinchi o‘rinda turadi."
+            },
+            {
+              "heading": "Bemor bilan muloqot va kuzatuv",
+              "body": "Parvarishda bemorning shikoyati, nafas olish qiyinlashuvi, yutish, og‘riq va shish kabi belgilarni qayd etish muhim. Bunday bemorlar mustaqil muolajadan ko‘ra malakali tibbiy jamoa bahosiga muhtoj bo‘lishi mumkin."
+            },
+            {
+              "heading": "Og‘iz gigiyenasi va qulaylik",
+              "body": "Bemorning holatiga va shifokor ko‘rsatmasiga mos og‘iz gigiyenasi, namlik va qulay joylashuv infeksiya xavfini kamaytirish hamda parvarish sifatini oshirishga yordam beradi. Yuz-jag‘ jarohatida harakatlar va ovqatlanish bo‘yicha cheklovlar individual belgilanadi."
+            },
+            {
+              "heading": "Xavfli belgilar va yo‘naltirish",
+              "body": "Nafas olishning buzilishi, kuchayib borayotgan shish, hushning o‘zgarishi yoki nazorat qilib bo‘lmaydigan qon ketishi shoshilinch baholashni talab qiluvchi belgilar hisoblanadi. Birlamchi yordamdan keyingi maxsus parvarish jarroh va boshqa mutaxassislar bilan muvofiqlashtiriladi."
+            }
+          ],
           "teacher_materials": [],
-          "questions": [],
-          "review_status": "AWAITING_USER_MATERIALS"
+          "questions": [
+            {
+              "id": "intro_a4_aiq01",
+              "q": "Yuz-jag‘ jarohatida qaysi funksiya birinchi navbatda baholanadi?",
+              "options": [
+                "Nafas olish",
+                "Faqat tish rangi",
+                "Faqat soch uzunligi",
+                "Faqat tirnoq shakli"
+              ],
+              "answer": 0,
+              "explanation": "Nafas yo‘li xavfsizligi birlamchi ahamiyatga ega."
+            },
+            {
+              "id": "intro_a4_aiq02",
+              "q": "Parvarishda qaysi belgi qayd etiladi?",
+              "options": [
+                "Faqat asbob narxi",
+                "Shish va og‘riq",
+                "Faqat kreslo rangi",
+                "Faqat qog‘oz hajmi"
+              ],
+              "answer": 1,
+              "explanation": "Shikoyatlar va tashqi belgilarni kuzatish muhim."
+            },
+            {
+              "id": "intro_a4_aiq03",
+              "q": "Qaysi holat shoshilinch baholashni talab qiladi?",
+              "options": [
+                "Faqat kiyim rangi o‘zgarishi",
+                "Faqat reklama xati",
+                "Nafas olish qiyinlashuvi",
+                "Faqat suv ichish istagi"
+              ],
+              "answer": 2,
+              "explanation": "Nafas olishning buzilishi xavfli belgidir."
+            },
+            {
+              "id": "intro_a4_aiq04",
+              "q": "Jarohatlangan bemor parvarishi qanday belgilanadi?",
+              "options": [
+                "Hamma uchun bir xil qattiq rejimda",
+                "Faqat bemor yoshi bilan",
+                "Faqat asbob modeli bo‘yicha",
+                "Holati va shifokor ko‘rsatmasiga ko‘ra"
+              ],
+              "answer": 3,
+              "explanation": "Parvarish individual xavf va ehtiyojlarni hisobga oladi."
+            },
+            {
+              "id": "intro_a4_aiq05",
+              "q": "Mutaxassislararo yordam nimani anglatadi?",
+              "options": [
+                "Turli soha shifokorlarining muvofiqlashgan ishini",
+                "Faqat reklama hamkorligini",
+                "Faqat material savdosini",
+                "Faqat bemor kartasini ko‘paytirishni"
+              ],
+              "answer": 0,
+              "explanation": "Yuz-jag‘ jarohati bir necha mutaxassis bahosini talab qilishi mumkin."
+            },
+            {
+              "id": "intro_a4_aiq06",
+              "q": "Og‘iz gigiyenasi nima uchun muhim?",
+              "options": [
+                "Faqat tish formulasini o‘zgartirish",
+                "Og‘iz muhitini toza saqlash va infeksiya xavfini kamaytirishga yordam berish",
+                "Faqat quloqni tekshirish",
+                "Faqat ko‘rish o‘tkirligini oshirish"
+              ],
+              "answer": 1,
+              "explanation": "Mos gigiyena parvarishning qo‘llab-quvvatlovchi qismidir."
+            }
+          ],
+          "review_status": "AI_RESEARCH_DRAFT — open educational/clinical references, teacher verification recommended",
+          "research_sources": [
+            "https://www.cdc.gov/dental-infection-control/hcp/summary/"
+          ]
         },
         {
           "id": "intro_a5",
@@ -4839,10 +5575,103 @@
           "title": "Stomatologiyada deontologiya, tibbiy etika va xalqaro tamoyillar",
           "calendar_topic": "Stomatologiyada deontologiya, tibbiy etika va xalqaro tamoyillar",
           "focus": "Stomatologiyada deontologiya, tibbiy etika va xalqaro tamoyillar",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Tibbiy etika nima?",
+              "body": "Tibbiy etika shifokorning bemor, hamkasb va jamiyat oldidagi kasbiy mas’uliyatini o‘rganadi. Stomatologiyada foyda keltirish, zarar yetkazmaslik, adolat va bemor avtonomiyasini hurmat qilish asosiy tamoyillardir."
+            },
+            {
+              "heading": "Deontologiya va kasbiy burch",
+              "body": "Deontologiya kasbiy vazifa va xulq me’yorlarini o‘rganadi. Bemorni xolis tinglash, hurmat bilan muloqot qilish, sir saqlash va malaka doirasida ishlash shifokor burchiga kiradi."
+            },
+            {
+              "heading": "Xabardor rozilik",
+              "body": "Bemorning xabardor roziligi — muolaja maqsadi, muqobillari, muhim xavflari va kutilgan natijalarini tushungach erkin qaror qabul qilishi. Rozilik bitta imzo bilan cheklanmaydigan muloqot jarayonidir."
+            },
+            {
+              "heading": "Maxfiylik va hujjatlashtirish",
+              "body": "Tibbiy ma’lumotlar maxfiy saqlanadi va faqat qonuniy yoki axloqiy asos bo‘lganda tegishli doirada oshkor qilinadi. Davolash va maslahatlar aniq hujjatlashtirilishi muhim. 2022-yilgi WMA Xalqaro tibbiy etika kodeksi maxfiylik va bemor hurmatini ta’kidlaydi."
+            }
+          ],
           "teacher_materials": [],
-          "questions": [],
-          "review_status": "AWAITING_USER_MATERIALS"
+          "questions": [
+            {
+              "id": "intro_a5_aiq01",
+              "q": "Bemor avtonomiyasi nimani bildiradi?",
+              "options": [
+                "Faqat shifokor xohishini",
+                "Bemorning xabardor qarorini hurmat qilish",
+                "Faqat narxni",
+                "Faqat qo‘lqop turini"
+              ],
+              "answer": 1,
+              "explanation": "Avtonomiya bemor qarori va tanlovini hurmat qilishdir."
+            },
+            {
+              "id": "intro_a5_aiq02",
+              "q": "Deontologiya nimani o‘rganadi?",
+              "options": [
+                "Faqat mikroblar sonini",
+                "Faqat material qotishini",
+                "Kasbiy burch va xulq me’yorlarini",
+                "Faqat tana haroratini"
+              ],
+              "answer": 2,
+              "explanation": "Deontologiya kasbga oid burch va muomala normalari bilan bog‘liq."
+            },
+            {
+              "id": "intro_a5_aiq03",
+              "q": "Xabardor rozilik uchun nima zarur?",
+              "options": [
+                "Faqat bo‘sh blank",
+                "Faqat ish joyi logotipi",
+                "Faqat rentgen apparati",
+                "Tushunarli ma’lumot va erkin tanlov"
+              ],
+              "answer": 3,
+              "explanation": "Rozilik xabardor muloqotga asoslanadi."
+            },
+            {
+              "id": "intro_a5_aiq04",
+              "q": "Maxfiylik nimaga tegishli?",
+              "options": [
+                "Bemorning shaxsiy tibbiy ma’lumotlariga",
+                "Faqat asboblar narxiga",
+                "Faqat kabinet tartibiga",
+                "Faqat kassa hisobiga"
+              ],
+              "answer": 0,
+              "explanation": "Tibbiy sir bemor haqidagi ma’lumotlarni himoya qiladi."
+            },
+            {
+              "id": "intro_a5_aiq05",
+              "q": "Tibbiy etikaning asosiy tamoyili qaysi?",
+              "options": [
+                "Faqat tez ishlash",
+                "Zarar yetkazmaslik",
+                "Faqat reklama",
+                "Faqat savdo"
+              ],
+              "answer": 1,
+              "explanation": "Zarar yetkazmaslik — tibbiy etik tamoyillardan."
+            },
+            {
+              "id": "intro_a5_aiq06",
+              "q": "Muolajani hujjatlashtirish nima uchun zarur?",
+              "options": [
+                "Faqat xonani yoritish uchun",
+                "Faqat borni sovitish uchun",
+                "Davolashning aniq qaydi va mas’uliyat uchun",
+                "Faqat ko‘zgu tutish uchun"
+              ],
+              "answer": 2,
+              "explanation": "Tibbiy hujjat klinik uzviylikka xizmat qiladi."
+            }
+          ],
+          "review_status": "AI_RESEARCH_DRAFT — open educational/clinical references, teacher verification recommended",
+          "research_sources": [
+            "https://www.wma.net/what-we-do/medical-ethics/international-code-of-medical-ethics/"
+          ]
         },
         {
           "id": "intro_a6",
@@ -4850,10 +5679,103 @@
           "title": "Stomatologiya kabineti jihozlari va asosiy asbob-uskunalar",
           "calendar_topic": "Stomatologiya kabineti jihozlari va asosiy asbob-uskunalar",
           "focus": "Stomatologiya kabineti jihozlari va asosiy asbob-uskunalar",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Kabinet jihozlari",
+              "body": "Stomatologik ish joyining asosiy qismlari bemor kreslosi, shifokor stuli, stomatologik qurilma, yoritgich, asboblar stoli va so‘lak so‘rg‘ichdan iborat. Jihozlar muolaja va ko‘rik vazifalariga ko‘ra joylashtiriladi."
+            },
+            {
+              "heading": "Asosiy diagnostik to‘plam",
+              "body": "Stomatologik ko‘zgu, zond va pinset ko‘rikdagi klassik asboblardir. Ko‘zgu bevosita ko‘rinmaydigan yuzalarni aks ettiradi, zond tekshiruvga yordam beradi, pinset esa mayda buyumlarni tutadi."
+            },
+            {
+              "heading": "Rotatsion asboblar tizimi",
+              "body": "Turbinali dastak, mikromotorli to‘g‘ri yoki burchakli dastak va ularga mos borlar tish to‘qimalariga mexanik ishlov beruvchi asboblar guruhidir. Material va ulash mexanizmi bir-biriga mos bo‘lishi kerak."
+            },
+            {
+              "heading": "Havo-suv va aspiratsiya",
+              "body": "Havo-suv pistoleti ish maydonini yuvish va quritishda, aspiratsiya tizimi esa ortiqcha suyuqlikni olib turishda qo‘llanadi. Klinik asbob-uskunani tanlashda ularning qayta ishlanishi va infeksiya nazoratiga mosligi e’tiborga olinadi."
+            }
+          ],
           "teacher_materials": [],
-          "questions": [],
-          "review_status": "AWAITING_USER_MATERIALS"
+          "questions": [
+            {
+              "id": "intro_a6_aiq01",
+              "q": "Bemorni joylashtirish uchun nima ishlatiladi?",
+              "options": [
+                "Finir",
+                "Shtopfer",
+                "Stomatologik kreslo",
+                "Polir"
+              ],
+              "answer": 2,
+              "explanation": "Kreslo bemor holatini moslashtirishga xizmat qiladi."
+            },
+            {
+              "id": "intro_a6_aiq02",
+              "q": "Og‘izdagi ko‘rinmaydigan sirtni aks ettiruvchi asbob qaysi?",
+              "options": [
+                "Kompressor",
+                "Sement",
+                "Kanal shtifti",
+                "Ko‘zgu"
+              ],
+              "answer": 3,
+              "explanation": "Ko‘zgu diagnostik ko‘rishga yordam beradi."
+            },
+            {
+              "id": "intro_a6_aiq03",
+              "q": "Mayda materiallarni tutish uchun qanday asbob ishlatiladi?",
+              "options": [
+                "Pinset",
+                "Turbina",
+                "Polir",
+                "Kreslo"
+              ],
+              "answer": 0,
+              "explanation": "Pinset material va mayda buyumlarni tutadi."
+            },
+            {
+              "id": "intro_a6_aiq04",
+              "q": "Borni harakatga keltiruvchi moslama qaysi?",
+              "options": [
+                "Shishaionomer sement",
+                "Stomatologik dastak",
+                "Klinik stol",
+                "Qo‘lqop"
+              ],
+              "answer": 1,
+              "explanation": "Rotatsion dastak aylanma harakatni bor orqali uzatadi."
+            },
+            {
+              "id": "intro_a6_aiq05",
+              "q": "So‘lakni chiqaruvchi tizim qaysi?",
+              "options": [
+                "Rentgen",
+                "Yoritgich",
+                "Aspiratsiya",
+                "Qotish lampasi"
+              ],
+              "answer": 2,
+              "explanation": "Aspiratsiya og‘iz bo‘shlig‘idagi suyuqlikni olib turadi."
+            },
+            {
+              "id": "intro_a6_aiq06",
+              "q": "Havo-suv pistoletining vazifasi nima?",
+              "options": [
+                "Sementni kimyoviy qotirish",
+                "Tish ildizini o‘lchash",
+                "Faqat surat bosish",
+                "Maydonni yuvish va quritishga yordam berish"
+              ],
+              "answer": 3,
+              "explanation": "Havo-suv yo‘llari operatsion maydonni boshqarishga xizmat qiladi."
+            }
+          ],
+          "review_status": "AI_RESEARCH_DRAFT — open educational/clinical references, teacher verification recommended",
+          "research_sources": [
+            "https://www.cdc.gov/dental-infection-control/hcp/summary/"
+          ]
         },
         {
           "id": "intro_a7",
@@ -4861,10 +5783,103 @@
           "title": "Stomatologik ish joyining ergonomik tamoyillari",
           "calendar_topic": "Stomatologik ish joyining ergonomik tamoyillari",
           "focus": "Stomatologik ish joyining ergonomik tamoyillari",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Ergonomikaning asosiy maqsadi",
+              "body": "Ergonomika shifokor, assistent va bemor o‘rtasidagi ish harakatlarini qulay tashkil qilishga qaratiladi. Orqa, bo‘yin, yelka va qo‘llarga uzoq vaqt tushadigan statik yuklamalarni kamaytirish muhim."
+            },
+            {
+              "heading": "Ish holati va ko‘rish",
+              "body": "Kresloning balandligi va holati, ish maydonining joylashuvi hamda yoritish birgalikda baholanadi. Shifokorning uzluksiz noqulay egilishi va burilishi mushak zo‘riqishini kuchaytirishi mumkin."
+            },
+            {
+              "heading": "To‘rt qo‘lda ishlash bilan aloqasi",
+              "body": "Assistent asboblarni uzatish, aspiratsiya va maydonni tayyorlashga yordamlashganda shifokor keraksiz harakatlarni kamaytirishi mumkin. Vazifalar oldindan muvofiqlashtiriladi."
+            },
+            {
+              "heading": "Muhit omillari",
+              "body": "Shovqin, tebranish, yoritish, mikroiqlim va ish paytidagi tanaffuslar umumiy mehnat sharoitiga ta’sir qiladi. Ergonomika asboblarning o‘rnini va foydalanishga qulayligini ham o‘rganadi."
+            }
+          ],
           "teacher_materials": [],
-          "questions": [],
-          "review_status": "AWAITING_USER_MATERIALS"
+          "questions": [
+            {
+              "id": "intro_a7_aiq01",
+              "q": "Ergonomika nimani maqsad qiladi?",
+              "options": [
+                "Faqat kreslo rangini",
+                "Faqat sement qotishini",
+                "Faqat tish formulasini",
+                "Qulay va xavfsiz ish holatini"
+              ],
+              "answer": 3,
+              "explanation": "Ergonomika ish sharoitini inson imkoniyatlariga moslaydi."
+            },
+            {
+              "id": "intro_a7_aiq02",
+              "q": "Qaysi holat mushak zo‘riqishini oshirishi mumkin?",
+              "options": [
+                "Uzoq statik egilish",
+                "Qulay yoritish",
+                "Asbobga oson yetish",
+                "Yordamchi bilan muvofiqlik"
+              ],
+              "answer": 0,
+              "explanation": "Statik noqulay holat ortiqcha zo‘riqish tug‘diradi."
+            },
+            {
+              "id": "intro_a7_aiq03",
+              "q": "Asbobga qulay yetish qanday ta’sir qiladi?",
+              "options": [
+                "Emal rangini o‘zgartiradi",
+                "Ortiqcha harakatni kamaytiradi",
+                "Kanal sonini oshiradi",
+                "Sementni tez qotiradi"
+              ],
+              "answer": 1,
+              "explanation": "Ergonomik joylashuv samarasiz harakatlarni kamaytiradi."
+            },
+            {
+              "id": "intro_a7_aiq04",
+              "q": "To‘rt qo‘lda ishlashda kim ishtirok etadi?",
+              "options": [
+                "Faqat bemor",
+                "Faqat laboratoriya xodimi",
+                "Shifokor va assistent",
+                "Faqat registrator"
+              ],
+              "answer": 2,
+              "explanation": "Bu usul klinik jamoaning kelishilgan hamkorligiga asoslanadi."
+            },
+            {
+              "id": "intro_a7_aiq05",
+              "q": "Yoritishning yetarli bo‘lishi nimaga ta’sir qiladi?",
+              "options": [
+                "Faqat tish uzunligiga",
+                "Faqat mikrob shakliga",
+                "Faqat sement rangiga",
+                "Ish maydonini ko‘rishga"
+              ],
+              "answer": 3,
+              "explanation": "Yoritish ko‘rish sharoitining bir qismidir."
+            },
+            {
+              "id": "intro_a7_aiq06",
+              "q": "Qaysi omil ergonomik baholashga kiradi?",
+              "options": [
+                "Shovqin va tebranish",
+                "Faqat tish emali rangi",
+                "Faqat laboratoriya nomi",
+                "Faqat bemor ismi"
+              ],
+              "answer": 0,
+              "explanation": "Ergonomika atrof-muhit va ish qulayligini ham hisobga oladi."
+            }
+          ],
+          "review_status": "AI_RESEARCH_DRAFT — open educational/clinical references, teacher verification recommended",
+          "research_sources": [
+            "https://www.cdc.gov/dental-infection-control/hcp/summary/"
+          ]
         },
         {
           "id": "intro_a8",
@@ -4872,10 +5887,103 @@
           "title": "Stomatologiya muassasalarida sanitariya va shaxsiy gigiyena",
           "calendar_topic": "Stomatologiya muassasalarida sanitariya va shaxsiy gigiyena",
           "focus": "Stomatologiya muassasalarida sanitariya va shaxsiy gigiyena",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Sanitariya va gigiyena",
+              "body": "Stomatologiya muassasasida sanitariya xonaning tozaligi, ishchi yuzalarni qayta ishlash, chiqindilar bilan xavfsiz muomala va toza-qo‘llanilgan asboblar oqimini ajratishni o‘z ichiga oladi. Gigiyena qoidalari infeksiya zanjirini uzishga qaratilgan."
+            },
+            {
+              "heading": "Qo‘l gigiyenasi",
+              "body": "Bemor bilan aloqadan oldin va keyin, qo‘lqop kiyishdan oldin hamda yechgandan keyin qo‘l gigiyenasiga rioya qilinadi. Qo‘lqop qo‘l gigiyenasining o‘rnini bosmaydi."
+            },
+            {
+              "heading": "Shaxsiy himoya vositalari",
+              "body": "Qo‘lqop, tibbiy niqob, ko‘z yoki yuz himoyasi va mos ish kiyimi sachrash va biologik materiallar ta’sirini kamaytirishga yordam beradi. Ularni vazifaga mos tanlash va almashtirish muhim."
+            },
+            {
+              "heading": "Klinik yuzalar va asboblar",
+              "body": "Ko‘p tegiladigan tutqichlar, panel tugmalari va ish sathlari ifloslanishi mumkin. Tozalash va dezinfeksiya rejasi muassasa siyosati hamda ishlab chiqaruvchi ko‘rsatmalariga muvofiq olib boriladi."
+            }
+          ],
           "teacher_materials": [],
-          "questions": [],
-          "review_status": "AWAITING_USER_MATERIALS"
+          "questions": [
+            {
+              "id": "intro_a8_aiq01",
+              "q": "Qo‘lqop qo‘l gigiyenasining o‘rnini bosadimi?",
+              "options": [
+                "Yo‘q",
+                "Ha",
+                "Faqat yosh bemorda",
+                "Faqat ko‘rikda"
+              ],
+              "answer": 0,
+              "explanation": "Qo‘lqopni yechgandan keyin ham gigiyena talab etiladi."
+            },
+            {
+              "id": "intro_a8_aiq02",
+              "q": "Klinik sirtlarni qayta ishlash nima uchun kerak?",
+              "options": [
+                "Tish sonini o‘zgartirish uchun",
+                "Infeksiya yuqishini kamaytirish uchun",
+                "Ko‘zgu diametrini oshirish uchun",
+                "Kanal uzunligini oshirish uchun"
+              ],
+              "answer": 1,
+              "explanation": "Yuzalar mikrobning ko‘chish yo‘li bo‘lishi mumkin."
+            },
+            {
+              "id": "intro_a8_aiq03",
+              "q": "Yuzni sachrashdan himoya qilishga nima yordam beradi?",
+              "options": [
+                "Sement kukuni",
+                "Dentin layneri",
+                "Ko‘zoynak yoki yuz qalqoni",
+                "Kanal shtifti"
+              ],
+              "answer": 2,
+              "explanation": "Ko‘z va yuzni himoyalash shaxsiy himoya choralaridandir."
+            },
+            {
+              "id": "intro_a8_aiq04",
+              "q": "Asboblar oqimi qanday tashkil etilishi kerak?",
+              "options": [
+                "Hammasi aralashtiriladi",
+                "Faqat rangiga qaraladi",
+                "Faqat qadoq narxiga qaraladi",
+                "Iflos va toza yo‘nalishlar ajratiladi"
+              ],
+              "answer": 3,
+              "explanation": "Ifloslangan va qayta ishlangan asboblar ajratiladi."
+            },
+            {
+              "id": "intro_a8_aiq05",
+              "q": "Sanitariya tizimining vazifasi nimaga qaratilgan?",
+              "options": [
+                "Infeksiya xavfini kamaytirishga",
+                "Faqat estetik bezakka",
+                "Faqat tish formulasiga",
+                "Faqat qoplama narxiga"
+              ],
+              "answer": 0,
+              "explanation": "Sanitariya gigiyenik muhitni saqlashni ko‘zlaydi."
+            },
+            {
+              "id": "intro_a8_aiq06",
+              "q": "Qo‘l gigiyenasiga qachon rioya qilinadi?",
+              "options": [
+                "Faqat ish kunining oxirida",
+                "Bemor bilan aloqadan oldin va keyin",
+                "Faqat ikki kunda bir",
+                "Faqat o‘qituvchi kelganda"
+              ],
+              "answer": 1,
+              "explanation": "Qo‘l gigiyenasi bemorlararo yuqishni kamaytiradi."
+            }
+          ],
+          "review_status": "AI_RESEARCH_DRAFT — open educational/clinical references, teacher verification recommended",
+          "research_sources": [
+            "https://www.cdc.gov/dental-infection-control/hcp/summary/standard-precautions.html"
+          ]
         },
         {
           "id": "intro_a9",
@@ -4883,10 +5991,103 @@
           "title": "Kasallik tushunchasi, etiologiya, patogenez va diagnostika",
           "calendar_topic": "Kasallik tushunchasi, etiologiya, patogenez va diagnostika",
           "focus": "Kasallik tushunchasi, etiologiya, patogenez va diagnostika",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Kasallik tushunchasi",
+              "body": "Kasallik organizmning tuzilishi yoki funksiyasida normal holatdan og‘ish bilan kechadigan biologik jarayondir. Alomat — bemor sezadigan belgi, obyektiv belgi esa ko‘rikda aniqlanadigan o‘zgarishdir."
+            },
+            {
+              "heading": "Etiologiya",
+              "body": "Etiologiya kasallikning kelib chiqish sabablari va xavf omillarini o‘rganadi. Masalan, kariyesda mikroblar biofilmi, tez-tez shakar iste’moli, so‘lak va ftor bilan bog‘liq omillar birgalikda ta’sir qiladi."
+            },
+            {
+              "heading": "Patogenez",
+              "body": "Patogenez sababiy omillar ta’siridan kasallik alomatlari paydo bo‘lishigacha kechadigan mexanizmlarni anglatadi. Kariyesda kislotaning mineralni eritishi patogenezning muhim bo‘lagi; sabab va mexanizm tushunchalari aynan bir narsa emas."
+            },
+            {
+              "heading": "Diagnostika",
+              "body": "Diagnostika shikoyat va anamnez, klinik ko‘rik hamda kerak bo‘lsa qo‘shimcha tekshiruv natijalarini birlashtirib xulosa chiqarish jarayonidir. Differensial diagnostika o‘xshash belgili kasalliklarni farqlashga yordam beradi."
+            }
+          ],
           "teacher_materials": [],
-          "questions": [],
-          "review_status": "AWAITING_USER_MATERIALS"
+          "questions": [
+            {
+              "id": "intro_a9_aiq01",
+              "q": "Etiologiya nimani o‘rganadi?",
+              "options": [
+                "Faqat davolash narxini",
+                "Kasallik sabablarini",
+                "Faqat asbob shaklini",
+                "Faqat tish rangini"
+              ],
+              "answer": 1,
+              "explanation": "Etiologiya sabab va xavf omillarini tahlil qiladi."
+            },
+            {
+              "id": "intro_a9_aiq02",
+              "q": "Patogenez nimani anglatadi?",
+              "options": [
+                "Faqat tashxis kodini",
+                "Faqat bemorning familiyasini",
+                "Kasallik rivojlanish mexanizmini",
+                "Faqat muolaja davomiyligini"
+              ],
+              "answer": 2,
+              "explanation": "Patogenez jarayonning qanday rivojlanishini tushuntiradi."
+            },
+            {
+              "id": "intro_a9_aiq03",
+              "q": "Anamnez nima?",
+              "options": [
+                "Faqat rentgen surati",
+                "Faqat bor diametri",
+                "Faqat dorining rangi",
+                "Bemorning avvalgi holati va shikoyatlari haqidagi ma’lumotlar"
+              ],
+              "answer": 3,
+              "explanation": "Anamnez diagnostika ma’lumotlarining muhim manbaidir."
+            },
+            {
+              "id": "intro_a9_aiq04",
+              "q": "Subyektiv alomatga qaysi misol mos?",
+              "options": [
+                "Bemor sezadigan og‘riq",
+                "Rentgendagi soya",
+                "Shifokor o‘lchagan chuqurlik",
+                "Laboratoriya soni"
+              ],
+              "answer": 0,
+              "explanation": "Og‘riq bemor aytgan subyektiv belgidir."
+            },
+            {
+              "id": "intro_a9_aiq05",
+              "q": "Differensial diagnostikaning maqsadi nima?",
+              "options": [
+                "Faqat barcha kasallikni bir xil nomlash",
+                "O‘xshash kasalliklarni farqlash",
+                "Faqat asboblarni saqlash",
+                "Faqat xonani shamollatish"
+              ],
+              "answer": 1,
+              "explanation": "Differensial diagnostika muqobil ehtimollarni solishtiradi."
+            },
+            {
+              "id": "intro_a9_aiq06",
+              "q": "Kariyes patogenezidagi asosiy bosqichlardan biri qaysi?",
+              "options": [
+                "Faqat suyak o‘sishi",
+                "Faqat mushak qisqarishi",
+                "Kislota ta’sirida demineralizatsiya",
+                "Faqat quloq rezonansi"
+              ],
+              "answer": 2,
+              "explanation": "Kislota tish qattiq to‘qimasi minerallariga ta’sir qiladi."
+            }
+          ],
+          "review_status": "AI_RESEARCH_DRAFT — open educational/clinical references, teacher verification recommended",
+          "research_sources": [
+            "https://www.ada.org/resources/ada-library/oral-health-topics/caries-risk-assessment-and-management"
+          ]
         },
         {
           "id": "intro_a10",
@@ -4894,10 +6095,103 @@
           "title": "Stomatologik qurilmalar turlari va xavfsizlik",
           "calendar_topic": "Stomatologik qurilmalar turlari va xavfsizlik",
           "focus": "Stomatologik qurilmalar turlari va xavfsizlik",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Stomatologik qurilma turlari",
+              "body": "Stomatologik qurilmalar harakat manbaiga ko‘ra elektr mikromotorli yoki pnevmatik turbinali tizimlarni o‘z ichiga olishi mumkin. Klinikada ko‘p funksiyali muolaja bloklari va ko‘chma qurilmalar ham qo‘llanadi."
+            },
+            {
+              "heading": "Asosiy funksional bloklar",
+              "body": "Bemor kreslosi, instrumentlar paneli, yoritgich, havo-suv ta’minoti, aspiratsiya va boshqaruv pedali stomatologik muolaja blokining tarkibiga kirishi mumkin. Har bir qismning xizmat ko‘rsatish tartibi ishlab chiqaruvchi ko‘rsatmasiga bog‘liq."
+            },
+            {
+              "heading": "Texnik moslik",
+              "body": "Turli dastaklar havo, suv va elektr ulanishlari, mahkamlash qismlari hamda ish rejimlariga ko‘ra farqlanadi. Noto‘g‘ri ulanish yoki texnik nosozlik asbobning barqaror ishlashiga salbiy ta’sir qiladi."
+            },
+            {
+              "heading": "Xavfsizlik tushunchasi",
+              "body": "Elektr xavfsizligi, sovitish, aerozollarni cheklash, asbobning sozligi va bemor bilan ishlashdagi gigiyena muhim. Dastaklar tegishli qayta ishlash jarayonidan o‘tkazilishi va mutaxassis nazorati ostida qo‘llanishi kerak."
+            }
+          ],
           "teacher_materials": [],
-          "questions": [],
-          "review_status": "AWAITING_USER_MATERIALS"
+          "questions": [
+            {
+              "id": "intro_a10_aiq01",
+              "q": "Turbina rotori odatda nima bilan harakatga keladi?",
+              "options": [
+                "Sement bilan",
+                "Ko‘zgu bilan",
+                "Siqilgan havo bilan",
+                "Xlorid bilan"
+              ],
+              "answer": 2,
+              "explanation": "Pnevmatik turbina havoning energiyasidan foydalanadi."
+            },
+            {
+              "id": "intro_a10_aiq02",
+              "q": "Boshqaruv pedali nimaga xizmat qiladi?",
+              "options": [
+                "Faqat rentgen plyonkasini yuvishga",
+                "Faqat tish rangini o‘lchashga",
+                "Faqat pinsetni kattalashtirishga",
+                "Qurilmaning ayrim funksiyalarini nazorat qilishga"
+              ],
+              "answer": 3,
+              "explanation": "Pedal qurilmadagi ish rejimini boshqarishga xizmat qiladi."
+            },
+            {
+              "id": "intro_a10_aiq03",
+              "q": "Mikromotor qanday harakat hosil qiladi?",
+              "options": [
+                "Aylanma mexanik harakat",
+                "Faqat rentgen nuri",
+                "Faqat yorug‘lik akslanishi",
+                "Faqat kimyoviy rang"
+              ],
+              "answer": 0,
+              "explanation": "Mikromotor bor aylanishi uchun harakat manbaidir."
+            },
+            {
+              "id": "intro_a10_aiq04",
+              "q": "Dastak ulanishida nimaga qaraladi?",
+              "options": [
+                "Faqat tutqich rangiga",
+                "Texnik moslikka",
+                "Faqat qutidagi reklama rangiga",
+                "Faqat bemor yoshiga"
+              ],
+              "answer": 1,
+              "explanation": "Havo, suv va ulash qismlari mos bo‘lishi kerak."
+            },
+            {
+              "id": "intro_a10_aiq05",
+              "q": "Sovitish tizimining maqsadi nima?",
+              "options": [
+                "Kanal sonini oshirish",
+                "Tish bo‘shlig‘ini bo‘yash",
+                "Issiqlikni kamaytirish",
+                "Ko‘zgu diametrini kattalashtirish"
+              ],
+              "answer": 2,
+              "explanation": "Rotatsion ishlovda qizib ketishni kamaytirish muhim."
+            },
+            {
+              "id": "intro_a10_aiq06",
+              "q": "Texnik nosoz dastakdan foydalanish qanday baholanadi?",
+              "options": [
+                "Doimo yaxshi",
+                "Faqat estetik masala",
+                "Muammo emas",
+                "Xavfli holat"
+              ],
+              "answer": 3,
+              "explanation": "Nosozlik muolaja sifati va xavfsizligiga ta’sir qiladi."
+            }
+          ],
+          "review_status": "AI_RESEARCH_DRAFT — open educational/clinical references, teacher verification recommended",
+          "research_sources": [
+            "https://www.cdc.gov/dental-infection-control/hcp/summary/sterilization-disinfection.html"
+          ]
         },
         {
           "id": "intro_a11",
@@ -4905,10 +6199,131 @@
           "title": "Aseptika, antiseptika, sterilizatsiya va dezinfeksiya",
           "calendar_topic": "Aseptika, antiseptika, sterilizatsiya va dezinfeksiya",
           "focus": "Aseptika, antiseptika, sterilizatsiya va dezinfeksiya",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "Aseptika va antiseptika",
+              "body": "Aseptika mikroorganizmlarning toza yoki steril hududga tushishini oldini olishga qaratilgan tamoyillar majmuasidir. Antiseptika esa tirik to‘qimalardagi mikroblar sonini kamaytirish usullariga taalluqlidir. Ikki tushuncha bir xil emas."
+            },
+            {
+              "heading": "Dezinfeksiya",
+              "body": "Dezinfeksiya buyum va sirtlarda kasallik qo‘zg‘atuvchi mikroorganizmlarni kamaytiradi yoki zararsizlantiradi, ammo har doim barcha sporalarni yo‘qotmaydi. Tozalash — organik qoldiqlarni olib tashlash — dezinfeksiyadan oldin muhim."
+            },
+            {
+              "heading": "Sterilizatsiya",
+              "body": "Sterilizatsiya mikroorganizmlarning barcha shakllarini, jumladan sporalarni ham yo‘qotishga mo‘ljallangan jarayondir. Qayta ishlanadigan stomatologik asboblar ko‘pincha tegishli validatsiyalangan issiqlik sterilizatsiyasidan o‘tkaziladi."
+            },
+            {
+              "heading": "Asboblar tasnifi",
+              "body": "Kritik asboblar steril to‘qimalar yoki suyak bilan aloqaga kiradi; yarim kritik asboblar shilliq qavatga tegadi; nokritik asboblar esa asosan sog‘lom teri bilan aloqada bo‘ladi. Ishlov darajasi xavf guruhiga bog‘liq."
+            },
+            {
+              "heading": "Sterilizatsiyani nazorat qilish",
+              "body": "Sterilizator natijalarini baholashda mexanik, kimyoviy va biologik indikatorlardan foydalaniladi. Bu kuzatuv asboblarning qayta ishlanishi belgilangan sharoitda o‘tganini tekshirishga yordam beradi. Dastaklar ham bemorlar oralig‘ida tegishli qayta ishlashni talab qiladi."
+            }
+          ],
           "teacher_materials": [],
-          "questions": [],
-          "review_status": "AWAITING_USER_MATERIALS"
+          "questions": [
+            {
+              "id": "intro_a11_aiq01",
+              "q": "Aseptika nima?",
+              "options": [
+                "Faqat plomba qorish",
+                "Faqat rasmga olish",
+                "Faqat asbobni bo‘yash",
+                "Mikroblar tushishini oldini olish tamoyillari"
+              ],
+              "answer": 3,
+              "explanation": "Aseptika ifloslanishning oldini olishga qaratiladi."
+            },
+            {
+              "id": "intro_a11_aiq02",
+              "q": "Antiseptika nimaga taalluqli?",
+              "options": [
+                "Tirik to‘qimada mikroblarni kamaytirishga",
+                "Faqat metall tozalashga",
+                "Faqat tish formulasiga",
+                "Faqat rentgen plyonkasiga"
+              ],
+              "answer": 0,
+              "explanation": "Antiseptik vositalar odatda tirik to‘qimalarda qo‘llanadi."
+            },
+            {
+              "id": "intro_a11_aiq03",
+              "q": "Dezinfeksiya barcha sporalarni doim yo‘qotadimi?",
+              "options": [
+                "Ha, har doim",
+                "Yo‘q",
+                "Faqat kunduzi",
+                "Faqat yorug‘likda"
+              ],
+              "answer": 1,
+              "explanation": "Dezinfeksiya sterilizatsiyadan farqli jarayondir."
+            },
+            {
+              "id": "intro_a11_aiq04",
+              "q": "Sterilizatsiyada qanday maqsad ko‘zlanadi?",
+              "options": [
+                "Faqat rangni o‘zgartirish",
+                "Faqat shovqinni pasaytirish",
+                "Mikroorganizmlarning barcha shakllarini yo‘qotish",
+                "Faqat materialni qotirish"
+              ],
+              "answer": 2,
+              "explanation": "Sterilizatsiya barcha mikrob shakllarini yo‘qotishga qaratilgan."
+            },
+            {
+              "id": "intro_a11_aiq05",
+              "q": "Shilliq qavatga tegadigan asbob qanday tasniflanadi?",
+              "options": [
+                "Nokritik",
+                "Faqat laboratoriya",
+                "Faqat ma’muriy",
+                "Yarim kritik"
+              ],
+              "answer": 3,
+              "explanation": "Yarim kritik asboblar shilliq qavat bilan aloqada bo‘ladi."
+            },
+            {
+              "id": "intro_a11_aiq06",
+              "q": "Sterilizatsiya nazoratida qaysi indikatorlar ishlatiladi?",
+              "options": [
+                "Biologik, kimyoviy va mexanik",
+                "Faqat rangli markalar",
+                "Faqat bemor anketasi",
+                "Faqat reklama belgisi"
+              ],
+              "answer": 0,
+              "explanation": "Jarayon monitoringida uch turdagi tekshiruvdan foydalaniladi."
+            },
+            {
+              "id": "intro_a11_aiq07",
+              "q": "Asbobni qayta ishlashda birinchi umumiy bosqich qaysi?",
+              "options": [
+                "Darhol qadoqni yorish",
+                "Tozalash",
+                "Faqat yorug‘likka tutish",
+                "Faqat rasmga olish"
+              ],
+              "answer": 1,
+              "explanation": "Organik qoldiqlarni olib tashlash keyingi ishlov samarasi uchun muhim."
+            },
+            {
+              "id": "intro_a11_aiq08",
+              "q": "Stomatologik dastaklar bemorlar orasida nima talab qiladi?",
+              "options": [
+                "Faqat mato bilan artishni",
+                "Faqat havo bilan puflashni",
+                "Ishlab chiqaruvchi ko‘rsatmasiga mos issiqlik sterilizatsiyasini",
+                "Hech qanday ishlovsiz qayta ishlatishni"
+              ],
+              "answer": 2,
+              "explanation": "CDC dastaklarni tegishli qayta ishlash va issiqlik sterilizatsiyasini ta’kidlaydi."
+            }
+          ],
+          "review_status": "AI_RESEARCH_DRAFT — open educational/clinical references, teacher verification recommended",
+          "research_sources": [
+            "https://www.cdc.gov/dental-infection-control/hcp/summary/sterilization-disinfection.html"
+          ]
         },
         {
           "id": "intro_a12",
@@ -4916,10 +6331,107 @@
           "title": "To‘rt qo‘lda ishlash, shifokor xatosi va yatrogeniya",
           "calendar_topic": "To‘rt qo‘lda ishlash, shifokor xatosi va yatrogeniya",
           "focus": "To‘rt qo‘lda ishlash, shifokor xatosi va yatrogeniya",
-          "sections": [],
+          "sections": [
+            {
+              "heading": "To‘rt qo‘lda ishlash tushunchasi",
+              "body": "To‘rt qo‘lda ishlash — stomatolog va assistentning birgalikda muvofiqlashgan faoliyati. Bu yondashuvda asbob uzatish, aspiratsiya, bemor va maydonni tayyorlash oldindan kelishiladi."
+            },
+            {
+              "heading": "Vazifalarni ajratish",
+              "body": "Stomatolog tashxis va klinik qarorlar uchun javobgar bo‘ladi, assistent esa unga ruxsat etilgan vazifalar doirasida yordam beradi. Ish joyida asboblar harakatining qulayligi va gigiyena nazorati muhim."
+            },
+            {
+              "heading": "Shifokor xatosi",
+              "body": "Shifokor xatosi klinik qaror, muloqot, texnik jarayon yoki hujjatlashtirishdagi noto‘g‘ri harakat bilan bog‘liq bo‘lishi mumkin. Sabablarni o‘rganish xavflarni kamaytirish va kelgusida profilaktika choralarini yaxshilashga yordam beradi."
+            },
+            {
+              "heading": "Yatrogeniya",
+              "body": "Yatrogeniya — tibbiy yordam ko‘rsatish bilan bog‘liq noxush holat yoki shikastlanishning yuzaga kelishi. Bu tushuncha har qanday asorat albatta beparvolik bilan bog‘liq degani emas; sabab, oldini olish mumkinligi va hujjatli tahlil farqlanadi."
+            },
+            {
+              "heading": "Xavfsizlik madaniyati",
+              "body": "Bemorga tushunarli axborot berish, jamoa ichida vazifalarni aniq taqsimlash, xatolar haqida ochiq xabar berish va xavflarni tizimli ko‘rib chiqish bemor xavfsizligini oshiradi."
+            }
+          ],
           "teacher_materials": [],
-          "questions": [],
-          "review_status": "AWAITING_USER_MATERIALS"
+          "questions": [
+            {
+              "id": "intro_a12_aiq01",
+              "q": "To‘rt qo‘lda ishlash kimlar hamkorligi?",
+              "options": [
+                "Stomatolog va assistent",
+                "Faqat ikki bemor",
+                "Faqat registratorlar",
+                "Faqat laboratoriya xodimlari"
+              ],
+              "answer": 0,
+              "explanation": "Usul shifokor va assistentning muvofiqlashgan ishidir."
+            },
+            {
+              "id": "intro_a12_aiq02",
+              "q": "To‘rt qo‘lda ishlash nimani yaxshilashi mumkin?",
+              "options": [
+                "Faqat tish sonini",
+                "Ish harakatlarining samaradorligini",
+                "Faqat klinika nomini",
+                "Faqat yangi sement yaratishni"
+              ],
+              "answer": 1,
+              "explanation": "Jamoa ishi samarasiz harakatlarni kamaytiradi."
+            },
+            {
+              "id": "intro_a12_aiq03",
+              "q": "Klinik qaror uchun asosiy mas’ul kim?",
+              "options": [
+                "Faqat assistent",
+                "Faqat registrator",
+                "Stomatolog",
+                "Faqat texnik"
+              ],
+              "answer": 2,
+              "explanation": "Davolash va tashxis mas’uliyati stomatologda."
+            },
+            {
+              "id": "intro_a12_aiq04",
+              "q": "Yatrogeniya nima?",
+              "options": [
+                "Faqat tish kariyesi",
+                "Faqat suyak nomi",
+                "Faqat asbob markasi",
+                "Tibbiy yordam bilan bog‘liq noxush holat"
+              ],
+              "answer": 3,
+              "explanation": "Yatrogeniya tibbiy jarayon bilan bog‘liq zararli oqibatni anglatishi mumkin."
+            },
+            {
+              "id": "intro_a12_aiq05",
+              "q": "Har qanday yatrogeniya shifokor beparvoligi deganimi?",
+              "options": [
+                "Yo‘q",
+                "Ha, har doim",
+                "Faqat tunda",
+                "Faqat bolalarda"
+              ],
+              "answer": 0,
+              "explanation": "Asorat va beparvolik bir xil tushuncha emas."
+            },
+            {
+              "id": "intro_a12_aiq06",
+              "q": "Xatolarni tahlil qilish nima uchun zarur?",
+              "options": [
+                "Faqat jarima hisoblash uchun",
+                "Xavfni kamaytirish va tizimni yaxshilash uchun",
+                "Faqat reklama qilish uchun",
+                "Faqat asbob rangini o‘zgartirish uchun"
+              ],
+              "answer": 1,
+              "explanation": "Xavfsizlik tizimli o‘rganish orqali yaxshilanadi."
+            }
+          ],
+          "review_status": "AI_RESEARCH_DRAFT — open educational/clinical references, teacher verification recommended",
+          "research_sources": [
+            "https://www.fdiworlddental.org/leading-world-optimal-oral-health"
+          ]
         }
       ]
     },
