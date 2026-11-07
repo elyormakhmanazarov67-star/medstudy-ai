@@ -111,10 +111,11 @@
     if(state.tutorAnswer) {
       result=`<div class="card ai-result"><h3>✧ AI javobi</h3><p>${esc(state.tutorAnswer.answer).replace(/\n/g,'<br>')}</p><div class="smallprint">Foydalanilgan dars bo‘limlari: ${esc(state.tutorAnswer.sections.join(' · '))}</div><p class="smallprint">${esc(state.tutorAnswer.notice)}</p></div>`;
     }
-    shell(`<p class="eyebrow">Shaxsiy o‘quv yordamchi</p><h1>✧ AI Ustoz</h1>${disclaimer}<div class="card"><p class="smallprint">Kunlik so‘rov: ${t.used}/${t.limit} · Qolgan: ${t.remaining}</p>${!t.enabled?'<div class="caution">AI hali faollashtirilmagan. Administrator Railway’da API sozlamalarini kiritishi kerak.</div>':''}<label for="tutor-lesson">Mavzuni tanlang</label><select id="tutor-lesson" class="ai-input">${select}</select><label for="tutor-question">Savolingiz</label><textarea id="tutor-question" class="ai-input" maxlength="500" rows="4" placeholder="Masalan: Ergonomika nima uchun kerak?">${esc(state.tutorQuestion)}</textarea><p class="smallprint">Savol va mavzu parchasi OpenAI API'ga yuboriladi. Bemor ma’lumoti yoki maxfiy ma’lumotni kiritmang.</p><button class="btn btn-primary btn-wide" data-action="tutor-ask" ${(!t.enabled||t.remaining<=0||state.busy)?'disabled':''}>${state.busy?'Javob olinmoqda…':'AI Ustozdan so‘rash →'}</button></div>${result}<div class="card"><button class="btn btn-flat btn-wide" data-action="tutor-revoke">AI roziligini bekor qilish</button></div>`);
+    shell(`<p class="eyebrow">Shaxsiy o‘quv yordamchi</p><h1>✧ AI Ustoz</h1>${disclaimer}<div class="card"><p class="smallprint">Kunlik so‘rov: ${t.used}/${t.limit} · Qolgan: ${t.remaining}</p>${!t.enabled?'<div class="caution">AI hali faollashtirilmagan. Administrator Railway’da API sozlamalarini kiritishi kerak.</div>':''}<label for="tutor-lesson">Mavzuni tanlang</label><select id="tutor-lesson" class="ai-input">${select}</select><label for="tutor-mode">O‘rganish usuli</label><select id="tutor-mode" class="ai-input"><option value="explain">Sodda tushuntirish</option><option value="example">Misol bilan tushuntirish</option><option value="recall">Bilimni tekshiruvchi savol</option></select><label for="tutor-question">Savolingiz</label><textarea id="tutor-question" class="ai-input" maxlength="500" rows="4" placeholder="Masalan: Ergonomika nima uchun kerak?">${esc(state.tutorQuestion)}</textarea><p class="smallprint">Savol va mavzu parchasi OpenAI API'ga yuboriladi. Bemor ma’lumoti yoki maxfiy ma’lumotni kiritmang.</p><button class="btn btn-primary btn-wide" data-action="tutor-ask" ${(!t.enabled||t.remaining<=0||state.busy)?'disabled':''}>${state.busy?'Javob olinmoqda…':'AI Ustozdan so‘rash →'}</button></div>${result}<div class="card"><button class="btn btn-flat btn-wide" data-action="tutor-revoke">AI roziligini bekor qilish</button></div>`);
   }
   async function tutorAsk() {
     if(state.busy) return;
+    const mode=document.getElementById('tutor-mode')?.value||'explain';
     const select=document.getElementById('tutor-lesson');
     const field=document.getElementById('tutor-question');
     state.tutorLessonId=select?.value||state.tutorLessonId;
@@ -122,7 +123,7 @@
     if(state.tutorQuestion.length < 5) { alert('Savol kamida 5 ta belgi bo‘lsin'); return; }
     state.busy=true;
     renderTutor();
-    try { state.tutorAnswer=await api('/tutor/ask','POST',{lesson_id:state.tutorLessonId,question:state.tutorQuestion}); state.tutorStatus=await api('/tutor/status'); }
+    try { state.tutorAnswer=await api('/tutor/ask','POST',{lesson_id:state.tutorLessonId,question:state.tutorQuestion,mode}); state.tutorStatus=await api('/tutor/status'); }
     catch(e) { state.busy=false; fail(e); return; }
     state.busy=false;renderTutor();
   }
