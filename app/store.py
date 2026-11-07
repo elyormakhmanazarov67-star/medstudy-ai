@@ -70,7 +70,7 @@ class Store:
             c.execute("DELETE FROM users WHERE user_id=?", (uid,))
 
     def save_attempt(self, uid: int, lid: str, score: int, details: list[dict], mode: str='full'):
-        if mode not in ('full', 'retry'):
+        if mode not in ('full', 'retry', 'supplementary'):
             raise ValueError('Invalid attempt mode')
         if not self.has_consent(uid):
             raise PermissionError("Avval rozilik kerak")
@@ -90,7 +90,7 @@ class Store:
 
     def latest_wrong_ids(self, uid: int, lesson_id: str) -> list[str]:
         with self.connect() as c:
-            row = c.execute("SELECT id FROM attempts WHERE user_id=? AND lesson_id=? ORDER BY id DESC LIMIT 1", (uid,lesson_id)).fetchone()
+            row = c.execute("SELECT id FROM attempts WHERE user_id=? AND lesson_id=? AND mode IN ('full', 'retry') ORDER BY id DESC LIMIT 1", (uid,lesson_id)).fetchone()
             if not row:
                 return []
             return [r[0] for r in c.execute("SELECT question_id FROM answers WHERE attempt_id=? AND correct=0 ORDER BY id", (row[0],))]
