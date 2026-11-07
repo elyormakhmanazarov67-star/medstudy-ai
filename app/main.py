@@ -82,7 +82,7 @@ def delete_me(uid: int = Depends(current_user)):
 def catalog(uid: int = Depends(consent_required)):
     return {'status': 'DRAFT', 'subjects': [
         {'id': s['id'], 'title': s['title'], 'lessons': [
-            {'id': l['id'], 'title': l['title'], 'section_count':len(l['sections']), 'question_count':len(l['questions'])}
+            {'id': l['id'], 'title': l['title'], 'section_count':len(l['sections']), 'question_count':len(l['questions']), 'teacher_material_count':len(l.get('teacher_materials', [])), 'supplement_count':len(l.get('supplementary', []))}
             for l in s['lessons']]} for s in CATALOG['subjects']
     ]}
 
@@ -93,7 +93,7 @@ def lesson(lesson_id: str, uid: int = Depends(consent_required)):
         raise HTTPException(404, 'Mavzu topilmadi')
     subject, l = found
     return {'subject_id':subject['id'], 'subject_title':subject['title'], 'id':l['id'], 'title':l['title'],
-            'sections':l['sections'], 'sources':l.get('sources',[]),
+            'sections':l['sections'], 'teacher_materials':l.get('teacher_materials', []), 'supplementary':l.get('supplementary', []), 'sources':l.get('sources',[]),
             'question_count':len(l['questions']), 'questions':[public_question(q) for q in l['questions']]}
 
 class AttemptBody(BaseModel):
@@ -107,6 +107,8 @@ def submit(data: AttemptBody, uid: int = Depends(consent_required)):
     if not found:
         raise HTTPException(404, 'Mavzu topilmadi')
     questions = found[1]['questions']
+    if not questions:
+        raise HTTPException(409, 'O‘qituvçi materiali bo‘yiça test hozirça yo‘q')
     lookup = {q['id']:q for q in questions}
     full_ids = [q['id'] for q in questions]
     wrong_ids = STORE.latest_wrong_ids(uid, data.lesson_id)
@@ -205,6 +207,8 @@ def free_lesson_help(data: LessonHelpQuestion, uid: int = Depends(consent_requir
     found = find_lesson(CATALOG, data.lesson_id)
     if not found:
         raise HTTPException(404, 'Mavzu topilmadi')
+    if not found[1]['sections']:
+        raise HTTPException(409, 'Mavzu bo‘yiça o‘qituvçi konspekti hozirça kiritilmagan')
     if not data.question.strip():
         raise HTTPException(422, 'Savol bo‘sh bo‘lishi mumkin emas')
     return prepare_answer(found[1], data.question, data.mode)
@@ -237,6 +241,8 @@ async def tutor_ask(data: TutorQuestion, uid: int = Depends(consent_required)):
     lesson_found = find_lesson(CATALOG, data.lesson_id)
     if not lesson_found:
         raise HTTPException(404, 'Mavzu topilmadi')
+    if not lesson_found[1]['sections']:
+        raise HTTPException(409, 'Dars uchun tasdiqlangan manba hali yo‘q')
     if not data.question.strip():
         raise HTTPException(422, 'Savol bo‘sh bo‘lishi mumkin emas')
     # Reject obvious personally identifying data to reduce accidental exposure.
