@@ -12,6 +12,7 @@ from pydantic import BaseModel, Field
 from .auth import AuthError, verify_init_data
 from .core import load_catalog, find_lesson, public_question, grade
 from .store import Store
+from .study_plan import build_study_plan
 from . import tutor
 from .telegram_gateway import router as telegram_router, configure_telegram
 
@@ -133,6 +134,17 @@ def progress(uid: int = Depends(consent_required)):
          if find_lesson(CATALOG,row['lesson_id']) else row['lesson_id'],
          'percent':round(row['score']*100/row['total'])}
         for row in data]}
+
+@app.get('/api/study-plan')
+def study_plan(uid: int = Depends(consent_required)):
+    latest = STORE.latest(uid)
+    wrong_counts = {
+        lesson['id']: len(STORE.latest_wrong_ids(uid, lesson['id']))
+        for subject in CATALOG['subjects']
+        for lesson in subject['lessons']
+    }
+    return build_study_plan(CATALOG, latest, wrong_counts)
+
 
 @app.get('/api/review/{lesson_id}')
 def review(lesson_id: str,uid: int = Depends(consent_required)):
