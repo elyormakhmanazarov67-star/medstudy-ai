@@ -83,3 +83,18 @@ def test_history_is_private_and_latest_first(monkeypatch, tmp_path):
     assert client.delete("/api/me", headers=hdr()).status_code == 200
     assert client.post("/api/consent", headers=hdr()).status_code == 200
     assert client.get("/api/history", headers=hdr()).json()["items"] == []
+
+def test_premium_preview_requires_consent_and_never_accepts_payments(monkeypatch, tmp_path):
+    monkeypatch.setattr(main, "BOT_TOKEN", TOKEN)
+    monkeypatch.setattr(main, "ALLOWED_IDS", {UID})
+    monkeypatch.setattr(main, "STORE", Store(str(tmp_path / "premium.sqlite")))
+    client = TestClient(main.app)
+    assert client.get("/api/plans").status_code == 401
+    assert client.get("/api/plans", headers=hdr()).status_code == 403
+    assert client.post("/api/consent", headers=hdr()).status_code == 200
+    data = client.get("/api/plans", headers=hdr()).json()
+    assert data["purchases_enabled"] is False
+    assert data["subscription_processing_enabled"] is False
+    assert data["plans"][0]["available"] is True
+    assert data["plans"][1]["available"] is False
+    assert all(plan["price"] is None for plan in data["plans"])
