@@ -62,8 +62,8 @@ def test_consent_catalog_quiz_and_delete(client):
     empty=client.get('/api/lessons/ergonomika',headers=hdr()).json()
     assert len(empty['questions'])==1
     assert len(empty['teacher_materials'])>=1
-    assert len(empty['sammu_books'])>=1
-    assert empty['supplementary']==[]
+    assert empty.get('sammu_books', [])==[]
+    assert empty.get('supplementary', [])==[]
     body={'lesson_id':'ergonomika','question_ids':['old'],'answers':[0]}
     assert client.post('/api/attempts',json=body,headers=hdr()).status_code==400
     lesson=client.get('/api/lessons/eng_l1',headers=hdr()).json()
@@ -102,38 +102,17 @@ def test_wrong_review(client):
     assert client.get('/api/progress',headers=hdr()).json()['latest'][0]['total']==10
 
 
-def test_independent_required_and_supplementary_quizzes(client):
+def test_no_supplementary_data_or_quiz(client):
     client.post('/api/consent',headers=hdr())
-    lid='bio_l1'
-    source=main.CATALOG['subjects'][4]['lessons'][0]
-    required=source['questions']
-    extra=source['supplement_questions']
-    assert required and extra
-    assert set(q['id'] for q in required).isdisjoint(set(q['id'] for q in extra))
-    data={'lesson_id':lid,'question_ids':[q['id'] for q in extra],
-          'answers':[q['answer'] for q in extra],'category':'supplementary'}
-    assert client.post('/api/attempts',json=data,headers=hdr()).json()['mode']=='supplementary'
-    assert client.get('/api/progress',headers=hdr()).json()['latest']==[]
-    req={'lesson_id':lid,'question_ids':[q['id'] for q in required],
-         'answers':[q['answer'] for q in required],'category':'required'}
-    done=client.post('/api/attempts',json=req,headers=hdr())
-    assert done.status_code==200 and done.json()['mode']=='full'
-    assert client.get('/api/progress',headers=hdr()).json()['latest'][0]['total']==len(required)
-    bad=client.post('/api/attempts',json={**data,'category':'required'},headers=hdr())
-    assert bad.status_code==400
-    bad=client.post('/api/attempts',json={**req,'category':'supplementary'},headers=hdr())
-    assert bad.status_code==400
-    extra_result=client.get('/api/lessons/'+lid,headers=hdr()).json()
-    assert extra_result['supplement_sections']
-    assert extra_result['supplement_question_count']==len(extra)
-    assert 'answer' not in extra_result['supplement_questions'][0]
-
-def test_sammu_library_books_are_not_free_content(client):
-    client.post('/api/consent',headers=hdr())
-    lesson=client.get('/api/lessons/anat_3',headers=hdr()).json()
-    assert lesson['supplement_sections']
-    assert lesson['supplement_questions']
-    assert lesson['sammu_books']
-    assert all(b['url'].startswith('https://e-library.sammu.uz/') for b in lesson['sammu_books'])
-    assert all(b.get('access') for b in lesson['sammu_books'])
-    assert all(b['url'].startswith('https://openstax.org/') for b in lesson['supplementary'])
+    lesson=client.get('/api/lessons/bio_l1',headers=hdr()).json()
+    assert lesson.get('supplement_sections', [])==[]
+    assert lesson.get('supplement_questions', [])==[]
+    assert lesson.get('sammu_books', [])==[]
+    required=main.CATALOG['subjects'][4]['lessons'][0]['questions']
+    response=client.post('/api/attempts',json={
+        'lesson_id':'bio_l1',
+        'question_ids':[q['id'] for q in required],
+        'answers':[q['answer'] for q in required],
+        'category':'supplementary'
+    },headers=hdr())
+    assert response.status_code==409
