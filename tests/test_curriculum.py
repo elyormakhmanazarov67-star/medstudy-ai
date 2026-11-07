@@ -41,7 +41,11 @@ def test_user_source_teaching_material_counts():
     assert all(len(l['teacher_materials'])>0 for l in e['lessons']+b['lessons'])
     assert all(len(l['sections']) >= 7 for l in e['lessons'])
     assert all(len(l['questions']) == 10 for l in e['lessons'])
-    assert sum(len(l['questions']) for l in e['lessons']+b['lessons'])==58
+    assert sum(len(l['questions']) for l in e['lessons']+b['lessons'])==110
+    assert all(len(l['questions'])==15 for l in b['lessons'])
+    assert all(len(l['sections'])>=12 for l in b['lessons'])
+    assert len(set(sec['body'] for l in b['lessons'] for sec in l['sections'])) == sum(len(l['sections']) for l in b['lessons'])
+    assert [l['id'] for l in b['lessons']] == ['bio_l1','bio_l2','bio_l3','bio_l4']
 
 def test_only_required_information_is_present():
     data=load_catalog()

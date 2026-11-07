@@ -1,7 +1,7 @@
 {
-  "version": "0.5.13-content-only",
+  "version": "0.5.14-biofizika-lessons",
   "status": "TEST — O‘qituvchi materiallari va OpenStax ochiq darsliklaridan manba ko‘rsatilgan alohida o‘quv materiallari. Mutaxassis tekshiruvi talab etiladi.",
-  "note": "Botda original PDF/JPG/DOC/DOCX/PPT/PPTX fayllarni yuklash hamda yuklab olish imkoniyati o‘chirilgan. Dars konspektlari, 25 harfli elektron jadval va testlar mavjud. O‘quv manbalari nomlari ichki tarixiy metama’lumot sifatida qolgan, ilovada ko‘rsatilmaydi.",
+  "note": "Biofizikaning 4 mavzusi foydalanuvchining 5 ta yangi ma’ruza/amaliy materialiga tayanib kengaytirildi. Original fayllarni yuklab olish yoki serverga yuklash mavjud emas. Asosiy tarmoq o‘zgarmagan.",
   "subjects": [
     {
       "id": "stom_prerest",
@@ -2264,12 +2264,52 @@
           "focus": "Tibbiy va biologik fizikaga kirish — membranalar",
           "sections": [
             {
-              "heading": "Mavzu",
-              "body": "Biologik membrana, fosfolipid ikki qavat, osmos, diffuziya va ionlar almashinuvining fizik asoslari. Manba: 1-ma’ruza."
+              "heading": "Tibbiy va biologik fizika nimani o‘rganadi?",
+              "body": "Tibbiy biofizika tirik organizmlardagi mexanik, elektr, issiqlik va molekulyar jarayonlarning fizik qonuniyatlarini o‘rganadi. Biologik membranalardagi ion oqimi yurak va bosh miyaning elektr signallarini tushunishda asos bo‘ladi. EKG va EEG shu faollikning organizm miqyosida qayd etiladigan ko‘rinishlaridir."
             },
             {
-              "heading": "Asosiy tushuncha",
-              "body": "Membrana hujayrani tashqi muhitdan ajratadi; moddalarning o‘tishi turli fizik jarayonlarga bog‘liq."
+              "heading": "Biologik membrananing tuzilishi",
+              "body": "Hujayra membranasining asosi fosfolipidlarning ikki qavatidir. Gidrofil bosh qismlar suvli muhitga, gidrofob dumlar esa qavat ichkarisiga qaragan. Membranada oqsillar, glikoproteinlar, glikolipidlar va xolesterin ham mavjud. Bunday tuzilish hujayra ichki muhitini saqlashga yordam beradi."
+            },
+            {
+              "heading": "Tanlab o‘tkazuvchanlik",
+              "body": "Membrana barcha moddalarni bir xil o‘tkazmaydi. Kichik qutbsiz molekulalarning bir qismi lipid qavatidan o‘tishi mumkin, ionlar va ko‘plab qutbli moddalar esa kanal yoki tashuvchi oqsilga muhtoj. Shu hodisa selektiv o‘tkazuvchanlik deb ataladi."
+            },
+            {
+              "heading": "Diffuziya va osonlashgan diffuziya",
+              "body": "Oddiy diffuziya moddalarning konsentratsiya gradienti yo‘nalishida energiya sarflamasdan tarqalishidir. Osonlashgan diffuziyada modda ham gradient bo‘ylab o‘tadi, lekin buning uchun maxsus kanal yoki tashuvchi oqsil ishtirok etadi. Masalan, ion kanallari ionlarning selektiv o‘tishini ta’minlaydi."
+            },
+            {
+              "heading": "Osmos va filtratsiya",
+              "body": "Osmos — suvning yarim o‘tkazuvchan membrana orqali suvning kimyoviy potensiali yuqori tomondan past tomonga harakatidir; odatda eritmalar konsentratsiyasi farqi bilan izohlanadi. Filtratsiya esa asosan bosim farqi ta’sirida suyuqlik va erigan moddalar oqimidir."
+            },
+            {
+              "heading": "Faol transport va Na⁺/K⁺-ATFaza",
+              "body": "Faol transportda modda elektrokimyoviy gradientga qarshi ko‘chishi uchun energiya talab etiladi. Na⁺/K⁺-ATFaza bir ATP sarflab, odatda uchta Na⁺ ionini hujayradan tashqariga, ikkita K⁺ ionini hujayra ichiga o‘tkazadi. Bu nasos ion gradientlarini saqlab turadi."
+            },
+            {
+              "heading": "Elektrokimyoviy gradient",
+              "body": "Odatda hujayra tashqarisida Na⁺ va Cl⁻, ichkarisida esa K⁺ nisbatan ko‘proq bo‘ladi. Ion harakatini ham konsentratsiya farqi, ham elektr maydon belgilaydi. Ularning birgalikdagi ta’siri elektrokimyoviy gradient deyiladi."
+            },
+            {
+              "heading": "Membrana potensiali",
+              "body": "Membrananing ikki tomonidagi zaryadlar taqsimoti turlicha bo‘lgani uchun elektr potensiallar farqi vujudga keladi. Ko‘p qo‘zg‘aluvchan hujayralarda tinchlik potensiali manfiy bo‘ladi; hujayra turiga qarab taxminan −60 dan −90 mV gacha bo‘lishi mumkin. Nernst tenglamasi alohida ionning muvozanat potensialini tavsiflaydi."
+            },
+            {
+              "heading": "Harakat potensiali va qo‘zg‘aluvchanlik",
+              "body": "Nerv va mushak hujayralarida ion kanallarining ochilib-yopilishi membrana potensialini tez o‘zgartiradi. Depolyarizatsiya va repolyarizatsiya bosqichlari elektr signalining hosil bo‘lishiga xizmat qiladi. Ionlar muvozanati buzilishi yurak va nerv tizimi faoliyatiga ta’sir qilishi mumkin."
+            },
+            {
+              "heading": "Yurak biopotensiallari va EKG",
+              "body": "Elektrokardiogramma yurakning elektr faolligini tana yuzasidagi elektrodlar orqali qayd etadi. P to‘lqini bo‘lmachalar depolyarizatsiyasini, QRS kompleksi qorinchalar depolyarizatsiyasini, T to‘lqini esa qorinchalar repolyarizatsiyasini ifodalaydi."
+            },
+            {
+              "heading": "EKG ko‘rsatkichlarining ahamiyati",
+              "body": "PR oralig‘i atrioventrikulyar o‘tkazuvchanlik, QT oralig‘i esa qorinchalarning elektr faolligi davomiyligi bilan bog‘liq. ST segmentidagi o‘zgarishlar ayrim klinik holatlarda muhim bo‘lishi mumkin, ammo birgina EKG belgisi mustaqil tashxis o‘rnini bosa olmaydi. EKG yurakning qon haydash samaradorligini bevosita o‘lchamaydi."
+            },
+            {
+              "heading": "Bosh miya biopotensiallari va EEG",
+              "body": "EEG bosh terisiga o‘rnatilgan elektrodlar yordamida ko‘plab neyronlarning yig‘indi elektr faolligini qayd etadi. O‘quv materialida delta (0,5–4 Hz), theta (4–8 Hz), alfa (8–13 Hz), beta (13–30 Hz), gamma (30 Hz dan yuqori) ritmlari ko‘rsatilgan. Alfa-ritm ko‘pincha tinch, ko‘zlar yumuq holatda yaqqolroq namoyon bo‘ladi."
             }
           ],
           "teacher_materials": [
@@ -2283,30 +2323,186 @@
           "questions": [
             {
               "id": "bio_l1_q1",
-              "q": "Biologik membrananing asosiy tuzilmasi qaysi?",
+              "q": "Biologik membrananing asosiy strukturasi qaysi?",
               "options": [
-                "suyak plastinkasi",
-                "fosfolipid ikki qavat",
-                "teri qatlami",
-                "mushak tolasi"
+                "Fosfolipid ikki qavati",
+                "Kollagen tolalari",
+                "Suyak matriksi",
+                "Glikogen donachalari"
               ],
-              "answer": 1,
-              "explanation": "Manba: 1-mavzu Ma'ruza mashg'ulotii.pptx"
+              "answer": 0,
+              "explanation": "Membrananing asosini fosfolipid ikki qavati tashkil qiladi."
             },
             {
               "id": "bio_l1_q2",
-              "q": "Osmos asosan nimaning o‘tishi bilan bog‘liq?",
+              "q": "Fosfolipidning gidrofob dumlari qayerga yo‘nalgan?",
               "options": [
-                "suyak",
-                "kislorod apparati",
-                "suv",
-                "yorug‘lik"
+                "Suvli tashqi muhitga",
+                "Qavatning ichki qismiga",
+                "Yadro ichiga",
+                "Kapillyar bo‘shlig‘iga"
+              ],
+              "answer": 1,
+              "explanation": "Gidrofob dumlar membrananing ichki qismida joylashadi."
+            },
+            {
+              "id": "bio_l1_q3",
+              "q": "Oddiy diffuziyaning asosiy yo‘nalishi qaysi?",
+              "options": [
+                "Pastdan yuqori konsentratsiyaga ATP bilan",
+                "Konsentratsiya gradienti bo‘ylab",
+                "Har doim yadroga",
+                "Faqat elektr maydonga qarshi"
+              ],
+              "answer": 1,
+              "explanation": "Passiv diffuziya gradient bo‘ylab sodir bo‘ladi."
+            },
+            {
+              "id": "bio_l1_q4",
+              "q": "Osonlashgan diffuziyada nima ishtirok etadi?",
+              "options": [
+                "Ion kanali yoki tashuvchi oqsil",
+                "Faqat ribosoma",
+                "DNA-polimeraza",
+                "Yadrocha"
+              ],
+              "answer": 0,
+              "explanation": "Osonlashgan diffuziyada membrana oqsillari modda o‘tishiga yordam beradi."
+            },
+            {
+              "id": "bio_l1_q5",
+              "q": "Osmos nimaning harakati?",
+              "options": [
+                "Elektronlarning",
+                "Suvning yarim o‘tkazuvchan membrana orqali",
+                "Kalsiy suyakdan chiqishining",
+                "Issiqlikning"
+              ],
+              "answer": 1,
+              "explanation": "Osmos suv molekulalari ko‘chishi bilan bog‘liq."
+            },
+            {
+              "id": "bio_l1_q6",
+              "q": "Na⁺/K⁺-ATFaza bir ATP hisobiga nechta Na⁺ ni tashqariga chiqaradi?",
+              "options": [
+                "1",
+                "2",
+                "3",
+                "4"
               ],
               "answer": 2,
-              "explanation": "Manba: 1-mavzu Ma'ruza mashg'ulotii.pptx"
+              "explanation": "Nasos odatda uchta Na⁺ ni tashqariga chiqaradi."
+            },
+            {
+              "id": "bio_l1_q7",
+              "q": "Na⁺/K⁺-ATFaza nechta K⁺ ni hujayraga olib kiradi?",
+              "options": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "answer": 1,
+              "explanation": "U ikki K⁺ ni ichkariga olib kiradi."
+            },
+            {
+              "id": "bio_l1_q8",
+              "q": "Hujayra ichida nisbatan ko‘proq uchraydigan ion qaysi?",
+              "options": [
+                "Na⁺",
+                "Cl⁻",
+                "K⁺",
+                "Fe³⁺"
+              ],
+              "answer": 2,
+              "explanation": "Ko‘pchilik hujayralarda K⁺ ichkarida ko‘proq."
+            },
+            {
+              "id": "bio_l1_q9",
+              "q": "Membrana potensiali nimadan yuzaga keladi?",
+              "options": [
+                "Faqat harorat farqidan",
+                "Ikki tomondagi ion va zaryad taqsimoti farqidan",
+                "Faqat hujayra kattaligidan",
+                "Faqat yorug‘likdan"
+              ],
+              "answer": 1,
+              "explanation": "Membranadagi potensiallar farqi ion taqsimotiga bog‘liq."
+            },
+            {
+              "id": "bio_l1_q10",
+              "q": "Nernst tenglamasi nimani tavsiflaydi?",
+              "options": [
+                "Bir ionning muvozanat potensialini",
+                "Qon bosimini",
+                "Yurak hajmini",
+                "Mushak uzunligini"
+              ],
+              "answer": 0,
+              "explanation": "Nernst tenglamasi alohida ionning muvozanat potensialini beradi."
+            },
+            {
+              "id": "bio_l1_q11",
+              "q": "EKGdagi P to‘lqini nimaga mos keladi?",
+              "options": [
+                "Qorinchalar repolyarizatsiyasi",
+                "Bo‘lmachalar depolyarizatsiyasi",
+                "Qorinchalar qisqarish kuchi",
+                "Yurak chiqish hajmi"
+              ],
+              "answer": 1,
+              "explanation": "P to‘lqini bo‘lmachalar depolyarizatsiyasidir."
+            },
+            {
+              "id": "bio_l1_q12",
+              "q": "EKGdagi QRS kompleksi nimani bildiradi?",
+              "options": [
+                "Qorinchalar depolyarizatsiyasi",
+                "Bo‘lmachalar repolyarizatsiyasi",
+                "Qon tomir elastikligi",
+                "Nafas chastotasi"
+              ],
+              "answer": 0,
+              "explanation": "QRS kompleksi qorinchalar depolyarizatsiyasini ifodalaydi."
+            },
+            {
+              "id": "bio_l1_q13",
+              "q": "EKGdagi T to‘lqini nimani bildiradi?",
+              "options": [
+                "Bo‘lmachalar depolyarizatsiyasi",
+                "Qorinchalar repolyarizatsiyasi",
+                "Yurak hajmi",
+                "Qonning kislorod sig‘imi"
+              ],
+              "answer": 1,
+              "explanation": "T to‘lqini qorinchalar repolyarizatsiyasini bildiradi."
+            },
+            {
+              "id": "bio_l1_q14",
+              "q": "EEG qaysi faoliyatni qayd etadi?",
+              "options": [
+                "Bosh miyaning bioelektrik faolligini",
+                "Qon qovushqoqligini",
+                "O‘pka hajmini",
+                "Suyak zichligini"
+              ],
+              "answer": 0,
+              "explanation": "EEG neyronlarning yig‘indi elektr faolligini qayd etadi."
+            },
+            {
+              "id": "bio_l1_q15",
+              "q": "Alfa EEG ritmi odatda qaysi diapazonda?",
+              "options": [
+                "0,5–4 Hz",
+                "4–8 Hz",
+                "8–13 Hz",
+                "60–90 Hz"
+              ],
+              "answer": 2,
+              "explanation": "Ma’ruza alfa ritmni taxminan 8–13 Hz deb beradi."
             }
           ],
-          "review_status": "USER_SOURCE_DRAFT"
+          "review_status": "USER_SOURCE_DRAFT — five supplied Biofizika study files, revised content"
         },
         {
           "id": "bio_l2",
@@ -2316,12 +2512,60 @@
           "focus": "Bioenergetika asoslari",
           "sections": [
             {
-              "heading": "Mavzu",
-              "body": "ATP, mitoxondriya, tirik organizmlar termodinamikasi va energiya almashinuviga kirish. Manba: Bioenergetika ma’ruzasi va amaliy savolnoma."
+              "heading": "Bioenergetika va termodinamika",
+              "body": "Bioenergetika hujayrada energiya qanday hosil bo‘lishi, saqlanishi va sarflanishini o‘rganadi. Termodinamikaning birinchi qonuniga ko‘ra energiya yo‘qdan paydo bo‘lmaydi va yo‘qolmaydi, balki shaklini o‘zgartiradi. Hujayra oziq moddalarning kimyoviy energiyasini ish va issiqlik hosil qilishga sarflaydi."
             },
             {
-              "heading": "Asosiy tushuncha",
-              "body": "ATP hujayrada energiya almashinuvida ishtirok etadi; mitoxondriya ko‘plab hujayralarda energiya hosil bo‘lishi bilan bog‘liq."
+              "heading": "ATP tuzilishi va vazifasi",
+              "body": "ATP — adenozin trifosfat — adenin, riboza va uchta fosfat guruhidan iborat. U ion nasoslari, mushak qisqarishi, biosintez va boshqa hujayraviy jarayonlar uchun energiya almashinuvining asosiy vositasidir. ATP gidrolizida ATP + H₂O → ADP + Pi reaksiyasi sodir bo‘ladi."
+            },
+            {
+              "heading": "ATP sintezining fizik-kimyoviy mazmuni",
+              "body": "ATP ADP va noorganik fosfatdan energiya hisobiga qayta hosil qilinadi. Hujayra ATPni doimiy ravishda sintezlaydi va sarflaydi. Standart biokimyoviy sharoitda ATP gidrolizining erkin energiya o‘zgarishi taxminan −30,5 kJ/mol bo‘lib, haqiqiy hujayraviy sharoitlarda bu qiymat boshqacha bo‘lishi mumkin."
+            },
+            {
+              "heading": "Glikoliz",
+              "body": "Glikoliz sitozolda boradi. Bir glyukoza molekulasi ikki piruvat molekulasigacha parchalanib, sof hisobda ikki ATP va ikki NADH hosil qiladi. Glikolizning boshlang‘ich bosqichlari mitoxondriyaga bevosita bog‘liq emas."
+            },
+            {
+              "heading": "Kislorod yetishmovchiligida energiya almashinuvi",
+              "body": "Kislorod yetarli bo‘lmaganda oksidlovchi fosforlanish cheklanadi. Glikolizni davom ettirish uchun NAD⁺ tiklanishi zarur; odamning ko‘plab to‘qimalarida piruvat laktatga aylanishi bunga yordam beradi. Bunday sharoitda bitta glyukozadan olinadigan ATP miqdori aerob parchalanishga nisbatan kamroq bo‘ladi."
+            },
+            {
+              "heading": "Piruvatning keyingi taqdiri",
+              "body": "Kislorod yetarli va mitoxondriya faol bo‘lgan hujayralarda piruvat asetil-KoA ga aylantirilib, sitrat sikliga ulanadi. Piruvatdan asetil-KoA hosil bo‘lishida karbonat angidrid ajraladi va NADH hosil bo‘ladi."
+            },
+            {
+              "heading": "Krebs sikli (sitrat sikli)",
+              "body": "Krebs siklining asosiy reaksiyalari mitoxondriya matritsasida boradi. Uning vazifasi asetil guruhlarning oksidlanishi hamda NADH va FADH₂ kabi qaytarilgan elektron tashuvchilarni hosil qilishdir. Substrat darajasida fosforlanish orqali ham oz miqdorda GTP/ATP hosil bo‘ladi."
+            },
+            {
+              "heading": "Elektron transport zanjiri",
+              "body": "Elektron transport zanjiri mitoxondriyaning ichki membranasida joylashgan. NADH va FADH₂ elektronlarni tashiydi; elektronlarning zanjir bo‘ylab o‘tishi ayrim komplekslarda protonlarni membrana oralig‘i bo‘shlig‘iga chiqarishga yordam beradi."
+            },
+            {
+              "heading": "Kislorodning vazifasi",
+              "body": "Aerob nafas olishda molekulyar kislorod elektron transport zanjirining yakuniy elektron qabul qiluvchisidir. U elektronlar va protonlarni qabul qilib suv hosil bo‘lishida ishtirok etadi. Kislorod yetishmasa zanjirning ishlashi va ATP sintezi sezilarli cheklanadi."
+            },
+            {
+              "heading": "Proton gradienti va ATP-sintaza",
+              "body": "Ichki mitoxondrial membrana bo‘ylab H⁺ ionlarining elektrokimyoviy gradienti hosil bo‘ladi. Protonlar ATP-sintaza orqali qaytganda shu energiya ADP va fosfatdan ATP hosil qilishga sarflanadi. Bu mexanizm xemiosmotik bog‘lanish deb ataladi."
+            },
+            {
+              "heading": "Fosforlanish turlari",
+              "body": "Substrat darajasida fosforlanishda fosfat guruhi bevosita yuqori energiyali oraliq birikmadan ADP yoki GDP ga o‘tadi. Oksidlovchi fosforlanishda esa elektron transport zanjiri va proton gradienti ATP sintezini ta’minlaydi."
+            },
+            {
+              "heading": "Aerob va anaerob energiya ta’minoti",
+              "body": "Aerob oksidlanish odatda bir glyukoza hisobiga ko‘proq ATP beradi. Anaerob glikoliz esa kislorod kamligida qisqa muddat energiya yetkazishi mumkin, lekin sof foydasi ikki ATPdir. Zamonaviy hisoblarda glyukozaning to‘liq aerob parchalanishi ko‘pincha taxminan 30–32 ATP deb baholanadi; ayrim eski darsliklarda 36–38 ko‘rsatiladi."
+            },
+            {
+              "heading": "To‘qimalar va klinik ahamiyat",
+              "body": "Miya va yurak doimiy energiya ta’minotiga muhtoj. Gipoksiya, ishemiya va mitoxondriyal jarayonlarning buzilishi hujayra ATP zaxirasini kamaytirishi mumkin. Bioenergetika haqidagi bilimlar bunday o‘zgarishlarni tushunishga yordam beradi."
+            },
+            {
+              "heading": "Warburg effekti",
+              "body": "Ko‘plab o‘sma hujayralarida kislorod mavjud bo‘lsa ham glyukozadan laktat hosil bo‘lishi kuchayadi; bu aerob glikoliz yoki Warburg effekti deyiladi. Bu barcha o‘sma hujayralari mitoxondriyasi ishlamaydi degani emas. Klinik tasvirlashda glyukoza analoglari tutib qolinishi PET tadqiqotlarida qo‘llanadi."
             }
           ],
           "teacher_materials": [
@@ -2341,30 +2585,186 @@
           "questions": [
             {
               "id": "bio_l2_q1",
-              "q": "ATP qanday rol bajaradi?",
+              "q": "Bioenergetika nimani o‘rganadi?",
               "options": [
-                "faqat suyakni quradi",
-                "faqat tovush chiqaradi",
-                "hujayraning energiya almashinuviga xizmat qiladi",
-                "faqat ko‘rishni ta’minlaydi"
+                "Suyak shaklini",
+                "Tirik tizimlarda energiya aylanishini",
+                "Faqat tovushni",
+                "Faqat qon guruhini"
               ],
-              "answer": 2,
-              "explanation": "Manba: 2-Ma'ruza Bioenergetika asoslari.pptx"
+              "answer": 1,
+              "explanation": "Bioenergetika energiyaning hosil bo‘lishi va sarflanishini o‘rganadi."
             },
             {
               "id": "bio_l2_q2",
-              "q": "ATP sintezida muhim organella qaysi?",
+              "q": "ATP tarkibida nechta fosfat guruhi bor?",
               "options": [
-                "yadrocha",
-                "ribosoma",
-                "sentriola",
-                "mitoxondriya"
+                "1",
+                "2",
+                "3",
+                "4"
               ],
-              "answer": 3,
-              "explanation": "Manba: 2-Ma'ruza Bioenergetika asoslari.pptx"
+              "answer": 2,
+              "explanation": "ATP — adenozin trifosfat."
+            },
+            {
+              "id": "bio_l2_q3",
+              "q": "ATP gidrolizida qaysi mahsulot hosil bo‘ladi?",
+              "options": [
+                "ADP va noorganik fosfat",
+                "Glyukoza va O₂",
+                "DNA",
+                "Karbamid"
+              ],
+              "answer": 0,
+              "explanation": "ATP gidrolizi ADP va Pi hosil qiladi."
+            },
+            {
+              "id": "bio_l2_q4",
+              "q": "Glikoliz hujayraning qaysi qismida kechadi?",
+              "options": [
+                "Yadroda",
+                "Sitozolda",
+                "Lizosomada",
+                "Golji majmuasida"
+              ],
+              "answer": 1,
+              "explanation": "Glikoliz sitozolda boradi."
+            },
+            {
+              "id": "bio_l2_q5",
+              "q": "Bir glyukozaning glikolizidan sof nechta ATP olinadi?",
+              "options": [
+                "1",
+                "2",
+                "4",
+                "30"
+              ],
+              "answer": 1,
+              "explanation": "Glikolizning sof natijasi ikki ATP."
+            },
+            {
+              "id": "bio_l2_q6",
+              "q": "Glikoliz yakunida bir glyukozadan nechta piruvat hosil bo‘ladi?",
+              "options": [
+                "1",
+                "2",
+                "3",
+                "6"
+              ],
+              "answer": 1,
+              "explanation": "Glyukoza ikki piruvatgacha parchalanadi."
+            },
+            {
+              "id": "bio_l2_q7",
+              "q": "Glikolizdan hosil bo‘ladigan elektron tashuvchi qaysi?",
+              "options": [
+                "NADH",
+                "DNK",
+                "Glyukagon",
+                "Keratin"
+              ],
+              "answer": 0,
+              "explanation": "Glikolizda NADH hosil bo‘ladi."
+            },
+            {
+              "id": "bio_l2_q8",
+              "q": "Krebs sikli ko‘proq qayerda sodir bo‘ladi?",
+              "options": [
+                "Mitoxondriya matritsasida",
+                "Yadroda",
+                "Hujayra membranasining tashqi sirtida",
+                "Ribosomada"
+              ],
+              "answer": 0,
+              "explanation": "Eukariot hujayralarda sitrat sikli asosan matritsada."
+            },
+            {
+              "id": "bio_l2_q9",
+              "q": "NADH va FADH₂ vazifasi nima?",
+              "options": [
+                "Elektron tashish",
+                "Suyakni mustahkamlash",
+                "Yorug‘likni sindirish",
+                "DNK nusxalash"
+              ],
+              "answer": 0,
+              "explanation": "Ular qaytarilgan elektron tashuvchilardir."
+            },
+            {
+              "id": "bio_l2_q10",
+              "q": "Elektron transport zanjiri qayerda?",
+              "options": [
+                "Hujayra yadrosida",
+                "Mitoxondriya ichki membranasida",
+                "Sitoplazma pufakchalarida",
+                "Plazma ichida"
+              ],
+              "answer": 1,
+              "explanation": "ETZ ichki mitoxondrial membranada."
+            },
+            {
+              "id": "bio_l2_q11",
+              "q": "Aerob ETZda elektronlarning oxirgi qabul qiluvchisi qaysi?",
+              "options": [
+                "Azot",
+                "Kislorod",
+                "Laktat",
+                "Glyukoza"
+              ],
+              "answer": 1,
+              "explanation": "Molekulyar O₂ yakuniy elektron qabul qiluvchidir."
+            },
+            {
+              "id": "bio_l2_q12",
+              "q": "ATP-sintaza uchun energiya manbai qaysi?",
+              "options": [
+                "Protonlarning elektrokimyoviy gradienti",
+                "Qonning qovushqoqligi",
+                "Yorug‘lik nuri",
+                "Suyak zichligi"
+              ],
+              "answer": 0,
+              "explanation": "ATP-sintaza proton gradientidan foydalanadi."
+            },
+            {
+              "id": "bio_l2_q13",
+              "q": "Substrat darajasida fosforlanish nimani anglatadi?",
+              "options": [
+                "Fosfat guruhining bevosita ADP/GDPga uzatilishi",
+                "Faqat foton yutilishi",
+                "Faqat nafas olish",
+                "Suvning osmosi"
+              ],
+              "answer": 0,
+              "explanation": "Bu jarayonda oraliq birikmadan fosfat bevosita uzatiladi."
+            },
+            {
+              "id": "bio_l2_q14",
+              "q": "Kislorod yetishmasa ko‘plab to‘qimalarda qaysi modda ko‘payishi mumkin?",
+              "options": [
+                "Laktat",
+                "Ozon",
+                "Gemoglobin alfa zanjiri",
+                "Kollagen"
+              ],
+              "answer": 0,
+              "explanation": "NAD⁺ ni tiklash uchun piruvatning laktatga aylanishi kuchayadi."
+            },
+            {
+              "id": "bio_l2_q15",
+              "q": "Warburg effekti nima?",
+              "options": [
+                "Kislorod borligida ham glikoliz va laktat hosil bo‘lishining kuchayishi",
+                "Har qanday hujayrada ATPning yo‘qolishi",
+                "Faqat eritrotsitning parchalanishi",
+                "Ichki quloq rezonansi"
+              ],
+              "answer": 0,
+              "explanation": "Aerob glikoliz ko‘plab o‘sma hujayralariga xos metabolik holat."
             }
           ],
-          "review_status": "USER_SOURCE_DRAFT"
+          "review_status": "USER_SOURCE_DRAFT — five supplied Biofizika study files, revised content"
         },
         {
           "id": "bio_l3",
@@ -2374,12 +2774,60 @@
           "focus": "Akustika va eshitish tizimi",
           "sections": [
             {
-              "heading": "Mavzu",
-              "body": "Tovush — elastik muhitda tarqaluvchi mexanik to‘lqin. Eshitish diapazoni, tovush tezligi, tovush bosimi, Doppler effekti. Manba: 3-amaliy."
+              "heading": "Akustika va tovush tabiati",
+              "body": "Akustika tovushning hosil bo‘lishi, tarqalishi va qabul qilinishini o‘rganadi. Tovush elastik muhitda bosim va zarrachalar tebranishi bilan tarqaladigan mexanik to‘lqindir. Vakuumda tovush tarqalmaydi."
             },
             {
-              "heading": "Asosiy tushuncha",
-              "body": "Inson odatda 20 Hz dan 20 kHz gacha bo‘lgan chastotalarni eshita oladi."
+              "heading": "Chastota va eshitish diapazoni",
+              "body": "Chastota bir sekunddagi tebranishlar soni bo‘lib, gerts (Hz) bilan o‘lchanadi. Odamning odatiy eshitish diapazoni taxminan 20 Hz dan 20 000 Hz gacha. 20 Hz dan past tebranish infratovush, 20 kHz dan yuqori tebranish ultratovush deyiladi."
+            },
+            {
+              "heading": "Tovush tezligi va to‘lqin uzunligi",
+              "body": "To‘lqin tezligi v = f·λ formulasi bilan ifodalanadi; bunda f — chastota, λ — to‘lqin uzunligi. O‘quv materialida 20°C havoda tovush tezligi taxminan 343 m/s, suvda 1500 m/s va yumshoq to‘qimalarda o‘rtacha 1540 m/s deb ko‘rsatilgan. Tezlik muhit xossalariga bog‘liq."
+            },
+            {
+              "heading": "Tovush bosimi va detsibel",
+              "body": "Tovush bosimi darajasi logarifmik shkala bilan ifodalanadi: Lp = 20·log₁₀(p/p₀), bunda p₀ = 20 µPa — havodagi standart tayanch bosim. Detsibel (dB) nisbiy darajani ifodalaydi; kundalik suhbat va kuchli shovqin dB qiymatlari bilan solishtiriladi."
+            },
+            {
+              "heading": "Doppler effekti",
+              "body": "Tovush manbai va kuzatuvchi nisbatan harakatlanganda kuzatiladigan chastota o‘zgarishi Doppler effekti deyiladi. Doppler ultratovush usullari qon oqimining yo‘nalishi va tezligi haqida ma’lumot olishda ishlatiladi."
+            },
+            {
+              "heading": "Tashqi quloqning vazifasi",
+              "body": "Quloq suprasi va tashqi eshituv yo‘li tovushni yig‘ib, nog‘ora pardaga yetkazadi. Eshituv yo‘lining rezonans xossalari ayrim nutq uchun muhim chastotalarni kuchaytirishi mumkin."
+            },
+            {
+              "heading": "O‘rta quloq va impedans moslashuvi",
+              "body": "O‘rta quloqda bolg‘acha (malleus), sandon (incus) va uzangi (stapes) suyakchalari joylashgan. Ular nog‘ora pardasidagi tebranishni oval oynaga uzatadi. Membrana yuzalari va suyakchalar mexanikasi tovush energiyasining havo muhitidan ichki quloq suyuqligiga samarali o‘tishiga yordam beradi."
+            },
+            {
+              "heading": "Ichki quloq va tonotopiya",
+              "body": "Koxleadagi bazilyar membrananing turli qismlari turli chastotalarga sezgir. Uning asos qismi yuqori chastotalar, uch qismiga yaqin sohalari esa past chastotalar uchun sezgirroq. Bu xususiyat tonotopiya deb ataladi."
+            },
+            {
+              "heading": "Tovushning nerv signaliga aylanishi",
+              "body": "Tebranish ichki quloq suyuqliklari va bazilyar membranani harakatga keltiradi. Tukli hujayralarning stereosiliyalari egilganda mexanik sezgir ion kanallari faollashadi. Signal eshituv nervi orqali bosh miyaga uzatiladi."
+            },
+            {
+              "heading": "Eshitish chegarasi va audiogramma",
+              "body": "Audiometriyada turli chastotalardagi eng past eshitiladigan tovush darajasi aniqlanadi. Natijalar audiogrammada chastota (Hz) va eshitish darajasi (dB HL) bo‘yicha tasvirlanadi. Eshitish sezgirligi barcha chastotalarda bir xil emas."
+            },
+            {
+              "heading": "Rinne va Weber sinamalari",
+              "body": "Kamerton yordamida Rinne sinamasi havo va suyak orqali tovush o‘tkazilishini solishtiradi. Weber sinamasida kamerton tovushi boshning qaysi tomonida kuchliroq eshitilishi baholanadi. Bu sinamalar eshitish buzilishining mumkin bo‘lgan turini tekshirishga yordam beradi, audiometriyaning o‘rnini to‘liq bosmaydi."
+            },
+            {
+              "heading": "Obyektiv eshitish tekshiruvlari",
+              "body": "Otoakustik emissiyalar (OAE) koxleadagi tashqi tukli hujayralar faoliyati bilan bog‘liq tovush javoblarini qayd etadi. ABR tekshiruvi esa tovushga javoban eshituv yo‘llari va miya ustunchasida hosil bo‘ladigan elektr faollikni o‘lchaydi. Ikkala usul javob berishga qiynaladigan bemorlarda foydali."
+            },
+            {
+              "heading": "Ultratovushning tibbiyotdagi o‘rni",
+              "body": "Tibbiy ultratovush tekshiruvlari yuqori chastotali tovush to‘lqinlarining to‘qimalardagi qaytishi va tarqalishiga asoslanadi. Doppler usuli qon oqimini, elastografiya esa to‘qimalarning mexanik xossalarini baholashda qo‘llanishi mumkin."
+            },
+            {
+              "heading": "Shovqin va eshitish gigiyenasi",
+              "body": "Uzoq davom etgan kuchli shovqin eshitish sezgirligini pasaytirishi mumkin. Eshitish tekshiruvlari standart uskunalar yordamida mutaxassis nazorati ostida bajariladi. Eshitish chegarasi shaxs yoshi va tekshiruv sharoitiga qarab farqlanadi."
             }
           ],
           "teacher_materials": [
@@ -2393,30 +2841,186 @@
           "questions": [
             {
               "id": "bio_l3_q1",
-              "q": "Tovushning fizik tabiati nima?",
+              "q": "Tovush qanday to‘lqin?",
               "options": [
-                "elektr zaryadi",
-                "kimyoviy reaksiya",
-                "yorug‘lik fotoni",
-                "mexanik to‘lqin"
+                "Mexanik to‘lqin",
+                "Gamma nuri",
+                "Faqat elektromagnit to‘lqin",
+                "Statik elektr maydon"
               ],
-              "answer": 3,
-              "explanation": "Manba: 3-amaliy mashg'ulot.pdf"
+              "answer": 0,
+              "explanation": "Tovush muhitdagi mexanik tebranishdir."
             },
             {
               "id": "bio_l3_q2",
-              "q": "Insonning odatiy eshitish diapazoni qaysi?",
+              "q": "Tovush vakuumda tarqaladimi?",
+              "options": [
+                "Ha, doim",
+                "Yo‘q",
+                "Faqat 20 kHz da",
+                "Faqat bosim yuqori bo‘lsa"
+              ],
+              "answer": 1,
+              "explanation": "Mexanik tovushga muhit zarur."
+            },
+            {
+              "id": "bio_l3_q3",
+              "q": "Inson odatda qaysi chastotalarni eshitadi?",
               "options": [
                 "20 Hz–20 kHz",
-                "1–2 Hz",
-                "1–2 kHz",
-                "100–200 kHz"
+                "1–5 Hz",
+                "40–100 kHz",
+                "1–3 MHz"
               ],
               "answer": 0,
-              "explanation": "Manba: 3-amaliy mashg'ulot.pdf"
+              "explanation": "Eshitiladigan odatiy diapazon 20 Hz–20 kHz."
+            },
+            {
+              "id": "bio_l3_q4",
+              "q": "20 kHz dan yuqori tovush nima deyiladi?",
+              "options": [
+                "Infratovush",
+                "Ultratovush",
+                "Yorug‘lik",
+                "Rentgen nuri"
+              ],
+              "answer": 1,
+              "explanation": "20 kHz dan yuqorisi ultratovush."
+            },
+            {
+              "id": "bio_l3_q5",
+              "q": "Tovush tezligi formulasi qaysi?",
+              "options": [
+                "v = f·λ",
+                "v = m·g",
+                "v = I·R",
+                "v = P/t"
+              ],
+              "answer": 0,
+              "explanation": "To‘lqin tezligi chastota va to‘lqin uzunligi ko‘paytmasi."
+            },
+            {
+              "id": "bio_l3_q6",
+              "q": "20°C havoda tovush tezligi taxminan qancha?",
+              "options": [
+                "34 m/s",
+                "343 m/s",
+                "1500 m/s",
+                "300 000 km/s"
+              ],
+              "answer": 1,
+              "explanation": "Havoda taxminan 343 m/s."
+            },
+            {
+              "id": "bio_l3_q7",
+              "q": "Tovush bosimi darajasi qaysi birlikda ifodalanadi?",
+              "options": [
+                "Detsibel (dB)",
+                "Kilogramm",
+                "Mol",
+                "Kelvin"
+              ],
+              "answer": 0,
+              "explanation": "Tovush bosimi darajasi odatda dB bilan ifodalanadi."
+            },
+            {
+              "id": "bio_l3_q8",
+              "q": "Doppler effekti nimadan yuzaga keladi?",
+              "options": [
+                "Manba va kuzatuvchining nisbiy harakatidan",
+                "Yorug‘lik yutilishidan",
+                "Suv bug‘lanishidan",
+                "Mushakning qisqarishidan"
+              ],
+              "answer": 0,
+              "explanation": "Nisbiy harakat kuzatiladigan chastotani o‘zgartiradi."
+            },
+            {
+              "id": "bio_l3_q9",
+              "q": "O‘rta quloqning eshitish suyakchalari qaysilar?",
+              "options": [
+                "Bolg‘acha, sandon, uzangi",
+                "Radius, ulna, humerus",
+                "Maxilla, mandibula, vomer",
+                "Tibia, fibula, patella"
+              ],
+              "answer": 0,
+              "explanation": "Malleus, incus, stapes — o‘rta quloq suyakchalari."
+            },
+            {
+              "id": "bio_l3_q10",
+              "q": "Koxleaning bazal qismi asosan nimaga sezgir?",
+              "options": [
+                "Yuqori chastotalarga",
+                "Eng past chastotalarga",
+                "Faqat yorug‘likka",
+                "Faqat haroratga"
+              ],
+              "answer": 0,
+              "explanation": "Koxlea bazasi yuqori chastotalarni ajratishda faol."
+            },
+            {
+              "id": "bio_l3_q11",
+              "q": "Tovushni elektr signalga aylantirishda qaysi hujayralar qatnashadi?",
+              "options": [
+                "Tukli hujayralar",
+                "Eritrotsitlar",
+                "Osteotsitlar",
+                "Gepatotsitlar"
+              ],
+              "answer": 0,
+              "explanation": "Koxlea tukli hujayralari mexanotransduksiyani ta’minlaydi."
+            },
+            {
+              "id": "bio_l3_q12",
+              "q": "Audiogramma nimani ko‘rsatadi?",
+              "options": [
+                "Chastotaga bog‘liq eshitish chegarasini",
+                "Qon glyukozasini",
+                "Nafas hajmini",
+                "Tana haroratini"
+              ],
+              "answer": 0,
+              "explanation": "Audiogramma dB HL va Hz bo‘yicha eshitish chegarasini tasvirlaydi."
+            },
+            {
+              "id": "bio_l3_q13",
+              "q": "Rinne sinamasida nimalar solishtiriladi?",
+              "options": [
+                "Havo va suyak o‘tkazuvchanligi",
+                "Ko‘rish va eshitish",
+                "Qon va limfa",
+                "Bosim va harorat"
+              ],
+              "answer": 0,
+              "explanation": "Rinne kamerton bilan havo va suyak o‘tkazuvchanligini qiyoslaydi."
+            },
+            {
+              "id": "bio_l3_q14",
+              "q": "OAE usuli nimani baholashga yordam beradi?",
+              "options": [
+                "Koxlea tashqi tukli hujayralari faoliyatini",
+                "Suyak kalsiyini",
+                "Qon ivishini",
+                "Jigar fermentini"
+              ],
+              "answer": 0,
+              "explanation": "Otoakustik emissiyalar tashqi tukli hujayralar bilan bog‘liq."
+            },
+            {
+              "id": "bio_l3_q15",
+              "q": "ABR usulida qanday signal qayd etiladi?",
+              "options": [
+                "Tovushga javob beruvchi eshituv yo‘llari/miya ustunchasi elektr faolligi",
+                "Mushak kuchi",
+                "Tish qattiqligi",
+                "Qon zardobi rangi"
+              ],
+              "answer": 0,
+              "explanation": "ABR — eshituv miya ustunchasi javobi."
             }
           ],
-          "review_status": "USER_SOURCE_DRAFT"
+          "review_status": "USER_SOURCE_DRAFT — five supplied Biofizika study files, revised content"
         },
         {
           "id": "bio_l4",
@@ -2426,12 +3030,64 @@
           "focus": "Biologik suyuqliklar qovushqoqligi va qon reologiyasi",
           "sections": [
             {
-              "heading": "Mavzu",
-              "body": "Qovushqoqlik, gematokrit, eritrotsit xossalari va mikrotsirkulyatsiya. Manba: amaliy dars ishlanmasi."
+              "heading": "Qovushqoqlikning fizik ma’nosi",
+              "body": "Qovushqoqlik — suyuqlikning oqishga va qatlamlarining o‘zaro siljishiga bo‘lgan ichki qarshiligi. Dinamik qovushqoqlikning SI birligi paskal-sekund (Pa·s) hisoblanadi. Qovushqoqlik suyuqlikning haroratiga va tarkibiga bog‘liq."
             },
             {
-              "heading": "Asosiy tushuncha",
-              "body": "Qon reologiyasi qonning oqish xususiyatlarini o‘rganadi; tarkibiy omillar va qovushqoqlik o‘zaro bog‘liq."
+              "heading": "Nyuton va Nyuton bo‘lmagan suyuqliklar",
+              "body": "Nyuton suyuqligida ma’lum haroratda dinamik qovushqoqlik siljish tezligiga deyarli bog‘liq emas. Qon esa tarkibida eritrotsitlar va oqsillar bo‘lgani uchun ko‘pincha Nyuton bo‘lmagan xususiyat namoyon etadi: siljish tezligi oshganda uning ko‘rinma qovushqoqligi kamayishi mumkin."
+            },
+            {
+              "heading": "Qon va plazma qovushqoqligi",
+              "body": "Plazma qovushqoqligi asosan uning oqsil tarkibiga bog‘liq; fibrinogen va immunoglobulinlar muhim ta’sir qiladi. Butun qon qovushqoqligi esa plazma xossalariga qo‘shimcha ravishda eritrotsitlar hajm ulushi, shakl o‘zgartira olishi va agregatsiyasiga ham bog‘liq."
+            },
+            {
+              "heading": "Gematokrit va uning roli",
+              "body": "Gematokrit — qondagi eritrotsitlarning umumiy qon hajmiga nisbatan ulushi. Boshqa sharoitlar bir xil bo‘lsa, gematokrit ortishi qon qovushqoqligini oshirishga moyil. Suvsizlanishda plazma hajmi kamayib, gematokrit nisbatan oshishi mumkin."
+            },
+            {
+              "heading": "Eritrotsit deformabilligi",
+              "body": "Eritrotsitlar tor kapillyarlardan o‘tishda shaklini o‘zgartira oladi. Bu xususiyat deformabillik deb ataladi. Eritrotsitlar yetarlicha moslashuvchan bo‘lmasa, mikrotsirkulyatsiya qiyinlashishi mumkin."
+            },
+            {
+              "heading": "Eritrotsit agregatsiyasi",
+              "body": "Past oqim sharoitida eritrotsitlar bir-biriga yaqinlashib, tanga ustma-ust joylashganga o‘xshash tuzilmalar — rouleaux hosil qilishi mumkin. Bunga plazma oqsillari ta’sir qiladi. Agregatsiya qovushqoqlik va eritrotsitlar cho‘kish tezligiga ta’sir etishi mumkin."
+            },
+            {
+              "heading": "Puazell munosabati",
+              "body": "Ideal, laminar Nyuton oqimi uchun oqim qarshiligi qovushqoqlikka to‘g‘ri, tomir radiusining to‘rtinchi darajasiga teskari proporsional: R = 8ηL/(πr⁴). Bu qon aylanishini tushunishda foydali soddalashtirilgan model; tirik tomirlarda elastiklik va qonning Nyuton bo‘lmagan xossalari ham hisobga olinadi."
+            },
+            {
+              "heading": "Mikrotsirkulyatsiya va perfuziya",
+              "body": "Mikrotsirkulyatsiya mayda tomirlardagi qon oqimidir. Qovushqoqlikning sezilarli ortishi oqim qarshiligini oshirib, to‘qimalarga kislorod yetkazilishiga salbiy ta’sir qilishi mumkin. Bunda tomir radiusi, bosim gradienti va qonning kislorod tashish qobiliyati ham muhim."
+            },
+            {
+              "heading": "Suvsizlanish va politsitemiya",
+              "body": "Suvsizlanishda plazma hajmi kamaygani sabab qon nisbatan quyuqlashishi mumkin. Politsitemiyada eritrotsitlar massasi ortadi va qon qovushqoqligi ko‘tarilishi ehtimoli bor. Har ikkala holatda sabab bir xil emas."
+            },
+            {
+              "heading": "Anemiya va kislorod tashish",
+              "body": "Anemiyada qon qovushqoqligi pasayishi mumkin, lekin gemoglobin kamaygani uchun kislorod tashish imkoniyati ham cheklanadi. Shu bois qovushqoqlik pasaydi degani to‘qimalarga kislorod yetkazilishi yaxshilandi degani emas."
+            },
+            {
+              "heading": "ESR va reologiya o‘rtasidagi farq",
+              "body": "ESR — eritrotsitlar cho‘kish tezligi — yallig‘lanish, plazma oqsillari va eritrotsit agregatsiyasiga bog‘liq ko‘rsatkich. U butun qon qovushqoqligining bevosita o‘lchovi emas. ESRni boshqa laborator va klinik ma’lumotlar bilan birga baholash kerak."
+            },
+            {
+              "heading": "Sinovial suyuqlik, mukus va so‘lak",
+              "body": "Sinovial suyuqlik bo‘g‘im yuzalarini moylashga yordam beradi; uning reologiyasi gialuron kislotasiga bog‘liq. Mukusda mutsinlar muhim. So‘lakning viskoelastik xossalari uning suv, oqsil va mutsin tarkibiga bog‘liq bo‘lib, og‘iz bo‘shlig‘ining namlanishi va himoyasida ahamiyatlidir."
+            },
+            {
+              "heading": "Giperqovushqoqlik haqida tushuncha",
+              "body": "Giperqovushqoqlik sindromida qonning oqish xossalari jiddiy buzilishi mumkin. Nevrologik belgilar, ko‘rish o‘zgarishlari va shilliq qavatlardan qonash uning muhim klinik belgilaridan bo‘lishi mumkin. Bu mavzu nazariy tibbiy tushuncha sifatida o‘rganiladi, o‘z-o‘zini tashxislash uchun emas."
+            },
+            {
+              "heading": "Klinik holatlarni taqqoslash",
+              "body": "Suvsizlanish gemokontsentratsiya orqali, paraproteinemiya esa plazma oqsillari ko‘payishi orqali qovushqoqlikka ta’sir qiladi. Eritrotsit deformabilligi pasayganda kapillyar oqimning buzilishi mumkin. Bir xil gematokritli ikki kishida ham qovushqoqlik bir xil bo‘lishi shart emas."
+            },
+            {
+              "heading": "Stomatologiyadagi bog‘liqlik",
+              "body": "So‘lakning qovushqoqligi uning oqishi, shilliq qavatni namlashi va tish yuzalarini himoya qilishi bilan bog‘liq. So‘lak tarkibidagi suv va mutsinlarning o‘zgarishi uning fizik xossalarini ham o‘zgartirishi mumkin."
             }
           ],
           "teacher_materials": [
@@ -2445,30 +3101,186 @@
           "questions": [
             {
               "id": "bio_l4_q1",
-              "q": "Gematokrit nima bilan bog‘liq?",
+              "q": "Qovushqoqlik nimani ifodalaydi?",
               "options": [
-                "qondagi eritrotsitlar hajm ulushi bilan",
-                "tovuș chastotasi bilan",
-                "suyak uzunligi bilan",
-                "yorug‘lik kuchi bilan"
+                "Suyuqlikning oqishga ichki qarshiligini",
+                "Suvning rangini",
+                "Hujayra sonini",
+                "Tovush balandligini"
               ],
               "answer": 0,
-              "explanation": "Manba: biologik_suyuqliklar_qovushqoqligi_amaliy_dars-3-4.docx"
+              "explanation": "Qovushqoqlik ichki ishqalanish bilan bog‘liq."
             },
             {
               "id": "bio_l4_q2",
-              "q": "Reologiya nimani o‘rganadi?",
+              "q": "Dinamik qovushqoqlikning SI birligi qaysi?",
               "options": [
-                "faqat o‘pka hajmini",
-                "oqish va deformatsiya xossalarini",
-                "faqat suyaklarni",
-                "faqat tovushni"
+                "Pa·s",
+                "Hz",
+                "N",
+                "m/s"
               ],
-              "answer": 1,
-              "explanation": "Manba: biologik_suyuqliklar_qovushqoqligi_amaliy_dars-3-4.docx"
+              "answer": 0,
+              "explanation": "SI birlik — paskal-sekund."
+            },
+            {
+              "id": "bio_l4_q3",
+              "q": "Butun qon qanday reologik suyuqlik?",
+              "options": [
+                "Nyuton bo‘lmagan",
+                "Doim ideal gaz",
+                "Faqat qattiq jism",
+                "Har doim Nyuton"
+              ],
+              "answer": 0,
+              "explanation": "Butun qon oqim sharoitiga qarab ko‘rinma qovushqoqligini o‘zgartiradi."
+            },
+            {
+              "id": "bio_l4_q4",
+              "q": "Qonda shear-thinning nimani anglatadi?",
+              "options": [
+                "Siljish tezligi oshsa qovushqoqlik kamayishi",
+                "Chastota oshsa tovush yo‘qolishi",
+                "Harorat o‘zgarmasligi",
+                "Gemoglobin ko‘payishi"
+              ],
+              "answer": 0,
+              "explanation": "Siljish tezligi ortganda qonning ko‘rinma qovushqoqligi kamayishi mumkin."
+            },
+            {
+              "id": "bio_l4_q5",
+              "q": "Gematokrit nimaning ulushi?",
+              "options": [
+                "Qondagi eritrotsitlar hajmining",
+                "Plazmadagi glyukozaning",
+                "Tovush energiyasining",
+                "O‘pka hajmining"
+              ],
+              "answer": 0,
+              "explanation": "Gematokrit eritrotsitlar hajm ulushi."
+            },
+            {
+              "id": "bio_l4_q6",
+              "q": "Qon qovushqoqligini faqat gematokrit belgilaydimi?",
+              "options": [
+                "Yo‘q, plazma va eritrotsit xossalari ham ta’sir qiladi",
+                "Ha, faqat gematokrit",
+                "Faqat tana harorati",
+                "Faqat yurak urishi"
+              ],
+              "answer": 0,
+              "explanation": "Plazma oqsillari, deformabillik va agregatsiya ham muhim."
+            },
+            {
+              "id": "bio_l4_q7",
+              "q": "Eritrotsit deformabilligi nimaga yordam beradi?",
+              "options": [
+                "Tor kapillyarlardan o‘tishga",
+                "Tovushni eshitishga",
+                "ATF sinteziga",
+                "Suyak qotishiga"
+              ],
+              "answer": 0,
+              "explanation": "Shaklni moslashtira olish kapillyar oqim uchun muhim."
+            },
+            {
+              "id": "bio_l4_q8",
+              "q": "Rouleaux nima?",
+              "options": [
+                "Eritrotsitlarning tanga kabi ustma-ust yig‘ilishi",
+                "Qon ivish omili",
+                "Nerv tolasi",
+                "Quloq suyakchasi"
+              ],
+              "answer": 0,
+              "explanation": "Rouleaux eritrotsitlar agregatsiyasining ko‘rinishi."
+            },
+            {
+              "id": "bio_l4_q9",
+              "q": "Puazell modelida tomir radiusi qaysi darajada qatnashadi?",
+              "options": [
+                "Birinchi",
+                "Ikkinchi",
+                "Uchinchi",
+                "To‘rtinchi"
+              ],
+              "answer": 3,
+              "explanation": "R = 8ηL/(πr⁴) ideal oqim modelidir."
+            },
+            {
+              "id": "bio_l4_q10",
+              "q": "Suvsizlanish qon qovushqoqligiga qanday ta’sir qilishi mumkin?",
+              "options": [
+                "Gemokontsentratsiya orqali oshirishi",
+                "Har doim nolga tushirishi",
+                "Ta’sir qilmasligi",
+                "Faqat tovushni o‘zgartirishi"
+              ],
+              "answer": 0,
+              "explanation": "Plazma hajmi kamayishi gematokritni nisbatan oshiradi."
+            },
+            {
+              "id": "bio_l4_q11",
+              "q": "Anemiyada qovushqoqlik past bo‘lsa ham nima muammo bo‘lishi mumkin?",
+              "options": [
+                "Kislorod tashish kamayishi",
+                "Tovush tezligi oshishi",
+                "Suyak zichlashishi",
+                "Fosfolipid ko‘payishi"
+              ],
+              "answer": 0,
+              "explanation": "Gemoglobin pasaysa kislorod tashish ham kamayadi."
+            },
+            {
+              "id": "bio_l4_q12",
+              "q": "ESR bevosita qovushqoqlik o‘lchovimi?",
+              "options": [
+                "Yo‘q",
+                "Ha, aynan shu",
+                "Faqat ultratovushda",
+                "Faqat 20°C da"
+              ],
+              "answer": 0,
+              "explanation": "ESR cho‘kish tezligi; u to‘g‘ridan-to‘g‘ri viskozimetr natijasi emas."
+            },
+            {
+              "id": "bio_l4_q13",
+              "q": "Plazma qovushqoqligiga qaysi oqsillar ko‘proq ta’sir qiladi?",
+              "options": [
+                "Fibrinogen va immunoglobulinlar",
+                "Keratin va kollagen",
+                "Aktin va miozin",
+                "Insulin va glukagon"
+              ],
+              "answer": 0,
+              "explanation": "Plazma oqsillari qovushqoqlikka ta’sir etadi."
+            },
+            {
+              "id": "bio_l4_q14",
+              "q": "So‘lakning reologik xususiyatlari nimaga bog‘liq?",
+              "options": [
+                "Suv va mutsinlar tarkibiga",
+                "Faqat emal qalinligiga",
+                "Faqat EKGga",
+                "Faqat nafas chastotasiga"
+              ],
+              "answer": 0,
+              "explanation": "So‘lak viskoelastikligiga suv, oqsillar va mutsinlar ta’sir qiladi."
+            },
+            {
+              "id": "bio_l4_q15",
+              "q": "Sinovial suyuqlikning asosiy mexanik roli qaysi?",
+              "options": [
+                "Bo‘g‘im yuzalarini moylash",
+                "Qonda kislorod tashish",
+                "Yurakni depolyarizatsiya qilish",
+                "Tovushni kuchaytirish"
+              ],
+              "answer": 0,
+              "explanation": "Sinovial suyuqlik ishqalanishni kamaytiradi."
             }
           ],
-          "review_status": "USER_SOURCE_DRAFT"
+          "review_status": "USER_SOURCE_DRAFT — five supplied Biofizika study files, revised content"
         }
       ]
     },
