@@ -9,9 +9,8 @@
   const demo = new URLSearchParams(location.search).get('demo') === '1' && ['localhost', '127.0.0.1'].includes(location.hostname);
   const auth = webapp?.initData || '';
   const state = { tab: 'home', catalog: null, progress: null, studyPlan: null, history: null, lesson: null, quiz: null, result: null, consent: null, busy: false, tutorStatus: null, tutorQuestion:'', tutorAnswer: null, tutorLessonId:'' };
-  // Replace Uzbek sh/ch ONLY in user-visible interface copy, never in identifiers,
-  // URLs, filenames, English lesson text, or Telegram signed initData.
-  const uz = val => String(val ?? '').replace(/sh/gi, x => x === 'SH' ? 'Ş' : x === 'Sh' ? 'Ş' : 'ş').replace(/ch/gi, x => x === 'CH' ? 'Ç' : x === 'Ch' ? 'Ç' : 'ç');
+  // Preserve original Uzbek Latin digraphs (Sh/sh, Ch/ch); never rewrite text.
+  const uz = val => String(val ?? '');
   const esc = val => uz(val).replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]));
   const rawEsc = val => String(val ?? '').replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]));
   const strings = html => html.replace(/>([^<>]+)</g,(all,txt)=>'>'+uz(txt)+'<');
@@ -37,10 +36,10 @@
   const hasQuestions = lesson => (lesson?.questions || []).length > 0;
   const displayCategory = (lesson, kind) => {
     const docs = kind === 'required' ? (lesson.teacher_materials || []) : (lesson.supplementary || []);
-    const back = '<button class="back" data-action="lesson" data-id="'+rawEsc(lesson.id)+'">← Mavzuga qaytiş</button>';
-    const name = kind === 'required' ? 'Kerakli ma’lumotlar' : 'Qo‘şimça ma’lumotlar';
+    const back = '<button class="back" data-action="lesson" data-id="'+rawEsc(lesson.id)+'">← Mavzuga qaytish</button>';
+    const name = kind === 'required' ? 'Kerakli ma’lumotlar' : 'Qo‘shimcha ma’lumotlar';
     const intro = kind === 'required'
-      ? 'Bu bo‘limda o‘qituvçi yuborgan materiallar va ulardan tayyorlangan testlar bor.'
+      ? 'Bu bo‘limda o‘qituvchi yuborgan materiallar va ulardan tayyorlangan testlar bor.'
       : 'Mavzuga oid bepul o‘quv konspektlari va SamMU elektron kutubxonasidagi kitob havolalari alohida ko‘rsatiladi.';
     const renderLink = doc => {
       const title = '<strong>'+rawEsc(doc.title)+'</strong>';
@@ -56,18 +55,18 @@
       cards = docs.map(renderLink).join('');
       cards += (lesson.sections||[]).map(s=>'<section class="lesson-section"><h3>'+esc(s.heading)+'</h3><p>'+esc(s.body)+'</p></section>').join('');
       if(lesson.questions?.length) cards += '<div class="card"><h3>Kerakli ma’lumotlar testi</h3><button class="btn btn-primary btn-wide" data-action="start-quiz">Testni boshlash ('+lesson.questions.length+')</button></div>';
-      if(!docs.length && !lesson.sections?.length)cards = '<div class="empty"><h3>Hozirça material yo‘q</h3><p>O‘qituvçi materiallari kelishi kutilmoqda.</p></div>';
+      if(!docs.length && !lesson.sections?.length)cards = '<div class="empty"><h3>Hozircha material yo‘q</h3><p>O‘qituvchi materiallari kelishi kutilmoqda.</p></div>';
     } else {
       const extraSections = lesson.supplement_sections || [];
-      cards = '<div class="sectionhead"><h2>Bepul qo‘şimça konspektlar</h2></div>';
+      cards = '<div class="sectionhead"><h2>Bepul qo‘shimcha konspektlar</h2></div>';
       if(extraSections.length)cards += extraSections.map(s=>'<section class="lesson-section"><h3>'+esc(s.heading)+'</h3><p>'+esc(s.body)+'</p></section>').join('');
-      else cards += '<div class="card"><p>Mavzu bo‘yiça bepul konspekt hozirça tayyor emas. Bu kitob matni o‘qilganini anglatmaydi.</p></div>';
+      else cards += '<div class="card"><p>Mavzu bo‘yicha bepul konspekt hozircha tayyor emas. Bu kitob matni o‘qilganini anglatmaydi.</p></div>';
       if(docs.length)cards += '<div class="sectionhead"><h2>Bepul xorijiy manbalar</h2></div>'+docs.map(renderLink).join('');
-      if(lesson.supplement_questions?.length)cards += '<div class="card"><h3>Qo‘şimça ma’lumotlar testi</h3><button class="btn btn-primary btn-wide" data-action="start-supplement-quiz">Qo‘şimça testni boshlash ('+lesson.supplement_questions.length+')</button></div>';
+      if(lesson.supplement_questions?.length)cards += '<div class="card"><h3>Qo‘shimcha ma’lumotlar testi</h3><button class="btn btn-primary btn-wide" data-action="start-supplement-quiz">Qo‘shimcha testni boshlash ('+lesson.supplement_questions.length+')</button></div>';
       const books = lesson.sammu_books || [];
       cards += '<div class="sectionhead"><h2>SamMU elektron kutubxonasidagi kitoblar</h2></div>';
-      if(books.length)cards += '<p class="smallprint">Bu kitob havolalari ma’lumotnoma sifatida saqlangan. To‘liq matnni o‘qiş uchun SamMU HEMIS ruxsati kerak bo‘lishi mumkin.</p>'+books.map(renderLink).join('');
-      else cards += '<div class="card"><p>Bu mavzu uçún SamMU katalogidan kitob aniqlanmagan.</p></div>';
+      if(books.length)cards += '<p class="smallprint">Bu kitob havolalari ma’lumotnoma sifatida saqlangan. To‘liq matnni o‘qish uchun SamMU HEMIS ruxsati kerak bo‘lishi mumkin.</p>'+books.map(renderLink).join('');
+      else cards += '<div class="card"><p>Bu mavzu uchún SamMU katalogidan kitob aniqlanmagan.</p></div>';
     }
     shell(back+'<p class="eyebrow">'+esc(lesson.subject_title)+'</p><h1>'+name+'</h1><p class="smallprint">'+intro+'</p>'+cards+disclaimer);
   };
@@ -78,8 +77,8 @@
     const completed=state.progress?.latest?.filter(x=>lessons.some(l=>l.id===x.lesson_id)).length || 0;
     const attempts=state.progress?.attempts_count || 0;
     const cards=subjects.map(s=>'<button class="card lesson-card" data-action="subject" data-id="'+rawEsc(s.id)+'"><span class="lesson-icon">📚</span><span class="lesson-content"><strong>'+esc(s.title)+'</strong><small>'+s.lessons.length+' ta mavzu</small></span><span class="chevron">›</span></button>').join('');
-    shell('<section class="hero"><p class="eyebrow">Talabalar uçún o‘quv platforma</p><h1>MedStudy AI</h1><p>O‘qituvçi yuborgan materiallar va SamMU kutubxonasidan qo‘şimça o‘qiş — alohida bo‘limlarda.</p></section>'+
-      '<div class="stats"><div class="stat"><strong>'+subjects.length+'</strong><small>Fan</small></div><div class="stat"><strong>'+lessons.length+'</strong><small>Mavzu</small></div><div class="stat"><strong>'+attempts+'</strong><small>Test uriniş</small></div></div>'+
+    shell('<section class="hero"><p class="eyebrow">Talabalar uchún o‘quv platforma</p><h1>MedStudy AI</h1><p>O‘qituvchi yuborgan materiallar va SamMU kutubxonasidan qo‘shimcha o‘qish — alohida bo‘limlarda.</p></section>'+
+      '<div class="stats"><div class="stat"><strong>'+subjects.length+'</strong><small>Fan</small></div><div class="stat"><strong>'+lessons.length+'</strong><small>Mavzu</small></div><div class="stat"><strong>'+attempts+'</strong><small>Test urinish</small></div></div>'+
       '<div class="sectionhead"><h2>Fanlar</h2><span>'+completed+'/'+lessons.length+' o‘rganilgan</span></div>'+cards+disclaimer+
       '<div class="footer-logo">MedStudy AI · Mustaqil ta’lim loyihasi</div>');
   }
@@ -89,7 +88,7 @@
     state.tab='subject';state.subjectId=id;
     const cards=s.lessons.map((l,i)=>'<button class="card lesson-card" data-action="lesson" data-id="'+rawEsc(l.id)+'"><span class="lesson-icon">📖</span><span class="lesson-content"><span class="tag">'+(i+1)+'-MAVZU</span><strong>'+esc(l.title)+'</strong><small>'+l.section_count+' bo‘lim · '+l.question_count+' savol</small></span><span class="chevron">›</span></button>').join('');
     shell('<button class="back" data-action="home">← Fanlar</button><h1>'+esc(s.title)+'</h1>'+
-      '<p class="smallprint">Mavzuni tanlang, so‘ng kerakli yoki qo‘şimça ma’lumotlarni oching.</p>'+cards);
+      '<p class="smallprint">Mavzuni tanlang, so‘ng kerakli yoki qo‘shimcha ma’lumotlarni oching.</p>'+cards);
   }
   async function getLesson(id) {
     loading();
@@ -104,9 +103,9 @@
     const books=(l.sammu_books||[]).length;
     shell('<button class="back" data-action="subject" data-id="'+rawEsc(l.subject_id)+'">← Mavzular</button>'+
       '<p class="eyebrow">'+esc(l.subject_title)+'</p><h1>'+esc(l.title)+'</h1>'+
-      '<p class="smallprint">Mavzu içidagi bo‘limni tanlang.</p>'+
-      '<button class="card lesson-card" data-action="category" data-kind="required"><span class="lesson-icon">📘</span><span class="lesson-content"><strong>Kerakli ma’lumotlar</strong><small>O‘qituvçi materiallari · '+needed+' fayl</small></span><span class="chevron">›</span></button>'+
-      '<button class="card lesson-card" data-action="category" data-kind="supplementary"><span class="lesson-icon">📗</span><span class="lesson-content"><strong>Qo‘şimça ma’lumotlar</strong><small>Bepul konspekt · '+extra+' bo‘lim · '+books+' kitob</small></span><span class="chevron">›</span></button>'+
+      '<p class="smallprint">Mavzu ichidagi bo‘limni tanlang.</p>'+
+      '<button class="card lesson-card" data-action="category" data-kind="required"><span class="lesson-icon">📘</span><span class="lesson-content"><strong>Kerakli ma’lumotlar</strong><small>O‘qituvchi materiallari · '+needed+' fayl</small></span><span class="chevron">›</span></button>'+
+      '<button class="card lesson-card" data-action="category" data-kind="supplementary"><span class="lesson-icon">📗</span><span class="lesson-content"><strong>Qo‘shimcha ma’lumotlar</strong><small>Bepul konspekt · '+extra+' bo‘lim · '+books+' kitob</small></span><span class="chevron">›</span></button>'+
       disclaimer);
   }
   function startQuiz(questions, mode='full', category='required') {
@@ -116,7 +115,7 @@
   }
   function renderQuiz() {
     state.tab='quiz';const qz=state.quiz;const q=qz.questions[qz.pos];const val=qz.answers[qz.pos];const n=qz.questions.length;
-    shell(`<button class="back" data-action="lesson" data-id="${rawEsc(state.lesson.id)}">← Mavzuga qaytish</button><div class="quiz-top"><span>${qz.category==='supplementary'?'Qo‘şimça ma’lumotlar testi':qz.mode==='retry'?'Xatolarni takrorlash':'Kerakli ma’lumotlar testi'}</span><strong>${qz.pos+1}/${n}</strong></div><div class="bar"><div class="bar-fill" style="width:${Math.round((qz.pos)/n*100)}%"></div></div><h2 class="question">${esc(q.q)}</h2><div class="answers">${q.options.map((opt,i)=>`<button class="answer ${val===i?'selected':''}" data-action="answer" data-value="${i}"><span class="letter">${'ABCD'[i]}</span>${esc(opt)}</button>`).join('')}</div><div class="quiz-actions"><button class="btn btn-primary btn-wide" data-action="next" ${val===null||state.busy?'disabled':''}>${qz.pos===n-1?'Testni yakunlash':'Keyingi savol →'}</button></div><p class="inline-note">To‘g‘ri javob va izohlar test yakunida ko‘rsatiladi.</p>`);
+    shell(`<button class="back" data-action="lesson" data-id="${rawEsc(state.lesson.id)}">← Mavzuga qaytish</button><div class="quiz-top"><span>${qz.category==='supplementary'?'Qo‘shimcha ma’lumotlar testi':qz.mode==='retry'?'Xatolarni takrorlash':'Kerakli ma’lumotlar testi'}</span><strong>${qz.pos+1}/${n}</strong></div><div class="bar"><div class="bar-fill" style="width:${Math.round((qz.pos)/n*100)}%"></div></div><h2 class="question">${esc(q.q)}</h2><div class="answers">${q.options.map((opt,i)=>`<button class="answer ${val===i?'selected':''}" data-action="answer" data-value="${i}"><span class="letter">${'ABCD'[i]}</span>${esc(opt)}</button>`).join('')}</div><div class="quiz-actions"><button class="btn btn-primary btn-wide" data-action="next" ${val===null||state.busy?'disabled':''}>${qz.pos===n-1?'Testni yakunlash':'Keyingi savol →'}</button></div><p class="inline-note">To‘g‘ri javob va izohlar test yakunida ko‘rsatiladi.</p>`);
   }
   async function next() {
     if(state.busy) return;
