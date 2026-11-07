@@ -2,7 +2,7 @@
   "version": "0.5.2-draft",
   "status": "DRAFT — 15 mashg‘ulotga batafsil original izohlar va nazorat savollari qo‘shildi; o‘qituvchi tekshirishi kerak",
   "curriculum_source": "Talaba taqdim etgan Profi University Navoiy, 2026–2027, 1-semestr, Preklinik restavratsion stomatologiya, 15 ta amaliy mashg‘ulot kalendar rejasi",
-  "reference_scope": "SamMU e-library dagi 4555, 5780, 2058, 3055, 343, 4516, 6185-sonli bibliografik qaydlar va ochiq kitob tavsiflari tekshirildi. Sahifa matnlari HEMIS tizimi orqali himoyalangan: kitoblar to‘liq matni yoki sahifa raqamlari ko‘rilmadi. Materiallar shu yo‘nalishdagi umumiy akademik bilimlardan mustaqil qayta yozildi. Ushbu loyiha SamMU ning rasmiy materiallari yoki ko‘chirmasi emas.",
+  "reference_scope": "SamMU e-library dagi 4555, 5780, 2058, 3055, 343, 4516, 50-sonli bibliografik qaydlar va ochiq kitob tavsiflari tekshirildi. Sahifa matnlari HEMIS tizimi orqali himoyalangan: kitoblar to‘liq matni yoki sahifa raqamlari ko‘rilmadi. Materiallar shu yo‘nalishdagi umumiy akademik bilimlardan mustaqil qayta yozildi. Ushbu loyiha SamMU ning rasmiy materiallari yoki ko‘chirmasi emas.",
   "subjects": [
     {
       "id": "stom_prerest",
@@ -1690,7 +1690,7 @@
           "sources": [
             "https://e-library.sammu.uz/uz/book/4555",
             "https://e-library.sammu.uz/uz/book/5780",
-            "https://e-library.sammu.uz/uz/book/6185"
+            "https://e-library.sammu.uz/uz/book/50"
           ],
           "questions": [
             {
@@ -1988,7 +1988,7 @@
           "sources": [
             "https://e-library.sammu.uz/uz/book/4555",
             "https://e-library.sammu.uz/uz/book/5780",
-            "https://e-library.sammu.uz/uz/book/6185"
+            "https://e-library.sammu.uz/uz/book/50"
           ],
           "questions": [
             {
@@ -2137,7 +2137,7 @@
           "sources": [
             "https://e-library.sammu.uz/uz/book/4555",
             "https://e-library.sammu.uz/uz/book/5780",
-            "https://e-library.sammu.uz/uz/book/6185"
+            "https://e-library.sammu.uz/uz/book/50"
           ],
           "questions": [
             {
@@ -2286,7 +2286,7 @@
           "sources": [
             "https://e-library.sammu.uz/uz/book/4555",
             "https://e-library.sammu.uz/uz/book/5780",
-            "https://e-library.sammu.uz/uz/book/6185",
+            "https://e-library.sammu.uz/uz/book/50",
             "https://e-library.sammu.uz/uz/book/2058"
           ],
           "questions": [
