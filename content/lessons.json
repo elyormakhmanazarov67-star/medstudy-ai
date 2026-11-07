@@ -2401,6 +2401,1228 @@
           ]
         }
       ]
+    },
+    {
+      "id": "stom_kirish",
+      "title": "Stomatologiyaga kirish",
+      "academic_year": "2026–2027",
+      "semester": 1,
+      "total_sessions": 12,
+      "curriculum_source": "Talaba yuborgan A1–A12 amaliy mashg‘ulotlar rasmi",
+      "lessons": [
+        {
+          "id": "intro_a1",
+          "title": "A1. Stomatologiyaga kirish: tarixiy bosqichlar va mahalliy maktablar",
+          "focus": "Stomatologiyaga kirish: tarixiy bosqichlar va mahalliy maktablar",
+          "session_number": 1,
+          "calendar_topic": "Stomatologiyaga kirish: tarixiy bosqichlar va mahalliy maktablar",
+          "sections": [
+            {
+              "heading": "Stomatologiya fanining vazifasi",
+              "body": "Stomatologiya og‘iz bo‘shlig‘i, tish va yuz-jag‘ tizimi salomatligini o‘rganadi. Uning asosiy yo‘nalishlari profilaktika, tashxislash, davolash va reabilitatsiyadir. Tibbiy kasbning rivojlanishi davomida oddiy amaliy tajriba ilmiy tekshiruv va maxsus ta’limga aylangan."
+            },
+            {
+              "heading": "Tarixning muhim davrlari",
+              "body": "Qadimda tish kasalliklari haqida yozma ma’lumotlar uchraydi. O‘rta asrlarda Ibn Sino kabi olimlar tibbiyot bilimlarini tizimlashtirishga hissa qo‘shgan. XVIII asrda Pyer Foshar stomatologiyani alohida fan sifatida rivojlantirishga ta’sir ko‘rsatgan; keyingi asrlarda og‘riqsizlantirish, rentgen va profilaktika taraqqiy etgan."
+            },
+            {
+              "heading": "SamMU va stomatologiya maktabi",
+              "body": "SamMU rasmiy ma’lumotlariga ko‘ra, uning stomatologiya fakulteti 2009 yildan faoliyat yuritadi. Fakultetda terapevtik, ortopedik, bolalar stomatologiyasi va jarrohlik kabi ixtisoslashgan yo‘nalishlar mavjud. Ushbu tarixiy fakt universitet saytidagi ochiq ma’lumotlarga asoslanadi."
+            }
+          ],
+          "questions": [
+            {
+              "id": "int_a1_q1",
+              "q": "Stomatologiyaning asosiy o‘rganish sohasi qaysi?",
+              "options": [
+                "Faqat nafas yo‘llari",
+                "Og‘iz bo‘shlig‘i va tish-jag‘ tizimi",
+                "Faqat buyraklar",
+                "Faqat eshitish organlari"
+              ],
+              "answer": 1,
+              "explanation": "To‘g‘ri javob: Og‘iz bo‘shlig‘i va tish-jag‘ tizimi. Stomatologiya og‘iz bo‘shlig‘i, tish va yuz-jag‘ tizimi salomatligini o‘rganadi. Uning asosiy yo‘nalishlari profilaktika, tashxislash, davolash va rea"
+            },
+            {
+              "id": "int_a1_q2",
+              "q": "Stomatologik profilaktikaning maqsadi nima?",
+              "options": [
+                "Faqat rentgen suratini olish",
+                "Faqat dori sotish",
+                "Kasalliklar xavfini kamaytirish",
+                "Faqat jihozlarni sanash"
+              ],
+              "answer": 2,
+              "explanation": "To‘g‘ri javob: Kasalliklar xavfini kamaytirish. Stomatologiya og‘iz bo‘shlig‘i, tish va yuz-jag‘ tizimi salomatligini o‘rganadi. Uning asosiy yo‘nalishlari profilaktika, tashxislash, davolash va rea"
+            },
+            {
+              "id": "int_a1_q3",
+              "q": "O‘rta asr tibbiyoti tarixida nomi tilga olinadigan olim kim?",
+              "options": [
+                "Isaak Nyuton",
+                "Maykl Faradey",
+                "Alan Tyuring",
+                "Ibn Sino"
+              ],
+              "answer": 3,
+              "explanation": "To‘g‘ri javob: Ibn Sino. Qadimda tish kasalliklari haqida yozma ma’lumotlar uchraydi. O‘rta asrlarda Ibn Sino kabi olimlar tibbiyot bilimlarini tizimlashtirishga hissa qo‘shga"
+            },
+            {
+              "id": "int_a1_q4",
+              "q": "Pyer Foshar faoliyati asosan qaysi davrga to‘g‘ri keladi?",
+              "options": [
+                "XVIII asr",
+                "XI asr",
+                "XXI asr",
+                "V asr"
+              ],
+              "answer": 0,
+              "explanation": "To‘g‘ri javob: XVIII asr. Qadimda tish kasalliklari haqida yozma ma’lumotlar uchraydi. O‘rta asrlarda Ibn Sino kabi olimlar tibbiyot bilimlarini tizimlashtirishga hissa qo‘shga"
+            },
+            {
+              "id": "int_a1_q5",
+              "q": "SamMU stomatologiya fakulteti qachondan faoliyat yuritmoqda?",
+              "options": [
+                "1890-yildan",
+                "2009-yildan",
+                "1945-yildan",
+                "2025-yildan"
+              ],
+              "answer": 1,
+              "explanation": "To‘g‘ri javob: 2009-yildan. SamMU rasmiy ma’lumotlariga ko‘ra, uning stomatologiya fakulteti 2009 yildan faoliyat yuritadi. Fakultetda terapevtik, ortopedik, bolalar stomatologiy"
+            },
+            {
+              "id": "int_a1_q6",
+              "q": "Stomatologiyaning zamonaviy yo‘nalishlaridan biri qaysi?",
+              "options": [
+                "Astrofizika",
+                "Geodeziya",
+                "Ortopedik stomatologiya",
+                "Astronomiya"
+              ],
+              "answer": 2,
+              "explanation": "To‘g‘ri javob: Ortopedik stomatologiya. SamMU rasmiy ma’lumotlariga ko‘ra, uning stomatologiya fakulteti 2009 yildan faoliyat yuritadi. Fakultetda terapevtik, ortopedik, bolalar stomatologiy"
+            }
+          ],
+          "sources": [
+            "https://www.sammu.uz/uz/pages/dentistry_faculty",
+            "https://www.sammu.uz/uz/pages/history_dentistry_faculty",
+            "https://e-library.sammu.uz/uz/book/4555"
+          ],
+          "review_status": "DRAFT — manba va tushuntirishlar o‘qituvchi tomonidan tekshirilishi kerak"
+        },
+        {
+          "id": "intro_a2",
+          "title": "A2. Davolash-profilaktika stomatologiya muassasalari va bo‘limlari",
+          "focus": "Davolash-profilaktika stomatologiya muassasalari va bo‘limlari",
+          "session_number": 2,
+          "calendar_topic": "Davolash-profilaktika stomatologiya muassasalari va bo‘limlari",
+          "sections": [
+            {
+              "heading": "Muassasa turlari",
+              "body": "Stomatologik yordam poliklinika, ko‘p tarmoqli shifoxonaning tegishli bo‘limi va ixtisoslashgan markazlarda tashkil etilishi mumkin. Muassasa turi bemor oqimi, xizmatlar ko‘lami va yo‘llanma tartibi bilan farqlanadi."
+            },
+            {
+              "heading": "Tarkibiy bo‘limlar",
+              "body": "Qabul va ro‘yxatga olish, konsultatsiya, terapevtik stomatologiya, jarrohlik, ortopediya hamda sterilizatsiya bilan bog‘liq xonalar funksional qismlar bo‘lishi mumkin. Har bir muassasada aynan bir xil bo‘limlar mavjud bo‘lishi shart emas."
+            },
+            {
+              "heading": "Profilaktika va yo‘naltirish",
+              "body": "Davolash-profilaktika muassasalari bemorlarni o‘z vaqtida ko‘rikdan o‘tkazish, xavf omillarini tushuntirish va zarur bo‘lsa mutaxassisga yo‘naltirish kabi vazifalarni bajaradi. Sog‘liqni saqlash tizimidagi hamkorlik bemor xavfsizligiga xizmat qiladi."
+            }
+          ],
+          "questions": [
+            {
+              "id": "int_a2_q1",
+              "q": "Stomatologik poliklinika nimaga misol?",
+              "options": [
+                "Rentgen nurlari turiga",
+                "Dori molekulasiga",
+                "Davolash-profilaktika muassasasiga",
+                "Suyak bo‘limiga"
+              ],
+              "answer": 2,
+              "explanation": "To‘g‘ri javob: Davolash-profilaktika muassasasiga. Stomatologik yordam poliklinika, ko‘p tarmoqli shifoxonaning tegishli bo‘limi va ixtisoslashgan markazlarda tashkil etilishi mumkin. Muassasa turi bem"
+            },
+            {
+              "id": "int_a2_q2",
+              "q": "Ro‘yxatga olish bo‘limining vazifasi nima?",
+              "options": [
+                "Plomba materialini qotirish",
+                "Bor ishlab chiqarish",
+                "Kompressor yig‘ish",
+                "Bemor oqimini tashkil etish"
+              ],
+              "answer": 3,
+              "explanation": "To‘g‘ri javob: Bemor oqimini tashkil etish. Stomatologik yordam poliklinika, ko‘p tarmoqli shifoxonaning tegishli bo‘limi va ixtisoslashgan markazlarda tashkil etilishi mumkin. Muassasa turi bem"
+            },
+            {
+              "id": "int_a2_q3",
+              "q": "Sterilizatsiya bilan bog‘liq xona nima uchun kerak?",
+              "options": [
+                "Asboblarni qayta ishlash tizimi uchun",
+                "Bemorning bo‘yini o‘lchash uchun",
+                "Faqat telefonlarni saqlash uchun",
+                "Faqat reklama uchun"
+              ],
+              "answer": 0,
+              "explanation": "To‘g‘ri javob: Asboblarni qayta ishlash tizimi uchun. Qabul va ro‘yxatga olish, konsultatsiya, terapevtik stomatologiya, jarrohlik, ortopediya hamda sterilizatsiya bilan bog‘liq xonalar funksional qismlar"
+            },
+            {
+              "id": "int_a2_q4",
+              "q": "Muassasalar tarkibi bir xil bo‘lishi shartmi?",
+              "options": [
+                "Ha, hamma joyda aynan bir xil",
+                "Yo‘q, xizmat turiga qarab farqlanadi",
+                "Faqat devor rangi farq qiladi",
+                "Faqat binoning yoshi farq qiladi"
+              ],
+              "answer": 1,
+              "explanation": "To‘g‘ri javob: Yo‘q, xizmat turiga qarab farqlanadi. Qabul va ro‘yxatga olish, konsultatsiya, terapevtik stomatologiya, jarrohlik, ortopediya hamda sterilizatsiya bilan bog‘liq xonalar funksional qismlar"
+            },
+            {
+              "id": "int_a2_q5",
+              "q": "Mutaxassisga yo‘llash qanday maqsadga xizmat qiladi?",
+              "options": [
+                "Barcha ko‘riklarni bekor qilishga",
+                "Bemor hujjatini yashirishga",
+                "Kerakli tibbiy yordamni tashkil etishga",
+                "Asbob narxini oshirishga"
+              ],
+              "answer": 2,
+              "explanation": "To‘g‘ri javob: Kerakli tibbiy yordamni tashkil etishga. Davolash-profilaktika muassasalari bemorlarni o‘z vaqtida ko‘rikdan o‘tkazish, xavf omillarini tushuntirish va zarur bo‘lsa mutaxassisga yo‘naltirish "
+            },
+            {
+              "id": "int_a2_q6",
+              "q": "Profilaktika qanday yondashuv?",
+              "options": [
+                "Faqat protez yasashga yo‘naltirilgan",
+                "Faqat jarrohlikka tegishli",
+                "Faqat hisob-kitobga oid",
+                "Kasallikning oldini olishga yo‘naltirilgan"
+              ],
+              "answer": 3,
+              "explanation": "To‘g‘ri javob: Kasallikning oldini olishga yo‘naltirilgan. Davolash-profilaktika muassasalari bemorlarni o‘z vaqtida ko‘rikdan o‘tkazish, xavf omillarini tushuntirish va zarur bo‘lsa mutaxassisga yo‘naltirish "
+            }
+          ],
+          "sources": [
+            "https://www.sammu.uz/uz/pages/dentistry_faculty",
+            "https://www.sammu.uz/uz/pages/history_dentistry_faculty",
+            "https://e-library.sammu.uz/uz/book/4555"
+          ],
+          "review_status": "DRAFT — manba va tushuntirishlar o‘qituvchi tomonidan tekshirilishi kerak"
+        },
+        {
+          "id": "intro_a3",
+          "title": "A3. Stomatologiya klinikasi: turlari, toifalari va xodimlar vazifalari",
+          "focus": "Stomatologiya klinikasi: turlari, toifalari va xodimlar vazifalari",
+          "session_number": 3,
+          "calendar_topic": "Stomatologiya klinikasi: turlari, toifalari va xodimlar vazifalari",
+          "sections": [
+            {
+              "heading": "Klinikalar faoliyati",
+              "body": "Stomatologiya klinikasi turli ixtisosliklar bo‘yicha xizmat ko‘rsatishi mumkin. Xizmatlar spektri, muassasa hajmi, jihozlanish va kadrlar tarkibi klinikalar o‘rtasida farqlanadi. Xizmat sifati faqat interyer yoki reklama bilan baholanmaydi."
+            },
+            {
+              "heading": "Jamoa a’zolari",
+              "body": "Stomatolog bemorni baholaydi va davolash qarorini qabul qiladi; stomatologik assistent ish jarayonini qo‘llab-quvvatlaydi; hamshira, administrator va texnik xodimlar o‘z vakolatidagi vazifalarni bajaradilar. Har bir kasbda mas’uliyat va maxfiylik talablari bor."
+            },
+            {
+              "heading": "Kasbiy standart tushunchasi",
+              "body": "Kasbiy standartlar va muassasa ichki tartiblari vazifa chegaralari, hujjat yuritish, malaka va xavfsizlikni belgilaydi. Talaba o‘z vakolatini oshirmasligi, tibbiy qarorlarni mustaqil qabul qilmasligi kerak."
+            }
+          ],
+          "questions": [
+            {
+              "id": "int_a3_q1",
+              "q": "Davolash qarorini kim qabul qiladi?",
+              "options": [
+                "Faqat klinika reklama xodimi",
+                "Faqat kassir",
+                "Faqat asbob sotuvchisi",
+                "Malakali stomatolog"
+              ],
+              "answer": 3,
+              "explanation": "To‘g‘ri javob: Malakali stomatolog. Stomatologiya klinikasi turli ixtisosliklar bo‘yicha xizmat ko‘rsatishi mumkin. Xizmatlar spektri, muassasa hajmi, jihozlanish va kadrlar tarkibi klin"
+            },
+            {
+              "id": "int_a3_q2",
+              "q": "Stomatologik assistent nima qiladi?",
+              "options": [
+                "Shifokor ishini yordamchi vazifalar bilan qo‘llab-quvvatlaydi",
+                "Har doim mustaqil tashxis qo‘yadi",
+                "Shifokor nazoratini bekor qiladi",
+                "Kasbiy standartlarni almashtiradi"
+              ],
+              "answer": 0,
+              "explanation": "To‘g‘ri javob: Shifokor ishini yordamchi vazifalar bilan qo‘llab-quvvatlaydi. Stomatologiya klinikasi turli ixtisosliklar bo‘yicha xizmat ko‘rsatishi mumkin. Xizmatlar spektri, muassasa hajmi, jihozlanish va kadrlar tarkibi klin"
+            },
+            {
+              "id": "int_a3_q3",
+              "q": "Klinikalar nima jihatdan farqlanishi mumkin?",
+              "options": [
+                "Faqat eshik rangiga ko‘ra",
+                "Xizmatlar ko‘lami va ixtisosliklar bo‘yicha",
+                "Faqat logotip kattaligiga ko‘ra",
+                "Faqat telefon markasiga ko‘ra"
+              ],
+              "answer": 1,
+              "explanation": "To‘g‘ri javob: Xizmatlar ko‘lami va ixtisosliklar bo‘yicha. Stomatolog bemorni baholaydi va davolash qarorini qabul qiladi; stomatologik assistent ish jarayonini qo‘llab-quvvatlaydi; hamshira, administrator va "
+            },
+            {
+              "id": "int_a3_q4",
+              "q": "Kasbiy standartlarning maqsadi nima?",
+              "options": [
+                "Barcha xodimlarni bir kasbga aylantirish",
+                "Tekshiruvni butunlay bekor qilish",
+                "Vazifa va mas’uliyat chegaralarini belgilash",
+                "Faqat devor bezash"
+              ],
+              "answer": 2,
+              "explanation": "To‘g‘ri javob: Vazifa va mas’uliyat chegaralarini belgilash. Stomatolog bemorni baholaydi va davolash qarorini qabul qiladi; stomatologik assistent ish jarayonini qo‘llab-quvvatlaydi; hamshira, administrator va "
+            },
+            {
+              "id": "int_a3_q5",
+              "q": "Bemor ma’lumotlari bilan ishlashda nima muhim?",
+              "options": [
+                "Ma’lumotni ommaga tarqatish",
+                "Ruxsatsiz suratga olish",
+                "Hujjatlarni tasodifiy ulashish",
+                "Maxfiylikni saqlash"
+              ],
+              "answer": 3,
+              "explanation": "To‘g‘ri javob: Maxfiylikni saqlash. Kasbiy standartlar va muassasa ichki tartiblari vazifa chegaralari, hujjat yuritish, malaka va xavfsizlikni belgilaydi. Talaba o‘z vakolatini oshirmas"
+            },
+            {
+              "id": "int_a3_q6",
+              "q": "Talabaning klinik roli qanday bo‘lishi kerak?",
+              "options": [
+                "Nazorat va vakolat doirasida",
+                "Har qanday muolajani mustaqil bajarish",
+                "Nosoz uskunani o‘zi ta’mirlash",
+                "Shifokor qarorini almashtirish"
+              ],
+              "answer": 0,
+              "explanation": "To‘g‘ri javob: Nazorat va vakolat doirasida. Kasbiy standartlar va muassasa ichki tartiblari vazifa chegaralari, hujjat yuritish, malaka va xavfsizlikni belgilaydi. Talaba o‘z vakolatini oshirmas"
+            }
+          ],
+          "sources": [
+            "https://www.sammu.uz/uz/pages/dentistry_faculty",
+            "https://www.sammu.uz/uz/pages/history_dentistry_faculty",
+            "https://e-library.sammu.uz/uz/book/4555"
+          ],
+          "review_status": "DRAFT — manba va tushuntirishlar o‘qituvchi tomonidan tekshirilishi kerak"
+        },
+        {
+          "id": "intro_a4",
+          "title": "A4. Yuz-jag‘ sohasi shikastlangan bemorlarni parvarish qilish",
+          "focus": "Yuz-jag‘ sohasi shikastlangan bemorlarni parvarish qilish",
+          "session_number": 4,
+          "calendar_topic": "Yuz-jag‘ sohasi shikastlangan bemorlarni parvarish qilish",
+          "sections": [
+            {
+              "heading": "Parvarish va xavfsizlik",
+              "body": "Yuz-jag‘ sohasi shikastlangan bemorni parvarishlashda umumiy ahvolini kuzatish, xavfsiz muloqot va shifokor ko‘rsatmalariga rioya qilish muhim. Bu mavzuda talabalar parvarish tashkiliy tamoyillarini, bemorning ehtiyojlarini va tibbiy jamoa mas’uliyatini tushunadilar."
+            },
+            {
+              "heading": "Muloqot va yordam",
+              "body": "Shikastlanish nutq, ovqatlanish va og‘iz gigiyenasi bilan bog‘liq qiyinchiliklarga sabab bo‘lishi mumkin. Tibbiyot xodimi bemor bilan sabrli muloqot qiladi va o‘z vakolati doirasida qulaylikni tashkil etadi. Shikast darajasini baholash va yordam turi shifokor vakolatidir."
+            },
+            {
+              "heading": "Shoshilinch holatlarda yo‘naltirish",
+              "body": "Nafas olish qiyinlashuvi yoki umumiy ahvol keskin o‘zgarishi kabi belgilar shoshilinch tibbiy baholash zarurligini ko‘rsatadi. Bunday vaziyatlarda tez yordam chaqirish va muassasaning shoshilinch protokollariga amal qilish lozim. Talaba mustaqil invaziv amaliyot o‘tkazmaydi."
+            }
+          ],
+          "questions": [
+            {
+              "id": "int_a4_q1",
+              "q": "Yuz-jag‘ jarohatida parvarishning muhim qismi qaysi?",
+              "options": [
+                "Bemor ahvolini kuzatish",
+                "Shifokor nazoratini bekor qilish",
+                "Asbobni nazoratsiz qo‘llash",
+                "Tibbiy hujjatlarni yashirish"
+              ],
+              "answer": 0,
+              "explanation": "To‘g‘ri javob: Bemor ahvolini kuzatish. Yuz-jag‘ sohasi shikastlangan bemorni parvarishlashda umumiy ahvolini kuzatish, xavfsiz muloqot va shifokor ko‘rsatmalariga rioya qilish muhim. Bu mav"
+            },
+            {
+              "id": "int_a4_q2",
+              "q": "Yuz-jag‘ sohasi shikastlanishi nimalarga ta’sir qilishi mumkin?",
+              "options": [
+                "Faqat oyoq kiyim o‘lchamiga",
+                "Nutq va ovqatlanishga",
+                "Faqat barmoq uzunligiga",
+                "Faqat soch rangiga"
+              ],
+              "answer": 1,
+              "explanation": "To‘g‘ri javob: Nutq va ovqatlanishga. Yuz-jag‘ sohasi shikastlangan bemorni parvarishlashda umumiy ahvolini kuzatish, xavfsiz muloqot va shifokor ko‘rsatmalariga rioya qilish muhim. Bu mav"
+            },
+            {
+              "id": "int_a4_q3",
+              "q": "Bemor bilan muloqot qanday bo‘lishi kerak?",
+              "options": [
+                "Kamsituvchi",
+                "Shoshma-shosharlik bilan",
+                "Hurmatli va tushunarli",
+                "Maxfiyliksiz"
+              ],
+              "answer": 2,
+              "explanation": "To‘g‘ri javob: Hurmatli va tushunarli. Shikastlanish nutq, ovqatlanish va og‘iz gigiyenasi bilan bog‘liq qiyinchiliklarga sabab bo‘lishi mumkin. Tibbiyot xodimi bemor bilan sabrli muloqot q"
+            },
+            {
+              "id": "int_a4_q4",
+              "q": "Shikast darajasini tibbiy baholash kimning vazifasi?",
+              "options": [
+                "Faqat administratorning",
+                "Faqat sinfdoshning",
+                "Faqat sotuvchining",
+                "Shifokorning"
+              ],
+              "answer": 3,
+              "explanation": "To‘g‘ri javob: Shifokorning. Shikastlanish nutq, ovqatlanish va og‘iz gigiyenasi bilan bog‘liq qiyinchiliklarga sabab bo‘lishi mumkin. Tibbiyot xodimi bemor bilan sabrli muloqot q"
+            },
+            {
+              "id": "int_a4_q5",
+              "q": "Nafas olish keskin qiyinlashsa nima kerak?",
+              "options": [
+                "Shoshilinch tibbiy yordam",
+                "Rejali reklama konsultatsiyasi",
+                "Faqat uyquni kutish",
+                "Bu holatni e’tiborsiz qoldirish"
+              ],
+              "answer": 0,
+              "explanation": "To‘g‘ri javob: Shoshilinch tibbiy yordam. Nafas olish qiyinlashuvi yoki umumiy ahvol keskin o‘zgarishi kabi belgilar shoshilinch tibbiy baholash zarurligini ko‘rsatadi. Bunday vaziyatlarda tez"
+            },
+            {
+              "id": "int_a4_q6",
+              "q": "Klinik parvarishda talaba nimaga amal qiladi?",
+              "options": [
+                "Faqat internet taxminiga",
+                "O‘qituvchi va shifokor ko‘rsatmalariga",
+                "Mustaqil invaziv tajribaga",
+                "Hujjatsiz tavsiyaga"
+              ],
+              "answer": 1,
+              "explanation": "To‘g‘ri javob: O‘qituvchi va shifokor ko‘rsatmalariga. Nafas olish qiyinlashuvi yoki umumiy ahvol keskin o‘zgarishi kabi belgilar shoshilinch tibbiy baholash zarurligini ko‘rsatadi. Bunday vaziyatlarda tez"
+            }
+          ],
+          "sources": [
+            "https://www.sammu.uz/uz/pages/dentistry_faculty",
+            "https://www.sammu.uz/uz/pages/history_dentistry_faculty",
+            "https://e-library.sammu.uz/uz/book/4555"
+          ],
+          "review_status": "DRAFT — manba va tushuntirishlar o‘qituvchi tomonidan tekshirilishi kerak"
+        },
+        {
+          "id": "intro_a5",
+          "title": "A5. Stomatologiyada deontologiya, tibbiy etika va xalqaro tamoyillar",
+          "focus": "Stomatologiyada deontologiya, tibbiy etika va xalqaro tamoyillar",
+          "session_number": 5,
+          "calendar_topic": "Stomatologiyada deontologiya, tibbiy etika va xalqaro tamoyillar",
+          "sections": [
+            {
+              "heading": "Tibbiy etika va deontologiya",
+              "body": "Tibbiy etika sog‘liqni saqlashda to‘g‘ri xulq-atvor, inson qadr-qimmati va mas’uliyatni o‘rganadi. Deontologiya kasbiy burch va tibbiyot xodimining bemor oldidagi majburiyatlari haqidagi tushunchalarni qamrab oladi."
+            },
+            {
+              "heading": "Rozilik va maxfiylik",
+              "body": "Tibbiy muolajadan oldin yetarli tushuntirish va bemorning tegishli roziligi muhim. Shaxsiy ma’lumotlarni maxfiy saqlash tibbiyotda asosiy axloqiy vazifalardan biridir. Klinik qarorlar faqat bemorning istagiga yoki reklama va’dasiga emas, tibbiy bilimlarga ham tayanadi."
+            },
+            {
+              "heading": "Xalqaro etik tamoyillar",
+              "body": "Tibbiy yordamda zarar yetkazmaslik, foyda keltirish, adolat va bemor avtonomiyasi kabi tamoyillar keng muhokama qilinadi. Ular mahalliy huquqiy me’yor va professional standartlarga zid emas, balki bemor manfaatini hurmat qiluvchi qarorlar uchun yo‘nalish beradi."
+            }
+          ],
+          "questions": [
+            {
+              "id": "int_a5_q1",
+              "q": "Deontologiya asosan nimaga doir?",
+              "options": [
+                "Suyak zichligiga",
+                "Kasbiy burch va majburiyatlarga",
+                "Bor geometriyasiga",
+                "Kompressor tezligiga"
+              ],
+              "answer": 1,
+              "explanation": "To‘g‘ri javob: Kasbiy burch va majburiyatlarga. Tibbiy etika sog‘liqni saqlashda to‘g‘ri xulq-atvor, inson qadr-qimmati va mas’uliyatni o‘rganadi. Deontologiya kasbiy burch va tibbiyot xodimining be"
+            },
+            {
+              "id": "int_a5_q2",
+              "q": "Tibbiy maxfiylik nima uchun muhim?",
+              "options": [
+                "Bemor ma’lumotini reklama qilish uchun",
+                "Hujjatlarni ommaga tarqatish uchun",
+                "Bemorning shaxsiy ma’lumotlarini himoyalash uchun",
+                "Nazoratni bekor qilish uchun"
+              ],
+              "answer": 2,
+              "explanation": "To‘g‘ri javob: Bemorning shaxsiy ma’lumotlarini himoyalash uchun. Tibbiy etika sog‘liqni saqlashda to‘g‘ri xulq-atvor, inson qadr-qimmati va mas’uliyatni o‘rganadi. Deontologiya kasbiy burch va tibbiyot xodimining be"
+            },
+            {
+              "id": "int_a5_q3",
+              "q": "Bemor avtonomiyasi tushunchasi nimaga bog‘liq?",
+              "options": [
+                "Faqat asboblar soniga",
+                "Faqat klinika rangiga",
+                "Faqat stomatolog kreslosiga",
+                "Bemorning xabardor tanlovi va huquqlariga"
+              ],
+              "answer": 3,
+              "explanation": "To‘g‘ri javob: Bemorning xabardor tanlovi va huquqlariga. Tibbiy muolajadan oldin yetarli tushuntirish va bemorning tegishli roziligi muhim. Shaxsiy ma’lumotlarni maxfiy saqlash tibbiyotda asosiy axloqiy vazi"
+            },
+            {
+              "id": "int_a5_q4",
+              "q": "Zarar yetkazmaslik qaysi sohaga tegishli?",
+              "options": [
+                "Tibbiy etika tamoyillariga",
+                "Faqat material narxiga",
+                "Faqat elektr tizimiga",
+                "Faqat geologiyaga"
+              ],
+              "answer": 0,
+              "explanation": "To‘g‘ri javob: Tibbiy etika tamoyillariga. Tibbiy muolajadan oldin yetarli tushuntirish va bemorning tegishli roziligi muhim. Shaxsiy ma’lumotlarni maxfiy saqlash tibbiyotda asosiy axloqiy vazi"
+            },
+            {
+              "id": "int_a5_q5",
+              "q": "Tibbiy rozilik qanday yondashuvga asoslanishi kerak?",
+              "options": [
+                "Majburlashga",
+                "Yetarli tushuntirish va ixtiyoriy qarorga",
+                "Ma’lumotni yashirishga",
+                "Faqat reklama matniga"
+              ],
+              "answer": 1,
+              "explanation": "To‘g‘ri javob: Yetarli tushuntirish va ixtiyoriy qarorga. Tibbiy yordamda zarar yetkazmaslik, foyda keltirish, adolat va bemor avtonomiyasi kabi tamoyillar keng muhokama qilinadi. Ular mahalliy huquqiy me’yor"
+            },
+            {
+              "id": "int_a5_q6",
+              "q": "Adolat tamoyili nimani anglatadi?",
+              "options": [
+                "Faqat bir guruhni e’tiborga olishni",
+                "Ma’lumotlarni yashirishni",
+                "Bemorlarga xolis munosabatni",
+                "Shifokorni almashtirishni"
+              ],
+              "answer": 2,
+              "explanation": "To‘g‘ri javob: Bemorlarga xolis munosabatni. Tibbiy yordamda zarar yetkazmaslik, foyda keltirish, adolat va bemor avtonomiyasi kabi tamoyillar keng muhokama qilinadi. Ular mahalliy huquqiy me’yor"
+            }
+          ],
+          "sources": [
+            "https://www.sammu.uz/uz/pages/dentistry_faculty",
+            "https://www.sammu.uz/uz/pages/history_dentistry_faculty",
+            "https://e-library.sammu.uz/uz/book/4555"
+          ],
+          "review_status": "DRAFT — manba va tushuntirishlar o‘qituvchi tomonidan tekshirilishi kerak"
+        },
+        {
+          "id": "intro_a6",
+          "title": "A6. Stomatologiya kabineti jihozlari va asosiy asbob-uskunalar",
+          "focus": "Stomatologiya kabineti jihozlari va asosiy asbob-uskunalar",
+          "session_number": 6,
+          "calendar_topic": "Stomatologiya kabineti jihozlari va asosiy asbob-uskunalar",
+          "sections": [
+            {
+              "heading": "Kabinetning asosiy tarkibi",
+              "body": "Stomatologik kreslo, yoritgich, asboblar moduli, aspiratsiya, havo-suv tizimlari va gigiyena uchun jihozlar kabi qismlar uchraydi. Barcha kabinetlarda aynan bir model bo‘lishi shart emas."
+            },
+            {
+              "heading": "Ko‘rik va material asboblari",
+              "body": "Ko‘rik ko‘zgusi, pinset va boshqa qo‘l asboblari vazifasiga ko‘ra ajratiladi. Restavratsion materiallar bilan ishlaydigan spatula va yordamchi moslamalar boshqa guruhdir. Asbobning maqsadi va qayta ishlanishi texnik hujjatga asoslanadi."
+            },
+            {
+              "heading": "Xavfsizlik madaniyati",
+              "body": "Klinikada toza va ifloslangan materiallar oqimi ajratilishi, elektr jihozlari mas’ul mutaxassislar tomonidan boshqarilishi kerak. Talaba uskuna bilan ishlashni nazorat ostida o‘rganadi; texnik qurilmani mustaqil yig‘ish yoki qayta ulash tavsiya etilmaydi."
+            }
+          ],
+          "questions": [
+            {
+              "id": "int_a6_q1",
+              "q": "Stomatologik kreslo nimaga xizmat qiladi?",
+              "options": [
+                "Sementni qotirishga",
+                "Bor yasashga",
+                "Bemor holatini qulay joylashtirishga",
+                "Steril paketni muhrlashga"
+              ],
+              "answer": 2,
+              "explanation": "To‘g‘ri javob: Bemor holatini qulay joylashtirishga. Stomatologik kreslo, yoritgich, asboblar moduli, aspiratsiya, havo-suv tizimlari va gigiyena uchun jihozlar kabi qismlar uchraydi. Barcha kabinetlarda"
+            },
+            {
+              "id": "int_a6_q2",
+              "q": "Aspiratsiya tizimi qanday vazifada ishlaydi?",
+              "options": [
+                "Yoritgichni ranglashda",
+                "Suyakni o‘lchashda",
+                "Tashxisni avtomatik chiqarishda",
+                "Suyuqlikni so‘rib chiqarishda"
+              ],
+              "answer": 3,
+              "explanation": "To‘g‘ri javob: Suyuqlikni so‘rib chiqarishda. Stomatologik kreslo, yoritgich, asboblar moduli, aspiratsiya, havo-suv tizimlari va gigiyena uchun jihozlar kabi qismlar uchraydi. Barcha kabinetlarda"
+            },
+            {
+              "id": "int_a6_q3",
+              "q": "Ko‘rik ko‘zgusining vazifasi qaysi?",
+              "options": [
+                "Og‘izdagi ayrim hududlarni ko‘rishga yordam berish",
+                "Kompressorni ishga tushirish",
+                "Elektr zaryadini o‘lchash",
+                "Cement aralashtirish"
+              ],
+              "answer": 0,
+              "explanation": "To‘g‘ri javob: Og‘izdagi ayrim hududlarni ko‘rishga yordam berish. Ko‘rik ko‘zgusi, pinset va boshqa qo‘l asboblari vazifasiga ko‘ra ajratiladi. Restavratsion materiallar bilan ishlaydigan spatula va yordamchi moslama"
+            },
+            {
+              "id": "int_a6_q4",
+              "q": "Asboblarni tasniflash nimaga bog‘liq?",
+              "options": [
+                "Faqat do‘kon narxiga",
+                "Vazifasi va ishlash xususiyatiga",
+                "Faqat korpus rangiga",
+                "Faqat ishlab chiqarish shahri bilan"
+              ],
+              "answer": 1,
+              "explanation": "To‘g‘ri javob: Vazifasi va ishlash xususiyatiga. Ko‘rik ko‘zgusi, pinset va boshqa qo‘l asboblari vazifasiga ko‘ra ajratiladi. Restavratsion materiallar bilan ishlaydigan spatula va yordamchi moslama"
+            },
+            {
+              "id": "int_a6_q5",
+              "q": "Kabinetda toza va iflos buyumlarni ajratish nima uchun kerak?",
+              "options": [
+                "Asbobni qimmat qilish uchun",
+                "Xona yoritishini oshirish uchun",
+                "Kontaminatsiya xavfini kamaytirish uchun",
+                "Telefonni himoyalash uchun"
+              ],
+              "answer": 2,
+              "explanation": "To‘g‘ri javob: Kontaminatsiya xavfini kamaytirish uchun. Klinikada toza va ifloslangan materiallar oqimi ajratilishi, elektr jihozlari mas’ul mutaxassislar tomonidan boshqarilishi kerak. Talaba uskuna bilan "
+            },
+            {
+              "id": "int_a6_q6",
+              "q": "Asbob mosligi va texnik xavfsizlik manbai qaysi?",
+              "options": [
+                "Tasodifiy video izohi",
+                "Faqat yorliq rangi",
+                "Faqat reklama",
+                "Ishlab chiqaruvchining yo‘riqnomasi"
+              ],
+              "answer": 3,
+              "explanation": "To‘g‘ri javob: Ishlab chiqaruvchining yo‘riqnomasi. Klinikada toza va ifloslangan materiallar oqimi ajratilishi, elektr jihozlari mas’ul mutaxassislar tomonidan boshqarilishi kerak. Talaba uskuna bilan "
+            }
+          ],
+          "sources": [
+            "https://www.sammu.uz/uz/pages/dentistry_faculty",
+            "https://www.sammu.uz/uz/pages/history_dentistry_faculty",
+            "https://e-library.sammu.uz/uz/book/4555"
+          ],
+          "review_status": "DRAFT — manba va tushuntirishlar o‘qituvchi tomonidan tekshirilishi kerak"
+        },
+        {
+          "id": "intro_a7",
+          "title": "A7. Stomatologik ish joyining ergonomik tamoyillari",
+          "focus": "Stomatologik ish joyining ergonomik tamoyillari",
+          "session_number": 7,
+          "calendar_topic": "Stomatologik ish joyining ergonomik tamoyillari",
+          "sections": [
+            {
+              "heading": "Ergonomikaning maqsadi",
+              "body": "Ergonomika ish muhitini odamning jismoniy imkoniyatlariga moslashga qaratiladi. Qulay ko‘rish, yoritish, asboblarning joylashuvi, gavda holati va ish tartibi sog‘liqni saqlash xodimlarida ishni tashkil etishning muhim qismlaridir."
+            },
+            {
+              "heading": "Jamoaviy faoliyat",
+              "body": "Stomatolog va assistent muvofiqlashtirilgan holda ishlaganda ortiqcha harakatlarni kamaytirishi mumkin. Ishchi asboblarni tartibli joylash, bemor bilan oldindan muloqot qilish va vazifalarni taqsimlash samaradorlikni qo‘llab-quvvatlaydi."
+            },
+            {
+              "heading": "Ish hududlarini tashkil qilish",
+              "body": "Shifokor hududi, assistent hududi, asboblar oqimi va toza materiallar zonalari ish joyining konseptual qismlaridir. Aniq joylashuv klinikaning rejasi va sanitariya talablariga moslashtiriladi. Noqulay holatda uzoq ishlash mehnat salomatligiga salbiy ta’sir qilishi mumkin."
+            }
+          ],
+          "questions": [
+            {
+              "id": "int_a7_q1",
+              "q": "Ergonomika nimaga qaratilgan?",
+              "options": [
+                "Faqat reklama joylashtirishga",
+                "Faqat asboblarni almashtirishga",
+                "Faqat dori sotishga",
+                "Ish sharoitini odamga moslashtirishga"
+              ],
+              "answer": 3,
+              "explanation": "To‘g‘ri javob: Ish sharoitini odamga moslashtirishga. Ergonomika ish muhitini odamning jismoniy imkoniyatlariga moslashga qaratiladi. Qulay ko‘rish, yoritish, asboblarning joylashuvi, gavda holati va ish "
+            },
+            {
+              "id": "int_a7_q2",
+              "q": "Shifokor-assistent hamkorligi nimaga yordam beradi?",
+              "options": [
+                "Ish harakatlarini muvofiqlashtirishga",
+                "Barcha nazoratni bekor qilishga",
+                "Asboblarni sterilizatsiyasiz ishlatishga",
+                "Bemor roziligini chetlab o‘tishga"
+              ],
+              "answer": 0,
+              "explanation": "To‘g‘ri javob: Ish harakatlarini muvofiqlashtirishga. Ergonomika ish muhitini odamning jismoniy imkoniyatlariga moslashga qaratiladi. Qulay ko‘rish, yoritish, asboblarning joylashuvi, gavda holati va ish "
+            },
+            {
+              "id": "int_a7_q3",
+              "q": "Ish joyida yoritish qanday rol o‘ynaydi?",
+              "options": [
+                "Barcha materialni qotiradi",
+                "Ko‘rish sharoitini yaxshilaydi",
+                "Bemorni avtomatik tashxislaydi",
+                "Elektr tizimini ta’mirlaydi"
+              ],
+              "answer": 1,
+              "explanation": "To‘g‘ri javob: Ko‘rish sharoitini yaxshilaydi. Stomatolog va assistent muvofiqlashtirilgan holda ishlaganda ortiqcha harakatlarni kamaytirishi mumkin. Ishchi asboblarni tartibli joylash, bemor bila"
+            },
+            {
+              "id": "int_a7_q4",
+              "q": "Ishchi buyumlarni oqilona joylashtirish nima uchun muhim?",
+              "options": [
+                "Yorug‘likni doimo o‘chiradi",
+                "Tishning shaklini avtomatik o‘zgartiradi",
+                "Keraksiz harakatlarni kamaytirishi mumkin",
+                "Har bir klinikani bir xil qiladi"
+              ],
+              "answer": 2,
+              "explanation": "To‘g‘ri javob: Keraksiz harakatlarni kamaytirishi mumkin. Stomatolog va assistent muvofiqlashtirilgan holda ishlaganda ortiqcha harakatlarni kamaytirishi mumkin. Ishchi asboblarni tartibli joylash, bemor bila"
+            },
+            {
+              "id": "int_a7_q5",
+              "q": "Uzoq vaqt noqulay gavda holati bilan ishlash nimaga bog‘liq?",
+              "options": [
+                "Faqat material narxiga",
+                "Faqat suv bosimiga",
+                "Faqat kabinet rangiga",
+                "Mehnat salomatligi xatarlariga"
+              ],
+              "answer": 3,
+              "explanation": "To‘g‘ri javob: Mehnat salomatligi xatarlariga. Shifokor hududi, assistent hududi, asboblar oqimi va toza materiallar zonalari ish joyining konseptual qismlaridir. Aniq joylashuv klinikaning rejasi "
+            },
+            {
+              "id": "int_a7_q6",
+              "q": "Ergonomik talablarni qo‘llashda nima inobatga olinadi?",
+              "options": [
+                "Mahalliy qoidalar va ish vazifasi",
+                "Faqat reklama ranglari",
+                "Faqat bino nomi",
+                "Faqat telefon modeli"
+              ],
+              "answer": 0,
+              "explanation": "To‘g‘ri javob: Mahalliy qoidalar va ish vazifasi. Shifokor hududi, assistent hududi, asboblar oqimi va toza materiallar zonalari ish joyining konseptual qismlaridir. Aniq joylashuv klinikaning rejasi "
+            }
+          ],
+          "sources": [
+            "https://www.sammu.uz/uz/pages/dentistry_faculty",
+            "https://www.sammu.uz/uz/pages/history_dentistry_faculty",
+            "https://e-library.sammu.uz/uz/book/4555"
+          ],
+          "review_status": "DRAFT — manba va tushuntirishlar o‘qituvchi tomonidan tekshirilishi kerak"
+        },
+        {
+          "id": "intro_a8",
+          "title": "A8. Stomatologiya muassasalarida sanitariya va shaxsiy gigiyena",
+          "focus": "Stomatologiya muassasalarida sanitariya va shaxsiy gigiyena",
+          "session_number": 8,
+          "calendar_topic": "Stomatologiya muassasalarida sanitariya va shaxsiy gigiyena",
+          "sections": [
+            {
+              "heading": "Sanitariya-gigiyena rejimi",
+              "body": "Tibbiyot muassasasida gigiyena rejimi xodimlar, bemorlar va yuzalar bilan bog‘liq infektsion xatarlarni kamaytirishga qaratiladi. Qo‘l gigiyenasi, xonalar tozaligi, material oqimi va himoya choralari muassasa protokoli bilan boshqariladi."
+            },
+            {
+              "heading": "Xodim salomatligi va nazorat",
+              "body": "Sog‘liqni saqlash xodimlarining zarur tibbiy ko‘riklari va kasbiy immunizatsiya talablari mahalliy me’yorlar bilan belgilanadi. Sog‘liq holati va ishga ruxsat masalalari mas’ul tibbiyot xodimlari tomonidan baholanadi."
+            },
+            {
+              "heading": "Epidemiologik xavfsizlik",
+              "body": "Shaxsiy himoya vositalari va toza/iflos oqimlarni ajratish, shuningdek, dezinfeksiya va sterilizatsiya jarayonlarini farqlash muhim. Talaba bu tamoyillarni nazariy jihatdan bilishi, amaliy tartibni o‘qituvchi va tasdiqlangan protokolga asoslanib o‘rganishi kerak."
+            }
+          ],
+          "questions": [
+            {
+              "id": "int_a8_q1",
+              "q": "Qo‘l gigiyenasi nimaga xizmat qiladi?",
+              "options": [
+                "Infeksiya tarqalish xavfini kamaytirishga",
+                "Faqat yoritish sifatini oshirishga",
+                "Borni tezroq aylantirishga",
+                "Cementni mustahkamlashga"
+              ],
+              "answer": 0,
+              "explanation": "To‘g‘ri javob: Infeksiya tarqalish xavfini kamaytirishga. Tibbiyot muassasasida gigiyena rejimi xodimlar, bemorlar va yuzalar bilan bog‘liq infektsion xatarlarni kamaytirishga qaratiladi. Qo‘l gigiyenasi, xon"
+            },
+            {
+              "id": "int_a8_q2",
+              "q": "Sanitariya rejimi qayerda belgilanadi?",
+              "options": [
+                "Faqat ijtimoiy tarmoqda",
+                "Tasdiqlangan muassasa va mahalliy talablarda",
+                "Faqat reklamada",
+                "Faqat dars jadvalida"
+              ],
+              "answer": 1,
+              "explanation": "To‘g‘ri javob: Tasdiqlangan muassasa va mahalliy talablarda. Tibbiyot muassasasida gigiyena rejimi xodimlar, bemorlar va yuzalar bilan bog‘liq infektsion xatarlarni kamaytirishga qaratiladi. Qo‘l gigiyenasi, xon"
+            },
+            {
+              "id": "int_a8_q3",
+              "q": "Xodimlarning tibbiy ko‘rigiga oid talablar nimaga asoslanadi?",
+              "options": [
+                "Faqat kabinet rangiga",
+                "Faqat telefon markasiga",
+                "Sog‘liqni saqlash me’yorlariga",
+                "Faqat shaxsiy taxminga"
+              ],
+              "answer": 2,
+              "explanation": "To‘g‘ri javob: Sog‘liqni saqlash me’yorlariga. Sog‘liqni saqlash xodimlarining zarur tibbiy ko‘riklari va kasbiy immunizatsiya talablari mahalliy me’yorlar bilan belgilanadi. Sog‘liq holati va ishg"
+            },
+            {
+              "id": "int_a8_q4",
+              "q": "Shaxsiy himoya vositalari nima uchun qo‘llanadi?",
+              "options": [
+                "Asboblarni qimmatlashtirish uchun",
+                "Rentgenni yoqish uchun",
+                "Bemorni avtomatik davolash uchun",
+                "Kasbiy biologik xatarlarni kamaytirish uchun"
+              ],
+              "answer": 3,
+              "explanation": "To‘g‘ri javob: Kasbiy biologik xatarlarni kamaytirish uchun. Sog‘liqni saqlash xodimlarining zarur tibbiy ko‘riklari va kasbiy immunizatsiya talablari mahalliy me’yorlar bilan belgilanadi. Sog‘liq holati va ishg"
+            },
+            {
+              "id": "int_a8_q5",
+              "q": "Toza va iflos ashyolar oqimini ajratish nimaning qismi?",
+              "options": [
+                "Infeksiya nazoratining",
+                "Elektr ta’minotining",
+                "Marketing strategiyasining",
+                "Geodeziyaning"
+              ],
+              "answer": 0,
+              "explanation": "To‘g‘ri javob: Infeksiya nazoratining. Shaxsiy himoya vositalari va toza/iflos oqimlarni ajratish, shuningdek, dezinfeksiya va sterilizatsiya jarayonlarini farqlash muhim. Talaba bu tamoyil"
+            },
+            {
+              "id": "int_a8_q6",
+              "q": "Sanitariya protokolidan chetga chiqish qanday oqibat berishi mumkin?",
+              "options": [
+                "Barcha xatarlarni yo‘qotadi",
+                "Infeksiya xavfini oshirishi mumkin",
+                "Sterilizatsiyani avtomatik amalga oshiradi",
+                "Bemor hujjatini almashtiradi"
+              ],
+              "answer": 1,
+              "explanation": "To‘g‘ri javob: Infeksiya xavfini oshirishi mumkin. Shaxsiy himoya vositalari va toza/iflos oqimlarni ajratish, shuningdek, dezinfeksiya va sterilizatsiya jarayonlarini farqlash muhim. Talaba bu tamoyil"
+            }
+          ],
+          "sources": [
+            "https://www.sammu.uz/uz/pages/dentistry_faculty",
+            "https://www.sammu.uz/uz/pages/history_dentistry_faculty",
+            "https://e-library.sammu.uz/uz/book/4555"
+          ],
+          "review_status": "DRAFT — manba va tushuntirishlar o‘qituvchi tomonidan tekshirilishi kerak"
+        },
+        {
+          "id": "intro_a9",
+          "title": "A9. Kasallik tushunchasi, etiologiya, patogenez va diagnostika",
+          "focus": "Kasallik tushunchasi, etiologiya, patogenez va diagnostika",
+          "session_number": 9,
+          "calendar_topic": "Kasallik tushunchasi, etiologiya, patogenez va diagnostika",
+          "sections": [
+            {
+              "heading": "Kasallikning umumiy tushunchasi",
+              "body": "Nozologiya kasalliklarni ilmiy tasniflash bilan shug‘ullanadi. Etiologiya kasallikning kelib chiqish sabablari va omillarini, patogenez esa kasallikning rivojlanish mexanizmlarini o‘rganadi."
+            },
+            {
+              "heading": "Simptom, sindrom va semiotika",
+              "body": "Simptom — bemorda kuzatiladigan yoki his qilinadigan belgi; sindrom esa o‘zaro bog‘liq belgilar majmui. Semiotika kasallik belgilarining tibbiy ahamiyatini o‘rganadi. Alohida belgi doimo yagona tashxisni anglatmaydi."
+            },
+            {
+              "heading": "Diagnostik fikrlash",
+              "body": "Diagnostik jarayon shikoyat va anamnez, klinik ko‘rik, zarur qo‘shimcha tekshiruvlar hamda ma’lumotlarni tahlil qilishdan iborat bo‘lishi mumkin. Tekshiruvning maqsadi xavfsiz va asosli qaror qabul qilishdir. Tashxis qo‘yish faqat tegishli malakali mutaxassis vakolatida."
+            }
+          ],
+          "questions": [
+            {
+              "id": "int_a9_q1",
+              "q": "Etiologiya nimani o‘rganadi?",
+              "options": [
+                "Faqat asbob shakllarini",
+                "Kasallik sabablari va omillarini",
+                "Faqat material qotishini",
+                "Faqat shifokor jadvalini"
+              ],
+              "answer": 1,
+              "explanation": "To‘g‘ri javob: Kasallik sabablari va omillarini. Nozologiya kasalliklarni ilmiy tasniflash bilan shug‘ullanadi. Etiologiya kasallikning kelib chiqish sabablari va omillarini, patogenez esa kasallikni"
+            },
+            {
+              "id": "int_a9_q2",
+              "q": "Patogenez nimani anglatadi?",
+              "options": [
+                "Suyak lotincha nomlarini",
+                "Faqat tibbiyot tarixi sanalarini",
+                "Kasallik rivojlanish mexanizmlarini",
+                "Faqat klinika tuzilishini"
+              ],
+              "answer": 2,
+              "explanation": "To‘g‘ri javob: Kasallik rivojlanish mexanizmlarini. Nozologiya kasalliklarni ilmiy tasniflash bilan shug‘ullanadi. Etiologiya kasallikning kelib chiqish sabablari va omillarini, patogenez esa kasallikni"
+            },
+            {
+              "id": "int_a9_q3",
+              "q": "Simptom nima?",
+              "options": [
+                "Har doim yakuniy tashxis",
+                "Shifokor kasbining nomi",
+                "Sterilizatsiya usuli",
+                "Kasallikning alohida belgisi"
+              ],
+              "answer": 3,
+              "explanation": "To‘g‘ri javob: Kasallikning alohida belgisi. Simptom — bemorda kuzatiladigan yoki his qilinadigan belgi; sindrom esa o‘zaro bog‘liq belgilar majmui. Semiotika kasallik belgilarining tibbiy ahamiy"
+            },
+            {
+              "id": "int_a9_q4",
+              "q": "Sindrom nima?",
+              "options": [
+                "O‘zaro bog‘liq belgilar majmui",
+                "Faqat bitta asbob",
+                "Faqat bemor kartasi",
+                "Faqat yoritish qurilmasi"
+              ],
+              "answer": 0,
+              "explanation": "To‘g‘ri javob: O‘zaro bog‘liq belgilar majmui. Simptom — bemorda kuzatiladigan yoki his qilinadigan belgi; sindrom esa o‘zaro bog‘liq belgilar majmui. Semiotika kasallik belgilarining tibbiy ahamiy"
+            },
+            {
+              "id": "int_a9_q5",
+              "q": "Nozologiya nimaga oid?",
+              "options": [
+                "Faqat elektr uzatishga",
+                "Kasalliklarni ilmiy tasniflashga",
+                "Faqat geometrik borlarga",
+                "Faqat muassasa reklamasiga"
+              ],
+              "answer": 1,
+              "explanation": "To‘g‘ri javob: Kasalliklarni ilmiy tasniflashga. Diagnostik jarayon shikoyat va anamnez, klinik ko‘rik, zarur qo‘shimcha tekshiruvlar hamda ma’lumotlarni tahlil qilishdan iborat bo‘lishi mumkin. Teks"
+            },
+            {
+              "id": "int_a9_q6",
+              "q": "Tashxisni kim vakolat doirasida qo‘yadi?",
+              "options": [
+                "Faqat sinfdosh",
+                "Faqat reklama agenti",
+                "Malakali tibbiyot mutaxassisi",
+                "Faqat tasodifiy bloger"
+              ],
+              "answer": 2,
+              "explanation": "To‘g‘ri javob: Malakali tibbiyot mutaxassisi. Diagnostik jarayon shikoyat va anamnez, klinik ko‘rik, zarur qo‘shimcha tekshiruvlar hamda ma’lumotlarni tahlil qilishdan iborat bo‘lishi mumkin. Teks"
+            }
+          ],
+          "sources": [
+            "https://www.sammu.uz/uz/pages/dentistry_faculty",
+            "https://www.sammu.uz/uz/pages/history_dentistry_faculty",
+            "https://e-library.sammu.uz/uz/book/4555"
+          ],
+          "review_status": "DRAFT — manba va tushuntirishlar o‘qituvchi tomonidan tekshirilishi kerak"
+        },
+        {
+          "id": "intro_a10",
+          "title": "A10. Stomatologik qurilmalar turlari va xavfsizlik",
+          "focus": "Stomatologik qurilmalar turlari va xavfsizlik",
+          "session_number": 10,
+          "calendar_topic": "Stomatologik qurilmalar turlari va xavfsizlik",
+          "sections": [
+            {
+              "heading": "Uskunalarning funksional turlari",
+              "body": "Stomatologik qurilmalarga bemor kreslosi, yoritgich, aspiratsiya moduli, mikromotor, turbinali tizim va ayrim diagnostik qurilmalar kiradi. Ular energiya manbai, vazifasi va texnik cheklovlariga ko‘ra farqlanadi."
+            },
+            {
+              "heading": "Texnik moslik va foydalanish chegaralari",
+              "body": "Bir xil ko‘rinadigan aksessuarlar turli ishlab chiqaruvchi tizimlariga mos kelmasligi mumkin. Har bir uskuna texnik hujjat, servis talablari va malakali foydalanuvchi tayyorgarligiga muhtoj. Mustaqil ta’mirlash yoki tasodifiy ulash xavf tug‘diradi."
+            },
+            {
+              "heading": "Bemor va xodim xavfsizligi",
+              "body": "Xavfsizlik elektr, mexanik, biologik va tashkiliy omillarni qamrab oladi. Nosozlikni payqaganda foydalanishni to‘xtatish va mas’ul xodimga xabar berish xavfsiz yondashuvdir. Qurilmalar bilan amaliy ko‘nikma o‘qituvchi nazorati ostida shakllanadi."
+            }
+          ],
+          "questions": [
+            {
+              "id": "int_a10_q1",
+              "q": "Aspiratsiya tizimining vazifasi nima?",
+              "options": [
+                "Kresloni dezinfeksiya qilish",
+                "Borni ishlab chiqarish",
+                "Suyuqlikni so‘rib chiqarish",
+                "Tish shaklini skanersiz ko‘chirish"
+              ],
+              "answer": 2,
+              "explanation": "To‘g‘ri javob: Suyuqlikni so‘rib chiqarish. Stomatologik qurilmalarga bemor kreslosi, yoritgich, aspiratsiya moduli, mikromotor, turbinali tizim va ayrim diagnostik qurilmalar kiradi. Ular energ"
+            },
+            {
+              "id": "int_a10_q2",
+              "q": "Mikromotor asosan nimaga xizmat qiladi?",
+              "options": [
+                "Bemor kartasini saqlashga",
+                "Suvni filtrlashga",
+                "Yorug‘lik spektrini o‘lchashga",
+                "Ishchi uchlikka harakat uzatishga"
+              ],
+              "answer": 3,
+              "explanation": "To‘g‘ri javob: Ishchi uchlikka harakat uzatishga. Stomatologik qurilmalarga bemor kreslosi, yoritgich, aspiratsiya moduli, mikromotor, turbinali tizim va ayrim diagnostik qurilmalar kiradi. Ular energ"
+            },
+            {
+              "id": "int_a10_q3",
+              "q": "Uskuna mosligi haqida qaysi manba ishonchli?",
+              "options": [
+                "Ishlab chiqaruvchi yo‘riqnomasi",
+                "Faqat reklama fotosurati",
+                "Tasodifiy forum",
+                "Faqat mahsulot rangi"
+              ],
+              "answer": 0,
+              "explanation": "To‘g‘ri javob: Ishlab chiqaruvchi yo‘riqnomasi. Bir xil ko‘rinadigan aksessuarlar turli ishlab chiqaruvchi tizimlariga mos kelmasligi mumkin. Har bir uskuna texnik hujjat, servis talablari va malaka"
+            },
+            {
+              "id": "int_a10_q4",
+              "q": "Texnik nosozlik aniqlansa nima qilish kerak?",
+              "options": [
+                "O‘zboshimchalik bilan ta’mirlash",
+                "Mas’ul mutaxassisga xabar berish",
+                "Nosozlikni yashirish",
+                "Tasodifiy qayta ulash"
+              ],
+              "answer": 1,
+              "explanation": "To‘g‘ri javob: Mas’ul mutaxassisga xabar berish. Bir xil ko‘rinadigan aksessuarlar turli ishlab chiqaruvchi tizimlariga mos kelmasligi mumkin. Har bir uskuna texnik hujjat, servis talablari va malaka"
+            },
+            {
+              "id": "int_a10_q5",
+              "q": "Dental qurilmalarda xavfsizlik nimani qamrab oladi?",
+              "options": [
+                "Faqat tashqi dizaynni",
+                "Faqat reklama nomini",
+                "Elektr, mexanik va biologik xatarlarni",
+                "Faqat katalog rangini"
+              ],
+              "answer": 2,
+              "explanation": "To‘g‘ri javob: Elektr, mexanik va biologik xatarlarni. Xavfsizlik elektr, mexanik, biologik va tashkiliy omillarni qamrab oladi. Nosozlikni payqaganda foydalanishni to‘xtatish va mas’ul xodimga xabar beris"
+            },
+            {
+              "id": "int_a10_q6",
+              "q": "Amaliy uskuna mashg‘uloti kim nazoratida bo‘ladi?",
+              "options": [
+                "Faqat talabalar guruhida",
+                "Faqat sotuvchi nazoratida",
+                "Nazoratsiz",
+                "O‘qitilgan mutaxassis"
+              ],
+              "answer": 3,
+              "explanation": "To‘g‘ri javob: O‘qitilgan mutaxassis. Xavfsizlik elektr, mexanik, biologik va tashkiliy omillarni qamrab oladi. Nosozlikni payqaganda foydalanishni to‘xtatish va mas’ul xodimga xabar beris"
+            }
+          ],
+          "sources": [
+            "https://www.sammu.uz/uz/pages/dentistry_faculty",
+            "https://www.sammu.uz/uz/pages/history_dentistry_faculty",
+            "https://e-library.sammu.uz/uz/book/4555"
+          ],
+          "review_status": "DRAFT — manba va tushuntirishlar o‘qituvchi tomonidan tekshirilishi kerak"
+        },
+        {
+          "id": "intro_a11",
+          "title": "A11. Aseptika, antiseptika, sterilizatsiya va dezinfeksiya",
+          "focus": "Aseptika, antiseptika, sterilizatsiya va dezinfeksiya",
+          "session_number": 11,
+          "calendar_topic": "Aseptika, antiseptika, sterilizatsiya va dezinfeksiya",
+          "sections": [
+            {
+              "heading": "Asosiy tushunchalar",
+              "body": "Aseptika mikroorganizmlarning tibbiy ish maydoniga tushishini oldini olishga qaratilgan chora-tadbirlar majmuidir. Antiseptika tirik to‘qimalarda mikroblar miqdorini kamaytirishga qaratilgan usullarni o‘z ichiga oladi. Bu ikki atama bir-birini to‘liq almashtirmaydi."
+            },
+            {
+              "heading": "Dezinfeksiya va sterilizatsiya",
+              "body": "Dezinfeksiya ko‘plab patogen mikroorganizmlarni kamaytirish yoki zararsizlantirishga xizmat qiladi, sterilizatsiya esa barcha tirik mikroorganizmlar shakllarini, jumladan sporalarni yo‘q qilish maqsadiga ega. Asbobga qaysi jarayon kerakligi uning qo‘llanish sohasi va muassasa protokoliga bog‘liq."
+            },
+            {
+              "heading": "Infeksiya nazorati tizimi",
+              "body": "Asbobni qayta ishlash, toza va iflos oqimlarni ajratish, qo‘l gigiyenasi va muhofaza vositalari birgalikda ishlaydi. Tayyorlov, nazorat va hujjatlashtirish mutaxassislar tomonidan bajariladi. Bu dars amaliy sterilizatsiya apparatining texnik ishlash bosqichlarini o‘rgatmaydi."
+            }
+          ],
+          "questions": [
+            {
+              "id": "int_a11_q1",
+              "q": "Aseptika qanday maqsadga xizmat qiladi?",
+              "options": [
+                "Faqat reklama yaratishga",
+                "Faqat yoritishni o‘lchashga",
+                "Faqat rentgen suratlarini saqlashga",
+                "Mikroblar tushishining oldini olishga"
+              ],
+              "answer": 3,
+              "explanation": "To‘g‘ri javob: Mikroblar tushishining oldini olishga. Aseptika mikroorganizmlarning tibbiy ish maydoniga tushishini oldini olishga qaratilgan chora-tadbirlar majmuidir. Antiseptika tirik to‘qimalarda mikr"
+            },
+            {
+              "id": "int_a11_q2",
+              "q": "Antiseptika qaysi tushuncha?",
+              "options": [
+                "Tirik to‘qimalarda mikroblar miqdorini kamaytirishga qaratilgan",
+                "Faqat qurilma tezligini o‘lchash",
+                "Faqat qadoqni bezash",
+                "Faqat klinika binosini ta’mirlash"
+              ],
+              "answer": 0,
+              "explanation": "To‘g‘ri javob: Tirik to‘qimalarda mikroblar miqdorini kamaytirishga qaratilgan. Aseptika mikroorganizmlarning tibbiy ish maydoniga tushishini oldini olishga qaratilgan chora-tadbirlar majmuidir. Antiseptika tirik to‘qimalarda mikr"
+            },
+            {
+              "id": "int_a11_q3",
+              "q": "Sterilizatsiya dezinfeksiyadan nimasi bilan farqlanadi?",
+              "options": [
+                "Faqat xonani yoritadi",
+                "Sporalarni ham qamrab oluvchi barcha mikroorganizmlarni yo‘qotishga qaratiladi",
+                "Faqat yuvish vositasining rangini o‘zgartiradi",
+                "Faqat kompressor ishini tekshiradi"
+              ],
+              "answer": 1,
+              "explanation": "To‘g‘ri javob: Sporalarni ham qamrab oluvchi barcha mikroorganizmlarni yo‘qotishga qaratiladi. Dezinfeksiya ko‘plab patogen mikroorganizmlarni kamaytirish yoki zararsizlantirishga xizmat qiladi, sterilizatsiya esa barcha tirik mikroorganizmlar s"
+            },
+            {
+              "id": "int_a11_q4",
+              "q": "Dezinfeksiya va sterilizatsiya bir xil atamalarmi?",
+              "options": [
+                "Ha, doimo bir xil",
+                "Faqat tili boshqa",
+                "Yo‘q, maqsad va darajasi farq qiladi",
+                "Faqat apparat narxi farq qiladi"
+              ],
+              "answer": 2,
+              "explanation": "To‘g‘ri javob: Yo‘q, maqsad va darajasi farq qiladi. Dezinfeksiya ko‘plab patogen mikroorganizmlarni kamaytirish yoki zararsizlantirishga xizmat qiladi, sterilizatsiya esa barcha tirik mikroorganizmlar s"
+            },
+            {
+              "id": "int_a11_q5",
+              "q": "Qo‘l gigiyenasi nimaning qismi?",
+              "options": [
+                "Geologiyaning",
+                "Reklama boshqaruvining",
+                "Stomatologik bor tasnifining",
+                "Infeksiya nazoratining"
+              ],
+              "answer": 3,
+              "explanation": "To‘g‘ri javob: Infeksiya nazoratining. Asbobni qayta ishlash, toza va iflos oqimlarni ajratish, qo‘l gigiyenasi va muhofaza vositalari birgalikda ishlaydi. Tayyorlov, nazorat va hujjatlasht"
+            },
+            {
+              "id": "int_a11_q6",
+              "q": "Asbobni qayta ishlash tartibi nimaga tayangan bo‘lishi kerak?",
+              "options": [
+                "Rasmiy protokol va ishlab chiqaruvchi ko‘rsatmasiga",
+                "Faqat talaba taxminiga",
+                "Faqat qutining rangiga",
+                "Faqat reklama videosiga"
+              ],
+              "answer": 0,
+              "explanation": "To‘g‘ri javob: Rasmiy protokol va ishlab chiqaruvchi ko‘rsatmasiga. Asbobni qayta ishlash, toza va iflos oqimlarni ajratish, qo‘l gigiyenasi va muhofaza vositalari birgalikda ishlaydi. Tayyorlov, nazorat va hujjatlasht"
+            }
+          ],
+          "sources": [
+            "https://www.sammu.uz/uz/pages/dentistry_faculty",
+            "https://www.sammu.uz/uz/pages/history_dentistry_faculty",
+            "https://e-library.sammu.uz/uz/book/4555"
+          ],
+          "review_status": "DRAFT — manba va tushuntirishlar o‘qituvchi tomonidan tekshirilishi kerak"
+        },
+        {
+          "id": "intro_a12",
+          "title": "A12. To‘rt qo‘lda ishlash, shifokor xatosi va yatrogeniya",
+          "focus": "To‘rt qo‘lda ishlash, shifokor xatosi va yatrogeniya",
+          "session_number": 12,
+          "calendar_topic": "To‘rt qo‘lda ishlash, shifokor xatosi va yatrogeniya",
+          "sections": [
+            {
+              "heading": "To‘rt qo‘lda ishlash",
+              "body": "Shifokor va assistentning muvofiqlashtirilgan hamkorligi to‘rt qo‘lda ishlash deb ataladi. Bu usulda bemor bilan aniq muloqot, vazifalarni kelishish va asboblar oqimini tartibga solish kabi tashkiliy masalalar muhim."
+            },
+            {
+              "heading": "Yatrogeniya tushunchasi",
+              "body": "Yatrogeniya tibbiy faoliyat bilan bog‘liq salbiy holatlar yoki zararlarni bildiruvchi atamadir. U har doim ataylab qilingan xatoni anglatmaydi: sabablar texnik, tashkiliy, kommunikativ yoki klinik bo‘lishi mumkin. Hodisani tahlil qilishda aybdor qidirishdan ko‘ra tizim va xavfni tushunish muhim."
+            },
+            {
+              "heading": "Xatolarning oldini olish madaniyati",
+              "body": "Aniq hujjatlashtirish, xabar berish, jamoa hamkorligi va malaka chegaralariga amal qilish xatolar xavfini kamaytirishi mumkin. Talaba shubhali vaziyatda mutaxassisga murojaat qiladi. Bemor xavfsizligi har bir ishtirokchining umumiy vazifasidir."
+            }
+          ],
+          "questions": [
+            {
+              "id": "int_a12_q1",
+              "q": "To‘rt qo‘lda ishlash nimani bildiradi?",
+              "options": [
+                "Shifokor va assistentning muvofiqlashgan ishini",
+                "To‘rt bemorga bir paytda muolajani",
+                "To‘rt xil kresloni",
+                "To‘rt marta rentgen qilishni"
+              ],
+              "answer": 0,
+              "explanation": "To‘g‘ri javob: Shifokor va assistentning muvofiqlashgan ishini. Shifokor va assistentning muvofiqlashtirilgan hamkorligi to‘rt qo‘lda ishlash deb ataladi. Bu usulda bemor bilan aniq muloqot, vazifalarni kelishish v"
+            },
+            {
+              "id": "int_a12_q2",
+              "q": "Yatrogeniya qanday tushuncha?",
+              "options": [
+                "Faqat bemor yoshini",
+                "Tibbiy faoliyat bilan bog‘liq salbiy oqibatlarni",
+                "Faqat dars vaqtini",
+                "Faqat asbob narxini"
+              ],
+              "answer": 1,
+              "explanation": "To‘g‘ri javob: Tibbiy faoliyat bilan bog‘liq salbiy oqibatlarni. Shifokor va assistentning muvofiqlashtirilgan hamkorligi to‘rt qo‘lda ishlash deb ataladi. Bu usulda bemor bilan aniq muloqot, vazifalarni kelishish v"
+            },
+            {
+              "id": "int_a12_q3",
+              "q": "Yatrogeniya har doim qasddan zarar yetkazishmi?",
+              "options": [
+                "Ha, faqat qasddan",
+                "Faqat elektr tizimi xatosi",
+                "Yo‘q, turli sababli bo‘lishi mumkin",
+                "Faqat reklama muammosi"
+              ],
+              "answer": 2,
+              "explanation": "To‘g‘ri javob: Yo‘q, turli sababli bo‘lishi mumkin. Yatrogeniya tibbiy faoliyat bilan bog‘liq salbiy holatlar yoki zararlarni bildiruvchi atamadir. U har doim ataylab qilingan xatoni anglatmaydi: sababl"
+            },
+            {
+              "id": "int_a12_q4",
+              "q": "Xatolarni kamaytirishga nima yordam beradi?",
+              "options": [
+                "Xatolarni yashirish",
+                "Protokolni e’tiborsiz qoldirish",
+                "Vazifalarni aralashtirish",
+                "Aniq muloqot va hujjatlashtirish"
+              ],
+              "answer": 3,
+              "explanation": "To‘g‘ri javob: Aniq muloqot va hujjatlashtirish. Yatrogeniya tibbiy faoliyat bilan bog‘liq salbiy holatlar yoki zararlarni bildiruvchi atamadir. U har doim ataylab qilingan xatoni anglatmaydi: sababl"
+            },
+            {
+              "id": "int_a12_q5",
+              "q": "Bemor xavfsizligi kimga tegishli?",
+              "options": [
+                "Butun tibbiy jamoaga",
+                "Faqat kassirga",
+                "Faqat marketing bo‘limiga",
+                "Faqat bemorga"
+              ],
+              "answer": 0,
+              "explanation": "To‘g‘ri javob: Butun tibbiy jamoaga. Aniq hujjatlashtirish, xabar berish, jamoa hamkorligi va malaka chegaralariga amal qilish xatolar xavfini kamaytirishi mumkin. Talaba shubhali vaziyat"
+            },
+            {
+              "id": "int_a12_q6",
+              "q": "Talaba shubhali holatda nima qiladi?",
+              "options": [
+                "Mustaqil invaziv tajriba qiladi",
+                "Mas’ul mutaxassisga xabar beradi",
+                "Xavfni yashiradi",
+                "Shifokor qarorini almashtiradi"
+              ],
+              "answer": 1,
+              "explanation": "To‘g‘ri javob: Mas’ul mutaxassisga xabar beradi. Aniq hujjatlashtirish, xabar berish, jamoa hamkorligi va malaka chegaralariga amal qilish xatolar xavfini kamaytirishi mumkin. Talaba shubhali vaziyat"
+            }
+          ],
+          "sources": [
+            "https://www.sammu.uz/uz/pages/dentistry_faculty",
+            "https://www.sammu.uz/uz/pages/history_dentistry_faculty",
+            "https://e-library.sammu.uz/uz/book/4555"
+          ],
+          "review_status": "DRAFT — manba va tushuntirishlar o‘qituvchi tomonidan tekshirilishi kerak"
+        }
+      ]
     }
   ]
 }
