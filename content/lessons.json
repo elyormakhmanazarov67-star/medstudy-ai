@@ -1,7 +1,7 @@
 {
-  "version": "0.5.10-topic-specific-lessons",
+  "version": "0.5.11-latin-terminology",
   "status": "TEST — O‘qituvchi materiallari va OpenStax ochiq darsliklaridan manba ko‘rsatilgan alohida o‘quv materiallari. Mutaxassis tekshiruvi talab etiladi.",
-  "note": "Mavzuga mos ma’lumot manbada topilgan darslarda alohida qisqa konspekt berilgan; yetarli manbasi bo‘lmagan darslar bo‘sh qoldirilgan.",
+  "note": "Mavzuga mos ma’lumot manbada topilgan darslarda alohida qisqa konspekt berilgan; yetarli manbasi bo‘lmagan darslar bo‘sh qoldirilgan. Profi University lotin tili dasturidagi 15 amaliy mavzu qo‘shildi; faqat yuborilgan ma’lumotlar bilan yoritilgan mavzularga konspekt berildi.",
   "subjects": [
     {
       "id": "stom_prerest",
@@ -2471,6 +2471,919 @@
           "review_status": "USER_SOURCE_DRAFT"
         }
       ]
+    },
+    {
+      "id": "lotin_tili_tibbiy_terminologiya",
+      "title": "Lotin tili va tibbiy terminologiya",
+      "academic_year": "2026–2027",
+      "semester": 1,
+      "total_sessions": 15,
+      "lessons": [
+        {
+          "id": "latin_a1",
+          "session_number": 1,
+          "title": "Tibbiy terminologiyaga kirish. Lotin tili alifbosi. Unli va undosh harflar. Urg‘u qo‘yish qoidalari.",
+          "calendar_topic": "Tibbiy terminologiyaga kirish. Lotin tili alifbosi. Unli va undosh harflar. Urg‘u qo‘yish qoidalari.",
+          "focus": "Tibbiy terminologiyaga kirish. Lotin tili alifbosi. Unli va undosh harflar. Urg‘u qo‘yish qoidalari.",
+          "sections": [
+            {
+              "heading": "Lotin alifbosi: 25 harf",
+              "body": "O‘quv taqdimoti va yuborilgan jadvalga ko‘ra tibbiy lotin alifbosi 25 harfdan iborat.\nUnlilar: A, E, I, O, U, Y (6 ta).\nUndoshlar: B, C, D, F, G, H, J, K, L, M, N, P, Q, R, S, T, V, X, Z (19 ta).\nQuyidagi 25 harfli ko‘rgazmali lug‘atda har bir harf uchun tibbiy misol va uning o‘zbekcha ma’nosi berilgan."
+            },
+            {
+              "heading": "Tibbiyotda ishlatiladigan asosiy so‘zlar",
+              "body": "Dens — tish; gingiva — milk; maxilla — yuqori jag‘; mandibula — pastki jag‘; lingua — til; nasus — burun; oculus — ko‘z; musculus — mushak. Bu so‘zlar anatomik terminlarni o‘rganish uchun asos bo‘ladi."
+            },
+            {
+              "heading": "Unli va undoshlarning talaffuzi",
+              "body": "A, E, I, O, U odatda shu nomdagi tovushlar bilan o‘qiladi; Y ko‘plab yunoncha o‘zlashmalarda «i» sifatida o‘qiladi. C harfi a, o, u oldida «k» (costa — kosta), e, i, y oldida esa o‘quv materialida «ts/s» sifatida berilgan (cito — sito)."
+            },
+            {
+              "heading": "Diftonglar",
+              "body": "ae va oe odatda «e» kabi talaffuz qilinadi: aegrotus — egrotus, oedema — edema. au va eu birikmalari birikma sifatida o‘qiladi: aurum — aurum, neuralgia — neuralgiya."
+            },
+            {
+              "heading": "Harf birikmalari",
+              "body": "qu → kv: aqua — akva. ngu unli oldida → ngv: lingua — lingva. ch → x: chirurgus — xirurgus; ph → f: phosphorus — fosforus; th → t: thermometrum — termometrum; rh → r: rheum — reum. «ti» ning talaffuzi ham so‘zdagi o‘rniga bog‘liq: solutio — solutsio, ostium — ostium."
+            },
+            {
+              "heading": "Lug‘atni mustahkamlash",
+              "body": "Yuborilgan alifbo rasmidagi misollar: Arteria — arteriya; Bronchus — bronx; Cellula — hujayra; Dens — tish; Hepar — jigar; Lingua — til; Ren — buyrak; Sanguis — qon. Qolgan misollarni 25 harfli jadvaldan o‘rganing."
+            }
+          ],
+          "teacher_materials": [
+            {
+              "title": "Lotin tili va tibbiy terminologiya — o‘quv dasturi",
+              "filename": "St.Lotin.26-27.doc",
+              "kind": "DOC",
+              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
+            },
+            {
+              "title": "25 ta harf ko‘rgazmali jadvali",
+              "filename": "photo_2026-11-08_02-29-35.jpg",
+              "kind": "JPG",
+              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
+            },
+            {
+              "title": "1-mavzu: alifbo va talaffuz",
+              "filename": "№1 mavzuLotin tili va tibbiy terminologiya (1).ppt",
+              "kind": "PPT",
+              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
+            }
+          ],
+          "questions": [
+            {
+              "id": "latin_a1_q01",
+              "q": "Lotin tili tibbiy alifbosida nechta harf bor?",
+              "options": [
+                "23",
+                "24",
+                "25",
+                "26"
+              ],
+              "answer": 2,
+              "explanation": "Alifbo jadvali 25 harfni ko‘rsatadi."
+            },
+            {
+              "id": "latin_a1_q02",
+              "q": "Lotin alifbosidagi unli harflar qaysilar?",
+              "options": [
+                "A, E, I, O, U, Y",
+                "A, O, U",
+                "B, C, D, F",
+                "A, E, I, O"
+              ],
+              "answer": 0,
+              "explanation": "Manbada 6 ta unli: A, E, I, O, U, Y."
+            },
+            {
+              "id": "latin_a1_q03",
+              "q": "«Dens» so‘zining o‘zbekcha ma’nosi?",
+              "options": [
+                "Mushak",
+                "Tish",
+                "Qon",
+                "Til"
+              ],
+              "answer": 1,
+              "explanation": "25 harfli jadvalda D — Dens — tish."
+            },
+            {
+              "id": "latin_a1_q04",
+              "q": "«Hepar» so‘zi nimani bildiradi?",
+              "options": [
+                "Jigar",
+                "Buyrak",
+                "Burun",
+                "O‘pka"
+              ],
+              "answer": 0,
+              "explanation": "Jadvalda H — Hepar — jigar."
+            },
+            {
+              "id": "latin_a1_q05",
+              "q": "«ae» harf birikmasi odatda qanday o‘qiladi?",
+              "options": [
+                "a",
+                "e",
+                "u",
+                "i"
+              ],
+              "answer": 1,
+              "explanation": "Diftonglar bo‘limida ae odatda e kabi o‘qilishi keltirilgan."
+            },
+            {
+              "id": "latin_a1_q06",
+              "q": "«Lingua» qaysi a’zoning lotincha nomi?",
+              "options": [
+                "Bosh",
+                "Yurak",
+                "Til",
+                "Ko‘z"
+              ],
+              "answer": 2,
+              "explanation": "L — Lingua — til."
+            },
+            {
+              "id": "latin_a1_q07",
+              "q": "«qu» birikmasi qanday o‘qiladi?",
+              "options": [
+                "ku",
+                "ch",
+                "kv",
+                "ng"
+              ],
+              "answer": 2,
+              "explanation": "Birikma misoli: aqua — akva."
+            },
+            {
+              "id": "latin_a1_q08",
+              "q": "«Sanguis» so‘zi nimani bildiradi?",
+              "options": [
+                "Milk",
+                "Qon",
+                "Ko‘z",
+                "Suyak"
+              ],
+              "answer": 1,
+              "explanation": "Posterda S — Sanguis — qon."
+            }
+          ],
+          "review_status": "USER_SOURCE_DRAFT — uploaded course materials",
+          "alphabet": [
+            {
+              "letter": "A",
+              "term": "Arteria",
+              "meaning": "arteriya (tomir)"
+            },
+            {
+              "letter": "B",
+              "term": "Bronchus",
+              "meaning": "bronx (nafas yo‘li)"
+            },
+            {
+              "letter": "C",
+              "term": "Cellula",
+              "meaning": "hujayra"
+            },
+            {
+              "letter": "D",
+              "term": "Dens",
+              "meaning": "tish"
+            },
+            {
+              "letter": "E",
+              "term": "Erythrocytus",
+              "meaning": "eritrotsit"
+            },
+            {
+              "letter": "F",
+              "term": "Fossa",
+              "meaning": "chuqurcha"
+            },
+            {
+              "letter": "G",
+              "term": "Glandula",
+              "meaning": "bez"
+            },
+            {
+              "letter": "H",
+              "term": "Hepar",
+              "meaning": "jigar"
+            },
+            {
+              "letter": "I",
+              "term": "Injectio",
+              "meaning": "inyeksiya (ukol)"
+            },
+            {
+              "letter": "J",
+              "term": "Junctura",
+              "meaning": "birikma"
+            },
+            {
+              "letter": "K",
+              "term": "Kalium",
+              "meaning": "kaliy"
+            },
+            {
+              "letter": "L",
+              "term": "Lingua",
+              "meaning": "til"
+            },
+            {
+              "letter": "M",
+              "term": "Musculus",
+              "meaning": "mushak"
+            },
+            {
+              "letter": "N",
+              "term": "Nasus",
+              "meaning": "burun"
+            },
+            {
+              "letter": "O",
+              "term": "Oculus",
+              "meaning": "ko‘z"
+            },
+            {
+              "letter": "P",
+              "term": "Pulmo",
+              "meaning": "o‘pka"
+            },
+            {
+              "letter": "Q",
+              "term": "Quadriceps femoris",
+              "meaning": "sonning to‘rt boshli mushagi"
+            },
+            {
+              "letter": "R",
+              "term": "Ren",
+              "meaning": "buyrak"
+            },
+            {
+              "letter": "S",
+              "term": "Sanguis",
+              "meaning": "qon"
+            },
+            {
+              "letter": "T",
+              "term": "Tonsilla",
+              "meaning": "tomoq bodomchasi"
+            },
+            {
+              "letter": "U",
+              "term": "Uterus",
+              "meaning": "bachadon"
+            },
+            {
+              "letter": "V",
+              "term": "Vena",
+              "meaning": "vena (tomir)"
+            },
+            {
+              "letter": "X",
+              "term": "Xiphoideus",
+              "meaning": "qilichsimon"
+            },
+            {
+              "letter": "Y",
+              "term": "Yersiniosis",
+              "meaning": "yersinioz"
+            },
+            {
+              "letter": "Z",
+              "term": "Zona",
+              "meaning": "soha, zona"
+            }
+          ]
+        },
+        {
+          "id": "latin_a2",
+          "session_number": 2,
+          "title": "Ot va uning grammatik kategoriyalari: rod, son, kelishik. Lug‘at formasi. Negiz. Moslashmagan aniqlovchi.",
+          "calendar_topic": "Ot va uning grammatik kategoriyalari: rod, son, kelishik. Lug‘at formasi. Negiz. Moslashmagan aniqlovchi.",
+          "focus": "Ot va uning grammatik kategoriyalari: rod, son, kelishik. Lug‘at formasi. Negiz. Moslashmagan aniqlovchi.",
+          "sections": [
+            {
+              "heading": "Ot — Nomen substantivum",
+              "body": "Lotin tilida ot anatomik tuzilma, a’zo va to‘qimalarni ifodalaydi: organum — a’zo, os — suyak, musculus — mushak, vena — vena. Otlar uch rodga ega: masculinum (m), femininum (f), neutrum (n). Sonlari: singularis — birlik, pluralis — ko‘plik."
+            },
+            {
+              "heading": "Kelishiklar va turlanishlar",
+              "body": "Tibbiy atamalarda Nominativus (bosh kelishik) va Genetivus (qaratqich kelishigi) ayniqsa muhim. Otlar Genetivus singularis tugallanishiga ko‘ra besh turlanishga bo‘linadi: I — -ae, II — -i, III — -is, IV — -us, V — -ei."
+            },
+            {
+              "heading": "Otning lug‘at shakli va negizi",
+              "body": "Lug‘atda odatda bosh kelishik, qaratqich shakli yoki uning qo‘shimchasi va rod keltiriladi: vertebra, -ae f — umurtqa; musculus, -i m — mushak; foramen, -inis n — teshik; corpus, -oris n — tana. Negiz qaratqich birlik shaklidan tegishli tugallanishni olib aniqlanadi: vertebrae → vertebr-; foraminis → foramin-."
+            },
+            {
+              "heading": "Anatomik atamalarning tuzilishi",
+              "body": "Moslashmagan aniqlovchida asosiy ot bosh kelishikda, ikkinchi ot esa qaratqich kelishigida keladi: corpus vertebrae — umurtqa tanasi; caput costae — qovurg‘a boshchasi; cavum nasi — burun bo‘shlig‘i; arcus aortae — aorta yoyi; fossa mandibulae — pastki jag‘ chuqurchasi."
+            },
+            {
+              "heading": "Lug‘at va mashqlar",
+              "body": "I turlanish: costa — qovurg‘a; gingiva — milk; maxilla — yuqori jag‘; mandibula — pastki jag‘; scapula — kurak suyagi; vertebra — umurtqa; arteria — arteriya.\nII turlanish: musculus — mushak; ligamentum — boylam; sternum — to‘sh suyagi; radius — bilak suyagi.\nMustaqil topshiriq: costa, maxilla, sutura, orbita, scapula va gingiva so‘zlarining ma’nosini yozing. «Ramus nervi», «musculus colli», «caput humeri» birikmalaridagi qaratqich otlarni toping."
+            }
+          ],
+          "teacher_materials": [
+            {
+              "title": "Lotin tili va tibbiy terminologiya — o‘quv dasturi",
+              "filename": "St.Lotin.26-27.doc",
+              "kind": "DOC",
+              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
+            },
+            {
+              "title": "2-mavzu: ot va grammatik kategoriyalar",
+              "filename": "№2Lotin tili.pptx",
+              "kind": "PPTX",
+              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
+            },
+            {
+              "title": "2-mavzu: terminlar va mashqlar",
+              "filename": "2-mavzu lotin tili mashq (2) (2).docx",
+              "kind": "DOCX",
+              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
+            },
+            {
+              "title": "Blits-so‘rov va moslik mashqlari",
+              "filename": "3-mavzu lotin.docx",
+              "kind": "DOCX",
+              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
+            },
+            {
+              "title": "Mavzulashtirilgan lug‘at",
+              "filename": "Lotin tili mavzulashtirilgan.docx",
+              "kind": "DOCX",
+              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
+            }
+          ],
+          "questions": [
+            {
+              "id": "latin_a2_q01",
+              "q": "«maxilla» qaysi anatomik tuzilma?",
+              "options": [
+                "Pastki jag‘",
+                "Yuqori jag‘",
+                "Kurak suyagi",
+                "Bo‘yin"
+              ],
+              "answer": 1,
+              "explanation": "Maxilla — yuqori jag‘."
+            },
+            {
+              "id": "latin_a2_q02",
+              "q": "«mandibula» nimani bildiradi?",
+              "options": [
+                "Pastki jag‘",
+                "Yelka suyagi",
+                "O‘pka",
+                "Ko‘z"
+              ],
+              "answer": 0,
+              "explanation": "Mandibula — pastki jag‘."
+            },
+            {
+              "id": "latin_a2_q03",
+              "q": "Otlarning I turlanishida Genetivus singularis tugallanishi qaysi?",
+              "options": [
+                "-is",
+                "-i",
+                "-ae",
+                "-us"
+              ],
+              "answer": 2,
+              "explanation": "I turlanish qaratqich birlik tugallanishi -ae."
+            },
+            {
+              "id": "latin_a2_q04",
+              "q": "«corpus vertebrae» nimani bildiradi?",
+              "options": [
+                "Tish ildizi",
+                "Umurtqa tanasi",
+                "Burun yo‘li",
+                "Qon tomiri"
+              ],
+              "answer": 1,
+              "explanation": "Corpus vertebrae — umurtqa tanasi."
+            },
+            {
+              "id": "latin_a2_q05",
+              "q": "«musculus, -i m» misolida m nimani bildiradi?",
+              "options": [
+                "Neutrum",
+                "Masculinum",
+                "Femininum",
+                "Pluralis"
+              ],
+              "answer": 1,
+              "explanation": "m — genus masculinum."
+            },
+            {
+              "id": "latin_a2_q06",
+              "q": "«gingiva» qanday to‘qima nomi?",
+              "options": [
+                "Milk",
+                "Suyak",
+                "Jigar",
+                "Til"
+              ],
+              "answer": 0,
+              "explanation": "Gingiva — milk."
+            },
+            {
+              "id": "latin_a2_q07",
+              "q": "«cavum nasi» nimani bildiradi?",
+              "options": [
+                "Burun bo‘shlig‘i",
+                "Ko‘z kosasi",
+                "Og‘iz tubi",
+                "Chakka suyagi"
+              ],
+              "answer": 0,
+              "explanation": "Cavum nasi — burun bo‘shlig‘i."
+            }
+          ],
+          "review_status": "USER_SOURCE_DRAFT — uploaded course materials"
+        },
+        {
+          "id": "latin_a3",
+          "session_number": 3,
+          "title": "Sifat va uning grammatik kategoriyalari. Lug‘at formasi. Sifatlarning 2 guruhi. Murakkab anatomik atamalar.",
+          "calendar_topic": "Sifat va uning grammatik kategoriyalari. Lug‘at formasi. Sifatlarning 2 guruhi. Murakkab anatomik atamalar.",
+          "focus": "Sifat va uning grammatik kategoriyalari. Lug‘at formasi. Sifatlarning 2 guruhi. Murakkab anatomik atamalar.",
+          "sections": [
+            {
+              "heading": "Sifat — Nomen adjectivum",
+              "body": "Sifat predmetning belgisi, holati yoki xususiyatini bildiradi. Anatomik terminlarda sifat ot bilan rod, son va kelishikda moslashadi: musculus longus — uzun mushak; arteria longa — uzun arteriya; ligamentum longum — uzun boylam."
+            },
+            {
+              "heading": "I guruh sifatlari",
+              "body": "I–II turlanish asosidagi sifatlar uch rod shaklida beriladi: longus, -a, -um — uzun; magnus, -a, -um — katta; dexter, -tra, -trum — o‘ng; sinister, -tra, -trum — chap. Sifatni ishlatishda o‘zi aniqlayotgan otning rodiga mos shakl tanlanadi."
+            },
+            {
+              "heading": "II guruh sifatlari",
+              "body": "III turlanish sifatlarining ko‘pi m/f uchun -is, n uchun -e shaklida beriladi: brevis, -e — qisqa; vertebralis, -e — umurtqaga oid; frontalis, -e — peshonaga oid; dentalis, -e — tishga oid; mandibularis, -e — pastki jag‘ga oid."
+            },
+            {
+              "heading": "Moslashgan va moslashmagan aniqlovchi",
+              "body": "Moslashgan aniqlovchi ot bilan rod, son va kelishikda moslashadigan sifat: vena cava — kovak vena; ligamentum latum — keng boylam; arteria carotis communis — umumiy uyqu arteriyasi.\nMoslashmagan aniqlovchi esa qaratqich kelishigidagi ot bilan ifodalanadi: musculus capitis — bosh mushagi; ligamentum teres hepatis — jigarning yumaloq boylami."
+            },
+            {
+              "heading": "Murakkab anatomik terminlarga misollar",
+              "body": "Musculus pectoralis major — katta ko‘krak mushagi; arteria coronaria dextra — o‘ng toj arteriyasi; vena saphena magna — katta teri osti venasi; canalis palatinus major — katta tanglay kanali; tonsilla palatina — tanglay bodomchasi."
+            }
+          ],
+          "teacher_materials": [
+            {
+              "title": "Lotin tili va tibbiy terminologiya — o‘quv dasturi",
+              "filename": "St.Lotin.26-27.doc",
+              "kind": "DOC",
+              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
+            },
+            {
+              "title": "3-mavzu: sifat va anatomik atamalar",
+              "filename": "№3 Lotin tili va tibbiy terminologiya.pptx",
+              "kind": "PPTX",
+              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
+            },
+            {
+              "title": "Mavzulashtirilgan lug‘at",
+              "filename": "Lotin tili mavzulashtirilgan.docx",
+              "kind": "DOCX",
+              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
+            }
+          ],
+          "questions": [
+            {
+              "id": "latin_a3_q01",
+              "q": "«musculus longus» nimani bildiradi?",
+              "options": [
+                "Katta mushak",
+                "Uzun mushak",
+                "Kichik mushak",
+                "Chuqur mushak"
+              ],
+              "answer": 1,
+              "explanation": "Longus — uzun, musculus — mushak."
+            },
+            {
+              "id": "latin_a3_q02",
+              "q": "«arteria longa» birikmasida sifat qaysi?",
+              "options": [
+                "arteria",
+                "longa",
+                "ikkalasi ham ot",
+                "yo‘q"
+              ],
+              "answer": 1,
+              "explanation": "Longa ayol rodiga mos sifat."
+            },
+            {
+              "id": "latin_a3_q03",
+              "q": "«brevis, -e» qaysi guruhga mansub?",
+              "options": [
+                "II guruh sifatlari",
+                "I guruh sifatlari",
+                "Otlar",
+                "Sonlar"
+              ],
+              "answer": 0,
+              "explanation": "Brevis, -e — III turlanishdagi sifat turi."
+            },
+            {
+              "id": "latin_a3_q04",
+              "q": "«dentalis» qanday ma’no bildiradi?",
+              "options": [
+                "Tishga oid",
+                "Ko‘zga oid",
+                "Bo‘yinga oid",
+                "Qonga oid"
+              ],
+              "answer": 0,
+              "explanation": "Dentalis — tishga oid."
+            },
+            {
+              "id": "latin_a3_q05",
+              "q": "Moslashmagan aniqlovchi odatda qanday shaklda bo‘ladi?",
+              "options": [
+                "Sifatning oddiy darajasi",
+                "Otning qaratqich kelishigi",
+                "Fe’lning hozirgi zamoni",
+                "Sanoq son"
+              ],
+              "answer": 1,
+              "explanation": "Masalan musculus capitis — capitis qaratqichdagi ot."
+            },
+            {
+              "id": "latin_a3_q06",
+              "q": "«ligamentum latum» qanday tarjima qilinadi?",
+              "options": [
+                "Tor boylam",
+                "Keng boylam",
+                "Tish go‘shti",
+                "O‘pka"
+              ],
+              "answer": 1,
+              "explanation": "Ligamentum — boylam; latum — keng."
+            }
+          ],
+          "review_status": "USER_SOURCE_DRAFT — uploaded course materials"
+        },
+        {
+          "id": "latin_a4",
+          "session_number": 4,
+          "title": "Sifat darajalari: oddiy, qiyosiy va orttirma daraja. Yasalishi va qo‘shimchalari.",
+          "calendar_topic": "Sifat darajalari: oddiy, qiyosiy va orttirma daraja. Yasalishi va qo‘shimchalari.",
+          "focus": "Sifat darajalari: oddiy, qiyosiy va orttirma daraja. Yasalishi va qo‘shimchalari.",
+          "sections": [
+            {
+              "heading": "Sifat darajalari",
+              "body": "O‘quv taqdimotida sifatning uch darajasi berilgan: positivus — oddiy daraja (longus — uzun), comparativus — qiyosiy daraja (longior — uzunroq), superlativus — orttirma daraja (longissimus — eng uzun). Ushbu misol sifat darajalarining shaklini solishtirishga yordam beradi."
+            }
+          ],
+          "teacher_materials": [
+            {
+              "title": "Lotin tili va tibbiy terminologiya — o‘quv dasturi",
+              "filename": "St.Lotin.26-27.doc",
+              "kind": "DOC",
+              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
+            },
+            {
+              "title": "Sifat darajalari misollari",
+              "filename": "№3 Lotin tili va tibbiy terminologiya.pptx",
+              "kind": "PPTX",
+              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
+            }
+          ],
+          "questions": [
+            {
+              "id": "latin_a4_q01",
+              "q": "«longior» qanday sifat darajasi?",
+              "options": [
+                "Oddiy",
+                "Qiyosiy",
+                "Orttirma",
+                "Kelishik"
+              ],
+              "answer": 1,
+              "explanation": "Longior — uzunroq."
+            },
+            {
+              "id": "latin_a4_q02",
+              "q": "«longissimus» qaysi sifat darajasi?",
+              "options": [
+                "Oddiy",
+                "Qiyosiy",
+                "Orttirma",
+                "Son"
+              ],
+              "answer": 2,
+              "explanation": "Longissimus — eng uzun."
+            }
+          ],
+          "review_status": "USER_SOURCE_DRAFT — uploaded course materials"
+        },
+        {
+          "id": "latin_a5",
+          "session_number": 5,
+          "title": "Otlarning III turlanishi. Genus masculinum, femininum, neutrum.",
+          "calendar_topic": "Otlarning III turlanishi. Genus masculinum, femininum, neutrum.",
+          "focus": "Otlarning III turlanishi. Genus masculinum, femininum, neutrum.",
+          "sections": [
+            {
+              "heading": "III turlanishdagi otlar",
+              "body": "III turlanishdagi otlarning Genetivus singularis shakli odatda -is bilan tugaydi. Manbadagi misollar: os, ossis n — suyak; foramen, foraminis n — teshik; corpus, corporis n — tana; ren, renis m — buyrak; pulmo, pulmonis m — o‘pka. Bu guruhda turli roddagi otlar bo‘lishi mumkin."
+            }
+          ],
+          "teacher_materials": [
+            {
+              "title": "Lotin tili va tibbiy terminologiya — o‘quv dasturi",
+              "filename": "St.Lotin.26-27.doc",
+              "kind": "DOC",
+              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
+            },
+            {
+              "title": "Ot turlanishi bo‘yicha mashqlar",
+              "filename": "2-mavzu lotin tili mashq (2) (2).docx",
+              "kind": "DOCX",
+              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
+            },
+            {
+              "title": "Mavzulashtirilgan lug‘at",
+              "filename": "Lotin tili mavzulashtirilgan.docx",
+              "kind": "DOCX",
+              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
+            }
+          ],
+          "questions": [
+            {
+              "id": "latin_a5_q01",
+              "q": "III turlanishda Genetivus singularis odatda nima bilan tugaydi?",
+              "options": [
+                "-ae",
+                "-i",
+                "-is",
+                "-ei"
+              ],
+              "answer": 2,
+              "explanation": "III turlanishda -is."
+            },
+            {
+              "id": "latin_a5_q02",
+              "q": "«os, ossis n» so‘zi nimani bildiradi?",
+              "options": [
+                "Suyak",
+                "Mushak",
+                "Tish",
+                "Ko‘z"
+              ],
+              "answer": 0,
+              "explanation": "Os, ossis — suyak."
+            },
+            {
+              "id": "latin_a5_q03",
+              "q": "«foramen, foraminis n» so‘zi nimani bildiradi?",
+              "options": [
+                "Tomir",
+                "Chuqurcha",
+                "Teshik",
+                "Boylam"
+              ],
+              "answer": 2,
+              "explanation": "Foramen — teshik."
+            }
+          ],
+          "review_status": "USER_SOURCE_DRAFT — uploaded course materials"
+        },
+        {
+          "id": "latin_a6",
+          "session_number": 6,
+          "title": "I–V turlanishdagi otlar va I–III turlanishdagi sifatlarning Nominativus va Genetivus pluralis qo‘shimchalari. Sonlar.",
+          "calendar_topic": "I–V turlanishdagi otlar va I–III turlanishdagi sifatlarning Nominativus va Genetivus pluralis qo‘shimchalari. Sonlar.",
+          "focus": "I–V turlanishdagi otlar va I–III turlanishdagi sifatlarning Nominativus va Genetivus pluralis qo‘shimchalari. Sonlar.",
+          "sections": [
+            {
+              "heading": "Bosh kelishik birlik va ko‘plik",
+              "body": "Yuborilgan mashq materiallarida quyidagi shakllar bor: vena → venae (vena → venalar), musculus → musculi (mushak → mushaklar), septum → septa (to‘siq → to‘siqlar). Bunda otning rod va turlanishiga qarab ko‘plik tugallanishi o‘zgaradi."
+            },
+            {
+              "heading": "Qaratqich kelishigi misollari",
+              "body": "I turlanishda qaratqich birlikda -ae, ko‘plikda -arum ishlatiladi: patellae, patellarum. II turlanishdagi m otlari: alveoli, alveolorum; n otlari: tuberculi, tuberculorum. Manbadagi boshqa turlanishlarning barcha ko‘plik shakllari yetarli bo‘lmagani uchun bu yerda umumlashtirilmagan."
+            }
+          ],
+          "teacher_materials": [
+            {
+              "title": "Lotin tili va tibbiy terminologiya — o‘quv dasturi",
+              "filename": "St.Lotin.26-27.doc",
+              "kind": "DOC",
+              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
+            },
+            {
+              "title": "Ot turlanishi bo‘yicha mashqlar",
+              "filename": "2-mavzu lotin tili mashq (2) (2).docx",
+              "kind": "DOCX",
+              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
+            },
+            {
+              "title": "Mavzulashtirilgan lug‘at",
+              "filename": "Lotin tili mavzulashtirilgan.docx",
+              "kind": "DOCX",
+              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
+            }
+          ],
+          "questions": [
+            {
+              "id": "latin_a6_q01",
+              "q": "«vena» so‘zining Nominativus pluralis shakli qaysi?",
+              "options": [
+                "venae",
+                "venum",
+                "venis",
+                "venorum"
+              ],
+              "answer": 0,
+              "explanation": "Vena → venae."
+            },
+            {
+              "id": "latin_a6_q02",
+              "q": "«septum» so‘zining bosh kelishik ko‘plik shakli qaysi?",
+              "options": [
+                "septi",
+                "septa",
+                "septae",
+                "septorum"
+              ],
+              "answer": 1,
+              "explanation": "Septum → septa."
+            }
+          ],
+          "review_status": "USER_SOURCE_DRAFT — uploaded course materials"
+        },
+        {
+          "id": "latin_a7",
+          "session_number": 7,
+          "title": "Klinik terminologiyaga kirish. Klinik atamalar yasash: suffiksatsiya va prefiksatsiya.",
+          "calendar_topic": "Klinik terminologiyaga kirish. Klinik atamalar yasash: suffiksatsiya va prefiksatsiya.",
+          "focus": "Klinik terminologiyaga kirish. Klinik atamalar yasash: suffiksatsiya va prefiksatsiya.",
+          "sections": [],
+          "teacher_materials": [
+            {
+              "title": "Lotin tili va tibbiy terminologiya — o‘quv dasturi",
+              "filename": "St.Lotin.26-27.doc",
+              "kind": "DOC",
+              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
+            }
+          ],
+          "questions": [],
+          "review_status": "AWAITING_SOURCE — content not in supplied materials"
+        },
+        {
+          "id": "latin_a8",
+          "session_number": 8,
+          "title": "Prefiksatsiya usuli.",
+          "calendar_topic": "Prefiksatsiya usuli.",
+          "focus": "Prefiksatsiya usuli.",
+          "sections": [],
+          "teacher_materials": [
+            {
+              "title": "Lotin tili va tibbiy terminologiya — o‘quv dasturi",
+              "filename": "St.Lotin.26-27.doc",
+              "kind": "DOC",
+              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
+            }
+          ],
+          "questions": [],
+          "review_status": "AWAITING_SOURCE — content not in supplied materials"
+        },
+        {
+          "id": "latin_a9",
+          "session_number": 9,
+          "title": "Klinik termin elementlari. A’zolar, diagnostika, davolash va kasalliklarni ifodalovchi yunon-lotin atamalari.",
+          "calendar_topic": "Klinik termin elementlari. A’zolar, diagnostika, davolash va kasalliklarni ifodalovchi yunon-lotin atamalari.",
+          "focus": "Klinik termin elementlari. A’zolar, diagnostika, davolash va kasalliklarni ifodalovchi yunon-lotin atamalari.",
+          "sections": [],
+          "teacher_materials": [
+            {
+              "title": "Lotin tili va tibbiy terminologiya — o‘quv dasturi",
+              "filename": "St.Lotin.26-27.doc",
+              "kind": "DOC",
+              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
+            }
+          ],
+          "questions": [],
+          "review_status": "AWAITING_SOURCE — content not in supplied materials"
+        },
+        {
+          "id": "latin_a10",
+          "session_number": 10,
+          "title": "Yunon-lotin dubletlari. To‘qima, a’zo, suyuqlik, sekret, jins, yosh va patologik jarayonlar atamalari.",
+          "calendar_topic": "Yunon-lotin dubletlari. To‘qima, a’zo, suyuqlik, sekret, jins, yosh va patologik jarayonlar atamalari.",
+          "focus": "Yunon-lotin dubletlari. To‘qima, a’zo, suyuqlik, sekret, jins, yosh va patologik jarayonlar atamalari.",
+          "sections": [],
+          "teacher_materials": [
+            {
+              "title": "Lotin tili va tibbiy terminologiya — o‘quv dasturi",
+              "filename": "St.Lotin.26-27.doc",
+              "kind": "DOC",
+              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
+            }
+          ],
+          "questions": [],
+          "review_status": "AWAITING_SOURCE — content not in supplied materials"
+        },
+        {
+          "id": "latin_a11",
+          "session_number": 11,
+          "title": "Yunon-lotin dubletlari va yakka termin elementlari. Fizik xususiyat va sifatni ifodalovchi atamalar.",
+          "calendar_topic": "Yunon-lotin dubletlari va yakka termin elementlari. Fizik xususiyat va sifatni ifodalovchi atamalar.",
+          "focus": "Yunon-lotin dubletlari va yakka termin elementlari. Fizik xususiyat va sifatni ifodalovchi atamalar.",
+          "sections": [],
+          "teacher_materials": [
+            {
+              "title": "Lotin tili va tibbiy terminologiya — o‘quv dasturi",
+              "filename": "St.Lotin.26-27.doc",
+              "kind": "DOC",
+              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
+            }
+          ],
+          "questions": [],
+          "review_status": "AWAITING_SOURCE — content not in supplied materials"
+        },
+        {
+          "id": "latin_a12",
+          "session_number": 12,
+          "title": "Farmatsevtik terminologiyaga kirish. Dorivor modda nomlari, dori shakllari va farmatsevtik atamalar.",
+          "calendar_topic": "Farmatsevtik terminologiyaga kirish. Dorivor modda nomlari, dori shakllari va farmatsevtik atamalar.",
+          "focus": "Farmatsevtik terminologiyaga kirish. Dorivor modda nomlari, dori shakllari va farmatsevtik atamalar.",
+          "sections": [],
+          "teacher_materials": [
+            {
+              "title": "Lotin tili va tibbiy terminologiya — o‘quv dasturi",
+              "filename": "St.Lotin.26-27.doc",
+              "kind": "DOC",
+              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
+            }
+          ],
+          "questions": [],
+          "review_status": "AWAITING_SOURCE — content not in supplied materials"
+        },
+        {
+          "id": "latin_a13",
+          "session_number": 13,
+          "title": "Fe’l va uning grammatik kategoriyalari. Retseptura formulirovkalari.",
+          "calendar_topic": "Fe’l va uning grammatik kategoriyalari. Retseptura formulirovkalari.",
+          "focus": "Fe’l va uning grammatik kategoriyalari. Retseptura formulirovkalari.",
+          "sections": [],
+          "teacher_materials": [
+            {
+              "title": "Lotin tili va tibbiy terminologiya — o‘quv dasturi",
+              "filename": "St.Lotin.26-27.doc",
+              "kind": "DOC",
+              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
+            }
+          ],
+          "questions": [],
+          "review_status": "AWAITING_SOURCE — content not in supplied materials"
+        },
+        {
+          "id": "latin_a14",
+          "session_number": 14,
+          "title": "Retsept tuzilishi va yozish qoidalari. Tabletka, shamcha va ko‘z plyonkalari.",
+          "calendar_topic": "Retsept tuzilishi va yozish qoidalari. Tabletka, shamcha va ko‘z plyonkalari.",
+          "focus": "Retsept tuzilishi va yozish qoidalari. Tabletka, shamcha va ko‘z plyonkalari.",
+          "sections": [],
+          "teacher_materials": [
+            {
+              "title": "Lotin tili va tibbiy terminologiya — o‘quv dasturi",
+              "filename": "St.Lotin.26-27.doc",
+              "kind": "DOC",
+              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
+            }
+          ],
+          "questions": [],
+          "review_status": "AWAITING_SOURCE — content not in supplied materials"
+        },
+        {
+          "id": "latin_a15",
+          "session_number": 15,
+          "title": "Retsepturada kimyoviy elementlar, kislotalar, oksidlar va tuzlar.",
+          "calendar_topic": "Retsepturada kimyoviy elementlar, kislotalar, oksidlar va tuzlar.",
+          "focus": "Retsepturada kimyoviy elementlar, kislotalar, oksidlar va tuzlar.",
+          "sections": [],
+          "teacher_materials": [
+            {
+              "title": "Lotin tili va tibbiy terminologiya — o‘quv dasturi",
+              "filename": "St.Lotin.26-27.doc",
+              "kind": "DOC",
+              "note": "Fayl faqat administrator serverga yuklaganidan keyin ilovada ochiladi."
+            }
+          ],
+          "questions": [],
+          "review_status": "AWAITING_SOURCE — content not in supplied materials"
+        }
+      ],
+      "schedule_note": "O‘quv dasturining umumiy qismida 1-semestr, amaliy mavzular jadvalida esa «2-semestr» deb yozilgan; aniqlashtirish kerak."
     }
   ]
 }

@@ -14,7 +14,7 @@ from pathlib import Path
 
 from fastapi import HTTPException
 
-VALID_EXTS = {".pdf", ".pptx", ".docx"}
+VALID_EXTS = {".pdf", ".pptx", ".docx", ".doc", ".ppt", ".jpg", ".jpeg", ".png"}
 MAX_FILE_SIZE = 75 * 1024 * 1024
 MAX_UPLOAD_BYTES = 160 * 1024 * 1024
 MAX_TOTAL_UNPACKED = 220 * 1024 * 1024
@@ -95,6 +95,12 @@ def _save_stream(stream, filename: str, directory: Path, size_limit: int = MAX_F
         if ext in {".docx", ".pptx"}:
             if not head.startswith(b"PK") or not zipfile.is_zipfile(temporary):
                 raise HTTPException(422, "Office fayl formati noto‘g‘ri")
+        if ext in {".doc", ".ppt"} and head != bytes.fromhex("D0CF11E0A1B11AE1"):
+            raise HTTPException(422, "Eski Office fayl formati noto‘g‘ri")
+        if ext in {".jpg", ".jpeg"} and not head.startswith(b"\\xff\\xd8\\xff"):
+            raise HTTPException(422, "JPEG formati noto‘g‘ri")
+        if ext == ".png" and head != b"\\x89PNG\\r\\n\\x1a\\n":
+            raise HTTPException(422, "PNG formati noto‘g‘ri")
         os.chmod(temporary, 0o600)
         os.replace(temporary, destination)
         return size

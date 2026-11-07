@@ -71,3 +71,23 @@ def test_upload_is_admin_only(tmp_path,monkeypatch):
     response=client.post('/api/materials/bundle',headers=hdr(),files={'archive':('teacher.zip',_bundle(name,b'%PDF-1.5\nfile'),'application/zip')})
     assert response.status_code==403
     assert client.get('/api/materials/admin',headers=hdr()).json()['is_admin'] is False
+
+
+def test_legacy_office_and_poster_upload_with_header_validation(tmp_path,monkeypatch):
+    client=_test_client(tmp_path,monkeypatch)
+    assert client.post('/api/consent',headers=hdr()).status_code==200
+    course=next(s for s in main.CATALOG['subjects'] if s['id']=='lotin_tili_tibbiy_terminologiya')
+    files={m['filename'] for l in course['lessons'] for m in l['teacher_materials']}
+    samples={
+        'photo_2026-11-08_02-29-35.jpg':b'\\xff\\xd8\\xff\\xe0'+b'demo',
+        'St.Lotin.26-27.doc':bytes.fromhex('D0CF11E0A1B11AE1')+b'demo',
+    }
+    for name,body in samples.items():
+        assert name in files
+        fid=materials.file_id(name)
+        good=client.post('/api/materials/upload/'+fid,headers=hdr(),files={'file':(name,body,'application/octet-stream')})
+        assert good.status_code==200, good.text
+        fetched=client.get('/api/materials/'+fid,headers=hdr())
+        assert fetched.status_code==200 and fetched.content==body
+        bad=client.post('/api/materials/upload/'+fid,headers=hdr(),files={'file':(name,b'not a valid file','application/octet-stream')})
+        assert bad.status_code==422

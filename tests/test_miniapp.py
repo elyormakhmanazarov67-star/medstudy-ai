@@ -34,8 +34,8 @@ def hdr(raw=None):return {'X-Telegram-Init-Data': raw or sign()}
 
 def test_catalog_and_grading():
     c=load_catalog()
-    assert len(c['subjects'])==5
-    assert sum(len(s['lessons']) for s in c['subjects'])==66
+    assert len(c['subjects'])==6
+    assert sum(len(s['lessons']) for s in c['subjects'])==81
     assert len(c['subjects'][0]['lessons'])==31
     assert len(c['subjects'][1]['lessons'])==12
     assert len(c['subjects'][0]['lessons'][0]['questions'])==1
@@ -58,7 +58,7 @@ def test_consent_catalog_quiz_and_delete(client):
     assert client.get('/api/me',headers=hdr()).json()['consented'] is False
     assert client.post('/api/consent',headers=hdr()).status_code==200
     c=client.get('/api/catalog',headers=hdr())
-    assert c.status_code==200 and len(c.json()['subjects'])==5
+    assert c.status_code==200 and len(c.json()['subjects'])==6
     empty=client.get('/api/lessons/ergonomika',headers=hdr()).json()
     assert len(empty['questions'])==1
     assert len(empty['teacher_materials'])>=1
@@ -116,3 +116,18 @@ def test_no_supplementary_data_or_quiz(client):
         'category':'supplementary'
     },headers=hdr())
     assert response.status_code==409
+
+
+def test_latin_subject_and_poster_in_authenticated_lesson(client):
+    assert client.post('/api/consent',headers=hdr()).status_code==200
+    catalog=client.get('/api/catalog',headers=hdr()).json()
+    latin=next(s for s in catalog['subjects'] if s['id']=='lotin_tili_tibbiy_terminologiya')
+    assert len(latin['lessons'])==15
+    first=client.get('/api/lessons/latin_a1',headers=hdr()).json()
+    assert first['subject_id']=='lotin_tili_tibbiy_terminologiya'
+    assert len(first['alphabet'])==25
+    assert first['alphabet'][3]['term']=='Dens'
+    assert first['questions'][0]['q']
+    assert client.get('/api/lessons/latin_a1').status_code==401
+    later=client.get('/api/lessons/latin_a15',headers=hdr()).json()
+    assert later['sections']==[] and later['questions']==[]

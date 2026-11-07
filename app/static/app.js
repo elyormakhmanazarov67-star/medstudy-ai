@@ -8,7 +8,7 @@
   const app = document.getElementById('app');
   const demo = new URLSearchParams(location.search).get('demo') === '1' && ['localhost', '127.0.0.1'].includes(location.hostname);
   const auth = webapp?.initData || '';
-  const state = { tab: 'home', catalog: null, progress: null, studyPlan: null, history: null, lesson: null, quiz: null, result: null, consent: null, busy: false, tutorStatus: null, tutorQuestion:'', tutorAnswer: null, tutorLessonId:'' };
+  const state = { tab: 'home', catalog: null, progress: null, studyPlan: null, history: null, lesson: null, quiz: null, result: null, consent: null, busy: false, tutorStatus: null, tutorQuestion:'', tutorAnswer: null, tutorLessonId:'',materialsAdmin:false };
   // Preserve original Uzbek Latin digraphs (Sh/sh, Ch/ch); never rewrite text.
   const uz = val => String(val ?? '');
   const esc = val => uz(val).replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]));
@@ -43,9 +43,17 @@
       const download = doc.available && doc.file_id
         ? '<button type="button" class="btn btn-primary" data-action="download-material" data-id="'+rawEsc(doc.file_id)+'" data-filename="'+rawEsc(doc.filename)+'">⬇ Yuklab olish</button>'
         : '<span class="smallprint">Fayl serverga hali yuklanmagan</span>';
-      return '<div class="card">'+title+'<p class="smallprint">'+esc(doc.filename||'')+'</p>'+download+hint+'</div>';
+      const preview = doc.available && doc.file_id && /\\.(jpg|jpeg|png)$/i.test(doc.filename || '')
+        ? '<button type="button" class="btn btn-flat" data-action="preview-material" data-id="'+rawEsc(doc.file_id)+'">Rasmni ko‘rish</button><div class="material-preview" id="preview-'+rawEsc(doc.file_id)+'"></div>'
+        : '';
+      const upload = state.materialsAdmin && doc.file_id && !doc.available
+        ? '<div class="admin-upload"><input type="file" id="upload-'+rawEsc(doc.file_id)+'" aria-label="'+esc(doc.title)+' faylini yuklash"><button class="btn btn-flat" data-action="upload-material" data-id="'+rawEsc(doc.file_id)+'">Faylni yuklash</button></div>'
+        : '';
+      return '<div class="card">'+title+'<p class="smallprint">'+esc(doc.filename||'')+'</p>'+download+preview+upload+hint+'</div>';
     };
-    let cards = docs.map(renderLink).join('');
+    const alphabet = lesson.alphabet || [];
+    let cards = alphabet.length ? '<div class="card"><h3>Lotin alifbosi — 25 ta harf</h3><p class="smallprint">Siz yuborgan rasm asosida tibbiy misollar.</p><div class="alphabet-grid">'+alphabet.map(a=>'<div class="alphabet-item"><strong>'+esc(a.letter)+'</strong><span><b>'+esc(a.term)+'</b><small>'+esc(a.meaning)+'</small></span></div>').join('')+'</div></div>' : '';
+    cards += docs.map(renderLink).join('');
     cards += (lesson.sections||[]).map(s=>'<section class="lesson-section"><h3>'+esc(s.heading)+'</h3><p>'+esc(s.body)+'</p></section>').join('');
     if(lesson.questions?.length) cards += '<div class="card"><h3>Kerakli ma’lumotlar testi</h3><button class="btn btn-primary btn-wide" data-action="start-quiz">Testni boshlash ('+lesson.questions.length+')</button></div>';
     if(!docs.length && !lesson.sections?.length) cards = '<div class="empty"><h3>Hozircha material yo‘q</h3><p>O‘qituvchi materiallari kelishi kutilmoqda.</p></div>';
@@ -70,6 +78,37 @@
     a.click();
     a.remove();
     setTimeout(()=>URL.revokeObjectURL(objectUrl),20000);
+  }
+  async function uploadMaterial(id) {
+    if(!state.materialsAdmin || !/^[a-f0-9]{24}$/.test(id))throw Error('Faylni yuklashga ruxsat yo‘q');
+    const field=document.getElementById('upload-'+id);
+    const file=field?.files?.[0];
+    if(!file)throw Error('Avval faylni tanlang');
+    const payload=new FormData();payload.append('file',file);
+    const headers={'X-Telegram-Init-Data':auth};
+    if(demo)headers['X-Dev-Preview']='local-only';
+    const resp=await fetch('/api/materials/upload/'+id,{method:'POST',headers,body:payload});
+    const result=await resp.json().catch(()=>({}));
+    if(!resp.ok)throw Error(result.detail||'Yuklashda xatolik');
+    state.lesson=await api('/lessons/'+encodeURIComponent(state.lesson.id));
+    displayCategory(state.lesson);
+  }
+  async function previewMaterial(id) {
+    if(!/^[a-f0-9]{24}$/.test(id))throw Error('Fayl identifikatori noto‘g‘ri');
+    const headers={'X-Telegram-Init-Data':auth};
+    if(demo)headers['X-Dev-Preview']='local-only';
+    const resp=await fetch('/api/materials/'+id,{headers,cache:'no-store'});
+    if(!resp.ok)throw Error('Rasm serverga yuklanmagan');
+    const blob=await resp.blob();
+    if(!blob.size || blob.size>15*1024*1024)throw Error('Rasm hajmi juda katta');
+    const objectUrl=URL.createObjectURL(blob);
+    const slot=document.getElementById('preview-'+id);
+    if(!slot){URL.revokeObjectURL(objectUrl);return;}
+    const img=document.createElement('img');
+    img.alt='Lotin alifbosi jadvali';img.src=objectUrl;img.className='material-poster';
+    img.addEventListener('load',()=>setTimeout(()=>URL.revokeObjectURL(objectUrl),600000),{once:true});
+    img.addEventListener('error',()=>URL.revokeObjectURL(objectUrl),{once:true});
+    slot.replaceChildren(img);
   }
   function home() {
     state.tab='home';
@@ -189,7 +228,7 @@
     loading();try {
       const me=await api('/me');state.consent=me.consented;
       if(!me.consented){consentScreen();return;}
-      [state.catalog,state.progress]=await Promise.all([api('/catalog'),api('/progress')]);home();
+      [state.catalog,state.progress]=await Promise.all([api('/catalog'),api('/progress')]);state.materialsAdmin=(await api('/materials/admin').catch(()=>({is_admin:false}))).is_admin===true;home();
     } catch(e){fail(e);}
   }
   document.addEventListener('click',async evt=>{
@@ -201,6 +240,8 @@
         case 'subject':showSubject(el.dataset.id);break;
         case 'category':if(state.lesson)displayCategory(state.lesson);break;
         case 'download-material':await downloadMaterial(el.dataset.id,el.dataset.filename);break;
+        case 'preview-material':await previewMaterial(el.dataset.id);break;
+        case 'upload-material':await uploadMaterial(el.dataset.id);break;
         case 'lesson': if(el.dataset.id)await getLesson(el.dataset.id);break;
         case 'start-quiz':if(state.lesson && state.lesson.questions?.length)startQuiz(state.lesson.questions,'full','required');break;
         case 'answer':state.quiz.answers[state.quiz.pos]=Number(el.dataset.value);renderQuiz();break;

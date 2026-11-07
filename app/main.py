@@ -113,7 +113,7 @@ def lesson(lesson_id: str, uid: int = Depends(consent_required)):
         raise HTTPException(404, 'Mavzu topilmadi')
     subject, l = found
     return {'subject_id':subject['id'], 'subject_title':subject['title'], 'id':l['id'], 'title':l['title'],
-            'sections':l['sections'], 'teacher_materials':materials.public_materials(l.get('teacher_materials', []), CATALOG, MATERIALS_DIR), 'sources':l.get('sources',[]),
+            'sections':l['sections'], 'alphabet':l.get('alphabet', []), 'teacher_materials':materials.public_materials(l.get('teacher_materials', []), CATALOG, MATERIALS_DIR), 'sources':l.get('sources',[]),
             'question_count':len(l['questions']), 'questions':[public_question(q) for q in l['questions']],}
 
 @app.get('/api/materials/admin')
