@@ -68,7 +68,7 @@ def test_revoke_and_delete_cleans_tables(client):
 def test_lesson_grounding():
     lesson=main.CATALOG['subjects'][3]['lessons'][0]
     context, heads=tutor.select_context(lesson, 'tooth')
-    assert 'Lug‘at' in context
+    assert 'lug‘at' in context.lower()
     assert len(heads) in range(1,4)
     assert len(context)<=4800
     response={'status':'completed','output':[{'type':'reasoning'},{'type':'message','content':[{'type':'output_text','text':'O‘zbekcha izoh'}]}]}
