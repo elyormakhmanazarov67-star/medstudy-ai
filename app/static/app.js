@@ -39,7 +39,7 @@
     const docs = kind === 'required' ? (lesson.teacher_materials || []) : (lesson.supplementary || []);
     const back = '<button class="back" data-action="lesson" data-id="'+rawEsc(lesson.id)+'">← Mavzuga qaytiş</button>';
     const name = kind === 'required' ? 'Kerakli ma’lumotlar' : 'Qo‘şimça ma’lumotlar';
-    const intro = kind === 'required' ? 'Bu bo‘limda faqat o‘qituvçi yuborgan materiallar bor.' : 'Bo‘ş vaqtda oldindan o‘qiş uçún SamMU e-library manbalari. Ular o‘qituvçi bergan vazifalar o‘rnini bosmaydi.';
+    const intro = kind === 'required' ? 'Bu bo‘limda faqat o‘qituvçi yuborgan materiallar bor.' : 'Bo‘ş vaqtda mustaqil o‘qiş uchun oçiq darsliklarga asoslangan konspektlar. Testi ham alohida.';
     let cards = docs.map(doc => {
       const label = '<strong>'+rawEsc(doc.title)+'</strong>';
       const hint = doc.note ? '<p class="smallprint">'+esc(doc.note)+'</p>' : '';
@@ -48,12 +48,17 @@
       }
       return '<div class="card">'+label+'<p class="smallprint">'+rawEsc(doc.filename || '')+'</p>'+hint+'</div>';
     }).join('');
+    if(kind==='supplementary'){
+      const extras=lesson.supplement_sections || [];
+      cards = extras.map(s=>'<section class="lesson-section"><h3>'+esc(s.heading)+'</h3><p>'+esc(s.body)+'</p></section>').join('') + cards;
+      if(lesson.supplement_questions?.length) cards += '<div class="card"><h3>Qo‘şimça ma’lumotlar testi</h3><button class="btn btn-primary btn-wide" data-action="start-supplement-quiz">Qo‘şimça testni boshlash ('+lesson.supplement_questions.length+')</button></div>';
+    }
     if(kind==='required' && (lesson.sections||[]).length) {
       cards += (lesson.sections||[]).map(s=>'<div class="card"><h3>'+esc(s.heading)+'</h3><p>'+esc(s.body)+'</p></div>').join('');
       if(hasQuestions(lesson)) cards += '<div class="card"><button class="btn btn-primary btn-wide" data-action="start-quiz">Testni boshlash ('+lesson.questions.length+')</button></div>';
     }
-    if(!docs.length && !(kind==='required' && lesson.sections?.length)) {
-      cards = '<div class="empty"><div class="symbol">📥</div><h3>Hozirça material yo‘q</h3><p>'+(kind==='required'?'O‘qituvçidan material kelishi kutilmoqda.':'SamMU elektron kutubxonasidagi mos kitob aniqlanmagan.')+'</p></div>';
+    if(!docs.length && !(kind==='required' && lesson.sections?.length) && !(kind==='supplementary' && lesson.supplement_sections?.length)) {
+      cards = '<div class="empty"><div class="symbol">📥</div><h3>Hozirça konspekt yo‘q</h3><p>'+(kind==='required'?'O‘qituvçidan material kelishi kutilmoqda.':'Bu mavzuga oid oçiq konspekt hali tayyorlanmagan.')+'</p></div>';
     }
     shell(back+'<p class="eyebrow">'+esc(lesson.subject_title)+'</p><h1>'+name+'</h1><p class="smallprint">'+intro+'</p>'+cards+disclaimer);
   };
@@ -86,22 +91,22 @@
     state.tab='lesson';
     const l=state.lesson;
     const needed=(l.teacher_materials||[]).length;
-    const extra=(l.supplementary||[]).length;
+    const extra=(l.supplement_sections||[]).length;
     shell('<button class="back" data-action="subject" data-id="'+rawEsc(l.subject_id)+'">← Mavzular</button>'+
       '<p class="eyebrow">'+esc(l.subject_title)+'</p><h1>'+esc(l.title)+'</h1>'+
       '<p class="smallprint">Mavzu içidagi bo‘limni tanlang.</p>'+
       '<button class="card lesson-card" data-action="category" data-kind="required"><span class="lesson-icon">📘</span><span class="lesson-content"><strong>Kerakli ma’lumotlar</strong><small>O‘qituvçi materiallari · '+needed+' fayl</small></span><span class="chevron">›</span></button>'+
-      '<button class="card lesson-card" data-action="category" data-kind="supplementary"><span class="lesson-icon">📗</span><span class="lesson-content"><strong>Qo‘şimça ma’lumotlar</strong><small>SamMU e-library · '+extra+' manba</small></span><span class="chevron">›</span></button>'+
+      '<button class="card lesson-card" data-action="category" data-kind="supplementary"><span class="lesson-icon">📗</span><span class="lesson-content"><strong>Qo‘şimça ma’lumotlar</strong><small>Oçiq darsliklar · '+extra+' bo‘lim</small></span><span class="chevron">›</span></button>'+
       disclaimer);
   }
-  function startQuiz(questions, mode='full') {
+  function startQuiz(questions, mode='full', category='required') {
     if (!questions.length) { state.tab='lesson'; showLesson(); return; }
-    state.quiz={questions,mode,answers:Array(questions.length).fill(null),pos:0};
+    state.quiz={questions,mode,category,answers:Array(questions.length).fill(null),pos:0};
     renderQuiz();
   }
   function renderQuiz() {
     state.tab='quiz';const qz=state.quiz;const q=qz.questions[qz.pos];const val=qz.answers[qz.pos];const n=qz.questions.length;
-    shell(`<button class="back" data-action="lesson" data-id="${esc(state.lesson.id)}">← Mavzuga qaytish</button><div class="quiz-top"><span>${qz.mode==='retry'?'Xatolarni takrorlash':'Bilim sinovi'}</span><strong>${qz.pos+1}/${n}</strong></div><div class="bar"><div class="bar-fill" style="width:${Math.round((qz.pos)/n*100)}%"></div></div><h2 class="question">${esc(q.q)}</h2><div class="answers">${q.options.map((opt,i)=>`<button class="answer ${val===i?'selected':''}" data-action="answer" data-value="${i}"><span class="letter">${'ABCD'[i]}</span>${esc(opt)}</button>`).join('')}</div><div class="quiz-actions"><button class="btn btn-primary btn-wide" data-action="next" ${val===null||state.busy?'disabled':''}>${qz.pos===n-1?'Testni yakunlash':'Keyingi savol →'}</button></div><p class="inline-note">To‘g‘ri javob va izohlar test yakunida ko‘rsatiladi.</p>`);
+    shell(`<button class="back" data-action="lesson" data-id="${rawEsc(state.lesson.id)}">← Mavzuga qaytish</button><div class="quiz-top"><span>${qz.category==='supplementary'?'Qo‘şimça ma’lumotlar testi':qz.mode==='retry'?'Xatolarni takrorlash':'Kerakli ma’lumotlar testi'}</span><strong>${qz.pos+1}/${n}</strong></div><div class="bar"><div class="bar-fill" style="width:${Math.round((qz.pos)/n*100)}%"></div></div><h2 class="question">${esc(q.q)}</h2><div class="answers">${q.options.map((opt,i)=>`<button class="answer ${val===i?'selected':''}" data-action="answer" data-value="${i}"><span class="letter">${'ABCD'[i]}</span>${esc(opt)}</button>`).join('')}</div><div class="quiz-actions"><button class="btn btn-primary btn-wide" data-action="next" ${val===null||state.busy?'disabled':''}>${qz.pos===n-1?'Testni yakunlash':'Keyingi savol →'}</button></div><p class="inline-note">To‘g‘ri javob va izohlar test yakunida ko‘rsatiladi.</p>`);
   }
   async function next() {
     if(state.busy) return;
@@ -109,7 +114,7 @@
     if(qz.pos<qz.questions.length-1){qz.pos++;renderQuiz();return;}
     state.busy=true;renderQuiz();
     try {
-      state.result=await api('/attempts','POST',{lesson_id:state.lesson.id, question_ids:qz.questions.map(q=>q.id), answers:qz.answers});
+      state.result=await api('/attempts','POST',{lesson_id:state.lesson.id, question_ids:qz.questions.map(q=>q.id), answers:qz.answers,category:qz.category});
       state.progress=await api('/progress');state.busy=false;showResult();
     } catch(e){state.busy=false;fail(e);}
   }
@@ -119,8 +124,9 @@
     shell(`<button class="back" data-action="home">← Asosiy menyu</button><div class="result-score"><span class="eyebrow">Test yakunlandi</span><div class="big-score">${r.percent}%</div><h2>${r.score} / ${r.total} to‘g‘ri javob</h2><p>${r.percent>=80?'Zo‘r! Bilimingizni mustahkamlang.':'Natijani ko‘rib chiqing va mavzuni qayta takrorlang.'}</p></div><div class="card"><h3>Keyingi qadam</h3><button class="btn btn-primary btn-wide" data-action="lesson" data-id="${esc(state.lesson.id)}">Mavzuni qayta o‘qish</button><div class="spacer"></div><button class="btn btn-flat btn-wide" data-action="retry">${r.score===r.total?'Testni yana yechish':'Xato savollarni takrorlash'}</button></div><div class="sectionhead"><h2>Javoblar tahlili</h2><span>${r.total} ta savol</span></div>${mapped.map(({q,detail},i)=>`<div class="review-row"><strong>${i+1}. ${esc(q.q)}</strong><p class="${detail.correct?'ok':'bad'}">${detail.correct?'✓ To‘g‘ri':'✕ Xato'} · Siz: ${esc(q.options[detail.chosen])}</p>${!detail.correct?`<p class="ok">To‘g‘ri: ${esc(q.options[detail.answer])}</p>`:''}<p>${esc(detail.explanation)}</p></div>`).join('')}`);
   }
   async function retryWrong(){
+    if(state.quiz?.category==='supplementary'){startQuiz(state.lesson.supplement_questions,'full','supplementary');return;}
     if(state.result?.score===state.result?.total){startQuiz(state.lesson.questions,'full');return;}
-    loading();try{const r=await api('/review/'+encodeURIComponent(state.lesson.id));if(!r.questions.length){startQuiz(state.lesson.questions);return;}startQuiz(r.questions,'retry');}catch(e){fail(e);}
+    loading();try{const r=await api('/review/'+encodeURIComponent(state.lesson.id));if(!r.questions.length){startQuiz(state.lesson.questions);return;}startQuiz(r.questions,'retry','required');}catch(e){fail(e);}
   }
   async function progress(){
     state.tab='progress';loading();try{[state.progress,state.studyPlan,state.history]=await Promise.all([api('/progress'),api('/study-plan'),api('/history?limit=12')]);renderProgress();}catch(e){fail(e);}
@@ -190,7 +196,8 @@
         case 'subject':showSubject(el.dataset.id);break;
         case 'category':if(state.lesson)displayCategory(state.lesson,el.dataset.kind);break;
         case 'lesson': if(el.dataset.id)await getLesson(el.dataset.id);break;
-        case 'start-quiz':if(state.lesson && state.lesson.questions?.length)startQuiz(state.lesson.questions);break;
+        case 'start-quiz':if(state.lesson && state.lesson.questions?.length)startQuiz(state.lesson.questions,'full','required');break;
+        case 'start-supplement-quiz':if(state.lesson && state.lesson.supplement_questions?.length)startQuiz(state.lesson.supplement_questions,'full','supplementary');break;
         case 'answer':state.quiz.answers[state.quiz.pos]=Number(el.dataset.value);renderQuiz();break;
         case 'next':await next();break;
         case 'retry':if(state.tab==='result')await retryWrong();else await init();break;
