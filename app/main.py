@@ -103,7 +103,11 @@ class AttemptBody(BaseModel):
     lesson_id: str = Field(min_length=1, max_length=100)
     question_ids: list[str] = Field(min_length=1, max_length=100)
     answers: list[int] = Field(min_length=1, max_length=100)
-    category: str = Field(default='required', pattern='^(required|supplementary)
+    category: str = Field(default="required", pattern="^(required|supplementary)$")
+
+
+@app.post("/api/attempts")
+def submit(data: AttemptBody, uid: int = Depends(consent_required)):
     found = find_lesson(CATALOG, data.lesson_id)
     if not found:
         raise HTTPException(404, 'Mavzu topilmadi')
