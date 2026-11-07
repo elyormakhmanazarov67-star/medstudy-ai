@@ -52,7 +52,7 @@ def test_study_plan_requires_auth_and_consent(monkeypatch, tmp_path):
     assert client.post("/api/consent", headers=hdr()).status_code == 200
     r = client.get("/api/study-plan", headers=hdr())
     assert r.status_code == 200
-    assert r.json()["total_lessons"] == 50
+    assert r.json()["total_lessons"] == 66
     assert r.json()["attempted_lessons"] == 0
 
 
