@@ -11,7 +11,7 @@ def test_all_subjects_and_teacher_source_separation():
         assert all(isinstance(l.get('teacher_materials'),list) for l in subject['lessons'])
         assert all(isinstance(l.get('supplementary'),list) for l in subject['lessons'])
         for lesson in subject['lessons']:
-            assert all(item.get('url','').startswith('https://e-library.sammu.uz/') for item in lesson['supplementary'])
+            assert all(item.get('url','').startswith(('https://e-library.sammu.uz/', 'https://openstax.org/')) for item in lesson['supplementary'])
             assert all(not item.get('url') for item in lesson['teacher_materials'])
             for question in lesson['questions']:
                 assert len(question['options'])==4
@@ -37,3 +37,5 @@ def test_user_source_teaching_material_counts():
     assert len(b['lessons'])==4
     assert all(len(l['teacher_materials'])>0 for l in e['lessons']+b['lessons'])
     assert sum(len(l['questions']) for l in e['lessons']+b['lessons'])==18
+    assert all(len(l.get('supplement_sections', [])) >= 1 for l in b['lessons'])
+    assert all(len(l.get('supplement_questions', [])) >= 1 for l in b['lessons'])
