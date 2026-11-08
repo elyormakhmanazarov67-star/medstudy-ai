@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.2",
   "status": "TEST — O‘qituvchi materiallari va OpenStax ochiq darsliklaridan manba ko‘rsatilgan alohida o‘quv materiallari. Mutaxassis tekshiruvi talab etiladi.",
   "note": "81 ta mavzuning barchasida konspekt va test savollar mavjud. Oldingi foydalanuvchi manbalari saqlangan, ilgari bo‘sh darslar tashqi o‘quv manbalari va ChatGPT asosida AI_RESEARCH_DRAFT deb belgilangan; original fayllarni yuklab olish mavjud emas. MedStudy AI v1.0 beta: suhbatli AI Ustoz, 3 daraja, og‘zaki savol-javob (rozilik/kunlik limit). Bepul yordamchi va yuklab olishsiz darslar saqlangan.",
   "subjects": [

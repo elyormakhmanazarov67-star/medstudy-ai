@@ -120,3 +120,89 @@ def test_oral_and_level_styles():
     assert 'boshlang‘ich' in tutor.response_level('basic').lower()
     with pytest.raises(ValueError):
         tutor.response_level('unknown')
+
+
+
+def test_global_quota_shared_between_users(client, monkeypatch):
+    c,calls=client
+    second=UID+1
+    monkeypatch.setattr(main, 'ALLOWED_IDS', {UID,second})
+    monkeypatch.setenv('AI_GLOBAL_DAILY_LIMIT','3')
+    h2=hdr(__import__('tests.test_miniapp',fromlist=['sign']).sign(uid=second))
+    for headers in (hdr(),h2):
+        assert c.post('/api/consent',headers=headers).status_code==200
+        assert c.post('/api/tutor/consent',headers=headers).status_code==200
+    payload={'lesson_id':'eng_l1','question':'Tish haqida izoh bering'}
+    assert c.post('/api/tutor/ask',headers=hdr(),json=payload).status_code==200
+    assert c.post('/api/tutor/ask',headers=hdr(),json=payload).status_code==200
+    assert c.get('/api/tutor/status',headers=h2).json()['remaining']==1
+    assert c.post('/api/tutor/ask',headers=h2,json=payload).status_code==200
+    assert c.post('/api/tutor/ask',headers=h2,json=payload).status_code==429
+    assert c.get('/api/tutor/status',headers=h2).json()['remaining']==0
+    assert len(calls)==3
+    assert main.STORE.ai_global_usage()==3
+
+
+def test_untrusted_chat_not_saved_to_database(client):
+    import sqlite3
+    c,calls=client
+    c.post('/api/consent',headers=hdr())
+    c.post('/api/tutor/consent',headers=hdr())
+    marker='privatetutorhistoryexample-notstored'
+    p={'lesson_id':'eng_l1','question':marker,'mode':'oral',
+       'history':[{'role':'user','content':'Avval savol berdim'},
+                  {'role':'assistant','content':'Menga tarixdan savol bering'}]}
+    assert c.post('/api/tutor/ask',headers=hdr(),json=p).status_code==200
+    with main.STORE.connect() as db:
+        names=[r[0] for r in db.execute("SELECT name FROM sqlite_master WHERE type='table'")]
+        assert not any('message' in x or 'transcript' in x for x in names)
+        assert marker not in str(db.iterdump())
+        assert main.STORE.ai_usage(UID)==1
+
+
+def test_openai_payload_grounded_stateless_and_oral_stages(monkeypatch):
+    import asyncio
+    import json
+    import httpx
+    monkeypatch.setenv('OPENAI_API_KEY','test-key-not-real')
+    monkeypatch.setenv('AI_ENABLED','1')
+    records=[]
+    def handler(request):
+        body=json.loads(request.content)
+        records.append(body)
+        return httpx.Response(200,json={'status':'completed','output':[
+            {'type':'message','content':[{'type':'output_text','text':'Mavzudagi ta’rifni tekshiring.'}]}]})
+    constructor=httpx.AsyncClient
+    def mocked_client(*args,**kwargs):
+        kwargs['transport']=httpx.MockTransport(handler)
+        return constructor(*args,**kwargs)
+    monkeypatch.setattr(tutor.httpx,'AsyncClient',mocked_client)
+    lesson=main.CATALOG['subjects'][4]['lessons'][1]
+    first=asyncio.run(tutor.generate_answer(lesson,'Bitta savol bering',mode='oral',level='basic'))
+    second=asyncio.run(tutor.generate_answer(lesson,'ATP qayerda hosil bo‘ladi?',
+        mode='oral',level='advanced',history=[
+        {'role':'user','content':'Bitta savol bering'},
+        {'role':'assistant','content':'ATP sintezi nima?'}]))
+    assert first['answer'] and second['answer']
+    assert all(x['store'] is False and x['max_output_tokens']<=720 for x in records)
+    assert all('DARSDAN_PARCHALAR' in x['input'] for x in records)
+    assert 'birinchi savol' in records[0]['input'].lower()
+    assert 'talabaning hozirgi javobini' in records[1]['input'].lower()
+    assert 'ATP sintezi nima?' in records[1]['input']
+    assert len(records)==2
+
+
+def test_response_failures_do_not_leak_secrets(monkeypatch):
+    import asyncio
+    import httpx
+    monkeypatch.setenv('OPENAI_API_KEY','test-key-not-real')
+    def handler(request):
+        return httpx.Response(429, json={'error':{'message':'secret private-key must not appear'}})
+    original=httpx.AsyncClient
+    monkeypatch.setattr(tutor.httpx,'AsyncClient',lambda *a,**kw:original(
+        *a,transport=httpx.MockTransport(handler),**kw))
+    lesson=main.CATALOG['subjects'][3]['lessons'][0]
+    with pytest.raises(tutor.TutorUnavailable) as err:
+        asyncio.run(tutor.generate_answer(lesson,'What is a tooth?'))
+    assert 'private-key' not in str(err.value)
+    assert 'balansi' in str(err.value).lower()

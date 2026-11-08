@@ -135,6 +135,15 @@ class Store:
             row = c.execute('SELECT requests FROM ai_usage WHERE user_id=? AND utc_day=?', (uid,day)).fetchone()
             return row[0] if row else 0
 
+    def ai_global_usage(self) -> int:
+        """Return UTC-day total requests without returning any user information."""
+        day = datetime.now(timezone.utc).date().isoformat()
+        with self.connect() as c:
+            return int(c.execute(
+                'SELECT COALESCE(SUM(requests),0) FROM ai_usage WHERE utc_day=?',
+                (day,)
+            ).fetchone()[0])
+
     def reserve_ai_request(self, uid: int, per_user: int, global_limit: int) -> int:
         """Reserve one request atomically; no message content is stored.
 

@@ -196,8 +196,11 @@ def _bounded_positive(name: str, default: int, cap: int) -> int:
 def tutor_status(uid: int = Depends(consent_required)):
     limit = _bounded_positive('AI_DAILY_LIMIT', 5, 20)
     used = STORE.ai_usage(uid)
+    global_limit = _bounded_positive('AI_GLOBAL_DAILY_LIMIT', 40, 100)
+    global_left = max(0, global_limit - STORE.ai_global_usage())
     return {'enabled': tutor.enabled(), 'consented': STORE.has_ai_consent(uid),
-            'used': used, 'limit': limit, 'remaining': max(0, limit-used),
+            'used': used, 'limit': limit,
+            'remaining': max(0, min(limit - used, global_left)),
             'conversation_saved': False, 'levels': ['basic', 'standard', 'advanced'],
             'modes': ['explain', 'example', 'recall', 'oral']}
 
@@ -270,7 +273,7 @@ async def tutor_ask(data: TutorQuestion, uid: int = Depends(consent_required)):
     if any(private.search(text) for text in [data.question] + [turn['content'] for turn in history]):
         raise HTTPException(422, 'Savol va tarixdan telefon, email yoki maxfiy kalitni olib tashlang')
     per_user = _bounded_positive('AI_DAILY_LIMIT', 5, 20)
-    globally = _bounded_positive('AI_GLOBAL_DAILY_LIMIT', 40, 1000)
+    globally = _bounded_positive('AI_GLOBAL_DAILY_LIMIT', 40, 100)
     try:
         used = STORE.reserve_ai_request(uid, per_user, globally)
     except (ValueError, PermissionError) as exc:
@@ -279,5 +282,6 @@ async def tutor_ask(data: TutorQuestion, uid: int = Depends(consent_required)):
         result = await tutor.generate_answer(lesson_found[1], data.question.strip(), mode=data.mode, level=data.level, history=history)
     except tutor.TutorUnavailable as exc:
         raise HTTPException(503, str(exc)) from exc
-    return {**result, 'remaining': max(0, per_user-used),
+    return {**result,
+            'remaining': max(0, min(per_user-used, globally-STORE.ai_global_usage())),
             'notice': 'AI javobi tekshirilmagan o‘quv materialiga asoslangan. Klinik maslahat emas.'}
