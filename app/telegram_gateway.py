@@ -36,6 +36,18 @@ def webhook_secret() -> str:
     return os.getenv('TELEGRAM_WEBHOOK_SECRET', '').strip()
 
 
+def approval_enabled() -> bool:
+    return os.getenv('ACCESS_APPROVAL_ENABLED', '0') == '1'
+
+
+def admin_ids() -> set[int]:
+    raw=(os.getenv('ADMIN_USER_IDS','').strip() or os.getenv('ALLOWED_USER_IDS',''))
+    try:
+        return {int(s.strip()) for s in raw.replace(';',',').split(',') if s.strip()}
+    except ValueError:
+        return set()
+
+
 def public_free_enabled() -> bool:
     return os.getenv('PUBLIC_FREE_ENABLED', '0') == '1'
 
@@ -76,7 +88,7 @@ async def configure_telegram() -> bool:
         await api_call('setWebhook', {
             'url': base + '/telegram/webhook',
             'secret_token': webhook_secret(),
-            'allowed_updates': ['message'],
+            'allowed_updates': ['message', 'callback_query'],
             'max_connections': 10,
         })
         await api_call('setChatMenuButton', {
@@ -92,6 +104,8 @@ async def configure_telegram() -> bool:
                 {'command': 'myid', 'description': 'Telegram ID raqamim'},
                 {'command': 'help', 'description': 'Yordam'},
                 {'command': 'privacy', 'description': 'Maxfiylik haqida'},
+                {'command': 'status', 'description': 'Mini App ruxsatim'},
+                {'command': 'requests', 'description': 'Admin: kutilayotgan so‘rovlar'},
             ]
         })
         logger.info('Telegram webhook + Mini App menu configured.')
@@ -117,6 +131,39 @@ async def receive_telegram_update(
         raise HTTPException(400, 'Invalid JSON')
     if not isinstance(update, dict):
         raise HTTPException(400, 'Invalid update')
+    store=request.app.state.store
+    def is_admin(uid: int) -> bool:
+        return uid in admin_ids()
+    # Inlined approval buttons are available only to Telegram administrators.
+    callback=update.get('callback_query')
+    if isinstance(callback,dict):
+        from_user=callback.get('from') or {}
+        admin_uid=from_user.get('id')
+        data=str(callback.get('data') or '')
+        match=re.fullmatch(r'access:(approve|reject|revoke):([1-9]\d{0,15})',data)
+        if approval_enabled() and isinstance(admin_uid,int) and is_admin(admin_uid) and match:
+            action,target=match.group(1),int(match.group(2))
+            decision={'approve':'approved','reject':'rejected','revoke':'revoked'}[action]
+            try:
+                store.review_access(target,decision,admin_uid)
+                reply=('✅ Tasdiqlandi' if decision=='approved' else
+                       '❌ Rad etildi' if decision=='rejected' else '⛔ Ruxsat bekor qilindi')
+                try:
+                    await api_call('sendMessage',{'chat_id':target,'text':
+                       ('✅ MedStudy AI Mini App uchun ruxsat berildi. /start yuborib ilovani oching.' if decision=='approved'
+                        else 'MedStudy AI Mini App ruxsati: '+reply)})
+                except (httpx.HTTPError,RuntimeError):
+                    logger.warning('Could not send approval notification')
+            except ValueError as exc:
+                reply=str(exc)
+        else:
+            reply='Bu amal faqat administratorga ruxsat etilgan'
+        try:
+            if isinstance(callback.get('id'),str):
+                await api_call('answerCallbackQuery',{'callback_query_id':callback['id'],'text':reply[:180]})
+        except (httpx.HTTPError,RuntimeError):
+            logger.warning('Could not answer callback')
+        return {'ok':True}
     message = update.get('message')
     if not isinstance(message, dict):
         return {'ok': True}
@@ -126,31 +173,85 @@ async def receive_telegram_update(
         return {'ok': True}
     uid = user['id']
     chat_id = chat.get('id')
+    if chat_id != uid:
+        return {'ok':True}
     text = str(message.get('text') or '').strip()
     cmd = (text.split(maxsplit=1)[0].split('@')[0] if text.startswith('/') else '').lower()
+    target_text=text.split(maxsplit=1)[1].strip() if len(text.split(maxsplit=1))>1 else ''
+    is_owner=is_admin(uid)
+    approval=approval_enabled()
+    markup=None
     if cmd == '/myid':
         body = f'Sizning Telegram ID: {uid}. Uni ochiq joyda ulashmang.'
-        markup = None
+    elif approval and is_owner and cmd in {'/approve','/reject','/revoke'}:
+        if not re.fullmatch(r'[1-9]\d{0,15}',target_text):
+            body='Format: /approve 123456789 yoki /reject 123456789 yoki /revoke 123456789'
+        else:
+            decision={'/approve':'approved','/reject':'rejected','/revoke':'revoked'}[cmd]
+            target=int(target_text)
+            try:
+                store.review_access(target,decision,uid)
+                body=f'✅ {target}: {decision}'
+                try:
+                    await api_call('sendMessage',{'chat_id':target,'text':
+                        'MedStudy AI ruxsat holati: '+decision+
+                        ('. /start yuborib ilovani oching.' if decision=='approved' else '.')})
+                except (httpx.HTTPError,RuntimeError):
+                    logger.warning('Could not send approval status')
+            except ValueError as exc:
+                body=str(exc)
+    elif approval and is_owner and cmd=='/requests':
+        pending=store.pending_access()
+        body=('Kutilayotgan so‘rovlar:\n'+'\n'.join(str(x) for x in pending)
+              +'\n\n/approve ID, /reject ID yoki /revoke ID') if pending else 'Kutilayotgan so‘rovlar yo‘q.'
+    elif approval and cmd=='/status':
+        status='approved' if is_owner else store.access_status(uid)
+        body={'approved':'✅ Mini App ochiq.', 'pending':'⏳ Administrator javobi kutilmoqda.',
+              'rejected':'❌ So‘rov rad etilgan.', 'revoked':'⛔ Ruxsat bekor qilingan.',
+              'not_requested':'/start orqali qabul so‘rovini yuboring.'}[status]
+    elif approval and not is_owner and cmd in {'/start','/help',''}:
+        status,created=store.request_access(uid)
+        if created:
+            for admin_uid in sorted(admin_ids())[:5]:
+                keyboard={'inline_keyboard':[
+                    [{'text':'✅ Tasdiqlash','callback_data':f'access:approve:{uid}'},
+                     {'text':'❌ Rad etish','callback_data':f'access:reject:{uid}'}]
+                ]}
+                try:
+                    await api_call('sendMessage',{'chat_id':admin_uid,
+                        'text':f'📩 MedStudy AI Mini App kirish so‘rovi.\nTelegram ID: {uid}\n'
+                               f'/approve {uid} yoki /reject {uid}',
+                        'reply_markup':keyboard})
+                except (httpx.HTTPError,RuntimeError):
+                    logger.warning('Cannot notify administrator; request remains in database')
+        if status=='approved':
+            body=('✅ Ruxsat tasdiqlangan. MedStudy AI Mini App’ni ochishingiz mumkin.')
+            markup={'inline_keyboard': [[{'text':'📱 MedStudy AI ni ochish',
+                       'web_app':{'url':public_url()}}]]} if public_url() else None
+        elif status=='pending':
+            body=('⏳ So‘rovingiz administratorga yuborildi. '
+                  'Ruxsat berilgach bu yerga xabar keladi. /status orqali tekshiring.')
+        elif status=='rejected':
+            body='❌ So‘rovingiz rad etilgan. Administratorga murojaat qiling.'
+        else:
+            body='⛔ Mini App ruxsatingiz bekor qilingan. Administratorga murojaat qiling.'
     elif not public_free_enabled() and uid not in allowed_users():
-        body = 'MedStudy AI hozir yopiq sinovda. /myid orqali ID ni ko‘ring va administratorga shaxsiy tartibda murojaat qiling.'
-        markup = None
-    elif cmd in {'/start', '/help', ''}:
-        body = ('🎓 MedStudy AI — tibbiyot talabalari uchun o‘quv yordamchisi.\n\n'
-                '📚 6 fan, 81 mavzu va 631 ta test savoli.\n'
-                '📊 Konspektlar, testlar va shaxsiy o‘quv tavsiyalari Mini App ichida.\n'
-                '🆓 Free rejim bepul. Pullik Pro obuna hozircha faol emas.\n'
-                '⚠️ Materiallar mustaqil o‘quv loyihasiga tegishli, klinik maslahat emas.\n\n'
-                'Quyidagi tugmani bosib Mini App ni oching.')
-        markup = {'inline_keyboard': [[{'text':'📱 MedStudy AI ni ochish', 'web_app':{'url': public_url()}}]]} if public_url() else None
+        body='MedStudy AI hozir yopiq sinovda. /myid orqali ID ni ko‘ring va administratorga shaxsiy tartibda murojaat qiling.'
+    elif cmd in {'/start','/help',''}:
+        body=('🎓 MedStudy AI — tibbiyot talabalari uchun o‘quv yordamchisi.\n\n'
+              '📚 6 fan, 81 mavzu va 631 ta test savoli.\n'
+              '🆓 Darslar va testlar bepul. Pro hali faol emas.\n'
+              '⚠️ Materiallar mustaqil o‘quv loyihasiga tegishli.\n\n'
+              'Quyidagi tugma orqali Mini App’ni oching.')
+        markup={'inline_keyboard': [[{'text':'📱 MedStudy AI ni ochish',
+                 'web_app':{'url':public_url()}}]]} if public_url() else None
     elif cmd == '/privacy':
-        body = ('Telegram ID, rozilik va test natijalari saqlanadi. '
-                'AI suhbat matnlari bot bazasiga yozilmaydi. '
-                'Ma’lumotlarni Mini App ichida o‘chirishingiz mumkin. '
-                'Ilova mustaqil ta’lim loyihasi, universitetning rasmiy xizmati emas.')
-        markup = None
+        body=('Telegram ID, rozilik va test natijalari saqlanadi. '
+              'Kirish so‘rovining holati, vaqti va uni ko‘rib chiqqan admin IDsi ham qayd etiladi. '
+              'Ma’lumotlarni Mini App ichidan o‘chirishingiz mumkin. '
+              'Bu rasmiy universitet xizmati emas.')
     else:
-        body = 'Mini App uchun /start buyrug‘ini yuboring.'
-        markup = None
+        body='Mini App uchun /start yoki /status buyrug‘ini yuboring.'
     payload = {'chat_id': chat_id, 'text': body}
     if markup:
         payload['reply_markup'] = markup

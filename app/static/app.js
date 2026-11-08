@@ -163,8 +163,17 @@
   function privacy(){
     state.tab='privacy';shell(`<p class="eyebrow">Shaxsiy ma’lumotlar</p><h1>Maxfiylik va xavfsizlik</h1><div class="card privacy"><h3>Qanday ma’lumotlar saqlanadi?</h3><p>Sinov davrida Telegram foydalanuvchi IDsi, rozilik vaqti, test javoblari va natijalari SQLite bazasida saqlanadi. Tanlangan Oq-yashil yoki Qora-yashil dizayn faqat qurilmangizdagi brauzer xotirasida saqlanadi. Ism, telefon raqami va yozishmalar saqlanmaydi. Dars Ustoz bepul rejimida savol faqat serverdagi dars matni bilan solishtiriladi; u OpenAI API'ga yuborilmaydi va bizning SQLite bazamizga yozilmaydi. AI Ustoz rejimi faqat alohida rozilikdan so‘ng savol va oxirgi uchta suhbat almashinuvini OpenAI APIga yuboradi. Suhbat matni SQLite bazasiga yozilmaydi va sahifa yangilanganda yo‘qoladi. AI javobi xato bo‘lishi mumkin.</p><h3>Ma’lumotlar kimga tegishli?</h3><p>Test natijalarini ilova administratori serverda boshqaradi. Ilova hozircha mustaqil o‘quv prototipi, universitetning rasmiy xizmati emas.</p><h3>Ma’lumotlarni o‘chirish</h3><p>Quyidagi tugma orqali shaxsiy test tarixingiz va rozilik yozuvini o‘chirishingiz mumkin.</p><button class="btn btn-danger btn-wide" data-action="delete">Ma’lumotlarimni o‘chirish</button></div>${disclaimer}`);
   }
+  function accessScreen(status){
+    const stateText={
+      pending:'⏳ So‘rovingiz administrator tasdig‘ini kutmoqda.',
+      rejected:'❌ Kirish so‘rovingiz rad etildi.',
+      revoked:'⛔ Mini App ruxsatingiz bekor qilindi.',
+      not_requested:'📨 Mini App’dan foydalanish uchun avval botga obuna bo‘ling.'
+    }[status]||'Administrator ruxsati kerak.';
+    app.innerHTML=strings(header()+'<main class="privacy"><p class="eyebrow">Kirish uchun ruxsat</p><h1>MedStudy AI</h1><div class="card"><h3>'+stateText+'</h3><p>Telegram botda /start yuboring. Administrator tasdiqlagach Mini App ochiladi. Pro va pullik obuna hozircha mavjud emas.</p><button class="btn btn-primary btn-wide" data-action="retry">Holatni yangilash</button></div></main>');
+  }
   function consentScreen(){
-    app.innerHTML=strings(header()+`<main class="privacy"><p class="eyebrow">Xush kelibsiz</p><h1>MedStudy AI’ga kirish</h1><div class="card"><h3>Yopiq sinovga rozilik</h3><p>Ta’limiy tajriba uchun Telegram ID, rozilik vaqti, test javoblari va natijalari administrator serveridagi SQLite bazasida saqlanadi. Ism, telefon va yozishmalar saqlanmaydi. Dars Ustoz bepul rejimida savolingiz serverdagi dars bilan solishtiriladi va bizning SQLite bazamizga saqlanmaydi. Tashqi AI xizmatiga hech narsa yuborilmaydi.</p><p>Keyin “Maxfiylik” bo‘limidan ularni o‘chirish mumkin. Materiallar ekspert tasdig‘ini olmagan.</p><button class="btn btn-primary btn-wide" data-action="consent">Roziman · Davom etish</button><div class="spacer"></div><p class="smallprint">Rozilik bermasangiz, natijalar saqlanmaydi va ilovadan foydalanish boshlanmaydi.</p></div></main>`);
+    app.innerHTML=strings(header()+`<main class="privacy"><p class="eyebrow">Xush kelibsiz</p><h1>MedStudy AI’ga kirish</h1><div class="card"><h3>Maxfiylik shartlariga rozilik</h3><p>Ta’limiy tajriba uchun Telegram ID, rozilik vaqti, test javoblari va natijalari administrator serveridagi SQLite bazasida saqlanadi. Ism, telefon va yozishmalar saqlanmaydi. Dars Ustoz bepul rejimida savolingiz serverdagi dars bilan solishtiriladi va bizning SQLite bazamizga saqlanmaydi. Tashqi AI xizmatiga hech narsa yuborilmaydi.</p><p>Keyin “Maxfiylik” bo‘limidan ularni o‘chirish mumkin. Materiallar ekspert tasdig‘ini olmagan.</p><button class="btn btn-primary btn-wide" data-action="consent">Roziman · Davom etish</button><div class="spacer"></div><p class="smallprint">Rozilik bermasangiz, natijalar saqlanmaydi va ilovadan foydalanish boshlanmaydi.</p></div></main>`);
   }
 
   function tutorClear() {
@@ -251,6 +260,7 @@
   async function init(){
     loading();try {
       const me=await api('/me');state.consent=me.consented;
+      if(me.approval_required && me.access_status!=='approved'){accessScreen(me.access_status);return;}
       if(!me.consented){consentScreen();return;}
       [state.catalog,state.progress]=await Promise.all([api('/catalog'),api('/progress')]);home();
     } catch(e){fail(e);}

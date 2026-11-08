@@ -27,6 +27,11 @@ ALLOWED_IDS = {int(x.strip()) for x in os.getenv('ALLOWED_USER_IDS', '').replace
 DEV_PREVIEW = os.getenv('DEV_PREVIEW', '0') == '1'
 
 
+def approval_enabled() -> bool:
+    """Switch to subscriber registration + administrator-reviewed Mini App."""
+    return os.getenv('ACCESS_APPROVAL_ENABLED', '0') == '1'
+
+
 def free_access_enabled() -> bool:
     """Explicit rollout flag; existing allowlist remains a safe fallback."""
     return os.getenv('PUBLIC_FREE_ENABLED', '0') == '1'
@@ -56,6 +61,8 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(title='MedStudy AI Mini App', docs_url=None, redoc_url=None, lifespan=lifespan)
 app.include_router(telegram_router)
+app.state.store = STORE
+app.state.is_admin = is_admin
 app.mount('/static', StaticFiles(directory=ROOT / 'app' / 'static'), name='static')
 
 @app.get('/')
@@ -65,7 +72,8 @@ def index():
 @app.get('/api/health')
 def health():
     return {'status': 'ok', 'version': CATALOG['version'], 'draft': True,
-            'free_public': free_access_enabled()}
+            'free_public': free_access_enabled(),
+            'approval_required': approval_enabled()}
 
 
 def current_user(request: Request, x_telegram_init_data: Annotated[str | None, Header()] = None) -> int:
@@ -81,7 +89,15 @@ def current_user(request: Request, x_telegram_init_data: Annotated[str | None, H
     return uid
 
 
-def consent_required(uid: int = Depends(current_user)) -> int:
+def access_required(uid: int = Depends(current_user)) -> int:
+    if approval_enabled() and not is_admin(uid):
+        status=STORE.access_status(uid)
+        if status!='approved':
+            raise HTTPException(403, 'Mini App uchun administrator tasdig‘i kerak. Botda /start yuboring.')
+    return uid
+
+
+def consent_required(uid: int = Depends(access_required)) -> int:
     if not STORE.has_consent(uid):
         raise HTTPException(status_code=403, detail='Avval maxfiylik shartlariga rozilik bering')
     return uid
@@ -91,16 +107,19 @@ def consent_required(uid: int = Depends(current_user)) -> int:
 def me(uid: int = Depends(current_user)):
     return {'consented': STORE.has_consent(uid),
             'test_mode': not free_access_enabled(), 'free_public': free_access_enabled(),
-            'is_admin': is_admin(uid)}
+            'is_admin': is_admin(uid), 'approval_required': approval_enabled(),
+            'access_status': ('approved' if is_admin(uid) else STORE.access_status(uid))
+                             if approval_enabled() else 'approved'}
 
 @app.post('/api/consent')
-def consent(uid: int = Depends(current_user)):
+def consent(uid: int = Depends(access_required)):
     STORE.consent(uid)
     return {'consented': True}
 
 @app.delete('/api/me')
 def delete_me(uid: int = Depends(current_user)):
     STORE.delete_user(uid)
+    STORE.delete_access(uid)
     return {'deleted': True}
 
 @app.get('/api/catalog')

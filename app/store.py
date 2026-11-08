@@ -51,6 +51,14 @@ class Store:
                 PRIMARY KEY (user_id, utc_day)
             );
             CREATE INDEX IF NOT EXISTS idx_ai_usage_day ON ai_usage(utc_day);
+            CREATE TABLE IF NOT EXISTS access_requests (
+                user_id INTEGER PRIMARY KEY,
+                status TEXT NOT NULL CHECK(status IN ('pending','approved','rejected','revoked')),
+                requested_at TEXT NOT NULL,
+                reviewed_at TEXT,
+                reviewed_by INTEGER
+            );
+            CREATE INDEX IF NOT EXISTS idx_access_status ON access_requests(status, requested_at);
             CREATE TABLE IF NOT EXISTS rate_limits (
                 user_id INTEGER NOT NULL REFERENCES users(user_id) ON DELETE CASCADE,
                 action TEXT NOT NULL,
@@ -75,6 +83,44 @@ class Store:
     def delete_user(self, uid: int):
         with self.connect() as c:
             c.execute("DELETE FROM users WHERE user_id=?", (uid,))
+
+    def access_status(self, uid: int) -> str:
+        with self.connect() as c:
+            row=c.execute('SELECT status FROM access_requests WHERE user_id=?',(uid,)).fetchone()
+            return row[0] if row else 'not_requested'
+
+    def request_access(self, uid: int) -> tuple[str, bool]:
+        """A /start subscription creates one request; repeated /start never spams admins."""
+        now=datetime.now(timezone.utc).isoformat()
+        with self.connect() as c:
+            cur=c.execute("""INSERT OR IGNORE INTO access_requests
+                (user_id,status,requested_at) VALUES (?,'pending',?)""",(uid,now))
+            status=c.execute('SELECT status FROM access_requests WHERE user_id=?',(uid,)).fetchone()[0]
+        return status, bool(cur.rowcount)
+
+    def review_access(self, uid: int, status: str, admin_uid: int) -> str:
+        if status not in {'approved','rejected','revoked'}:
+            raise ValueError('Noto‘g‘ri qaror')
+        with self.connect() as c:
+            row=c.execute('SELECT status FROM access_requests WHERE user_id=?',(uid,)).fetchone()
+            if not row:
+                raise ValueError('Foydalanuvchi hali /start orqali ariza yubormagan')
+            if status=='revoked' and row[0]!='approved':
+                raise ValueError('Faqat tasdiqlangan ruxsat bekor qilinadi')
+            c.execute("""UPDATE access_requests SET status=?, reviewed_at=?, reviewed_by=?
+                WHERE user_id=?""",(status,datetime.now(timezone.utc).isoformat(),admin_uid,uid))
+        return status
+
+    def pending_access(self, limit: int = 15) -> list[int]:
+        with self.connect() as c:
+            return [r[0] for r in c.execute(
+                "SELECT user_id FROM access_requests WHERE status='pending' ORDER BY requested_at LIMIT ?",
+                (min(max(limit,1),50),)
+            ).fetchall()]
+
+    def delete_access(self, uid: int) -> None:
+        with self.connect() as c:
+            c.execute('DELETE FROM access_requests WHERE user_id=?',(uid,))
 
     def reserve_public_action(self, uid: int, action: str, limit: int) -> None:
         """Atomic per-Telegram-user minute quota for public write/heavy endpoints."""
