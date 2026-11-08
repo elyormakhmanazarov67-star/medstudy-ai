@@ -51,7 +51,7 @@
     '<option value="'+id+'" '+(currentTheme===id?'selected':'')+'>'+name+'</option>').join('');
   const header=()=>'<header class="sitehead"><div class="brand"><div class="logo">🎓</div><div><strong>MedStudy AI</strong><small>O‘quv platforma</small></div></div>'+
     '<div class="head-actions"><label class="sr-only" for="theme-select">Dizayn ranglari</label><select class="theme-select" id="theme-select" aria-label="Dizayn ranglari">'+themeOptions()+'</select>'+
-    '<span class="pill"><span class="pill-dot"></span> v1.0.1</span></div></header>';
+    '<span class="pill"><span class="pill-dot"></span> Bepul</span></div></header>';
   const nav = () => '<div class="footer-nav"><div class="nav-inner">'+
     '<button class="nav '+(state.tab==='home'?'active':'')+'" data-action="home"><b>⌂</b>Asosiy</button>'+
     '<button class="nav '+(state.tab==='subjects'||state.tab==='subject'?'active':'')+'" data-action="subjects"><b>▤</b>Fanlar</button>'+
@@ -86,7 +86,7 @@
       ['progress','▥','O‘quv rejasi','Test natijasiga mos tavsiyalar'],
       ['privacy','⚙','Sozlamalar','Dizayn, maxfiylik va AI roziligi']
     ].map((row,i)=>'<button class="card feature-card '+(i===0?'feature-ai':'')+'" data-action="'+row[0]+'" '+(i===2?'data-purpose="tests"':'')+'><span class="feature-icon">'+row[1]+'</span><span class="feature-copy"><strong>'+row[2]+'</strong><small>'+row[3]+'</small></span><span class="chevron">›</span></button>').join('');
-    shell('<section class="hero"><div class="hero-text"><p class="eyebrow">Tibbiyot talabalari uchun</p><h1>MedStudy AI <span class="hero-version">v1.0.1</span></h1><p>Tibbiyot fanlarini o‘rganish, takrorlash va mustahkamlash uchun aqlli o‘quv yordamchisi.</p></div><div class="hero-illustration" aria-hidden="true">📚<span>🩺</span></div></section>'+
+    shell('<section class="hero"><div class="hero-text"><p class="eyebrow">Tibbiyot talabalari uchun</p><h1>MedStudy AI</h1><p>Tibbiyot fanlarini o‘rganish, takrorlash va mustahkamlash uchun aqlli o‘quv yordamchisi.</p></div><div class="hero-illustration" aria-hidden="true">📚<span>🩺</span></div></section>'+
       '<div class="features">'+menu+'</div>'+
       '<div class="stats"><div class="stat"><strong>'+subjects.length+'</strong><small>Fan</small></div><div class="stat"><strong>'+lessons.length+'</strong><small>Mavzu</small></div><div class="stat"><strong>'+attempts+'</strong><small>Test urinish</small></div></div>'+
       '<div class="sectionhead"><h2>Fanlar</h2><span>'+completed+'/'+lessons.length+' o‘rganilgan</span></div>'+cards+disclaimer+

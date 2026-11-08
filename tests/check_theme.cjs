@@ -35,6 +35,12 @@ async function main(){
   assert.equal(b.root.dataset.theme,'white');
   assert.equal(b.root.style.colorScheme,'light');
   assert.match(code,/Dizayn ranglari/); // header appears after consent check
+  assert.match(code,/MedStudy AI<\\/h1>/);
+  assert.match(code,/pill-dot<\\/span> Bepul/);
+  assert.doesNotMatch(code,/\\bv\\d+\\.\\d+(?:\\.\\d+)?\\b/); // no visible version text
+  const html=fs.readFileSync('app/static/index.html','utf8');
+  assert.match(html,/app\\.js\\?v=1\\.0\\.2/); // force fresh bundle after rollout
+
   for(const [name,color,scheme] of [
     ['black','#001a10','dark'],['white','#f6faf6','light']
   ]){
