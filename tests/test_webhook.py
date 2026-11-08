@@ -31,6 +31,7 @@ def test_webhook_id_and_minapp_entry(monkeypatch):
     assert client.post('/telegram/webhook', headers=headers,json=body).status_code==200
     assert calls[-1][1]['reply_markup']['inline_keyboard'][0][0]['web_app']['url']=='https://medstudy.example.org'
     body['message']['from']['id']=200
+    body['message']['chat']['id']=200
     assert client.post('/telegram/webhook', headers=headers,json=body).status_code==200
     assert 'reply_markup' not in calls[-1][1]
 
@@ -71,7 +72,7 @@ def test_webhook_public_free_start_and_privacy(monkeypatch):
     r=client.post('/telegram/webhook',headers=headers,json=body)
     assert r.status_code==200
     assert 'reply_markup' in calls[-1][1]
-    assert 'Free' in calls[-1][1]['text']
+    assert 'bepul' in calls[-1][1]['text']
     assert '/myid' not in calls[-1][1]['text']
     body['message']['text']='/privacy'
     assert client.post('/telegram/webhook',headers=headers,json=body).status_code==200
