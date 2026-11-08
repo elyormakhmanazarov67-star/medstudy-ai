@@ -21,7 +21,9 @@ jobs:
           python -m pip install -r requirements.txt
           python -m pip install pytest
       - name: Validate web app JavaScript syntax
-        run: node --check app/static/app.js
+        run: |
+          node --check app/static/app.js
+          node tests/check_theme.cjs
       - name: Run backend unit and API tests (no real Telegram/OpenAI calls)
         env:
           AI_ENABLED: "0"

@@ -9,3 +9,112 @@
 
 /* v1.0 beta adaptive tutor */
 .tutor-message{margin-top:12px;overflow-wrap:anywhere}.tutor-student{margin-left:12%;border-left:3px solid var(--gold)}.tutor-teacher{margin-right:8%;border-left:3px solid #6eaff5}.tutor-message p{white-space:normal;line-height:1.55}.tutor-message p:first-child{margin-bottom:7px}.ai-input{margin-bottom:12px}
+
+/* v1.0 beta 3 — optional accessible monochrome themes. Default blue unchanged. */
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.head-actions{display:flex;align-items:center;gap:8px;flex-wrap:nowrap}
+.theme-select{min-height:36px;max-width:105px;padding:7px 9px;border-radius:11px;border:1px solid var(--stroke);background:var(--card);color:var(--ink);font:inherit;font-size:12px;font-weight:750;cursor:pointer}
+.theme-select:focus-visible,.btn:focus-visible,.nav:focus-visible,.lesson-card:focus-visible,.answer:focus-visible,.back:focus-visible,.ai-input:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+@media(max-width:410px){.sitehead{flex-wrap:wrap}.head-actions{margin-left:auto}.brand strong{font-size:14px}.brand small{font-size:9px}.pill{font-size:10px;padding:6px 8px}}
+
+:root[data-theme="white"]{
+  --bg:#f6f6f6;--bg2:#ececec;--ink:#141414;--muted:#555;
+  --card:#fff;--stroke:#d6d6d6;--mint:#111;--blue:#171717;
+  --gold:#333;--danger:#a3222b;--shadow:0 8px 28px #11111112;
+  --mono-accent:#101010;--mono-accent-text:#fff;--mono-alt:#eee;
+  --mono-footer:#fff;--mono-accent-soft:#e7e7e7;--mono-link:#151515;
+  --mono-selected-text:#fff;--mono-bad:#8b1820;--mono-hero:#fff;
+  color-scheme:light;
+}
+:root[data-theme="black"]{
+  --bg:#070707;--bg2:#131313;--ink:#f5f5f5;--muted:#bebebe;
+  --card:#191919;--stroke:#474747;--mint:#fff;--blue:#f5f5f5;
+  --gold:#ececec;--danger:#ffaaaa;--shadow:0 8px 30px #00000099;
+  --mono-accent:#f5f5f5;--mono-accent-text:#080808;--mono-alt:#292929;
+  --mono-footer:#101010;--mono-accent-soft:#333;
+  --mono-link:#f5f5f5;--mono-selected-text:#0a0a0a;--mono-bad:#ffb5b5;
+  --mono-hero:#1a1a1a;
+  color-scheme:dark;
+}
+:root[data-theme="white"] body,:root[data-theme="black"] body{
+  background:var(--bg);color:var(--ink)
+}
+:root[data-theme="white"] a,:root[data-theme="black"] a{color:var(--mono-link);text-decoration:underline}
+:root[data-theme="white"] .logo,:root[data-theme="black"] .logo{
+  background:var(--mono-accent);color:var(--mono-accent-text);box-shadow:none
+}
+:root[data-theme="white"] .pill,:root[data-theme="black"] .pill{
+  color:var(--ink);border-color:var(--stroke)
+}
+:root[data-theme="white"] .pill-dot,:root[data-theme="black"] .pill-dot{background:var(--mono-accent)}
+:root[data-theme="white"] .hero,:root[data-theme="black"] .hero{
+  background:var(--mono-hero);border-color:var(--stroke);box-shadow:var(--shadow)
+}
+:root[data-theme="white"] .hero:after,:root[data-theme="black"] .hero:after{color:var(--mono-accent-soft)}
+:root[data-theme="white"] .hero p,:root[data-theme="black"] .hero p{color:var(--muted)}
+:root[data-theme="white"] .eyebrow,:root[data-theme="black"] .eyebrow{color:var(--ink)}
+:root[data-theme="white"] .btn-primary,:root[data-theme="black"] .btn-primary{
+  color:var(--mono-accent-text);background:var(--mono-accent)
+}
+:root[data-theme="white"] .btn-ghost,:root[data-theme="black"] .btn-ghost,
+:root[data-theme="white"] .btn-flat,:root[data-theme="black"] .btn-flat{
+  color:var(--ink);background:var(--mono-alt);border:1px solid var(--stroke)
+}
+:root[data-theme="white"] .lesson-icon,:root[data-theme="black"] .lesson-icon{
+  background:var(--mono-accent-soft);color:var(--ink)
+}
+:root[data-theme="white"] .lesson-card:hover,:root[data-theme="black"] .lesson-card:hover{border-color:var(--ink)}
+:root[data-theme="white"] .tag,:root[data-theme="black"] .tag{
+  border-color:var(--stroke);background:var(--mono-alt);color:var(--ink)
+}
+:root[data-theme="white"] .caution,:root[data-theme="black"] .caution{
+  color:var(--ink);background:var(--mono-alt);border:1px solid var(--stroke)
+}
+:root[data-theme="white"] .back,:root[data-theme="black"] .back{color:var(--ink)}
+:root[data-theme="white"] .lesson-section p,:root[data-theme="black"] .lesson-section p{color:var(--muted)}
+:root[data-theme="white"] .sources,:root[data-theme="black"] .sources{background:var(--mono-alt)}
+:root[data-theme="white"] .bar,:root[data-theme="black"] .bar{background:var(--mono-accent-soft)}
+:root[data-theme="white"] .bar-fill,:root[data-theme="black"] .bar-fill{background:var(--mono-accent)}
+:root[data-theme="white"] .answer,:root[data-theme="black"] .answer{
+  color:var(--ink);background:var(--card);border-color:var(--stroke)
+}
+:root[data-theme="white"] .answer.selected,:root[data-theme="black"] .answer.selected{
+  border-color:var(--mono-accent);box-shadow:inset 0 0 0 1px var(--mono-accent);background:var(--mono-alt);font-weight:750
+}
+:root[data-theme="white"] .letter,:root[data-theme="black"] .letter{
+  background:var(--mono-accent-soft);color:var(--ink)
+}
+:root[data-theme="white"] .answer.selected .letter,:root[data-theme="black"] .answer.selected .letter{
+  background:var(--mono-accent);color:var(--mono-selected-text)
+}
+:root[data-theme="white"] .big-score,:root[data-theme="black"] .big-score{color:var(--ink)}
+:root[data-theme="white"] .review-row,:root[data-theme="black"] .review-row{background:var(--card)}
+:root[data-theme="white"] .review-row p,:root[data-theme="black"] .review-row p{color:var(--muted)}
+:root[data-theme="white"] .ok,:root[data-theme="black"] .ok{color:var(--ink);font-weight:800}
+:root[data-theme="white"] .bad,:root[data-theme="black"] .bad{color:var(--mono-bad);font-weight:800}
+:root[data-theme="white"] .footer-nav,:root[data-theme="black"] .footer-nav{
+  background:var(--mono-footer);border-color:var(--stroke)
+}
+:root[data-theme="white"] .nav,:root[data-theme="black"] .nav{color:var(--muted)}
+:root[data-theme="white"] .nav.active,:root[data-theme="black"] .nav.active{
+  color:var(--ink);text-decoration:underline;text-underline-offset:5px
+}
+:root[data-theme="white"] .loader,:root[data-theme="black"] .loader{
+  border-color:var(--stroke);border-top-color:var(--mono-accent)
+}
+:root[data-theme="white"] .privacy p,:root[data-theme="black"] .privacy p{color:var(--muted)}
+:root[data-theme="white"] .error,:root[data-theme="black"] .error{color:var(--mono-bad)}
+:root[data-theme="white"] .footer-logo,:root[data-theme="black"] .footer-logo{color:var(--muted)}
+:root[data-theme="white"] .btn-danger,:root[data-theme="black"] .btn-danger{
+  color:var(--mono-bad);background:var(--mono-alt);border-color:var(--stroke)
+}
+:root[data-theme="white"] .ai-input,:root[data-theme="black"] .ai-input{
+  color:var(--ink);background:var(--card);border-color:var(--stroke)
+}
+:root[data-theme="white"] label,:root[data-theme="black"] label{color:var(--ink)}
+:root[data-theme="white"] .alphabet-item,:root[data-theme="black"] .alphabet-item{
+  background:var(--mono-alt);border-color:var(--stroke)
+}
+:root[data-theme="white"] .alphabet-item>strong,:root[data-theme="black"] .alphabet-item>strong{color:var(--ink)}
+:root[data-theme="white"] .tutor-student,:root[data-theme="black"] .tutor-student{border-left-color:var(--mono-accent)}
+:root[data-theme="white"] .tutor-teacher,:root[data-theme="black"] .tutor-teacher{border-left-color:var(--muted)}

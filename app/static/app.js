@@ -3,7 +3,27 @@
   const webapp = window.Telegram?.WebApp;
   webapp?.ready();
   webapp?.expand();
-  try { webapp?.setHeaderColor('#0b1832'); } catch (_) {}
+
+  // Only presentation settings are persisted, never messages or medical data.
+  const THEME_KEY='medstudy_theme_v1';
+  const THEME_COLORS={blue:'#0b1832',white:'#ffffff',black:'#080808'};
+  const ALLOWED_THEMES=new Set(['blue','white','black']);
+  let currentTheme='blue';
+  try {
+    const savedTheme=window.localStorage.getItem(THEME_KEY);
+    if(ALLOWED_THEMES.has(savedTheme))currentTheme=savedTheme;
+  }catch(_){}
+  function applyTheme(theme,persist=true){
+    currentTheme=ALLOWED_THEMES.has(theme)?theme:'blue';
+    document.documentElement.dataset.theme=currentTheme;
+    document.documentElement.style.colorScheme=currentTheme==='white'?'light':'dark';
+    const themeColor=THEME_COLORS[currentTheme];
+    const meta=document.querySelector('meta[name="theme-color"]');
+    if(meta)meta.setAttribute('content',themeColor);
+    try {webapp?.setHeaderColor(themeColor);webapp?.setBackgroundColor(themeColor);}catch(_){}
+    if(persist)try{window.localStorage.setItem(THEME_KEY,currentTheme);}catch(_){}
+  }
+  applyTheme(currentTheme,false);
 
   const app = document.getElementById('app');
   const demo = new URLSearchParams(location.search).get('demo') === '1' && ['localhost', '127.0.0.1'].includes(location.hostname);
@@ -25,7 +45,11 @@
     if (!response.ok) throw new Error(body?.detail || 'Server bilan aloqa xatosi');
     return body;
   }
-  const header = () => `<header class="sitehead"><div class="brand"><div class="logo">✦</div><div><strong>MedStudy AI</strong><small>O‘quv platforma</small></div></div><span class="pill"><span class="pill-dot"></span> v1.0 beta</span></header>`;
+  const themeOptions=()=>[['blue','Ko‘k'],['white','Oq'],['black','Qora']].map(([id,name])=>
+    '<option value="'+id+'" '+(currentTheme===id?'selected':'')+'>'+name+'</option>').join('');
+  const header=()=>'<header class="sitehead"><div class="brand"><div class="logo">✦</div><div><strong>MedStudy AI</strong><small>O‘quv platforma</small></div></div>'+
+    '<div class="head-actions"><label class="sr-only" for="theme-select">Dizayn ranglari</label><select class="theme-select" id="theme-select" aria-label="Dizayn ranglari">'+themeOptions()+'</select>'+
+    '<span class="pill"><span class="pill-dot"></span> v1.0 beta</span></div></header>';
   const nav = () => `<div class="footer-nav"><div class="nav-inner"><button class="nav ${state.tab==='home'?'active':''}" data-action="home"><b>⌂</b>Asosiy</button><button class="nav ${state.tab==='progress'?'active':''}" data-action="progress"><b>▥</b>Natijalar</button><button class="nav ${state.tab==='tutor'?'active':''}" data-action="tutor"><b>✧</b>AI Ustoz</button><button class="nav ${state.tab==='privacy'?'active':''}" data-action="privacy"><b>♢</b>Maxfiylik</button></div></div>`;
   const disclaimer = `<div class="caution">⚠️ Mazkur darslar sinov materialidir; mutaxassis ko‘rigidan o‘tmagan. Klinik amaliyot uchun yo‘riqnoma yoki rasmiy universitet xizmati emas.</div>`;
   const shell = content => { app.innerHTML = strings(header() + '<main>' + content + '</main>' + nav()); window.scrollTo(0,0); };
@@ -114,7 +138,7 @@
     shell(`<p class="eyebrow">Mening o‘sishim</p><h1>O‘quv natijalarim</h1><p class="smallprint">Faqat shaxsiy test natijalaringiz ko‘rsatiladi.</p><div class="stats"><div class="stat"><strong>${p.attempts_count}</strong><small>Urinishlar</small></div><div class="stat"><strong>${p.latest.length}</strong><small>O‘rganilgan mavzu</small></div><div class="stat"><strong>${p.latest.length?Math.round(p.latest.reduce((x,r)=>x+r.percent,0)/p.latest.length):0}%</strong><small>Oxirgi o‘rtacha</small></div></div>${recommendations}${historyHtml}<div class="sectionhead"><h2>Mavzular kesimida</h2><span>Oxirgi urinishlar</span></div>${p.latest.length?`<div class="card">${p.latest.map(r=>`<div class="progress-row"><div class="progress-label"><strong>${esc(r.title)}</strong><span>${r.score}/${r.total} · ${r.percent}%</span></div><div class="bar"><div class="bar-fill" style="width:${r.percent}%"></div></div></div>`).join('')}<p class="smallprint">Eslatma: xatolarni takrorlash testida savollar soni kamroq bo‘lishi mumkin.</p></div>`:`<div class="empty"><div class="symbol">📊</div><h3>Natijalar hozircha yo‘q</h3><p>Birinchi testni topshiring — progress shu yerda ko‘rinadi.</p><button class="btn btn-primary" data-action="home">Darslarni ko‘rish →</button></div>`}`);
   }
   function privacy(){
-    state.tab='privacy';shell(`<p class="eyebrow">Shaxsiy ma’lumotlar</p><h1>Maxfiylik va xavfsizlik</h1><div class="card privacy"><h3>Qanday ma’lumotlar saqlanadi?</h3><p>Sinov davrida faqat Telegram foydalanuvchi IDsi, rozilik vaqti, test javoblari va natijalari SQLite bazasida saqlanadi. Ism, telefon raqami va yozishmalar saqlanmaydi. Dars Ustoz bepul rejimida savol faqat serverdagi dars matni bilan solishtiriladi; u OpenAI API'ga yuborilmaydi va bizning SQLite bazamizga yozilmaydi. AI Ustoz rejimi faqat alohida rozilikdan so‘ng savol va oxirgi uchta suhbat almashinuvini OpenAI APIga yuboradi. Suhbat matni SQLite bazasiga yozilmaydi va sahifa yangilanganda yo‘qoladi. AI javobi xato bo‘lishi mumkin.</p><h3>Ma’lumotlar kimga tegishli?</h3><p>Test natijalarini ilova administratori serverda boshqaradi. Ilova hozircha mustaqil o‘quv prototipi, universitetning rasmiy xizmati emas.</p><h3>Ma’lumotlarni o‘chirish</h3><p>Quyidagi tugma orqali shaxsiy test tarixingiz va rozilik yozuvini o‘chirishingiz mumkin.</p><button class="btn btn-danger btn-wide" data-action="delete">Ma’lumotlarimni o‘chirish</button></div>${disclaimer}`);
+    state.tab='privacy';shell(`<p class="eyebrow">Shaxsiy ma’lumotlar</p><h1>Maxfiylik va xavfsizlik</h1><div class="card privacy"><h3>Qanday ma’lumotlar saqlanadi?</h3><p>Sinov davrida Telegram foydalanuvchi IDsi, rozilik vaqti, test javoblari va natijalari SQLite bazasida saqlanadi. Tanlangan Ko‘k, Oq yoki Qora dizayn faqat qurilmangizdagi brauzer xotirasida saqlanadi. Ism, telefon raqami va yozishmalar saqlanmaydi. Dars Ustoz bepul rejimida savol faqat serverdagi dars matni bilan solishtiriladi; u OpenAI API'ga yuborilmaydi va bizning SQLite bazamizga yozilmaydi. AI Ustoz rejimi faqat alohida rozilikdan so‘ng savol va oxirgi uchta suhbat almashinuvini OpenAI APIga yuboradi. Suhbat matni SQLite bazasiga yozilmaydi va sahifa yangilanganda yo‘qoladi. AI javobi xato bo‘lishi mumkin.</p><h3>Ma’lumotlar kimga tegishli?</h3><p>Test natijalarini ilova administratori serverda boshqaradi. Ilova hozircha mustaqil o‘quv prototipi, universitetning rasmiy xizmati emas.</p><h3>Ma’lumotlarni o‘chirish</h3><p>Quyidagi tugma orqali shaxsiy test tarixingiz va rozilik yozuvini o‘chirishingiz mumkin.</p><button class="btn btn-danger btn-wide" data-action="delete">Ma’lumotlarimni o‘chirish</button></div>${disclaimer}`);
   }
   function consentScreen(){
     app.innerHTML=strings(header()+`<main class="privacy"><p class="eyebrow">Xush kelibsiz</p><h1>MedStudy AI’ga kirish</h1><div class="card"><h3>Yopiq sinovga rozilik</h3><p>Ta’limiy tajriba uchun Telegram ID, rozilik vaqti, test javoblari va natijalari administrator serveridagi SQLite bazasida saqlanadi. Ism, telefon va yozishmalar saqlanmaydi. Dars Ustoz bepul rejimida savolingiz serverdagi dars bilan solishtiriladi va bizning SQLite bazamizga saqlanmaydi. Tashqi AI xizmatiga hech narsa yuborilmaydi.</p><p>Keyin “Maxfiylik” bo‘limidan ularni o‘chirish mumkin. Materiallar ekspert tasdig‘ini olmagan.</p><button class="btn btn-primary btn-wide" data-action="consent">Roziman · Davom etish</button><div class="spacer"></div><p class="smallprint">Rozilik bermasangiz, natijalar saqlanmaydi va ilovadan foydalanish boshlanmaydi.</p></div></main>`);
@@ -234,6 +258,7 @@
   });
   document.addEventListener('change',evt=>{
     const id=evt.target.id;
+    if(id==='theme-select'){applyTheme(evt.target.value);return;}
     if(['tutor-lesson','tutor-provider','tutor-mode','tutor-level'].includes(id))state.tutorQuestion=document.getElementById('tutor-question')?.value||'';
     if(id==='tutor-lesson'){
       if(evt.target.value!==state.tutorLessonId){state.tutorLessonId=evt.target.value;tutorClear();}
