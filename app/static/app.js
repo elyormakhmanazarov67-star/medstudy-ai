@@ -8,7 +8,7 @@
   const app = document.getElementById('app');
   const demo = new URLSearchParams(location.search).get('demo') === '1' && ['localhost', '127.0.0.1'].includes(location.hostname);
   const auth = webapp?.initData || '';
-  const state = { tab: 'home', catalog: null, progress: null, studyPlan: null, history: null, lesson: null, quiz: null, result: null, consent: null, busy: false, tutorStatus: null, tutorQuestion:'', tutorAnswer: null, tutorLessonId:'' };
+  const state = { tab: 'home', catalog: null, progress: null, studyPlan: null, history: null, lesson: null, quiz: null, result: null, consent: null, busy: false, tutorStatus: null, tutorQuestion:'', tutorAnswer: null, tutorLessonId:'', tutorMode:'explain', tutorLevel:'standard', tutorProvider:'lesson', tutorHistory:[], tutorMessages:[], tutorError:'' };
   // Preserve original Uzbek Latin digraphs (Sh/sh, Ch/ch); never rewrite text.
   const uz = val => String(val ?? '');
   const esc = val => uz(val).replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]));
@@ -25,7 +25,7 @@
     if (!response.ok) throw new Error(body?.detail || 'Server bilan aloqa xatosi');
     return body;
   }
-  const header = () => `<header class="sitehead"><div class="brand"><div class="logo">✦</div><div><strong>MedStudy AI</strong><small>O‘quv platforma</small></div></div><span class="pill"><span class="pill-dot"></span> v0.5.13</span></header>`;
+  const header = () => `<header class="sitehead"><div class="brand"><div class="logo">✦</div><div><strong>MedStudy AI</strong><small>O‘quv platforma</small></div></div><span class="pill"><span class="pill-dot"></span> v1.0 beta</span></header>`;
   const nav = () => `<div class="footer-nav"><div class="nav-inner"><button class="nav ${state.tab==='home'?'active':''}" data-action="home"><b>⌂</b>Asosiy</button><button class="nav ${state.tab==='progress'?'active':''}" data-action="progress"><b>▥</b>Natijalar</button><button class="nav ${state.tab==='tutor'?'active':''}" data-action="tutor"><b>✧</b>AI Ustoz</button><button class="nav ${state.tab==='privacy'?'active':''}" data-action="privacy"><b>♢</b>Maxfiylik</button></div></div>`;
   const disclaimer = `<div class="caution">⚠️ Mazkur darslar sinov materialidir; mutaxassis ko‘rigidan o‘tmagan. Klinik amaliyot uchun yo‘riqnoma yoki rasmiy universitet xizmati emas.</div>`;
   const shell = content => { app.innerHTML = strings(header() + '<main>' + content + '</main>' + nav()); window.scrollTo(0,0); };
@@ -72,7 +72,7 @@
     shell('<button class="back" data-action="subject" data-id="'+rawEsc(l.subject_id)+'">← Mavzular</button>'+
       '<p class="eyebrow">'+esc(l.subject_title)+'</p><h1>'+esc(l.title)+'</h1>'+
       '<button class="card lesson-card" data-action="category" data-kind="required"><span class="lesson-icon">📘</span><span class="lesson-content"><strong>Kerakli ma’lumotlar</strong><small>Mavzu konspekti va testlar</small></span><span class="chevron">›</span></button>'+
-      disclaimer);
+      '<button class="card lesson-card" data-action="tutor" data-id="'+rawEsc(l.id)+'"><span class="lesson-icon">✧</span><span class="lesson-content"><strong>AI Ustoz bilan o‘rganish</strong><small>Ushbu mavzuga oid savol-javob</small></span><span class="chevron">›</span></button>'+disclaimer);
   }
   function startQuiz(questions, mode='full', category='required') {
     if (!questions.length) { state.tab='lesson'; showLesson(); return; }
@@ -120,40 +120,86 @@
     app.innerHTML=strings(header()+`<main class="privacy"><p class="eyebrow">Xush kelibsiz</p><h1>MedStudy AI’ga kirish</h1><div class="card"><h3>Yopiq sinovga rozilik</h3><p>Ta’limiy tajriba uchun Telegram ID, rozilik vaqti, test javoblari va natijalari administrator serveridagi SQLite bazasida saqlanadi. Ism, telefon va yozishmalar saqlanmaydi. Dars Ustoz bepul rejimida savolingiz serverdagi dars bilan solishtiriladi va bizning SQLite bazamizga saqlanmaydi. Tashqi AI xizmatiga hech narsa yuborilmaydi.</p><p>Keyin “Maxfiylik” bo‘limidan ularni o‘chirish mumkin. Materiallar ekspert tasdig‘ini olmagan.</p><button class="btn btn-primary btn-wide" data-action="consent">Roziman · Davom etish</button><div class="spacer"></div><p class="smallprint">Rozilik bermasangiz, natijalar saqlanmaydi va ilovadan foydalanish boshlanmaydi.</p></div></main>`);
   }
 
+  function tutorClear() {
+    state.tutorHistory=[];state.tutorMessages=[];state.tutorAnswer=null;
+    state.tutorError='';state.tutorQuestion='';
+  }
+  function tutorModeOptions() {
+    return [['explain','Tushuntirish'],['example','Misol bilan'],['recall','Bilimni tekshirish'],['oral','Og‘zaki imtihon']].map(([id,name]) =>
+      '<option value="'+id+'" '+(state.tutorMode===id?'selected':'')+'>'+name+'</option>').join('');
+  }
+  function tutorLevelOptions() {
+    return [['basic','Boshlang‘ich'],['standard','O‘rta'],['advanced','Murakkab']].map(([id,name]) =>
+      '<option value="'+id+'" '+(state.tutorLevel===id?'selected':'')+'>'+name+'</option>').join('');
+  }
   async function tutorScreen(id='') {
+    if(id && id!==state.tutorLessonId){state.tutorLessonId=id;tutorClear();}
     state.tab='tutor';
-    if(id) state.tutorLessonId=id;
     loading();
-    try { state.tutorStatus=await api('/tutor/status'); renderTutor(); }
-    catch(e) { fail(e); }
+    try {
+      state.tutorStatus=await api('/tutor/status');
+      renderTutor();
+    } catch(e){fail(e);}
   }
   function renderTutor() {
     state.tab='tutor';
-    const t=state.tutorStatus;
+    const t=state.tutorStatus||{enabled:false,consented:false,used:0,limit:5,remaining:0};
     const lessons=subjectSummary();
-    if (!state.tutorLessonId && lessons[0]) state.tutorLessonId=lessons[0].id;
-    const select=lessons.map(l=>`<option value="${esc(l.id)}" ${l.id===state.tutorLessonId?'selected':''}>${esc(l.title)}</option>`).join('');
-    let result='';
-    if(state.tutorAnswer) {
-      result=`<div class="card ai-result"><h3>✧ Dars yordamchisi javobi</h3><p>${esc(state.tutorAnswer.answer).replace(/\n/g,'<br>')}</p><div class="smallprint">Foydalanilgan dars bo‘limlari: ${esc(state.tutorAnswer.sections.join(' · '))}</div><p class="smallprint">${esc(state.tutorAnswer.notice)}</p></div>`;
-    }
-    shell(`<p class="eyebrow">Yuborilgan manbalar bo‘yicha yordamchi</p><h1>✧ Dars Ustoz</h1><p class="smallprint">Bepul rejim · Darslardan tayyor izohlar; bu ChatGPT yoki generativ AI emas.</p>${disclaimer}<div class="card"><p class="smallprint">Savollar darsning original konspekti va testlaridan javob oladi. OpenAI API chaqirilmaydi va to‘lov qilinmaydi.</p><label for="tutor-lesson">Mavzuni tanlang</label><select id="tutor-lesson" class="ai-input">${select}</select><label for="tutor-mode">O‘rganish usuli</label><select id="tutor-mode" class="ai-input"><option value="explain">Sodda tushuntirish</option><option value="example">Misol bilan tushuntirish</option><option value="recall">Bilimni tekshiruvchi savol</option></select><label for="tutor-question">Savolingiz</label><textarea id="tutor-question" class="ai-input" maxlength="500" rows="4" placeholder="Masalan: Ergonomika nima uchun kerak?">${esc(state.tutorQuestion)}</textarea><p class="smallprint">Savol serverdagi dars matnida qidiriladi. Bemor yoki maxfiy ma’lumotni kiritmang.</p><button class="btn btn-primary btn-wide" data-action="tutor-ask" ${state.busy?'disabled':''}>${state.busy?'Javob tayyorlanmoqda…':'Darsdan javob olish →'}</button></div>${result}`);
+    if(!state.tutorLessonId&&lessons[0])state.tutorLessonId=lessons[0].id;
+    const select=lessons.map(l=>'<option value="'+esc(l.id)+'" '+(l.id===state.tutorLessonId?'selected':'')+'>'+esc(l.subject_title)+' · '+esc(l.title)+'</option>').join('');
+    const usingAI=state.tutorProvider==='ai';
+    const aiInfo=t.enabled
+      ? (t.consented ? '<p class="smallprint">Haqiqiy AI suhbat · Qolgan kunlik so‘rov: '+t.remaining+'/'+t.limit+'.</p>'
+         : '<p class="smallprint">OpenAI API orqali savol berish uchun alohida rozilik kerak. Savol va oxirgi 3 ta suhbat almashinuvi xizmatga yuboriladi; bizning SQLite bazamizda saqlanmaydi.</p><button class="btn btn-flat btn-wide" data-action="tutor-consent">Roziman · AI Ustozni ochish</button>')
+      : '<p class="smallprint">Haqiqiy AI hozir sozlanmagan yoki o‘chirilgan. Bepul dars yordamchisi ishlaydi.</p>';
+    const log=state.tutorMessages.map(item=>
+      '<div class="card tutor-message '+(item.role==='user'?'tutor-student':'tutor-teacher')+'"><p class="smallprint">'+(item.role==='user'?'Talaba':'Dars Ustoz')+'</p><p>'+esc(item.content).replace(/\n/g,'<br>')+'</p></div>').join('');
+    const error=state.tutorError?'<p class="error" role="alert">'+esc(state.tutorError)+'</p>':'';
+    const canAsk=!(state.busy||(usingAI&&(!t.enabled||!t.consented||t.remaining<=0)));
+    const btnText=state.busy?'Javob tayyorlanmoqda…':usingAI?'AI Ustozdan so‘rash →':'Darsdan javob olish →';
+    const provider='<label for="tutor-provider">Yordamchi turi</label><select id="tutor-provider" class="ai-input"><option value="lesson" '+(!usingAI?'selected':'')+'>Bepul konspekt yordamchisi</option><option value="ai" '+(usingAI?'selected':'')+'>AI Ustoz — OpenAI (rozilik va limit bilan)</option></select>';
+    shell('<p class="eyebrow">MedStudy AI v1.0 beta</p><h1>✧ AI Ustoz 2.0</h1>'+disclaimer+
+      '<div class="card"><p class="smallprint">Bepul rejim dars matnidan izlaydi va generativ AI emas. AI rejimi savol-javobni davom ettiradi, lekin dars konspekti doirasida ishlaydi.</p>'+
+      '<label for="tutor-lesson">Mavzuni tanlang</label><select id="tutor-lesson" class="ai-input">'+select+'</select>'+
+      provider+
+      '<label for="tutor-mode">O‘rganish usuli</label><select id="tutor-mode" class="ai-input">'+tutorModeOptions()+'</select>'+
+      '<label for="tutor-level">Tushuntirish darajasi</label><select id="tutor-level" class="ai-input">'+tutorLevelOptions()+'</select>'+
+      (usingAI?aiInfo:'<p class="smallprint">Bepul rejim tayyor izoh va savollarni ko‘rsatadi; erkin yozilgan javobni baholamaydi.</p>')+
+      '<label for="tutor-question">Savolingiz yoki javobingiz</label><textarea id="tutor-question" class="ai-input" maxlength="500" rows="4" placeholder="Masalan: Membrana nima uchun kerak?">'+esc(state.tutorQuestion)+'</textarea>'+
+      '<p class="smallprint">Bemor, telefon, email yoki maxfiy ma’lumot kiritmang. Suhbat faqat ushbu sahifa ochiq turganda xotirada saqlanadi.</p>'+
+      '<button class="btn btn-primary btn-wide" data-action="tutor-ask" '+(!canAsk?'disabled':'')+'>'+btnText+'</button>'+
+      '<button class="btn btn-flat btn-wide" data-action="tutor-new">Yangi suhbat</button>'+
+      (t.consented?'<button class="btn btn-flat btn-wide" data-action="tutor-revoke">AI roziligini bekor qilish</button>':'')+
+      error+'</div>'+log);
   }
   async function tutorAsk() {
     if(state.busy) return;
-    const mode=document.getElementById('tutor-mode')?.value||'explain';
-    const select=document.getElementById('tutor-lesson');
-    const field=document.getElementById('tutor-question');
-    state.tutorLessonId=select?.value||state.tutorLessonId;
-    state.tutorQuestion=field?.value.trim()||'';
-    if(state.tutorQuestion.length < 5) { alert('Savol kamida 5 ta belgi bo‘lsin'); return; }
-    state.busy=true;
-    renderTutor();
-    try { state.tutorAnswer=await api('/tutor/lesson','POST',{lesson_id:state.tutorLessonId,question:state.tutorQuestion,mode}); }
-    catch(e) { state.busy=false; fail(e); return; }
+    const text=document.getElementById('tutor-question')?.value.trim()||'';
+    state.tutorQuestion=text;
+    if(text.length<5){state.tutorError='Savol kamida 5 ta belgidan iborat bo‘lsin';renderTutor();return;}
+    if(state.tutorProvider==='ai' && (!state.tutorStatus?.enabled||!state.tutorStatus?.consented)) {
+      state.tutorError='Avval AI xizmatiga alohida rozilik bering';renderTutor();return;
+    }
+    state.tutorError='';
+    const payload={lesson_id:state.tutorLessonId,question:text,mode:state.tutorMode};
+    const ai=state.tutorProvider==='ai';
+    if(ai){payload.level=state.tutorLevel;payload.history=state.tutorHistory.slice(-6);}
+    state.busy=true;renderTutor();
+    try {
+      const result=await api(ai?'/tutor/ask':'/tutor/lesson','POST',payload);
+      state.tutorAnswer=result;
+      state.tutorMessages.push({role:'user',content:text},{role:'assistant',content:result.answer});
+      state.tutorMessages=state.tutorMessages.slice(-12);
+      if(ai){
+        state.tutorHistory.push({role:'user',content:text},{role:'assistant',content:result.answer.slice(0,500)});
+        state.tutorHistory=state.tutorHistory.slice(-6);
+        state.tutorStatus.remaining=result.remaining;
+        state.tutorStatus.used+=1;
+      }
+      state.tutorQuestion='';
+    }catch(e){state.tutorError=e.message;}
     state.busy=false;renderTutor();
   }
-
   async function init(){
     loading();try {
       const me=await api('/me');state.consent=me.consented;
@@ -177,13 +223,26 @@
         case 'progress':await progress();break;
         case 'privacy':privacy();break;
         case 'tutor':await tutorScreen(el.dataset.id||'');break;
-        case 'tutor-consent':await api('/tutor/consent','POST');await tutorScreen();break;
+        case 'tutor-consent':await api('/tutor/consent','POST');state.tutorStatus.consented=true;await tutorScreen();break;
         case 'tutor-ask':await tutorAsk();break;
-        case 'tutor-revoke':await api('/tutor/consent','DELETE');state.tutorAnswer=null;await tutorScreen();break;
+        case 'tutor-new':tutorClear();renderTutor();break;
+        case 'tutor-revoke':await api('/tutor/consent','DELETE');tutorClear();state.tutorProvider='lesson';await tutorScreen();break;
         case 'consent':await api('/consent','POST');await init();break;
-        case 'delete':if(!confirm('Barcha test natijalari o‘chirilsinmi?'))return;await api('/me','DELETE');state.catalog=null;state.progress=null;state.studyPlan=null;state.history=null;state.tutorAnswer=null;state.tutorQuestion='';await init();break;
+        case 'delete':if(!confirm('Barcha test natijalari o‘chirilsinmi?'))return;await api('/me','DELETE');state.catalog=null;state.progress=null;state.studyPlan=null;state.history=null;tutorClear();state.tutorProvider='lesson';await init();break;
       }
     }catch(e){fail(e);}
+  });
+  document.addEventListener('change',evt=>{
+    const id=evt.target.id;
+    if(id==='tutor-lesson'){
+      if(evt.target.value!==state.tutorLessonId){state.tutorLessonId=evt.target.value;tutorClear();}
+      renderTutor();
+    }
+    if(id==='tutor-provider'){
+      state.tutorProvider=evt.target.value;tutorClear();renderTutor();
+    }
+    if(id==='tutor-mode'){state.tutorMode=evt.target.value;tutorClear();renderTutor();}
+    if(id==='tutor-level'){state.tutorLevel=evt.target.value;renderTutor();}
   });
   init();
 })();

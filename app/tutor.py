@@ -12,7 +12,7 @@ import re
 
 import httpx
 
-MODEL = 'gpt-6-luna'
+MODEL = 'gpt-4.1-mini'
 URL = 'https://api.openai.com/v1/responses'
 WORD = re.compile(r"[a-zA-ZÀ-ÿʻ’‘o‘g‘0-9]+", re.UNICODE)
 

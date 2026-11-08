@@ -6,3 +6,6 @@
 
 /* Latin alphabet / authenticated teaching files */
 .alphabet-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:14px}.alphabet-item{display:flex;gap:9px;align-items:flex-start;border:1px solid var(--stroke);background:#11284b;border-radius:11px;padding:10px}.alphabet-item>strong{flex:0 0 28px;font-family:Georgia,serif;font-size:24px;color:var(--gold)}.alphabet-item span{min-width:0}.alphabet-item b{display:block;font-size:12px;overflow-wrap:anywhere}.alphabet-item small{display:block;color:var(--muted);font-size:11px;line-height:1.4;margin-top:3px}@media(max-width:390px){.alphabet-grid{grid-template-columns:1fr}}
+
+/* v1.0 beta adaptive tutor */
+.tutor-message{margin-top:12px;overflow-wrap:anywhere}.tutor-student{margin-left:12%;border-left:3px solid var(--gold)}.tutor-teacher{margin-right:8%;border-left:3px solid #6eaff5}.tutor-message p{white-space:normal;line-height:1.55}.tutor-message p:first-child{margin-bottom:7px}.ai-input{margin-bottom:12px}
