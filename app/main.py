@@ -26,6 +26,27 @@ BOT_TOKEN = os.getenv('BOT_TOKEN', '')
 ALLOWED_IDS = {int(x.strip()) for x in os.getenv('ALLOWED_USER_IDS', '').replace(';', ',').split(',') if x.strip()}
 DEV_PREVIEW = os.getenv('DEV_PREVIEW', '0') == '1'
 
+
+def free_access_enabled() -> bool:
+    """Explicit rollout flag; existing allowlist remains a safe fallback."""
+    return os.getenv('PUBLIC_FREE_ENABLED', '0') == '1'
+
+
+def admin_ids() -> set[int]:
+    """Administrator IDs are never derived from the public-access flag."""
+    raw = os.getenv('ADMIN_USER_IDS', '').strip()
+    if not raw:
+        return ALLOWED_IDS
+    try:
+        return {int(v.strip()) for v in raw.replace(';', ',').split(',') if v.strip()}
+    except ValueError:
+        return set()
+
+
+def is_admin(uid: int) -> bool:
+    return uid in admin_ids()
+
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     if DEV_PREVIEW and os.getenv('RAILWAY_ENVIRONMENT_ID'):
@@ -43,7 +64,8 @@ def index():
 
 @app.get('/api/health')
 def health():
-    return {'status': 'ok', 'version': CATALOG['version'], 'draft': True}
+    return {'status': 'ok', 'version': CATALOG['version'], 'draft': True,
+            'free_public': free_access_enabled()}
 
 
 def current_user(request: Request, x_telegram_init_data: Annotated[str | None, Header()] = None) -> int:
@@ -54,7 +76,7 @@ def current_user(request: Request, x_telegram_init_data: Annotated[str | None, H
         uid = verify_init_data(x_telegram_init_data or '', BOT_TOKEN)
     except (AuthError, ValueError) as exc:
         raise HTTPException(status_code=401, detail=str(exc)) from exc
-    if not ALLOWED_IDS or uid not in ALLOWED_IDS:
+    if not free_access_enabled() and uid not in ALLOWED_IDS:
         raise HTTPException(status_code=403, detail='Yopiq sinov. Administrator ruxsati kerak.')
     return uid
 
@@ -67,7 +89,9 @@ def consent_required(uid: int = Depends(current_user)) -> int:
 
 @app.get('/api/me')
 def me(uid: int = Depends(current_user)):
-    return {'consented': STORE.has_consent(uid), 'test_mode': True}
+    return {'consented': STORE.has_consent(uid),
+            'test_mode': not free_access_enabled(), 'free_public': free_access_enabled(),
+            'is_admin': is_admin(uid)}
 
 @app.post('/api/consent')
 def consent(uid: int = Depends(current_user)):
@@ -131,6 +155,10 @@ def submit(data: AttemptBody, uid: int = Depends(consent_required)):
         score, details = grade(chosen_questions, data.answers)
     except ValueError as exc:
         raise HTTPException(400, str(exc)) from exc
+    try:
+        STORE.reserve_public_action(uid, 'quiz', 20)
+    except ValueError as exc:
+        raise HTTPException(429, str(exc)) from exc
     STORE.save_attempt(uid, data.lesson_id, score, details, mode=mode)
     return {'score':score, 'total':len(details), 'mode':mode,
             'percent':round(score*100/len(details)), 'details':details}
@@ -198,9 +226,10 @@ def tutor_status(uid: int = Depends(consent_required)):
     used = STORE.ai_usage(uid)
     global_limit = _bounded_positive('AI_GLOBAL_DAILY_LIMIT', 40, 100)
     global_left = max(0, global_limit - STORE.ai_global_usage())
-    return {'enabled': tutor.enabled(), 'consented': STORE.has_ai_consent(uid),
-            'used': used, 'limit': limit,
-            'remaining': max(0, min(limit - used, global_left)),
+    return {'enabled': is_admin(uid) and tutor.enabled(),
+            'consented': is_admin(uid) and STORE.has_ai_consent(uid),
+            'used': used if is_admin(uid) else 0, 'limit': limit,
+            'remaining': max(0, min(limit - used, global_left)) if is_admin(uid) else 0,
             'conversation_saved': False, 'levels': ['basic', 'standard', 'advanced'],
             'modes': ['explain', 'example', 'recall', 'oral']}
 
@@ -221,11 +250,17 @@ def free_lesson_help(data: LessonHelpQuestion, uid: int = Depends(consent_requir
         raise HTTPException(409, 'Mavzu bo‘yiça o‘qituvçi konspekti hozirça kiritilmagan')
     if not data.question.strip():
         raise HTTPException(422, 'Savol bo‘sh bo‘lishi mumkin emas')
+    try:
+        STORE.reserve_public_action(uid, 'lesson_help', 12)
+    except ValueError as exc:
+        raise HTTPException(429, str(exc)) from exc
     return prepare_answer(found[1], data.question, data.mode)
 
 
 @app.post('/api/tutor/consent')
 def tutor_consent(uid: int = Depends(consent_required)):
+    if not is_admin(uid):
+        raise HTTPException(403, 'Pro AI rejimi hozircha ochilmagan')
     STORE.consent_ai(uid)
     return {'consented': True}
 
@@ -251,6 +286,8 @@ class TutorQuestion(BaseModel):
 
 @app.post('/api/tutor/ask')
 async def tutor_ask(data: TutorQuestion, uid: int = Depends(consent_required)):
+    if not is_admin(uid):
+        raise HTTPException(403, 'Pro AI rejimi hozircha ochilmagan')
     if not tutor.enabled():
         raise HTTPException(503, 'AI hozir o‘chirilgan. Administrator sozlamalarini tekshirsin.')
     if not STORE.has_ai_consent(uid):

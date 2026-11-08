@@ -52,3 +52,31 @@ def test_public_url_validation(monkeypatch):
     monkeypatch.setenv('WEB_APP_URL','')
     monkeypatch.setenv('RAILWAY_PUBLIC_DOMAIN','medstudy.up.railway.app')
     assert gateway.public_url()=='https://medstudy.up.railway.app'
+
+
+def test_webhook_public_free_start_and_privacy(monkeypatch):
+    monkeypatch.setenv('PUBLIC_FREE_ENABLED', '1')
+    monkeypatch.setenv('TELEGRAM_WEBHOOK_SECRET','s'*40)
+    monkeypatch.setenv('WEB_APP_URL','https://medstudy.example.org')
+    monkeypatch.setenv('ALLOWED_USER_IDS','100')
+    calls=[]
+    async def capture(method,payload):
+        calls.append((method,payload))
+        return {'ok':True}
+    monkeypatch.setattr(gateway,'api_call',capture)
+    client=TestClient(main.app)
+    headers={'X-Telegram-Bot-Api-Secret-Token':'s'*40}
+    body={'update_id':992,'message':{'chat':{'id':234,'type':'private'},
+          'from':{'id':234},'text':'/start'}}
+    r=client.post('/telegram/webhook',headers=headers,json=body)
+    assert r.status_code==200
+    assert 'reply_markup' in calls[-1][1]
+    assert 'Free' in calls[-1][1]['text']
+    assert '/myid' not in calls[-1][1]['text']
+    body['message']['text']='/privacy'
+    assert client.post('/telegram/webhook',headers=headers,json=body).status_code==200
+    assert 'test natijalari' in calls[-1][1]['text']
+    monkeypatch.setenv('PUBLIC_FREE_ENABLED','0')
+    body['message']['text']='/start'
+    assert client.post('/telegram/webhook',headers=headers,json=body).status_code==200
+    assert 'reply_markup' not in calls[-1][1]

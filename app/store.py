@@ -51,6 +51,13 @@ class Store:
                 PRIMARY KEY (user_id, utc_day)
             );
             CREATE INDEX IF NOT EXISTS idx_ai_usage_day ON ai_usage(utc_day);
+            CREATE TABLE IF NOT EXISTS rate_limits (
+                user_id INTEGER NOT NULL REFERENCES users(user_id) ON DELETE CASCADE,
+                action TEXT NOT NULL,
+                window_utc_minute TEXT NOT NULL,
+                requests INTEGER NOT NULL DEFAULT 0,
+                PRIMARY KEY (user_id, action)
+            );
             """)
             cols = {r[1] for r in c.execute("PRAGMA table_info(attempts)")}
             if "mode" not in cols:
@@ -68,6 +75,23 @@ class Store:
     def delete_user(self, uid: int):
         with self.connect() as c:
             c.execute("DELETE FROM users WHERE user_id=?", (uid,))
+
+    def reserve_public_action(self, uid: int, action: str, limit: int) -> None:
+        """Atomic per-Telegram-user minute quota for public write/heavy endpoints."""
+        if action not in {'quiz', 'lesson_help'} or not 1 <= limit <= 60:
+            raise ValueError('Noto‘g‘ri limit')
+        minute = datetime.now(timezone.utc).strftime('%Y%m%d%H%M')
+        with self.connect() as c:
+            c.execute("""INSERT OR IGNORE INTO rate_limits(user_id, action, window_utc_minute, requests)
+                         VALUES (?, ?, ?, 0)""", (uid, action, minute))
+            changed = c.execute("""UPDATE rate_limits
+                 SET requests=CASE WHEN window_utc_minute=? THEN requests+1 ELSE 1 END,
+                     window_utc_minute=?
+                 WHERE user_id=? AND action=?
+                   AND (window_utc_minute<>? OR requests<?)""",
+                 (minute, minute, uid, action, minute, limit)).rowcount
+            if not changed:
+                raise ValueError('Juda ko‘p so‘rov yuborildi. Bir daqiqadan so‘ng qayta urinib ko‘ring.')
 
     def save_attempt(self, uid: int, lid: str, score: int, details: list[dict], mode: str='full'):
         if mode not in ('full', 'retry', 'supplementary'):

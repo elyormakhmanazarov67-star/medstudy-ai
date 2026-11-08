@@ -1,4 +1,4 @@
-"""Small Telegram webhook gateway for the closed pilot Mini App.
+"""Telegram webhook gateway for public Free / allowlisted pilot Mini App.
 
 No update bodies or tokens are logged. A single HTTPS service can host both
 Telegram's Mini App and the Telegram Bot API webhook.
@@ -34,6 +34,10 @@ def bot_token() -> str:
 
 def webhook_secret() -> str:
     return os.getenv('TELEGRAM_WEBHOOK_SECRET', '').strip()
+
+
+def public_free_enabled() -> bool:
+    return os.getenv('PUBLIC_FREE_ENABLED', '0') == '1'
 
 
 def allowed_users() -> set[int]:
@@ -127,18 +131,20 @@ async def receive_telegram_update(
     if cmd == '/myid':
         body = f'Sizning Telegram ID: {uid}. Uni ochiq joyda ulashmang.'
         markup = None
-    elif uid not in allowed_users():
+    elif not public_free_enabled() and uid not in allowed_users():
         body = 'MedStudy AI hozir yopiq sinovda. /myid orqali ID ni ko‘ring va administratorga shaxsiy tartibda murojaat qiling.'
         markup = None
     elif cmd in {'/start', '/help', ''}:
-        body = ('🎓 MedStudy AI — yopiq sinov versiyasi.\n\n'
-                '📚 Fanlar, o‘qituvçi materiallari va SamMU e-library havolalari.\n'
-                '📊 Test natijalari va xatolarni qaytarish Mini App ichida.\n'
-                '⚠️ O‘quv materiallari mutaxassis tasdig‘ini kutmoqda.\n\n'
+        body = ('🎓 MedStudy AI — tibbiyot talabalari uchun o‘quv yordamchisi.\n\n'
+                '📚 6 fan, 81 mavzu va 631 ta test savoli.\n'
+                '📊 Konspektlar, testlar va shaxsiy o‘quv tavsiyalari Mini App ichida.\n'
+                '🆓 Free rejim bepul. Pullik Pro obuna hozircha faol emas.\n'
+                '⚠️ Materiallar mustaqil o‘quv loyihasiga tegishli, klinik maslahat emas.\n\n'
                 'Quyidagi tugmani bosib Mini App ni oching.')
         markup = {'inline_keyboard': [[{'text':'📱 MedStudy AI ni ochish', 'web_app':{'url': public_url()}}]]} if public_url() else None
     elif cmd == '/privacy':
-        body = ('Sinovda Telegram ID, rozilik va test natijalari saqlanadi. '
+        body = ('Telegram ID, rozilik va test natijalari saqlanadi. '
+                'AI suhbat matnlari bot bazasiga yozilmaydi. '
                 'Ma’lumotlarni Mini App ichida o‘chirishingiz mumkin. '
                 'Ilova mustaqil ta’lim loyihasi, universitetning rasmiy xizmati emas.')
         markup = None

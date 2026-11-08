@@ -133,3 +133,61 @@ def test_latin_subject_and_poster_in_authenticated_lesson(client):
     later=client.get('/api/lessons/latin_a15',headers=hdr()).json()
     assert later['sections'] and later['questions']
     assert len(later['questions'])==5
+
+
+def test_public_free_telegram_auth_consent_and_isolation(client, monkeypatch):
+    monkeypatch.setenv('PUBLIC_FREE_ENABLED','1')
+    outsider=UID+123
+    outsider_headers=hdr(sign(uid=outsider))
+    # Public means real signed Telegram users, not anonymous web visitors.
+    assert client.get('/api/me').status_code==401
+    assert client.get('/api/me', headers=hdr(sign(uid=outsider, now=int(time.time())-4000))).status_code==401
+    assert client.get('/api/me',headers=outsider_headers).status_code==200
+    assert client.get('/api/me',headers=outsider_headers).json()['is_admin'] is False
+    assert client.get('/api/catalog',headers=outsider_headers).status_code==403
+    assert client.post('/api/consent',headers=outsider_headers).status_code==200
+    assert client.get('/api/catalog',headers=outsider_headers).status_code==200
+    assert client.get('/api/lessons/eng_l1',headers=outsider_headers).status_code==200
+    assert client.get('/api/progress',headers=outsider_headers).json()['attempts_count']==0
+    assert client.post('/api/consent',headers=hdr()).status_code==200
+    questions=main.CATALOG['subjects'][3]['lessons'][0]['questions']
+    payload={'lesson_id':'eng_l1','question_ids':[q['id'] for q in questions],
+             'answers':[q['answer'] for q in questions]}
+    assert client.post('/api/attempts',json=payload,headers=outsider_headers).status_code==200
+    assert client.get('/api/progress',headers=outsider_headers).json()['attempts_count']==1
+    assert client.get('/api/progress',headers=hdr()).json()['attempts_count']==0
+    assert client.get('/api/health').json()['free_public'] is True
+    assert client.delete('/api/me',headers=outsider_headers).status_code==200
+    assert client.get('/api/catalog',headers=outsider_headers).status_code==403
+
+
+def test_public_free_does_not_unlock_paid_ai(client, monkeypatch):
+    from app import tutor
+    monkeypatch.setenv('PUBLIC_FREE_ENABLED','1')
+    monkeypatch.setenv('AI_ENABLED','1')
+    monkeypatch.setenv('OPENAI_API_KEY','test-only-no-real-call')
+    newcomer=UID+555
+    headers=hdr(sign(uid=newcomer))
+    client.post('/api/consent',headers=headers)
+    status=client.get('/api/tutor/status',headers=headers)
+    assert status.status_code==200
+    assert status.json()['enabled'] is False and status.json()['remaining']==0
+    assert client.post('/api/tutor/consent',headers=headers).status_code==403
+    assert client.post('/api/tutor/ask',headers=headers,json={
+        'lesson_id':'eng_l1','question':'Tish anatomiyasi nima?'}).status_code==403
+    assert client.post('/api/tutor/lesson',headers=headers,json={
+        'lesson_id':'eng_l1','question':'Tish anatomiyasi nima?'}).status_code==200
+
+
+def test_free_rate_limits_per_user_and_action(client, monkeypatch):
+    monkeypatch.setenv('PUBLIC_FREE_ENABLED','1')
+    user_headers=hdr(sign(uid=UID+300))
+    client.post('/api/consent',headers=user_headers)
+    payload={'lesson_id':'eng_l1','question':'What is the tooth?'}
+    for _ in range(12):
+        assert client.post('/api/tutor/lesson',headers=user_headers,json=payload).status_code==200
+    assert client.post('/api/tutor/lesson',headers=user_headers,json=payload).status_code==429
+    # Other users and other actions have separate quotas.
+    client.post('/api/consent',headers=hdr())
+    assert client.post('/api/tutor/lesson',headers=hdr(),json=payload).status_code==200
+    assert client.get('/api/catalog',headers=user_headers).status_code==200
