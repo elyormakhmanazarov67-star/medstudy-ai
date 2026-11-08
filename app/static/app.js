@@ -49,7 +49,7 @@
     '<option value="'+id+'" '+(currentTheme===id?'selected':'')+'>'+name+'</option>').join('');
   const header=()=>'<header class="sitehead"><div class="brand"><div class="logo">✦</div><div><strong>MedStudy AI</strong><small>O‘quv platforma</small></div></div>'+
     '<div class="head-actions"><label class="sr-only" for="theme-select">Dizayn ranglari</label><select class="theme-select" id="theme-select" aria-label="Dizayn ranglari">'+themeOptions()+'</select>'+
-    '<span class="pill"><span class="pill-dot"></span> v1.0 beta</span></div></header>';
+    '<span class="pill"><span class="pill-dot"></span> v1.0</span></div></header>';
   const nav = () => `<div class="footer-nav"><div class="nav-inner"><button class="nav ${state.tab==='home'?'active':''}" data-action="home"><b>⌂</b>Asosiy</button><button class="nav ${state.tab==='progress'?'active':''}" data-action="progress"><b>▥</b>Natijalar</button><button class="nav ${state.tab==='tutor'?'active':''}" data-action="tutor"><b>✧</b>AI Ustoz</button><button class="nav ${state.tab==='privacy'?'active':''}" data-action="privacy"><b>♢</b>Maxfiylik</button></div></div>`;
   const disclaimer = `<div class="caution">⚠️ Mazkur darslar sinov materialidir; mutaxassis ko‘rigidan o‘tmagan. Klinik amaliyot uchun yo‘riqnoma yoki rasmiy universitet xizmati emas.</div>`;
   const shell = content => { app.innerHTML = strings(header() + '<main>' + content + '</main>' + nav()); window.scrollTo(0,0); };
@@ -182,7 +182,7 @@
     const canAsk=!(state.busy||(usingAI&&(!t.enabled||!t.consented||t.remaining<=0)));
     const btnText=state.busy?'Javob tayyorlanmoqda…':usingAI?'AI Ustozdan so‘rash →':'Darsdan javob olish →';
     const provider='<label for="tutor-provider">Yordamchi turi</label><select id="tutor-provider" class="ai-input"><option value="lesson" '+(!usingAI?'selected':'')+'>Bepul konspekt yordamchisi</option><option value="ai" '+(usingAI?'selected':'')+'>AI Ustoz — OpenAI (rozilik va limit bilan)</option></select>';
-    shell('<p class="eyebrow">MedStudy AI v1.0 beta</p><h1>✧ AI Ustoz 2.0</h1>'+disclaimer+
+    shell('<p class="eyebrow">MedStudy AI v1.0</p><h1>✧ AI Ustoz 2.0</h1>'+disclaimer+
       '<div class="card"><p class="smallprint">Bepul rejim dars matnidan izlaydi va generativ AI emas. AI rejimi savol-javobni davom ettiradi, lekin dars konspekti doirasida ishlaydi.</p>'+
       '<label for="tutor-lesson">Mavzuni tanlang</label><select id="tutor-lesson" class="ai-input">'+select+'</select>'+
       provider+
