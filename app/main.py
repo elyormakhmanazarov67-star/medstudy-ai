@@ -2,7 +2,7 @@ from __future__ import annotations
 import os
 from contextlib import asynccontextmanager
 from pathlib import Path
-from typing import Annotated
+from typing import Annotated, Literal
 from dotenv import load_dotenv
 from fastapi import FastAPI, Depends, Header, HTTPException, Request
 from fastapi.responses import FileResponse
@@ -197,13 +197,15 @@ def tutor_status(uid: int = Depends(consent_required)):
     limit = _bounded_positive('AI_DAILY_LIMIT', 5, 20)
     used = STORE.ai_usage(uid)
     return {'enabled': tutor.enabled(), 'consented': STORE.has_ai_consent(uid),
-            'used': used, 'limit': limit, 'remaining': max(0, limit-used)}
+            'used': used, 'limit': limit, 'remaining': max(0, limit-used),
+            'conversation_saved': False, 'levels': ['basic', 'standard', 'advanced'],
+            'modes': ['explain', 'example', 'recall', 'oral']}
 
 
 class LessonHelpQuestion(BaseModel):
     lesson_id: str = Field(min_length=1, max_length=100)
     question: str = Field(min_length=5, max_length=500)
-    mode: str = Field(default="explain", pattern="^(explain|example|recall)$")
+    mode: str = Field(default="explain", pattern="^(explain|example|recall|oral)$")
 
 
 @app.post('/api/tutor/lesson')
@@ -231,10 +233,17 @@ def tutor_revoke_consent(uid: int = Depends(consent_required)):
     return {'consented': False}
 
 
+class DialogueTurn(BaseModel):
+    role: Literal['user', 'assistant']
+    content: str = Field(min_length=1, max_length=500)
+
+
 class TutorQuestion(BaseModel):
     lesson_id: str = Field(min_length=1, max_length=100)
     question: str = Field(min_length=5, max_length=500)
-    mode: str = Field(default="explain", pattern="^(explain|example|recall)$")
+    mode: str = Field(default="explain", pattern="^(explain|example|recall|oral)$")
+    level: str = Field(default="standard", pattern="^(basic|standard|advanced)$")
+    history: list[DialogueTurn] = Field(default_factory=list, max_length=6)
 
 
 @app.post('/api/tutor/ask')
@@ -250,10 +259,16 @@ async def tutor_ask(data: TutorQuestion, uid: int = Depends(consent_required)):
         raise HTTPException(409, 'Dars uchun tasdiqlangan manba hali yo‘q')
     if not data.question.strip():
         raise HTTPException(422, 'Savol bo‘sh bo‘lishi mumkin emas')
-    # Reject obvious personally identifying data to reduce accidental exposure.
+    # Conversation is kept only in browser memory. Validate every untrusted turn
+    # before sending anything to the external provider; do not persist the text.
     import re
-    if re.search(r'[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}|\+?998[\d -]{8,}|sk-[a-zA-Z0-9_-]{12,}', data.question):
-        raise HTTPException(422, 'Savoldan telefon, email yoki maxfiy kalitni olib tashlang')
+    history = [turn.model_dump() for turn in data.history]
+    if len(history) % 2 or any(turn['role'] != ('user' if i % 2 == 0 else 'assistant')
+                               for i, turn in enumerate(history)):
+        raise HTTPException(422, 'Suhbat navbati noto‘g‘ri; yangi suhbat boshlang')
+    private = re.compile(r'[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}|\+?998[\d -]{8,}|sk-[a-zA-Z0-9_-]{12,}')
+    if any(private.search(text) for text in [data.question] + [turn['content'] for turn in history]):
+        raise HTTPException(422, 'Savol va tarixdan telefon, email yoki maxfiy kalitni olib tashlang')
     per_user = _bounded_positive('AI_DAILY_LIMIT', 5, 20)
     globally = _bounded_positive('AI_GLOBAL_DAILY_LIMIT', 40, 1000)
     try:
@@ -261,7 +276,7 @@ async def tutor_ask(data: TutorQuestion, uid: int = Depends(consent_required)):
     except (ValueError, PermissionError) as exc:
         raise HTTPException(429 if isinstance(exc, ValueError) else 403, str(exc)) from exc
     try:
-        result = await tutor.generate_answer(lesson_found[1], data.question.strip(), mode=data.mode)
+        result = await tutor.generate_answer(lesson_found[1], data.question.strip(), mode=data.mode, level=data.level, history=history)
     except tutor.TutorUnavailable as exc:
         raise HTTPException(503, str(exc)) from exc
     return {**result, 'remaining': max(0, per_user-used),

@@ -16,8 +16,9 @@ def client(tmp_path, monkeypatch):
     monkeypatch.setenv('AI_DAILY_LIMIT', '2')
     monkeypatch.setenv('AI_GLOBAL_DAILY_LIMIT', '3')
     calls = []
-    async def answer(lesson, question, mode='explain'):
-        calls.append({'lesson': lesson['id'], 'question': question, 'mode': mode})
+    async def answer(lesson, question, mode='explain', level='standard', history=None):
+        calls.append({'lesson': lesson['id'], 'question': question, 'mode': mode,
+                      'level': level, 'history': history or []})
         return {'answer': 'Ergonomika ishni qulay tashkil etishdir.', 'sections': ['Ergonomika tushunchasi']}
     monkeypatch.setattr(tutor, 'generate_answer', answer)
     client = TestClient(main.app)
@@ -90,3 +91,32 @@ def test_teaching_styles_and_response_handling():
     assert 'misol' in tutor.response_style('example').lower()
     with pytest.raises(ValueError):
         tutor.response_style('unsafe')
+
+def test_multiturn_oral_tutor_is_bounded_and_opt_in(client):
+    c,calls=client
+    c.post('/api/consent',headers=hdr())
+    payload={'lesson_id':'eng_l1','question':'Menga nazariy savol bering',
+             'mode':'oral','level':'basic','history':[]}
+    assert c.post('/api/tutor/ask',headers=hdr(),json=payload).status_code==403
+    c.post('/api/tutor/consent',headers=hdr())
+    r=c.post('/api/tutor/ask',headers=hdr(),json=payload)
+    assert r.status_code==200
+    assert calls[0]['mode']=='oral' and calls[0]['level']=='basic'
+    conversation=[{'role':'user','content':'Menga nazariy savol bering'},
+                  {'role':'assistant','content':'Tish haqida qanday tushunchangiz bor?'}]
+    r=c.post('/api/tutor/ask',headers=hdr(),json={**payload,'history':conversation,
+        'question':'Tish qattiq to‘qimalardan tashkil topadi'})
+    assert r.status_code==200 and calls[1]['history']==conversation
+    assert c.post('/api/tutor/ask',headers=hdr(),json={**payload,'history':[conversation[1]]}).status_code==422
+    assert c.post('/api/tutor/ask',headers=hdr(),json={**payload,'level':'expert'}).status_code==422
+    assert c.post('/api/tutor/ask',headers=hdr(),json={**payload,'history':conversation*4}).status_code==422
+    assert c.post('/api/tutor/ask',headers=hdr(),json={**payload,'history':[
+        {'role':'user','content':'email a@b.com'},{'role':'assistant','content':'Ok'}
+    ]}).status_code==422
+    assert len(calls)==2
+
+def test_oral_and_level_styles():
+    assert 'savol' in tutor.response_style('oral').lower()
+    assert 'boshlang‘ich' in tutor.response_level('basic').lower()
+    with pytest.raises(ValueError):
+        tutor.response_level('unknown')

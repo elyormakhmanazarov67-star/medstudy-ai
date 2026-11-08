@@ -43,7 +43,10 @@ def build_study_plan(catalog: dict, latest: list[dict], wrong_counts: dict[str, 
                     2, "maintain", "Bilimni mustahkamlash",
                     "Oxirgi to‘liq test natijasi 80% yoki undan yuqori."
                 )
+            level = ("basic" if score is None or score < 60 else
+                     "standard" if score < 85 else "advanced")
             items.append({
+                "recommended_level": level,
                 "lesson_id": lid, "lesson_title": lesson["title"],
                 "subject_id": subject["id"], "subject_title": subject["title"],
                 "last_full_percent": score, "wrong_count": missed,

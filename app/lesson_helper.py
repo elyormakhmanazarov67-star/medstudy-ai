@@ -7,7 +7,7 @@ from __future__ import annotations
 
 from .tutor import _tokens
 
-MODES = ("explain", "example", "recall")
+MODES = ("explain", "example", "recall", "oral")
 
 
 def _ranked_sections(lesson: dict, question: str) -> list[tuple[int, int, dict]]:
@@ -76,7 +76,7 @@ def prepare_answer(lesson: dict, question: str, mode: str = "explain") -> dict:
                 "O‘zingizni tekshiring:\n"
                 + stem
                 + ("\n" + "\n".join(f"{chr(65+i)}) {opt}" for i, opt in enumerate(variants)) if variants else "")
-                + "\n\nJavobni darsdan topishga harakat qiling. To‘liq testda javobni tekshirishingiz mumkin."
+                + "\n\nBu bepul savol yordamchisi yozma javobni tekshira olmaydi. Javobni to‘liq testda tekshiring."
             )
     else:
         answer = f"{heading}\n\n{body[:900]}"

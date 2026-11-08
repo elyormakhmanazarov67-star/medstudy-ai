@@ -31,7 +31,7 @@ def test_helper_modes_from_15_lesson_curriculum():
     lessons = main.CATALOG["subjects"][3]["lessons"]
     assert len(lessons) == 5
     for lesson in lessons:
-        for mode in ("explain", "example", "recall"):
+        for mode in ("explain", "example", "recall", "oral"):
             result = prepare_answer(lesson, lesson["sections"][0]["heading"], mode)
             assert result["answer"]
             assert result["provider"] == "lesson"

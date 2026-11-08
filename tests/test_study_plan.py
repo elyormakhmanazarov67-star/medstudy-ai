@@ -98,3 +98,14 @@ def test_premium_preview_requires_consent_and_never_accepts_payments(monkeypatch
     assert data["plans"][0]["available"] is True
     assert data["plans"][1]["available"] is False
     assert all(plan["price"] is None for plan in data["plans"])
+
+def test_plan_recommends_tutor_level_from_score():
+    cat={'subjects':[{'id':'x','title':'X','lessons':[
+        {'id':'new','title':'New'},{'id':'low','title':'Low'},
+        {'id':'mid','title':'Mid'},{'id':'high','title':'High'}]}]}
+    latest=[{'lesson_id':'low','score':3,'total':10},
+            {'lesson_id':'mid','score':7,'total':10},
+            {'lesson_id':'high','score':9,'total':10}]
+    plan=build_study_plan(cat,latest,{})
+    levels={item['lesson_id']:item['recommended_level'] for item in plan['items']}
+    assert levels=={'new':'basic','low':'basic','mid':'standard','high':'advanced'}
