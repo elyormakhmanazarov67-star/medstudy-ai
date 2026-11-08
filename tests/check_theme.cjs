@@ -34,7 +34,7 @@ async function main(){
   await Promise.resolve();await Promise.resolve();
   assert.equal(b.root.dataset.theme,'blue');
   assert.equal(b.root.style.colorScheme,'dark');
-  assert.match(b.app.innerHTML,/Dizayn ranglari/);
+  assert.match(code,/Dizayn ranglari/); // header appears after consent check
   for(const [name,color,scheme] of [
     ['white','#ffffff','light'],['black','#080808','dark'],['blue','#0b1832','dark']
   ]){
