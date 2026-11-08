@@ -191,3 +191,66 @@ def test_free_rate_limits_per_user_and_action(client, monkeypatch):
     client.post('/api/consent',headers=hdr())
     assert client.post('/api/tutor/lesson',headers=hdr(),json=payload).status_code==200
     assert client.get('/api/catalog',headers=user_headers).status_code==200
+
+
+def test_approval_gate_pending_approved_revoked_and_persistent_progress(client,monkeypatch):
+    from app.store import Store
+    import tempfile
+    monkeypatch.setenv('PUBLIC_FREE_ENABLED','1')
+    monkeypatch.setenv('ACCESS_APPROVAL_ENABLED','1')
+    newcomer=UID+998
+    headers=hdr(sign(uid=newcomer))
+    assert client.get('/api/me',headers=headers).json()['access_status']=='not_requested'
+    assert client.get('/api/catalog',headers=headers).status_code==403
+    assert client.post('/api/consent',headers=headers).status_code==403
+    assert client.post('/api/tutor/lesson',headers=headers,json={
+      'lesson_id':'eng_l1','question':'What is a tooth?'}).status_code==403
+    assert client.get('/api/catalog').status_code==401
+    assert client.get('/api/catalog',headers=hdr(sign(uid=newcomer,now=int(time.time())-4000))).status_code==401
+    status,created=main.STORE.request_access(newcomer)
+    assert status=='pending' and created is True
+    assert main.STORE.request_access(newcomer)==('pending',False)
+    assert client.get('/api/catalog',headers=headers).status_code==403
+    assert main.STORE.review_access(newcomer,'approved',UID)=='approved'
+    assert client.post('/api/consent',headers=headers).status_code==200
+    assert client.get('/api/catalog',headers=headers).status_code==200
+    questions=main.CATALOG['subjects'][3]['lessons'][0]['questions']
+    payload={'lesson_id':'eng_l1','question_ids':[q['id'] for q in questions],
+             'answers':[q['answer'] for q in questions]}
+    assert client.post('/api/attempts',headers=headers,json=payload).status_code==200
+    assert client.get('/api/progress',headers=headers).json()['attempts_count']==1
+    main.STORE.review_access(newcomer,'revoked',UID)
+    assert client.get('/api/catalog',headers=headers).status_code==403
+    assert client.get('/api/progress',headers=headers).status_code==403
+    main.STORE.review_access(newcomer,'approved',UID)
+    assert client.get('/api/progress',headers=headers).json()['attempts_count']==1
+    assert client.get('/api/catalog',headers=hdr()).status_code==403
+    # A user who deletes their account also deletes their registration.
+    assert client.delete('/api/me',headers=headers).status_code==200
+    assert main.STORE.access_status(newcomer)=='not_requested'
+    assert client.get('/api/catalog',headers=headers).status_code==403
+
+
+def test_approval_gate_admin_bypass_still_requires_privacy(client,monkeypatch):
+    monkeypatch.setenv('PUBLIC_FREE_ENABLED','1')
+    monkeypatch.setenv('ACCESS_APPROVAL_ENABLED','1')
+    monkeypatch.setattr(main,'ALLOWED_IDS',{UID})
+    assert client.get('/api/me',headers=hdr()).json()['access_status']=='approved'
+    assert client.get('/api/catalog',headers=hdr()).status_code==403
+    assert client.post('/api/consent',headers=hdr()).status_code==200
+    assert client.get('/api/catalog',headers=hdr()).status_code==200
+
+
+def test_access_requests_persist_without_deleting_old_records(client,monkeypatch):
+    monkeypatch.setenv('PUBLIC_FREE_ENABLED','1')
+    monkeypatch.setenv('ACCESS_APPROVAL_ENABLED','1')
+    other=UID+777
+    main.STORE.request_access(other)
+    assert main.STORE.access_status(other)=='pending'
+    from app.store import Store
+    reopened=Store(main.STORE.path)
+    assert reopened.access_status(other)=='pending'
+    reopened.review_access(other,'rejected',UID)
+    assert reopened.access_status(other)=='rejected'
+    assert other not in reopened.pending_access()
+    assert reopened.request_access(other)==('rejected',False)

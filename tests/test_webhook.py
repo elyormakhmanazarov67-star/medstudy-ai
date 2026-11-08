@@ -80,3 +80,52 @@ def test_webhook_public_free_start_and_privacy(monkeypatch):
     body['message']['text']='/start'
     assert client.post('/telegram/webhook',headers=headers,json=body).status_code==200
     assert 'reply_markup' not in calls[-1][1]
+
+
+def test_approval_webhook_request_admin_callback_and_revocation(monkeypatch,tmp_path):
+    from app.store import Store
+    monkeypatch.setenv('ACCESS_APPROVAL_ENABLED','1')
+    monkeypatch.setenv('PUBLIC_FREE_ENABLED','1')
+    monkeypatch.setenv('BOT_TOKEN','12345:abc')
+    monkeypatch.setenv('TELEGRAM_WEBHOOK_SECRET','x'*40)
+    monkeypatch.setenv('WEB_APP_URL','https://medstudy.example.org')
+    monkeypatch.setenv('ALLOWED_USER_IDS','100')
+    store=Store(str(tmp_path/'access.sqlite'))
+    monkeypatch.setattr(main.app.state,'store',store)
+    calls=[]
+    async def capture(method,payload):
+        calls.append((method,payload))
+        return {'ok':True}
+    monkeypatch.setattr(gateway,'api_call',capture)
+    client=TestClient(main.app)
+    headers={'X-Telegram-Bot-Api-Secret-Token':'x'*40}
+    start={'update_id':5501,'message':{'chat':{'id':200,'type':'private'},
+        'from':{'id':200},'text':'/start'}}
+    assert client.post('/telegram/webhook',headers=headers,json=start).status_code==200
+    assert store.access_status(200)=='pending'
+    admin_notifications=[p for m,p in calls if m=='sendMessage' and p.get('chat_id')==100]
+    assert len(admin_notifications)==1
+    assert admin_notifications[0]['reply_markup']['inline_keyboard'][0][0]['callback_data']=='access:approve:200'
+    newcomer_msgs=[p for m,p in calls if m=='sendMessage' and p.get('chat_id')==200]
+    assert 'reply_markup' not in newcomer_msgs[-1]
+    # Duplicate /start does not send duplicate notifications.
+    assert client.post('/telegram/webhook',headers=headers,json=start).status_code==200
+    assert len([p for m,p in calls if m=='sendMessage' and p.get('chat_id')==100])==1
+    # Forged callback with correct webhook secret but non-admin identity cannot approve.
+    callback={'update_id':5502,'callback_query':{'id':'c1','from':{'id':200},
+        'data':'access:approve:200'}}
+    assert client.post('/telegram/webhook',headers=headers,json=callback).status_code==200
+    assert store.access_status(200)=='pending'
+    callback['callback_query']['from']['id']=100
+    assert client.post('/telegram/webhook',headers=headers,json=callback).status_code==200
+    assert store.access_status(200)=='approved'
+    assert client.post('/telegram/webhook',headers=headers,json=start).status_code==200
+    allowed=[p for m,p in calls if m=='sendMessage' and p.get('chat_id')==200]
+    assert 'reply_markup' in allowed[-1]
+    revoke={'update_id':5503,'message':{'chat':{'id':100,'type':'private'},
+         'from':{'id':100},'text':'/revoke 200'}}
+    assert client.post('/telegram/webhook',headers=headers,json=revoke).status_code==200
+    assert store.access_status(200)=='revoked'
+    assert client.post('/telegram/webhook',headers=headers,json=start).status_code==200
+    denied=[p for m,p in calls if m=='sendMessage' and p.get('chat_id')==200]
+    assert 'reply_markup' not in denied[-1]
