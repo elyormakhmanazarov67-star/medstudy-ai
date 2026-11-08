@@ -32,11 +32,11 @@ function boot(seed={}){
 async function main(){
   let b=boot();
   await Promise.resolve();await Promise.resolve();
-  assert.equal(b.root.dataset.theme,'blue');
-  assert.equal(b.root.style.colorScheme,'dark');
+  assert.equal(b.root.dataset.theme,'white');
+  assert.equal(b.root.style.colorScheme,'light');
   assert.match(code,/Dizayn ranglari/); // header appears after consent check
   for(const [name,color,scheme] of [
-    ['white','#ffffff','light'],['black','#080808','dark'],['blue','#0b1832','dark']
+    ['black','#001a10','dark'],['white','#f6faf6','light']
   ]){
     b.changed.events.change({target:{id:'theme-select',value:name}});
     assert.equal(b.root.dataset.theme,name);
@@ -50,8 +50,14 @@ async function main(){
   assert.equal(persisted.root.style.colorScheme,'dark');
   assert.equal(persisted.values.get(key),'black');
   const invalid=boot({[key]:'attack'});
-  assert.equal(invalid.root.dataset.theme,'blue');
+  assert.equal(invalid.root.dataset.theme,'white');
   assert.equal(invalid.values.get(key),'attack'); // invalid preference isn't executed
+  const oldBlue=boot({[key]:'blue'});
+  assert.equal(oldBlue.root.dataset.theme,'white');
+  assert.equal(oldBlue.values.get(key),'white');
+  assert.match(code,/Oq-yashil/);
+  assert.match(code,/Qora-yashil/);
+  assert.doesNotMatch(code,/\['blue','Ko‘k'\]/);
   assert.match(css,/:root\[data-theme="white"\]/);
   assert.match(css,/:root\[data-theme="black"\]/);
   for(const cls of ['.hero','.answer','.footer-nav','.ai-input','.tutor-student','.alphabet-item','.caution','.btn-primary']){
@@ -66,8 +72,8 @@ async function main(){
     };
     const x=lum(a),y=lum(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05);
   };
-  assert.ok(contrast('#101010','#ffffff')>=7);
-  assert.ok(contrast('#f5f5f5','#080808')>=7);
-  console.log('THEME_SWITCH_OK: blue/white/black, refresh preference, native header, contrast');
+  assert.ok(contrast('#173727','#ffffff')>=7);
+  assert.ok(contrast('#f5fff8','#001a10')>=7);
+  console.log('THEME_SWITCH_OK: white-green/black-green, migration, persistence, contrast');
 }
 main().catch(e=>{console.error(e);process.exitCode=1;});

@@ -4,17 +4,19 @@
   webapp?.ready();
   webapp?.expand();
 
-  // Only presentation settings are persisted, never messages or medical data.
+  // Only appearance preferences persist in the browser, never learning conversations.
+  // Migrating earlier blue preference to the new white-and-green design.
   const THEME_KEY='medstudy_theme_v1';
-  const THEME_COLORS={blue:'#0b1832',white:'#ffffff',black:'#080808'};
-  const ALLOWED_THEMES=new Set(['blue','white','black']);
-  let currentTheme='blue';
+  const THEME_COLORS={white:'#f6faf6',black:'#001a10'};
+  const ALLOWED_THEMES=new Set(['white','black']);
+  let currentTheme='white';
   try {
-    const savedTheme=window.localStorage.getItem(THEME_KEY);
-    if(ALLOWED_THEMES.has(savedTheme))currentTheme=savedTheme;
+    const previous=window.localStorage.getItem(THEME_KEY);
+    if(ALLOWED_THEMES.has(previous))currentTheme=previous;
+    else if(previous==='blue')window.localStorage.setItem(THEME_KEY,'white');
   }catch(_){}
   function applyTheme(theme,persist=true){
-    currentTheme=ALLOWED_THEMES.has(theme)?theme:'blue';
+    currentTheme=ALLOWED_THEMES.has(theme)?theme:'white';
     document.documentElement.dataset.theme=currentTheme;
     document.documentElement.style.colorScheme=currentTheme==='white'?'light':'dark';
     const themeColor=THEME_COLORS[currentTheme];
@@ -45,12 +47,17 @@
     if (!response.ok) throw new Error(body?.detail || 'Server bilan aloqa xatosi');
     return body;
   }
-  const themeOptions=()=>[['blue','Ko‘k'],['white','Oq'],['black','Qora']].map(([id,name])=>
+  const themeOptions=()=>[['white','Oq-yashil'],['black','Qora-yashil']].map(([id,name])=>
     '<option value="'+id+'" '+(currentTheme===id?'selected':'')+'>'+name+'</option>').join('');
-  const header=()=>'<header class="sitehead"><div class="brand"><div class="logo">✦</div><div><strong>MedStudy AI</strong><small>O‘quv platforma</small></div></div>'+
+  const header=()=>'<header class="sitehead"><div class="brand"><div class="logo">🎓</div><div><strong>MedStudy AI</strong><small>O‘quv platforma</small></div></div>'+
     '<div class="head-actions"><label class="sr-only" for="theme-select">Dizayn ranglari</label><select class="theme-select" id="theme-select" aria-label="Dizayn ranglari">'+themeOptions()+'</select>'+
-    '<span class="pill"><span class="pill-dot"></span> v1.0</span></div></header>';
-  const nav = () => `<div class="footer-nav"><div class="nav-inner"><button class="nav ${state.tab==='home'?'active':''}" data-action="home"><b>⌂</b>Asosiy</button><button class="nav ${state.tab==='progress'?'active':''}" data-action="progress"><b>▥</b>Natijalar</button><button class="nav ${state.tab==='tutor'?'active':''}" data-action="tutor"><b>✧</b>AI Ustoz</button><button class="nav ${state.tab==='privacy'?'active':''}" data-action="privacy"><b>♢</b>Maxfiylik</button></div></div>`;
+    '<span class="pill"><span class="pill-dot"></span> v1.0.1</span></div></header>';
+  const nav = () => '<div class="footer-nav"><div class="nav-inner">'+
+    '<button class="nav '+(state.tab==='home'?'active':'')+'" data-action="home"><b>⌂</b>Asosiy</button>'+
+    '<button class="nav '+(state.tab==='subjects'||state.tab==='subject'?'active':'')+'" data-action="subjects"><b>▤</b>Fanlar</button>'+
+    '<button class="nav '+(state.tab==='progress'?'active':'')+'" data-action="progress"><b>▥</b>Natijalar</button>'+
+    '<button class="nav '+(state.tab==='privacy'?'active':'')+'" data-action="privacy"><b>⚙</b>Sozlamalar</button>'+
+    '</div></div>';
   const disclaimer = `<div class="caution">⚠️ Mazkur darslar sinov materialidir; mutaxassis ko‘rigidan o‘tmagan. Klinik amaliyot uchun yo‘riqnoma yoki rasmiy universitet xizmati emas.</div>`;
   const shell = content => { app.innerHTML = strings(header() + '<main>' + content + '</main>' + nav()); window.scrollTo(0,0); };
   const loading = () => { app.innerHTML = `<div class="boot"><div class="loader"></div><p>Ma’lumotlar yuklanmoqda…</p></div>`; };
@@ -72,10 +79,25 @@
     const completed=state.progress?.latest?.filter(x=>lessons.some(l=>l.id===x.lesson_id)).length || 0;
     const attempts=state.progress?.attempts_count || 0;
     const cards=subjects.map(s=>'<button class="card lesson-card" data-action="subject" data-id="'+rawEsc(s.id)+'"><span class="lesson-icon">📚</span><span class="lesson-content"><strong>'+esc(s.title)+'</strong><small>'+s.lessons.length+' ta mavzu</small></span><span class="chevron">›</span></button>').join('');
-    shell('<section class="hero"><p class="eyebrow">Talabalar uchún o‘quv platforma</p><h1>MedStudy AI</h1><p>O‘qituvchi yuborgan dars materiallari va ularning testlari.</p></section>'+
+    const menu=[
+      ['tutor','🎓','AI Ustoz 2.0','Tushuntiradi, misol keltiradi va bilimingizni tekshiradi'],
+      ['subjects','📖','Konspektlar','Fanlar va mavzular bo‘yicha ma’lumotlar'],
+      ['subjects','✅','Testlar','Mavzular bo‘yicha test savollari'],
+      ['progress','▥','O‘quv rejasi','Test natijasiga mos tavsiyalar'],
+      ['privacy','⚙','Sozlamalar','Dizayn, maxfiylik va AI roziligi']
+    ].map((row,i)=>'<button class="card feature-card '+(i===0?'feature-ai':'')+'" data-action="'+row[0]+'" '+(i===2?'data-purpose="tests"':'')+'><span class="feature-icon">'+row[1]+'</span><span class="feature-copy"><strong>'+row[2]+'</strong><small>'+row[3]+'</small></span><span class="chevron">›</span></button>').join('');
+    shell('<section class="hero"><div class="hero-text"><p class="eyebrow">Tibbiyot talabalari uchun</p><h1>MedStudy AI <span class="hero-version">v1.0.1</span></h1><p>Tibbiyot fanlarini o‘rganish, takrorlash va mustahkamlash uchun aqlli o‘quv yordamchisi.</p></div><div class="hero-illustration" aria-hidden="true">📚<span>🩺</span></div></section>'+
+      '<div class="features">'+menu+'</div>'+
       '<div class="stats"><div class="stat"><strong>'+subjects.length+'</strong><small>Fan</small></div><div class="stat"><strong>'+lessons.length+'</strong><small>Mavzu</small></div><div class="stat"><strong>'+attempts+'</strong><small>Test urinish</small></div></div>'+
       '<div class="sectionhead"><h2>Fanlar</h2><span>'+completed+'/'+lessons.length+' o‘rganilgan</span></div>'+cards+disclaimer+
       '<div class="footer-logo">MedStudy AI · Mustaqil ta’lim loyihasi</div>');
+  }
+  function showSubjects(purpose='notes'){
+    state.tab='subjects';
+    state.subjectsPurpose=purpose;
+    const subjects=state.catalog?.subjects||[];
+    const cards=subjects.map(s=>'<button class="card lesson-card" data-action="subject" data-id="'+rawEsc(s.id)+'"><span class="lesson-icon">📚</span><span class="lesson-content"><strong>'+esc(s.title)+'</strong><small>'+s.lessons.length+' ta mavzu</small></span><span class="chevron">›</span></button>').join('');
+    shell('<button class="back" data-action="home">← Asosiy</button><p class="eyebrow">'+(purpose==='tests'?'Bilimni sinash':'O‘quv materiallari')+'</p><h1>'+ (purpose==='tests'?'Testlar':'Fanlar va konspektlar') +'</h1><p class="smallprint">Fan va mavzuni tanlang.</p>'+cards);
   }
   function showSubject(id){
     const s=(state.catalog?.subjects||[]).find(x=>x.id===id);
@@ -83,7 +105,7 @@
     state.tab='subject';state.subjectId=id;
     const cards=s.lessons.map((l,i)=>'<button class="card lesson-card" data-action="lesson" data-id="'+rawEsc(l.id)+'"><span class="lesson-icon">📖</span><span class="lesson-content"><span class="tag">'+(i+1)+'-MAVZU</span><strong>'+esc(l.title)+'</strong><small>'+l.section_count+' bo‘lim · '+l.question_count+' savol</small></span><span class="chevron">›</span></button>').join('');
     shell('<button class="back" data-action="home">← Fanlar</button><h1>'+esc(s.title)+'</h1>'+
-      '<p class="smallprint">Mavzuni tanlang va kerakli ma’lumotlarni oching.</p>'+cards);
+      '<p class="smallprint">'+(state.subjectsPurpose==='tests'?'Test uchun mavzuni tanlang.':'Mavzuni tanlang va kerakli ma’lumotlarni oching.')+'</p>'+cards);
   }
   async function getLesson(id) {
     loading();
@@ -96,7 +118,8 @@
     shell('<button class="back" data-action="subject" data-id="'+rawEsc(l.subject_id)+'">← Mavzular</button>'+
       '<p class="eyebrow">'+esc(l.subject_title)+'</p><h1>'+esc(l.title)+'</h1>'+
       '<button class="card lesson-card" data-action="category" data-kind="required"><span class="lesson-icon">📘</span><span class="lesson-content"><strong>Kerakli ma’lumotlar</strong><small>Mavzu konspekti va testlar</small></span><span class="chevron">›</span></button>'+
-      '<button class="card lesson-card" data-action="tutor" data-id="'+rawEsc(l.id)+'"><span class="lesson-icon">✧</span><span class="lesson-content"><strong>AI Ustoz bilan o‘rganish</strong><small>Ushbu mavzuga oid savol-javob</small></span><span class="chevron">›</span></button>'+disclaimer);
+      '<button class="card lesson-card" data-action="tutor" data-id="'+rawEsc(l.id)+'"><span class="lesson-icon">🎓</span><span class="lesson-content"><strong>AI Ustoz bilan o‘rganish</strong><small>Ushbu mavzuga oid savol-javob</small></span><span class="chevron">›</span></button>'+
+      (l.questions?.length?'<button class="btn btn-primary btn-wide lesson-quiz-cta" data-action="start-quiz">✓ Testni boshlash ('+l.questions.length+')</button>':'')+disclaimer);
   }
   function startQuiz(questions, mode='full', category='required') {
     if (!questions.length) { state.tab='lesson'; showLesson(); return; }
@@ -138,7 +161,7 @@
     shell(`<p class="eyebrow">Mening o‘sishim</p><h1>O‘quv natijalarim</h1><p class="smallprint">Faqat shaxsiy test natijalaringiz ko‘rsatiladi.</p><div class="stats"><div class="stat"><strong>${p.attempts_count}</strong><small>Urinishlar</small></div><div class="stat"><strong>${p.latest.length}</strong><small>O‘rganilgan mavzu</small></div><div class="stat"><strong>${p.latest.length?Math.round(p.latest.reduce((x,r)=>x+r.percent,0)/p.latest.length):0}%</strong><small>Oxirgi o‘rtacha</small></div></div>${recommendations}${historyHtml}<div class="sectionhead"><h2>Mavzular kesimida</h2><span>Oxirgi urinishlar</span></div>${p.latest.length?`<div class="card">${p.latest.map(r=>`<div class="progress-row"><div class="progress-label"><strong>${esc(r.title)}</strong><span>${r.score}/${r.total} · ${r.percent}%</span></div><div class="bar"><div class="bar-fill" style="width:${r.percent}%"></div></div></div>`).join('')}<p class="smallprint">Eslatma: xatolarni takrorlash testida savollar soni kamroq bo‘lishi mumkin.</p></div>`:`<div class="empty"><div class="symbol">📊</div><h3>Natijalar hozircha yo‘q</h3><p>Birinchi testni topshiring — progress shu yerda ko‘rinadi.</p><button class="btn btn-primary" data-action="home">Darslarni ko‘rish →</button></div>`}`);
   }
   function privacy(){
-    state.tab='privacy';shell(`<p class="eyebrow">Shaxsiy ma’lumotlar</p><h1>Maxfiylik va xavfsizlik</h1><div class="card privacy"><h3>Qanday ma’lumotlar saqlanadi?</h3><p>Sinov davrida Telegram foydalanuvchi IDsi, rozilik vaqti, test javoblari va natijalari SQLite bazasida saqlanadi. Tanlangan Ko‘k, Oq yoki Qora dizayn faqat qurilmangizdagi brauzer xotirasida saqlanadi. Ism, telefon raqami va yozishmalar saqlanmaydi. Dars Ustoz bepul rejimida savol faqat serverdagi dars matni bilan solishtiriladi; u OpenAI API'ga yuborilmaydi va bizning SQLite bazamizga yozilmaydi. AI Ustoz rejimi faqat alohida rozilikdan so‘ng savol va oxirgi uchta suhbat almashinuvini OpenAI APIga yuboradi. Suhbat matni SQLite bazasiga yozilmaydi va sahifa yangilanganda yo‘qoladi. AI javobi xato bo‘lishi mumkin.</p><h3>Ma’lumotlar kimga tegishli?</h3><p>Test natijalarini ilova administratori serverda boshqaradi. Ilova hozircha mustaqil o‘quv prototipi, universitetning rasmiy xizmati emas.</p><h3>Ma’lumotlarni o‘chirish</h3><p>Quyidagi tugma orqali shaxsiy test tarixingiz va rozilik yozuvini o‘chirishingiz mumkin.</p><button class="btn btn-danger btn-wide" data-action="delete">Ma’lumotlarimni o‘chirish</button></div>${disclaimer}`);
+    state.tab='privacy';shell(`<p class="eyebrow">Shaxsiy ma’lumotlar</p><h1>Maxfiylik va xavfsizlik</h1><div class="card privacy"><h3>Qanday ma’lumotlar saqlanadi?</h3><p>Sinov davrida Telegram foydalanuvchi IDsi, rozilik vaqti, test javoblari va natijalari SQLite bazasida saqlanadi. Tanlangan Oq-yashil yoki Qora-yashil dizayn faqat qurilmangizdagi brauzer xotirasida saqlanadi. Ism, telefon raqami va yozishmalar saqlanmaydi. Dars Ustoz bepul rejimida savol faqat serverdagi dars matni bilan solishtiriladi; u OpenAI API'ga yuborilmaydi va bizning SQLite bazamizga yozilmaydi. AI Ustoz rejimi faqat alohida rozilikdan so‘ng savol va oxirgi uchta suhbat almashinuvini OpenAI APIga yuboradi. Suhbat matni SQLite bazasiga yozilmaydi va sahifa yangilanganda yo‘qoladi. AI javobi xato bo‘lishi mumkin.</p><h3>Ma’lumotlar kimga tegishli?</h3><p>Test natijalarini ilova administratori serverda boshqaradi. Ilova hozircha mustaqil o‘quv prototipi, universitetning rasmiy xizmati emas.</p><h3>Ma’lumotlarni o‘chirish</h3><p>Quyidagi tugma orqali shaxsiy test tarixingiz va rozilik yozuvini o‘chirishingiz mumkin.</p><button class="btn btn-danger btn-wide" data-action="delete">Ma’lumotlarimni o‘chirish</button></div>${disclaimer}`);
   }
   function consentScreen(){
     app.innerHTML=strings(header()+`<main class="privacy"><p class="eyebrow">Xush kelibsiz</p><h1>MedStudy AI’ga kirish</h1><div class="card"><h3>Yopiq sinovga rozilik</h3><p>Ta’limiy tajriba uchun Telegram ID, rozilik vaqti, test javoblari va natijalari administrator serveridagi SQLite bazasida saqlanadi. Ism, telefon va yozishmalar saqlanmaydi. Dars Ustoz bepul rejimida savolingiz serverdagi dars bilan solishtiriladi va bizning SQLite bazamizga saqlanmaydi. Tashqi AI xizmatiga hech narsa yuborilmaydi.</p><p>Keyin “Maxfiylik” bo‘limidan ularni o‘chirish mumkin. Materiallar ekspert tasdig‘ini olmagan.</p><button class="btn btn-primary btn-wide" data-action="consent">Roziman · Davom etish</button><div class="spacer"></div><p class="smallprint">Rozilik bermasangiz, natijalar saqlanmaydi va ilovadan foydalanish boshlanmaydi.</p></div></main>`);
@@ -171,30 +194,31 @@
     const lessons=subjectSummary();
     if(!state.tutorLessonId&&lessons[0])state.tutorLessonId=lessons[0].id;
     const select=lessons.map(l=>'<option value="'+esc(l.id)+'" '+(l.id===state.tutorLessonId?'selected':'')+'>'+esc(l.subject_title)+' · '+esc(l.title)+'</option>').join('');
+    const chosen=lessons.find(l=>l.id===state.tutorLessonId);
     const usingAI=state.tutorProvider==='ai';
     const aiInfo=t.enabled
-      ? (t.consented ? '<p class="smallprint">Haqiqiy AI suhbat · Qolgan kunlik so‘rov: '+t.remaining+'/'+t.limit+'.</p>'
-         : '<p class="smallprint">OpenAI API orqali savol berish uchun alohida rozilik kerak. Savol va oxirgi 3 ta suhbat almashinuvi xizmatga yuboriladi; bizning SQLite bazamizda saqlanmaydi.</p><button class="btn btn-flat btn-wide" data-action="tutor-consent">Roziman · AI Ustozni ochish</button>')
-      : '<p class="smallprint">Haqiqiy AI hozir sozlanmagan yoki o‘chirilgan. Bepul dars yordamchisi ishlaydi.</p>';
+      ? (t.consented?'<p class="smallprint">Haqiqiy AI suhbat · Qolgan kunlik so‘rov: '+t.remaining+'/'+t.limit+'.</p>'
+        :'<p class="smallprint">OpenAI API orqali suhbat uchun alohida rozilik kerak. Savol va oxirgi uchta suhbat almashinuvi OpenAI xizmatiga yuboriladi; botimizning SQLite bazasida saqlanmaydi.</p><button class="btn btn-flat btn-wide" data-action="tutor-consent">Roziman · AI Ustozni ochish</button>')
+      :'<p class="smallprint">Haqiqiy AI hozir sozlanmagan yoki o‘chirilgan. Bepul dars yordamchisi ishlaydi.</p>';
     const log=state.tutorMessages.map(item=>
-      '<div class="card tutor-message '+(item.role==='user'?'tutor-student':'tutor-teacher')+'"><p class="smallprint">'+(item.role==='user'?'Talaba':'Dars Ustoz')+'</p><p>'+esc(item.content).replace(/\n/g,'<br>')+'</p></div>').join('');
+      '<div class="card tutor-message '+(item.role==='user'?'tutor-student':'tutor-teacher')+'"><p class="smallprint">'+(item.role==='user'?'Talaba':'AI Ustoz')+'</p><p>'+esc(item.content).replace(/\n/g,'<br>')+'</p></div>').join('');
     const error=state.tutorError?'<p class="error" role="alert">'+esc(state.tutorError)+'</p>':'';
     const canAsk=!(state.busy||(usingAI&&(!t.enabled||!t.consented||t.remaining<=0)));
-    const btnText=state.busy?'Javob tayyorlanmoqda…':usingAI?'AI Ustozdan so‘rash →':'Darsdan javob olish →';
-    const provider='<label for="tutor-provider">Yordamchi turi</label><select id="tutor-provider" class="ai-input"><option value="lesson" '+(!usingAI?'selected':'')+'>Bepul konspekt yordamchisi</option><option value="ai" '+(usingAI?'selected':'')+'>AI Ustoz — OpenAI (rozilik va limit bilan)</option></select>';
-    shell('<p class="eyebrow">MedStudy AI v1.0</p><h1>✧ AI Ustoz 2.0</h1>'+disclaimer+
-      '<div class="card"><p class="smallprint">Bepul rejim dars matnidan izlaydi va generativ AI emas. AI rejimi savol-javobni davom ettiradi, lekin dars konspekti doirasida ishlaydi.</p>'+
-      '<label for="tutor-lesson">Mavzuni tanlang</label><select id="tutor-lesson" class="ai-input">'+select+'</select>'+
-      provider+
-      '<label for="tutor-mode">O‘rganish usuli</label><select id="tutor-mode" class="ai-input">'+tutorModeOptions()+'</select>'+
-      '<label for="tutor-level">Tushuntirish darajasi</label><select id="tutor-level" class="ai-input">'+tutorLevelOptions()+'</select>'+
-      (usingAI?aiInfo:'<p class="smallprint">Bepul rejim tayyor izoh va savollarni ko‘rsatadi; erkin yozilgan javobni baholamaydi.</p>')+
-      '<label for="tutor-question">Savolingiz yoki javobingiz</label><textarea id="tutor-question" class="ai-input" maxlength="500" rows="4" placeholder="Masalan: Membrana nima uchun kerak?">'+esc(state.tutorQuestion)+'</textarea>'+
-      '<p class="smallprint">Bemor, telefon, email yoki maxfiy ma’lumot kiritmang. Suhbat faqat ushbu sahifa ochiq turganda xotirada saqlanadi.</p>'+
+    const btnText=state.busy?'Javob tayyorlanmoqda…':usingAI?'AI Ustozga yuborish →':'Darsdan javob olish →';
+    shell('<div class="tutor-banner">🎓 AI Ustoz 2.0 <span>· '+(state.tutorMode==='oral'?'Og‘zaki imtihon':'Dars rejimi')+'</span></div>'+
+      '<div class="card tutor-subject"><span class="feature-icon">🦷</span><div><p class="smallprint">Tanlangan mavzu</p><strong>'+esc(chosen?.title||'Mavzuni tanlang')+'</strong></div></div>'+
+      '<div class="card tutor-settings"><p class="smallprint">Suhbatni davom ettirishingiz yoki yangi mavzu tanlashingiz mumkin.</p>'+
+      '<label for="tutor-lesson">Mavzu</label><select id="tutor-lesson" class="ai-input">'+select+'</select>'+
+      '<label for="tutor-provider">Yordamchi turi</label><select id="tutor-provider" class="ai-input"><option value="lesson" '+(!usingAI?'selected':'')+'>Bepul konspekt yordamchisi</option><option value="ai" '+(usingAI?'selected':'')+'>AI Ustoz — OpenAI (rozilik va limit)</option></select>'+
+      '<div class="tutor-config-grid"><div><label for="tutor-mode">O‘rganish usuli</label><select id="tutor-mode" class="ai-input">'+tutorModeOptions()+'</select></div>'+
+      '<div><label for="tutor-level">Qiyinchilik darajasi</label><select id="tutor-level" class="ai-input">'+tutorLevelOptions()+'</select></div></div>'+
+      (usingAI?aiInfo:'<p class="smallprint">Bepul rejim darsdagi tayyor ma’lumotlardan foydalanadi, yozma javobingizni avtomatik baholamaydi.</p>')+'</div>'+
+      (log?'<section class="tutor-chat" aria-live="polite">'+log+'</section>':'<div class="tutor-empty">✧ Savolingizni yozing. AI Ustoz ushbu mavzu bo‘yicha yordam beradi.</div>')+
+      '<div class="card tutor-composer"><label for="tutor-question">Savolingiz yoki javobingiz</label><textarea id="tutor-question" class="ai-input" maxlength="500" rows="3" placeholder="Xabar yozing…">'+esc(state.tutorQuestion)+'</textarea>'+
       '<button class="btn btn-primary btn-wide" data-action="tutor-ask" '+(!canAsk?'disabled':'')+'>'+btnText+'</button>'+
       '<button class="btn btn-flat btn-wide" data-action="tutor-new">Yangi suhbat</button>'+
-      (t.consented?'<button class="btn btn-flat btn-wide" data-action="tutor-revoke">AI roziligini bekor qilish</button>':'')+
-      error+'</div>'+log);
+      (t.consented?'<button class="btn btn-flat btn-wide" data-action="tutor-revoke">AI roziligini bekor qilish</button>':'')+error+
+      '<p class="smallprint">Bemor, telefon, email yoki maxfiy ma’lumot kiritmang. Suhbat sahifa yopilganda yoki yangilanganda yo‘qoladi.</p></div>'+disclaimer);
   }
   async function tutorAsk() {
     if(state.busy) return;
@@ -237,6 +261,7 @@
     try{
       switch(act){
         case 'home': if(state.catalog)home();else init();break;
+        case 'subjects':showSubjects(el.dataset.purpose||'notes');break;
         case 'subject':showSubject(el.dataset.id);break;
         case 'category':if(state.lesson)displayCategory(state.lesson);break;
         case 'lesson': if(el.dataset.id)await getLesson(el.dataset.id);break;
