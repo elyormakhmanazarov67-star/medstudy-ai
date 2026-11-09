@@ -95,7 +95,13 @@ class _MobileAccountPageState extends State<MobileAccountPage> {
 
   Future<void> submit() async {
     if (busy) return;
-    if (!(formKey.currentState?.validate() ?? false)) return;
+    if (!(formKey.currentState?.validate() ?? false)) {
+      setState(() {
+        pendingSubmitted = false;
+        message = 'Barcha maydonlarni tekshiring: ism, email va parol majburiy.';
+      });
+      return;
+    }
     setState(() {
       busy = true;
       message = '';
@@ -175,6 +181,7 @@ class _MobileAccountPageState extends State<MobileAccountPage> {
   Widget build(BuildContext context) => Scaffold(
     appBar: AppBar(title: const Text('Talaba kabineti')),
     body: ListView(
+      keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
       padding: const EdgeInsets.all(20),
       children: [
         if (widget.notice != null && widget.notice!.isNotEmpty)
@@ -213,9 +220,10 @@ class _MobileAccountPageState extends State<MobileAccountPage> {
                   maxLength: 70,
                   enabled: !busy,
                   textCapitalization: TextCapitalization.words,
+                  autofillHints: const [AutofillHints.name],
                   textInputAction: TextInputAction.next,
                   decoration: const InputDecoration(
-                    labelText: 'Ism va familiya',
+                    labelText: 'Ism va familiya *',
                     border: OutlineInputBorder(),
                   ),
                   validator: (value) => (value ?? '').trim().length < 2
@@ -228,10 +236,12 @@ class _MobileAccountPageState extends State<MobileAccountPage> {
                 controller: email,
                 enabled: !busy,
                 keyboardType: TextInputType.emailAddress,
+                autofillHints: const [AutofillHints.email],
+                textCapitalization: TextCapitalization.none,
                 textInputAction: TextInputAction.next,
                 autocorrect: false,
                 decoration: const InputDecoration(
-                  labelText: 'Email',
+                  labelText: 'Email *',
                   border: OutlineInputBorder(),
                 ),
                 validator: validateEmail,
@@ -241,13 +251,16 @@ class _MobileAccountPageState extends State<MobileAccountPage> {
                 controller: password,
                 enabled: !busy,
                 obscureText: !showPassword,
+                autofillHints: register
+                    ? const [AutofillHints.newPassword]
+                    : const [AutofillHints.password],
                 enableSuggestions: false,
                 autocorrect: false,
                 textInputAction: TextInputAction.done,
                 onFieldSubmitted: (_) => submit(),
                 decoration: InputDecoration(
                   labelText: register
-                      ? 'Parol (kamida 12 ta belgi)' : 'Parol',
+                      ? 'Parol * (kamida 12 ta belgi)' : 'Parol *',
                   border: const OutlineInputBorder(),
                   suffixIcon: IconButton(
                     tooltip: showPassword
