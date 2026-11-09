@@ -39,7 +39,10 @@ async function main(){
   assert.ok(code.includes('pill-dot"></span> Bepul'));
   assert.ok(!code.includes('v1.0.1') && !code.includes('v1.0.2'));
   const html=fs.readFileSync('app/static/index.html','utf8');
-  assert.ok(html.includes('app.js?v=1.0.3')); // browser cache busting
+  const jsVersion=html.match(/app\.js\?v=(\d+\.\d+\.\d+)/);
+  const cssVersion=html.match(/style\.css\?v=(\d+\.\d+\.\d+)/);
+  assert.ok(jsVersion && cssVersion, 'Assets must have versioned URLs for cache busting');
+  assert.equal(jsVersion[1],cssVersion[1], 'JS and CSS cache versions must match');
 
   for(const [name,color,scheme] of [
     ['black','#001a10','dark'],['white','#f6faf6','light']
