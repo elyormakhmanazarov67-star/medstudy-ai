@@ -61,6 +61,49 @@ class MobileApi {
     return _get('/api/mobile/diagrams/' + lessonId);
   }
 
+
+  static Future<List<Map<String, dynamic>>> getProgress() async {
+    final body = jsonDecode(await _get('/api/mobile/progress'));
+    final data = body is Map ? body['items'] : null;
+    if (data is! List) {
+      throw const MobileApiException('Natijalar formati noto‘g‘ri.');
+    }
+    return data
+        .whereType<Map>()
+        .map((item) => Map<String, dynamic>.from(item))
+        .toList(growable: false);
+  }
+
+  static Future<void> putProgress({
+    required String lessonId,
+    required bool read,
+    int? bestScore,
+  }) async {
+    final token = await storage.read(key: 'mobile_access_token');
+    if (token == null || token.isEmpty) {
+      throw const MobileApiException('Ilovadan foydalanish uchun kiring.', status: 401);
+    }
+    final response = await http.put(
+      endpoint('/api/mobile/progress'),
+      headers: {
+        'Authorization': 'Bearer $token',
+        'Content-Type': 'application/json',
+        'Cache-Control': 'no-store',
+      },
+      body: jsonEncode({
+        'lesson_id': lessonId,
+        'read': read,
+        'best_score': bestScore,
+      }),
+    ).timeout(const Duration(seconds: 8));
+    if (response.statusCode != 200) {
+      throw MobileApiException(
+        'Natija hozircha telefonda saqlandi.',
+        status: response.statusCode,
+      );
+    }
+  }
+
   static Future<void> clearToken() async =>
       storage.delete(key: 'mobile_access_token');
 }
