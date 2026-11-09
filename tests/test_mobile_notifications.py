@@ -41,7 +41,6 @@ def test_notification_sends_only_account_ids(monkeypatch):
                sent[0][1]["reply_markup"]["inline_keyboard"] for button in row)
 
 
-@pytest.mark.asyncio
 def test_notification_failure_is_reported(monkeypatch):
     monkeypatch.setenv("MOBILE_NOTIFY_BOT_TOKEN", "example-token-for-test")
     monkeypatch.setenv("MOBILE_NOTIFY_CHAT_ID", "@medstudyadmin")
