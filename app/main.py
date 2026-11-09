@@ -368,3 +368,10 @@ def mobile_revoke(account_id: int, uid: int = Depends(current_user)):
     if not is_admin(uid):
         raise HTTPException(403, 'Administrator ruxsati kerak')
     return mobile_auth.approve_account(account_id, False)
+
+
+@app.post('/api/mobile/admin/accounts/{account_id}/reject')
+def mobile_reject(account_id: int, uid: int = Depends(current_user)):
+    if not is_admin(uid):
+        raise HTTPException(403, 'Administrator ruxsati kerak')
+    return mobile_auth.set_account_status(account_id, 'rejected')
