@@ -1,0 +1,30 @@
+name: MedStudy AI Mobile Flutter CI
+on:
+  push:
+    branches:
+      - feature/native-mobile-mvp
+    paths:
+      - 'mobile/**'
+      - '.github/workflows/mobile.yml'
+  workflow_dispatch:
+jobs:
+  flutter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - name: Generate Android and iOS platform files
+        run: flutter create . --platforms=android,ios --project-name medstudy_ai --org uz.medstudy
+        working-directory: mobile
+      - name: Dependencies
+        run: flutter pub get
+        working-directory: mobile
+      - name: Analyze Flutter source
+        run: flutter analyze
+        working-directory: mobile
+      - name: Test restored study catalog
+        run: flutter test
+        working-directory: mobile
