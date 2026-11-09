@@ -4,6 +4,7 @@ on:
     branches:
       - feature/native-mobile-mvp
       - feature/mobile-auth-v2
+      - feature/ios-v2
     paths:
       - 'mobile/**'
       - 'app/mobile_auth.py'
