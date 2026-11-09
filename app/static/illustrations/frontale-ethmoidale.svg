@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="565" viewBox="0 0 900 565" role="img" aria-labelledby="t d">
+<title id="t">Os frontale va os ethmoidale: soddalashtirilgan anatomik sxema</title>
+<desc id="d">Chap tomonda kalla suyagining old ko‘rinishi: peshona suyagi yashil, g‘alvirsimon suyak ko‘kimtir rangda. O‘ng tomonda g‘alvirsimon suyakning asosiy qismlari alohida ko‘rsatilgan.</desc>
+<rect width="900" height="565" fill="#f3f9f5"/>
+<rect x="16" y="16" width="425" height="530" rx="19" fill="#fff" stroke="#cee4d4" stroke-width="2"/>
+<rect x="459" y="16" width="425" height="530" rx="19" fill="#fff" stroke="#cee4d4" stroke-width="2"/>
+<g font-family="Arial,Helvetica,sans-serif">
+<text x="37" y="53" font-size="22" font-weight="700" fill="#193b2a">Kalla suyagi — old ko‘rinish</text>
+<text x="37" y="77" font-size="14" fill="#4a6655">Yuz va kalla qismlarining sxematik tasviri</text>
+<text x="480" y="53" font-size="22" font-weight="700" fill="#193b2a">Os ethmoidale</text>
+<text x="480" y="77" font-size="14" fill="#4a6655">G‘alvirsimon suyakning asosiy qismlari</text>
+</g>
+<!-- front skull neutral contour -->
+<path d="M118 258 Q108 187 152 153 Q182 121 228 121 Q276 123 308 157 Q343 199 331 266 L320 321 L339 384 Q339 413 312 440 L299 462 Q269 493 226 500 Q176 493 148 461 L134 440 Q105 407 112 381 L129 323Z" fill="#fff8eb" stroke="#a4a6a0" stroke-width="5" stroke-linejoin="round"/>
+<!-- frontal bone highlighted on forehead and orbital roof -->
+<path d="M120 260 Q108 186 154 154 Q188 118 229 125 Q278 126 308 159 Q343 200 329 259 L290 286 Q267 266 248 270 L228 284 L207 270 Q183 267 164 286Z" fill="#81d3a8" stroke="#27935d" stroke-width="4" stroke-linejoin="round"/>
+<path d="M137 258 Q156 274 165 278 Q180 260 205 260 M252 260 Q279 260 294 278 Q315 268 329 258" fill="none" stroke="#167749" stroke-width="3"/>
+<!-- orbit cavities -->
+<ellipse cx="170" cy="328" rx="46" ry="46" fill="#e2e5de" stroke="#87938c" stroke-width="4"/>
+<ellipse cx="284" cy="328" rx="46" ry="46" fill="#e2e5de" stroke="#87938c" stroke-width="4"/>
+<ellipse cx="170" cy="328" rx="33" ry="32" fill="#f2f3e9" stroke="#b0b7ae" stroke-width="2"/>
+<ellipse cx="284" cy="328" rx="33" ry="32" fill="#f2f3e9" stroke="#b0b7ae" stroke-width="2"/>
+<!-- nose -->
+<path d="M224 288 Q210 310 203 344 L218 363 L237 363 L249 344 Q240 305 231 288Z" fill="#a7dbe4" stroke="#237e8e" stroke-width="3"/>
+<path d="M201 366 Q184 392 184 422 Q226 438 270 422 Q270 387 250 366Z" fill="#d2d9cd" stroke="#a4a6a0" stroke-width="3"/>
+<path d="M227 365 L227 426" stroke="#238597" stroke-width="5" stroke-linecap="round"/>
+<!-- cheek upper teeth -->
+<path d="M143 397 Q163 388 185 402 L188 431 L168 441 L147 429 Z" fill="#f4eadb" stroke="#a4a6a0" stroke-width="3"/>
+<path d="M268 402 Q290 388 312 397 L307 429 L287 441 L268 431Z" fill="#f4eadb" stroke="#a4a6a0" stroke-width="3"/>
+<path d="M164 450 Q225 466 290 450" fill="none" stroke="#929f94" stroke-width="4"/>
+<g fill="#fff" stroke="#a4a6a0" stroke-width="2">
+<rect x="176" y="447" width="15" height="22" rx="4"/><rect x="194" y="450" width="15" height="24" rx="4"/>
+<rect x="212" y="452" width="15" height="24" rx="4"/><rect x="230" y="452" width="15" height="24" rx="4"/>
+<rect x="248" y="450" width="15" height="24" rx="4"/><rect x="266" y="446" width="15" height="22" rx="4"/>
+</g>
+<!-- labels left -->
+<g font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#154b34">
+<text x="39" y="119" font-weight="700">Os frontale</text>
+<path d="M140 116 L186 191" fill="none" stroke="#17854d" stroke-width="2.5"/><circle cx="186" cy="191" r="5" fill="#17854d"/>
+<text x="258" y="111" font-weight="700" fill="#146679">Os ethmoidale</text>
+<path d="M317 120 L231 318" fill="none" stroke="#248ba0" stroke-width="2.5"/><circle cx="231" cy="318" r="5" fill="#248ba0"/>
+</g>
+<g font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#426457">
+<text x="37" y="519">Yashil: peshona suyagi</text>
+<text x="245" y="519">Ko‘k: g‘alvirsimon soha</text>
+</g>
+<!-- ethmoid separated schematic -->
+<g stroke-linejoin="round">
+<path d="M647 209 Q636 168 667 132 Q696 169 683 209Z" fill="#4b9db0" stroke="#146c83" stroke-width="4"/>
+<path d="M541 220 Q590 202 642 216 L693 216 Q748 202 795 220 L795 239 Q742 251 697 241 L639 241 Q588 251 541 239Z" fill="#98dce8" stroke="#1b778d" stroke-width="4"/>
+<path d="M652 241 L681 241 L677 440 Q662 462 650 441Z" fill="#9adce6" stroke="#197c92" stroke-width="4"/>
+<path d="M550 246 Q565 231 616 245 L633 365 Q597 386 560 367Z" fill="#c7e9dc" stroke="#3c9471" stroke-width="4"/>
+<path d="M704 245 Q749 230 782 247 L775 367 Q744 387 707 364Z" fill="#c7e9dc" stroke="#3c9471" stroke-width="4"/>
+<g fill="#a6cfc1" stroke="#64a98f" stroke-width="2">
+<ellipse cx="579" cy="273" rx="13" ry="18"/><ellipse cx="604" cy="296" rx="14" ry="20"/><ellipse cx="580" cy="328" rx="13" ry="19"/><ellipse cx="747" cy="272" rx="13" ry="18"/><ellipse cx="721" cy="297" rx="14" ry="20"/><ellipse cx="749" cy="330" rx="13" ry="19"/>
+</g>
+<g fill="#1d879a"><circle cx="569" cy="222" r="3"/><circle cx="591" cy="219" r="3"/><circle cx="616" cy="223" r="3"/><circle cx="715" cy="222" r="3"/><circle cx="740" cy="219" r="3"/><circle cx="767" cy="222" r="3"/></g>
+</g>
+<!-- right explanatory callouts -->
+<g font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#244e43">
+<text x="479" y="129">Crista galli</text><path d="M579 127 L646 163" stroke="#467d69" stroke-width="2" fill="none"/>
+<text x="717" y="163">Lamina</text><text x="717" y="181">cribrosa</text><path d="M730 185 L727 218" stroke="#467d69" stroke-width="2" fill="none"/>
+<text x="497" y="418">Labyrinthus</text><text x="497" y="437">ethmoidalis</text><path d="M588 412 L595 357" stroke="#467d69" stroke-width="2" fill="none"/>
+<text x="703" y="418">Lamina</text><text x="703" y="437">perpendicularis</text><path d="M704 411 L676 393" stroke="#467d69" stroke-width="2" fill="none"/>
+</g>
+<text x="480" y="510" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#526a5b">Tuzilmalar joylashuvini eslab qolish uchun sxema</text>
+</svg>

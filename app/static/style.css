@@ -195,3 +195,15 @@
 .lesson-quiz-cta{margin:9px 0 14px}
 @media(max-width:380px){.hero-illustration{font-size:37px}.hero-illustration span{font-size:30px}.hero h1{font-size:23px!important}.tutor-config-grid{grid-template-columns:1fr}.feature-copy strong{font-size:15px}}
 @media(prefers-reduced-motion:reduce){.btn,.lesson-card,.bar-fill{transition:none!important}.loader{animation:none}}
+
+/* Original topic-specific anatomical illustration */
+.visual-entry{border-color:var(--mint)}
+.visual-figure{margin:16px 0 20px;border:1px solid var(--stroke);border-radius:18px;overflow:hidden;background:var(--card)}
+.visual-image{display:block;width:100%;height:auto;max-height:550px;object-fit:contain;background:#f5faf7}
+.visual-figure figcaption{padding:10px 14px;color:var(--muted);font-size:12px;line-height:1.5;border-top:1px solid var(--stroke)}
+.visual-guide{padding:18px!important}
+.visual-fact{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-top:1px solid var(--stroke)}
+.visual-fact:first-of-type{border-top:0}
+.visual-fact strong{font-size:15px}
+.visual-fact p{font-size:13px;color:var(--muted);margin:5px 0 0;line-height:1.5}
+.visual-number{display:inline-grid;place-items:center;flex:none;width:26px;height:26px;border-radius:8px;background:var(--bg2);color:var(--mint);font-size:12px;font-weight:800}
