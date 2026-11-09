@@ -22,8 +22,13 @@ A manual GitHub Actions workflow is available:
 
 `.github/workflows/ios-simulator.yml`
 
-GitHub → Actions → **MedStudy AI iOS Simulator (manual)** → Run workflow
-→ branch `feature/mobile-auth-v2`.
+The workflow file is currently on `feature/mobile-auth-v2`, not the
+repository's default `main` branch. GitHub may **not display its manual
+Run workflow button yet**: manual dispatch normally requires the workflow
+to be registered on the default branch. Do not merge development code into
+production just to make this test runnable. When the development branch is
+approved for merging, select the iOS workflow in GitHub Actions, run it on
+the iOS development branch, and inspect the unsigned simulator artifact.
 
 It runs on a macOS GitHub runner and builds an unsigned iOS **Simulator**
 application. The resulting artifact **cannot be installed on a real iPhone**
