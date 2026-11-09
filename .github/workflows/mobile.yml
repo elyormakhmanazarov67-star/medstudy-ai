@@ -35,7 +35,7 @@ jobs:
           DATABASE_PATH: '/tmp/medstudy-ci.sqlite'
         run: python -m pytest -q tests/test_mobile_auth.py tests/test_mobile_notifications.py tests/test_miniapp.py tests/test_tutor.py tests/test_webhook.py tests/test_study_plan.py tests/test_curriculum.py tests/test_lesson_helper.py tests/test_materials.py
   staging-smoke:
-    if: github.ref == 'refs/heads/feature/mobile-auth-v2'
+    if: github.ref == 'refs/heads/feature/mobile-auth-v2' || github.ref == 'refs/heads/feature/ios-v2'
     runs-on: ubuntu-latest
     steps:
       - name: Check staging registration and protected content over HTTPS
