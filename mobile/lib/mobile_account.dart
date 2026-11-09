@@ -54,7 +54,7 @@ class _MobileAccountPageState extends State<MobileAccountPage> {
   }
 
   Future<void> submit() async {
-    if (_server.isEmpty || !Uri.tryParse(_server)!.isScheme('https')) {
+    if (_server.isEmpty || Uri.tryParse(_server)?.scheme != 'https') {
       setState(() => message = 'HTTPS API manzili sozlanmagan.');
       return;
     }
