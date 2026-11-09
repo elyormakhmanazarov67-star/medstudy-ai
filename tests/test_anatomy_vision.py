@@ -35,7 +35,8 @@ def client(tmp_path, monkeypatch):
 
     async def fake_explain(lesson, image_data_uri, question=""):
         calls.append((lesson["id"], image_data_uri, question))
-        return {"answer": "Os frontale — kalla suyagining oldingi qismida."}
+        return {"answer": "Os frontale — kalla suyagining oldingi qismida.",
+                "labels": [{"latin":"Os frontale", "x":500, "y":300}]}
 
     monkeypatch.setattr(anatomy_vision, "explain_image", fake_explain)
     return TestClient(main.app), calls
@@ -79,6 +80,7 @@ def test_requires_login_access_and_separate_ai_consent(client):
     assert calls[0][0] == "anat_10"
     assert calls[0][1].startswith("data:image/jpeg;base64,")
     assert "Os frontale" in r.json()["answer"]
+    assert r.json()["labels"] == [{"latin":"Os frontale", "x":500, "y":300}]
 
 
 def test_only_anatomy_and_real_supported_images(client):
@@ -137,3 +139,60 @@ def test_openai_request_uses_stateless_image_input(monkeypatch):
     assert req["store"] is False
     assert req["input"][0]["content"][1]["type"]=="input_image"
     assert "faqat anatomik lotin" in req["instructions"]
+
+
+def test_latin_labels_are_validated_and_limited():
+    import json
+    def raw_response(obj):
+        return {
+            "status": "completed",
+            "output": [{"type":"message","content":[{"type":"output_text","text":json.dumps(obj)}]}],
+        }
+
+    result=anatomy_vision.parse_labeled_answer(raw_response({
+        "answer":"Os frontale oldingi qismda.", "labels":[
+            {"latin":"Os frontale", "x":500, "y":300},
+            {"latin":"Os frontale", "x":500, "y":300},  # duplicate
+            {"latin":"Os ethmoidale", "x":300, "y":450},
+            {"latin":"Peshana suyagi!", "x":200, "y":400},  # invalid punctuation
+            {"latin":"Os sphenoidale", "x":-10, "y":400},  # invalid coordinates
+            {"latin":"Os temporale", "x":False, "y":200}, # booleans are not ints
+            {"latin":"Os occipitale", "x":200, "y":1200},
+            {"latin":"Os parietale", "x":700, "y":130},
+        ],
+    }))
+    assert result["answer"].startswith("Os frontale")
+    assert result["labels"] == [
+        {"latin":"Os frontale", "x":500, "y":300},
+        {"latin":"Os ethmoidale", "x":300, "y":450},
+        {"latin":"Os parietale", "x":700, "y":130},
+    ]
+    assert anatomy_vision.parse_labeled_answer({
+        "status":"completed","output":[{"type":"message","content":[
+            {"type":"output_text","text":"Oddiy matn javobi."}]}],
+    }) == {"answer":"Oddiy matn javobi.","labels":[]}
+
+
+def test_generated_json_schema_uses_latin_coordinates(monkeypatch):
+    import json
+    monkeypatch.setenv("OPENAI_API_KEY","fake-test-key")
+    records=[]
+    original=httpx.AsyncClient
+    def handler(req):
+        body=json.loads(req.content)
+        records.append(body)
+        return httpx.Response(200,json={"status":"completed","output":[{
+            "type":"message","content":[{"type":"output_text","text":json.dumps({
+                "answer":"Os frontale aniq ko‘rinadi.",
+                "labels":[{"latin":"Os frontale", "x":410, "y":260}],
+            })}],
+        }]})
+    monkeypatch.setattr(anatomy_vision.httpx,"AsyncClient",
+        lambda *args,**kwargs: original(*args,transport=httpx.MockTransport(handler),**kwargs))
+    lesson=next(l for s in main.CATALOG["subjects"] for l in s["lessons"] if l["id"]=="anat_10")
+    output=asyncio.run(anatomy_vision.explain_image(lesson,anatomy_vision.normalize_image(sample_picture(),"image/jpeg")))
+    assert output["labels"] == [{"latin":"Os frontale","x":410,"y":260}]
+    assert records[0]["text"]["format"]["type"]=="json_schema"
+    assert records[0]["text"]["format"]["strict"] is True
+    assert records[0]["store"] is False
+    assert "lotin" in records[0]["instructions"].lower()
