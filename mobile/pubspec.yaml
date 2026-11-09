@@ -1,7 +1,7 @@
 name: medstudy_ai
 description: "MedStudy AI — mustaqil mobil o'quv ilovasi (Android va iOS)."
 publish_to: none
-version: 0.1.0+1
+version: 3.0.0+3
 environment:
   sdk: ">=3.4.0 <4.0.0"
 dependencies:
