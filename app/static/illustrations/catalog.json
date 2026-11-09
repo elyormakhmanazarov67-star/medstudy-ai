@@ -1,0 +1,380 @@
+{
+  "anat_1": {
+    "src": "/static/illustrations/anat_1.svg",
+    "title": "Anatomiya: anatomik holat va sathlar",
+    "alt": "Odam tanasining sxemasi va anatomik yo‘nalishlar",
+    "facts": [
+      [
+        "Caput",
+        "156. Tananing yuqori qismi."
+      ],
+      [
+        "Truncus",
+        "280. Ko‘krak va qorin sohalari."
+      ],
+      [
+        "Membrum superius",
+        "323. Qo‘l sohasi."
+      ],
+      [
+        "Membrum inferius",
+        "420. Oyoq sohasi."
+      ],
+      [
+        "Planum sagittale",
+        "235. Tanani o‘ng va chap qismlarga ajratadi."
+      ]
+    ]
+  },
+  "anat_2": {
+    "src": "/static/illustrations/anat_2.svg",
+    "title": "Umumiy osteologiya: umurtqa pog‘onasi",
+    "alt": "Umurtqa pog‘onasining bo‘limlari soddalashtirilgan sxemada",
+    "facts": [
+      [
+        "Vertebrae cervicales",
+        "165. 7 ta bo‘yin umurtqasi."
+      ],
+      [
+        "Vertebrae thoracicae",
+        "265. 12 ta ko‘krak umurtqasi."
+      ],
+      [
+        "Vertebrae lumbales",
+        "380. 5 ta bel umurtqasi."
+      ],
+      [
+        "Os sacrum",
+        "444. Umurtqalarning qo‘shilishidan hosil."
+      ],
+      [
+        "Os coxae",
+        "442. Tana va oyoqlarni bog‘laydi."
+      ]
+    ]
+  },
+  "anat_3": {
+    "src": "/static/illustrations/anat_3.svg",
+    "title": "Ko‘krak qafasi: qovurg‘alar va to‘sh suyagi",
+    "alt": "Old tomondan qovurg‘alar, to‘sh suyagi va umurtqa",
+    "facts": [
+      [
+        "Sternum",
+        "226. Ko‘krakning old o‘rtasida."
+      ],
+      [
+        "Costae verae",
+        "239. 1–7-juft qovurg‘alar."
+      ],
+      [
+        "Costae spuriae",
+        "345. 8–10-juft qovurg‘alar."
+      ],
+      [
+        "Costae fluctuantes",
+        "420. 11–12-juft qovurg‘alar."
+      ],
+      [
+        "Vertebrae thoracicae",
+        "409. Qovurg‘alarning orqa tayanchi."
+      ]
+    ]
+  },
+  "anat_4": {
+    "src": "/static/illustrations/anat_4.svg",
+    "title": "Yelka kamari: o‘mrov va kurak suyaklari",
+    "alt": "Yelka kamarining old va orqa tuzilmalari",
+    "facts": [
+      [
+        "Clavicula",
+        "174. Yelka kamarining old qismi."
+      ],
+      [
+        "Scapula",
+        "278. Yassi uchburchak suyak."
+      ],
+      [
+        "Spina scapulae",
+        "264. Kurakning orqa qismida."
+      ],
+      [
+        "Cavitas glenoidalis",
+        "220. Yelka suyagi boshchasiga tutashadi."
+      ],
+      [
+        "Humerus",
+        "358. Qo‘lning erkin qismi."
+      ]
+    ]
+  },
+  "anat_5": {
+    "src": "/static/illustrations/anat_5.svg",
+    "title": "Qo‘l erkin qismi suyaklari",
+    "alt": "Yelka, bilak va qo‘l panjasi skeleti",
+    "facts": [
+      [
+        "Humerus",
+        "212. Yelkaning uzun suyagi."
+      ],
+      [
+        "Radius",
+        "372. Bosh barmoq tomonida."
+      ],
+      [
+        "Ulna",
+        "373. Kichik barmoq tomonida."
+      ],
+      [
+        "Ossa carpi",
+        "447. Bilak va kaft orasidagi 8 suyak."
+      ],
+      [
+        "Ossa metacarpi",
+        "475. Kaftning besh naysimon suyagi."
+      ]
+    ]
+  },
+  "anat_6": {
+    "src": "/static/illustrations/anat_6.svg",
+    "title": "Chanoq kamari: old ko‘rinish",
+    "alt": "Chanoq suyagining qismlari va dumg‘aza",
+    "facts": [
+      [
+        "Os ilium",
+        "223. Chanoqning keng yuqori qismi."
+      ],
+      [
+        "Os ischii",
+        "325. Past-orqa bo‘lagi."
+      ],
+      [
+        "Os pubis",
+        "400. Old-pastki bo‘lagi."
+      ],
+      [
+        "Os sacrum",
+        "273. Chanoqning orqa devoriga tegishli."
+      ],
+      [
+        "Foramen obturatum",
+        "349. Qov va o‘tirg‘ich oralig‘idagi teshik."
+      ]
+    ]
+  },
+  "anat_7": {
+    "src": "/static/illustrations/anat_7.svg",
+    "title": "Chanoq kamari: yon va bo‘g‘im ko‘rinishi",
+    "alt": "Yonbosh, o‘tirg‘ich, qov qismlari va sirka bo‘g‘imi",
+    "facts": [
+      [
+        "Crista iliaca",
+        "174. Yonbosh suyagining yuqori qirrasi."
+      ],
+      [
+        "Acetabulum",
+        "294. Son suyagi boshchasi bilan tutashadi."
+      ],
+      [
+        "Foramen obturatum",
+        "363. Chanoq suyagidagi yirik teshik."
+      ],
+      [
+        "Os ischii",
+        "427. Chanoqning orqa-pastki qismi."
+      ],
+      [
+        "Os pubis",
+        "310. Chanoqning old-pastki qismi."
+      ]
+    ]
+  },
+  "anat_8": {
+    "src": "/static/illustrations/anat_8.svg",
+    "title": "Oyoq erkin qismi suyaklari",
+    "alt": "Son, tizza, boldir va oyoq panjasi skeleti",
+    "facts": [
+      [
+        "Femur",
+        "237. Tananing eng uzun suyagi."
+      ],
+      [
+        "Patella",
+        "334. Tizza old tomonidagi suyak."
+      ],
+      [
+        "Tibia",
+        "397. Boldirning ichki, yirik suyagi."
+      ],
+      [
+        "Fibula",
+        "391. Boldirning tashqi ingichka suyagi."
+      ],
+      [
+        "Ossa tarsi",
+        "463. To‘piq va tovon sohasidagi suyaklar."
+      ]
+    ]
+  },
+  "anat_9": {
+    "src": "/static/illustrations/anat_9.svg",
+    "title": "Kalla miya qismi: ensa va tepa suyaklari",
+    "alt": "Kalla suyagining orqa va yon tomonlari",
+    "facts": [
+      [
+        "Ossa parietalia",
+        "234. Juft suyaklar, kalla gumbazi."
+      ],
+      [
+        "Os occipitale",
+        "378. Kallaning orqa-pastki qismi."
+      ],
+      [
+        "Sutura sagittalis",
+        "188. Ikki tepa suyagi oralig‘ida."
+      ],
+      [
+        "Sutura lambdoidea",
+        "326. Tepa va ensa suyaklari chegarasi."
+      ],
+      [
+        "Protuberantia occipitalis",
+        "408. Ensa tashqi yuzasidagi bo‘rtiq."
+      ]
+    ]
+  },
+  "anat_10": {
+    "src": "/static/illustrations/anat_10.svg",
+    "title": "Peshona va g‘alvirsimon suyaklar",
+    "alt": "Peshona, ko‘z kosasi va g‘alvirsimon suyak",
+    "facts": [
+      [
+        "Os frontale",
+        "201. Peshona va ko‘z kosasi tomiga tegishli."
+      ],
+      [
+        "Os ethmoidale",
+        "338. Burun bo‘shlig‘i va ko‘z kosasiga tegishli."
+      ],
+      [
+        "Crista galli",
+        "266. Yuqoriga chiqib turgan o‘simta."
+      ],
+      [
+        "Lamina perpendicularis",
+        "386. Burun to‘sig‘i tarkibiga kiradi."
+      ],
+      [
+        "Margo supraorbitalis",
+        "269. Ko‘z kosasi ustidagi suyak qirrasi."
+      ]
+    ]
+  },
+  "anat_11": {
+    "src": "/static/illustrations/anat_11.svg",
+    "title": "Ponasimon va chakka suyaklari",
+    "alt": "Ponasimon suyak va chakka suyagining yon tomondan tuzilishi",
+    "facts": [
+      [
+        "Os sphenoidale",
+        "259. Kalla asosining markaziy suyagi."
+      ],
+      [
+        "Ala major",
+        "240. Ponasimon suyak yon qismi."
+      ],
+      [
+        "Ala minor",
+        "203. Ponasimon suyak yuqori yon qismi."
+      ],
+      [
+        "Os temporale",
+        "389. Eshituv apparati atrofidagi suyak."
+      ],
+      [
+        "Meatus acusticus externus",
+        "382. Chakka suyagining yon teshigi."
+      ]
+    ]
+  },
+  "anat_12": {
+    "src": "/static/illustrations/anat_12.svg",
+    "title": "Kalla yuz qismi: jag‘ va mayda suyaklar",
+    "alt": "Yuz skeleti va asosiy juft suyaklarning joylashuvi",
+    "facts": [
+      [
+        "Maxilla",
+        "381. Yuqori tish qatorini tutadi."
+      ],
+      [
+        "Mandibula",
+        "464. Harakatchan pastki jag‘ suyagi."
+      ],
+      [
+        "Os zygomaticum",
+        "331. Yonoq va orbita yon devori."
+      ],
+      [
+        "Os nasale",
+        "274. Burun ko‘prigining suyak qismi."
+      ],
+      [
+        "Os lacrimale",
+        "300. Ko‘z kosasining medial devori."
+      ]
+    ]
+  },
+  "anat_13": {
+    "src": "/static/illustrations/anat_13.svg",
+    "title": "Butun kalla: orbita va burun bo‘shlig‘i",
+    "alt": "Ko‘z kosalari, burun bo‘shlig‘i va chakka sohasi",
+    "facts": [
+      [
+        "Orbita",
+        "289. Ko‘z olmasi joylashadigan suyak bo‘shlig‘i."
+      ],
+      [
+        "Cavitas nasi",
+        "363. Nafas yo‘llarining bosh qismi."
+      ],
+      [
+        "Fossa temporalis",
+        "339. Kalla yonidagi botiq soha."
+      ],
+      [
+        "Arcus zygomaticus",
+        "359. Yuzning yon suyaksimon yoyi."
+      ],
+      [
+        "Basis cranii",
+        "432. Kallaning tub qismi."
+      ]
+    ]
+  },
+  "anat_14": {
+    "src": "/static/illustrations/anat_14.svg",
+    "title": "Kalla asosidagi teshiklar va yoriqlar",
+    "alt": "Kalla asosi va uning muhim anatomik teshiklari",
+    "facts": [
+      [
+        "Foramen magnum",
+        "343. Orqa miya o‘tadigan katta teshik."
+      ],
+      [
+        "Foramen ovale",
+        "285. Kalla asosidagi oval shaklli teshik."
+      ],
+      [
+        "Foramen spinosum",
+        "357. Kalla asosining kichik teshiklaridan."
+      ],
+      [
+        "Canalis opticus",
+        "197. Ko‘ruv nervi yo‘li."
+      ],
+      [
+        "Fissura orbitalis superior",
+        "214. Orbita bilan kalla bo‘shlig‘i orasidagi yoriq."
+      ]
+    ]
+  }
+}
