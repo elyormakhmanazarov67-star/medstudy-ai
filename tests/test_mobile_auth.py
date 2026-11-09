@@ -187,6 +187,7 @@ def test_admin_browser_cookie_invalid_after_key_rotation(monkeypatch):
         assert "max-age" not in response.headers["set-cookie"].lower()
         assert client.get(base + "/session").status_code == 200
         # Forged or expired session must not authenticate.
+        client.cookies.clear()
         client.cookies.set(mobile_admin.SESSION_COOKIE, "v1.1.fake.invalid",
                            domain="testserver", path=mobile_admin.COOKIE_PATH)
         assert client.get(base + "/session").status_code == 403
