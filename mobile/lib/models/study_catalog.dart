@@ -1,7 +1,4 @@
-import 'dart:convert';
-import 'package:flutter/services.dart';
-
-/// Offline catalog built from original MedStudy AI study summaries and tests.
+/// Catalog is obtained from authenticated HTTPS API, never bundled in the APK.
 class StudyCatalog {
   final List<StudySubject> subjects;
   const StudyCatalog(this.subjects);
@@ -11,11 +8,6 @@ class StudyCatalog {
     return StudyCatalog(raw
         .map((item) => StudySubject.fromJson(Map<String, dynamic>.from(item as Map)))
         .toList(growable: false));
-  }
-
-  static Future<StudyCatalog> load() async {
-    final raw = await rootBundle.loadString('assets/data/lessons.json');
-    return StudyCatalog.fromJson(jsonDecode(raw) as Map<String, dynamic>);
   }
 
   int get lessonCount => subjects.fold(0, (n, s) => n + s.lessons.length);
@@ -80,7 +72,6 @@ class StudyLesson {
   }
 
   bool get hasAnatomyDiagram => RegExp(r'^anat_([1-9]|1[0-4])$').hasMatch(id);
-  String get diagramAsset => 'assets/illustrations/' + id + '.svg';
   bool get needsReview => reviewStatus.contains('DRAFT');
 }
 
