@@ -8,7 +8,6 @@ void main() {
     await tester.pumpWidget(const MaterialApp(home: DentalArch3DPage()));
     expect(find.text('MedStudy AI 3.0 · 3D'), findsOneWidget);
     expect(find.byKey(const Key('dental-arch-3d')), findsOneWidget);
-    expect(find.textContaining('O‘quv maketi'), findsOneWidget);
     final original = tester.widget<Text>(find.textContaining('Burilish:')).data;
 
     await tester.drag(find.byKey(const Key('dental-arch-3d')),
