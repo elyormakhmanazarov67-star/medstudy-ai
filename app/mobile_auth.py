@@ -81,6 +81,7 @@ def rate_limit(db, key, max_attempts=8):
     db.execute("DELETE FROM mobile_auth_limits WHERE window < ?", (window - 1,))
     db.execute("INSERT INTO mobile_auth_limits VALUES (?, ?, 1) ON CONFLICT(key_hash,window) DO UPDATE SET attempts=attempts+1", (key_hash, window))
     used = db.execute("SELECT attempts FROM mobile_auth_limits WHERE key_hash=? AND window=?", (key_hash, window)).fetchone()[0]
+    db.commit()  # Persist limits even if caller later rejects credentials.
     if used > max_attempts:
         raise HTTPException(429, "Juda ko'p urinish. Keyinroq qayta urinib ko'ring.")
 
