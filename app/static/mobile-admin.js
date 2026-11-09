@@ -1,35 +1,102 @@
 'use strict';
 const byId = id => document.getElementById(id);
 const status = message => { byId('status').textContent = message; };
-const headers = () => ({
-  'X-Mobile-Admin-Key': byId('secret').value.trim(),
-  'Content-Type': 'application/json'
-});
+
+function showSession(signedIn) {
+  byId('login-section').hidden = signedIn;
+  byId('session-section').hidden = !signedIn;
+  document.querySelectorAll('.admin-content').forEach(section => {
+    section.hidden = !signedIn;
+  });
+  if (!signedIn) {
+    byId('requests').replaceChildren();
+    byId('telegram-status').textContent = 'Kirish talab qilinadi.';
+  }
+}
 
 async function request(path, options = {}) {
-  if (!byId('secret').value.trim()) {
-    throw Error('Administrator kaliti kiritilmagan. Railway → medstudy-ai-mobile-staging → Variables → MOBILE_ADMIN_KEY qiymatini nusxalang.');
+  let response;
+  try {
+    response = await fetch(path, {
+      ...options,
+      cache: 'no-store',
+      credentials: 'same-origin',
+      headers: { 'Content-Type': 'application/json', ...(options.headers || {}) }
+    });
+  } catch (_) {
+    throw Error('Serverga ulanib bo‘lmadi. Internetni tekshiring.');
   }
-  const response = await fetch(path, {
-    ...options,
-    cache: 'no-store',
-    credentials: 'omit',
-    headers: headers()
-  });
   if (!response.ok) {
-    if (response.status === 403) throw Error('Administrator kaliti qabul qilinmadi. Railway Variables dagi MOBILE_ADMIN_KEY qiymatini tekshiring.');
+    if (response.status === 403) {
+      if (path !== '/api/mobile/admin-console/session') showSession(false);
+      throw Error(path === '/api/mobile/admin-console/session'
+        ? 'Administrator kaliti noto‘g‘ri. Railway Variables dagi MOBILE_ADMIN_KEY qiymatini kiriting.'
+        : 'Administrator sessiyasi tugagan. Qayta kiring.');
+    }
     if (response.status === 409) throw Error('Telegram bot tokeni yoki chat ID sozlanmagan.');
-    if (response.status === 502) throw Error('Telegram xabarni qabul qilmadi. Shaxsiy akkauntingizdan xabar yuboruvchi botni ochib /start yuboring.');
+    if (response.status === 502) throw Error('Telegram xabarni qabul qilmadi. Shaxsiy akkauntingizdan xabar yuboruvchi botga /start yuboring.');
     throw Error('Server xatosi: ' + response.status);
   }
   return response.json();
+}
+
+async function signIn() {
+  const key = byId('secret').value.trim();
+  if (!key) {
+    status('Administrator kalitini kiriting.');
+    return;
+  }
+  byId('load').disabled = true;
+  try {
+    await request('/api/mobile/admin-console/session', {
+      method: 'POST',
+      headers: { 'X-Mobile-Admin-Key': key },
+      body: JSON.stringify({ remember: byId('remember').checked })
+    });
+    byId('secret').value = '';
+    showSession(true);
+    await load();
+  } catch (error) {
+    status(error.message);
+  } finally {
+    byId('load').disabled = false;
+  }
+}
+
+async function restoreSession() {
+  try {
+    const response = await fetch('/api/mobile/admin-console/session', {
+      credentials: 'same-origin',
+      cache: 'no-store'
+    });
+    if (response.status === 200) {
+      showSession(true);
+      await load();
+    } else {
+      showSession(false);
+      status('Kalitni bir marta kiriting. «Bu brauzerda eslab qolish» belgisini qoldiring.');
+    }
+  } catch (_) {
+    showSession(false);
+    status('Serverga ulanib bo‘lmadi. Internetni tekshiring.');
+  }
+}
+
+async function signOut() {
+  try {
+    await request('/api/mobile/admin-console/logout', { method: 'POST' });
+    showSession(false);
+    status('Ushbu brauzerdan chiqdingiz. Keyingi safar kalit kerak bo‘ladi.');
+  } catch (error) {
+    status(error.message);
+  }
 }
 
 async function review(id, decision) {
   if (!window.confirm('Mobil akkaunt ' + id + ': ' + decision + '. Tasdiqlaysizmi?')) return;
   try {
     await request('/api/mobile/admin-console/review', {
-      method: 'POST', body: JSON.stringify({account_id: id, decision})
+      method: 'POST', body: JSON.stringify({ account_id: id, decision })
     });
     status('Natija saqlandi: ' + id + ' (' + decision + ')');
     await load();
@@ -44,7 +111,7 @@ async function load() {
     byId('telegram-status').textContent = telegram.ready
       ? 'Telegram xabar yuborishga sozlangan.'
       : 'Telegram ulanmagan: bot tokeni ' + (telegram.bot_configured ? 'bor' : 'YO‘Q')
-        + ', kanal/chat ID ' + (telegram.chat_configured ? 'bor' : 'YO‘Q') + '. Railway Variables ni tekshiring.';
+        + ', chat ID ' + (telegram.chat_configured ? 'bor' : 'YO‘Q') + '. Railway Variables ni tekshiring.';
     const items = data.items || [];
     status(items.length ? 'Kutilayotgan arizalar: ' + items.length : 'Yangi arizalar yo‘q.');
     for (const account of items) {
@@ -68,18 +135,29 @@ async function load() {
   } catch (error) { status(error.message); }
 }
 
-byId('load').addEventListener('click', load);
+byId('load').addEventListener('click', signIn);
+byId('secret').addEventListener('keydown', event => {
+  if (event.key === 'Enter') signIn();
+});
+byId('logout').addEventListener('click', signOut);
+
 byId('revoke').addEventListener('click', () => {
   const id = Number(byId('account-id').value);
-  if (!Number.isSafeInteger(id) || id < 1) { status('Akkaunt ID raqamini tekshiring.'); return; }
+  if (!Number.isSafeInteger(id) || id < 1) {
+    status('Akkaunt ID raqamini tekshiring.');
+    return;
+  }
   review(id, 'revoked');
 });
 
 byId('resend-pending').addEventListener('click', async () => {
   try {
-    const result = await request('/api/mobile/admin-console/resend-pending', { method: 'POST' });
+    const result = await request('/api/mobile/admin-console/resend-pending', {
+      method: 'POST'
+    });
     status(result.sent ? 'Telegramga xabar yuborildi.' : 'Yuboriladigan yangi arizalar yo‘q.');
-  } catch (error) {
-    status(error.message);
-  }
+  } catch (error) { status(error.message); }
 });
+
+showSession(false);
+restoreSession();
