@@ -61,6 +61,14 @@ def init_db():
             attempts INTEGER NOT NULL,
             PRIMARY KEY(key_hash, window)
         );
+        CREATE TABLE IF NOT EXISTS mobile_progress (
+            account_id INTEGER NOT NULL REFERENCES mobile_accounts(id) ON DELETE CASCADE,
+            lesson_id TEXT NOT NULL,
+            is_read INTEGER NOT NULL DEFAULT 0 CHECK (is_read IN (0, 1)),
+            best_score INTEGER,
+            updated_at TEXT NOT NULL,
+            PRIMARY KEY(account_id, lesson_id)
+        );
         """)
         columns = {row[1] for row in db.execute("PRAGMA table_info(mobile_accounts)")}
         if "status" not in columns:
@@ -244,3 +252,83 @@ def authorized_diagram(lesson_id: str, authorization: str | None = Header(defaul
         raise HTTPException(404, "Rasm topilmadi")
     return Response(path.read_bytes(), media_type="image/svg+xml",
                     headers={"Cache-Control": "no-store", "X-Content-Type-Options": "nosniff"})
+
+
+class ProgressUpdate(BaseModel):
+    """Account scoped lesson progress: the account ID comes only from bearer auth."""
+    lesson_id: str = Field(min_length=1, max_length=100, pattern=r"^[a-zA-Z0-9_-]+$")
+    read: bool = False
+    best_score: int | None = Field(default=None, ge=0, le=100)
+
+
+def _known_question_count(lesson_id: str) -> int | None:
+    for subject in mobile_catalog()["subjects"]:
+        for lesson in subject["lessons"]:
+            if lesson["id"] == lesson_id:
+                return len(lesson.get("questions", []))
+    return None
+
+
+@router.get("/progress")
+def get_mobile_progress(authorization: str | None = Header(default=None)):
+    account = current_account(authorization)
+    with connect() as db:
+        rows = db.execute(
+            "SELECT lesson_id, is_read, best_score FROM mobile_progress "
+            "WHERE account_id=? ORDER BY lesson_id",
+            (account["id"],),
+        ).fetchall()
+    return JSONResponse(
+        {"items": [
+            {"lesson_id": row[0], "read": bool(row[1]), "best_score": row[2]}
+            for row in rows
+        ]},
+        headers={"Cache-Control": "no-store"},
+    )
+
+
+@router.put("/progress")
+def put_mobile_progress(
+    body: ProgressUpdate, authorization: str | None = Header(default=None)
+):
+    account = current_account(authorization)
+    total = _known_question_count(body.lesson_id)
+    if total is None:
+        raise HTTPException(404, "Dars topilmadi")
+    if body.best_score is not None and body.best_score > total:
+        raise HTTPException(422, "Test natijasi savollar sonidan katta")
+    if not body.read and body.best_score is None:
+        raise HTTPException(422, "Saqlash uchun natija berilmagan")
+    with connect() as db:
+        rate_limit(db, "progress:" + str(account["id"]), 240)
+        db.execute(
+            """
+            INSERT INTO mobile_progress
+                (account_id, lesson_id, is_read, best_score, updated_at)
+            VALUES (?, ?, ?, ?, ?)
+            ON CONFLICT(account_id, lesson_id) DO UPDATE SET
+                is_read=MAX(mobile_progress.is_read, excluded.is_read),
+                best_score=CASE
+                    WHEN excluded.best_score IS NULL THEN mobile_progress.best_score
+                    WHEN mobile_progress.best_score IS NULL
+                         OR excluded.best_score > mobile_progress.best_score
+                    THEN excluded.best_score
+                    ELSE mobile_progress.best_score
+                END,
+                updated_at=excluded.updated_at
+            """,
+            (
+                account["id"], body.lesson_id, int(body.read),
+                body.best_score, now_text(),
+            ),
+        )
+        value = db.execute(
+            "SELECT is_read,best_score FROM mobile_progress "
+            "WHERE account_id=? AND lesson_id=?",
+            (account["id"], body.lesson_id),
+        ).fetchone()
+    return JSONResponse(
+        {"lesson_id": body.lesson_id, "read": bool(value[0]),
+         "best_score": value[1]},
+        headers={"Cache-Control": "no-store"},
+    )
