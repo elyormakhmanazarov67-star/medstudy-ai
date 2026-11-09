@@ -98,12 +98,14 @@ jobs:
         run: |
           python - <<'PY'
           from pathlib import Path
+          import re
           path = Path("android/app/src/main/AndroidManifest.xml")
           text = path.read_text(encoding="utf-8")
           entry = '<uses-permission android:name="android.permission.INTERNET" />'
           if 'android.permission.INTERNET' not in text:
               text = text.replace('<application', entry + '\n    <application', 1)
-              path.write_text(text, encoding="utf-8")
+          text = re.sub(r'android:label="[^"]+"', 'android:label="MedStudy AI 3.0"', text, count=1)
+          path.write_text(text, encoding="utf-8")
           PY
         working-directory: mobile
       - name: Build Android debug APK
