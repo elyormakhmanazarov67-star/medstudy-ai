@@ -1,10 +1,7 @@
 """Mobile Telegram notifications must be explicit, private and testable."""
-import os
-from unittest.mock import AsyncMock
+import asyncio
 
 import httpx
-import pytest
-
 from app.mobile_notifications import notification_status, send_pending_notice
 
 
@@ -15,8 +12,7 @@ def test_notification_requires_bot_and_chat(monkeypatch):
     assert notification_status()["chat_configured"] is False
 
 
-@pytest.mark.asyncio
-async def test_notification_sends_only_account_ids(monkeypatch):
+def test_notification_sends_only_account_ids(monkeypatch):
     monkeypatch.setenv("MOBILE_NOTIFY_BOT_TOKEN", "example-token-for-test")
     monkeypatch.setenv("MOBILE_NOTIFY_CHAT_ID", "-1001234567890")
     sent = []
@@ -36,7 +32,7 @@ async def test_notification_sends_only_account_ids(monkeypatch):
             return FakeResponse()
     monkeypatch.setattr(httpx, "AsyncClient", FakeClient)
     assert notification_status()["ready"] is True
-    assert await send_pending_notice([41]) is True
+    assert asyncio.run(send_pending_notice([41])) is True
     assert len(sent) == 1
     assert sent[0][1]["chat_id"] == "-1001234567890"
     assert "#41" in sent[0][1]["text"]
@@ -46,7 +42,7 @@ async def test_notification_sends_only_account_ids(monkeypatch):
 
 
 @pytest.mark.asyncio
-async def test_notification_failure_is_reported(monkeypatch):
+def test_notification_failure_is_reported(monkeypatch):
     monkeypatch.setenv("MOBILE_NOTIFY_BOT_TOKEN", "example-token-for-test")
     monkeypatch.setenv("MOBILE_NOTIFY_CHAT_ID", "@medstudyadmin")
     class FakeResponse:
@@ -61,4 +57,4 @@ async def test_notification_failure_is_reported(monkeypatch):
         async def post(self, url, json):
             return FakeResponse()
     monkeypatch.setattr(httpx, "AsyncClient", FakeClient)
-    assert await send_pending_notice([1]) is False
+    assert asyncio.run(send_pending_notice([1])) is False
