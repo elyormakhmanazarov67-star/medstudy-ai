@@ -116,3 +116,82 @@ def test_staging_admin_portal_requires_private_key(monkeypatch):
         with TestClient(app) as client:
             assert client.get("/mobile-admin").status_code == 404
             assert client.get("/api/mobile/admin-console/pending", headers={"X-Mobile-Admin-Key": "A" * 40}).status_code == 404
+
+
+
+def test_admin_browser_remember_session_and_logout(monkeypatch):
+    """A secure cookie replaces retyping the key; no password leaks to storage."""
+    from fastapi import FastAPI
+    from app import mobile_admin
+    with tempfile.TemporaryDirectory() as temp:
+        monkeypatch.setattr(mobile_auth, "DB_PATH", str(Path(temp) / "auth.db"))
+        monkeypatch.setattr(mobile_auth, "_DB_READY", False)
+        monkeypatch.setenv("MOBILE_ADMIN_PANEL_ENABLED", "1")
+        monkeypatch.setenv("MOBILE_ADMIN_KEY", "test-secret-value-" + "B" * 40)
+        app = FastAPI()
+        app.include_router(mobile_auth.router)
+        app.include_router(mobile_admin.router)
+        with TestClient(app, base_url="https://testserver") as client:
+            base = "/api/mobile/admin-console"
+            assert client.get(base + "/session").status_code == 403
+            assert client.get(base + "/pending").status_code == 403
+            assert client.post(base + "/session", json={"remember": True},
+                               headers={"X-Mobile-Admin-Key": "bad"}).status_code == 403
+            result = client.post(
+                base + "/session", json={"remember": True},
+                headers={"X-Mobile-Admin-Key": "test-secret-value-" + "B" * 40},
+            )
+            assert result.status_code == 200
+            cookie = result.headers["set-cookie"].lower()
+            assert "httponly" in cookie
+            assert "secure" in cookie
+            assert "samesite=strict" in cookie
+            assert "max-age=2592000" in cookie
+            assert "path=/api/mobile/admin-console" in cookie
+            assert client.get(base + "/session").json() == {"authenticated": True}
+            assert client.get(base + "/pending").status_code == 200
+
+            register = {
+                "email": "cookie-test@example.org",
+                "password": "long_password_for_testing",
+                "display_name": "Cookie Tester",
+            }
+            assert client.post("/api/mobile/register", json=register).status_code == 202
+            uid = mobile_auth.pending_accounts()[0]["id"]
+            body = {"account_id": uid, "decision": "approved"}
+            # Cookie-based state changes require a same-origin browser request.
+            assert client.post(base + "/review", json=body).status_code == 403
+            assert client.post(base + "/review", json=body,
+                               headers={"Origin": "https://evil.example"}).status_code == 403
+            assert client.post(base + "/review", json=body,
+                               headers={"Origin": "https://testserver"}).status_code == 200
+
+            assert client.post(base + "/logout",
+                               headers={"Origin": "https://testserver"}).status_code == 200
+            assert client.get(base + "/session").status_code == 403
+            assert client.get(base + "/pending").status_code == 403
+
+
+def test_admin_browser_cookie_invalid_after_key_rotation(monkeypatch):
+    from fastapi import FastAPI
+    from app import mobile_admin
+    monkeypatch.setenv("MOBILE_ADMIN_PANEL_ENABLED", "1")
+    monkeypatch.setenv("MOBILE_ADMIN_KEY", "C" * 40)
+    app = FastAPI()
+    app.include_router(mobile_admin.router)
+    with TestClient(app, base_url="https://testserver") as client:
+        base = "/api/mobile/admin-console"
+        response = client.post(base + "/session", json={"remember": False},
+                               headers={"X-Mobile-Admin-Key": "C" * 40})
+        assert response.status_code == 200
+        assert "max-age" not in response.headers["set-cookie"].lower()
+        assert client.get(base + "/session").status_code == 200
+        # Forged or expired session must not authenticate.
+        client.cookies.set(mobile_admin.SESSION_COOKIE, "v1.1.fake.invalid",
+                           domain="testserver", path=mobile_admin.COOKIE_PATH)
+        assert client.get(base + "/session").status_code == 403
+        client.cookies.clear()
+        assert client.post(base + "/session", json={"remember": True},
+                           headers={"X-Mobile-Admin-Key": "C" * 40}).status_code == 200
+        monkeypatch.setenv("MOBILE_ADMIN_KEY", "D" * 40)
+        assert client.get(base + "/session").status_code == 403
