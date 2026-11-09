@@ -1,8 +1,10 @@
 # MedStudy AI 2.0 — iOS development
 
 This uses the same Flutter code as the Android app. **No duplicate student
-accounts, backend, or admin site are needed.** Changes stay on
-`feature/mobile-auth-v2`, separate from the production Telegram bot.
+accounts, backend, or admin site are needed.** iPhone-only changes stay on
+`feature/ios-v2`, branched from the working `feature/mobile-auth-v2` Android
+pilot. Railway staging remains on the Android branch and production Telegram
+remains untouched.
 
 ## Current scope
 
@@ -16,19 +18,44 @@ accounts, backend, or admin site are needed.** Changes stay on
 Staging API: `https://medstudy-ai-mobile-staging-staging.up.railway.app`
 Admin panel: `https://medstudy-ai-mobile-staging-staging.up.railway.app/mobile-admin`
 
+
+## iPhone implementation stage 1
+
+- Reuse the same HTTPS mobile account API and existing admin approvals.
+- Show a `CupertinoTabBar` on iOS, `NavigationBar` on Android.
+- Use iOS interactive back-swipe page routes for subjects, lessons and tests.
+- Apply iPhone keyboard autofill for name, email and password.
+- Test Cupertino routes and tab navigation on the Linux Flutter runner; these
+  are widget tests, **not** a native iOS build or a substitute for device tests.
+- Android builds/tests run from `feature/ios-v2` too, to catch regressions.
+- Only the installed Android debug APK is frozen as our baseline, not the
+  iOS code branch. No app-store deployment or Apple credentials are added.
+
+### What is still blocked
+
+A real iPhone IPA needs a macOS/Xcode build, provisioning and signing.
+The simulator-only macOS workflow is deliberately manual because GitHub
+macOS runners for private repositories can incur charges. GitHub does not
+normally expose its manual dispatch button before the workflow exists on
+the default branch. We will not alter `main` simply to expose
+that button or automatically incur cloud macOS costs.
+
+**Windows cannot compile/sign an iPhone IPA by itself.** From a Mac, run
+the Flutter commands below and use Xcode with an Apple ID to sign a real-device
+debug build. This is not needed while developing shared Dart UI and tests.
+
 ## Build validation (no Apple membership required)
 
 A manual GitHub Actions workflow is available:
 
 `.github/workflows/ios-simulator.yml`
 
-The workflow file is currently on `feature/mobile-auth-v2`, not the
+The workflow file is currently on `feature/ios-v2`, not the
 repository's default `main` branch. GitHub may **not display its manual
 Run workflow button yet**: manual dispatch normally requires the workflow
 to be registered on the default branch. Do not merge development code into
-production just to make this test runnable. When the development branch is
-approved for merging, select the iOS workflow in GitHub Actions, run it on
-the iOS development branch, and inspect the unsigned simulator artifact.
+production just to make this test runnable. When a safe workflow registration strategy is selected, run it on
+the iOS development branch and inspect the unsigned simulator artifact.
 
 It runs on a macOS GitHub runner and builds an unsigned iOS **Simulator**
 application. The resulting artifact **cannot be installed on a real iPhone**
@@ -61,4 +88,5 @@ No API keys or passwords should be pasted into source code or chat.
 4. Add server-side progress sync for Android ⇄ iPhone continuity.
 5. Decide on Apple Developer enrollment and distribution only when ready.
 
-Production service and `main` are intentionally unchanged.
+Android APK already installed, production Telegram bot, staging backend,
+and `main` are intentionally unchanged.
