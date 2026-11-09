@@ -64,7 +64,7 @@ jobs:
           PY
         working-directory: mobile
       - name: Build Android debug APK
-        run: flutter build apk --debug
+        run: flutter build apk --debug --dart-define=MEDSTUDY_API_URL=https://medstudy-ai-mobile-staging-staging.up.railway.app
         working-directory: mobile
       - name: Verify private study lessons are not packaged
         run: |
