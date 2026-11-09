@@ -75,3 +75,39 @@ def test_rejected_account_cannot_reapply_without_admin_action(monkeypatch):
             assert client.post("/api/mobile/register", json=payload).status_code == 202
             assert mobile_auth.pending_accounts() == []
             assert client.post("/api/mobile/login", json={"email":payload["email"],"password":payload["password"]}).status_code == 403
+
+
+def test_staging_admin_portal_requires_private_key(monkeypatch):
+    from app import mobile_admin
+    with tempfile.TemporaryDirectory() as temp:
+        monkeypatch.setattr(mobile_auth, "DB_PATH", str(Path(temp) / "auth.db"))
+        monkeypatch.setattr(mobile_auth, "_DB_READY", False)
+        monkeypatch.setenv("MOBILE_ADMIN_PANEL_ENABLED", "1")
+        monkeypatch.setenv("MOBILE_ADMIN_KEY", "A" * 40)
+        from fastapi import FastAPI
+        app = FastAPI()
+        app.include_router(mobile_auth.router)
+        app.include_router(mobile_admin.router)
+        with TestClient(app) as client:
+            assert client.get("/api/mobile/admin-console/pending").status_code == 403
+            assert client.get("/api/mobile/admin-console/pending",
+                              headers={"X-Mobile-Admin-Key": "incorrect"}).status_code == 403
+            assert client.post("/api/mobile/admin-console/review",
+                               json={"account_id": 1, "decision": "approved"}).status_code == 403
+            assert client.get("/mobile-admin").status_code == 200
+            payload = {"email": "new@example.org", "password": "secure-passphrase-123", "display_name": "Student"}
+            assert client.post("/api/mobile/register", json=payload).status_code == 202
+            headers = {"X-Mobile-Admin-Key": "A" * 40}
+            pending = client.get("/api/mobile/admin-console/pending", headers=headers)
+            assert pending.status_code == 200
+            account_id = pending.json()["items"][0]["id"]
+            assert client.post("/api/mobile/admin-console/review", headers=headers,
+                               json={"account_id": account_id, "decision": "approved"}).status_code == 200
+            assert client.post("/api/mobile/login",
+                               json={"email": payload["email"], "password": payload["password"]}).status_code == 200
+            assert client.post("/api/mobile/admin-console/review", headers=headers,
+                               json={"account_id": account_id, "decision": "revoked"}).status_code == 200
+        monkeypatch.setenv("MOBILE_ADMIN_PANEL_ENABLED", "0")
+        with TestClient(app) as client:
+            assert client.get("/mobile-admin").status_code == 404
+            assert client.get("/api/mobile/admin-console/pending", headers={"X-Mobile-Admin-Key": "A" * 40}).status_code == 404
