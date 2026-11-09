@@ -1,9 +1,11 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'models/study_catalog.dart';
 import 'mobile_api.dart';
 import 'mobile_account.dart';
 import 'widgets/authorized_diagram.dart';
+import 'widgets/adaptive_study_navigation.dart';
 import 'models/study_progress.dart';
 
 const green = Color(0xFF20844D);
@@ -89,6 +91,10 @@ class _MedStudyRootState extends State<MedStudyRoot> with WidgetsBindingObserver
   ThemeData createTheme(Brightness brightness) => ThemeData(
     useMaterial3: true,
     colorScheme: ColorScheme.fromSeed(seedColor: green, brightness: brightness),
+    appBarTheme: AppBarTheme(
+      centerTitle: defaultTargetPlatform == TargetPlatform.iOS,
+      scrolledUnderElevation: 0,
+    ),
     scaffoldBackgroundColor: brightness == Brightness.dark
         ? const Color(0xFF111B14) : const Color(0xFFF2F8F3),
   );
@@ -132,15 +138,9 @@ class _HomePageState extends State<HomePage> {
       builder: (context, _) => Scaffold(
         appBar: AppBar(title: Text(headings[tab],
             style: const TextStyle(fontWeight: FontWeight.bold))),
-        bottomNavigationBar: NavigationBar(
+        bottomNavigationBar: AdaptiveStudyNavigation(
           selectedIndex: tab,
-          onDestinationSelected: (index) => setState(() => tab = index),
-          destinations: const [
-            NavigationDestination(icon: Icon(Icons.home_outlined), label: 'Asosiy'),
-            NavigationDestination(icon: Icon(Icons.menu_book_outlined), label: 'Fanlar'),
-            NavigationDestination(icon: Icon(Icons.bar_chart_outlined), label: 'Natija'),
-            NavigationDestination(icon: Icon(Icons.settings_outlined), label: 'Sozlama'),
-          ],
+          onSelected: (index) => setState(() => tab = index),
         ),
         body: SafeArea(child: switch (tab) {
           0 => homeContent(),
@@ -256,10 +256,11 @@ class _HomePageState extends State<HomePage> {
       value: widget.dark,
       onChanged: widget.onTheme,
     )),
-    const Card(child: ListTile(
-      leading: Icon(Icons.phone_android_outlined),
-      title: Text('MedStudy AI · Mobil MVP'),
-      subtitle: Text('Ruxsat bilan kirish. AI Ustoz va Pro hali ulanmagan.'),
+    Card(child: ListTile(
+      leading: Icon(Theme.of(context).platform == TargetPlatform.iOS
+          ? Icons.phone_iphone_outlined : Icons.phone_android_outlined),
+      title: const Text('MedStudy AI 2.0'),
+      subtitle: const Text('iOS va Android · AI Ustoz va Pro keyingi bosqichda.'),
     )),
     const Card(child: ListTile(
       leading: Icon(Icons.privacy_tip_outlined),
