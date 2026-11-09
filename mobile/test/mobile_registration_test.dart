@@ -49,7 +49,7 @@ void main() {
 
   test('Unapproved accounts cannot log in even with correct password', () async {
     final client = MockClient((request) async =>
-      http.Response(jsonEncode({'detail': 'Administrator tasdig‘i kutilmoqda'}), 403));
+      http.Response(jsonEncode({'detail': 'Administrator tasdigi kutilmoqda'}), 403));
     final auth = MobileAuthService(baseUrl: server, client: client);
     await expectLater(
       auth.login(email: 'new@example.org', password: 'long-password'),
