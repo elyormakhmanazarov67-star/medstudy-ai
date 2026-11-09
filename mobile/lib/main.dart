@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'models/study_catalog.dart';
+import 'mobile_account.dart';
 import 'models/study_progress.dart';
 
 const green = Color(0xFF20844D);
@@ -181,6 +182,13 @@ class _HomePageState extends State<HomePage> {
   ]);
 
   Widget settingsContent() => ListView(padding: const EdgeInsets.all(16), children: [
+    Card(child: ListTile(
+      leading: const Icon(Icons.person_outline),
+      title: const Text('Talaba kabineti'),
+      subtitle: const Text('Ro‘yxatdan o‘tish yoki akkauntga kirish'),
+      trailing: const Icon(Icons.chevron_right),
+      onTap: () => Navigator.push(context, MaterialPageRoute<void>(builder: (_) => const MobileAccountPage())),
+    )),
     Card(child: SwitchListTile(
       title: const Text('Qora-yashil rejim'),
       subtitle: const Text('Oq-yashil yoki qora-yashil dizayn'),
