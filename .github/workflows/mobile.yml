@@ -7,9 +7,14 @@ on:
     paths:
       - 'mobile/**'
       - 'app/mobile_auth.py'
+      - 'app/mobile_admin.py'
+      - 'app/mobile_notifications.py'
+      - 'app/static/mobile-admin.js'
+      - 'app/static/mobile-admin.html'
       - 'app/telegram_gateway.py'
       - 'app/main.py'
       - 'tests/test_mobile_auth.py'
+      - 'tests/test_mobile_notifications.py'
       - '.github/workflows/mobile.yml'
   workflow_dispatch:
 jobs:
@@ -27,7 +32,7 @@ jobs:
           AUTO_SET_WEBHOOK: '0'
           AI_ENABLED: '0'
           DATABASE_PATH: '/tmp/medstudy-ci.sqlite'
-        run: python -m pytest -q tests/test_mobile_auth.py tests/test_miniapp.py tests/test_tutor.py tests/test_webhook.py tests/test_study_plan.py tests/test_curriculum.py tests/test_lesson_helper.py tests/test_materials.py
+        run: python -m pytest -q tests/test_mobile_auth.py tests/test_mobile_notifications.py tests/test_miniapp.py tests/test_tutor.py tests/test_webhook.py tests/test_study_plan.py tests/test_curriculum.py tests/test_lesson_helper.py tests/test_materials.py
   staging-smoke:
     if: github.ref == 'refs/heads/feature/mobile-auth-v2'
     runs-on: ubuntu-latest
