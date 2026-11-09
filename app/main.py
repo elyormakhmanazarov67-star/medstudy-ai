@@ -16,7 +16,7 @@ from .study_plan import build_study_plan
 from .plans import plans_catalog
 from . import tutor
 from .lesson_helper import prepare_answer
-from . import mobile_auth
+from . import mobile_auth, mobile_admin
 from .telegram_gateway import router as telegram_router, configure_telegram
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -63,6 +63,7 @@ async def lifespan(app: FastAPI):
 app = FastAPI(title='MedStudy AI Mini App', docs_url=None, redoc_url=None, lifespan=lifespan)
 app.include_router(telegram_router)
 app.include_router(mobile_auth.router)
+app.include_router(mobile_admin.router)
 app.state.store = STORE
 app.state.is_admin = is_admin
 app.mount('/static', StaticFiles(directory=ROOT / 'app' / 'static'), name='static')
