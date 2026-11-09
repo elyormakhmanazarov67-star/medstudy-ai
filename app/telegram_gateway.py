@@ -89,7 +89,11 @@ async def configure_telegram() -> bool:
         logger.info('Telegram auto configuration is OFF; Mini App HTTP service only.')
         return False
     if not telegram_setup_ready():
-        logger.warning('Cannot configure Telegram: BOT_TOKEN, WEB_APP_URL, or TELEGRAM_WEBHOOK_SECRET not ready.')
+        secret = webhook_secret()
+        logger.warning(
+            'Cannot configure Telegram: token_present=%s, public_url_valid=%s, webhook_secret_valid=%s',
+            bool(bot_token()), bool(public_url()), bool(re.fullmatch(r'[A-Za-z0-9_-]{16,256}', secret)),
+        )
         return False
     base = public_url()
     try:
