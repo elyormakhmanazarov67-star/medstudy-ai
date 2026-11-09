@@ -44,6 +44,25 @@ that button or automatically incur cloud macOS costs.
 the Flutter commands below and use Xcode with an Apple ID to sign a real-device
 debug build. This is not needed while developing shared Dart UI and tests.
 
+
+## iPhone implementation stage 2
+
+- Student sign-in and registration now use native-styled Cupertino action
+  buttons on iOS and retain Material buttons on Android.
+- Forms validate fields while the student types and support platform
+  autofill, including iCloud Keychain on eligible iPhones.
+- The app asks the OS to finish its autofill/save-password flow only after
+  receiving an accepted registration request or successful sign-in.
+- iOS tab/navigation, page-route, and account-action widget tests run in the
+  ordinary Flutter CI jobs. These tests do **not** claim an iOS Simulator build.
+- Both branches now run HTTPS staging smoke checks, without editing the
+  Railway backend or admin-approval database.
+
+Next, a real iOS Simulator build must be run on macOS with Xcode. The manual
+macOS workflow stays intentionally disabled until the owner chooses a runner
+and accepts any applicable billing. A physical iPhone build still requires
+Apple code signing. Android debug APK 76.9 MB remains the installed baseline.
+
 ## Build validation (no Apple membership required)
 
 A manual GitHub Actions workflow is available:
