@@ -1,44 +1,94 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'models/study_catalog.dart';
+import 'mobile_api.dart';
 import 'mobile_account.dart';
+import 'widgets/authorized_diagram.dart';
 import 'models/study_progress.dart';
 
 const green = Color(0xFF20844D);
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  final catalog = await StudyCatalog.load();
   final prefs = await SharedPreferences.getInstance();
-  runApp(MedStudyRoot(catalog: catalog, prefs: prefs));
+  runApp(MedStudyRoot(prefs: prefs));
 }
 
 class MedStudyRoot extends StatefulWidget {
-  final StudyCatalog catalog;
   final SharedPreferences prefs;
-  const MedStudyRoot({super.key, required this.catalog, required this.prefs});
+  const MedStudyRoot({super.key, required this.prefs});
   @override
   State<MedStudyRoot> createState() => _MedStudyRootState();
 }
 
-class _MedStudyRootState extends State<MedStudyRoot> {
+class _MedStudyRootState extends State<MedStudyRoot> with WidgetsBindingObserver {
   late bool dark = widget.prefs.getBool('dark_theme') ?? false;
-  late final StudyProgress progress = StudyProgress(widget.prefs);
+  StudyCatalog? catalog;
+  StudyProgress? progress;
+  String? accountId;
+  String? notice;
+  bool checking = true;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+    checkAccess();
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    progress?.dispose();
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.resumed) checkAccess();
+  }
+
+  Future<void> checkAccess() async {
+    if (!mounted) return;
+    setState(() { checking = true; catalog = null; notice = null; });
+    try {
+      final account = await MobileApi.me();
+      final nextCatalog = await MobileApi.catalog();
+      if (!mounted) return;
+      final userId = account['id'].toString();
+      if (accountId != userId) {
+        progress?.dispose();
+        progress = StudyProgress(widget.prefs, accountKey: userId);
+        accountId = userId;
+      }
+      setState(() { catalog = nextCatalog; checking = false; });
+    } on MobileApiException catch (error) {
+      if (error.status == 401 || error.status == 403) {
+        await MobileApi.clearToken();
+      }
+      if (!mounted) return;
+      setState(() { catalog = null; checking = false; notice = error.message; });
+    } catch (_) {
+      if (!mounted) return;
+      setState(() {
+        catalog = null;
+        checking = false;
+        notice = 'Serverga ulanib bo‘lmadi. Internetni tekshirib, qayta kiring.';
+      });
+    }
+  }
 
   void setDark(bool enabled) {
     setState(() => dark = enabled);
     widget.prefs.setBool('dark_theme', enabled);
   }
 
-  ThemeData createTheme(Brightness brightness) {
-    return ThemeData(
-      useMaterial3: true,
-      colorScheme: ColorScheme.fromSeed(seedColor: green, brightness: brightness),
-      scaffoldBackgroundColor: brightness == Brightness.dark
-          ? const Color(0xFF111B14) : const Color(0xFFF2F8F3),
-    );
-  }
+  ThemeData createTheme(Brightness brightness) => ThemeData(
+    useMaterial3: true,
+    colorScheme: ColorScheme.fromSeed(seedColor: green, brightness: brightness),
+    scaffoldBackgroundColor: brightness == Brightness.dark
+        ? const Color(0xFF111B14) : const Color(0xFFF2F8F3),
+  );
 
   @override
   Widget build(BuildContext context) => MaterialApp(
@@ -47,7 +97,12 @@ class _MedStudyRootState extends State<MedStudyRoot> {
     theme: createTheme(Brightness.light),
     darkTheme: createTheme(Brightness.dark),
     themeMode: dark ? ThemeMode.dark : ThemeMode.light,
-    home: HomePage(catalog: widget.catalog, progress: progress, dark: dark, onTheme: setDark),
+    home: checking
+      ? const Scaffold(body: Center(child: CircularProgressIndicator()))
+      : catalog == null || progress == null
+        ? MobileAccountPage(onAuthChanged: checkAccess, notice: notice)
+        : HomePage(catalog: catalog!, progress: progress!, dark: dark,
+            onTheme: setDark, onAuthChanged: checkAccess),
   );
 }
 
@@ -56,8 +111,9 @@ class HomePage extends StatefulWidget {
   final StudyProgress progress;
   final bool dark;
   final ValueChanged<bool> onTheme;
+  final Future<void> Function() onAuthChanged;
   const HomePage({super.key, required this.catalog, required this.progress,
-      required this.dark, required this.onTheme});
+      required this.dark, required this.onTheme, required this.onAuthChanged});
   @override
   State<HomePage> createState() => _HomePageState();
 }
@@ -187,7 +243,7 @@ class _HomePageState extends State<HomePage> {
       title: const Text('Talaba kabineti'),
       subtitle: const Text('Ro‘yxatdan o‘tish yoki akkauntga kirish'),
       trailing: const Icon(Icons.chevron_right),
-      onTap: () => Navigator.push(context, MaterialPageRoute<void>(builder: (_) => const MobileAccountPage())),
+      onTap: () => Navigator.push(context, MaterialPageRoute<void>(builder: (_) => MobileAccountPage(onAuthChanged: widget.onAuthChanged))),
     )),
     Card(child: SwitchListTile(
       title: const Text('Qora-yashil rejim'),
@@ -199,12 +255,12 @@ class _HomePageState extends State<HomePage> {
     const Card(child: ListTile(
       leading: Icon(Icons.phone_android_outlined),
       title: Text('MedStudy AI · Mobil MVP'),
-      subtitle: Text('Offline rejim. Mustaqil login, AI Ustoz va Pro hali ulanmagan.'),
+      subtitle: Text('Ruxsat bilan kirish. AI Ustoz va Pro hali ulanmagan.'),
     )),
     const Card(child: ListTile(
       leading: Icon(Icons.privacy_tip_outlined),
       title: Text('Maxfiylik'),
-      subtitle: Text('O‘qish va test natijalari faqat ushbu qurilmada saqlanadi.'),
+      subtitle: Text('Test natijalari hozircha faqat ushbu qurilmada saqlanadi.'),
     )),
   ]);
 }
@@ -262,7 +318,7 @@ class LessonPage extends StatelessWidget {
             const Text('Rasm orqali tushuntirish',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
             const SizedBox(height: 12),
-            SvgPicture.asset(lesson.diagramAsset, height: 300),
+            AuthorizedDiagram(lessonId: lesson.id),
           ]),
         )),
         if (lesson.sections.isEmpty) const Card(child: Padding(
