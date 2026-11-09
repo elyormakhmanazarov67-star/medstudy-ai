@@ -9,9 +9,11 @@ import secrets
 import sqlite3
 import time
 from datetime import datetime, timezone
+from functools import lru_cache
 from pathlib import Path
 
 from fastapi import APIRouter, Header, HTTPException, Request
+from fastapi.responses import JSONResponse, Response
 from pydantic import BaseModel, Field
 
 router = APIRouter(prefix="/api/mobile", tags=["mobile"])
@@ -44,6 +46,7 @@ def init_db():
             salt BLOB NOT NULL,
             password_hash BLOB NOT NULL,
             approved INTEGER NOT NULL DEFAULT 0,
+            status TEXT NOT NULL DEFAULT 'pending',
             created_at TEXT NOT NULL
         );
         CREATE TABLE IF NOT EXISTS mobile_sessions (
@@ -59,6 +62,10 @@ def init_db():
             PRIMARY KEY(key_hash, window)
         );
         """)
+        columns = {row[1] for row in db.execute("PRAGMA table_info(mobile_accounts)")}
+        if "status" not in columns:
+            db.execute("ALTER TABLE mobile_accounts ADD COLUMN status TEXT NOT NULL DEFAULT 'pending'")
+            db.execute("UPDATE mobile_accounts SET status='approved' WHERE approved=1")
     _DB_READY = True
 
 
@@ -130,14 +137,19 @@ def login(body: Login, request: Request):
         ip = request.client.host if request.client else "unknown"
         rate_limit(db, "login-ip:" + ip, 30)
         rate_limit(db, "login-account:" + email, 8)
-        row = db.execute("SELECT id,salt,password_hash,approved FROM mobile_accounts WHERE email=?", (email,)).fetchone()
+        row = db.execute("SELECT id,salt,password_hash,approved,status FROM mobile_accounts WHERE email=?", (email,)).fetchone()
         # Equalize password check for non-existent users.
         fake_salt = b"medstudy-pilot00"
         computed = hash_password(body.password, row[1] if row else fake_salt)
         if not row or not hmac.compare_digest(computed, row[2]):
             raise HTTPException(401, "Email yoki parol noto'g'ri")
-        if not row[3]:
-            raise HTTPException(403, "Administrator tasdig'i kutilmoqda")
+        if not row[3] or row[4] != "approved":
+            detail = "Administrator tasdig'i kutilmoqda"
+            if row[4] == "rejected":
+                detail = "Ariza rad etilgan. Administrator bilan bog'laning."
+            if row[4] == "revoked":
+                detail = "Ruxsat bekor qilingan. Administrator bilan bog'laning."
+            raise HTTPException(403, detail)
         token = secrets.token_urlsafe(32)
         expiry = int(time.time()) + SESSION_SECONDS
         db.execute("DELETE FROM mobile_sessions WHERE expires_at < ?", (int(time.time()),))
@@ -153,10 +165,10 @@ def current_account(authorization: str | None):
     if not 30 <= len(token) <= 100:
         raise HTTPException(401, "Sessiya yaroqsiz")
     with connect() as db:
-        row = db.execute("""SELECT a.id,a.email,a.display_name,a.approved FROM mobile_sessions s
+        row = db.execute("""SELECT a.id,a.email,a.display_name,a.approved,a.status FROM mobile_sessions s
             JOIN mobile_accounts a ON a.id=s.account_id
             WHERE s.token_hash=? AND s.expires_at>?""", (digest(token), int(time.time()))).fetchone()
-    if not row or not row[3]:
+    if not row or not row[3] or row[4] != 'approved':
         raise HTTPException(401, "Sessiya tugagan yoki ruxsat bekor qilingan")
     return {"id": row[0], "email": row[1], "display_name": row[2]}
 
@@ -178,15 +190,46 @@ def pending_accounts(limit=30):
     init_db()
     with connect() as db:
         return [{"id": row[0], "email": row[1], "display_name": row[2]} for row in
-                db.execute("SELECT id,email,display_name FROM mobile_accounts WHERE approved=0 ORDER BY id LIMIT ?", (limit,))]
+                db.execute("SELECT id,email,display_name FROM mobile_accounts WHERE status='pending' ORDER BY id LIMIT ?", (limit,))]
+
+
+def set_account_status(account_id: int, status: str):
+    if status not in {"approved", "rejected", "revoked"}:
+        raise ValueError("Invalid status")
+    init_db()
+    with connect() as db:
+        count = db.execute("UPDATE mobile_accounts SET status=?, approved=? WHERE id=?",
+                           (status, int(status == "approved"), account_id)).rowcount
+        if not count:
+            raise HTTPException(404, "Account topilmadi")
+        if status != "approved":
+            db.execute("DELETE FROM mobile_sessions WHERE account_id=?", (account_id,))
+    return {"account_id": account_id, "status": status, "approved": status == "approved"}
 
 
 def approve_account(account_id, approved):
-    init_db()
-    with connect() as db:
-        count = db.execute("UPDATE mobile_accounts SET approved=? WHERE id=?", (int(approved), account_id)).rowcount
-        if not count:
-            raise HTTPException(404, "Account topilmadi")
-        if not approved:
-            db.execute("DELETE FROM mobile_sessions WHERE account_id=?", (account_id,))
-    return {"account_id": account_id, "approved": approved}
+    return set_account_status(account_id, "approved" if approved else "revoked")
+
+
+@lru_cache(maxsize=1)
+def mobile_catalog():
+    from .core import load_catalog
+    return load_catalog(Path(__file__).resolve().parent.parent / "content" / "lessons.json")
+
+
+@router.get("/catalog")
+def authorized_catalog(authorization: str | None = Header(default=None)):
+    current_account(authorization)
+    return JSONResponse(mobile_catalog(), headers={"Cache-Control": "no-store"})
+
+
+@router.get("/diagrams/{lesson_id}")
+def authorized_diagram(lesson_id: str, authorization: str | None = Header(default=None)):
+    current_account(authorization)
+    if not re.fullmatch(r"anat_(?:[1-9]|1[0-4])", lesson_id):
+        raise HTTPException(404, "Rasm topilmadi")
+    path = Path(__file__).resolve().parent / "static" / "illustrations" / f"{lesson_id}.svg"
+    if not path.is_file():
+        raise HTTPException(404, "Rasm topilmadi")
+    return Response(path.read_bytes(), media_type="image/svg+xml",
+                    headers={"Cache-Control": "no-store", "X-Content-Type-Options": "nosniff"})
