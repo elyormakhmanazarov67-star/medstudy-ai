@@ -66,3 +66,27 @@ def admin_review(body: ReviewBody, x_mobile_admin_key: str | None = Header(defau
     verify_admin_key(x_mobile_admin_key)
     result = mobile_auth.set_account_status(body.account_id, body.decision)
     return result
+
+
+@router.get("/api/mobile/admin-console/telegram-status")
+def telegram_status(x_mobile_admin_key: str | None = Header(default=None)):
+    """Authenticated diagnostics; never return secrets or chat identifiers."""
+    verify_admin_key(x_mobile_admin_key)
+    from .mobile_notifications import notification_status
+    return {**notification_status(), "pending_count": len(mobile_auth.pending_accounts())}
+
+
+@router.post("/api/mobile/admin-console/resend-pending")
+async def resend_pending(x_mobile_admin_key: str | None = Header(default=None)):
+    """Allow admin to notify about applications submitted before bot configuration."""
+    verify_admin_key(x_mobile_admin_key)
+    from .mobile_notifications import notification_status, send_pending_notice
+    if not notification_status()["ready"]:
+        raise HTTPException(409, "Telegram bot yoki kanal ID sozlanmagan")
+    pending = mobile_auth.pending_accounts()
+    if not pending:
+        return {"sent": False, "pending_count": 0}
+    success = await send_pending_notice([item["id"] for item in pending])
+    if not success:
+        raise HTTPException(502, "Telegram xabarni qabul qilmadi. Botni kanalga administrator qiling.")
+    return {"sent": True, "pending_count": len(pending)}
