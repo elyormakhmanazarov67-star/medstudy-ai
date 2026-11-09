@@ -30,7 +30,7 @@
   const app = document.getElementById('app');
   const demo = new URLSearchParams(location.search).get('demo') === '1' && ['localhost', '127.0.0.1'].includes(location.hostname);
   const auth = webapp?.initData || '';
-  const state = { tab: 'home', catalog: null, progress: null, studyPlan: null, history: null, lesson: null, quiz: null, result: null, consent: null, busy: false, tutorStatus: null, tutorQuestion:'', tutorAnswer: null, tutorLessonId:'', tutorMode:'explain', tutorLevel:'standard', tutorProvider:'lesson', tutorHistory:[], tutorMessages:[], tutorError:'', anatomyFile:null, anatomyPreview:'', anatomyQuestion:'', anatomyAnswer:'', anatomyError:'', anatomyBusy:false, anatomyStatus:null, anatomyLabels:[], anatomyShowLabels:true };
+  const state = { tab: 'home', catalog: null, progress: null, studyPlan: null, history: null, lesson: null, quiz: null, result: null, consent: null, busy: false, tutorStatus: null, tutorQuestion:'', tutorAnswer: null, tutorLessonId:'', tutorMode:'explain', tutorLevel:'standard', tutorProvider:'lesson', tutorHistory:[], tutorMessages:[], tutorError:'', anatomyFile:null, anatomyPreview:'', anatomyQuestion:'', anatomyAnswer:'', anatomyError:'', anatomyBusy:false, anatomyStatus:null, anatomyLabels:[], anatomyShowLabels:true, anatomyImageWidth:null };
   // Preserve original Uzbek Latin digraphs (Sh/sh, Ch/ch); never rewrite text.
   const uz = val => String(val ?? '');
   const esc = val => uz(val).replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]));
@@ -126,7 +126,7 @@
   function resetAnatomyImage(){
     if(state.anatomyPreview)URL.revokeObjectURL(state.anatomyPreview);
     state.anatomyFile=null;state.anatomyPreview='';
-    state.anatomyQuestion='';state.anatomyAnswer='';state.anatomyError='';state.anatomyLabels=[];state.anatomyShowLabels=true;
+    state.anatomyQuestion='';state.anatomyAnswer='';state.anatomyError='';state.anatomyLabels=[];state.anatomyShowLabels=true;state.anatomyImageWidth=null;
   }
   async function anatomyImageScreen(){
     if(!state.lesson?.anatomy_image_explain){showLesson();return;}
@@ -147,7 +147,7 @@
       return '<span class="anatomy-marker '+side+' '+vertical+'" style="left:'+x+'%;top:'+y+'%" aria-label="'+esc(item.latin)+'"><span class="anatomy-pin">'+(i+1)+'</span><span class="anatomy-label">'+esc(item.latin)+'</span></span>';
     }).join(''):'';
     const preview=state.anatomyPreview
-      ?'<div class="anatomy-picture-wrap"><div class="anatomy-annotated-picture"><img class="anatomy-preview" src="'+rawEsc(state.anatomyPreview)+'" alt="Tanlangan anatomiya rasmi">'+annotations+'</div></div>'+
+      ?'<div class="anatomy-picture-wrap"><div class="anatomy-annotated-picture" '+(state.anatomyImageWidth?'style="width:'+state.anatomyImageWidth+'px"':'')+'><img class="anatomy-preview" src="'+rawEsc(state.anatomyPreview)+'" alt="Tanlangan anatomiya rasmi">'+annotations+'</div></div>'+
        (labels.length?'<button class="btn btn-flat btn-wide" data-action="anatomy-toggle">'+(state.anatomyShowLabels?'Belgilarni yashirish':'Belgilarni ko‘rsatish')+'</button>'+
         '<div class="anatomy-legend" aria-label="Rasmdagi anatomik belgilar">'+labels.map((item,i)=>'<div class="anatomy-legend-item"><span class="anatomy-number">'+(i+1)+'</span><strong>'+esc(item.latin)+'</strong></div>').join('')+'</div>':
         state.anatomyAnswer?'<p class="smallprint">Rasmda ishonch bilan belgilash mumkin bo‘lgan anatomik suyak yoki tuzilma aniqlanmadi.</p>':'')
@@ -175,6 +175,22 @@
     if(!['image/jpeg','image/png','image/webp'].includes(file.type)){state.anatomyError='Faqat JPG, PNG yoki WEBP rasm tanlang';renderAnatomyImage();return;}
     if(file.size===0||file.size>5*1024*1024){state.anatomyError='Rasm hajmi 5 MB dan oshmasin';renderAnatomyImage();return;}
     state.anatomyFile=file;state.anatomyPreview=URL.createObjectURL(file);
+    const previewUrl=state.anatomyPreview;
+    // Set overlay width to the *rendered* image width, even for tall portraits.
+    const probe=new Image();
+    probe.onload=()=>{
+      if(state.anatomyPreview!==previewUrl)return;
+      state.anatomyImageWidth=Math.max(1,Math.round(Math.min(
+        probe.naturalWidth,340*probe.naturalWidth/probe.naturalHeight)));
+      if(state.tab==='anatomy-image')renderAnatomyImage();
+    };
+    probe.onerror=()=>{
+      if(state.anatomyPreview===previewUrl){
+        state.anatomyError='Rasmni ko‘rsatib bo‘lmadi. Boshqa rasm tanlang.';
+        state.anatomyFile=null;renderAnatomyImage();
+      }
+    };
+    probe.src=previewUrl;
     renderAnatomyImage();
   }
   async function sendAnatomyImage(){
