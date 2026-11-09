@@ -27,6 +27,7 @@ class _MedStudyRootState extends State<MedStudyRoot> with WidgetsBindingObserver
   StudyProgress? progress;
   String? accountId;
   String? notice;
+  final GlobalKey<NavigatorState> navigator = GlobalKey<NavigatorState>();
   bool checking = true;
 
   @override
@@ -67,9 +68,11 @@ class _MedStudyRootState extends State<MedStudyRoot> with WidgetsBindingObserver
         await MobileApi.clearToken();
       }
       if (!mounted) return;
+      navigator.currentState?.popUntil((route) => route.isFirst);
       setState(() { catalog = null; checking = false; notice = error.message; });
     } catch (_) {
       if (!mounted) return;
+      navigator.currentState?.popUntil((route) => route.isFirst);
       setState(() {
         catalog = null;
         checking = false;
@@ -92,6 +95,7 @@ class _MedStudyRootState extends State<MedStudyRoot> with WidgetsBindingObserver
 
   @override
   Widget build(BuildContext context) => MaterialApp(
+    navigatorKey: navigator,
     title: 'MedStudy AI',
     debugShowCheckedModeBanner: false,
     theme: createTheme(Brightness.light),
