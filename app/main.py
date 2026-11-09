@@ -84,8 +84,10 @@ def current_user(request: Request, x_telegram_init_data: Annotated[str | None, H
         uid = verify_init_data(x_telegram_init_data or '', BOT_TOKEN)
     except (AuthError, ValueError) as exc:
         raise HTTPException(status_code=401, detail=str(exc)) from exc
+    # A personally approved subscriber must get in even when public Free is disabled.
     if not free_access_enabled() and uid not in ALLOWED_IDS:
-        raise HTTPException(status_code=403, detail='Yopiq sinov. Administrator ruxsati kerak.')
+        if not (approval_enabled() and STORE.access_status(uid)=='approved'):
+            raise HTTPException(status_code=403, detail='Yopiq sinov. Administrator ruxsati kerak.')
     return uid
 
 

@@ -67,11 +67,19 @@ async def api_call(method: str, payload: dict) -> dict:
     if not token:
         raise RuntimeError('BOT_TOKEN is unset')
     async with httpx.AsyncClient(timeout=15.0) as client:
-        response = await client.post(f'https://api.telegram.org/bot{token}/{method}', json=payload)
-        response.raise_for_status()
-        result = response.json()
+        try:
+            response = await client.post(f'https://api.telegram.org/bot{token}/{method}', json=payload)
+        except httpx.RequestError:
+            # Never emit URLs containing the Telegram token into Railway logs.
+            raise RuntimeError(f'Telegram {method}: connection failed') from None
+        if response.status_code >= 400:
+            raise RuntimeError(f'Telegram {method}: HTTP {response.status_code}')
+        try:
+            result = response.json()
+        except ValueError:
+            raise RuntimeError(f'Telegram {method}: invalid response') from None
         if not result.get('ok'):
-            raise RuntimeError(f'Telegram {method} returned an error')
+            raise RuntimeError(f'Telegram {method}: API rejected the request')
         return result
 
 
@@ -106,12 +114,15 @@ async def configure_telegram() -> bool:
                 {'command': 'privacy', 'description': 'Maxfiylik haqida'},
                 {'command': 'status', 'description': 'Mini App ruxsatim'},
                 {'command': 'requests', 'description': 'Admin: kutilayotgan so‘rovlar'},
+                {'command': 'approve', 'description': 'Admin: Telegram ID ga ruxsat'},
+                {'command': 'reject', 'description': 'Admin: arizani rad etish'},
+                {'command': 'revoke', 'description': 'Admin: ruxsatni bekor qilish'},
             ]
         })
-        logger.info('Telegram webhook + Mini App menu configured.')
+        logger.warning('Telegram webhook and Mini App menu successfully registered on %s', base)
         return True
-    except (httpx.HTTPError, RuntimeError):
-        logger.exception('Telegram configuration failed. Mini App web server remains available.')
+    except (httpx.HTTPError, RuntimeError) as exc:
+        logger.warning('Telegram setup failed (%s); Mini App HTTP server is still available.', exc.__class__.__name__ if isinstance(exc, httpx.HTTPError) else str(exc))
         return False
 
 
@@ -200,6 +211,13 @@ async def receive_telegram_update(
                     logger.warning('Could not send approval status')
             except ValueError as exc:
                 body=str(exc)
+    elif approval and is_owner and cmd=='/help':
+        body=('MedStudy AI — administrator buyruqlari:\n'
+              '/requests — kutilayotgan arizalar\n'
+              '/approve ID — Telegram ID orqali ruxsat berish\n'
+              '/reject ID — arizani rad etish\n'
+              '/revoke ID — ruxsatni bekor qilish\n'
+              '/myid — mening Telegram ID raqamim')
     elif approval and is_owner and cmd=='/requests':
         pending=store.pending_access()
         body=('Kutilayotgan so‘rovlar:\n'+'\n'.join(str(x) for x in pending)

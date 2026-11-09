@@ -103,8 +103,15 @@ class Store:
             raise ValueError('Noto‘g‘ri qaror')
         with self.connect() as c:
             row=c.execute('SELECT status FROM access_requests WHERE user_id=?',(uid,)).fetchone()
+            if not row and status=='approved':
+                # Admin may grant access by numeric Telegram ID before the student sends /start.
+                now=datetime.now(timezone.utc).isoformat()
+                c.execute("""INSERT INTO access_requests
+                    (user_id,status,requested_at,reviewed_at,reviewed_by)
+                    VALUES (?,'approved',?,?,?)""",(uid,now,now,admin_uid))
+                return status
             if not row:
-                raise ValueError('Foydalanuvchi hali /start orqali ariza yubormagan')
+                raise ValueError('Foydalanuvchi avval /start yuborishi kerak')
             if status=='revoked' and row[0]!='approved':
                 raise ValueError('Faqat tasdiqlangan ruxsat bekor qilinadi')
             c.execute("""UPDATE access_requests SET status=?, reviewed_at=?, reviewed_by=?
