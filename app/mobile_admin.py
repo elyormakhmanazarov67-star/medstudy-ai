@@ -23,6 +23,21 @@ def verify_admin_key(key: str | None):
         raise HTTPException(403, "Administrator authorization failed")
 
 
+@router.get("/mobile-register", include_in_schema=False)
+def public_registration_page():
+    """Public form can only create a pending application, never grant access."""
+    from pathlib import Path
+    return FileResponse(
+        Path(__file__).resolve().parent / "static" / "mobile-register.html",
+        headers={
+            "Cache-Control": "no-store",
+            "X-Content-Type-Options": "nosniff",
+            "Referrer-Policy": "no-referrer",
+            "Content-Security-Policy": "default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; form-action 'none'; base-uri 'none'; frame-ancestors 'none'",
+        },
+    )
+
+
 @router.get("/mobile-admin", include_in_schema=False)
 def admin_page():
     if os.getenv("MOBILE_ADMIN_PANEL_ENABLED", "0") != "1":
