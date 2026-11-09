@@ -31,3 +31,12 @@ jobs:
       - name: Test restored study catalog
         run: flutter test
         working-directory: mobile
+      - name: Build Android debug APK
+        run: flutter build apk --debug
+        working-directory: mobile
+      - name: Upload Android APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: medstudy-ai-android-debug
+          path: mobile/build/app/outputs/flutter-apk/app-debug.apk
+          retention-days: 7
