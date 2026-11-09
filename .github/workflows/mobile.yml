@@ -19,6 +19,9 @@ jobs:
       - name: Generate Android and iOS platform files
         run: flutter create . --platforms=android,ios --project-name medstudy_ai --org uz.medstudy
         working-directory: mobile
+      - name: Remove generated example test
+        run: rm -f test/widget_test.dart
+        working-directory: mobile
       - name: Dependencies
         run: flutter pub get
         working-directory: mobile

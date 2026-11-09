@@ -311,9 +311,11 @@ class _QuizPageState extends State<QuizPage> {
   @override
   Widget build(BuildContext context) {
     final questions = widget.lesson.questions;
-    if (questions.isEmpty) return Scaffold(
-        appBar: AppBar(title: const Text('Test')),
-        body: const Center(child: Text('Bu mavzuda test yo‘q.')));
+    if (questions.isEmpty) {
+      return Scaffold(
+          appBar: AppBar(title: const Text('Test')),
+          body: const Center(child: Text('Bu mavzuda test yo‘q.')));
+    }
     return Scaffold(
       appBar: AppBar(title: Text(finished ? 'Test natijasi' : 'Mavzu testi')),
       body: ListView(padding: const EdgeInsets.all(16), children:
