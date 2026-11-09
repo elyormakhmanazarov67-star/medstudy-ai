@@ -6,23 +6,23 @@
     "facts": [
       [
         "Caput",
-        "156. Tananing yuqori qismi."
+        "Bosh: Tananing yuqori qismi."
       ],
       [
         "Truncus",
-        "280. Ko‘krak va qorin sohalari."
+        "Gavda: Ko‘krak va qorin sohalari."
       ],
       [
         "Membrum superius",
-        "323. Qo‘l sohasi."
+        "Yuqori qo‘l-oyoq: Qo‘l sohasi."
       ],
       [
         "Membrum inferius",
-        "420. Oyoq sohasi."
+        "Pastki qo‘l-oyoq: Oyoq sohasi."
       ],
       [
         "Planum sagittale",
-        "235. Tanani o‘ng va chap qismlarga ajratadi."
+        "Sagittal sath: Tanani o‘ng va chap qismlarga ajratadi."
       ]
     ]
   },
@@ -33,23 +33,23 @@
     "facts": [
       [
         "Vertebrae cervicales",
-        "165. 7 ta bo‘yin umurtqasi."
+        "Bo‘yin umurtqalari: 7 ta bo‘yin umurtqasi."
       ],
       [
         "Vertebrae thoracicae",
-        "265. 12 ta ko‘krak umurtqasi."
+        "Ko‘krak umurtqalari: 12 ta ko‘krak umurtqasi."
       ],
       [
         "Vertebrae lumbales",
-        "380. 5 ta bel umurtqasi."
+        "Bel umurtqalari: 5 ta bel umurtqasi."
       ],
       [
         "Os sacrum",
-        "444. Umurtqalarning qo‘shilishidan hosil."
+        "Dumg‘aza suyagi: Umurtqalarning qo‘shilishidan hosil."
       ],
       [
         "Os coxae",
-        "442. Tana va oyoqlarni bog‘laydi."
+        "Chanoq suyagi: Tana va oyoqlarni bog‘laydi."
       ]
     ]
   },
@@ -60,23 +60,23 @@
     "facts": [
       [
         "Sternum",
-        "226. Ko‘krakning old o‘rtasida."
+        "To‘sh suyagi: Ko‘krakning old o‘rtasida."
       ],
       [
         "Costae verae",
-        "239. 1–7-juft qovurg‘alar."
+        "Chin qovurg‘alar: 1–7-juft qovurg‘alar."
       ],
       [
         "Costae spuriae",
-        "345. 8–10-juft qovurg‘alar."
+        "Soxta qovurg‘alar: 8–10-juft qovurg‘alar."
       ],
       [
         "Costae fluctuantes",
-        "420. 11–12-juft qovurg‘alar."
+        "Erkin qovurg‘alar: 11–12-juft qovurg‘alar."
       ],
       [
         "Vertebrae thoracicae",
-        "409. Qovurg‘alarning orqa tayanchi."
+        "Ko‘krak umurtqalari: Qovurg‘alarning orqa tayanchi."
       ]
     ]
   },
@@ -87,23 +87,23 @@
     "facts": [
       [
         "Clavicula",
-        "174. Yelka kamarining old qismi."
+        "O‘mrov suyagi: Yelka kamarining old qismi."
       ],
       [
         "Scapula",
-        "278. Yassi uchburchak suyak."
+        "Kurak suyagi: Yassi uchburchak suyak."
       ],
       [
         "Spina scapulae",
-        "264. Kurakning orqa qismida."
+        "Kurak qirrasi: Kurakning orqa qismida."
       ],
       [
         "Cavitas glenoidalis",
-        "220. Yelka suyagi boshchasiga tutashadi."
+        "Bo‘g‘im chuqurchasi: Yelka suyagi boshchasiga tutashadi."
       ],
       [
         "Humerus",
-        "358. Qo‘lning erkin qismi."
+        "Yelka suyagi: Qo‘lning erkin qismi."
       ]
     ]
   },
@@ -114,23 +114,23 @@
     "facts": [
       [
         "Humerus",
-        "212. Yelkaning uzun suyagi."
+        "Yelka suyagi: Yelkaning uzun suyagi."
       ],
       [
         "Radius",
-        "372. Bosh barmoq tomonida."
+        "Bilak suyagi: Bosh barmoq tomonida."
       ],
       [
         "Ulna",
-        "373. Kichik barmoq tomonida."
+        "Tirsak suyagi: Kichik barmoq tomonida."
       ],
       [
         "Ossa carpi",
-        "447. Bilak va kaft orasidagi 8 suyak."
+        "Kaft usti suyaklari: Bilak va kaft orasidagi 8 suyak."
       ],
       [
         "Ossa metacarpi",
-        "475. Kaftning besh naysimon suyagi."
+        "Kaft suyaklari: Kaftning besh naysimon suyagi."
       ]
     ]
   },
@@ -141,50 +141,50 @@
     "facts": [
       [
         "Os ilium",
-        "223. Chanoqning keng yuqori qismi."
+        "Yonbosh suyagi: Chanoqning keng yuqori qismi."
       ],
       [
         "Os ischii",
-        "325. Past-orqa bo‘lagi."
+        "O‘tirg‘ich suyagi: Past-orqa bo‘lagi."
       ],
       [
         "Os pubis",
-        "400. Old-pastki bo‘lagi."
+        "Qov suyagi: Old-pastki bo‘lagi."
       ],
       [
         "Os sacrum",
-        "273. Chanoqning orqa devoriga tegishli."
+        "Dumg‘aza suyagi: Chanoqning orqa devoriga tegishli."
       ],
       [
         "Foramen obturatum",
-        "349. Qov va o‘tirg‘ich oralig‘idagi teshik."
+        "Yopqich teshik: Qov va o‘tirg‘ich oralig‘idagi teshik."
       ]
     ]
   },
   "anat_7": {
     "src": "/static/illustrations/anat_7.svg",
     "title": "Chanoq kamari: yon va bo‘g‘im ko‘rinishi",
-    "alt": "Yonbosh, o‘tirg‘ich, qov qismlari va sirka bo‘g‘imi",
+    "alt": "Yonbosh, o‘tirg‘ich, qov qismlari va son bo‘g‘imi",
     "facts": [
       [
         "Crista iliaca",
-        "174. Yonbosh suyagining yuqori qirrasi."
+        "Yonbosh qirrasi: Yonbosh suyagining yuqori qirrasi."
       ],
       [
         "Acetabulum",
-        "294. Son suyagi boshchasi bilan tutashadi."
+        "Son bo‘g‘imi kosachasi: Son suyagi boshchasi bilan tutashadi."
       ],
       [
         "Foramen obturatum",
-        "363. Chanoq suyagidagi yirik teshik."
+        "Yopqich teshik: Chanoq suyagidagi yirik teshik."
       ],
       [
         "Os ischii",
-        "427. Chanoqning orqa-pastki qismi."
+        "O‘tirg‘ich suyagi: Chanoqning orqa-pastki qismi."
       ],
       [
         "Os pubis",
-        "310. Chanoqning old-pastki qismi."
+        "Qov suyagi: Chanoqning old-pastki qismi."
       ]
     ]
   },
@@ -195,23 +195,23 @@
     "facts": [
       [
         "Femur",
-        "237. Tananing eng uzun suyagi."
+        "Son suyagi: Tananing eng uzun suyagi."
       ],
       [
         "Patella",
-        "334. Tizza old tomonidagi suyak."
+        "Tizza qopqog‘i: Tizza old tomonidagi suyak."
       ],
       [
         "Tibia",
-        "397. Boldirning ichki, yirik suyagi."
+        "Katta boldir suyagi: Boldirning ichki, yirik suyagi."
       ],
       [
         "Fibula",
-        "391. Boldirning tashqi ingichka suyagi."
+        "Kichik boldir suyagi: Boldirning tashqi ingichka suyagi."
       ],
       [
         "Ossa tarsi",
-        "463. To‘piq va tovon sohasidagi suyaklar."
+        "Oyoq kafti usti suyaklari: To‘piq va tovon sohasidagi suyaklar."
       ]
     ]
   },
@@ -222,23 +222,23 @@
     "facts": [
       [
         "Ossa parietalia",
-        "234. Juft suyaklar, kalla gumbazi."
+        "Tepa suyaklari: Juft suyaklar, kalla gumbazi."
       ],
       [
         "Os occipitale",
-        "378. Kallaning orqa-pastki qismi."
+        "Ensa suyagi: Kallaning orqa-pastki qismi."
       ],
       [
         "Sutura sagittalis",
-        "188. Ikki tepa suyagi oralig‘ida."
+        "Sagittal chok: Ikki tepa suyagi oralig‘ida."
       ],
       [
         "Sutura lambdoidea",
-        "326. Tepa va ensa suyaklari chegarasi."
+        "Lambdasimon chok: Tepa va ensa suyaklari chegarasi."
       ],
       [
         "Protuberantia occipitalis",
-        "408. Ensa tashqi yuzasidagi bo‘rtiq."
+        "Ensa bo‘rtig‘i: Ensa tashqi yuzasidagi bo‘rtiq."
       ]
     ]
   },
@@ -249,23 +249,23 @@
     "facts": [
       [
         "Os frontale",
-        "201. Peshona va ko‘z kosasi tomiga tegishli."
+        "Peshona suyagi: Peshona va ko‘z kosasi tomiga tegishli."
       ],
       [
         "Os ethmoidale",
-        "338. Burun bo‘shlig‘i va ko‘z kosasiga tegishli."
+        "G‘alvirsimon suyak: Burun bo‘shlig‘i va ko‘z kosasiga tegishli."
       ],
       [
         "Crista galli",
-        "266. Yuqoriga chiqib turgan o‘simta."
+        "Xo‘roz toji o‘simtasi: Yuqoriga chiqib turgan o‘simta."
       ],
       [
         "Lamina perpendicularis",
-        "386. Burun to‘sig‘i tarkibiga kiradi."
+        "Tik plastinka: Burun to‘sig‘i tarkibiga kiradi."
       ],
       [
         "Margo supraorbitalis",
-        "269. Ko‘z kosasi ustidagi suyak qirrasi."
+        "Ko‘z kosasi ustki qirrasi: Ko‘z kosasi ustidagi suyak qirrasi."
       ]
     ]
   },
@@ -276,23 +276,23 @@
     "facts": [
       [
         "Os sphenoidale",
-        "259. Kalla asosining markaziy suyagi."
+        "Ponasimon suyak: Kalla asosining markaziy suyagi."
       ],
       [
         "Ala major",
-        "240. Ponasimon suyak yon qismi."
+        "Katta qanot: Ponasimon suyak yon qismi."
       ],
       [
         "Ala minor",
-        "203. Ponasimon suyak yuqori yon qismi."
+        "Kichik qanot: Ponasimon suyak yuqori yon qismi."
       ],
       [
         "Os temporale",
-        "389. Eshituv apparati atrofidagi suyak."
+        "Chakka suyagi: Eshituv apparati atrofidagi suyak."
       ],
       [
         "Meatus acusticus externus",
-        "382. Chakka suyagining yon teshigi."
+        "Tashqi eshituv yo‘li: Chakka suyagining yon teshigi."
       ]
     ]
   },
@@ -303,23 +303,23 @@
     "facts": [
       [
         "Maxilla",
-        "381. Yuqori tish qatorini tutadi."
+        "Yuqori jag‘: Yuqori tish qatorini tutadi."
       ],
       [
         "Mandibula",
-        "464. Harakatchan pastki jag‘ suyagi."
+        "Pastki jag‘: Harakatchan pastki jag‘ suyagi."
       ],
       [
         "Os zygomaticum",
-        "331. Yonoq va orbita yon devori."
+        "Yonoq suyagi: Yonoq va orbita yon devori."
       ],
       [
         "Os nasale",
-        "274. Burun ko‘prigining suyak qismi."
+        "Burun suyagi: Burun ko‘prigining suyak qismi."
       ],
       [
         "Os lacrimale",
-        "300. Ko‘z kosasining medial devori."
+        "Ko‘z yosh suyagi: Ko‘z kosasining medial devori."
       ]
     ]
   },
@@ -330,23 +330,23 @@
     "facts": [
       [
         "Orbita",
-        "289. Ko‘z olmasi joylashadigan suyak bo‘shlig‘i."
+        "Ko‘z kosasi: Ko‘z olmasi joylashadigan suyak bo‘shlig‘i."
       ],
       [
         "Cavitas nasi",
-        "363. Nafas yo‘llarining bosh qismi."
+        "Burun bo‘shlig‘i: Nafas yo‘llarining bosh qismi."
       ],
       [
         "Fossa temporalis",
-        "339. Kalla yonidagi botiq soha."
+        "Chakka chuqurchasi: Kalla yonidagi botiq soha."
       ],
       [
         "Arcus zygomaticus",
-        "359. Yuzning yon suyaksimon yoyi."
+        "Yonoq yoyi: Yuzning yon suyaksimon yoyi."
       ],
       [
         "Basis cranii",
-        "432. Kallaning tub qismi."
+        "Kalla asosi: Kallaning tub qismi."
       ]
     ]
   },
@@ -357,23 +357,23 @@
     "facts": [
       [
         "Foramen magnum",
-        "343. Orqa miya o‘tadigan katta teshik."
+        "Katta ensa teshigi: Orqa miya o‘tadigan katta teshik."
       ],
       [
         "Foramen ovale",
-        "285. Kalla asosidagi oval shaklli teshik."
+        "Oval teshik: Kalla asosidagi oval shaklli teshik."
       ],
       [
         "Foramen spinosum",
-        "357. Kalla asosining kichik teshiklaridan."
+        "Tikanli teshik: Kalla asosining kichik teshiklaridan."
       ],
       [
         "Canalis opticus",
-        "197. Ko‘ruv nervi yo‘li."
+        "Ko‘ruv kanali: Ko‘ruv nervi yo‘li."
       ],
       [
         "Fissura orbitalis superior",
-        "214. Orbita bilan kalla bo‘shlig‘i orasidagi yoriq."
+        "Yuqori ko‘z kosasi yorig‘i: Orbita bilan kalla bo‘shlig‘i orasidagi yoriq."
       ]
     ]
   }
