@@ -3,11 +3,26 @@ on:
   push:
     branches:
       - feature/native-mobile-mvp
+      - feature/mobile-auth-v2
     paths:
       - 'mobile/**'
+      - 'app/mobile_auth.py'
+      - 'app/main.py'
+      - 'tests/test_mobile_auth.py'
       - '.github/workflows/mobile.yml'
   workflow_dispatch:
 jobs:
+  backend-auth:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install test dependencies
+        run: pip install -r requirements.txt pytest
+      - name: Mobile auth tests
+        run: python -m pytest -q tests/test_mobile_auth.py
   flutter:
     runs-on: ubuntu-latest
     steps:
