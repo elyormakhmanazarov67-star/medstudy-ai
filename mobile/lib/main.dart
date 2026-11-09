@@ -6,6 +6,7 @@ import 'mobile_api.dart';
 import 'mobile_account.dart';
 import 'widgets/authorized_diagram.dart';
 import 'widgets/adaptive_study_navigation.dart';
+import 'widgets/adaptive_study_route.dart';
 import 'models/study_progress.dart';
 
 const green = Color(0xFF20844D);
@@ -209,8 +210,7 @@ class _HomePageState extends State<HomePage> {
       subtitle: Text(subject.lessons.length.toString() + ' mavzu · ' +
           completed.toString() + ' o‘qilgan'),
       trailing: const Icon(Icons.chevron_right),
-      onTap: () => Navigator.push(context, MaterialPageRoute<void>(
-          builder: (_) => SubjectPage(subject: subject, progress: widget.progress))),
+      onTap: () => Navigator.push(context, adaptiveStudyRoute<void>(context,           SubjectPage(subject: subject, progress: widget.progress))),
     ));
   }
 
@@ -247,7 +247,7 @@ class _HomePageState extends State<HomePage> {
       title: const Text('Talaba kabineti'),
       subtitle: const Text('Ro‘yxatdan o‘tish yoki akkauntga kirish'),
       trailing: const Icon(Icons.chevron_right),
-      onTap: () => Navigator.push(context, MaterialPageRoute<void>(builder: (_) => MobileAccountPage(onAuthChanged: widget.onAuthChanged))),
+      onTap: () => Navigator.push(context, adaptiveStudyRoute<void>(context, MobileAccountPage(onAuthChanged: widget.onAuthChanged))),
     )),
     Card(child: SwitchListTile(
       title: const Text('Qora-yashil rejim'),
@@ -291,8 +291,7 @@ class SubjectPage extends StatelessWidget {
             subtitle: Text(lesson.questions.length.toString() +
                 ' test' + (lesson.hasAnatomyDiagram ? ' · rasmli dars' : '')),
             trailing: const Icon(Icons.chevron_right),
-            onTap: () => Navigator.push(context, MaterialPageRoute<void>(
-                builder: (_) => LessonPage(lesson: lesson, progress: progress))),
+            onTap: () => Navigator.push(context, adaptiveStudyRoute<void>(context,                 LessonPage(lesson: lesson, progress: progress))),
           ));
         },
       ),
@@ -345,8 +344,7 @@ class LessonPage extends StatelessWidget {
           label: Text(progress.isRead(lesson.id) ? 'O‘qilgan' : 'Darsni o‘qidim'),
         ),
         if (lesson.questions.isNotEmpty) OutlinedButton.icon(
-          onPressed: () => Navigator.push(context, MaterialPageRoute<void>(
-              builder: (_) => QuizPage(lesson: lesson, progress: progress))),
+          onPressed: () => Navigator.push(context, adaptiveStudyRoute<void>(context,               QuizPage(lesson: lesson, progress: progress))),
           icon: const Icon(Icons.quiz_outlined),
           label: Text('Testni boshlash · ' + lesson.questions.length.toString()),
         ),
