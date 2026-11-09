@@ -38,3 +38,25 @@ konspektlar va testlar.
 
 Katalogdagi \`AI_RESEARCH_DRAFT\` va \`USER_SOURCE_DRAFT\` materiallar
 mutaxassis tekshiruviga muhtoj. Darslar klinik maslahat o'rnini bosmaydi.
+
+
+## MedStudy AI 2.0 — mobile login pilot (feature/mobile-auth-v2)
+- Flutter: Sozlamalar -> Talaba kabineti -> yangi akkaunt yaratish yoki kirish.
+- Server endpoints: POST /api/mobile/register, POST /api/mobile/login, GET /api/mobile/me,
+  POST /api/mobile/logout. Parollar scrypt orqali xeshlanadi; sessiya tokenining faqat
+  SHA-256 xeshi SQLite'da saqlanadi. 14 kunlik muddati bor.
+- Yangi akkauntlar avtomatik ochilmaydi: Telegram administrator tomonidan tasdiqlanadi.
+  Admin Mini App'ning autentifikatsiyalangan Telegram HTTP so'rovlari bilan:
+  GET /api/mobile/admin/pending,
+  POST /api/mobile/admin/accounts/{id}/approve,
+  POST /api/mobile/admin/accounts/{id}/revoke.
+- Android build uchun HTTPS manzilni `--dart-define=MEDSTUDY_API_URL=https://YOUR-STAGING-DOMAIN`
+  sifatida bering. Manzil berilmasa mobil darslar offline ishlaydi, login ulanmaydi.
+- Test APK GitHub Actions -> MedStudy AI Mobile Flutter CI -> artifacts.
+- Google Play/App Storega tayyor emas: email verification va account recovery yo'q;
+  maxsus staging servisida tekshiring, haqiqiy studentlarni hali ommaviy taklif qilmang.
+- Production Railway xizmatini o'zgartirmang. Staging'da mustaqil persistent SQLite volume
+  yoki boshqa barqaror DB kerak. DATABASE_PATH (yoki MOBILE_AUTH_DB_PATH) doimiy diskka
+  ko'rsatishi zarur. Sessions TLS orqali uzatiladi va mobil qurilmada secure storage'da saqlanadi.
+- Telegram /api katalog API login bilan avtomatik ishlamaydi: server progress
+  sinxronizatsiyasi keyingi bosqich.
