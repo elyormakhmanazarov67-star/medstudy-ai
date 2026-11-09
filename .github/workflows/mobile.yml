@@ -28,6 +28,43 @@ jobs:
           AI_ENABLED: '0'
           DATABASE_PATH: '/tmp/medstudy-ci.sqlite'
         run: python -m pytest -q tests/test_mobile_auth.py tests/test_miniapp.py tests/test_tutor.py tests/test_webhook.py tests/test_study_plan.py tests/test_curriculum.py tests/test_lesson_helper.py tests/test_materials.py
+  staging-smoke:
+    if: github.ref == 'refs/heads/feature/mobile-auth-v2'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check staging registration and protected content over HTTPS
+        run: |
+          python - <<'PY'
+          import time
+          from urllib.request import Request, urlopen
+          from urllib.error import HTTPError
+
+          base = 'https://medstudy-ai-mobile-staging-staging.up.railway.app'
+          checks = [
+              ('/api/health', 'GET', None, 200),
+              ('/mobile-register', 'GET', None, 200),
+              ('/api/mobile/catalog', 'GET', None, 401),
+              ('/api/mobile/register', 'POST', b'{}', 422),
+          ]
+          for path, method, data, expected in checks:
+              for attempt in range(12):
+                  try:
+                      req = Request(base + path, data=data, method=method)
+                      if data is not None:
+                          req.add_header('Content-Type', 'application/json')
+                      with urlopen(req, timeout=8) as response:
+                          status = response.status
+                  except HTTPError as err:
+                      status = err.code
+                  except OSError:
+                      status = None
+                  if status == expected:
+                      print(path, status, 'OK')
+                      break
+                  if attempt == 11:
+                      raise SystemExit(f'{path}: expected {expected}, got {status}')
+                  time.sleep(5)
+          PY
   flutter:
     runs-on: ubuntu-latest
     steps:
