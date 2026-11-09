@@ -201,3 +201,18 @@
 .anatomy-preview{display:block;max-width:100%;max-height:340px;object-fit:contain;border-radius:12px;margin:12px auto;border:1px solid var(--stroke)}
 .anatomy-answer{border-top:1px solid var(--stroke);padding-top:15px;margin-top:17px}
 .anatomy-answer p{overflow-wrap:anywhere;line-height:1.6}
+
+
+/* Relative overlay shares the <img>'s displayed dimensions on phone and desktop.
+   Labels stay in the browser: no annotated photo download or file is stored. */
+.anatomy-picture-wrap{display:flex;justify-content:center;max-width:100%;margin:16px auto 13px}
+.anatomy-annotated-picture{position:relative;display:inline-block;max-width:100%;line-height:0}
+.anatomy-annotated-picture .anatomy-preview{display:block;width:auto;height:auto;max-width:100%;max-height:340px;margin:0 auto;border:1px solid var(--stroke);border-radius:12px}
+.anatomy-marker{position:absolute;z-index:2;pointer-events:none;width:0;height:0;line-height:1.2}
+.anatomy-pin{display:grid;place-items:center;position:absolute;left:0;top:0;transform:translate(-50%,-50%);width:23px;height:23px;border-radius:50%;font-size:12px;font-weight:800;color:#fff;background:#067533;border:2px solid #fff;box-shadow:0 0 0 2px #067533aa,0 2px 7px #0006}
+.anatomy-label{position:absolute;z-index:3;left:14px;bottom:10px;padding:5px 7px;min-width:45px;max-width:min(43vw,145px);width:max-content;white-space:normal;overflow-wrap:break-word;line-height:1.25;border-radius:7px;border:1px solid #baffbe;font-size:11px;font-weight:800;color:#fff;background:#054f28ed;box-shadow:0 3px 10px #0006}
+.anatomy-marker.on-left .anatomy-label{left:auto;right:14px}
+.anatomy-marker.under-dot .anatomy-label{bottom:auto;top:12px}
+.anatomy-legend{display:flex;flex-wrap:wrap;column-gap:10px;row-gap:7px;margin:12px 0 16px}
+.anatomy-legend-item{display:flex;align-items:center;gap:7px;padding:7px 9px;border-radius:9px;border:1px solid var(--stroke);background:var(--green-soft);font-size:12px;line-height:1.4}
+.anatomy-number{display:grid;place-items:center;flex:0 0 auto;min-width:20px;height:20px;color:white;background:#067533;border-radius:99px;font-size:11px;font-weight:800}
