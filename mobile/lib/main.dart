@@ -74,7 +74,7 @@ class _MedStudyRootState extends State<MedStudyRoot> with WidgetsBindingObserver
       });
       unawaited(progress!.syncWithServer(
         nextCatalog.lessons.map((lesson) => lesson.id),
-      ));
+      ).then((_) {}));
     } on MobileApiException catch (error) {
       if (error.status == 401 || error.status == 403) {
         await MobileApi.clearToken();
