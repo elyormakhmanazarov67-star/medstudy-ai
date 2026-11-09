@@ -30,7 +30,7 @@
   const app = document.getElementById('app');
   const demo = new URLSearchParams(location.search).get('demo') === '1' && ['localhost', '127.0.0.1'].includes(location.hostname);
   const auth = webapp?.initData || '';
-  const state = { tab: 'home', catalog: null, progress: null, studyPlan: null, history: null, lesson: null, quiz: null, result: null, consent: null, busy: false, tutorStatus: null, tutorQuestion:'', tutorAnswer: null, tutorLessonId:'', tutorMode:'explain', tutorLevel:'standard', tutorProvider:'lesson', tutorHistory:[], tutorMessages:[], tutorError:'' };
+  const state = { tab: 'home', catalog: null, progress: null, studyPlan: null, history: null, lesson: null, quiz: null, result: null, consent: null, busy: false, tutorStatus: null, tutorQuestion:'', tutorAnswer: null, tutorLessonId:'', tutorMode:'explain', tutorLevel:'standard', tutorProvider:'lesson', tutorHistory:[], tutorMessages:[], tutorError:'', anatomyFile:null, anatomyPreview:'', anatomyQuestion:'', anatomyAnswer:'', anatomyError:'', anatomyBusy:false, anatomyStatus:null, anatomyLabels:[], anatomyShowLabels:true, anatomyImageWidth:null };
   // Preserve original Uzbek Latin digraphs (Sh/sh, Ch/ch); never rewrite text.
   const uz = val => String(val ?? '');
   const esc = val => uz(val).replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]));
@@ -119,8 +119,100 @@
       '<p class="eyebrow">'+esc(l.subject_title)+'</p><h1>'+esc(l.title)+'</h1>'+
       '<button class="card lesson-card" data-action="category" data-kind="required"><span class="lesson-icon">📘</span><span class="lesson-content"><strong>Kerakli ma’lumotlar</strong><small>Mavzu konspekti va testlar</small></span><span class="chevron">›</span></button>'+
       '<button class="card lesson-card" data-action="tutor" data-id="'+rawEsc(l.id)+'"><span class="lesson-icon">🎓</span><span class="lesson-content"><strong>AI Ustoz bilan o‘rganish</strong><small>Ushbu mavzuga oid savol-javob</small></span><span class="chevron">›</span></button>'+
+      (l.anatomy_image_explain?'<button class="card lesson-card" data-action="anatomy-image"><span class="lesson-icon">🦴</span><span class="lesson-content"><strong>Rasm orqali tushuntirish</strong><small>Suyak rasmini ChatGPT yordamida o‘rganish</small></span><span class="chevron">›</span></button>':'')+
       (l.questions?.length?'<button class="btn btn-primary btn-wide lesson-quiz-cta" data-action="start-quiz">✓ Testni boshlash ('+l.questions.length+')</button>':'')+disclaimer);
   }
+
+  function resetAnatomyImage(){
+    if(state.anatomyPreview)URL.revokeObjectURL(state.anatomyPreview);
+    state.anatomyFile=null;state.anatomyPreview='';
+    state.anatomyQuestion='';state.anatomyAnswer='';state.anatomyError='';state.anatomyLabels=[];state.anatomyShowLabels=true;state.anatomyImageWidth=null;
+  }
+  async function anatomyImageScreen(){
+    if(!state.lesson?.anatomy_image_explain){showLesson();return;}
+    state.tab='anatomy-image';loading();
+    try{state.anatomyStatus=await api('/tutor/status');renderAnatomyImage();}
+    catch(e){fail(e);}
+  }
+  function renderAnatomyImage(){
+    state.tab='anatomy-image';
+    const l=state.lesson,t=state.anatomyStatus||{};
+    const ready=Boolean(t.enabled&&t.consented&&t.remaining>0);
+    const labels=Array.isArray(state.anatomyLabels)?state.anatomyLabels:[];
+    const annotations=state.anatomyShowLabels?labels.map((item,i)=>{
+      const x=Math.max(0,Math.min(100,Number(item.x)/10));
+      const y=Math.max(0,Math.min(100,Number(item.y)/10));
+      const side=x>=60?'on-left':'on-right';
+      const vertical=y<=23?'under-dot':'above-dot';
+      return '<span class="anatomy-marker '+side+' '+vertical+'" style="left:'+x+'%;top:'+y+'%" aria-label="'+esc(item.latin)+'"><span class="anatomy-pin">'+(i+1)+'</span><span class="anatomy-label">'+esc(item.latin)+'</span></span>';
+    }).join(''):'';
+    const preview=state.anatomyPreview
+      ?'<div class="anatomy-picture-wrap"><div class="anatomy-annotated-picture" '+(state.anatomyImageWidth?'style="width:'+state.anatomyImageWidth+'px"':'')+'><img class="anatomy-preview" src="'+rawEsc(state.anatomyPreview)+'" alt="Tanlangan anatomiya rasmi">'+annotations+'</div></div>'+
+       (labels.length?'<button class="btn btn-flat btn-wide" data-action="anatomy-toggle">'+(state.anatomyShowLabels?'Belgilarni yashirish':'Belgilarni ko‘rsatish')+'</button>'+
+        '<div class="anatomy-legend" aria-label="Rasmdagi anatomik belgilar">'+labels.map((item,i)=>'<div class="anatomy-legend-item"><span class="anatomy-number">'+(i+1)+'</span><strong>'+esc(item.latin)+'</strong></div>').join('')+'</div>':
+        state.anatomyAnswer?'<p class="smallprint">Rasmda ishonch bilan belgilash mumkin bo‘lgan anatomik suyak yoki tuzilma aniqlanmadi.</p>':'')
+      :'<p class="smallprint">Hozircha rasm tanlanmagan.</p>';
+    shell('<button class="back" data-action="lesson" data-id="'+rawEsc(l.id)+'">← Mavzuga qaytish</button>'+
+      '<p class="eyebrow">Odam anatomiyasi</p><h1>Rasm orqali tushuntirish</h1>'+
+      '<div class="card"><strong>'+esc(l.title)+'</strong><p class="smallprint">Faqat suyak yoki anatomiya sxemasini yuboring. Bemor rasmi, shaxsiy hujjat yoki shaxsiy ma’lumot yubormang. Tasvir OpenAI xizmatiga jo‘natiladi, bizning serverimizda saqlanmaydi.</p>'+
+      '<label for="anatomy-file">Suyak rasmini tanlash (JPG, PNG, WEBP; 5 MB gacha)</label>'+
+      '<input class="ai-input anatomy-file" type="file" id="anatomy-file" accept="image/jpeg,image/png,image/webp" '+(state.anatomyBusy?'disabled':'')+'>'+preview+
+      '<label for="anatomy-question">Qo‘shimcha savol (ixtiyoriy)</label>'+
+      '<textarea id="anatomy-question" class="ai-input" maxlength="500" rows="2" placeholder="Masalan: Lotincha nomlarini ko‘rsat">'+esc(state.anatomyQuestion)+'</textarea>'+
+      (!t.enabled?'<p class="smallprint">OpenAI rasm tahlili hozir o‘chirilgan yoki sizga ochilmagan. Oddiy konspektlar ishlaydi.</p>':
+        !t.consented?'<p class="smallprint">Rasmni OpenAI xizmatiga yuborish uchun alohida rozilik kerak.</p><button class="btn btn-flat btn-wide" data-action="anatomy-consent">Roziman · AI rasm tahlilini ochish</button>':
+        '<p class="smallprint">Bugungi qolgan AI so‘rovlar: '+t.remaining+'/'+t.limit+'</p>')+
+      '<button class="btn btn-primary btn-wide" data-action="anatomy-send" '+(!ready||!state.anatomyFile||state.anatomyBusy?'disabled':'')+'>'+
+      (state.anatomyBusy?'Tahlil qilinmoqda…':'Rasmni tushuntirish →')+'</button>'+
+      (state.anatomyError?'<p role="alert" class="error">'+esc(state.anatomyError)+'</p>':'')+
+      (state.anatomyAnswer?'<div class="anatomy-answer" aria-live="polite"><h3>ChatGPT tushuntirishi</h3><p>'+esc(state.anatomyAnswer).replace(/\n/g,'<br>')+'</p><p class="smallprint">Javobni darslikdagi anatomik rasmlar bilan tekshiring.</p></div>':'')+
+      '</div>'+disclaimer);
+  }
+  function selectAnatomyFile(file){
+    const question=state.anatomyQuestion;
+    resetAnatomyImage();state.anatomyQuestion=question;
+    if(!file){renderAnatomyImage();return;}
+    if(!['image/jpeg','image/png','image/webp'].includes(file.type)){state.anatomyError='Faqat JPG, PNG yoki WEBP rasm tanlang';renderAnatomyImage();return;}
+    if(file.size===0||file.size>5*1024*1024){state.anatomyError='Rasm hajmi 5 MB dan oshmasin';renderAnatomyImage();return;}
+    state.anatomyFile=file;state.anatomyPreview=URL.createObjectURL(file);
+    const previewUrl=state.anatomyPreview;
+    // Set overlay width to the *rendered* image width, even for tall portraits.
+    const probe=new Image();
+    probe.onload=()=>{
+      if(state.anatomyPreview!==previewUrl)return;
+      state.anatomyImageWidth=Math.max(1,Math.round(Math.min(
+        probe.naturalWidth,340*probe.naturalWidth/probe.naturalHeight)));
+      if(state.tab==='anatomy-image')renderAnatomyImage();
+    };
+    probe.onerror=()=>{
+      if(state.anatomyPreview===previewUrl){
+        state.anatomyError='Rasmni ko‘rsatib bo‘lmadi. Boshqa rasm tanlang.';
+        state.anatomyFile=null;renderAnatomyImage();
+      }
+    };
+    probe.src=previewUrl;
+    renderAnatomyImage();
+  }
+  async function sendAnatomyImage(){
+    if(state.anatomyBusy||!state.anatomyFile)return;
+    const t=state.anatomyStatus;if(!t?.enabled||!t?.consented||t.remaining<=0)return;
+    state.anatomyQuestion=document.getElementById('anatomy-question')?.value.trim()||'';
+    const body=new FormData();
+    body.append('lesson_id',state.lesson.id);body.append('question',state.anatomyQuestion);
+    body.append('image',state.anatomyFile,state.anatomyFile.name);
+    const headers={'X-Telegram-Init-Data':auth};if(demo)headers['X-Dev-Preview']='local-only';
+    state.anatomyBusy=true;state.anatomyError='';renderAnatomyImage();
+    try{
+      const response=await fetch('/api/anatomy/image-explain',{method:'POST',headers,body,cache:'no-store'});
+      const data=await response.json().catch(()=>({}));
+      if(!response.ok)throw new Error(data.detail||'Rasmni tahlil qilishda xato');
+      state.anatomyAnswer=data.answer||'';
+      state.anatomyLabels=Array.isArray(data.labels)?data.labels:[];state.anatomyShowLabels=true;
+      state.anatomyStatus.remaining=data.remaining;state.anatomyStatus.used+=1;
+    }catch(e){state.anatomyError=e.message;}
+    state.anatomyBusy=false;renderAnatomyImage();
+  }
+
   function startQuiz(questions, mode='full', category='required') {
     if (!questions.length) { state.tab='lesson'; showLesson(); return; }
     state.quiz={questions,mode,category,answers:Array(questions.length).fill(null),pos:0};
@@ -161,7 +253,7 @@
     shell(`<p class="eyebrow">Mening o‘sishim</p><h1>O‘quv natijalarim</h1><p class="smallprint">Faqat shaxsiy test natijalaringiz ko‘rsatiladi.</p><div class="stats"><div class="stat"><strong>${p.attempts_count}</strong><small>Urinishlar</small></div><div class="stat"><strong>${p.latest.length}</strong><small>O‘rganilgan mavzu</small></div><div class="stat"><strong>${p.latest.length?Math.round(p.latest.reduce((x,r)=>x+r.percent,0)/p.latest.length):0}%</strong><small>Oxirgi o‘rtacha</small></div></div>${recommendations}${historyHtml}<div class="sectionhead"><h2>Mavzular kesimida</h2><span>Oxirgi urinishlar</span></div>${p.latest.length?`<div class="card">${p.latest.map(r=>`<div class="progress-row"><div class="progress-label"><strong>${esc(r.title)}</strong><span>${r.score}/${r.total} · ${r.percent}%</span></div><div class="bar"><div class="bar-fill" style="width:${r.percent}%"></div></div></div>`).join('')}<p class="smallprint">Eslatma: xatolarni takrorlash testida savollar soni kamroq bo‘lishi mumkin.</p></div>`:`<div class="empty"><div class="symbol">📊</div><h3>Natijalar hozircha yo‘q</h3><p>Birinchi testni topshiring — progress shu yerda ko‘rinadi.</p><button class="btn btn-primary" data-action="home">Darslarni ko‘rish →</button></div>`}`);
   }
   function privacy(){
-    state.tab='privacy';shell(`<p class="eyebrow">Shaxsiy ma’lumotlar</p><h1>Maxfiylik va xavfsizlik</h1><div class="card privacy"><h3>Qanday ma’lumotlar saqlanadi?</h3><p>Sinov davrida Telegram foydalanuvchi IDsi, rozilik vaqti, test javoblari va natijalari SQLite bazasida saqlanadi. Tanlangan Oq-yashil yoki Qora-yashil dizayn faqat qurilmangizdagi brauzer xotirasida saqlanadi. Ism, telefon raqami va yozishmalar saqlanmaydi. Dars Ustoz bepul rejimida savol faqat serverdagi dars matni bilan solishtiriladi; u OpenAI API'ga yuborilmaydi va bizning SQLite bazamizga yozilmaydi. AI Ustoz rejimi faqat alohida rozilikdan so‘ng savol va oxirgi uchta suhbat almashinuvini OpenAI APIga yuboradi. Suhbat matni SQLite bazasiga yozilmaydi va sahifa yangilanganda yo‘qoladi. AI javobi xato bo‘lishi mumkin.</p><h3>Ma’lumotlar kimga tegishli?</h3><p>Test natijalarini ilova administratori serverda boshqaradi. Ilova hozircha mustaqil o‘quv prototipi, universitetning rasmiy xizmati emas.</p><h3>Ma’lumotlarni o‘chirish</h3><p>Quyidagi tugma orqali shaxsiy test tarixingiz va rozilik yozuvini o‘chirishingiz mumkin.</p><button class="btn btn-danger btn-wide" data-action="delete">Ma’lumotlarimni o‘chirish</button></div>${disclaimer}`);
+    state.tab='privacy';shell(`<p class="eyebrow">Shaxsiy ma’lumotlar</p><h1>Maxfiylik va xavfsizlik</h1><div class="card privacy"><h3>Qanday ma’lumotlar saqlanadi?</h3><p>Sinov davrida Telegram foydalanuvchi IDsi, rozilik vaqti, test javoblari va natijalari SQLite bazasida saqlanadi. Tanlangan Oq-yashil yoki Qora-yashil dizayn faqat qurilmangizdagi brauzer xotirasida saqlanadi. Ism, telefon raqami va yozishmalar saqlanmaydi. Dars Ustoz bepul rejimida savol faqat serverdagi dars matni bilan solishtiriladi; u OpenAI API'ga yuborilmaydi va bizning SQLite bazamizga yozilmaydi. AI Ustoz rejimi faqat alohida rozilikdan so‘ng savol va oxirgi uchta suhbat almashinuvini OpenAI APIga yuboradi. Suhbat matni SQLite bazasiga yozilmaydi va sahifa yangilanganda yo‘qoladi. AI javobi xato bo‘lishi mumkin. Anatomiya rasm tahlilida tasvir OpenAI xizmatiga alohida rozilik bilan yuboriladi; serverimizda saqlanmaydi.</p><h3>Ma’lumotlar kimga tegishli?</h3><p>Test natijalarini ilova administratori serverda boshqaradi. Ilova hozircha mustaqil o‘quv prototipi, universitetning rasmiy xizmati emas.</p><h3>Ma’lumotlarni o‘chirish</h3><p>Quyidagi tugma orqali shaxsiy test tarixingiz va rozilik yozuvini o‘chirishingiz mumkin.</p><button class="btn btn-danger btn-wide" data-action="delete">Ma’lumotlarimni o‘chirish</button></div>${disclaimer}`);
   }
   function accessScreen(status){
     const stateText={
@@ -281,6 +373,10 @@
         case 'retry':if(state.tab==='result')await retryWrong();else await init();break;
         case 'progress':await progress();break;
         case 'privacy':privacy();break;
+        case 'anatomy-image':resetAnatomyImage();await anatomyImageScreen();break;
+        case 'anatomy-consent':await api('/tutor/consent','POST');await anatomyImageScreen();break;
+        case 'anatomy-send':await sendAnatomyImage();break;
+        case 'anatomy-toggle':state.anatomyShowLabels=!state.anatomyShowLabels;renderAnatomyImage();break;
         case 'tutor':if(el.dataset.level)state.tutorLevel=el.dataset.level;await tutorScreen(el.dataset.id||'');break;
         case 'tutor-consent':await api('/tutor/consent','POST');state.tutorStatus.consented=true;await tutorScreen();break;
         case 'tutor-ask':await tutorAsk();break;
@@ -294,6 +390,7 @@
   document.addEventListener('change',evt=>{
     const id=evt.target.id;
     if(id==='theme-select'){applyTheme(evt.target.value);return;}
+    if(id==='anatomy-file'){state.anatomyQuestion=document.getElementById('anatomy-question')?.value||'';selectAnatomyFile(evt.target.files?.[0]);return;}
     if(['tutor-lesson','tutor-provider','tutor-mode','tutor-level'].includes(id))state.tutorQuestion=document.getElementById('tutor-question')?.value||'';
     if(id==='tutor-lesson'){
       if(evt.target.value!==state.tutorLessonId){state.tutorLessonId=evt.target.value;tutorClear();}

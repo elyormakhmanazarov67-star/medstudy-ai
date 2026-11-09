@@ -3,7 +3,7 @@ on:
   push:
     branches: [v0.5-dev]
   pull_request:
-    branches: [main]
+    branches: [main, v0.5-dev]
 permissions:
   contents: read
 jobs:
@@ -29,4 +29,4 @@ jobs:
           AI_ENABLED: "0"
           AUTO_SET_WEBHOOK: "0"
           DATABASE_PATH: "/tmp/medstudy-v05-ci.sqlite"
-        run: python -m pytest -q tests/test_miniapp.py tests/test_tutor.py tests/test_webhook.py tests/test_study_plan.py tests/test_curriculum.py tests/test_lesson_helper.py tests/test_materials.py
+        run: python -m pytest -q tests/test_miniapp.py tests/test_tutor.py tests/test_webhook.py tests/test_study_plan.py tests/test_curriculum.py tests/test_lesson_helper.py tests/test_materials.py tests/test_anatomy_vision.py
