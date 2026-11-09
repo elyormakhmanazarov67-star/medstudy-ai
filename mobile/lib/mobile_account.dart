@@ -1,6 +1,9 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+import 'widgets/adaptive_account_buttons.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:http/http.dart' as http;
 
@@ -115,6 +118,7 @@ class _MobileAccountPageState extends State<MobileAccountPage> {
           password: password.text,
         );
         if (!mounted) return;
+        TextInput.finishAutofillContext();
         password.clear();
         setState(() {
           register = false;
@@ -129,6 +133,7 @@ class _MobileAccountPageState extends State<MobileAccountPage> {
           password: password.text,
         );
         await _secure.write(key: 'mobile_access_token', value: token);
+        TextInput.finishAutofillContext();
         password.clear();
         await widget.onAuthChanged?.call();
         if (mounted) {
@@ -211,8 +216,9 @@ class _MobileAccountPageState extends State<MobileAccountPage> {
           const Text('Ro‘yxatdan o‘tish bevosita ilova ichida '
               'amalga oshiriladi. Brauzer yoki Telegram kerak emas.'),
           const SizedBox(height: 18),
-          Form(
+          AutofillGroup(child: Form(
             key: formKey,
+            autovalidateMode: AutovalidateMode.onUserInteraction,
             child: Column(children: [
               if (register) ...[
                 TextFormField(
@@ -275,19 +281,19 @@ class _MobileAccountPageState extends State<MobileAccountPage> {
                 validator: validatePassword,
               ),
             ]),
-          ),
+          )),
           const SizedBox(height: 18),
-          FilledButton.icon(
+          AdaptiveAccountPrimaryButton(
             onPressed: busy ? null : submit,
-            icon: Icon(register ? Icons.person_add_alt_1 : Icons.login),
-            label: Text(busy ? 'Serverga yuborilmoqda…'
-                : (register ? 'Ro‘yxatdan o‘tish' : 'Kirish')),
+            icon: register ? Icons.person_add_alt_1 : Icons.login,
+            label: busy ? 'Serverga yuborilmoqda…'
+                : (register ? 'Ro‘yxatdan o‘tish' : 'Kirish'),
           ),
-          TextButton(
+          AdaptiveAccountSecondaryButton(
             onPressed: busy ? null : changeMode,
-            child: Text(register
+            label: register
                 ? 'Akkauntim bor — kirish'
-                : 'Yangi akkaunt yaratish'),
+                : 'Yangi akkaunt yaratish',
           ),
           const SizedBox(height: 8),
           const Text('Talaba uchun ariza yuborilgach, administrator '
