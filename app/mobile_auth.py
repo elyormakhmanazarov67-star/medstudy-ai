@@ -112,23 +112,9 @@ def normalize_email(email):
 
 
 async def notify_mobile_admins(account_id: int, name: str):
-    """Tell verified Telegram administrators only once about new mobile applications."""
-    from .telegram_gateway import admin_ids, api_call, bot_token
-    if not bot_token():
-        return
-    for admin_uid in sorted(admin_ids())[:5]:
-        try:
-            await api_call("sendMessage", {
-                "chat_id": admin_uid,
-                "text": f"📱 MedStudy AI mobil ro'yxat: {name} (ID: {account_id})",
-                "reply_markup": {"inline_keyboard": [[
-                    {"text": "✅ Tasdiqlash", "callback_data": f"mobile:approve:{account_id}"},
-                    {"text": "❌ Rad etish", "callback_data": f"mobile:reject:{account_id}"},
-                ]]},
-            })
-        except Exception:
-            # Never log contact data, private credentials or Telegram payloads.
-            pass
+    """Do not expose student's contact details to Telegram channels."""
+    from .mobile_notifications import send_pending_notice
+    await send_pending_notice([account_id])
 
 
 @router.post("/register", status_code=202)
