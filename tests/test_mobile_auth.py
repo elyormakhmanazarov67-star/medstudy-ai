@@ -95,6 +95,11 @@ def test_staging_admin_portal_requires_private_key(monkeypatch):
             assert client.post("/api/mobile/admin-console/review",
                                json={"account_id": 1, "decision": "approved"}).status_code == 403
             assert client.get("/mobile-admin").status_code == 200
+            registration_page = client.get("/mobile-register")
+            assert registration_page.status_code == 200
+            assert "Ro‘yxatdan o‘tish" in registration_page.text
+            assert registration_page.headers["cache-control"] == "no-store"
+            assert client.get("/api/mobile/catalog").status_code == 401
             payload = {"email": "new@example.org", "password": "secure-passphrase-123", "display_name": "Student"}
             assert client.post("/api/mobile/register", json=payload).status_code == 202
             headers = {"X-Mobile-Admin-Key": "A" * 40}
