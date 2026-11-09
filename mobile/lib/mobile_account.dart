@@ -7,7 +7,9 @@ const _server = String.fromEnvironment('MEDSTUDY_API_URL');
 const _secure = FlutterSecureStorage();
 
 class MobileAccountPage extends StatefulWidget {
-  const MobileAccountPage({super.key});
+  final Future<void> Function()? onAuthChanged;
+  final String? notice;
+  const MobileAccountPage({super.key, this.onAuthChanged, this.notice});
 
   @override
   State<MobileAccountPage> createState() => _MobileAccountPageState();
@@ -71,6 +73,7 @@ class _MobileAccountPageState extends State<MobileAccountPage> {
       if (response.statusCode == 200 && !register) {
         await _secure.write(key: 'mobile_access_token', value: payload['access_token'] as String);
         await checkSession();
+        await widget.onAuthChanged?.call();
         if (mounted) setState(() => message = 'Muvaffaqiyatli kirdingiz.');
       } else if (response.statusCode == 202) {
         if (mounted) setState(() { register = false; message = 'Ariza yuborildi. Administrator tasdig‘ini kuting.'; });
@@ -96,6 +99,7 @@ class _MobileAccountPageState extends State<MobileAccountPage> {
       }
     }
     await _secure.delete(key: 'mobile_access_token');
+    await widget.onAuthChanged?.call();
     if (mounted) setState(() { profile = null; message = 'Chiqildi.'; });
   }
 
@@ -103,13 +107,15 @@ class _MobileAccountPageState extends State<MobileAccountPage> {
   Widget build(BuildContext context) => Scaffold(
     appBar: AppBar(title: const Text('Talaba kabineti')),
     body: ListView(padding: const EdgeInsets.all(20), children: [
+      if (widget.notice != null && widget.notice!.isNotEmpty)
+        Card(child: Padding(padding: const EdgeInsets.all(12), child: Text(widget.notice!))),
       const Icon(Icons.school_outlined, color: Color(0xFF20844D), size: 54),
       const SizedBox(height: 20),
       if (profile != null) ...[
         Text('Salom, ${profile!['display_name']}', style: Theme.of(context).textTheme.headlineSmall),
         Text('${profile!['email']}'),
         const SizedBox(height: 15),
-        const Text('Hozircha darslar offline. Natijalarni serverga uzatish keyingi bosqichda.'),
+        const Text('Darslar server orqali himoyalangan. Natijalarni sinxronlash keyingi bosqichda.'),
         const SizedBox(height: 20),
         FilledButton(onPressed: busy ? null : logout, child: const Text('Chiqish')),
       ] else ...[
@@ -132,7 +138,7 @@ class _MobileAccountPageState extends State<MobileAccountPage> {
       if (message.isNotEmpty) Padding(padding: const EdgeInsets.only(top: 15),
         child: Text(message, textAlign: TextAlign.center)),
       if (_server.isEmpty) const Padding(padding: EdgeInsets.only(top: 12),
-        child: Text('API manzili berilmagan. Ilova offline ishlashda davom etadi.')),
+        child: Text('Server manzili sozlanmagan. Ruxsatsiz dars va testlar ochilmaydi.')),
     ]),
   );
 }
