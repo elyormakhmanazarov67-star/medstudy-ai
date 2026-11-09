@@ -1,62 +1,84 @@
-name: MedStudy AI iOS Simulator (manual)
+name: MedStudy AI iOS Simulator (controlled test)
 
-# Manual only: private repositories may incur macOS runner charges.
-# This builds an unsigned SIMULATOR app, not an iPhone IPA or App Store release.
+# One explicitly tagged push triggers a single macOS Simulator build.
+# Private-repository macOS compute can consume included minutes or be billed.
+# Not an IPA, not installable on real iPhones, not an App Store release.
 on:
+  push:
+    branches:
+      - feature/ios-v2
+    paths:
+      - .github/workflows/ios-simulator.yml
   workflow_dispatch:
 
 permissions:
   contents: read
 
+concurrency:
+  group: medstudy-ios-simulator-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   ios-simulator:
+    if: github.ref == 'refs/heads/feature/ios-v2' && (github.event_name == 'workflow_dispatch' || startsWith(github.event.head_commit.message, 'ios-sim-build:'))
     runs-on: macos-15
-    timeout-minutes: 45
+    timeout-minutes: 25
     steps:
-      - name: Checkout iOS development branch
+      - name: Check out independent iOS branch
         uses: actions/checkout@v4
 
-      - name: Flutter stable
+      - name: Show installed Xcode
+        run: xcodebuild -version
+
+      - name: Install Flutter stable
         uses: subosito/flutter-action@v2
         with:
           channel: stable
           cache: true
 
-      - name: Generate iOS project files
+      - name: Generate iOS platform project
+        working-directory: mobile
         run: flutter create . --platforms=ios --project-name medstudy_ai --org uz.medstudy
-        working-directory: mobile
 
-      - name: Name the app for the iPhone home screen
+      - name: Give iPhone app the correct display name
+        working-directory: mobile
         run: |
-          plutil -replace CFBundleDisplayName -string "MedStudy AI" ios/Runner/Info.plist
+          plutil -replace CFBundleDisplayName -string 'MedStudy AI' ios/Runner/Info.plist
           plutil -lint ios/Runner/Info.plist
-        working-directory: mobile
 
-      - name: Remove example test
+      - name: Remove Flutter's generated example widget test
+        working-directory: mobile
         run: rm -f test/widget_test.dart
-        working-directory: mobile
 
-      - name: Install Flutter dependencies
+      - name: Resolve Flutter and iOS plugin dependencies
+        working-directory: mobile
         run: flutter pub get
-        working-directory: mobile
 
-      - name: Analyze and run tests
+      - name: Analyze and test shared Flutter app
+        working-directory: mobile
         run: |
           flutter analyze
           flutter test
-        working-directory: mobile
 
-      - name: Build unsigned iOS Simulator application against staging
+      - name: Compile unsigned app for iOS Simulator against staging
+        working-directory: mobile
         run: flutter build ios --simulator --debug --dart-define=MEDSTUDY_API_URL=https://medstudy-ai-mobile-staging-staging.up.railway.app
-        working-directory: mobile
 
-      - name: Verify iOS simulator bundle created
+      - name: Verify simulator app and protected study content
+        working-directory: mobile
         run: |
           test -d build/ios/iphonesimulator/Runner.app
           test -f build/ios/iphonesimulator/Runner.app/Info.plist
-        working-directory: mobile
+          APP_NAME=$(plutil -extract CFBundleDisplayName raw build/ios/iphonesimulator/Runner.app/Info.plist)
+          test "$APP_NAME" = "MedStudy AI"
+          if find build/ios/iphonesimulator/Runner.app -type f \
+            \( -name lessons.json -o -name anat_1.svg -o -name anat_2.svg \) | grep -q .; then
+            echo 'ERROR: private educational content embedded in unsigned Simulator bundle'
+            exit 1
+          fi
+          du -sh build/ios/iphonesimulator/Runner.app
 
-      - name: Upload simulator-only test application
+      - name: Upload iOS Simulator app (NOT for physical iPhone)
         uses: actions/upload-artifact@v4
         with:
           name: medstudy-ai-ios-SIMULATOR-NOT-IPHONE
