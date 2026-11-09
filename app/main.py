@@ -4,7 +4,7 @@ from contextlib import asynccontextmanager
 from pathlib import Path
 from typing import Annotated, Literal
 from dotenv import load_dotenv
-from fastapi import FastAPI, Depends, Header, HTTPException, Request
+from fastapi import FastAPI, Depends, Header, HTTPException, Request, File, Form, UploadFile
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
@@ -15,6 +15,7 @@ from .store import Store
 from .study_plan import build_study_plan
 from .plans import plans_catalog
 from . import tutor
+from . import anatomy_vision
 from .lesson_helper import prepare_answer
 from .telegram_gateway import router as telegram_router, configure_telegram
 
@@ -138,6 +139,7 @@ def lesson(lesson_id: str, uid: int = Depends(consent_required)):
     subject, l = found
     return {'subject_id':subject['id'], 'subject_title':subject['title'], 'id':l['id'], 'title':l['title'],
             'sections':l['sections'], 'alphabet':l.get('alphabet', []), 'sources':l.get('sources',[]),
+            'anatomy_image_explain':subject['id']=='odam_anatomiyasi_1',
             'question_count':len(l['questions']), 'questions':[public_question(q) for q in l['questions']],}
 
 class AttemptBody(BaseModel):
@@ -288,6 +290,57 @@ def tutor_consent(uid: int = Depends(consent_required)):
 def tutor_revoke_consent(uid: int = Depends(consent_required)):
     STORE.revoke_ai_consent(uid)
     return {'consented': False}
+
+
+
+@app.post('/api/anatomy/image-explain')
+async def anatomy_image_explain(
+    lesson_id: Annotated[str, Form(min_length=1, max_length=100)],
+    image: Annotated[UploadFile, File()],
+    question: Annotated[str, Form(max_length=500)] = '',
+    uid: int = Depends(consent_required),
+):
+    """Temporary image upload for anatomy teaching; never persisted to disk."""
+    # Keep the same authorization, opt-in and shared budget as the paid AI tutor.
+    if not is_admin(uid):
+        raise HTTPException(403, 'Rasm orqali AI tushuntirish hozircha administrator sinovida')
+    if not tutor.enabled():
+        raise HTTPException(503, 'AI hozir o‘chirilgan. Administrator sozlamalarini tekshirsin.')
+    if not STORE.has_ai_consent(uid):
+        raise HTTPException(403, 'Rasmni OpenAI xizmatiga yuborish uchun alohida rozilik kerak')
+    found = find_lesson(CATALOG, lesson_id)
+    if not found:
+        raise HTTPException(404, 'Mavzu topilmadi')
+    subject, selected = found
+    if subject['id'] != 'odam_anatomiyasi_1':
+        raise HTTPException(403, 'Rasm orqali tushuntirish faqat anatomiya mavzularida')
+    if image.content_type not in anatomy_vision.MIME_FORMATS:
+        raise HTTPException(422, 'Faqat JPG, PNG yoki WEBP rasmi qabul qilinadi')
+    import re
+    if re.search(r'[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}|\+?998[\d -]{8,}|sk-[a-zA-Z0-9_-]{12,}', question):
+        raise HTTPException(422, 'Savoldan shaxsiy ma’lumotlarni olib tashlang')
+    # Read no more than the limit plus one byte, independent of claimed Content-Length.
+    payload = await image.read(anatomy_vision.MAX_IMAGE_BYTES + 1)
+    await image.close()
+    try:
+        normalized = anatomy_vision.normalize_image(payload, image.content_type)
+    except ValueError as exc:
+        raise HTTPException(422, str(exc)) from exc
+    per_user = _bounded_positive('AI_DAILY_LIMIT', 5, 20)
+    globally = _bounded_positive('AI_GLOBAL_DAILY_LIMIT', 40, 100)
+    try:
+        used = STORE.reserve_ai_request(uid, per_user, globally)
+    except (ValueError, PermissionError) as exc:
+        raise HTTPException(429 if isinstance(exc, ValueError) else 403, str(exc)) from exc
+    try:
+        result = await anatomy_vision.explain_image(selected, normalized, question)
+    except tutor.TutorUnavailable as exc:
+        raise HTTPException(503, str(exc)) from exc
+    return {
+        **result,
+        'remaining': max(0, min(per_user-used, globally-STORE.ai_global_usage())),
+        'notice': 'AI xato qilishi mumkin. Faqat o‘quv maqsadida; klinik tashxis emas.',
+    }
 
 
 class DialogueTurn(BaseModel):
