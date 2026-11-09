@@ -30,7 +30,7 @@
   const app = document.getElementById('app');
   const demo = new URLSearchParams(location.search).get('demo') === '1' && ['localhost', '127.0.0.1'].includes(location.hostname);
   const auth = webapp?.initData || '';
-  const state = { tab: 'home', catalog: null, progress: null, studyPlan: null, history: null, lesson: null, quiz: null, result: null, consent: null, busy: false, tutorStatus: null, tutorQuestion:'', tutorAnswer: null, tutorLessonId:'', tutorMode:'explain', tutorLevel:'standard', tutorProvider:'lesson', tutorHistory:[], tutorMessages:[], tutorError:'', anatomyFile:null, anatomyPreview:'', anatomyQuestion:'', anatomyAnswer:'', anatomyError:'', anatomyBusy:false, anatomyStatus:null };
+  const state = { tab: 'home', catalog: null, progress: null, studyPlan: null, history: null, lesson: null, quiz: null, result: null, consent: null, busy: false, tutorStatus: null, tutorQuestion:'', tutorAnswer: null, tutorLessonId:'', tutorMode:'explain', tutorLevel:'standard', tutorProvider:'lesson', tutorHistory:[], tutorMessages:[], tutorError:'', anatomyFile:null, anatomyPreview:'', anatomyQuestion:'', anatomyAnswer:'', anatomyError:'', anatomyBusy:false, anatomyStatus:null, anatomyLabels:[], anatomyShowLabels:true };
   // Preserve original Uzbek Latin digraphs (Sh/sh, Ch/ch); never rewrite text.
   const uz = val => String(val ?? '');
   const esc = val => uz(val).replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]));
@@ -126,7 +126,7 @@
   function resetAnatomyImage(){
     if(state.anatomyPreview)URL.revokeObjectURL(state.anatomyPreview);
     state.anatomyFile=null;state.anatomyPreview='';
-    state.anatomyQuestion='';state.anatomyAnswer='';state.anatomyError='';
+    state.anatomyQuestion='';state.anatomyAnswer='';state.anatomyError='';state.anatomyLabels=[];state.anatomyShowLabels=true;
   }
   async function anatomyImageScreen(){
     if(!state.lesson?.anatomy_image_explain){showLesson();return;}
@@ -138,7 +138,20 @@
     state.tab='anatomy-image';
     const l=state.lesson,t=state.anatomyStatus||{};
     const ready=Boolean(t.enabled&&t.consented&&t.remaining>0);
-    const preview=state.anatomyPreview?'<img class="anatomy-preview" src="'+rawEsc(state.anatomyPreview)+'" alt="Tanlangan anatomiya rasmi">':'<p class="smallprint">Hozircha rasm tanlanmagan.</p>';
+    const labels=Array.isArray(state.anatomyLabels)?state.anatomyLabels:[];
+    const annotations=state.anatomyShowLabels?labels.map((item,i)=>{
+      const x=Math.max(0,Math.min(100,Number(item.x)/10));
+      const y=Math.max(0,Math.min(100,Number(item.y)/10));
+      const side=x>=60?'on-left':'on-right';
+      const vertical=y<=23?'under-dot':'above-dot';
+      return '<span class="anatomy-marker '+side+' '+vertical+'" style="left:'+x+'%;top:'+y+'%" aria-label="'+esc(item.latin)+'"><span class="anatomy-pin">'+(i+1)+'</span><span class="anatomy-label">'+esc(item.latin)+'</span></span>';
+    }).join(''):'';
+    const preview=state.anatomyPreview
+      ?'<div class="anatomy-picture-wrap"><div class="anatomy-annotated-picture"><img class="anatomy-preview" src="'+rawEsc(state.anatomyPreview)+'" alt="Tanlangan anatomiya rasmi">'+annotations+'</div></div>'+
+       (labels.length?'<button class="btn btn-flat btn-wide" data-action="anatomy-toggle">'+(state.anatomyShowLabels?'Belgilarni yashirish':'Belgilarni ko‘rsatish')+'</button>'+
+        '<div class="anatomy-legend" aria-label="Rasmdagi anatomik belgilar">'+labels.map((item,i)=>'<div class="anatomy-legend-item"><span class="anatomy-number">'+(i+1)+'</span><strong>'+esc(item.latin)+'</strong></div>').join('')+'</div>':
+        state.anatomyAnswer?'<p class="smallprint">Rasmda ishonch bilan belgilash mumkin bo‘lgan anatomik suyak yoki tuzilma aniqlanmadi.</p>':'')
+      :'<p class="smallprint">Hozircha rasm tanlanmagan.</p>';
     shell('<button class="back" data-action="lesson" data-id="'+rawEsc(l.id)+'">← Mavzuga qaytish</button>'+
       '<p class="eyebrow">Odam anatomiyasi</p><h1>Rasm orqali tushuntirish</h1>'+
       '<div class="card"><strong>'+esc(l.title)+'</strong><p class="smallprint">Faqat suyak yoki anatomiya sxemasini yuboring. Bemor rasmi, shaxsiy hujjat yoki shaxsiy ma’lumot yubormang. Tasvir OpenAI xizmatiga jo‘natiladi, bizning serverimizda saqlanmaydi.</p>'+
@@ -178,6 +191,7 @@
       const data=await response.json().catch(()=>({}));
       if(!response.ok)throw new Error(data.detail||'Rasmni tahlil qilishda xato');
       state.anatomyAnswer=data.answer||'';
+      state.anatomyLabels=Array.isArray(data.labels)?data.labels:[];state.anatomyShowLabels=true;
       state.anatomyStatus.remaining=data.remaining;state.anatomyStatus.used+=1;
     }catch(e){state.anatomyError=e.message;}
     state.anatomyBusy=false;renderAnatomyImage();
@@ -346,6 +360,7 @@
         case 'anatomy-image':resetAnatomyImage();await anatomyImageScreen();break;
         case 'anatomy-consent':await api('/tutor/consent','POST');await anatomyImageScreen();break;
         case 'anatomy-send':await sendAnatomyImage();break;
+        case 'anatomy-toggle':state.anatomyShowLabels=!state.anatomyShowLabels;renderAnatomyImage();break;
         case 'tutor':if(el.dataset.level)state.tutorLevel=el.dataset.level;await tutorScreen(el.dataset.id||'');break;
         case 'tutor-consent':await api('/tutor/consent','POST');state.tutorStatus.consented=true;await tutorScreen();break;
         case 'tutor-ask':await tutorAsk();break;
