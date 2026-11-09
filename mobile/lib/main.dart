@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -6,6 +7,7 @@ import 'mobile_api.dart';
 import 'mobile_account.dart';
 import 'widgets/authorized_diagram.dart';
 import 'widgets/adaptive_study_navigation.dart';
+import 'widgets/dental_arch_3d.dart';
 import 'models/study_progress.dart';
 
 const green = Color(0xFF20844D);
@@ -28,6 +30,7 @@ class _MedStudyRootState extends State<MedStudyRoot> with WidgetsBindingObserver
   StudyCatalog? catalog;
   StudyProgress? progress;
   String? accountId;
+  Map<String, dynamic>? accountDetails;
   String? notice;
   final GlobalKey<NavigatorState> navigator = GlobalKey<NavigatorState>();
   bool checking = true;
@@ -64,19 +67,27 @@ class _MedStudyRootState extends State<MedStudyRoot> with WidgetsBindingObserver
         progress = StudyProgress(widget.prefs, accountKey: userId);
         accountId = userId;
       }
-      setState(() { catalog = nextCatalog; checking = false; });
+      setState(() {
+        catalog = nextCatalog;
+        accountDetails = account;
+        checking = false;
+      });
+      unawaited(progress!.syncWithServer(
+        nextCatalog.lessons.map((lesson) => lesson.id),
+      ));
     } on MobileApiException catch (error) {
       if (error.status == 401 || error.status == 403) {
         await MobileApi.clearToken();
       }
       if (!mounted) return;
       navigator.currentState?.popUntil((route) => route.isFirst);
-      setState(() { catalog = null; checking = false; notice = error.message; });
+      setState(() { catalog = null; accountDetails = null; checking = false; notice = error.message; });
     } catch (_) {
       if (!mounted) return;
       navigator.currentState?.popUntil((route) => route.isFirst);
       setState(() {
         catalog = null;
+        accountDetails = null;
         checking = false;
         notice = 'Serverga ulanib bo‘lmadi. Internetni tekshirib, qayta kiring.';
       });
@@ -102,7 +113,7 @@ class _MedStudyRootState extends State<MedStudyRoot> with WidgetsBindingObserver
   @override
   Widget build(BuildContext context) => MaterialApp(
     navigatorKey: navigator,
-    title: 'MedStudy AI',
+    title: 'MedStudy AI 3.0',
     debugShowCheckedModeBanner: false,
     theme: createTheme(Brightness.light),
     darkTheme: createTheme(Brightness.dark),
@@ -112,6 +123,7 @@ class _MedStudyRootState extends State<MedStudyRoot> with WidgetsBindingObserver
       : catalog == null || progress == null
         ? MobileAccountPage(onAuthChanged: checkAccess, notice: notice)
         : HomePage(catalog: catalog!, progress: progress!, dark: dark,
+            account: accountDetails ?? const <String, dynamic>{},
             onTheme: setDark, onAuthChanged: checkAccess),
   );
 }
@@ -119,11 +131,13 @@ class _MedStudyRootState extends State<MedStudyRoot> with WidgetsBindingObserver
 class HomePage extends StatefulWidget {
   final StudyCatalog catalog;
   final StudyProgress progress;
+  final Map<String, dynamic> account;
   final bool dark;
   final ValueChanged<bool> onTheme;
   final Future<void> Function() onAuthChanged;
   const HomePage({super.key, required this.catalog, required this.progress,
-      required this.dark, required this.onTheme, required this.onAuthChanged});
+      required this.account, required this.dark, required this.onTheme,
+      required this.onAuthChanged});
   @override
   State<HomePage> createState() => _HomePageState();
 }
@@ -160,10 +174,24 @@ class _HomePageState extends State<HomePage> {
     return ListView(padding: const EdgeInsets.all(16), children: [
       Container(
         padding: const EdgeInsets.all(22),
-        decoration: BoxDecoration(color: const Color(0xFF166B3D),
-            borderRadius: BorderRadius.circular(22)),
+
+        decoration: BoxDecoration(
+          gradient: const LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [Color(0xFF0C3829), Color(0xFF166B3D), Color(0xFF2B9860)],
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: const Color(0xFF166B3D).withValues(alpha: 0.23),
+              blurRadius: 20,
+              offset: const Offset(0, 10),
+            ),
+          ],
+          borderRadius: BorderRadius.circular(22),
+        ),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          const Text('MEDSTUDY AI', style: TextStyle(color: Color(0xFFBCEBCB),
+          const Text('MEDSTUDY AI 3.0 · BETA', style: TextStyle(color: Color(0xFFBCEBCB),
               letterSpacing: 2, fontWeight: FontWeight.bold)),
           const SizedBox(height: 12),
           const Text('Bilim sari har kuni bir qadam',
@@ -180,6 +208,22 @@ class _HomePageState extends State<HomePage> {
               widget.catalog.lessonCount.toString(),
               style: const TextStyle(color: Colors.white)),
         ]),
+      ),
+      const SizedBox(height: 22),
+      Card(
+        clipBehavior: Clip.antiAlias,
+        child: ListTile(
+          contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+          leading: const CircleAvatar(
+            backgroundColor: Color(0xFFDEF8E9),
+            child: Icon(Icons.threed_rotation, color: Color(0xFF166B3D)),
+          ),
+          title: const Text('3D stomatologiya', style: TextStyle(fontWeight: FontWeight.bold)),
+          subtitle: const Text('Interaktiv tish qatori maketi · Aylantirish va kattalashtirish'),
+          trailing: const Icon(Icons.arrow_forward_ios, size: 18),
+          onTap: () => Navigator.push(context,
+            MaterialPageRoute<void>(builder: (_) => const DentalArch3DPage())),
+        ),
       ),
       const SizedBox(height: 22),
       const Text('Fanlar', style: TextStyle(fontSize: 21, fontWeight: FontWeight.bold)),
@@ -243,6 +287,11 @@ class _HomePageState extends State<HomePage> {
 
   Widget settingsContent() => ListView(padding: const EdgeInsets.all(16), children: [
     Card(child: ListTile(
+      leading: const CircleAvatar(child: Icon(Icons.person)),
+      title: Text(widget.account['display_name']?.toString() ?? 'Talaba'),
+      subtitle: Text(widget.account['email']?.toString() ?? ''),
+    )),
+    Card(child: ListTile(
       leading: const Icon(Icons.person_outline),
       title: const Text('Talaba kabineti'),
       subtitle: const Text('Ro‘yxatdan o‘tish yoki akkauntga kirish'),
@@ -259,13 +308,13 @@ class _HomePageState extends State<HomePage> {
     Card(child: ListTile(
       leading: Icon(Theme.of(context).platform == TargetPlatform.iOS
           ? Icons.phone_iphone_outlined : Icons.phone_android_outlined),
-      title: const Text('MedStudy AI 2.0'),
-      subtitle: const Text('iOS va Android · AI Ustoz va Pro keyingi bosqichda.'),
+      title: const Text('MedStudy AI 3.0 · Beta'),
+      subtitle: const Text('Android · 3D ta’lim · AI Ustoz va Pro keyingi bosqichda.'),
     )),
     const Card(child: ListTile(
       leading: Icon(Icons.privacy_tip_outlined),
       title: Text('Maxfiylik'),
-      subtitle: Text('Test natijalari hozircha faqat ushbu qurilmada saqlanadi.'),
+      subtitle: Text('Natijalar qurilmada saqlanadi; server sinxronizatsiyasi beta bosqichida.'),
     )),
   ]);
 }
@@ -343,6 +392,12 @@ class LessonPage extends StatelessWidget {
           onPressed: () => progress.markRead(lesson.id),
           icon: Icon(progress.isRead(lesson.id) ? Icons.check_circle : Icons.bookmark_add_outlined),
           label: Text(progress.isRead(lesson.id) ? 'O‘qilgan' : 'Darsni o‘qidim'),
+        ),
+        if (lesson.hasAnatomyDiagram) OutlinedButton.icon(
+          onPressed: () => Navigator.push(context,
+            MaterialPageRoute<void>(builder: (_) => const DentalArch3DPage())),
+          icon: const Icon(Icons.threed_rotation),
+          label: const Text('3D tish qatori · O‘quv maketi'),
         ),
         if (lesson.questions.isNotEmpty) OutlinedButton.icon(
           onPressed: () => Navigator.push(context, MaterialPageRoute<void>(
