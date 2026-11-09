@@ -12,7 +12,7 @@ from datetime import datetime, timezone
 from functools import lru_cache
 from pathlib import Path
 
-from fastapi import APIRouter, Header, HTTPException, Request
+from fastapi import APIRouter, BackgroundTasks, Header, HTTPException, Request
 from fastapi.responses import JSONResponse, Response
 from pydantic import BaseModel, Field
 
@@ -111,8 +111,28 @@ def normalize_email(email):
     return value
 
 
+async def notify_mobile_admins(account_id: int, name: str):
+    """Tell verified Telegram administrators only once about new mobile applications."""
+    from .telegram_gateway import admin_ids, api_call, bot_token
+    if not bot_token():
+        return
+    for admin_uid in sorted(admin_ids())[:5]:
+        try:
+            await api_call("sendMessage", {
+                "chat_id": admin_uid,
+                "text": f"📱 MedStudy AI mobil ro'yxat: {name} (ID: {account_id})",
+                "reply_markup": {"inline_keyboard": [[
+                    {"text": "✅ Tasdiqlash", "callback_data": f"mobile:approve:{account_id}"},
+                    {"text": "❌ Rad etish", "callback_data": f"mobile:reject:{account_id}"},
+                ]]},
+            })
+        except Exception:
+            # Never log contact data, private credentials or Telegram payloads.
+            pass
+
+
 @router.post("/register", status_code=202)
-def register(body: Register, request: Request):
+async def register(body: Register, request: Request, background_tasks: BackgroundTasks):
     init_db()
     email = normalize_email(body.email)
     name = body.display_name.strip()
@@ -123,8 +143,13 @@ def register(body: Register, request: Request):
         exists = db.execute("SELECT id FROM mobile_accounts WHERE email=?", (email,)).fetchone()
         if not exists:
             salt = secrets.token_bytes(16)
-            db.execute("INSERT INTO mobile_accounts(email,display_name,salt,password_hash,created_at) VALUES (?,?,?,?,?)",
+            result = db.execute("INSERT INTO mobile_accounts(email,display_name,salt,password_hash,created_at) VALUES (?,?,?,?,?)",
                        (email, name, salt, hash_password(body.password, salt), now_text()))
+            new_account_id = result.lastrowid
+        else:
+            new_account_id = None
+    if new_account_id is not None:
+        background_tasks.add_task(notify_mobile_admins, new_account_id, name)
     # Do not reveal whether email is registered.
     return {"message": "Ariza qabul qilindi. Administrator tasdig'ini kuting."}
 
