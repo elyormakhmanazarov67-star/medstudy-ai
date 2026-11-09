@@ -88,5 +88,5 @@ async def resend_pending(x_mobile_admin_key: str | None = Header(default=None)):
         return {"sent": False, "pending_count": 0}
     success = await send_pending_notice([item["id"] for item in pending])
     if not success:
-        raise HTTPException(502, "Telegram xabarni qabul qilmadi. Botni kanalga administrator qiling.")
+        raise HTTPException(502, "Telegram xabarni qabul qilmadi. Xabar yuboruvchi botga shaxsiy akkauntingizdan /start yuboring.")
     return {"sent": True, "pending_count": len(pending)}
