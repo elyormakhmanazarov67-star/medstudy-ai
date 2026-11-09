@@ -5,6 +5,8 @@ import 'package:medstudy_ai/widgets/dental_arch_3d.dart';
 void main() {
   testWidgets('MedStudy AI 3.0 dental arch can rotate and reset',
       (tester) async {
+    await tester.binding.setSurfaceSize(const Size(800, 1200));
+    addTearDown(() => tester.binding.setSurfaceSize(null));
     await tester.pumpWidget(const MaterialApp(home: DentalArch3DPage()));
     expect(find.text('MedStudy AI 3.0 · 3D'), findsOneWidget);
     expect(find.byKey(const Key('dental-arch-3d')), findsOneWidget);
