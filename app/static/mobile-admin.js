@@ -2,11 +2,14 @@
 const byId = id => document.getElementById(id);
 const status = message => { byId('status').textContent = message; };
 const headers = () => ({
-  'X-Mobile-Admin-Key': byId('secret').value,
+  'X-Mobile-Admin-Key': byId('secret').value.trim(),
   'Content-Type': 'application/json'
 });
 
 async function request(path, options = {}) {
+  if (!byId('secret').value.trim()) {
+    throw Error('Administrator kaliti kiritilmagan. Railway → medstudy-ai-mobile-staging → Variables → MOBILE_ADMIN_KEY qiymatini nusxalang.');
+  }
   const response = await fetch(path, {
     ...options,
     cache: 'no-store',
@@ -14,7 +17,9 @@ async function request(path, options = {}) {
     headers: headers()
   });
   if (!response.ok) {
-    if (response.status === 403) throw Error('Maxfiy kalit noto‘g‘ri.');
+    if (response.status === 403) throw Error('Administrator kaliti qabul qilinmadi. Railway Variables dagi MOBILE_ADMIN_KEY qiymatini tekshiring.');
+    if (response.status === 409) throw Error('Telegram bot tokeni yoki chat ID sozlanmagan.');
+    if (response.status === 502) throw Error('Telegram xabarni qabul qilmadi. Shaxsiy akkauntingizdan xabar yuboruvchi botni ochib /start yuboring.');
     throw Error('Server xatosi: ' + response.status);
   }
   return response.json();
@@ -75,6 +80,6 @@ byId('resend-pending').addEventListener('click', async () => {
     const result = await request('/api/mobile/admin-console/resend-pending', { method: 'POST' });
     status(result.sent ? 'Telegramga xabar yuborildi.' : 'Yuboriladigan yangi arizalar yo‘q.');
   } catch (error) {
-    status(error.message + ' Telegram botini kanalga administrator qiling.');
+    status(error.message);
   }
 });
