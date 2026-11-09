@@ -35,6 +35,11 @@ async function load() {
   byId('requests').replaceChildren();
   try {
     const data = await request('/api/mobile/admin-console/pending');
+    const telegram = await request('/api/mobile/admin-console/telegram-status');
+    byId('telegram-status').textContent = telegram.ready
+      ? 'Telegram xabar yuborishga sozlangan.'
+      : 'Telegram ulanmagan: bot tokeni ' + (telegram.bot_configured ? 'bor' : 'YO‘Q')
+        + ', kanal/chat ID ' + (telegram.chat_configured ? 'bor' : 'YO‘Q') + '. Railway Variables ni tekshiring.';
     const items = data.items || [];
     status(items.length ? 'Kutilayotgan arizalar: ' + items.length : 'Yangi arizalar yo‘q.');
     for (const account of items) {
@@ -63,4 +68,13 @@ byId('revoke').addEventListener('click', () => {
   const id = Number(byId('account-id').value);
   if (!Number.isSafeInteger(id) || id < 1) { status('Akkaunt ID raqamini tekshiring.'); return; }
   review(id, 'revoked');
+});
+
+byId('resend-pending').addEventListener('click', async () => {
+  try {
+    const result = await request('/api/mobile/admin-console/resend-pending', { method: 'POST' });
+    status(result.sent ? 'Telegramga xabar yuborildi.' : 'Yuboriladigan yangi arizalar yo‘q.');
+  } catch (error) {
+    status(error.message + ' Telegram botini kanalga administrator qiling.');
+  }
 });
