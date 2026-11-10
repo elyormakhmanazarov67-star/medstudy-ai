@@ -53,7 +53,7 @@ def test_public_url_validation(monkeypatch):
     monkeypatch.setenv('WEB_APP_URL','')
     monkeypatch.setenv('RAILWAY_PUBLIC_DOMAIN','medstudy.up.railway.app')
     assert gateway.public_url()=='https://medstudy.up.railway.app'
-    assert gateway.mini_app_launch_url().startswith('https://medstudy.up.railway.app/?miniapp=preklinik-')
+    assert gateway.mini_app_launch_url().startswith('https://medstudy.up.railway.app/miniapp/preklinik-')
 
 
 def test_webhook_public_free_start_and_privacy(monkeypatch):
