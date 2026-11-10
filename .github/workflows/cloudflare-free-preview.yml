@@ -1,0 +1,56 @@
+name: MedStudy AI Cloudflare free preview (no deploy)
+on:
+  push:
+    branches:
+      - feature/cloudflare-free-pilot-20261110
+    paths:
+      - 'cloudflare/**'
+      - 'content/lessons.json'
+      - '.github/workflows/cloudflare-free-preview.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build free static Mini App and test signed Telegram API
+        run: |
+          node cloudflare/scripts/build-assets.mjs
+          node --check cloudflare/src/worker.mjs
+          node --test cloudflare/test/*.test.mjs
+      - name: Validate D1 migration on local SQLite without real student data
+        run: |
+          python - <<'PY'
+          import sqlite3
+          from pathlib import Path
+          script=Path('cloudflare/migrations/0001_schema.sql').read_text()
+          db=sqlite3.connect(':memory:')
+          db.executescript(script)
+          tables={x[0] for x in db.execute("select name from sqlite_master where type='table'")}
+          assert {'users','access_requests','attempts','answers','rate_limits'} <= tables
+          db.execute("insert into users(user_id,consented_at) values (?,?)",(1,'demo'))
+          db.execute("insert into access_requests(user_id,status,requested_at) values (?,?,?)",
+                     (1,'approved','demo'))
+          db.commit()
+          assert db.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
+          print('D1_SCHEMA_PREVIEW_OK: schema, approvals and relationships verified')
+          PY
+      - name: Assert no Qdrant, Telegram or Railway secrets are embedded in source
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          config=Path('cloudflare/wrangler.jsonc').read_text()
+          assert 'BOT_TOKEN' not in config
+          assert 'QDRANT_API_KEY' not in config
+          assert 'REPLACE_AFTER_D1_DATABASE_CREATION' in config
+          print('PREVIEW_ONLY: no production credentials or deploy actions')
+          PY
