@@ -39,7 +39,7 @@ async function main(){
   assert.ok(code.includes('pill-dot"></span> Bepul'));
   assert.ok(!code.includes('v1.0.1') && !code.includes('v1.0.2'));
   const html=fs.readFileSync('app/static/index.html','utf8');
-  assert.ok(html.includes('app.js?v=1.0.4')); // browser cache busting
+  assert.ok(html.includes('app.js?v=1.0.6')); // browser cache busting
   // Photo labels are visible directly over the photo and can be hidden.
   assert.ok(code.includes('anatomy-annotated-picture'));
   assert.ok(code.includes('anatomy-marker'));
