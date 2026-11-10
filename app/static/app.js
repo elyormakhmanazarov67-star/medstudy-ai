@@ -182,7 +182,7 @@
     if(!s)return home();
     state.tab='subject';state.subjectId=id;
     const cards=s.lessons.map((l,i)=>'<button class="card lesson-card" data-action="lesson" data-id="'+rawEsc(l.id)+'"><span class="lesson-icon">📖</span><span class="lesson-content"><span class="tag">'+(i+1)+'-MAVZU</span><strong>'+esc(l.title)+'</strong><small>'+l.section_count+' bo‘lim · '+l.question_count+' savol</small></span><span class="chevron">›</span></button>').join('');
-    shell('<button class="back" data-action="home">← Fanlar</button><h1>'+esc(s.title)+'</h1>'+
+    shell('<button class="back" data-action="subjects">← Fanlar</button><h1>'+esc(s.title)+'</h1>'+
       '<p class="smallprint">'+(state.subjectsPurpose==='tests'?'Test uchun mavzuni tanlang.':'Mavzuni tanlang va kerakli ma’lumotlarni oching.')+'</p>'+cards);
   }
   async function getLesson(id) {
@@ -280,6 +280,7 @@
     loading();
     try {
       state.tutorStatus=await api('/tutor/status');
+      if (!state.tutorStatus.enabled) state.tutorProvider='lesson';
       renderTutor();
     } catch(e){fail(e);}
   }
@@ -296,15 +297,15 @@
         :'<p class="smallprint">OpenAI API orqali suhbat uchun alohida rozilik kerak. Savol va oxirgi uchta suhbat almashinuvi OpenAI xizmatiga yuboriladi; botimizning SQLite bazasida saqlanmaydi.</p><button class="btn btn-flat btn-wide" data-action="tutor-consent">Roziman · AI Ustozni ochish</button>')
       :'<p class="smallprint">Haqiqiy AI hozir sozlanmagan yoki o‘chirilgan. Bepul dars yordamchisi ishlaydi.</p>';
     const log=state.tutorMessages.map(item=>
-      '<div class="card tutor-message '+(item.role==='user'?'tutor-student':'tutor-teacher')+'"><p class="smallprint">'+(item.role==='user'?'Talaba':'AI Ustoz')+'</p><p>'+esc(item.content).replace(/\n/g,'<br>')+'</p></div>').join('');
+      '<div class="card tutor-message '+(item.role==='user'?'tutor-student':'tutor-teacher')+'"><p class="smallprint">'+(item.role==='user'?'Talaba':'Dars yordamchisi')+'</p><p>'+esc(item.content).replace(/\n/g,'<br>')+'</p></div>').join('');
     const error=state.tutorError?'<p class="error" role="alert">'+esc(state.tutorError)+'</p>':'';
     const canAsk=!(state.busy||(usingAI&&(!t.enabled||!t.consented||t.remaining<=0)));
     const btnText=state.busy?'Javob tayyorlanmoqda…':usingAI?'AI Ustozga yuborish →':'Darsdan javob olish →';
-    shell('<div class="tutor-banner">🎓 AI Ustoz 2.0 <span>· '+(state.tutorMode==='oral'?'Og‘zaki imtihon':'Dars rejimi')+'</span></div>'+
+    shell('<div class="tutor-banner">🎓 Dars Ustoz <span>· '+(state.tutorMode==='oral'?'Og‘zaki imtihon':'Dars rejimi')+'</span></div>'+
       '<div class="card tutor-subject"><span class="feature-icon">🦷</span><div><p class="smallprint">Tanlangan mavzu</p><strong>'+esc(chosen?.title||'Mavzuni tanlang')+'</strong></div></div>'+
       '<div class="card tutor-settings"><p class="smallprint">Suhbatni davom ettirishingiz yoki yangi mavzu tanlashingiz mumkin.</p>'+
       '<label for="tutor-lesson">Mavzu</label><select id="tutor-lesson" class="ai-input">'+select+'</select>'+
-      '<label for="tutor-provider">Yordamchi turi</label><select id="tutor-provider" class="ai-input"><option value="lesson" '+(!usingAI?'selected':'')+'>Bepul konspekt yordamchisi</option><option value="ai" '+(usingAI?'selected':'')+'>AI Ustoz — OpenAI (rozilik va limit)</option></select>'+
+      '<label for="tutor-provider">Yordamchi turi</label><select id="tutor-provider" class="ai-input"><option value="lesson" '+(!usingAI?'selected':'')+'>Bepul konspekt yordamchisi</option><option value="ai" '+(usingAI?'selected':'')+' '+(!t.enabled?'disabled':'')+'>AI Ustoz — OpenAI (hozircha o‘chiq)</option></select>'+
       '<div class="tutor-config-grid"><div><label for="tutor-mode">O‘rganish usuli</label><select id="tutor-mode" class="ai-input">'+tutorModeOptions()+'</select></div>'+
       '<div><label for="tutor-level">Qiyinchilik darajasi</label><select id="tutor-level" class="ai-input">'+tutorLevelOptions()+'</select></div></div>'+
       (usingAI?aiInfo:'<p class="smallprint">Bepul rejim darsdagi tayyor ma’lumotlardan foydalanadi, yozma javobingizni avtomatik baholamaydi.</p>')+'</div>'+
@@ -375,7 +376,7 @@
         case 'tutor-new':tutorClear();renderTutor();break;
         case 'tutor-revoke':await api('/tutor/consent','DELETE');tutorClear();state.tutorProvider='lesson';await tutorScreen();break;
         case 'consent':await api('/consent','POST');await init();break;
-        case 'delete':if(!confirm('Barcha test natijalari o‘chirilsinmi?'))return;await api('/me','DELETE');state.catalog=null;state.progress=null;state.studyPlan=null;state.history=null;tutorClear();state.tutorProvider='lesson';await init();break;
+        case 'delete':if(!confirm('Barcha test natijalari o‘chirilsinmi?'))return;await api('/me','DELETE');state.catalog=null;state.progress=null;state.studyPlan=null;state.history=null;tutorClear();state.tutorProvider='lesson';accessScreen('not_requested');break;
       }
     }catch(e){fail(e);}
   });
