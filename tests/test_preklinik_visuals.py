@@ -41,7 +41,7 @@ def test_preklinik_31_lessons_have_distinct_illustrated_guides():
 
 def test_preklinik_visual_action_is_isolated_to_its_subject():
     script = (ROOT / "app" / "static" / "app.js").read_text(encoding="utf-8")
-    assert "l.subject_id==='stom_prerest'?" in script
+    assert "const isPreklinik=l.subject_id==='stom_prerest'" in script
     assert "case 'preklinik-visual':await showPreklinikVisual();break;" in script
     assert "lesson.subject_id!=='stom_prerest'" in script
     assert "data-action=\"anatomy-visual\"" in script
