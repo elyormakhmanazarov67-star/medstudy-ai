@@ -29,7 +29,7 @@ def test_webhook_id_and_minapp_entry(monkeypatch):
     assert '100' in calls[-1][1]['text']
     body['message']['text']='/start'
     assert client.post('/telegram/webhook', headers=headers,json=body).status_code==200
-    assert calls[-1][1]['reply_markup']['inline_keyboard'][0][0]['web_app']['url']=='https://medstudy.example.org'
+    assert calls[-1][1]['reply_markup']['inline_keyboard'][0][0]['web_app']['url']==gateway.mini_app_launch_url()
     body['message']['from']['id']=200
     body['message']['chat']['id']=200
     assert client.post('/telegram/webhook', headers=headers,json=body).status_code==200
@@ -53,6 +53,7 @@ def test_public_url_validation(monkeypatch):
     monkeypatch.setenv('WEB_APP_URL','')
     monkeypatch.setenv('RAILWAY_PUBLIC_DOMAIN','medstudy.up.railway.app')
     assert gateway.public_url()=='https://medstudy.up.railway.app'
+    assert gateway.mini_app_launch_url().startswith('https://medstudy.up.railway.app/?miniapp=preklinik-')
 
 
 def test_webhook_public_free_start_and_privacy(monkeypatch):
