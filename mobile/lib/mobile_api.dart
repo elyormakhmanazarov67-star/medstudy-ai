@@ -105,10 +105,7 @@ class MobileApi {
   }
 
   static Future<Map<String, dynamic>> preklinikVisual(String lessonId) async {
-    if (!RegExp(r'^[a-z0-9_]{1,100}
-      storage.delete(key: 'mobile_access_token');
-}
-).hasMatch(lessonId)) {
+    if (!RegExp(r'^[a-z0-9_]{1,100}$').hasMatch(lessonId)) {
       throw const MobileApiException('Ushbu mavzu uchun rasm topilmadi.');
     }
     final response = jsonDecode(
