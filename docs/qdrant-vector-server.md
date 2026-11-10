@@ -21,31 +21,37 @@ A future embedding model must generate exactly 384-dimensional vectors.
 We have not yet selected or evaluated the embedding model for Uzbek teaching
 content. Creating an empty collection does not produce semantic search.
 
-## Create the collection through GitHub Actions
+## Create your first collection in the Qdrant Cloud dashboard
 
-1. Open https://cloud.qdrant.io and select the **existing** medstudy-vector
-   cluster. Check that it is HEALTHY (not suspended).
-2. Copy the HTTPS **Cluster Endpoint** from its details page (not the Qdrant
-   console page). In your GitHub repository:
-   Settings > Secrets and variables > Actions > New repository secret.
-   Add **QDRANT_URL**, containing the endpoint, including :6333 if supplied.
-3. In Qdrant Cloud, open the cluster's Database API Keys. Use an active
-   key with manage/write permission; if the old key is uncertain, create
-   a fresh one. Store it as GitHub Actions secret **QDRANT_API_KEY**.
-   Never paste any key into ChatGPT, a public link, a README or the Mini App.
-   Revoke any unused or exposed old keys after confirming the new key works.
-4. GitHub > Actions > **Qdrant Cloud collection setup for MedStudy AI**
-   > Run workflow. Choose branch **feature/qdrant-vector-setup-20261110**
-   and operation **status**. You should see exists: false if empty.
-5. Repeat Run workflow with operation **create**. This action is
-   idempotent: it creates the collection only if it is missing. It never
-   deletes other collections, resets settings, or uploads student content.
-6. Go to Qdrant Cloud > Cluster UI > Collections and verify
-   **medstudy_lessons_v1**, vector size 384, similarity Cosine.
+The quickest option needs no secret or API key copied into a chat:
 
-GitHub Actions secrets remain encrypted in GitHub, but who can trigger an
-Actions workflow and which repository branches may access secrets should be
-limited to trusted collaborators.
+1. Open https://cloud.qdrant.io and select your **existing** medstudy-vector
+   cluster (AWS Europe). Check that its status is HEALTHY.
+2. Click **Cluster UI**, then **Collections** and **Create Collection**.
+3. Enter collection name **medstudy_lessons_v1**.
+4. For an ordinary single dense vector, choose **vector size 384** and
+   **distance Cosine**. If an on-disk option is available, enable it.
+5. Save/create and verify the new collection appears in Collections.
+
+Do not create a second Qdrant Cloud cluster. The new collection will initially
+contain zero vectors until we choose and run a multilingual embeddings model.
+
+## Optional scripted creation (prepared, not yet deployed)
+
+The tested script at scripts/qdrant_setup.py can also create/verify the
+collection without deleting existing data. Add QDRANT_URL (HTTPS cluster
+endpoint) and QDRANT_API_KEY (database key) through secure environment
+variables on a trusted machine or in GitHub Actions repository secrets.
+
+Important: the newly added manual GitHub Actions workflow lives only on
+this feature branch. GitHub requires a workflow file on the default
+branch before its manual "Run workflow" control can be used. We have
+NOT enabled manual production Actions execution or altered the
+production app. Use the dashboard instructions above for now.
+
+Never paste QDRANT_API_KEY into a chat, public GitHub file, or client
+JavaScript. If an old Qdrant key is no longer needed, revoke it in the
+Qdrant Cloud API Keys screen after confirming the newer key works.
 
 ## Next stage after the empty collection exists
 
