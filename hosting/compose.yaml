@@ -1,0 +1,50 @@
+name: medstudy-portable
+# Separate staging VPS stack: does not modify any Railway deployment.
+services:
+  api:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      PORT: "8000"
+      DATABASE_PATH: /app/data/medstudy.db
+      DEV_PREVIEW: "0"
+      AI_ENABLED: "0"
+      # This must remain OFF before a deliberate production cutover.
+      AUTO_SET_WEBHOOK: "0"
+    volumes:
+      - medstudy_data:/app/data
+    expose:
+      - "8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/health', timeout=4).read()"]
+      interval: 30s
+      timeout: 8s
+      retries: 3
+      start_period: 30s
+    security_opt:
+      - no-new-privileges:true
+
+  proxy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    depends_on:
+      api:
+        condition: service_healthy
+    env_file: .env
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    security_opt:
+      - no-new-privileges:true
+
+volumes:
+  medstudy_data:
+  caddy_data:
+  caddy_config:

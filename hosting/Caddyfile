@@ -1,0 +1,9 @@
+# SITE_DOMAIN must point to this Linux cloud VM; open TCP 80 and 443.
+{$SITE_DOMAIN} {
+    encode zstd gzip
+    reverse_proxy api:8000
+    header {
+        X-Content-Type-Options "nosniff"
+        Referrer-Policy "strict-origin-when-cross-origin"
+    }
+}
