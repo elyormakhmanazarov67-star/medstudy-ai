@@ -15,8 +15,8 @@ jobs:
           BASE: https://medstudy-ai-production-f1c8.up.railway.app
         run: |
           set -eu
-          curl --fail --show-error -L --max-time 12 -D /tmp/index-headers.txt "$BASE/?miniapp=preklinik-20261110-refresh1" -o /tmp/index.html
-          curl --fail --show-error -L --max-time 12 -D /tmp/js-headers.txt "$BASE/static/app.js?v=1.0.7" -o /tmp/app.js
+          curl --fail --show-error -L --max-time 12 -D /tmp/index-headers.txt "$BASE/miniapp/preklinik-20261110-v2" -o /tmp/index.html
+          curl --fail --show-error -L --max-time 12 -D /tmp/js-headers.txt "$BASE/static/app.js?v=1.0.8" -o /tmp/app.js
           curl --fail --show-error -L --max-time 12 "$BASE/static/illustrations/preklinik/catalog.json" -o /tmp/illustrations.json
           echo "INDEX:"
           grep -io 'app.js?v=[^"]*' /tmp/index.html || true
@@ -35,6 +35,6 @@ jobs:
           html=open('/tmp/index.html').read()
           assert "l.subject_id==='stom_prerest'" in js
           assert "case 'preklinik-visual'" in js
-          assert 'app.js?v=1.0.7' in html
+          assert 'app.js?v=1.0.8' in html
           print('LIVE_PREKLINIK_ASSETS_OK')
           PY
