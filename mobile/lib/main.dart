@@ -6,6 +6,7 @@ import 'models/study_catalog.dart';
 import 'mobile_api.dart';
 import 'mobile_account.dart';
 import 'widgets/authorized_diagram.dart';
+import 'widgets/preklinik_visual_page.dart';
 import 'widgets/adaptive_study_navigation.dart';
 import 'widgets/dental_arch_3d.dart';
 import 'models/study_progress.dart';
@@ -338,10 +339,14 @@ class SubjectPage extends StatelessWidget {
                 ? const Icon(Icons.check) : Text((i + 1).toString())),
             title: Text(lesson.title, style: const TextStyle(fontWeight: FontWeight.bold)),
             subtitle: Text(lesson.questions.length.toString() +
-                ' test' + (lesson.hasAnatomyDiagram ? ' · rasmli dars' : '')),
+                ' test' + (lesson.hasAnatomyDiagram || subject.id == 'stom_prerest' ? ' · rasmli dars' : '')),
             trailing: const Icon(Icons.chevron_right),
             onTap: () => Navigator.push(context, MaterialPageRoute<void>(
-                builder: (_) => LessonPage(lesson: lesson, progress: progress))),
+                builder: (_) => LessonPage(
+                  lesson: lesson,
+                  progress: progress,
+                  isPreklinik: subject.id == 'stom_prerest',
+                ))),
           ));
         },
       ),
@@ -352,7 +357,13 @@ class SubjectPage extends StatelessWidget {
 class LessonPage extends StatelessWidget {
   final StudyLesson lesson;
   final StudyProgress progress;
-  const LessonPage({super.key, required this.lesson, required this.progress});
+  final bool isPreklinik;
+  const LessonPage({
+    super.key,
+    required this.lesson,
+    required this.progress,
+    this.isPreklinik = false,
+  });
   @override
   Widget build(BuildContext context) => AnimatedBuilder(
     animation: progress,
@@ -366,6 +377,24 @@ class LessonPage extends StatelessWidget {
           child: Text('Dars matni o‘qituvchi yoki mutaxassis tekshiruviga muhtoj.',
               style: TextStyle(fontSize: 13)),
         )),
+        if (isPreklinik) Card(
+          child: ListTile(
+            leading: const CircleAvatar(
+              child: Icon(Icons.image_outlined),
+            ),
+            title: const Text(
+              'Rasm orqali tushuntirish',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            subtitle: const Text(
+              'Mavzuga mos sxema va uchta muhim tushuncha',
+            ),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () => Navigator.push(context, MaterialPageRoute<void>(
+              builder: (_) => PreklinikVisualPage(lessonId: lesson.id),
+            )),
+          ),
+        ),
         if (lesson.hasAnatomyDiagram) Card(child: Padding(
           padding: const EdgeInsets.all(12),
           child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
