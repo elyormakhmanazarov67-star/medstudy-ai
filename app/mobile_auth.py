@@ -244,3 +244,37 @@ def authorized_diagram(lesson_id: str, authorization: str | None = Header(defaul
         raise HTTPException(404, "Rasm topilmadi")
     return Response(path.read_bytes(), media_type="image/svg+xml",
                     headers={"Cache-Control": "no-store", "X-Content-Type-Options": "nosniff"})
+
+
+@lru_cache(maxsize=1)
+def preklinik_visual_catalog():
+    """Original illustrated guides; data is not bundled in Android APK."""
+    import json
+    path = Path(__file__).resolve().parent / "static" / "illustrations" / "preklinik" / "catalog.json"
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+@router.get("/preklinik-visual/{lesson_id}")
+def authorized_preklinik_visual(
+    lesson_id: str, authorization: str | None = Header(default=None),
+):
+    """Only approved mobile accounts may fetch a topic-specific graphic."""
+    current_account(authorization)
+    catalog = preklinik_visual_catalog()
+    visual = catalog.get(lesson_id)
+    if visual is None or not re.fullmatch(r"[a-z0-9_]{1,100}", lesson_id):
+        raise HTTPException(404, "Mavzu rasmi topilmadi")
+    # Filename is taken only from the audited catalog, never from user input.
+    svg_path = Path(__file__).resolve().parent / "static" / "illustrations" / "preklinik" / (lesson_id + ".svg")
+    if not svg_path.is_file():
+        raise HTTPException(404, "Mavzu rasmi topilmadi")
+    return JSONResponse(
+        {
+            "title": visual["title"],
+            "alt": visual["alt"],
+            "notice": visual["notice"],
+            "facts": visual["facts"],
+            "svg": svg_path.read_text(encoding="utf-8"),
+        },
+        headers={"Cache-Control": "no-store", "X-Content-Type-Options": "nosniff"},
+    )
