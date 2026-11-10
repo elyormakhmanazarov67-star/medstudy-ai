@@ -28,6 +28,17 @@ def public_url() -> str:
     return candidate
 
 
+
+# A changed launch URL tells Telegram Desktop/WebView to open a fresh Mini App
+# session instead of reusing a previously opened page after a deployment.
+MINI_APP_LAUNCH_BUILD = 'preklinik-20261110-refresh1'
+
+
+def mini_app_launch_url() -> str:
+    base = public_url()
+    return base + '/?miniapp=' + MINI_APP_LAUNCH_BUILD if base else ''
+
+
 def bot_token() -> str:
     return os.getenv('BOT_TOKEN', '').strip()
 
@@ -95,7 +106,7 @@ async def configure_telegram() -> bool:
             'menu_button': {
                 'type': 'web_app',
                 'text': 'MedStudy AI',
-                'web_app': {'url': base},
+                'web_app': {'url': mini_app_launch_url()},
             }
         })
         await api_call('setMyCommands', {
@@ -227,7 +238,7 @@ async def receive_telegram_update(
         if status=='approved':
             body=('✅ Ruxsat tasdiqlangan. MedStudy AI Mini App’ni ochishingiz mumkin.')
             markup={'inline_keyboard': [[{'text':'📱 MedStudy AI ni ochish',
-                       'web_app':{'url':public_url()}}]]} if public_url() else None
+                       'web_app':{'url':mini_app_launch_url()}}]]} if mini_app_launch_url() else None
         elif status=='pending':
             body=('⏳ So‘rovingiz administratorga yuborildi. '
                   'Ruxsat berilgach bu yerga xabar keladi. /status orqali tekshiring.')
@@ -244,7 +255,7 @@ async def receive_telegram_update(
               '⚠️ Materiallar mustaqil o‘quv loyihasiga tegishli.\n\n'
               'Quyidagi tugma orqali Mini App’ni oching.')
         markup={'inline_keyboard': [[{'text':'📱 MedStudy AI ni ochish',
-                 'web_app':{'url':public_url()}}]]} if public_url() else None
+                 'web_app':{'url':mini_app_launch_url()}}]]} if mini_app_launch_url() else None
     elif cmd == '/privacy':
         body=('Telegram ID, rozilik va test natijalari saqlanadi. '
               'Kirish so‘rovining holati, vaqti va uni ko‘rib chiqqan admin IDsi ham qayd etiladi. '
