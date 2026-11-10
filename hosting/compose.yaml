@@ -33,7 +33,9 @@ services:
     depends_on:
       api:
         condition: service_healthy
-    env_file: .env
+    # Do not pass bot credentials to the TLS proxy container.
+    environment:
+      SITE_DOMAIN: "${SITE_DOMAIN:?Set SITE_DOMAIN in hosting/.env}"
     ports:
       - "80:80"
       - "443:443"
