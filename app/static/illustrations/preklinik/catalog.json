@@ -1,0 +1,622 @@
+{
+  "ergonomika": {
+    "title": "1-mavzu · Stomatologik kabinet",
+    "src": "/static/illustrations/preklinik/ergonomika.svg",
+    "alt": "Stomatologik kabinet: uchta o‘quv tushunchasi ko‘rsatilgan mustaqil vektor sxema",
+    "facts": [
+      [
+        "Bemor kreslosi",
+        "Bemorning holatini moslashga xizmat qiladi."
+      ],
+      [
+        "Yoritgich",
+        "Ish maydonini ko‘rish uchun yo‘naltirilgan nur beradi."
+      ],
+      [
+        "Asboblar bloki",
+        "Dastaklar, suv va havo tizimlari jamlanadi."
+      ]
+    ],
+    "notice": "Soddalashtirilgan o‘quv sxemasi; klinik tasvir yoki muolaja ko‘rsatmasi emas."
+  },
+  "ergonomika_2": {
+    "title": "2-mavzu · Ergonomik ish holati",
+    "src": "/static/illustrations/preklinik/ergonomika_2.svg",
+    "alt": "Ergonomik ish holati: uchta o‘quv tushunchasi ko‘rsatilgan mustaqil vektor sxema",
+    "facts": [
+      [
+        "Shifokor o‘rindig‘i",
+        "Barqaror, qulay o‘tirish holatini qo‘llab-quvvatlaydi."
+      ],
+      [
+        "Ko‘rish burchagi",
+        "Ish maydoni gavdani ortiqcha egmasdan ko‘riladi."
+      ],
+      [
+        "Jihoz joylashuvi",
+        "Kerakli asboblar qo‘l yetadigan hududda turadi."
+      ]
+    ],
+    "notice": "Soddalashtirilgan o‘quv sxemasi; klinik tasvir yoki muolaja ko‘rsatmasi emas."
+  },
+  "qurilmalar": {
+    "title": "3-mavzu · Bormashina va qurilmalar",
+    "src": "/static/illustrations/preklinik/qurilmalar.svg",
+    "alt": "Bormashina va qurilmalar: uchta o‘quv tushunchasi ko‘rsatilgan mustaqil vektor sxema",
+    "facts": [
+      [
+        "Harakat manbai",
+        "Elektr yoki pnevmatik tizim aylanishni hosil qiladi."
+      ],
+      [
+        "Ulash qismi",
+        "Quvvatni dastakka mos bog‘lovchi bo‘g‘in."
+      ],
+      [
+        "Stomatologik blok",
+        "Boshqaruv va yordamchi tizimlar yig‘indisi."
+      ]
+    ],
+    "notice": "Soddalashtirilgan o‘quv sxemasi; klinik tasvir yoki muolaja ko‘rsatmasi emas."
+  },
+  "qurilmalar_2": {
+    "title": "4-mavzu · Turbinali va mikromotorli dastak",
+    "src": "/static/illustrations/preklinik/qurilmalar_2.svg",
+    "alt": "Turbinali va mikromotorli dastak: uchta o‘quv tushunchasi ko‘rsatilgan mustaqil vektor sxema",
+    "facts": [
+      [
+        "Turbinali dastak",
+        "Rotor siqilgan havo oqimi bilan aylanadi."
+      ],
+      [
+        "Mikromotorli dastak",
+        "Aylanish elektr motor orqali uzatiladi."
+      ],
+      [
+        "Burchakli dastak",
+        "Ishchi boshcha turli sohalarga yetish uchun burchakli."
+      ]
+    ],
+    "notice": "Soddalashtirilgan o‘quv sxemasi; klinik tasvir yoki muolaja ko‘rsatmasi emas."
+  },
+  "qurilmalar_3": {
+    "title": "5-mavzu · Dastak qismlari va mosligi",
+    "src": "/static/illustrations/preklinik/qurilmalar_3.svg",
+    "alt": "Dastak qismlari va mosligi: uchta o‘quv tushunchasi ko‘rsatilgan mustaqil vektor sxema",
+    "facts": [
+      [
+        "Ulash moslamasi",
+        "Dastak va qurilma orasidagi mos birikma."
+      ],
+      [
+        "Bor tutqichi",
+        "Ishchi asbobni barqaror ushlab turadigan mexanizm."
+      ],
+      [
+        "Sovitish kanali",
+        "Ishlov davomida suv-havo oqimini yetkazish tizimi."
+      ]
+    ],
+    "notice": "Soddalashtirilgan o‘quv sxemasi; klinik tasvir yoki muolaja ko‘rsatmasi emas."
+  },
+  "asboblar": {
+    "title": "6-mavzu · Stomatologik ko‘rik asboblari",
+    "src": "/static/illustrations/preklinik/asboblar.svg",
+    "alt": "Stomatologik ko‘rik asboblari: uchta o‘quv tushunchasi ko‘rsatilgan mustaqil vektor sxema",
+    "facts": [
+      [
+        "Ko‘zgu",
+        "Bevosita ko‘rinmaydigan sohani aks ettiradi."
+      ],
+      [
+        "Zond",
+        "Sirt xususiyatlarini tekshirishda qo‘llanadi."
+      ],
+      [
+        "Pinset",
+        "Mayda buyumlarni ushlash va ko‘chirishga yordam beradi."
+      ]
+    ],
+    "notice": "Soddalashtirilgan o‘quv sxemasi; klinik tasvir yoki muolaja ko‘rsatmasi emas."
+  },
+  "asboblar_2": {
+    "title": "7-mavzu · Plomba qo‘yish asboblari",
+    "src": "/static/illustrations/preklinik/asboblar_2.svg",
+    "alt": "Plomba qo‘yish asboblari: uchta o‘quv tushunchasi ko‘rsatilgan mustaqil vektor sxema",
+    "facts": [
+      [
+        "Shpatel",
+        "Material tarkibiy qismlarini aralashtirish uchun."
+      ],
+      [
+        "Gladilka",
+        "Materialni joylashtirish va shakllantirishga xizmat qiladi."
+      ],
+      [
+        "Shtopfer",
+        "Restavratsion materialni moslashtirish asbobi."
+      ]
+    ],
+    "notice": "Soddalashtirilgan o‘quv sxemasi; klinik tasvir yoki muolaja ko‘rsatmasi emas."
+  },
+  "rotatsion": {
+    "title": "8-mavzu · Stomatologik bor shakllari",
+    "src": "/static/illustrations/preklinik/rotatsion.svg",
+    "alt": "Stomatologik bor shakllari: uchta o‘quv tushunchasi ko‘rsatilgan mustaqil vektor sxema",
+    "facts": [
+      [
+        "Ishchi boshcha",
+        "Kesuvchi yoki abraziv qism sirtga ta’sir qiladi."
+      ],
+      [
+        "Bo‘yin",
+        "Boshcha bilan o‘zakni bog‘lovchi qism."
+      ],
+      [
+        "O‘zak",
+        "Borni dastakning tutqichiga mahkamlaydi."
+      ]
+    ],
+    "notice": "Soddalashtirilgan o‘quv sxemasi; klinik tasvir yoki muolaja ko‘rsatmasi emas."
+  },
+  "rotatsion_2": {
+    "title": "9-mavzu · Olmosli va qotishmali borlar",
+    "src": "/static/illustrations/preklinik/rotatsion_2.svg",
+    "alt": "Olmosli va qotishmali borlar: uchta o‘quv tushunchasi ko‘rsatilgan mustaqil vektor sxema",
+    "facts": [
+      [
+        "Olmosli bor",
+        "Abraziv donachalar orqali sirtga ishlov beradi."
+      ],
+      [
+        "Qattiq qotishmali bor",
+        "Kesuvchi qirralari bilan materialni ajratadi."
+      ],
+      [
+        "Donadorlik",
+        "Abraziv yuzaning qo‘polligini bildiradi."
+      ]
+    ],
+    "notice": "Soddalashtirilgan o‘quv sxemasi; klinik tasvir yoki muolaja ko‘rsatmasi emas."
+  },
+  "rotatsion_3": {
+    "title": "10-mavzu · Finirlash va polirovka",
+    "src": "/static/illustrations/preklinik/rotatsion_3.svg",
+    "alt": "Finirlash va polirovka: uchta o‘quv tushunchasi ko‘rsatilgan mustaqil vektor sxema",
+    "facts": [
+      [
+        "Finirlash",
+        "Shakl va konturdagi notekisliklarni kamaytirish."
+      ],
+      [
+        "Silliqlash",
+        "Yuzani mayinroq abraziv bilan tekislash."
+      ],
+      [
+        "Polirovka",
+        "Oxirgi bosqichda sirtni yaltiroqroq qilish."
+      ]
+    ],
+    "notice": "Soddalashtirilgan o‘quv sxemasi; klinik tasvir yoki muolaja ko‘rsatmasi emas."
+  },
+  "plombalar": {
+    "title": "11-mavzu · Plomba materiallari sinflari",
+    "src": "/static/illustrations/preklinik/plombalar.svg",
+    "alt": "Plomba materiallari sinflari: uchta o‘quv tushunchasi ko‘rsatilgan mustaqil vektor sxema",
+    "facts": [
+      [
+        "Vaqtinchalik material",
+        "Qisqa muddatli yopish uchun mo‘ljallangan."
+      ],
+      [
+        "Doimiy material",
+        "Restavratsiyaning uzoqroq xizmatiga mo‘ljallangan."
+      ],
+      [
+        "Tanlash mezoni",
+        "Tarkib, qotish va mexanik xossalar baholanadi."
+      ]
+    ],
+    "notice": "Soddalashtirilgan o‘quv sxemasi; klinik tasvir yoki muolaja ko‘rsatmasi emas."
+  },
+  "plombalar_2": {
+    "title": "12-mavzu · Vaqtinchalik plomba",
+    "src": "/static/illustrations/preklinik/plombalar_2.svg",
+    "alt": "Vaqtinchalik plomba: uchta o‘quv tushunchasi ko‘rsatilgan mustaqil vektor sxema",
+    "facts": [
+      [
+        "Vaqtinchalik yopish",
+        "Davolash oralig‘ida bo‘shliqni berkitish."
+      ],
+      [
+        "Sun’iy dentin",
+        "An’anaviy vaqtinchalik yopuvchi materiallar guruhidan."
+      ],
+      [
+        "Rux oksidi asosli material",
+        "Ayrim vaqtinchalik bog‘lov tarkiblarda uchraydi."
+      ]
+    ],
+    "notice": "Soddalashtirilgan o‘quv sxemasi; klinik tasvir yoki muolaja ko‘rsatmasi emas."
+  },
+  "tagliklar": {
+    "title": "13-mavzu · Ajratuvchi taglik",
+    "src": "/static/illustrations/preklinik/tagliklar.svg",
+    "alt": "Ajratuvchi taglik: uchta o‘quv tushunchasi ko‘rsatilgan mustaqil vektor sxema",
+    "facts": [
+      [
+        "Emal",
+        "Tish tojining tashqi qattiq qatlami."
+      ],
+      [
+        "Dentin",
+        "Emal ostida joylashgan to‘qima."
+      ],
+      [
+        "Taglik",
+        "Restavratsiya bilan ichki qatlam orasida ajratish vazifasini bajaradi."
+      ]
+    ],
+    "notice": "Soddalashtirilgan o‘quv sxemasi; klinik tasvir yoki muolaja ko‘rsatmasi emas."
+  },
+  "tagliklar_2": {
+    "title": "14-mavzu · Davolovchi taglik",
+    "src": "/static/illustrations/preklinik/tagliklar_2.svg",
+    "alt": "Davolovchi taglik: uchta o‘quv tushunchasi ko‘rsatilgan mustaqil vektor sxema",
+    "facts": [
+      [
+        "Pulpa",
+        "Tishning ichki yumshoq to‘qimasi."
+      ],
+      [
+        "Chuqur dentin",
+        "Pulpaga yaqin joydagi to‘qima sohasi."
+      ],
+      [
+        "Himoya qatlami",
+        "Biologik himoya maqsadidagi material qatlami."
+      ]
+    ],
+    "notice": "Soddalashtirilgan o‘quv sxemasi; klinik tasvir yoki muolaja ko‘rsatmasi emas."
+  },
+  "tagliklar_3": {
+    "title": "15-mavzu · Sementlar tasnifi",
+    "src": "/static/illustrations/preklinik/tagliklar_3.svg",
+    "alt": "Sementlar tasnifi: uchta o‘quv tushunchasi ko‘rsatilgan mustaqil vektor sxema",
+    "facts": [
+      [
+        "Rux-fosfat sement",
+        "An’anaviy stomatologik sement turlaridan."
+      ],
+      [
+        "Silikat sement",
+        "Tarixiy restavratsion materiallar guruhiga kiradi."
+      ],
+      [
+        "Shishaionomer sement",
+        "Tish bilan kimyoviy tutashishga qodir material."
+      ]
+    ],
+    "notice": "Soddalashtirilgan o‘quv sxemasi; klinik tasvir yoki muolaja ko‘rsatmasi emas."
+  },
+  "pre_session_16": {
+    "title": "16-mavzu · Polikarboksilat sement",
+    "src": "/static/illustrations/preklinik/pre_session_16.svg",
+    "alt": "Polikarboksilat sement: uchta o‘quv tushunchasi ko‘rsatilgan mustaqil vektor sxema",
+    "facts": [
+      [
+        "Kukun",
+        "Tarkibida rux oksidi bo‘lishi mumkin."
+      ],
+      [
+        "Suyuqlik",
+        "Polikarboksilat kislota asosidagi faza."
+      ],
+      [
+        "Bog‘lanish",
+        "Material tish to‘qimasi bilan yopishishga qodir."
+      ]
+    ],
+    "notice": "Soddalashtirilgan o‘quv sxemasi; klinik tasvir yoki muolaja ko‘rsatmasi emas."
+  },
+  "pre_session_17": {
+    "title": "17-mavzu · Shishaionomer sement tarkibi",
+    "src": "/static/illustrations/preklinik/pre_session_17.svg",
+    "alt": "Shishaionomer sement tarkibi: uchta o‘quv tushunchasi ko‘rsatilgan mustaqil vektor sxema",
+    "facts": [
+      [
+        "Shisha kukuni",
+        "Ftorli alumosilikat shisha komponenti."
+      ],
+      [
+        "Suyuqlik",
+        "Polikislota bilan bog‘liq suvli tarkib."
+      ],
+      [
+        "Qotish",
+        "Kislota-asos reaksiyasi orqali shakllanadigan tuzilma."
+      ]
+    ],
+    "notice": "Soddalashtirilgan o‘quv sxemasi; klinik tasvir yoki muolaja ko‘rsatmasi emas."
+  },
+  "pre_session_18": {
+    "title": "18-mavzu · Shishaionomer xossalari",
+    "src": "/static/illustrations/preklinik/pre_session_18.svg",
+    "alt": "Shishaionomer xossalari: uchta o‘quv tushunchasi ko‘rsatilgan mustaqil vektor sxema",
+    "facts": [
+      [
+        "Adgeziya",
+        "Emal va dentin bilan kimyoviy bog‘lanish xususiyati."
+      ],
+      [
+        "Ftor ionlari",
+        "Ayrim shishaionomerlar ftor ajratishi mumkin."
+      ],
+      [
+        "Cheklovlar",
+        "Mexanik yuklamaga chidamlilik turi va sharoitga bog‘liq."
+      ]
+    ],
+    "notice": "Soddalashtirilgan o‘quv sxemasi; klinik tasvir yoki muolaja ko‘rsatmasi emas."
+  },
+  "pre_session_19": {
+    "title": "19-mavzu · Amalgama tarkibi",
+    "src": "/static/illustrations/preklinik/pre_session_19.svg",
+    "alt": "Amalgama tarkibi: uchta o‘quv tushunchasi ko‘rsatilgan mustaqil vektor sxema",
+    "facts": [
+      [
+        "Metall qotishma",
+        "Kumush va boshqa metall komponentlar bo‘lishi mumkin."
+      ],
+      [
+        "Simob",
+        "Amalgama hosil qiluvchi tarkibiy komponent."
+      ],
+      [
+        "Restavratsiya",
+        "An’anaviy orqa tish plombalarida qo‘llangan material."
+      ]
+    ],
+    "notice": "Soddalashtirilgan o‘quv sxemasi; klinik tasvir yoki muolaja ko‘rsatmasi emas."
+  },
+  "pre_session_20": {
+    "title": "20-mavzu · Amalgama xossalari",
+    "src": "/static/illustrations/preklinik/pre_session_20.svg",
+    "alt": "Amalgama xossalari: uchta o‘quv tushunchasi ko‘rsatilgan mustaqil vektor sxema",
+    "facts": [
+      [
+        "Mustahkamlik",
+        "Chaynash bosimiga nisbatan chidamliligi bilan tanilgan."
+      ],
+      [
+        "Estetika",
+        "Metall rang tish tusidan farq qiladi."
+      ],
+      [
+        "Baholash",
+        "Afzallik va cheklovlar alohida solishtiriladi."
+      ]
+    ],
+    "notice": "Soddalashtirilgan o‘quv sxemasi; klinik tasvir yoki muolaja ko‘rsatmasi emas."
+  },
+  "pre_session_21": {
+    "title": "21-mavzu · Ildiz kanalini plombalash",
+    "src": "/static/illustrations/preklinik/pre_session_21.svg",
+    "alt": "Ildiz kanalini plombalash: uchta o‘quv tushunchasi ko‘rsatilgan mustaqil vektor sxema",
+    "facts": [
+      [
+        "Ildiz kanali",
+        "Tish ildizi ichidagi anatomik yo‘l."
+      ],
+      [
+        "Shtift materiali",
+        "Kanalni to‘ldiruvchi asosiy material."
+      ],
+      [
+        "Siler",
+        "Kanal devori va to‘ldiruvchi o‘rtasidagi bo‘shliqlarni yopishga yordam beradi."
+      ]
+    ],
+    "notice": "Soddalashtirilgan o‘quv sxemasi; klinik tasvir yoki muolaja ko‘rsatmasi emas."
+  },
+  "pre_session_22": {
+    "title": "22-mavzu · Kanal obturatsiyasini baholash",
+    "src": "/static/illustrations/preklinik/pre_session_22.svg",
+    "alt": "Kanal obturatsiyasini baholash: uchta o‘quv tushunchasi ko‘rsatilgan mustaqil vektor sxema",
+    "facts": [
+      [
+        "Kanal uzunligi",
+        "To‘ldirilgan soha ildizning anatomik chegarasiga nisbatan baholanadi."
+      ],
+      [
+        "Apikal soha",
+        "Ildiz uchiga yaqin anatomik qism."
+      ],
+      [
+        "Sifat nazorati",
+        "Zichlik va to‘ldirish darajasi baholanadi."
+      ]
+    ],
+    "notice": "Soddalashtirilgan o‘quv sxemasi; klinik tasvir yoki muolaja ko‘rsatmasi emas."
+  },
+  "pre_session_23": {
+    "title": "23-mavzu · Kariyes bosqichlari",
+    "src": "/static/illustrations/preklinik/pre_session_23.svg",
+    "alt": "Kariyes bosqichlari: uchta o‘quv tushunchasi ko‘rsatilgan mustaqil vektor sxema",
+    "facts": [
+      [
+        "Biofilm",
+        "Mikroorganizmlar qatlamining tish sirtidagi yig‘indisi."
+      ],
+      [
+        "Demineralizatsiya",
+        "Kislota ta’sirida mineral yo‘qotilishi."
+      ],
+      [
+        "Dentin shikastlanishi",
+        "Jarayon emaldan chuqur qatlamlarga o‘tishi mumkin."
+      ]
+    ],
+    "notice": "Soddalashtirilgan o‘quv sxemasi; klinik tasvir yoki muolaja ko‘rsatmasi emas."
+  },
+  "pre_session_24": {
+    "title": "24-mavzu · Black bo‘yicha kovak sinflari",
+    "src": "/static/illustrations/preklinik/pre_session_24.svg",
+    "alt": "Black bo‘yicha kovak sinflari: uchta o‘quv tushunchasi ko‘rsatilgan mustaqil vektor sxema",
+    "facts": [
+      [
+        "I–II sinf",
+        "Fissura va orqa tishlarning kontakt yuzasi bilan bog‘liq."
+      ],
+      [
+        "III–IV sinf",
+        "Old tishning kontakt yuzasi, kesuvchi qirra ishtiroki bilan farqlanadi."
+      ],
+      [
+        "V–VI sinf",
+        "Bo‘yin sohasi va do‘mboq yoki qirra hududlari."
+      ]
+    ],
+    "notice": "Soddalashtirilgan o‘quv sxemasi; klinik tasvir yoki muolaja ko‘rsatmasi emas."
+  },
+  "pre_session_25": {
+    "title": "25-mavzu · Kariyesni ICDAS bilan baholash",
+    "src": "/static/illustrations/preklinik/pre_session_25.svg",
+    "alt": "Kariyesni ICDAS bilan baholash: uchta o‘quv tushunchasi ko‘rsatilgan mustaqil vektor sxema",
+    "facts": [
+      [
+        "Boshlang‘ich o‘zgarish",
+        "Dastlabki ko‘rinadigan emal belgilarini farqlash."
+      ],
+      [
+        "O‘rta daraja",
+        "Emal nuqsoni va ehtimoliy dentin soyasi aniqlanishi."
+      ],
+      [
+        "Og‘ir daraja",
+        "Kengroq kavitasiyalangan shikastlanish."
+      ]
+    ],
+    "notice": "Soddalashtirilgan o‘quv sxemasi; klinik tasvir yoki muolaja ko‘rsatmasi emas."
+  },
+  "pre_session_26": {
+    "title": "26-mavzu · Yuqori chaynov tishlari",
+    "src": "/static/illustrations/preklinik/pre_session_26.svg",
+    "alt": "Yuqori chaynov tishlari: uchta o‘quv tushunchasi ko‘rsatilgan mustaqil vektor sxema",
+    "facts": [
+      [
+        "Premolyar",
+        "Toj do‘mboqlari va ildiz-kanal variantlari mavjud."
+      ],
+      [
+        "Molyar",
+        "Ko‘p do‘mboqli chaynash yuzasiga ega."
+      ],
+      [
+        "Ildizlar",
+        "Yuqori molyarlarda ko‘pincha uch ildiz uchraydi."
+      ]
+    ],
+    "notice": "Soddalashtirilgan o‘quv sxemasi; klinik tasvir yoki muolaja ko‘rsatmasi emas."
+  },
+  "pre_session_27": {
+    "title": "27-mavzu · Pastki chaynov tishlari",
+    "src": "/static/illustrations/preklinik/pre_session_27.svg",
+    "alt": "Pastki chaynov tishlari: uchta o‘quv tushunchasi ko‘rsatilgan mustaqil vektor sxema",
+    "facts": [
+      [
+        "Pastki premolyar",
+        "Ko‘pincha bir ildizli, kanal variantlari mavjud."
+      ],
+      [
+        "Pastki molyar",
+        "Odatda ikkita ildiz bilan tavsiflanadi."
+      ],
+      [
+        "Pulpa bo‘shlig‘i",
+        "Toj va ildiz kanallariga davom etuvchi ichki qism."
+      ]
+    ],
+    "notice": "Soddalashtirilgan o‘quv sxemasi; klinik tasvir yoki muolaja ko‘rsatmasi emas."
+  },
+  "pre_session_28": {
+    "title": "28-mavzu · Yuqori frontal tishlar",
+    "src": "/static/illustrations/preklinik/pre_session_28.svg",
+    "alt": "Yuqori frontal tishlar: uchta o‘quv tushunchasi ko‘rsatilgan mustaqil vektor sxema",
+    "facts": [
+      [
+        "Markaziy kurak",
+        "Kesuvchi qirra va ko‘pincha bitta ildiz bilan tavsiflanadi."
+      ],
+      [
+        "Yon kurak",
+        "O‘lchami va ichki anatomiyasi farqlanishi mumkin."
+      ],
+      [
+        "Qoziq tish",
+        "Uzun ildizli frontal tish turlaridan biri."
+      ]
+    ],
+    "notice": "Soddalashtirilgan o‘quv sxemasi; klinik tasvir yoki muolaja ko‘rsatmasi emas."
+  },
+  "pre_session_29": {
+    "title": "29-mavzu · Pastki frontal tishlar",
+    "src": "/static/illustrations/preklinik/pre_session_29.svg",
+    "alt": "Pastki frontal tishlar: uchta o‘quv tushunchasi ko‘rsatilgan mustaqil vektor sxema",
+    "facts": [
+      [
+        "Pastki kurak",
+        "Ingichkaroq toj va odatda bitta ildiz."
+      ],
+      [
+        "Qoziq tish",
+        "Kesuvchi bo‘rtig‘i bo‘lgan frontal tish."
+      ],
+      [
+        "Kanal variantlari",
+        "Ayrim pastki kuraklarda qo‘shimcha kanal uchrashi mumkin."
+      ]
+    ],
+    "notice": "Soddalashtirilgan o‘quv sxemasi; klinik tasvir yoki muolaja ko‘rsatmasi emas."
+  },
+  "pre_session_30": {
+    "title": "30-mavzu · Qattiq to‘qimaga ishlov asoslari",
+    "src": "/static/illustrations/preklinik/pre_session_30.svg",
+    "alt": "Qattiq to‘qimaga ishlov asoslari: uchta o‘quv tushunchasi ko‘rsatilgan mustaqil vektor sxema",
+    "facts": [
+      [
+        "Emalni asrash",
+        "Sog‘lom to‘qimani imkon qadar saqlash muhim."
+      ],
+      [
+        "Bor shakli",
+        "Ishlov xususiyati boshchaning geometriyasiga bog‘liq."
+      ],
+      [
+        "Sovitish",
+        "Rotatsion ishlovda issiqlikni kamaytirish vazifasini bajaradi."
+      ]
+    ],
+    "notice": "Soddalashtirilgan o‘quv sxemasi; klinik tasvir yoki muolaja ko‘rsatmasi emas."
+  },
+  "pre_session_31": {
+    "title": "31-mavzu · Stomatologiyada xavfsizlik",
+    "src": "/static/illustrations/preklinik/pre_session_31.svg",
+    "alt": "Stomatologiyada xavfsizlik: uchta o‘quv tushunchasi ko‘rsatilgan mustaqil vektor sxema",
+    "facts": [
+      [
+        "Shaxsiy himoya",
+        "Niqob, ko‘zoynak va qo‘lqop himoya to‘plamiga kiradi."
+      ],
+      [
+        "Dezinfeksiya",
+        "Zararsizlantirish bosqichi; sterilizatsiya bilan aynan bir xil emas."
+      ],
+      [
+        "Sterilizatsiya",
+        "Asbobda mikroorganizmlarni yo‘qotishga qaratilgan jarayon."
+      ]
+    ],
+    "notice": "Soddalashtirilgan o‘quv sxemasi; klinik tasvir yoki muolaja ko‘rsatmasi emas."
+  }
+}
