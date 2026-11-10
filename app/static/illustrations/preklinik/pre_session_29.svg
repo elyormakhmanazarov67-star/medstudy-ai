@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 740" role="img" aria-labelledby="title desc">
+<title id="title">29-mavzu · Pastki frontal tishlar</title><desc id="desc">Pastki frontal tishlar: uchta o‘quv tushunchasi ko‘rsatilgan mustaqil vektor sxema</desc>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#E8F6EE"/><stop offset="1" stop-color="#D8F0E7"/></linearGradient></defs>
+<rect width="1200" height="740" rx="34" fill="url(#bg)"/>
+<rect x="34" y="30" width="1132" height="112" rx="24" fill="#145C43"/>
+<text x="72" y="71" font-size="21" font-weight="700" fill="#ACF4CC">PREKLINIK RESTAVRATSION STOMATOLOGIYA</text>
+<text x="72" y="112" font-size="31" font-weight="800" fill="#FFFFFF">29-mavzu · Pastki frontal tishlar</text>
+<rect x="43" y="170" width="558" height="429" rx="26" fill="#FFFFFF" stroke="#C6DED2" stroke-width="3"/>
+<circle cx="322" cy="382" r="183" fill="#D1B8A7" opacity=".13"/>
+<g stroke="#4C756A" stroke-width="6" stroke-linejoin="round"><path d="M250 190L357 190L355 332L332 496Q315 559 297 498L267 333Z" fill="#FFF8E6"/><path d="M257 200L347 200L340 312L272 312Z" fill="#FFFDF2"/><path d="M277 330L293 459L309 507L327 459L337 330" stroke="#E2C896" stroke-width="8" fill="none"/><path d="M300 274L306 429" stroke="#E9A2AB" stroke-width="11" stroke-linecap="round"/><path d="M250 190L357 190" stroke="#E0CA9D" stroke-width="8"/></g>
+<rect x="635" y="223" width="508" height="113" rx="20" fill="#FFFFFF" stroke="#DCEAE3" stroke-width="2"/>
+  <circle cx="675" cy="257" r="23" fill="#D1B8A7"/><text x="675" y="265" font-size="22" text-anchor="middle" font-weight="800" fill="#163B32">1</text>
+  <text x="715" y="259" font-size="24" font-weight="800" fill="#173B35">Pastki kurak</text>
+  <text x="715" y="295" font-size="18" fill="#4F6B61">Ingichkaroq toj va odatda bitta ildiz.</text>
+<rect x="635" y="354" width="508" height="113" rx="20" fill="#FFFFFF" stroke="#DCEAE3" stroke-width="2"/>
+  <circle cx="675" cy="388" r="23" fill="#D1B8A7"/><text x="675" y="396" font-size="22" text-anchor="middle" font-weight="800" fill="#163B32">2</text>
+  <text x="715" y="390" font-size="24" font-weight="800" fill="#173B35">Qoziq tish</text>
+  <text x="715" y="426" font-size="18" fill="#4F6B61">Kesuvchi bo‘rtig‘i bo‘lgan frontal tish.</text>
+<rect x="635" y="485" width="508" height="113" rx="20" fill="#FFFFFF" stroke="#DCEAE3" stroke-width="2"/>
+  <circle cx="675" cy="519" r="23" fill="#D1B8A7"/><text x="675" y="527" font-size="22" text-anchor="middle" font-weight="800" fill="#163B32">3</text>
+  <text x="715" y="521" font-size="24" font-weight="800" fill="#173B35">Kanal variantlari</text>
+  <text x="715" y="557" font-size="18" fill="#4F6B61">Ayrim pastki kuraklarda qo‘shimcha kanal uchrashi mumkin.</text>
+<path d="M50 639H1150" stroke="#B4D5C6" stroke-width="2"/>
+<text x="57" y="677" font-size="20" font-weight="600" fill="#285344">MEDSTUDY AI · Rasm orqali tushuntirish</text>
+<text x="57" y="711" font-size="17" fill="#547B6A">Mustaqil chizilgan soddalashtirilgan sxema · mutaxassis tekshiruvi talab etiladi.</text>
+</svg>
