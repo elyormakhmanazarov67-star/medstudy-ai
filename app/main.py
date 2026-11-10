@@ -64,7 +64,18 @@ app = FastAPI(title='MedStudy AI Mini App', docs_url=None, redoc_url=None, lifes
 app.include_router(telegram_router)
 app.state.store = STORE
 app.state.is_admin = is_admin
-app.mount('/static', StaticFiles(directory=ROOT / 'app' / 'static'), name='static')
+class FreshMiniAppStaticFiles(StaticFiles):
+    """Avoid serving stale Telegram WebView scripts after a production deploy."""
+    async def get_response(self, path: str, scope: dict):
+        response = await super().get_response(path, scope)
+        if path.endswith(('.js', '.css', '.json', '.svg', '.html')):
+            response.headers['Cache-Control'] = 'no-store, max-age=0, must-revalidate'
+            response.headers['Pragma'] = 'no-cache'
+            response.headers['Expires'] = '0'
+        return response
+
+
+app.mount('/static', FreshMiniAppStaticFiles(directory=ROOT / 'app' / 'static'), name='static')
 
 @app.get('/')
 def index():
