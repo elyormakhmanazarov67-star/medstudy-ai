@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 740" role="img" aria-labelledby="title desc">
+<title id="title">15-mavzu · Sementlar tasnifi</title><desc id="desc">Sementlar tasnifi: uchta o‘quv tushunchasi ko‘rsatilgan mustaqil vektor sxema</desc>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#E8F6EE"/><stop offset="1" stop-color="#D8F0E7"/></linearGradient></defs>
+<rect width="1200" height="740" rx="34" fill="url(#bg)"/>
+<rect x="34" y="30" width="1132" height="112" rx="24" fill="#145C43"/>
+<text x="72" y="71" font-size="21" font-weight="700" fill="#ACF4CC">PREKLINIK RESTAVRATSION STOMATOLOGIYA</text>
+<text x="72" y="112" font-size="31" font-weight="800" fill="#FFFFFF">15-mavzu · Sementlar tasnifi</text>
+<rect x="43" y="170" width="558" height="429" rx="26" fill="#FFFFFF" stroke="#C6DED2" stroke-width="3"/>
+<circle cx="322" cy="382" r="183" fill="#B7A4E1" opacity=".13"/>
+<g stroke="#335F5D" stroke-width="7" stroke-linejoin="round"><rect x="171" y="316" width="155" height="157" rx="25" fill="#DCEEE6"/><path d="M157 321L341 321L332 297L170 297Z" fill="#A6D5BE"/><rect x="364" y="281" width="75" height="181" rx="20" fill="#E6D4F2"/><rect x="374" y="252" width="55" height="49" rx="12" fill="#C9B4DB"/><path d="M266 509L443 509" stroke="#7B9E9B" stroke-width="17" stroke-linecap="round"/><path d="M316 503L359 430" stroke="#B1BFC6" stroke-width="14"/><circle cx="287" cy="456" r="18" fill="#F7D9AA" stroke="#E7B76B"/><circle cx="312" cy="441" r="11" fill="#F7D9AA" stroke="#E7B76B"/></g>
+<rect x="635" y="223" width="508" height="113" rx="20" fill="#FFFFFF" stroke="#DCEAE3" stroke-width="2"/>
+  <circle cx="675" cy="257" r="23" fill="#B7A4E1"/><text x="675" y="265" font-size="22" text-anchor="middle" font-weight="800" fill="#163B32">1</text>
+  <text x="715" y="259" font-size="24" font-weight="800" fill="#173B35">Rux-fosfat sement</text>
+  <text x="715" y="295" font-size="18" fill="#4F6B61">An’anaviy stomatologik sement turlaridan.</text>
+<rect x="635" y="354" width="508" height="113" rx="20" fill="#FFFFFF" stroke="#DCEAE3" stroke-width="2"/>
+  <circle cx="675" cy="388" r="23" fill="#B7A4E1"/><text x="675" y="396" font-size="22" text-anchor="middle" font-weight="800" fill="#163B32">2</text>
+  <text x="715" y="390" font-size="24" font-weight="800" fill="#173B35">Silikat sement</text>
+  <text x="715" y="426" font-size="18" fill="#4F6B61">Tarixiy restavratsion materiallar guruhiga kiradi.</text>
+<rect x="635" y="485" width="508" height="113" rx="20" fill="#FFFFFF" stroke="#DCEAE3" stroke-width="2"/>
+  <circle cx="675" cy="519" r="23" fill="#B7A4E1"/><text x="675" y="527" font-size="22" text-anchor="middle" font-weight="800" fill="#163B32">3</text>
+  <text x="715" y="521" font-size="24" font-weight="800" fill="#173B35">Shishaionomer sement</text>
+  <text x="715" y="557" font-size="18" fill="#4F6B61">Tish bilan kimyoviy tutashishga qodir material.</text>
+<path d="M50 639H1150" stroke="#B4D5C6" stroke-width="2"/>
+<text x="57" y="677" font-size="20" font-weight="600" fill="#285344">MEDSTUDY AI · Rasm orqali tushuntirish</text>
+<text x="57" y="711" font-size="17" fill="#547B6A">Mustaqil chizilgan soddalashtirilgan sxema · mutaxassis tekshiruvi talab etiladi.</text>
+</svg>
