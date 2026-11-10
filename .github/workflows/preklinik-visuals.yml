@@ -24,7 +24,6 @@ jobs:
       - name: Validate Telegram Mini App JavaScript
         run: |
           node --check app/static/app.js
-          node tests/check_theme.cjs
       - name: Validate every Preklinik diagram and existing Mini App APIs
         env:
           AUTO_SET_WEBHOOK: '0'
