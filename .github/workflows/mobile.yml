@@ -3,11 +3,76 @@ on:
   push:
     branches:
       - feature/native-mobile-mvp
+      - feature/mobile-auth-v2
+      - feature/preklinik-mobile-api-20261110
     paths:
       - 'mobile/**'
+      - 'app/mobile_auth.py'
+      - 'app/static/illustrations/preklinik/**'
+      - 'tests/test_mobile_preklinik_visuals.py'
+      - 'app/mobile_admin.py'
+      - 'app/mobile_notifications.py'
+      - 'app/static/mobile-admin.js'
+      - 'app/static/mobile-admin.html'
+      - 'app/telegram_gateway.py'
+      - 'app/main.py'
+      - 'tests/test_mobile_auth.py'
+      - 'tests/test_mobile_notifications.py'
       - '.github/workflows/mobile.yml'
   workflow_dispatch:
 jobs:
+  backend-auth:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install test dependencies
+        run: pip install -r requirements.txt pytest
+      - name: Mobile auth tests
+        env:
+          AUTO_SET_WEBHOOK: '0'
+          AI_ENABLED: '0'
+          DATABASE_PATH: '/tmp/medstudy-ci.sqlite'
+        run: python -m pytest -q tests/test_mobile_preklinik_visuals.py tests/test_mobile_auth.py tests/test_mobile_notifications.py tests/test_miniapp.py tests/test_tutor.py tests/test_webhook.py tests/test_study_plan.py tests/test_curriculum.py tests/test_lesson_helper.py tests/test_materials.py
+  staging-smoke:
+    if: github.ref == 'refs/heads/feature/mobile-auth-v2'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check staging registration and protected content over HTTPS
+        run: |
+          python - <<'PY'
+          import time
+          from urllib.request import Request, urlopen
+          from urllib.error import HTTPError
+
+          base = 'https://medstudy-ai-mobile-staging-staging.up.railway.app'
+          checks = [
+              ('/api/health', 'GET', None, 200),
+              ('/mobile-register', 'GET', None, 200),
+              ('/api/mobile/catalog', 'GET', None, 401),
+              ('/api/mobile/register', 'POST', b'{}', 422),
+          ]
+          for path, method, data, expected in checks:
+              for attempt in range(12):
+                  try:
+                      req = Request(base + path, data=data, method=method)
+                      if data is not None:
+                          req.add_header('Content-Type', 'application/json')
+                      with urlopen(req, timeout=8) as response:
+                          status = response.status
+                  except HTTPError as err:
+                      status = err.code
+                  except OSError:
+                      status = None
+                  if status == expected:
+                      print(path, status, 'OK')
+                      break
+                  if attempt == 11:
+                      raise SystemExit(f'{path}: expected {expected}, got {status}')
+                  time.sleep(5)
+          PY
   flutter:
     runs-on: ubuntu-latest
     steps:
@@ -31,3 +96,31 @@ jobs:
       - name: Test restored study catalog
         run: flutter test
         working-directory: mobile
+      - name: Add Android INTERNET permission
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path("android/app/src/main/AndroidManifest.xml")
+          text = path.read_text(encoding="utf-8")
+          entry = '<uses-permission android:name="android.permission.INTERNET" />'
+          if 'android.permission.INTERNET' not in text:
+              text = text.replace('<application', entry + '\n    <application', 1)
+              path.write_text(text, encoding="utf-8")
+          PY
+        working-directory: mobile
+      - name: Build Android debug APK
+        run: flutter build apk --debug --dart-define=MEDSTUDY_API_URL=https://medstudy-ai-mobile-staging-staging.up.railway.app
+        working-directory: mobile
+      - name: Verify private study lessons are not packaged
+        run: |
+          if unzip -Z1 build/app/outputs/flutter-apk/app-debug.apk | grep -E 'flutter_assets/(assets/data/lessons\.json|assets/illustrations/)'; then
+            echo "ERROR: private study assets embedded in APK"
+            exit 1
+          fi
+        working-directory: mobile
+      - name: Upload Android APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: medstudy-ai-android-debug
+          path: mobile/build/app/outputs/flutter-apk/app-debug.apk
+          retention-days: 7

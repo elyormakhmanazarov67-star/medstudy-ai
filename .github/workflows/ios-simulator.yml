@@ -1,0 +1,65 @@
+name: MedStudy AI iOS Simulator (manual)
+
+# Manual only: private repositories may incur macOS runner charges.
+# This builds an unsigned SIMULATOR app, not an iPhone IPA or App Store release.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  ios-simulator:
+    runs-on: macos-15
+    timeout-minutes: 45
+    steps:
+      - name: Checkout iOS development branch
+        uses: actions/checkout@v4
+
+      - name: Flutter stable
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Generate iOS project files
+        run: flutter create . --platforms=ios --project-name medstudy_ai --org uz.medstudy
+        working-directory: mobile
+
+      - name: Name the app for the iPhone home screen
+        run: |
+          plutil -replace CFBundleDisplayName -string "MedStudy AI" ios/Runner/Info.plist
+          plutil -lint ios/Runner/Info.plist
+        working-directory: mobile
+
+      - name: Remove example test
+        run: rm -f test/widget_test.dart
+        working-directory: mobile
+
+      - name: Install Flutter dependencies
+        run: flutter pub get
+        working-directory: mobile
+
+      - name: Analyze and run tests
+        run: |
+          flutter analyze
+          flutter test
+        working-directory: mobile
+
+      - name: Build unsigned iOS Simulator application against staging
+        run: flutter build ios --simulator --debug --dart-define=MEDSTUDY_API_URL=https://medstudy-ai-mobile-staging-staging.up.railway.app
+        working-directory: mobile
+
+      - name: Verify iOS simulator bundle created
+        run: |
+          test -d build/ios/iphonesimulator/Runner.app
+          test -f build/ios/iphonesimulator/Runner.app/Info.plist
+        working-directory: mobile
+
+      - name: Upload simulator-only test application
+        uses: actions/upload-artifact@v4
+        with:
+          name: medstudy-ai-ios-SIMULATOR-NOT-IPHONE
+          path: mobile/build/ios/iphonesimulator/Runner.app/
+          retention-days: 7
+          if-no-files-found: error

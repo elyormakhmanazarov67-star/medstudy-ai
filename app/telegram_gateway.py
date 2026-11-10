@@ -155,8 +155,18 @@ async def receive_telegram_update(
         from_user=callback.get('from') or {}
         admin_uid=from_user.get('id')
         data=str(callback.get('data') or '')
+        mobile_match=re.fullmatch(r'mobile:(approve|reject|revoke):([1-9]\d{0,15})',data)
         match=re.fullmatch(r'access:(approve|reject|revoke):([1-9]\d{0,15})',data)
-        if approval_enabled() and isinstance(admin_uid,int) and is_admin(admin_uid) and match:
+        if isinstance(admin_uid,int) and is_admin(admin_uid) and mobile_match:
+            from . import mobile_auth
+            action,target = mobile_match.group(1), int(mobile_match.group(2))
+            status = {'approve':'approved','reject':'rejected','revoke':'revoked'}[action]
+            try:
+                mobile_auth.set_account_status(target,status)
+                reply = '✅ Mobil akkaunt tasdiqlandi' if status == 'approved' else '✅ Mobil akkaunt holati: ' + status
+            except HTTPException:
+                reply = 'Mobil akkaunt topilmadi'
+        elif approval_enabled() and isinstance(admin_uid,int) and is_admin(admin_uid) and match:
             action,target=match.group(1),int(match.group(2))
             decision={'approve':'approved','reject':'rejected','revoke':'revoked'}[action]
             try:
@@ -215,13 +225,34 @@ async def receive_telegram_update(
                     logger.warning('Could not send approval status')
             except ValueError as exc:
                 body=str(exc)
+    elif is_owner and cmd in {'/mobilepending','/mobileapprove','/mobilereject','/mobilerevoke'}:
+        from . import mobile_auth
+        if cmd == '/mobilepending':
+            pending = mobile_auth.pending_accounts()
+            body = ("📱 Mobil ilova ruxsat so'rovlari:\n" +
+                    "\n".join(f"{item['id']}: {item['display_name']} ({item['email']})" for item in pending) +
+                    "\n\n/mobileapprove ID yoki /mobilereject ID") if pending else "Yangi mobil arizalar yo'q."
+        elif not re.fullmatch(r'[1-9]\d{0,15}', target_text):
+            body = 'Format: /mobileapprove 1 yoki /mobilereject 1 yoki /mobilerevoke 1'
+        else:
+            status = {'/mobileapprove':'approved','/mobilereject':'rejected',
+                      '/mobilerevoke':'revoked'}[cmd]
+            try:
+                mobile_auth.set_account_status(int(target_text),status)
+                body = f'✅ Mobil akkaunt {target_text}: {status}'
+            except HTTPException:
+                body = 'Bunday mobil akkaunt topilmadi'
     elif approval and is_owner and cmd=='/help':
         body=('MedStudy AI — administrator buyruqlari:\n'
               '/requests — kutilayotgan arizalar\n'
               '/approve ID — Telegram ID orqali ruxsat berish\n'
               '/reject ID — arizani rad etish\n'
               '/revoke ID — ruxsatni bekor qilish\n'
-              '/myid — mening Telegram ID raqamim')
+              '/myid — mening Telegram ID raqamim\n'
+              '/mobilepending — mobil ilova arizalari\n'
+              '/mobileapprove ID — mobil kirishga ruxsat\n'
+              '/mobilereject ID — mobil arizani rad etish\n'
+              '/mobilerevoke ID — mobil kirishni bekor qilish')
     elif approval and is_owner and cmd=='/requests':
         pending=store.pending_access()
         body=('Kutilayotgan so‘rovlar:\n'+'\n'.join(str(x) for x in pending)

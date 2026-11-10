@@ -1,13 +1,12 @@
 import 'dart:convert';
-import 'package:flutter/services.dart';
+import 'dart:io';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:medstudy_ai/models/study_catalog.dart';
 
 void main() {
-  TestWidgetsFlutterBinding.ensureInitialized();
-
   test('Restored curriculum contains 81 lessons and 631 questions', () async {
-    final raw = await rootBundle.loadString('assets/data/lessons.json');
+    // Test fixture remains in the repository, but is never packaged into Android/iOS.
+    final raw = await File('../content/lessons.json').readAsString();
     final catalog = StudyCatalog.fromJson(jsonDecode(raw) as Map<String, dynamic>);
     expect(catalog.subjects.length, 6);
     expect(catalog.lessonCount, 81);

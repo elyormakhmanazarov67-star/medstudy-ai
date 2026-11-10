@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>MedStudy AI — Mobil administrator</title>
+  <link rel="stylesheet" href="/static/mobile-admin.css">
+  <script src="/static/mobile-admin.js?v=remember1" defer></script>
+</head>
+<body>
+  <main>
+    <header><h1>MedStudy AI</h1><p>Mobil ilovaga ruxsat berish</p></header>
+    <section id="login-section">
+      <h2>Administrator kirishi</h2>
+      <label for="secret">Administrator maxfiy kaliti (Railway Variables)</label>
+      <input id="secret" type="password" autocomplete="off" spellcheck="false" placeholder="MOBILE_ADMIN_KEY qiymatini kiriting" aria-label="Administrator kaliti">
+      <p>Kalit Railway loyihasi → <strong>medstudy-ai-mobile-staging</strong> → <strong>Variables</strong> → <strong>MOBILE_ADMIN_KEY</strong> bo‘limida. Telegram ID yoki bot tokenini bu yerga kiritmang.</p>
+      <label class="remember-row">
+        <input id="remember" type="checkbox" checked style="display:inline;width:auto;margin:0 8px 0 0">
+        Bu brauzerda 30 kun davomida eslab qolish
+      </label>
+      <button id="load" type="button">Kirish va saqlash</button>
+      <p>Faqat shaxsiy qurilmangizda «eslab qolish»ni yoqing. Kalit brauzerda oddiy matn sifatida saqlanmaydi.</p>
+    </section>
+    <section id="session-section" hidden>
+      <p><strong>Administrator sifatida kirdingiz.</strong> Bu brauzer keyingi safar avtomatik taniladi.</p>
+      <button id="logout" type="button">Ushbu brauzerdan chiqish</button>
+    </section>
+    <p id="status" role="status" aria-live="polite">Kalitni kiriting va arizalarni tekshiring.</p>
+    <section class="admin-content" hidden>
+      <h2>Telegram xabarlari</h2>
+      <p id="telegram-status" role="status">Telegram sozlamalari hali tekshirilmagan.</p>
+      <button id="resend-pending" type="button">Kutilayotgan arizalarni Telegramga yuborish</button>
+    </section>
+    <section class="admin-content" hidden>
+      <h2>Ruxsat kutayotgan talabalar</h2>
+      <ul id="requests"></ul>
+    </section>
+    <section class="admin-content" hidden>
+      <h2>Avval berilgan ruxsatni bekor qilish</h2>
+      <p>Avval tasdiqlangan mobil akkaunt ID raqamini kiriting.</p>
+      <label for="account-id">Mobil akkaunt ID</label>
+      <input id="account-id" type="number" min="1" step="1">
+      <button id="revoke" type="button">Ruxsatni bekor qilish</button>
+    </section>
+    <footer>Faqat MedStudy AI administratorlari uchun. Kalit browserning oddiy xotirasiga yozilmaydi; tizim himoyalangan sessiya cookie'sidan foydalanadi.</footer>
+  </main>
+</body>
+</html>

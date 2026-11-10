@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 740" role="img" aria-labelledby="title desc">
+<title id="title">30-mavzu · Qattiq to‘qimaga ishlov asoslari</title><desc id="desc">Qattiq to‘qimaga ishlov asoslari: uchta o‘quv tushunchasi ko‘rsatilgan mustaqil vektor sxema</desc>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#E8F6EE"/><stop offset="1" stop-color="#D8F0E7"/></linearGradient></defs>
+<rect width="1200" height="740" rx="34" fill="url(#bg)"/>
+<rect x="34" y="30" width="1132" height="112" rx="24" fill="#145C43"/>
+<text x="72" y="71" font-size="21" font-weight="700" fill="#ACF4CC">PREKLINIK RESTAVRATSION STOMATOLOGIYA</text>
+<text x="72" y="112" font-size="31" font-weight="800" fill="#FFFFFF">30-mavzu · Qattiq to‘qimaga ishlov asoslari</text>
+<rect x="43" y="170" width="558" height="429" rx="26" fill="#FFFFFF" stroke="#C6DED2" stroke-width="3"/>
+<circle cx="322" cy="382" r="183" fill="#EBC179" opacity=".13"/>
+<g stroke-linejoin="round" stroke="#335C64" stroke-width="5"><path d="M184 473L232 473L240 357L176 357Z" fill="#B9DCE0"/><circle cx="208" cy="333" r="28" fill="#FFE4A0"/><path d="M280 473L330 473L339 368L270 368Z" fill="#B9DCE0"/><path d="M285 361L316 283L338 361Z" fill="#FFE4A0"/><path d="M376 473L423 473L434 355L367 355Z" fill="#B9DCE0"/><path d="M377 353Q389 279 423 288L434 353Z" fill="#FFE4A0"/><path d="M207 307L207 360M295 317L315 356M400 299L412 356" stroke="#DDBE6B" stroke-width="3" stroke-dasharray="5 6"/><path d="M148 499H478" stroke="#6B9E91" stroke-width="10" stroke-linecap="round"/></g>
+<rect x="635" y="223" width="508" height="113" rx="20" fill="#FFFFFF" stroke="#DCEAE3" stroke-width="2"/>
+  <circle cx="675" cy="257" r="23" fill="#EBC179"/><text x="675" y="265" font-size="22" text-anchor="middle" font-weight="800" fill="#163B32">1</text>
+  <text x="715" y="259" font-size="24" font-weight="800" fill="#173B35">Emalni asrash</text>
+  <text x="715" y="295" font-size="18" fill="#4F6B61">Sog‘lom to‘qimani imkon qadar saqlash muhim.</text>
+<rect x="635" y="354" width="508" height="113" rx="20" fill="#FFFFFF" stroke="#DCEAE3" stroke-width="2"/>
+  <circle cx="675" cy="388" r="23" fill="#EBC179"/><text x="675" y="396" font-size="22" text-anchor="middle" font-weight="800" fill="#163B32">2</text>
+  <text x="715" y="390" font-size="24" font-weight="800" fill="#173B35">Bor shakli</text>
+  <text x="715" y="426" font-size="18" fill="#4F6B61">Ishlov xususiyati boshchaning geometriyasiga bog‘liq.</text>
+<rect x="635" y="485" width="508" height="113" rx="20" fill="#FFFFFF" stroke="#DCEAE3" stroke-width="2"/>
+  <circle cx="675" cy="519" r="23" fill="#EBC179"/><text x="675" y="527" font-size="22" text-anchor="middle" font-weight="800" fill="#163B32">3</text>
+  <text x="715" y="521" font-size="24" font-weight="800" fill="#173B35">Sovitish</text>
+  <text x="715" y="557" font-size="18" fill="#4F6B61">Rotatsion ishlovda issiqlikni kamaytirish vazifasini baj…</text>
+<path d="M50 639H1150" stroke="#B4D5C6" stroke-width="2"/>
+<text x="57" y="677" font-size="20" font-weight="600" fill="#285344">MEDSTUDY AI · Rasm orqali tushuntirish</text>
+<text x="57" y="711" font-size="17" fill="#547B6A">Mustaqil chizilgan soddalashtirilgan sxema · mutaxassis tekshiruvi talab etiladi.</text>
+</svg>

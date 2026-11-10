@@ -1,40 +1,42 @@
-# MedStudy AI — Flutter mobil ilovasi
+# MedStudy AI 2.0 — ruxsatli Android/iOS mobil ilova
 
-Android va iOS uchun boshlang'ich **offline mobil MVP**. Telegram bot va Railway
-serverlarini o'zgartirmaydi. Kod alohida \`feature/native-mobile-mvp\` shoxida.
+Kod: feature/mobile-auth-v2. Ishlab turgan Telegram Mini App va Railway production o'zgarmagan.
 
-## Birinchi versiyada
-- 6 fan, 81 mavzu, 631 test savoli (joriy MedStudy AI katalogidan)
-- 14 anatomik SVG sxema, lotincha anatomik belgilar
-- O'zbek lotin yozuvida ma'ruza matnlari va test izohlari
-- O'qilgan darslar va testning eng yaxshi natijalari qurilmada saqlanadi
-- Oq-yashil va qora-yashil ko'rinishlar
-- Dars va testlar faqat ilova ichida; asl PDF/Word/PPT yuklab olish yo'q
+## Talabalarga ruxsat
+1. Talaba ilovani ochganda darslar va testlar berilmaydi.
+2. Ism, email, parol bilan ro'yxatdan o'tadi: status pending.
+3. Telegram admin arizani ko'radi: /mobilepending.
+4. Admin /mobileapprove ID yoki Tasdiqlash tugmasi bilan tasdiqlaydi.
+5. Shundan keyingina talaba login qiladi va serverdan darslar, testlar, anatomiya sxemalarini oladi.
+6. /mobilereject ID arizani rad etadi; /mobilerevoke ID oldin berilgan ruxsat va faol sessiyalarni bekor qiladi.
 
-**Hozirgi cheklov:** bu offline MVP. Mustaqil akkaunt, xavfsiz server
-sinxronizatsiyasi, jonli AI Ustoz, Pro to'lov va push xabarnomalar hali
-ulanmagan. Mavjud backend Telegram initData talab qiladi, shuning uchun
-uni mobil akkauntga xavfsiz moslashtirish alohida ish bo'ladi.
+Yangi serverga bot ulanganida admin Telegramga yangi ariza haqida Tasdiqlash / Rad etish tugmali xabar oladi. Bu buyruqlar HAZIRGI production botda hali faol emas. Bir Telegram botning webhookini staging va productionga bir vaqtda ulash mumkin emas; ishlab turgan webhookni o'zgartirmaslik kerak.
 
-## Flutter bilan ishga tushirish
+## Himoya
+- Flutter APK ichiga darslar JSON va anatomiya SVG fayllari joylanmaydi. GitHub'da tarixiy assets manba sifatida qoladi, APKga kirmaydi.
+- /api/mobile/catalog va /api/mobile/diagrams/{id} endpointlari faqat tasdiqlangan akkauntning bearer tokeni bilan ishlaydi.
+- Har ishga tushirish va ilovaga qaytishda sessiya server bilan tekshiriladi; internet yo'q bo'lsa, kontent berilmaydi.
+- Parollar scrypt xeshi bilan, sessiyalar SHA-256 xeshlangan tokenlar bilan saqlanadi. Telefon tokenni secure storage orqali saqlaydi.
+- Progress qurilmada mobil akkauntga alohida bog'lanadi. Server sinxronizatsiyasi keyingi bosqich.
+- Materiallar mustaqil o'quv konspektlari; original PDF/Word/PPT fayllari APKda yo'q.
 
-\`\`\`sh
-cd mobile
-flutter create . --platforms=android,ios --project-name medstudy_ai --org uz.medstudy
-flutter pub get
-flutter run
-\`\`\`
+## Test server
+Productionga deploy qilmang. Mustaqil staging API, HTTPS va persistent DB kerak. Yangi backend branch stagingga o'rnatilmagan.
 
-Hozircha Android/iOS platforma generator papkalari GitHub'da yo'q:
-\`flutter create\` ular uchun birinchi marta kerak. iOS build uchun Mac va
-Xcode talab etiladi. Windows kompyuterida Android'ni sinab ko'rish mumkin.
+Flutterda:
+    cd mobile
+    flutter create . --platforms=android,ios --project-name medstudy_ai --org uz.medstudy
+    flutter pub get
+    flutter run --dart-define=MEDSTUDY_API_URL=https://YOUR-STAGING-DOMAIN
 
-## Kontent manbalari
+Android internet permission manifestga qo'shilishi kerak; GitHub Actions buni avtomatik qiladi.
+GitHub Actions ichidagi Android APK xavfsiz defaultga ega: server URL berilmagan bo'lsa, darslar bloklanadi.
+iOS build uchun Mac, Xcode va signing kerak.
 
-\`assets/data/lessons.json\` — \`content/lessons.json\` bilan bir xil blob,
-14 ta \`assets/illustrations/anat_*.svg\` — mavjud loyiha sxemalari.
-O'qituvchi PDF/DOC/PPT fayllari kiritilmaydi; faqat mustaqil qisqa
-konspektlar va testlar.
+## API yo'llari
+POST /api/mobile/register; POST /api/mobile/login; GET /api/mobile/me; POST /api/mobile/logout;
+GET /api/mobile/catalog; GET /api/mobile/diagrams/{id};
+GET /api/mobile/admin/pending; POST /api/mobile/admin/accounts/{id}/approve;
+POST /api/mobile/admin/accounts/{id}/reject; POST /api/mobile/admin/accounts/{id}/revoke.
 
-Katalogdagi \`AI_RESEARCH_DRAFT\` va \`USER_SOURCE_DRAFT\` materiallar
-mutaxassis tekshiruviga muhtoj. Darslar klinik maslahat o'rnini bosmaydi.
+Haqiqiy talabalarni qabul qilishdan avval email verification, parolni tiklash, foydalanuvchi ma'lumotlarini o'chirish va qo'shimcha security review talab etiladi.

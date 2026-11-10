@@ -16,6 +16,7 @@ from .study_plan import build_study_plan
 from .plans import plans_catalog
 from . import tutor
 from .lesson_helper import prepare_answer
+from . import mobile_auth, mobile_admin
 from .telegram_gateway import router as telegram_router, configure_telegram
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -61,6 +62,8 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(title='MedStudy AI Mini App', docs_url=None, redoc_url=None, lifespan=lifespan)
 app.include_router(telegram_router)
+app.include_router(mobile_auth.router)
+app.include_router(mobile_admin.router)
 app.state.store = STORE
 app.state.is_admin = is_admin
 app.mount('/static', StaticFiles(directory=ROOT / 'app' / 'static'), name='static')
@@ -343,3 +346,33 @@ async def tutor_ask(data: TutorQuestion, uid: int = Depends(consent_required)):
     return {**result,
             'remaining': max(0, min(per_user-used, globally-STORE.ai_global_usage())),
             'notice': 'AI javobi tekshirilmagan o‘quv materialiga asoslangan. Klinik maslahat emas.'}
+
+
+# Mobile account approvals are authorized only by a verified Telegram admin.
+# Keep this separate from the public mobile login endpoints.
+@app.get('/api/mobile/admin/pending')
+def mobile_pending(uid: int = Depends(current_user)):
+    if not is_admin(uid):
+        raise HTTPException(403, 'Administrator ruxsati kerak')
+    return {'items': mobile_auth.pending_accounts()}
+
+
+@app.post('/api/mobile/admin/accounts/{account_id}/approve')
+def mobile_approve(account_id: int, uid: int = Depends(current_user)):
+    if not is_admin(uid):
+        raise HTTPException(403, 'Administrator ruxsati kerak')
+    return mobile_auth.approve_account(account_id, True)
+
+
+@app.post('/api/mobile/admin/accounts/{account_id}/revoke')
+def mobile_revoke(account_id: int, uid: int = Depends(current_user)):
+    if not is_admin(uid):
+        raise HTTPException(403, 'Administrator ruxsati kerak')
+    return mobile_auth.approve_account(account_id, False)
+
+
+@app.post('/api/mobile/admin/accounts/{account_id}/reject')
+def mobile_reject(account_id: int, uid: int = Depends(current_user)):
+    if not is_admin(uid):
+        raise HTTPException(403, 'Administrator ruxsati kerak')
+    return mobile_auth.set_account_status(account_id, 'rejected')

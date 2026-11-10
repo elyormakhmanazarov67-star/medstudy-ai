@@ -1,52 +1,118 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'models/study_catalog.dart';
+import 'mobile_api.dart';
+import 'mobile_account.dart';
+import 'widgets/authorized_diagram.dart';
+import 'widgets/adaptive_study_navigation.dart';
 import 'models/study_progress.dart';
 
 const green = Color(0xFF20844D);
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  final catalog = await StudyCatalog.load();
   final prefs = await SharedPreferences.getInstance();
-  runApp(MedStudyRoot(catalog: catalog, prefs: prefs));
+  runApp(MedStudyRoot(prefs: prefs));
 }
 
 class MedStudyRoot extends StatefulWidget {
-  final StudyCatalog catalog;
   final SharedPreferences prefs;
-  const MedStudyRoot({super.key, required this.catalog, required this.prefs});
+  const MedStudyRoot({super.key, required this.prefs});
   @override
   State<MedStudyRoot> createState() => _MedStudyRootState();
 }
 
-class _MedStudyRootState extends State<MedStudyRoot> {
+class _MedStudyRootState extends State<MedStudyRoot> with WidgetsBindingObserver {
   late bool dark = widget.prefs.getBool('dark_theme') ?? false;
-  late final StudyProgress progress = StudyProgress(widget.prefs);
+  StudyCatalog? catalog;
+  StudyProgress? progress;
+  String? accountId;
+  String? notice;
+  final GlobalKey<NavigatorState> navigator = GlobalKey<NavigatorState>();
+  bool checking = true;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+    checkAccess();
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    progress?.dispose();
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.resumed) checkAccess();
+  }
+
+  Future<void> checkAccess() async {
+    if (!mounted) return;
+    setState(() { checking = true; catalog = null; notice = null; });
+    try {
+      final account = await MobileApi.me();
+      final nextCatalog = await MobileApi.catalog();
+      if (!mounted) return;
+      final userId = account['id'].toString();
+      if (accountId != userId) {
+        progress?.dispose();
+        progress = StudyProgress(widget.prefs, accountKey: userId);
+        accountId = userId;
+      }
+      setState(() { catalog = nextCatalog; checking = false; });
+    } on MobileApiException catch (error) {
+      if (error.status == 401 || error.status == 403) {
+        await MobileApi.clearToken();
+      }
+      if (!mounted) return;
+      navigator.currentState?.popUntil((route) => route.isFirst);
+      setState(() { catalog = null; checking = false; notice = error.message; });
+    } catch (_) {
+      if (!mounted) return;
+      navigator.currentState?.popUntil((route) => route.isFirst);
+      setState(() {
+        catalog = null;
+        checking = false;
+        notice = 'Serverga ulanib bo‘lmadi. Internetni tekshirib, qayta kiring.';
+      });
+    }
+  }
 
   void setDark(bool enabled) {
     setState(() => dark = enabled);
     widget.prefs.setBool('dark_theme', enabled);
   }
 
-  ThemeData createTheme(Brightness brightness) {
-    return ThemeData(
-      useMaterial3: true,
-      colorScheme: ColorScheme.fromSeed(seedColor: green, brightness: brightness),
-      scaffoldBackgroundColor: brightness == Brightness.dark
-          ? const Color(0xFF111B14) : const Color(0xFFF2F8F3),
-    );
-  }
+  ThemeData createTheme(Brightness brightness) => ThemeData(
+    useMaterial3: true,
+    colorScheme: ColorScheme.fromSeed(seedColor: green, brightness: brightness),
+    appBarTheme: AppBarTheme(
+      centerTitle: defaultTargetPlatform == TargetPlatform.iOS,
+      scrolledUnderElevation: 0,
+    ),
+    scaffoldBackgroundColor: brightness == Brightness.dark
+        ? const Color(0xFF111B14) : const Color(0xFFF2F8F3),
+  );
 
   @override
   Widget build(BuildContext context) => MaterialApp(
+    navigatorKey: navigator,
     title: 'MedStudy AI',
     debugShowCheckedModeBanner: false,
     theme: createTheme(Brightness.light),
     darkTheme: createTheme(Brightness.dark),
     themeMode: dark ? ThemeMode.dark : ThemeMode.light,
-    home: HomePage(catalog: widget.catalog, progress: progress, dark: dark, onTheme: setDark),
+    home: checking
+      ? const Scaffold(body: Center(child: CircularProgressIndicator()))
+      : catalog == null || progress == null
+        ? MobileAccountPage(onAuthChanged: checkAccess, notice: notice)
+        : HomePage(catalog: catalog!, progress: progress!, dark: dark,
+            onTheme: setDark, onAuthChanged: checkAccess),
   );
 }
 
@@ -55,8 +121,9 @@ class HomePage extends StatefulWidget {
   final StudyProgress progress;
   final bool dark;
   final ValueChanged<bool> onTheme;
+  final Future<void> Function() onAuthChanged;
   const HomePage({super.key, required this.catalog, required this.progress,
-      required this.dark, required this.onTheme});
+      required this.dark, required this.onTheme, required this.onAuthChanged});
   @override
   State<HomePage> createState() => _HomePageState();
 }
@@ -71,15 +138,9 @@ class _HomePageState extends State<HomePage> {
       builder: (context, _) => Scaffold(
         appBar: AppBar(title: Text(headings[tab],
             style: const TextStyle(fontWeight: FontWeight.bold))),
-        bottomNavigationBar: NavigationBar(
+        bottomNavigationBar: AdaptiveStudyNavigation(
           selectedIndex: tab,
-          onDestinationSelected: (index) => setState(() => tab = index),
-          destinations: const [
-            NavigationDestination(icon: Icon(Icons.home_outlined), label: 'Asosiy'),
-            NavigationDestination(icon: Icon(Icons.menu_book_outlined), label: 'Fanlar'),
-            NavigationDestination(icon: Icon(Icons.bar_chart_outlined), label: 'Natija'),
-            NavigationDestination(icon: Icon(Icons.settings_outlined), label: 'Sozlama'),
-          ],
+          onSelected: (index) => setState(() => tab = index),
         ),
         body: SafeArea(child: switch (tab) {
           0 => homeContent(),
@@ -181,6 +242,13 @@ class _HomePageState extends State<HomePage> {
   ]);
 
   Widget settingsContent() => ListView(padding: const EdgeInsets.all(16), children: [
+    Card(child: ListTile(
+      leading: const Icon(Icons.person_outline),
+      title: const Text('Talaba kabineti'),
+      subtitle: const Text('Ro‘yxatdan o‘tish yoki akkauntga kirish'),
+      trailing: const Icon(Icons.chevron_right),
+      onTap: () => Navigator.push(context, MaterialPageRoute<void>(builder: (_) => MobileAccountPage(onAuthChanged: widget.onAuthChanged))),
+    )),
     Card(child: SwitchListTile(
       title: const Text('Qora-yashil rejim'),
       subtitle: const Text('Oq-yashil yoki qora-yashil dizayn'),
@@ -188,15 +256,16 @@ class _HomePageState extends State<HomePage> {
       value: widget.dark,
       onChanged: widget.onTheme,
     )),
-    const Card(child: ListTile(
-      leading: Icon(Icons.phone_android_outlined),
-      title: Text('MedStudy AI · Mobil MVP'),
-      subtitle: Text('Offline rejim. Mustaqil login, AI Ustoz va Pro hali ulanmagan.'),
+    Card(child: ListTile(
+      leading: Icon(Theme.of(context).platform == TargetPlatform.iOS
+          ? Icons.phone_iphone_outlined : Icons.phone_android_outlined),
+      title: const Text('MedStudy AI 2.0'),
+      subtitle: const Text('iOS va Android · AI Ustoz va Pro keyingi bosqichda.'),
     )),
     const Card(child: ListTile(
       leading: Icon(Icons.privacy_tip_outlined),
       title: Text('Maxfiylik'),
-      subtitle: Text('O‘qish va test natijalari faqat ushbu qurilmada saqlanadi.'),
+      subtitle: Text('Test natijalari hozircha faqat ushbu qurilmada saqlanadi.'),
     )),
   ]);
 }
@@ -254,7 +323,7 @@ class LessonPage extends StatelessWidget {
             const Text('Rasm orqali tushuntirish',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
             const SizedBox(height: 12),
-            SvgPicture.asset(lesson.diagramAsset, height: 300),
+            AuthorizedDiagram(lessonId: lesson.id),
           ]),
         )),
         if (lesson.sections.isEmpty) const Card(child: Padding(
