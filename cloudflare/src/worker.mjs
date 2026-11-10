@@ -260,7 +260,7 @@ async function reviewWrong(request, env, lessonId) {
 const helpModes = new Set(['explain', 'example', 'recall', 'oral']);
 function lessonWords(text) {
   return new Set(String(text || '').toLocaleLowerCase('uz').normalize('NFKC')
-    .match(/[\\p{L}\\p{N}]{3,}/gu) || []);
+    .match(/[\p{L}\p{N}]{3,}/gu) || []);
 }
 function wordOverlap(first, second) {
   const words = lessonWords(first);
@@ -304,7 +304,7 @@ async function lessonHelp(request, env) {
   const section = sections[0].section;
   const body = String(section.body || '').slice(0,900);
   const heading = String(section.heading || '');
-  let answer = heading + '\\n\\n' + body;
+  let answer = heading + '\n\n' + body;
   if (mode !== 'explain' && (lesson.questions || []).length) {
     const quizzes = lesson.questions.map((q, i) => ({
       q, i,
@@ -314,12 +314,12 @@ async function lessonHelp(request, env) {
     if (mode === 'example') {
       const choice = quiz.options?.[quiz.answer];
       if (choice !== undefined)
-        answer = 'Darsdagi misol:\\n' + quiz.q + '\\nJavob: ' + choice +
-          '\\nIzoh: ' + (quiz.explanation || '');
+        answer = 'Darsdagi misol:\n' + quiz.q + '\nJavob: ' + choice +
+          '\nIzoh: ' + (quiz.explanation || '');
     } else {
-      const choices = (quiz.options || []).map((x,i) => String.fromCharCode(65+i) + ') ' + x).join('\\n');
-      answer = 'O‘zingizni tekshiring:\\n' + quiz.q + '\\n' + choices +
-        '\\n\\nJavobni to‘liq testda tekshiring. Bepul yordamchi yozma javobni baholamaydi.';
+      const choices = (quiz.options || []).map((x,i) => String.fromCharCode(65+i) + ') ' + x).join('\n');
+      answer = 'O‘zingizni tekshiring:\n' + quiz.q + '\n' + choices +
+        '\n\nJavobni to‘liq testda tekshiring. Bepul yordamchi yozma javobni baholamaydi.';
     }
   }
   return reply({
