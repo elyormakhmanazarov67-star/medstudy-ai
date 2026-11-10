@@ -172,12 +172,16 @@
   function showLesson(){
     state.tab='lesson';
     const l=state.lesson;
+    const preklinikSubject=(state.catalog?.subjects||[]).find(subject=>subject.id==='stom_prerest');
+    const isPreklinik=l.subject_id==='stom_prerest' ||
+      !!preklinikSubject?.lessons?.some(topic=>topic.id===l.id);
     shell('<button class="back" data-action="subject" data-id="'+rawEsc(l.subject_id)+'">← Mavzular</button>'+
       '<p class="eyebrow">'+esc(l.subject_title)+'</p><h1>'+esc(l.title)+'</h1>'+
       '<button class="card lesson-card" data-action="category" data-kind="required"><span class="lesson-icon">📘</span><span class="lesson-content"><strong>Kerakli ma’lumotlar</strong><small>Mavzu konspekti va testlar</small></span><span class="chevron">›</span></button>'+
+(isPreklinik?'<button class="card lesson-card anatomy-visual-entry" data-action="preklinik-visual"><span class="lesson-icon">🦷</span><span class="lesson-content"><strong>Rasm orqali tushuntirish</strong><small>Ushbu mavzuga oid sxema va 3 ta izoh</small></span><span class="chevron">›</span></button>':'')+
       '<button class="card lesson-card" data-action="tutor" data-id="'+rawEsc(l.id)+'"><span class="lesson-icon">🎓</span><span class="lesson-content"><strong>AI Ustoz bilan o‘rganish</strong><small>Ushbu mavzuga oid savol-javob</small></span><span class="chevron">›</span></button>'+
       (l.subject_id==='odam_anatomiyasi_1'?'<button class="card lesson-card anatomy-visual-entry" data-action="anatomy-visual"><span class="lesson-icon">🦴</span><span class="lesson-content"><strong>Rasm orqali tushuntirish</strong><small>Har bir mavzuga mos tayyor sxema va lotincha nomlar</small></span><span class="chevron">›</span></button>':'')+
-      (l.subject_id==='stom_prerest'?'<button class="card lesson-card anatomy-visual-entry" data-action="preklinik-visual"><span class="lesson-icon">🦷</span><span class="lesson-content"><strong>Rasm orqali tushuntirish</strong><small>Ushbu mavzuga oid sxema va 3 ta izoh</small></span><span class="chevron">›</span></button>':'')+
+      
       (l.questions?.length?'<button class="btn btn-primary btn-wide lesson-quiz-cta" data-action="start-quiz">✓ Testni boshlash ('+l.questions.length+')</button>':'')+disclaimer);
   }
 
