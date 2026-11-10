@@ -5,7 +5,7 @@ import { readFileSync, mkdirSync, cpSync, rmSync, writeFileSync } from 'node:fs'
 import { dirname, resolve, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const root = resolve(dirname(fileURLToPath(import.meta.url)), '..', '..', '..');
+const root = resolve(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const publicDir = join(root, 'cloudflare', 'public');
 const generatedDir = join(root, 'cloudflare', 'generated');
 const raw = readFileSync(join(root, 'content', 'lessons.json'), 'utf8');
