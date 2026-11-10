@@ -31,12 +31,12 @@ def public_url() -> str:
 
 # A changed launch URL tells Telegram Desktop/WebView to open a fresh Mini App
 # session instead of reusing a previously opened page after a deployment.
-MINI_APP_LAUNCH_BUILD = 'preklinik-20261110-refresh1'
+MINI_APP_LAUNCH_PATH = '/miniapp/preklinik-20261110-v2'
 
 
 def mini_app_launch_url() -> str:
     base = public_url()
-    return base + '/?miniapp=' + MINI_APP_LAUNCH_BUILD if base else ''
+    return base + MINI_APP_LAUNCH_PATH if base else ''
 
 
 def bot_token() -> str:
