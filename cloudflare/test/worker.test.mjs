@@ -106,7 +106,7 @@ test('consent, subjects and lessons work for approved fake student; answers are 
   assert.equal(missing.status,404);
 });
 
-test('unsupported writes and webhook return an explicit disabled response', async () => {
-  assert.equal((await responseJson('/api/attempts',{db:fakeDb(),method:'POST'})).status,501);
+test('invalid quiz requests and live Telegram webhook are denied', async () => {
+  assert.equal((await responseJson('/api/attempts',{db:fakeDb(),method:'POST'})).status,400);
   assert.equal((await responseJson('/telegram/webhook',{db:fakeDb()})).status,503);
 });
