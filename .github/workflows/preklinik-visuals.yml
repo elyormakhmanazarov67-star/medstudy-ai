@@ -3,8 +3,13 @@ on:
   push:
     branches:
       - feature/preklinik-visuals-20261110
+      - fix/miniapp-preklinik-refresh-20261110
     paths:
       - 'app/static/app.js'
+      - 'app/main.py'
+      - 'app/telegram_gateway.py'
+      - 'tests/test_webhook.py'
+      - 'tests/test_miniapp_fresh_assets.py'
       - 'app/static/index.html'
       - 'tests/check_theme.cjs'
       - 'app/static/illustrations/preklinik/**'
@@ -33,4 +38,4 @@ jobs:
           AI_ENABLED: '0'
           DATABASE_PATH: '/tmp/medstudy-preklinik-ci.sqlite'
         run: |
-          python -m pytest -q tests/test_preklinik_visuals.py tests/test_miniapp.py tests/test_curriculum.py tests/test_materials.py
+          python -m pytest -q tests/test_preklinik_visuals.py tests/test_miniapp_fresh_assets.py tests/test_webhook.py tests/test_miniapp.py tests/test_curriculum.py tests/test_materials.py
