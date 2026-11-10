@@ -51,6 +51,6 @@ jobs:
           config=Path('cloudflare/wrangler.jsonc').read_text()
           assert 'BOT_TOKEN' not in config
           assert 'QDRANT_API_KEY' not in config
-          assert 'REPLACE_AFTER_D1_DATABASE_CREATION' in config
+          assert '"database_id": "3a1de55b-ce29-49cb-af3a-f674c8af2d15"' in config
           print('PREVIEW_ONLY: no production credentials or deploy actions')
           PY
