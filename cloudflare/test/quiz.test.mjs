@@ -149,7 +149,7 @@ test('Quiz rejects forged scores, wrong IDs, invalid answers and unsigned users'
   const good={lesson_id:lessonId,question_ids:ids,answers};
   const forged=await send(db,'/api/attempts',{method:'POST',body:{...good,score:100,answers:[0]}});
   assert.equal(forged.status,422);
-  const fakeIds=await send(db,'/api/attempts',{method:'POST',body:{...good,question_ids:['fake']}});
+  const fakeIds=await send(db,'/api/attempts',{method:'POST',body:{...good,question_ids:[...ids.slice(0,-1),'fake']}});
   assert.equal(fakeIds.status,400);
   const badAnswer=await send(db,'/api/attempts',{method:'POST',body:{...good,answers:answers.map(()=>5)}});
   assert.equal(badAnswer.status,422);
