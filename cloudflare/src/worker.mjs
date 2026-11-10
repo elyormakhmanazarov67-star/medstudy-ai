@@ -188,12 +188,11 @@ async function submitAttempt(request, env) {
     return error(429, 'Juda ko‘p so‘rov yuborildi. Bir daqiqadan so‘ng qayta urinib ko‘ring.');
   }
 
-  // Use a unique client-generated integer ID so all statements can run in one
-  // atomic D1 batch, without relying on last_insert_rowid() across statements.
-  const random = crypto.getRandomValues(new Uint32Array(2));
-  const attemptId = Number(
-    ((BigInt(random[0]) << 32n) | BigInt(random[1])) & ((1n << 52n) - 1n)
-  ) + 1;
+  // Timestamp-first integer ID preserves the existing latest/retry/history
+  // queries ordered by id. The small random suffix reduces same-ms collisions.
+  // Integer stays inside JavaScript's safe range for the foreseeable future.
+  const random = crypto.getRandomValues(new Uint16Array(1))[0];
+  const attemptId = Date.now() * 2048 + (random % 2048);
   const createdAt = new Date().toISOString();
   const statements = [
     env.DB.prepare(
