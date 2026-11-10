@@ -230,7 +230,13 @@
     loading();try{const r=await api('/review/'+encodeURIComponent(state.lesson.id));if(!r.questions.length){startQuiz(state.lesson.questions);return;}startQuiz(r.questions,'retry','required');}catch(e){fail(e);}
   }
   async function progress(){
-    state.tab='progress';loading();try{[state.progress,state.studyPlan,state.history]=await Promise.all([api('/progress'),api('/study-plan'),api('/history?limit=12')]);renderProgress();}catch(e){fail(e);}
+    state.tab='progress';loading();try{
+      [state.progress,state.history]=await Promise.all([api('/progress'),api('/history?limit=12')]);
+      // Study-plan is optional in the Cloudflare pilot. Its route is not yet implemented;
+      // do not hide saved D1 quiz results when the optional feature returns 501.
+      state.studyPlan=await api('/study-plan').catch(()=>({items:[]}));
+      renderProgress();
+    }catch(e){fail(e);}
   }
   function renderProgress(){
     state.tab='progress';const p=state.progress||{latest:[],attempts_count:0};
