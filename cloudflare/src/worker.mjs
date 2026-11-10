@@ -1,6 +1,6 @@
-/* MedStudy AI Cloudflare Free preview: no live webhook and no quiz writes.
- * This pilot deliberately fails closed for missing secrets, missing D1, and
- * missing approvals. It never copies private Railway data automatically.
+/* MedStudy AI Cloudflare Free preview: the live Telegram webhook remains disabled.
+ * Authenticated quiz writes use D1, but no Railway data is migrated by this
+ * preview. Missing secrets, D1 and approvals still fail closed.
  */
 import catalog from '../generated/catalog.mjs';
 
