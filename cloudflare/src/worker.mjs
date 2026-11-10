@@ -3,6 +3,7 @@
  * preview. Missing secrets, D1 and approvals still fail closed.
  */
 import catalog from '../generated/catalog.mjs';
+import { handleTelegramWebhook } from './telegram.mjs';
 
 const reply = (body, status = 200) => new Response(JSON.stringify(body), {
   status, headers: { 'content-type': 'application/json; charset=utf-8',
@@ -261,6 +262,7 @@ export async function handleRequest(request, env) {
     return reply({ status: 'ok', version: catalog.version, provider: 'cloudflare-preview',
       migration_ready: false, approval_required: env.ACCESS_APPROVAL_ENABLED === '1' });
   }
+  if (path === '/telegram/webhook') return handleTelegramWebhook(request, env);
   if (path.startsWith('/telegram') || path.startsWith('/bot/')) {
     return error(503, 'Telegram webhook hali ko‘chirilmagan');
   }
