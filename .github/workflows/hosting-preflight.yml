@@ -8,6 +8,7 @@ on:
       - 'hosting/**'
       - '.dockerignore'
       - 'tests/test_hosting_portability.py'
+      - 'tests/test_hosting_recovery.py'
       - '.github/workflows/hosting-preflight.yml'
   workflow_dispatch:
 
@@ -38,13 +39,15 @@ jobs:
           AUTO_SET_WEBHOOK: '0'
           DATABASE_PATH: '/tmp/medstudy-hosting-preflight-ci.sqlite'
         run: |
-          python -m pytest -q tests/test_hosting_portability.py tests/test_miniapp.py tests/test_webhook.py
+          python -m pytest -q tests/test_hosting_portability.py tests/test_hosting_recovery.py tests/test_miniapp.py tests/test_webhook.py
       - name: Build container and test unauthenticated health endpoint
         run: |
           docker build -f Dockerfile -t medstudy-portable:ci .
           docker run -d --name medstudy-hosting-smoke \
             -p 127.0.0.1:17890:8000 \
-            -e BOT_TOKEN= \
+            -e BOT_TOKEN=111111:test-only-token \
+            -e PUBLIC_FREE_ENABLED=1 \
+            -e ACCESS_APPROVAL_ENABLED=0 \
             -e AUTO_SET_WEBHOOK=0 \
             -e AI_ENABLED=0 \
             -e DATABASE_PATH=/app/data/medstudy.db \
@@ -54,4 +57,5 @@ jobs:
             sleep 1
           done
           python -c "import json; assert json.load(open('/tmp/medstudy-health.json'))['status']=='ok'"
+          python hosting/load_smoke.py --base http://127.0.0.1:17890 --students 35
           docker stop medstudy-hosting-smoke
