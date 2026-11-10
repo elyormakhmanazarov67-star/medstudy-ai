@@ -1,6 +1,6 @@
 # MedStudy AI — free Cloudflare Workers + D1 migration pilot
 
-**Status: source-code preview only. NOT deployed, NOT ready to replace Railway.**
+**Status: the Cloudflare Preview has been deployed. The new Telegram command gateway is implemented and offline-tested on this feature branch, but stays DISABLED by default. Not ready to replace Railway.**
 
 Our goal is zero recurring platform charges for a small school cohort of
 10–20 students (up to 35 maximum), without keeping a home computer running.
@@ -54,16 +54,13 @@ Run without any Cloudflare account or real Telegram key:
 
 Not implemented, do not switch over yet:
 
-- Telegram webhook, /start subscription requests, administrator approvals
-  and bot commands.
+- Activating and verifying the isolated test-bot webhook on Cloudflare with a separate Telegram bot.
 - Real-cloud end-to-end signed student quiz tests and recovery from failure.
 - Study planning, full AI Ustoz helper and optional Qdrant integration.
 - Restoring private student SQLite data into D1 with consistency checks.
 - Real-cloud testing and handling Cloudflare Free limits.
 
-Remaining unimplemented API routes return an explicit 501, and webhook routes
-return 503. This is intentional, to prevent silent corruption during
-testing.
+Remaining unimplemented API routes return an explicit 501. Telegram webhook returns 503 unless TELEGRAM_WEBHOOK_ENABLED=1, and requires correct secrets and the D1 replay-protection migration before use. Do not turn it on for the existing Railway bot.
 
 ## How to prepare an actual Cloudflare Free preview — when ready
 
@@ -113,3 +110,38 @@ test-bot sessions and retain a rollback plan. Never overwrite newer
 student progress with an older backup.
 
 Keep Railway operating until the new application is fully compatible.
+
+
+## New test-bot gateway (code only, OFF by default)
+
+The preview feature branch now has a Telegram command gateway that handles
+/start, /myid, /status, /privacy, and the admin commands /requests,
+/approve ID, /reject ID, /revoke ID. It also handles inline approval buttons.
+The webhook validates Telegram's secret header and rejects updates without it.
+Replay protection uses the new D1 table telegram_updates; full Telegram
+messages and student names are not stored.
+
+We intentionally have NOT enabled the gateway or changed the Railway webhook.
+
+1. Before deployment, keep this isolated preview on its own Worker name and
+   ensure GitHub Actions tests pass.
+2. Apply only the NEW second migration on the already-created D1 database:
+   npx.cmd wrangler d1 migrations apply medstudy-ai-free --remote
+3. Create a SEPARATE Telegram test bot. Do not use the Railway production bot.
+   Do not send Bot API tokens, secret headers or personal IDs in chat/screenshots.
+4. On the Cloudflare Worker, set BOT_TOKEN and TELEGRAM_WEBHOOK_SECRET as
+   encrypted Worker secrets for the test bot only. The webhook secret must be
+   a random 16–256-character string made of letters, numbers, _ or -.
+   ADMIN_USER_IDS must be set to the intended test administrator ID.
+5. WEB_APP_URL should match the preview Worker origin. Only after reviewing
+   configuration, opt in to TELEGRAM_WEBHOOK_ENABLED=1 on the test Worker.
+   There is no automatic setWebhook, so registering
+   https://medstudy-ai-free-preview.elyormakhmanazarov67.workers.dev/telegram/webhook
+   as a Telegram webhook is a separate deliberate action for the TEST bot
+   and must include the matching secret_token.
+6. Verify student approval/revocation and the signed Mini App on the separate
+   test bot before any possible production cutover.
+
+No production bot token, student database or webhook is moved by this code
+change. For more information see the official Telegram Bot API setWebhook
+documentation: https://core.telegram.org/bots/api#setwebhook
