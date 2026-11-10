@@ -61,7 +61,9 @@
   const disclaimer = `<div class="caution">⚠️ Mazkur darslar sinov materialidir; mutaxassis ko‘rigidan o‘tmagan. Klinik amaliyot uchun yo‘riqnoma yoki rasmiy universitet xizmati emas.</div>`;
   // Original, offline-friendly anatomy illustrations are independent of Pro AI.
   const ANATOMY_VISUAL_URL='/static/illustrations/catalog.json';
+  const PREKLINIK_VISUAL_URL='/static/illustrations/preklinik/catalog.json';
   let anatomyVisualIndex=null;
+  let preklinikVisualIndex=null;
   const shell = content => { app.innerHTML = strings(header() + '<main>' + content + '</main>' + nav()); window.scrollTo(0,0); };
   const loading = () => { app.innerHTML = `<div class="boot"><div class="loader"></div><p>Ma’lumotlar yuklanmoqda…</p></div>`; };
   const fail = err => shell(`<div class="empty"><div class="symbol">⚠️</div><h2>Ulanishda xatolik</h2><p class="error">${esc(err.message)}</p><button class="btn btn-primary" data-action="retry">Qayta urinish</button><p class="smallprint">Telegram orqali qayta oching. Lokal demo uchun yo‘riqnoma bilan ishga tushiring.</p></div>`);
@@ -98,6 +100,35 @@
         disclaimer);
     }catch(error){fail(error);}
   }
+  async function showPreklinikVisual(){
+    const lesson=state.lesson;
+    if(!lesson || lesson.subject_id!=='stom_prerest'){showLesson();return;}
+    state.tab='preklinik-visual';
+    loading();
+    try{
+      if(!preklinikVisualIndex){
+        const response=await fetch(PREKLINIK_VISUAL_URL,{cache:'no-store'});
+        if(!response.ok)throw new Error('Preklinik rasmlari yuklanmadi');
+        preklinikVisualIndex=await response.json();
+      }
+      const visual=preklinikVisualIndex[lesson.id];
+      if(!visual || !visual.src || !Array.isArray(visual.facts) || visual.facts.length!==3){
+        throw new Error('Ushbu mavzuning o‘quv sxemasi topilmadi');
+      }
+      const facts=visual.facts.map(([heading,detail],i)=>
+        '<div class="anatomy-visual-fact"><span class="anatomy-visual-number">'+(i+1)+
+        '</span><div><strong>'+esc(heading)+'</strong><p>'+esc(detail)+'</p></div></div>').join('');
+      shell('<button class="back" data-action="lesson" data-id="'+rawEsc(lesson.id)+'">← Mavzuga qaytish</button>'+
+        '<p class="eyebrow">'+esc(lesson.subject_title)+'</p><h1>Rasm orqali tushuntirish</h1>'+
+        '<p class="smallprint">'+esc(visual.title)+'</p>'+
+        '<figure class="anatomy-visual-figure"><img src="'+rawEsc(visual.src)+
+        '" alt="'+esc(visual.alt)+'" loading="eager" decoding="async" />'+
+        '<figcaption>'+esc(visual.notice || 'Soddalashtirilgan o‘quv sxemasi; mutaxassis tekshiruvi talab etiladi.')+'</figcaption></figure>'+
+        '<section class="card anatomy-visual-facts"><h3>Rasmdagi asosiy tushunchalar</h3>'+facts+'</section>'+
+        disclaimer);
+    }catch(error){fail(error);}
+  }
+
   function home() {
     state.tab='home';
     const subjects=state.catalog?.subjects || [];
@@ -146,6 +177,7 @@
       '<button class="card lesson-card" data-action="category" data-kind="required"><span class="lesson-icon">📘</span><span class="lesson-content"><strong>Kerakli ma’lumotlar</strong><small>Mavzu konspekti va testlar</small></span><span class="chevron">›</span></button>'+
       '<button class="card lesson-card" data-action="tutor" data-id="'+rawEsc(l.id)+'"><span class="lesson-icon">🎓</span><span class="lesson-content"><strong>AI Ustoz bilan o‘rganish</strong><small>Ushbu mavzuga oid savol-javob</small></span><span class="chevron">›</span></button>'+
       (l.subject_id==='odam_anatomiyasi_1'?'<button class="card lesson-card anatomy-visual-entry" data-action="anatomy-visual"><span class="lesson-icon">🦴</span><span class="lesson-content"><strong>Rasm orqali tushuntirish</strong><small>Har bir mavzuga mos tayyor sxema va lotincha nomlar</small></span><span class="chevron">›</span></button>':'')+
+      (l.subject_id==='stom_prerest'?'<button class="card lesson-card anatomy-visual-entry" data-action="preklinik-visual"><span class="lesson-icon">🦷</span><span class="lesson-content"><strong>Rasm orqali tushuntirish</strong><small>Ushbu mavzuga oid sxema va 3 ta izoh</small></span><span class="chevron">›</span></button>':'')+
       (l.questions?.length?'<button class="btn btn-primary btn-wide lesson-quiz-cta" data-action="start-quiz">✓ Testni boshlash ('+l.questions.length+')</button>':'')+disclaimer);
   }
 
@@ -400,6 +432,7 @@
         case 'progress':await progress();break;
         case 'privacy':privacy();break;
         case 'anatomy-visual':await showPresetAnatomyVisual();break;
+        case 'preklinik-visual':await showPreklinikVisual();break;
         case 'anatomy-image':resetAnatomyImage();await anatomyImageScreen();break;
         case 'anatomy-consent':await api('/tutor/consent','POST');await anatomyImageScreen();break;
         case 'anatomy-send':await sendAnatomyImage();break;
