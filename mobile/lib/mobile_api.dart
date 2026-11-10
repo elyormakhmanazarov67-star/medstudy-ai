@@ -104,6 +104,22 @@ class MobileApi {
     }
   }
 
+  static Future<Map<String, dynamic>> preklinikVisual(String lessonId) async {
+    if (!RegExp(r'^[a-z0-9_]{1,100}
+      storage.delete(key: 'mobile_access_token');
+}
+).hasMatch(lessonId)) {
+      throw const MobileApiException('Ushbu mavzu uchun rasm topilmadi.');
+    }
+    final response = jsonDecode(
+      await _get('/api/mobile/preklinik-visual/' + Uri.encodeComponent(lessonId)),
+    );
+    if (response is! Map) {
+      throw const MobileApiException('Rasm ma’lumotlari noto‘g‘ri.');
+    }
+    return Map<String, dynamic>.from(response);
+  }
+
   static Future<void> clearToken() async =>
       storage.delete(key: 'mobile_access_token');
 }
