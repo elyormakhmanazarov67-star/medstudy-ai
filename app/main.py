@@ -79,7 +79,17 @@ app.mount('/static', FreshMiniAppStaticFiles(directory=ROOT / 'app' / 'static'),
 
 @app.get('/')
 def index():
-    return FileResponse(ROOT / 'app' / 'static' / 'index.html', headers={'Cache-Control':'no-store'})
+    return FileResponse(ROOT / 'app' / 'static' / 'index.html', headers={'Cache-Control':'no-store, max-age=0, must-revalidate'})
+
+
+@app.get('/miniapp/preklinik-20261110-v2', include_in_schema=False)
+def preklinik_miniapp_v2():
+    """Fresh Telegram launch path, with existing auth unchanged."""
+    return FileResponse(
+        ROOT / 'app' / 'static' / 'index.html',
+        headers={'Cache-Control':'no-store, max-age=0, must-revalidate',
+                 'Pragma':'no-cache'},
+    )
 
 @app.get('/api/health')
 def health():
