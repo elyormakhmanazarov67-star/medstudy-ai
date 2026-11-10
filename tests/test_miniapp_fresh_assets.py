@@ -33,5 +33,10 @@ def test_mini_app_script_and_diagram_assets_cannot_be_stale():
 def test_versioned_telegram_entrypoint(monkeypatch):
     monkeypatch.setenv('WEB_APP_URL', 'https://medstudy.example.org')
     url = telegram_gateway.mini_app_launch_url()
-    assert url.startswith('https://medstudy.example.org/?miniapp=preklinik-')
+    assert url == 'https://medstudy.example.org/miniapp/preklinik-20261110-v2'
     assert 'telegram' not in url.lower()
+    with TestClient(main.app) as client:
+        page = client.get('/miniapp/preklinik-20261110-v2')
+        assert page.status_code == 200
+        assert 'app.js?v=1.0.8' in page.text
+        assert 'no-store' in page.headers['cache-control']
