@@ -102,6 +102,41 @@
     if(!cards) cards = '<div class="empty"><h3>Hozircha ma’lumot yo‘q</h3><p>Ushbu mavzu bo‘yicha konspekt hali berilmagan.</p></div>';
     shell(back+'<p class="eyebrow">'+esc(lesson.subject_title)+'</p><h1>Kerakli ma’lumotlar</h1>'+cards+disclaimer);
   };
+  const PREKLINIK_VISUAL_CATALOG='/static/illustrations/preklinik/catalog.json';
+  let preklinikVisualIndex=null;
+
+  async function showPreklinikVisual(){
+    const lesson=state.lesson;
+    if(!lesson || lesson.subject_id!=='stom_prerest'){
+      showLesson();
+      return;
+    }
+    state.tab='preklinik-visual';
+    loading();
+    try{
+      if(!preklinikVisualIndex){
+        const response=await fetch(PREKLINIK_VISUAL_CATALOG,{cache:'no-store'});
+        if(!response.ok)throw new Error('Rasmlar katalogini yuklab bo‘lmadi');
+        preklinikVisualIndex=await response.json();
+      }
+      const visual=preklinikVisualIndex[lesson.id];
+      if(!visual || !visual.src || !Array.isArray(visual.facts) || visual.facts.length!==3){
+        throw new Error('Ushbu mavzu uchun sxema topilmadi');
+      }
+      const facts=visual.facts.map(([term,description],i)=>
+        '<div class="visual-fact"><span class="visual-number">'+(i+1)+
+        '</span><div><strong>'+esc(term)+'</strong><p>'+esc(description)+'</p></div></div>').join('');
+      shell('<button class="back" data-action="lesson" data-id="'+rawEsc(lesson.id)+'">← Mavzuga qaytish</button>'+
+        '<p class="eyebrow">'+esc(lesson.subject_title)+'</p>'+
+        '<h1>Rasm orqali tushuntirish</h1><p class="smallprint">'+esc(visual.title)+'</p>'+
+        '<figure class="visual-figure"><img class="visual-image" src="'+rawEsc(visual.src)+
+        '" alt="'+esc(visual.alt)+'" loading="eager" decoding="async" />'+
+        '<figcaption>'+esc(visual.notice || 'Soddalashtirilgan o‘quv sxemasi.')+'</figcaption></figure>'+
+        '<section class="card visual-guide"><h3>Rasmdagi asosiy tushunchalar</h3>'+facts+'</section>'+
+        disclaimer);
+    }catch(error){fail(error);}
+  }
+
   function showVisualLesson(){
     const l = state.lesson;
     const visual = l && VISUAL_LESSONS[l.id];
@@ -161,6 +196,7 @@
     shell('<button class="back" data-action="subject" data-id="'+rawEsc(l.subject_id)+'">← Mavzular</button>'+
       '<p class="eyebrow">'+esc(l.subject_title)+'</p><h1>'+esc(l.title)+'</h1>'+
       '<button class="card lesson-card" data-action="category" data-kind="required"><span class="lesson-icon">📘</span><span class="lesson-content"><strong>Kerakli ma’lumotlar</strong><small>Mavzu konspekti va testlar</small></span><span class="chevron">›</span></button>'+
+      (l.subject_id==='stom_prerest' ? '<button class="card lesson-card visual-entry" data-action="preklinik-visual"><span class="lesson-icon">🦷</span><span class="lesson-content"><strong>Rasm orqali tushuntirish</strong><small>Mavzuga mos sxema va 3 ta tushuntirish</small></span><span class="chevron">›</span></button>' : '')+
       (VISUAL_LESSONS[l.id] ? '<button class="card lesson-card visual-entry" data-action="visual"><span class="lesson-icon">🦴</span><span class="lesson-content"><strong>Rasm orqali tushuntirish</strong><small>Lotincha nomlar bilan anatomik sxema</small></span><span class="chevron">›</span></button>' : '')+
       '<button class="card lesson-card" data-action="tutor" data-id="'+rawEsc(l.id)+'"><span class="lesson-icon">🎓</span><span class="lesson-content"><strong>AI Ustoz bilan o‘rganish</strong><small>Ushbu mavzuga oid savol-javob</small></span><span class="chevron">›</span></button>'+
       (l.questions?.length?'<button class="btn btn-primary btn-wide lesson-quiz-cta" data-action="start-quiz">✓ Testni boshlash ('+l.questions.length+')</button>':'')+disclaimer);
@@ -319,6 +355,7 @@
         case 'subject':showSubject(el.dataset.id);break;
         case 'category':if(state.lesson)displayCategory(state.lesson);break;
         case 'visual':if(state.lesson)showVisualLesson();break;
+        case 'preklinik-visual':if(state.lesson)await showPreklinikVisual();break;
         case 'lesson': if(el.dataset.id)await getLesson(el.dataset.id);break;
         case 'start-quiz':if(state.lesson && state.lesson.questions?.length)startQuiz(state.lesson.questions,'full','required');break;
         case 'answer':state.quiz.answers[state.quiz.pos]=Number(el.dataset.value);renderQuiz();break;
