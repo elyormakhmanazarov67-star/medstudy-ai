@@ -5,6 +5,8 @@ on:
       - feature/preklinik-visuals-20261110
     paths:
       - 'app/static/app.js'
+      - 'app/static/index.html'
+      - 'tests/check_theme.cjs'
       - 'app/static/illustrations/preklinik/**'
       - 'tests/test_preklinik_visuals.py'
       - '.github/workflows/preklinik-visuals.yml'
@@ -24,6 +26,7 @@ jobs:
       - name: Validate Telegram Mini App JavaScript
         run: |
           node --check app/static/app.js
+          node tests/check_theme.cjs
       - name: Validate every Preklinik diagram and existing Mini App APIs
         env:
           AUTO_SET_WEBHOOK: '0'
