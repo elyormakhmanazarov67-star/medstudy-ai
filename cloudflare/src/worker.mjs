@@ -256,6 +256,138 @@ async function reviewWrong(request, env, lessonId) {
     questions: ids.map(id => lookup.get(id)).filter(Boolean).map(publicQuestion) });
 }
 
+
+const helpModes = new Set(['explain', 'example', 'recall', 'oral']);
+function lessonWords(text) {
+  return new Set(String(text || '').toLocaleLowerCase('uz').normalize('NFKC')
+    .match(/[\\p{L}\\p{N}]{3,}/gu) || []);
+}
+function wordOverlap(first, second) {
+  const words = lessonWords(first);
+  let matches = 0;
+  for (const word of lessonWords(second)) if (words.has(word)) matches++;
+  return matches;
+}
+async function lessonHelp(request, env) {
+  const session = await consentedUser(request, env);
+  if (session.failure) return session.failure;
+  if (Number(request.headers.get('content-length') || 0) > 4096) return error(413, 'Savol juda uzun');
+  let data;
+  try {
+    const raw = await request.text();
+    if (raw.length > 4096) return error(413, 'Savol juda uzun');
+    data = JSON.parse(raw);
+  } catch { return error(400, 'Savol formati noto‘g‘ri'); }
+  const question = data?.question, mode = data?.mode ?? 'explain';
+  if (!validID(data?.lesson_id) || typeof question !== 'string' ||
+      question.trim().length < 5 || question.length > 500 || !helpModes.has(mode)) {
+    return error(422, 'Savol yoki o‘rganish usuli noto‘g‘ri');
+  }
+  const found = lessonById(data.lesson_id);
+  if (!found) return error(404, 'Mavzu topilmadi');
+  const lesson = found.lesson;
+  if (!(lesson.sections || []).length) return error(409, 'Bu mavzu uchun konspekt hali berilmagan');
+  if (!await reserveRateLimit(env.DB, session.uid, 'lesson_help', 12)) {
+    return error(429, 'Bir daqiqalik yordamchi limiti tugadi');
+  }
+  const sections = lesson.sections.map((section, i) => ({
+    section, i,
+    score: 5 * wordOverlap(question, section.heading) + wordOverlap(question, section.body)
+  })).sort((a,b) => b.score - a.score || a.i - b.i);
+  if (!sections.length || sections[0].score <= 0) {
+    return reply({
+      answer: 'Bu savolga mos izoh tanlangan dars matnida topilmadi. Savolni darsdagi atamalar bilan qayta yozing.',
+      sections: [], provider: 'lesson',
+      notice: 'Bepul konspekt yordamchisi. Sun’iy intellekt emas.'
+    });
+  }
+  const section = sections[0].section;
+  const body = String(section.body || '').slice(0,900);
+  const heading = String(section.heading || '');
+  let answer = heading + '\\n\\n' + body;
+  if (mode !== 'explain' && (lesson.questions || []).length) {
+    const quizzes = lesson.questions.map((q, i) => ({
+      q, i,
+      score: 3 * wordOverlap(question, q.q) + wordOverlap(question, q.explanation)
+    })).sort((a,b) => b.score - a.score || a.i - b.i);
+    const quiz = quizzes[0].q;
+    if (mode === 'example') {
+      const choice = quiz.options?.[quiz.answer];
+      if (choice !== undefined)
+        answer = 'Darsdagi misol:\\n' + quiz.q + '\\nJavob: ' + choice +
+          '\\nIzoh: ' + (quiz.explanation || '');
+    } else {
+      const choices = (quiz.options || []).map((x,i) => String.fromCharCode(65+i) + ') ' + x).join('\\n');
+      answer = 'O‘zingizni tekshiring:\\n' + quiz.q + '\\n' + choices +
+        '\\n\\nJavobni to‘liq testda tekshiring. Bepul yordamchi yozma javobni baholamaydi.';
+    }
+  }
+  return reply({
+    answer: answer.slice(0,1600), sections:[heading], provider:'lesson',
+    notice:'Bepul konspekt yordamchisi. Sun’iy intellekt emas; materiallar DRAFT.'
+  });
+}
+async function studyPlan(request, env) {
+  const session = await consentedUser(request, env);
+  if (session.failure) return session.failure;
+  const uid = session.uid;
+  const [full, recentWrong] = await Promise.all([
+    env.DB.prepare(
+      "SELECT a.lesson_id,a.score,a.total FROM attempts a " +
+      "JOIN (SELECT lesson_id,MAX(id) AS attempt_id FROM attempts WHERE user_id=? AND mode='full' GROUP BY lesson_id) x " +
+      "ON a.id=x.attempt_id"
+    ).bind(uid).all(),
+    env.DB.prepare(
+      "SELECT a.lesson_id, COUNT(ans.id) AS wrong_count FROM attempts a " +
+      "JOIN (SELECT lesson_id,MAX(id) AS attempt_id FROM attempts WHERE user_id=? AND mode IN ('full','retry') GROUP BY lesson_id) x " +
+      "ON a.id=x.attempt_id LEFT JOIN answers ans ON ans.attempt_id=a.id AND ans.correct=0 " +
+      "GROUP BY a.lesson_id"
+    ).bind(uid).all(),
+  ]);
+  const lastFull = new Map((full.results||[]).map(x=>[x.lesson_id,x]));
+  const errors = new Map((recentWrong.results||[]).map(x=>[x.lesson_id,x.wrong_count]));
+  const items=[];
+  for (const subject of catalog.subjects) for(const lesson of subject.lessons) {
+    const row=lastFull.get(lesson.id);
+    const score=row?.total>0 ? Math.round(100*row.score/row.total) : null;
+    const missed=Number(errors.get(lesson.id)||0);
+    let priority,status,action,reason;
+    if(score===null) {
+      [priority,status,action,reason]=[1,'new','Darsni boshlash','Bu mavzu bo‘yicha hali to‘liq test topshirilmagan.'];
+    } else if(score<60) {
+      [priority,status,action,reason]=[0,'repeat','Darsni qayta o‘qish','Oxirgi to‘liq test natijasi 60% dan kam.'];
+    } else if(missed) {
+      [priority,status,action,reason]=[1,'review_errors','Xato savollarni takrorlash','Oxirgi mashqda hali xato savollar mavjud.'];
+    } else if(score<80) {
+      [priority,status,action,reason]=[1,'practice','Yana mashq qilish','Oxirgi to‘liq test natijasi 80% dan kam.'];
+    } else {
+      [priority,status,action,reason]=[2,'maintain','Bilimni mustahkamlash','Oxirgi to‘liq test natijasi 80% yoki undan yuqori.'];
+    }
+    items.push({
+      lesson_id:lesson.id,lesson_title:lesson.title,subject_id:subject.id,subject_title:subject.title,
+      last_full_percent:score,wrong_count:missed,status,action,reason,
+      recommended_level:score===null||score<60?'basic':score<85?'standard':'advanced',
+      priority
+    });
+  }
+  items.sort((a,b)=>a.priority-b.priority);
+  items.forEach(x=>delete x.priority);
+  const attempted=items.filter(x=>x.last_full_percent!==null).length;
+  return reply({total_lessons:items.length, attempted_lessons:attempted,
+    pending_lessons:items.length-attempted,items,
+    disclaimer:'Tavsiyalar faqat test natijalariga asoslangan; tibbiy maslahat emas.'});
+}
+async function deleteStudentData(request, env) {
+  const session = await signedUser(request, env);
+  if (session.failure) return session.failure;
+  // A student deletes only their own data. D1 foreign keys cascade attempts and answers.
+  await env.DB.batch([
+    env.DB.prepare('DELETE FROM access_requests WHERE user_id=?').bind(session.uid),
+    env.DB.prepare('DELETE FROM users WHERE user_id=?').bind(session.uid),
+  ]);
+  return reply({deleted:true});
+}
+
 export async function handleRequest(request, env) {
   const url = new URL(request.url), path = url.pathname;
   if (path === '/api/health' && request.method === 'GET') {
@@ -287,6 +419,22 @@ export async function handleRequest(request, env) {
     await env.DB.prepare('INSERT OR IGNORE INTO users (user_id,consented_at) VALUES (?,?)')
       .bind(session.uid, new Date().toISOString()).run();
     return reply({ consented: true });
+  }
+  if (path === '/api/me' && request.method === 'DELETE') {
+    return deleteStudentData(request, env);
+  }
+  if (path === '/api/tutor/status' && request.method === 'GET') {
+    const session = await consentedUser(request, env);
+    if (session.failure) return session.failure;
+    return reply({enabled:false, consented:false, used:0, limit:0, remaining:0,
+      conversation_saved:false,levels:['basic','standard','advanced'],
+      modes:['explain','example','recall','oral']});
+  }
+  if (path === '/api/tutor/lesson' && request.method === 'POST') {
+    return lessonHelp(request, env);
+  }
+  if (path === '/api/study-plan' && request.method === 'GET') {
+    return studyPlan(request, env);
   }
   if (path === '/api/catalog' && request.method === 'GET') {
     const session = await consentedUser(request, env);
