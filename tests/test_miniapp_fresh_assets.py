@@ -8,10 +8,10 @@ def test_mini_app_script_and_diagram_assets_cannot_be_stale():
     with TestClient(main.app) as client:
         page = client.get('/')
         assert page.status_code == 200
-        assert 'app.js?v=1.0.7' in page.text
+        assert 'app.js?v=1.0.8' in page.text
         assert 'no-store' in page.headers['cache-control']
 
-        javascript = client.get('/static/app.js?v=1.0.7')
+        javascript = client.get('/static/app.js?v=1.0.8')
         assert javascript.status_code == 200
         assert 'no-store' in javascript.headers['cache-control']
         assert "l.subject_id==='stom_prerest'" in javascript.text
