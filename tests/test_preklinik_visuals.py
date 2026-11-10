@@ -31,7 +31,11 @@ def test_preklinik_31_lessons_have_distinct_illustrated_guides():
         assert doc.tag == "{http://www.w3.org/2000/svg}svg"
         assert doc.attrib["role"] == "img"
         assert entry["title"] in "".join(doc.itertext())
-        assert "http://" not in raw and "<script" not in raw
+        assert "<script" not in raw
+        # The official SVG namespace uses HTTP; only external image
+        # or script references would be a risk.
+        assert "<image" not in raw and "<foreignObject" not in raw
+        assert 'href="http' not in raw
     assert len(list(ASSETS.glob("*.svg"))) == 31
 
 
