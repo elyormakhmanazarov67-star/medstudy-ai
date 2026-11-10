@@ -13,7 +13,7 @@
     {
       "binding": "DB",
       "database_name": "medstudy-ai-free",
-      "database_id": "REPLACE_AFTER_D1_DATABASE_CREATION",
+      "database_id": "3a1de55b-ce29-49cb-af3a-f674c8af2d15",
       "migrations_dir": "./migrations"
     }
   ],
