@@ -26,7 +26,8 @@ jobs:
         run: |
           node cloudflare/scripts/build-assets.mjs
           node --check cloudflare/src/worker.mjs
-          node --test cloudflare/test/*.test.mjs
+          cd cloudflare
+          node --test test/*.test.mjs
       - name: Validate D1 migration on local SQLite without real student data
         run: |
           python - <<'PY'
