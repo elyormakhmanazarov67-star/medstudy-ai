@@ -1,0 +1,36 @@
+name: Verify real Telegram Mini App service is updated
+on:
+  push:
+    branches:
+      - fix/preklinik-on-real-telegram-20261110
+    paths:
+      - '.github/workflows/check-live-real-miniapp.yml'
+permissions:
+  contents: read
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Verify real Telegram server serves the updated study interface
+        env:
+          ROOT: https://medstudy-ai-v0-4-test-staging.up.railway.app
+        run: |
+          set -euo pipefail
+          curl --fail --show-error -L --max-time 12 "$ROOT/" -o /tmp/miniapp.html
+          curl --fail --show-error -L --max-time 12 "$ROOT/static/app.js?v=1.0.9" -o /tmp/miniapp.js
+          curl --fail --show-error -L --max-time 12 "$ROOT/static/illustrations/preklinik/catalog.json" -o /tmp/preklinik.json
+          node --check /tmp/miniapp.js
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          html=Path('/tmp/miniapp.html').read_text()
+          js=Path('/tmp/miniapp.js').read_text()
+          imgs=json.loads(Path('/tmp/preklinik.json').read_text())
+          assert 'app.js?v=1.0.9' in html, 'Wrong live JavaScript version'
+          assert "l.subject_id==='stom_prerest'" in js, 'Preklin lesson button missing'
+          assert "case 'preklinik-visual':" in js, 'Preklin event handler missing'
+          assert len(imgs)==31, 'Not all lesson images deployed'
+          assert imgs['ergonomika']['src']=='/static/illustrations/preklinik/ergonomika.svg'
+          print('REAL_TELEGRAM_MINIAPP_UPDATED: 31 diagrams and visual button found')
+          PY
