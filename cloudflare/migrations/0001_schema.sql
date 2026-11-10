@@ -1,6 +1,6 @@
 -- Mirrors the original MedStudy Mini App SQLite schema. No existing
 -- Railway accounts or quiz attempts are copied by applying this migration.
-PRAGMA foreign_keys = ON;
+-- D1 enforces foreign keys automatically; do not toggle PRAGMA foreign_keys.
 CREATE TABLE IF NOT EXISTS users (
   user_id INTEGER PRIMARY KEY, consented_at TEXT NOT NULL
 );
