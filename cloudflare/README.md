@@ -45,6 +45,10 @@ Run without any Cloudflare account or real Telegram key:
 - Student access and approval read checks using mock/local D1.
 - POST /api/consent for an approved account.
 - GET /api/me, GET /api/catalog, GET /api/lessons/{id}.
+- POST /api/attempts with graded full/retry/supplementary quizzes, D1 writes
+  inside an atomic batch and a per-student rate limit.
+- GET /api/progress, GET /api/history and GET /api/review/{lesson_id} with
+  per-user authorization and no access to other students' scores.
 - The original 6 subjects and 81 lesson descriptions are packaged locally.
 - Static site and Preklinik illustration files are copied to deployable assets.
 
@@ -52,12 +56,12 @@ Not implemented, do not switch over yet:
 
 - Telegram webhook, /start subscription requests, administrator approvals
   and bot commands.
-- Quiz submit, answer grading, progress, attempts and history writes.
+- Real-cloud end-to-end signed student quiz tests and recovery from failure.
 - Study planning, full AI Ustoz helper and optional Qdrant integration.
 - Restoring private student SQLite data into D1 with consistency checks.
 - Real-cloud testing and handling Cloudflare Free limits.
 
-All unimplemented API routes return an explicit 501, and webhook routes
+Remaining unimplemented API routes return an explicit 501, and webhook routes
 return 503. This is intentional, to prevent silent corruption during
 testing.
 
