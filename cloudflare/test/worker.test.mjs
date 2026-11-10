@@ -2,6 +2,9 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { createHmac, webcrypto } from 'node:crypto';
 import { existsSync, readFileSync } from 'node:fs';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+const PUBLIC_DIR = resolve(dirname(fileURLToPath(import.meta.url)), '../public');
 import { handleRequest, verifyTelegramInitData } from '../src/worker.mjs';
 
 if (!globalThis.crypto) globalThis.crypto = webcrypto;
@@ -51,10 +54,10 @@ async function responseJson(path, opts={}) {
 }
 
 test('offline build preserves the existing Mini App JS, SVGs and 81 lessons', () => {
-  assert.ok(existsSync('cloudflare/public/index.html'));
-  assert.ok(existsSync('cloudflare/public/static/app.js'));
-  assert.ok(existsSync('cloudflare/public/static/illustrations/preklinik/ergonomika.svg'));
-  const html=readFileSync('cloudflare/public/index.html','utf8');
+  assert.ok(existsSync(resolve(PUBLIC_DIR, 'index.html')));
+  assert.ok(existsSync(resolve(PUBLIC_DIR, 'static/app.js')));
+  assert.ok(existsSync(resolve(PUBLIC_DIR, 'static/illustrations/preklinik/ergonomika.svg')));
+  const html=readFileSync(resolve(PUBLIC_DIR, 'index.html'),'utf8');
   assert.match(html,/app.js\?v=/);
 });
 
