@@ -1,0 +1,6 @@
+# Generated static assets and published curriculum, no secret uploads.
+public/
+generated/
+.dev.vars
+.wrangler/
+.env

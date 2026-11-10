@@ -1,0 +1,24 @@
+{
+  // Preview only. Do not connect production Telegram webhook until all API
+  // routes are implemented and all student records have been migrated safely.
+  "name": "medstudy-ai-free-preview",
+  "main": "./src/worker.mjs",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*", "/telegram/*", "/bot/*"]
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "medstudy-ai-free",
+      "database_id": "REPLACE_AFTER_D1_DATABASE_CREATION",
+      "migrations_dir": "./migrations"
+    }
+  ],
+  "vars": {
+    "ACCESS_APPROVAL_ENABLED": "1",
+    "PUBLIC_FREE_ENABLED": "0"
+  }
+}
